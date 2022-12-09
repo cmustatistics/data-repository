@@ -1,0 +1,22 @@
+project:
+  type: website
+  resources:
+    - "data/*.csv"
+
+website:
+  title: "CMU S&DS Data Repository"
+  page-footer: "Mainted by the Department of Statistics & Data Science, Carnegie Mellon University"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - by-method.qmd
+      - submit-data.qmd
+  sidebar:
+    contents: auto
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

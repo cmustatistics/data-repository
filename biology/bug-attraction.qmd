@@ -1,0 +1,141 @@
+---
+title: Insect attraction to light
+date: December 8, 2022
+author: Alex Reinhart
+description: What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.
+categories:
+  - GLMs
+  - experimental design
+---
+
+## Motivation
+
+You’ve probably seen that insects seem to be attracted to artificial lights at
+night. Insects appear to be most attractive to blue and ultraviolet light, and
+less attracted by red or infrared light.
+
+Previously, most outdoor high-intensity lighting---such as for street lights and
+parking lots---used sodium vapor lamps, a type of lamp that is very efficient
+for large lights but also produces a characteristic orange glow. Many cities and
+countries, however, are moving towards using light-emitting diodes (LEDs) in
+outdoor lighting, since they have become affordable and highly efficient. LED
+lights promise to require less maintenance and cost less to operate. Also, they
+are not limited to the orange glow of sodium vapor lamps---they can produce
+whiter light. Some research suggests this is beneficial for safety, since whiter
+light makes roads and sidewalks easier to see. But it can also have some harms.
+
+One possible harmful effect is to insects. If LEDs can produce whiter or bluer
+light, they may be more attractive to insects at night, disrupting their
+circadian rhythms and potentially even leading to their deaths as they circle
+lights endlessly.
+
+This data comes from a study intended to understand how what lights attract
+insects and what types of insects are most affected, to study the problem. The
+researchers set up light traps: each trap contained a light bulb and captured
+any insect attracted by the light to enter the trap.
+
+The researchers conducted their experiment by setting up six light traps, each
+with a different light bulb. (One trap contained no bulb, as a control.) The
+traps were set up each evening at sunset and then checked in the morning after
+sunrise, and the insects collected identified and counted.
+
+Traps were set up at three different sites (one urban, two rural). Relevant
+weather conditions were recorded. The experiment was repeated 32 times: 16 times
+at the urban site and 8 times at each rural site. This allowed the researchers
+to rotate which location (within an individual site) each trap was placed in,
+and allowed them to collect data under varying weather and moon phases. (Since
+the moon is bright in the night sky, the presence of a bright moon could
+presumably affect the results.)
+
+## Data
+
+Each row of data represents one trap on one night, and records the light bulb
+used in that trap, its location, the weather conditions, and the insects
+collected in that trap.
+
+| Variable | Description |
+|----|-------------|
+| Light Type 	| Type of light bulb used to attract insects. `No` means no bulb at all; `A`, `B`, and `C` are all Philips light bulbs whose color can be adjusted by the user; `LED` is a commercial white LED bulb; and `CFL` is a commercial compact fluorescent bulb. |
+| Model Lamp 	| More detailed description of the light bulb. For `A`, `B`, and `C`, describes the color temperature (K) the bulbs were set to. |
+| Location 	| Location the light trap was placed. Site codes starting with `B` are urban (the UCLA Botanical Garden); site codes `L` and `S` were rural locations (a UCLA field station and a UCLA ranch). Each site has six separate traps, designated by a number. |
+| Site 	| Site. `BG` = botanical garden, `LK` = La Kretz field station, `Stunt` = stunt ranch. |
+| Standardized Moon 	| Standardized variable representing the percentage of the moon visible on the night chosen (i.e., the moon phase). |
+| Standardized Mean Temp 	| Temperature on the night, standardized. |
+| Standardized Mean Humidity	| Humidity on the night, standardized. |
+| Standardized Max Wind 	| Maximum wind speed on the night, standardized. |
+| % Moon Visible 	| Percentage of moon visible (moon phase). |
+| Start Tem 	| Temperature at the beginning of the night (Celsius) |
+| End Temp 	| Temperature at the end of the experiment (Celsius)
+| Mean Temp 	| Mean temperature (Celsius) |
+| Humid Start 	| Relative humidity at the start of the experiment (%) |
+| Humid End 	| Relative humidity at the end of the experiment (%) |
+| Mean Humidity 	| Mean humidity (%) |
+| Max Wind 	| Maximum recorded wind speed (m/s) |
+| Illumination 	| Illumination produced by the light (lux) |
+| Diptera 	| Number of insects of the order Diptera captured in the trap |
+| Hymenoptera 	| Number of insects of the order Hymenoptera captured in the trap |
+| Hemiptera 	| Number of insects of the order Hemiptera captured in the trap |
+| Psocoptera 	| Number of insects of the order Psocoptera captured in the trap |
+| Coleoptera 	| Number of insects of the order Coleoptera captured in the trap |
+| Collembola 	| Number of insects of the order Collembola captured in the trap |
+| Arachnid 	| Number of insects of the order Arachnid captured in the trap |
+| Thysanura 	| Number of insects of the order Thysanura captured in the trap |
+| Isoptera 	| Number of insects of the order Isoptera captured in the trap |
+| Lepidoptera 	| Number of insects of the order Lepidoptera captured in the trap |
+| Neuroptera 	| Number of insects of the order Neuroptera captured in the trap |
+| Larave 	| Number of insects of the order Larave captured in the trap |
+| Orthoptera 	| Number of insects of the order Orthoptera captured in the trap |
+| Unident 	| Number of unidentified insects captured in the trap |
+| Total 	| Total number of insects captured in the trap |
+| Other Orders 	| Number of insects of other identified orders captured in the trap  |
+: [bug-attraction.csv](../data/bug-attraction.csv)
+
+## Questions
+
+These are adapted from questions used in notes for 36-707.
+
+1. We are interested in the total number of insects collected in each trap (the
+   `Total` variable) and how it relates to the light bulb type (`Light Type`).
+   We also know that the location (`Location`), moon phase (`% Moon Visible`),
+   mean night temperature (`Mean Temp`), and mean humidity (`Mean Humidity`)
+   might affect insect activity. Conduct an EDA of these variables to determine
+   what relationships the predictors may have with the response.
+2. Consider the study design. Because six traps were placed out each night, each
+   with a different bulb (or no bulb), the traps were exposed to the same
+   location, moon phase, temperature, and humidity. No bulb type has data from
+   moon phases that are systematically different from the other bulbs, or was
+   used on nights that were warmer than those for the other bulbs, or anything
+   like that. This is known as a *balanced* design.
+
+   Comment on what this design choice means. Can location, moon phase, mean
+   temperature, or mean humidity be confounding variables that would bias our
+   estimates of the effect of bulb type? Do we need to incorporate them into our
+   models to obtain an unbiased estimate of the causal effect of bulb type?
+
+3. Obtain the mean number of insects trapped by each bulb. Display the means in
+   a table. Which bulb attracts the fewest insects?
+
+   Note there is one missing count (recorded as `NA`) that you may need to
+   remove.
+
+4. Select a GLM for the total number of insects collected as a function of bulb
+   type, location, moon phase, temperature, and humidity. Use your EDA to guide
+   your model choice, and produce any necessary diagnostic plots to validate
+   your choice.
+
+   Produce a table of coefficients estimated from your final model, including
+   standard errors. Interpret, in words, the meaning of the coefficient for
+   temperature, giving a 95% confidence interval for the size of the effect.
+
+5. Consider a night where the moon is 60% visible, the humidity is 60%, and the
+   mean temperature is 15 °C. (These are roughly the average values in the
+   data.) Produce a table of the predicted number of insects trapped by each
+   bulb type at the La Kretz station on a night like this, giving 95% confidence
+   intervals for each prediction. Does your result match the table from part 3?
+
+## References
+
+Longcore, Aldern, Eggers, Flores, Franco, Hirshfield-Yamanishi, Petrinec, Yan,
+and Barroso. “Tuning the white light spectrum of light emitting diode lamps to
+reduce attraction of nocturnal arthropods”. *Philosophical Transactions of the
+Royal Society B* 370: 20140125. <https://doi.org/10.1098/rstb.2014.0125>

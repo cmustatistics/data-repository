@@ -1,0 +1,66 @@
+---
+title: AnAge Longevity Database
+author: Alex Reinhart
+date: December 27, 2021
+description: The AnAge database includes information on the longevity of thousands of animal species, allowing studies of the factors related to long lifespans.
+categories:
+  - linear regression
+---
+
+The [AnAge Database of Animal Ageing and
+Longevity](https://genomics.senescence.info/species/index.html) is a "curated
+database of ageing and life history in animals" that was "primarily developed
+for comparative biology studies." It contains information, compiled from
+hundreds of scientific papers, for over 4,200 species. It's mainly meant for
+studies of aging, so for each species, it includes variables such as lifespan,
+age of sexual maturity, adult body mass, typical body temperature, and metabolic
+rate. We can use this data to learn more about the relationships between each
+variable and the key outcome variable: lifespan.
+
+## Data
+
+Each observation is one animal species. Note that many variables are missing for
+individual species, so you may need to restrict your analysis to complete
+observations.
+
+
+| Variable | Description |
+|----|-------------|
+| HAGRID 	| A unique ID for each entry (the Human Ageing Genomic Resources ID) |
+| Kingdom 	| Along with the following variables (phylum, class, order, family, genus, and species), this gives the taxonomic classification of the species. Species names are typically given as genus and species, e.g. Anaxyrus americanus is the species name for the American toad. |
+| Phylum 	| Phylum of the species |
+| Class 	| Class of the species |
+| Order 	| Order of the species |
+| Family 	| Family of the species |
+| Genus 	| Genus of the species |
+| Species 	| Species name |
+| Common.name 	| Common name (i.e., the name used by ordinary people, not scientists) for the animal |
+| Maximum.longevity.yrs	| Maximum longevity (lifespan), in years |
+| Body.mass.g 	| Typical adult body mass, in grams |
+| Metabolic.rate 	| Typical resting metabolic rate (i.e., rate of energy use), in Watts |
+| Temperature 	| Typical body temperature, in Kelvin  |
+
+: [anage.csv](../data/anage.csv)
+
+
+## Questions
+
+1. Some research has suggested that slowing the metabolic rate---for example, by
+   intermittent fasting---may increase lifespan. Is this supported by the
+   evidence? Develop a model for lifespan using metabolic rate, and interpret
+   what it means.
+2. Is the relationship between metabolic rate and lifespan nonlinear, even after
+   transformations? Use a nonparametric model to determine if a nonlinear fit is
+   more appropriate.
+3. Build a model to predict longevity using the available data. Evaluate its
+   accuracy and report on any problems with the model.
+3. Explain whether your model supports the conclusion that changing an animal's
+   metabolic rate, such as through medical intervention, would *cause* its mean
+   lifespan to change.
+
+## References
+
+The AnAge Database of Animal Ageing and Longevity, at
+<https://genomics.senescence.info/species/index.html>. Data made available under
+the [Creative Commons Attribution 3.0 Unported
+License](https://creativecommons.org/licenses/by/3.0/).

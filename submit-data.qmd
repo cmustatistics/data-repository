@@ -1,0 +1,15 @@
+---
+title: Submit a Dataset
+---
+
+The repository can always use new datasets, so we welcome submissions. Datasets
+should meet a few requirements:
+
+- The data must be publicly shareable. There should not be any licensing
+  restrictions that prevent us from sharing it, or any human subjects ethics
+  concerns or other limitations.
+- The data should be in a standard, easy-to-use format, like CSV.
+- There should be good motivation for interesting analyses of the data that
+  would be appropriate for a course.
+
+TODO describe process

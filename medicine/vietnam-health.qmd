@@ -1,0 +1,133 @@
+---
+title: Health exams in Vietnam
+author: Alex Reinhart
+date: December 8, 2022
+description: As access to health care increases, public health advocates encourage ordinary people to get regular check-ups to detect problems before they become serious (and expensive). But not everyone follows this advice. This survey of people in Vietnam explores the factors leading people to get regular check-ups.
+categories:
+  - surveys
+  - classification
+  - logistic regression
+---
+
+## Motivation
+
+Medical care for serious diseases can be very expensive, and in countries
+without established socialized medical systems it can impose serious hardships
+on patients. Ideally, patients would get regular check-ups (or “general health
+examinations”, GHEs) so that serious conditions could be detected and treated
+early, before they cause serious problems. This would save money and improve
+public health.
+
+However, there are many possible obstacles to getting everyone to go to regular
+check-ups. They might be too expensive, or too difficult to schedule; some
+people may not trust doctors or believe that check-ups have any value; or some
+people may have had bad experiences when they previously tried to get check-ups.
+
+Public health researchers in Vietnam wanted to explore these reasons and
+determine what obstacles prevented widespread use of regular check-ups. They
+conducted an interview survey in Hanoi and Hung Yen, Vietnam, by traveling to
+“secondary schools, hospitals, companies, government agencies and randomly
+selected households in Hanoi” and interviewing people in person for about 10-15
+minutes. This dataset contains the raw data from that survey.
+
+## Data
+
+There were 2,068 valid responses to the survey, out of 2,479 people approached.
+This dataset includes all the valid responses.
+
+| Variable | Description |
+|----|-------------|
+| id 	| A unique ID for each survey respondent |
+| date 	| Probably the date of the interview, in YYYYMMDD format |
+| Age 	| Age of survey respondent (years) |
+| Sex 	| Sex of survey respondent |
+| Jobstt 	| Job status: stable, unstable, student, retired, homemaker, or other |
+| MaritalStt 	| Marital status: married, unmarried, other |
+| Edu 	| Maximum educational attainment (PostGrad = post-graduate, Grad = college or university, Second = high school, Hi = middle school) |
+| height 	| Height (cm) |
+| weight 	| Weight (kg) |
+| place 	| Place the survey was conducted |
+| BMI 	| Body mass index, calculated from height and weight |
+| HealthIns 	| Whether the respondent has health insurance |
+| RecExam 	| Time since the respondent last visited a doctor with symptoms of a disease (less12 = less than 12 months, b1224 = between 12 and 24 months, g24 = over 24 months, unknown = respondent doesn't know) |
+| RecPerExam 	| Time since respondent last visited a doctor for a check-up, not prompted by a specific illness. Coded in the same way |
+| ReaExam 	| Reason for their last check-up (noti.disease = concern over illness or epidemic, adv.sig = worrying symptoms, request = requested by an employer or insurance company, volunteer = no immediate reason) |
+| Wsttime 	| Does the respondent believe check-ups are a waste of time? |
+| Wstmon 	| Does the respondent believe check-ups are a waste of money? |
+| DiscDisease 	| Is the respondent afraid of check-ups because they're afraid of discovering a disease? |
+| Lessbelqual 	| Does the respondent have little faith in the quality of medical service? |
+| NotImp 	| Does the respondent believe check-ups are not urgent or important? |
+| HthyPriority 	| Does the respondent believe health is a first priority? |
+| ComSubsidy 	| Are check-ups subsidized by the respondent's employer or community? |
+| Habit 	| Did the respondent get the habit of regular check-ups from their family or employer? |
+| FlwHealth 	| Does the respondent constantly follow updates on their health measures? |
+| PerTrmt 	| Is the respondent receiving long-term medical treatment? |
+| AcqTrmt 	| Is a member of the respondent's family receiving long-term medical treatment? |
+| StabHthStt 	| Are the respondent and their family all in good health? |
+| MedCabinet 	| Does the respondent keep a medical cabinet and basic medical equipment at home? |
+| Tooluseskills	| Does the respondent have the skills to use basic medical equipment? |
+| ExpCare 	| Does the respondent have experience taking care of a sick family member? |
+| ExamTools 	| Does the respondent's family regularly take simple medical measurements, like blood pressure or weight? |
+| UseMon 	| If the respondent were provided cash to have a check-up, what would they do? allsoon = use all the money to have a check-up soon, partly = use part of the money for a check-up and save the rest, later = take all the money and have a check-up later |
+| Tangibles 	| Perceived quality of medical equipment and personnel at check-ups. Scale of 1 to 5, 1=lowest quality |
+| Reliability 	| Perceived ability of examiner to perform medical services that meet the patient's expertations, scale of 1 to 5 |
+| Respon 	| Perceived timeliness of check-up service, scale of 1 to 5 |
+| Assurance 	| Perceived knowledge or ability to assure professional reliance, scale of 1 to 5 |
+| Empathy 	| Perceived thoughtfulness and sense of responsibility of medical staff, scale of 1 to 5 |
+| StChoise 	| Respondent's preferred way of dealing with new symptoms: clinic = go to a clinic, askrel = ask family and relatives for advice, selfstudy = do personal research. |
+| CHPerc 	| Respondent's general opinion of public health (good, quite good, bad, unknown) |
+| SuitFreq 	| How often respondent believes check-ups should be done (6m = every 6 months, 12m = every 12 months, 18m = every 18 months, g18m = less often than every 18 months) |
+| AffCost 	| How much the respondent believes a check-up should cost (low = less than 1 million VND, med = from 1 to 2 million VND, hi = over 2 million VND) |
+| UseIT 	| Is the respondent willing to use information technology to detect health problems, if it's reliable? |
+| AfterIT 	| If a healthcare app indicated that the respondent needed to have a check-up, would they arrange one? |
+| SuffInfo 	| Respondent's rating of the sufficiency of information they received in check-ups, 1 to 5 scale |
+| AttractInfo 	| Respondent's rating of the attractiveness of information they received in check-ups, 1 to 5 scale |
+| ImpressInfo 	| Respondent's rating of the impressiveness of information they received in check-ups, 1 to 5 scale |
+| PopularInfo 	| Respondent's rating of the popularity of information they received in check-ups, 1 to 5 scale |
+| SuitExer 	| How much time the respondent thinks people should spend on sports and physical exercise to stay in shape (units not given) |
+| EvalExer 	| How much time the respondent spends on sports and physical exercise (verysuff = 'more than enough', quitesuff = 'enough', little = 'only a little', trivial = 'none or almost none' |
+| Age_gr 	| The respondent's age, broken into one of five categories  |
+
+: [vietnam-health.csv](../data/vietnam-health.csv)
+
+## Questions
+
+Suppose the Assistant Minister of Health is interested in increasing the number
+of people who get annual health exams. The Ministry could simply send reminders
+or offer incentives to anyone who does not appear for an exam each year. But the
+budget is limited and they cannot afford to try to convince every possible
+patient to get a check-up. Also, the Ministry does not know *why* people do not
+sign up for exams, and understanding why could help them make policy changes or
+make their public relations campaigns more effective. (For example, if people
+tend to think check-ups are a waste of money, their advertising should emphasize
+how cheap they are; if people don't believe medical service is high-quality, the
+advertising should emphasize the expertise and training of doctors.)
+
+1. Overall, how do people rate the attractiveness, impressiveness, sufficiency,
+   and popularity of information they receive in checkups? Give summaries of
+   these variables, as well as variables like assurance, reliability, and
+   empathy that indicate how medical personnel may be able to improve.
+2. Build a classifier to predict whether the respondent had a check-up in the
+   last 12 months (using `RecPerExam`). Use predictors that plausibly could be
+   related, and discuss which predictors have the strongest relationship with
+   the outcome. Which make a person less likely to get a check-up every twelve
+   months?
+3. The original paper (see citation below) used logistic regression to evaluate
+   how `RecPerExam` can be predicted by `Wsttime`, `Wstmon`, `HthyPriority`,
+   `FlwHealth`, and `HealthIns`. Try to replicate their analysis and evaluate
+   whether logistic regression is a good modeling choice. How do its results
+   compare to your classifier?
+4. One plausible hypothesis is that none of these factors matter much unless you
+   have health issues or know someone in their family with health issues. (This
+   is in `StabHthStt`.) That is, if nobody you know has serious health issues,
+   you may not decide to get check-ups, regardless of how attractive impressive
+   or inexpensive they are. If you do, then the factors do influence your
+   probability of getting a check-up. Test this hypothesis.
+
+## References
+
+Q-H Vuong (2017). Survey data on Vietnamese propensity to attend periodic
+general health examinations. *Scientific Data* 4 170142.
+<https://doi.org/10.1038/sdata.2017.142>
+
+Data available from the Open Science Framework: <https://osf.io/afz2w/>
