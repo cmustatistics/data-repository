@@ -1,0 +1,48 @@
+---
+title: Galaxy mass prediction
+author: Peter Freeman
+date: February 3, 2023
+description: Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy's mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?
+categories:
+  - linear regression
+  - machine learning
+---
+
+## Motivation
+
+Estimating the properties of galaxies, and even where they are, is a challenging process. The Rubin Observatory, a sky survey telescope located in Chile, will once it becomes operational image tens of billions of astronomical objects, the vast majority of which will be galaxies that have never been imaged before. Analyses of these data will require sophisticated methodologies, ones that will allow us to first determine where the galaxies are (i.e., how far away they are), and then conditional on the distance, how massive they are. Given galaxy distance and mass data, we can test theories of how the Universe evolves, by comparing simulated galaxy data with these data.
+
+The Buzzard-V1.0 simulation was used to generate a realistic sample of Rubin Observatory data. In this dataset are measurements for 111,172 galaxies. Developers used these data to benchmark, e.g., methods for estimating galaxy distance. Here, we can assume the distance has been estimated well, and use these data to try to model galaxy mass as a function of brightness and distance.
+
+## Data
+
+The dataset contains measures of magnitude and magnitude uncertainty in six astronomical bands (`u` for ultraviolet, `g` for green, `r` for red, `i` for infrared, and `z` and `y` for two additional infrared bands). Magnitude is a logarithmic measure of brightness, with an *increase* of 5 representing a *decrease* in brightness by a factor of 100, and with a value of zero being represented (roughly) by how the star Vega appears in the night sky. In addition, there is a `redshift` measured for each galaxy; it represents by how much light from the galaxy is stretched (by the expansion of Universe) as it travels to us. Thus higher redshifts represent larger distances. The last measurement is `log.mass`, which is the base-10 logarithm of the galaxy stellar mass in units of solar mass; for instance, `log.mass = 10` means that the galaxy has a mass 10 billion times that of the Sun.
+
+| Variable | Description |
+| -------- | ----------- |
+| u | Galaxy magnitude in Rubin u band (320.5-393.5 nm) |
+| g | Galaxy magnitude in Rubin g band (401.5-551.9 nm) |
+| r | Galaxy magnitude in Rubin r band (552.0-691.0 nm) |
+| i | Galaxy magnitude in Rubin i band (691.0-818.0 nm) |
+| z | Galaxy magnitude in Rubin z band (818.0-923.5 nm) |
+| y | Galaxy magnitude in Rubin y band (923.8-1084.5 nm) |
+| u.err | Uncertainty for u-band magnitude |
+| g.err | Uncertainty for g-band magnitude |
+| r.err | Uncertainty for r-band magnitude |
+| i.err | Uncertainty for i-band magnitude |
+| z.err | Uncertainty for z-band magnitude |
+| y.err | Uncertainty for y-band magnitude |
+| log.mass | Galaxy stellar mass (log-base-10 solar masses) |
+| redshift | Galaxy redshift |
+
+: [Buzzard_DC1.csv](../data/Buzzard_DC1.csv)
+
+## Questions
+
+As noted above, the idea here is to learn a statistical association between measures of magnitude and distance, and galaxy mass.
+
+One wrinkle here that analysts can exploit is that the data contain standard error estimates for the magnitudes (though not for redshift, for which, in practice, the error would be $\sim 10^{-5}$).
+
+## References
+
+Schmidt, Malz, Soo, Almosallam, Brescia, Cavuoti, Cohen-Tanugi, Connolly, DeRose, Freeman, Graham, Iyer, Jarvis, Kalmbach, Kovacs, Lee, Longo, Morrison, Newman, Nourbakhsh, Nuss, Pospisil, Tranin, Wechsler, Zhou, Izbicki, (The LSST Dark Energy Science Collaboration). "Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)". *Monthly Notices of the Royal Astronomical Society* 499: 1587–1606. <https://doi.org/10.1093/mnras/staa2799>
