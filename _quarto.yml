@@ -12,6 +12,7 @@ website:
         text: Home
       - by-method.qmd
       - submit-data.qmd
+      - external-sources.qmd
   sidebar:
     contents: auto
 
