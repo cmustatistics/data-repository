@@ -7,6 +7,8 @@ categories:
   - linear regression
 ---
 
+## Motivation
+
 Some research has suggested that groups of people working on a task can do
 better if the group is more diverse, since diverse group members can suggest
 more creative ideas and make better decisions. At the same time, diverse groups
