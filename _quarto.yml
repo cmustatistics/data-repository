@@ -22,3 +22,6 @@ format:
       - cosmo
       - cmu.scss
     toc: true
+
+execute:
+  freeze: auto
