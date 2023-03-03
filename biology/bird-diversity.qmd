@@ -8,6 +8,8 @@ categories:
   - hierarchical model
 ---
 
+## Motivation
+
 Ecologists and evolutionary biologists have long investigated links between
 diversity and geography. For example, as the area of a habitat increases, the
 [number of different species found within it
