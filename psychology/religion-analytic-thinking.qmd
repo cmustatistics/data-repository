@@ -1,0 +1,83 @@
+---
+title: Religion and analytic thinking
+author: Alex Reinhart
+date: February 25, 2017
+description: A controversial study found that encouraging analytic thinking also reduced religious belief. A replication attempt collected much more data to try to confirm the hypothesis; is it supported by the data?
+categories:
+  - ANOVA
+  - linear regression
+---
+
+## Motivation
+
+In 2012, a study published in *Science* made the controversial claim that
+“Analytic Thinking Promotes Religious Disbelief”: people who tend to think
+analytically report less belief in God. Moreover, the study reported on
+experiments in which subjects performed tasks intended to make them think more
+analytically, and found that afterwards, the subjects reported less religious
+belief.
+
+This was controversial for the obvious reasons; in the spirit of good science, a
+separate team of researchers set out to perform one of the key experiments
+again, with a larger sample size, to test if the reported effect really exists.
+The original study included several experiments, but the new team focused on one
+testing whether visual priming (showing people images meant to evoke particular
+feelings) could have an effect on religious belief by priming people to think
+more analytically.
+
+The experiment, conducted exactly as done in the original study, went as
+follows. Participants were told they were part of a study on memory, and shown
+four photographs: half saw photographs of Rodin’s famous [The
+Thinker](https://en.wikipedia.org/wiki/The_Thinker) (intended to induce analytic
+thinking), and half saw photographs of Myron’s
+[Discobolus](https://en.wikipedia.org/wiki/Discobolus), intended as a neutral
+control.
+
+Then, in subsequent demographic questions, they were asked how strongly they
+believed in God, on a scale of 0 to 100 (0 meaning no belief and 100 meaning
+absolute belief).
+
+The replication study collected several times more data than the original study,
+from four sites: a community college, a private Lutheran university, a private
+Catholic university, and online (via Amazon’s [Mechanical
+Turk](https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk) service).
+
+## Data
+
+Each row is one experimental subject, randomized to see either Discobolus or The
+Thinker.
+
+| Variable | Description |
+|----|-------------|
+| condition |	Whether the subject saw Discobolus ('discus') or The Thinker ('thinker') |
+| site |	Which site the subject was from |
+| religious |	Religious belief, from 0 to 100 |
+| age |	Age of the subject, in years |
+| gender |	Gender of the subject  |
+
+: [religion-analytic.csv](../data/religion-analytic.csv)
+
+## Questions
+
+1. Perform basic EDA. Do the demographics of the participants differ by site?
+   What is the distribution of religious beliefs?
+2. Perform an analysis to determine if religious belief really does vary by
+   condition, as claimed in the original study. Do your results match? What do
+   you conclude?
+3. Is there any evidence that the effect (if any) differs by site, age or
+   gender?
+
+
+## References
+
+The original experiment was: Gervais WM, Norenzayan A. (2012) Analytic Thinking
+Promotes Religious Disbelief. *Science* 336 (6080): 493–496.
+<https://doi.org/10.1126/science.1215647>
+
+The replication was: Sanchez C, Sundermeier B, Gray K, Calin-Jageman RJ (2017)
+Direct replication of Gervais & Norenzayan (2012): No evidence that analytic
+thinking decreases religious belief. *PLoS ONE* 12(2): e0172636.
+<https://doi.org/10.1371/journal.pone.0172636>
+
+Replication data obtained from <https://osf.io/qc6rh/> and subsequently
+converted and cleaned.
