@@ -1,0 +1,91 @@
+---
+title: Dry beans
+author: Alex Reinhart
+date: December 27, 2021
+description: Sort and classify beans using features extracted from images.
+categories:
+  - classification
+---
+
+## Motivation
+
+The common bean (*Phaseolus vulgaris*) is a plant widely cultivated for its dry
+seeds---beans. The species has long been cultivated for food and has developed
+into many varieties; many common beans, such as kidney beans, pinto beans, navy
+beans, and wax beans, are all varieties of the common bean. Because there are
+many varieties within the species, there are many varieties of seed that farmers
+can choose to plant, and each variety is suited for different growing climates
+and for different markets.
+
+However, in countries like Turkey, most farmers do not use commercially produced
+seeds certified to be all of one specific variety. They use seeds they obtain
+from their own crops or from other farmers, which may contain many different
+varieties of bean. To sort out specific varieties would require a trained expert
+to carefully sort the beans---which would be quite difficult when planting a
+field takes many thousands of seeds!
+
+As a result, there is some demand for systems that can automatically classify
+seeds by variety, for example by using images of the seeds. If seeds can be
+accurately sorted by computer, a machine could automatically sort seeds at high
+speed, allowing farmers to sort their crops, pick the best varieties for their
+fields and their markets, and sell their seeds to other farmers who want a
+specific variety.
+
+To collect this data, researchers used a camera to take photographs of 13,611
+beans of seven different varieties. (This study was conducted in Turkey, so the
+varieties are known by their Turkish names: Barbunya, Battal, Bombay, Calı,
+Dermason, Horoz, Tombul, Selanik and Seker.) The beans were of known variety.
+The researchers then used image processing code to extract features from the
+images, including the bean sizes and several measures of shape. The goal was to
+use these features to classify the variety of the beans; if this is possible,
+one could build a system using a camera and computer to automatically classify
+beans by variety.
+
+## Data
+
+This dataset contains features from 13,611 beans.
+
+| Variable | Description |
+|----------|-------------|
+| Area | 	Area of the bean in the image, measured as the number of pixels it covers in the image |
+| Perimeter | 	The circumference of the bean, measured as the length of its border in pixels|
+| MajorAxisLength |	The length of the bean's major axis in pixels, i.e. the longest line that can be drawn from end to end of the bean|
+| MinorAxisLength |	The length of the bean's minor axis in pixels, i.e. the longest line, perpendicular to the major axis, that can be drawn across the bean|
+| AspectRation |	The ratio of major axis to minor axis length|
+| Eccentricity | 	Eccentricity of an ellipse with the same second moments of area as the bean|
+| ConvexArea |	Number of pixels in the smallest convex polygon that contains the bean|
+| EquivDiameter |	The diameter of the circle with the same area of the bean|
+| Extent |	Ratio of the area of the bean to the area of the smallest rectangle that contains it|
+| Solidity |	The ratio of the bean's area to its convex area (i.e. Area/ConvexArea)|
+| roundness |	4πA / P², where A is the bean area and P its perimeter|
+| Compactness |	Ed/L, where Ed is the EquivDiameter and L is the major axis length|
+| ShapeFactor1 |	Major axis length divided by area|
+| ShapeFactor2 |	Minor axis length divided by area|
+| ShapeFactor3 |	4A/(πL²), where A is area and L is the major axis length|
+| ShapeFactor4 |	4A/(πLl), where A is area, L is major axis length, and l is minor axis length|
+| Class |	Variety of the bean |
+
+: [dry-beans.csv](../data/dry-beans.csv)
+
+## Questions
+
+1. Using a multiclass classifier---such as a neural network, multiclass support
+   vector machine, or kNN---build a classifier to predict bean variety from the
+   available features. Choose the features you use carefully; because some
+   features are calculated from others, some types of classifier may not need
+   all features. Also choose your validation strategy carefully to ensure you
+   can estimate your final model's accuracy.
+2. Explore different ways to measure the accuracy of the classifier. Examining
+   the confusion matrix may be useful to see what it is doing, but you should
+   also produce useful summaries, such as accuracy, precision, recall, F1 score,
+   and so on. Choose summaries that would be the most useful to bean producers.
+3. Which varieties are easiest to confuse with each other? Which are most
+   obviously different? Perhaps you can look up the varieties to see if the
+   results make sense; if your classifiers can't distinguish between two bean
+   varieties that appear very different, something might be wrong.
+
+## References
+
+Koklu, M. and Ozkan, I.A., (2020), "Multiclass Classification of Dry Beans Using
+Computer Vision and Machine Learning Techniques." *Computers and Electronics in
+Agriculture*, 174, 105507. <https://doi.org/10.1016/j.compag.2020.105507>
