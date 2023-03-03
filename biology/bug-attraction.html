@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2022-12-08">
+<meta name="description" content="What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.">
+
+<title>CMU S&amp;DS Data Repository - Insect attraction to light</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page">
+ <span class="menu-text">Datasets by Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html">
+ <span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Insect attraction to light</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">Datasets by Methods</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">External Sources</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">Submit a Dataset</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Astronomy</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">Galaxy mass prediction</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Biology</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">AnAge Longevity Database</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">Bird genetic diversity</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">Dry beans</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link active">Insect attraction to light</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Medicine</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">Health exams in Vietnam</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Psychology</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">Makeup and male attractiveness</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">Testosterone and diversity</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Insect attraction to light</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">GLMs</div>
+    <div class="quarto-category">experimental design</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alex Reinhart </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 8, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>You’ve probably seen that insects seem to be attracted to artificial lights at night. Insects appear to be most attractive to blue and ultraviolet light, and less attracted by red or infrared light.</p>
+<p>Previously, most outdoor high-intensity lighting—such as for street lights and parking lots—used sodium vapor lamps, a type of lamp that is very efficient for large lights but also produces a characteristic orange glow. Many cities and countries, however, are moving towards using light-emitting diodes (LEDs) in outdoor lighting, since they have become affordable and highly efficient. LED lights promise to require less maintenance and cost less to operate. Also, they are not limited to the orange glow of sodium vapor lamps—they can produce whiter light. Some research suggests this is beneficial for safety, since whiter light makes roads and sidewalks easier to see. But it can also have some harms.</p>
+<p>One possible harmful effect is to insects. If LEDs can produce whiter or bluer light, they may be more attractive to insects at night, disrupting their circadian rhythms and potentially even leading to their deaths as they circle lights&nbsp;endlessly.</p>
+<p>This data comes from a study intended to understand how what lights attract insects and what types of insects are most affected, to study the problem. The researchers set up light traps: each trap contained a light bulb and captured any insect attracted by the light to enter the trap.</p>
+<p>The researchers conducted their experiment by setting up six light traps, each with a different light bulb. (One trap contained no bulb, as a control.) The traps were set up each evening at sunset and then checked in the morning after sunrise, and the insects collected identified and counted.</p>
+<p>Traps were set up at three different sites (one urban, two rural). Relevant weather conditions were recorded. The experiment was repeated 32 times: 16 times at the urban site and 8 times at each rural site. This allowed the researchers to rotate which location (within an individual site) each trap was placed in, and allowed them to collect data under varying weather and moon phases. (Since the moon is bright in the night sky, the presence of a bright moon could presumably affect the results.)</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>Each row of data represents one trap on one night, and records the light bulb used in that trap, its location, the weather conditions, and the insects collected in that trap.</p>
+<table class="table">
+<caption><a href="../data/bug-attraction.csv">bug-attraction.csv</a></caption>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Light Type</td>
+<td>Type of light bulb used to attract insects. <code>No</code> means no bulb at all; <code>A</code>, <code>B</code>, and <code>C</code> are all Philips light bulbs whose color can be adjusted by the user; <code>LED</code> is a commercial white LED bulb; and <code>CFL</code> is a commercial compact fluorescent bulb.</td>
+</tr>
+<tr class="even">
+<td>Model Lamp</td>
+<td>More detailed description of the light bulb. For <code>A</code>, <code>B</code>, and <code>C</code>, describes the color temperature (K) the bulbs were set to.</td>
+</tr>
+<tr class="odd">
+<td>Location</td>
+<td>Location the light trap was placed. Site codes starting with <code>B</code> are urban (the UCLA Botanical Garden); site codes <code>L</code> and <code>S</code> were rural locations (a UCLA field station and a UCLA ranch). Each site has six separate traps, designated by a number.</td>
+</tr>
+<tr class="even">
+<td>Site</td>
+<td>Site. <code>BG</code> = botanical garden, <code>LK</code> = La Kretz field station, <code>Stunt</code> = stunt ranch.</td>
+</tr>
+<tr class="odd">
+<td>Standardized Moon</td>
+<td>Standardized variable representing the percentage of the moon visible on the night chosen (i.e., the moon phase).</td>
+</tr>
+<tr class="even">
+<td>Standardized Mean Temp</td>
+<td>Temperature on the night, standardized.</td>
+</tr>
+<tr class="odd">
+<td>Standardized Mean Humidity</td>
+<td>Humidity on the night, standardized.</td>
+</tr>
+<tr class="even">
+<td>Standardized Max Wind</td>
+<td>Maximum wind speed on the night, standardized.</td>
+</tr>
+<tr class="odd">
+<td>% Moon Visible</td>
+<td>Percentage of moon visible (moon phase).</td>
+</tr>
+<tr class="even">
+<td>Start Tem</td>
+<td>Temperature at the beginning of the night (Celsius)</td>
+</tr>
+<tr class="odd">
+<td>End Temp</td>
+<td>Temperature at the end of the experiment (Celsius)</td>
+</tr>
+<tr class="even">
+<td>Mean Temp</td>
+<td>Mean temperature (Celsius)</td>
+</tr>
+<tr class="odd">
+<td>Humid Start</td>
+<td>Relative humidity at the start of the experiment (%)</td>
+</tr>
+<tr class="even">
+<td>Humid End</td>
+<td>Relative humidity at the end of the experiment (%)</td>
+</tr>
+<tr class="odd">
+<td>Mean Humidity</td>
+<td>Mean humidity (%)</td>
+</tr>
+<tr class="even">
+<td>Max Wind</td>
+<td>Maximum recorded wind speed (m/s)</td>
+</tr>
+<tr class="odd">
+<td>Illumination</td>
+<td>Illumination produced by the light (lux)</td>
+</tr>
+<tr class="even">
+<td>Diptera</td>
+<td>Number of insects of the order Diptera captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Hymenoptera</td>
+<td>Number of insects of the order Hymenoptera captured in the trap</td>
+</tr>
+<tr class="even">
+<td>Hemiptera</td>
+<td>Number of insects of the order Hemiptera captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Psocoptera</td>
+<td>Number of insects of the order Psocoptera captured in the trap</td>
+</tr>
+<tr class="even">
+<td>Coleoptera</td>
+<td>Number of insects of the order Coleoptera captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Collembola</td>
+<td>Number of insects of the order Collembola captured in the trap</td>
+</tr>
+<tr class="even">
+<td>Arachnid</td>
+<td>Number of insects of the order Arachnid captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Thysanura</td>
+<td>Number of insects of the order Thysanura captured in the trap</td>
+</tr>
+<tr class="even">
+<td>Isoptera</td>
+<td>Number of insects of the order Isoptera captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Lepidoptera</td>
+<td>Number of insects of the order Lepidoptera captured in the trap</td>
+</tr>
+<tr class="even">
+<td>Neuroptera</td>
+<td>Number of insects of the order Neuroptera captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Larave</td>
+<td>Number of insects of the order Larave captured in the trap</td>
+</tr>
+<tr class="even">
+<td>Orthoptera</td>
+<td>Number of insects of the order Orthoptera captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Unident</td>
+<td>Number of unidentified insects captured in the trap</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>Total number of insects captured in the trap</td>
+</tr>
+<tr class="odd">
+<td>Other Orders</td>
+<td>Number of insects of other identified orders captured in the trap</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>These are adapted from questions used in notes for 36-707.</p>
+<ol type="1">
+<li><p>We are interested in the total number of insects collected in each trap (the <code>Total</code> variable) and how it relates to the light bulb type (<code>Light Type</code>). We also know that the location (<code>Location</code>), moon phase (<code>% Moon Visible</code>), mean night temperature (<code>Mean Temp</code>), and mean humidity (<code>Mean Humidity</code>) might affect insect activity. Conduct an EDA of these variables to determine what relationships the predictors may have with the response.</p></li>
+<li><p>Consider the study design. Because six traps were placed out each night, each with a different bulb (or no bulb), the traps were exposed to the same location, moon phase, temperature, and humidity. No bulb type has data from moon phases that are systematically different from the other bulbs, or was used on nights that were warmer than those for the other bulbs, or anything like that. This is known as a <em>balanced</em> design.</p>
+<p>Comment on what this design choice means. Can location, moon phase, mean temperature, or mean humidity be confounding variables that would bias our estimates of the effect of bulb type? Do we need to incorporate them into our models to obtain an unbiased estimate of the causal effect of bulb type?</p></li>
+<li><p>Obtain the mean number of insects trapped by each bulb. Display the means in a table. Which bulb attracts the fewest insects?</p>
+<p>Note there is one missing count (recorded as <code>NA</code>) that you may need to remove.</p></li>
+<li><p>Select a GLM for the total number of insects collected as a function of bulb type, location, moon phase, temperature, and humidity. Use your EDA to guide your model choice, and produce any necessary diagnostic plots to validate your choice.</p>
+<p>Produce a table of coefficients estimated from your final model, including standard errors. Interpret, in words, the meaning of the coefficient for temperature, giving a 95% confidence interval for the size of the effect.</p></li>
+<li><p>Consider a night where the moon is 60% visible, the humidity is 60%, and the mean temperature is 15 °C. (These are roughly the average values in the data.) Produce a table of the predicted number of insects trapped by each bulb type at the La Kretz station on a night like this, giving 95% confidence intervals for each prediction. Does your result match the table from part 3?</p></li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Longcore, Aldern, Eggers, Flores, Franco, Hirshfield-Yamanishi, Petrinec, Yan, and Barroso. “Tuning the white light spectrum of light emitting diode lamps to reduce attraction of nocturnal arthropods”. <em>Philosophical Transactions of the Royal Society B</em> 370: 20140125. <a href="https://doi.org/10.1098/rstb.2014.0125" class="uri">https://doi.org/10.1098/rstb.2014.0125</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+  </div>
+</footer>
+
+
+
+</body></html>

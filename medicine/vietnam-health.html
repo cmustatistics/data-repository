@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2022-12-08">
+<meta name="description" content="As access to health care increases, public health advocates encourage ordinary people to get regular check-ups to detect problems before they become serious (and expensive). But not everyone follows this advice. This survey of people in Vietnam explores the factors leading people to get regular check-ups.">
+
+<title>CMU S&amp;DS Data Repository - Health exams in Vietnam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page">
+ <span class="menu-text">Datasets by Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html">
+ <span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Health exams in Vietnam</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">Datasets by Methods</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">External Sources</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">Submit a Dataset</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Astronomy</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">Galaxy mass prediction</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Biology</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">AnAge Longevity Database</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">Bird genetic diversity</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">Dry beans</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">Insect attraction to light</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Medicine</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link active">Health exams in Vietnam</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Psychology</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">Makeup and male attractiveness</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">Testosterone and diversity</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Health exams in Vietnam</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">surveys</div>
+    <div class="quarto-category">classification</div>
+    <div class="quarto-category">logistic regression</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    As access to health care increases, public health advocates encourage ordinary people to get regular check-ups to detect problems before they become serious (and expensive). But not everyone follows this advice. This survey of people in Vietnam explores the factors leading people to get regular check-ups.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alex Reinhart </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 8, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Medical care for serious diseases can be very expensive, and in countries without established socialized medical systems it can impose serious hardships on patients. Ideally, patients would get regular check-ups (or “general health examinations”, GHEs) so that serious conditions could be detected and treated early, before they cause serious problems. This would save money and improve public health.</p>
+<p>However, there are many possible obstacles to getting everyone to go to regular check-ups. They might be too expensive, or too difficult to schedule; some people may not trust doctors or believe that check-ups have any value; or some people may have had bad experiences when they previously tried to get check-ups.</p>
+<p>Public health researchers in Vietnam wanted to explore these reasons and determine what obstacles prevented widespread use of regular check-ups. They conducted an interview survey in Hanoi and Hung Yen, Vietnam, by traveling to “secondary schools, hospitals, companies, government agencies and randomly selected households in Hanoi” and interviewing people in person for about 10-15 minutes. This dataset contains the raw data from that survey.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>There were 2,068 valid responses to the survey, out of 2,479 people approached. This dataset includes all the valid responses.</p>
+<table class="table">
+<caption><a href="../data/vietnam-health.csv">vietnam-health.csv</a></caption>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>A unique ID for each survey respondent</td>
+</tr>
+<tr class="even">
+<td>date</td>
+<td>Probably the date of the interview, in YYYYMMDD format</td>
+</tr>
+<tr class="odd">
+<td>Age</td>
+<td>Age of survey respondent (years)</td>
+</tr>
+<tr class="even">
+<td>Sex</td>
+<td>Sex of survey respondent</td>
+</tr>
+<tr class="odd">
+<td>Jobstt</td>
+<td>Job status: stable, unstable, student, retired, homemaker, or other</td>
+</tr>
+<tr class="even">
+<td>MaritalStt</td>
+<td>Marital status: married, unmarried, other</td>
+</tr>
+<tr class="odd">
+<td>Edu</td>
+<td>Maximum educational attainment (PostGrad = post-graduate, Grad = college or university, Second = high school, Hi = middle school)</td>
+</tr>
+<tr class="even">
+<td>height</td>
+<td>Height (cm)</td>
+</tr>
+<tr class="odd">
+<td>weight</td>
+<td>Weight (kg)</td>
+</tr>
+<tr class="even">
+<td>place</td>
+<td>Place the survey was conducted</td>
+</tr>
+<tr class="odd">
+<td>BMI</td>
+<td>Body mass index, calculated from height and weight</td>
+</tr>
+<tr class="even">
+<td>HealthIns</td>
+<td>Whether the respondent has health insurance</td>
+</tr>
+<tr class="odd">
+<td>RecExam</td>
+<td>Time since the respondent last visited a doctor with symptoms of a disease (less12 = less than 12 months, b1224 = between 12 and 24 months, g24 = over 24 months, unknown = respondent doesn’t know)</td>
+</tr>
+<tr class="even">
+<td>RecPerExam</td>
+<td>Time since respondent last visited a doctor for a check-up, not prompted by a specific illness. Coded in the same way</td>
+</tr>
+<tr class="odd">
+<td>ReaExam</td>
+<td>Reason for their last check-up (noti.disease = concern over illness or epidemic, adv.sig = worrying symptoms, request = requested by an employer or insurance company, volunteer = no immediate reason)</td>
+</tr>
+<tr class="even">
+<td>Wsttime</td>
+<td>Does the respondent believe check-ups are a waste of time?</td>
+</tr>
+<tr class="odd">
+<td>Wstmon</td>
+<td>Does the respondent believe check-ups are a waste of money?</td>
+</tr>
+<tr class="even">
+<td>DiscDisease</td>
+<td>Is the respondent afraid of check-ups because they’re afraid of discovering a disease?</td>
+</tr>
+<tr class="odd">
+<td>Lessbelqual</td>
+<td>Does the respondent have little faith in the quality of medical service?</td>
+</tr>
+<tr class="even">
+<td>NotImp</td>
+<td>Does the respondent believe check-ups are not urgent or important?</td>
+</tr>
+<tr class="odd">
+<td>HthyPriority</td>
+<td>Does the respondent believe health is a first priority?</td>
+</tr>
+<tr class="even">
+<td>ComSubsidy</td>
+<td>Are check-ups subsidized by the respondent’s employer or community?</td>
+</tr>
+<tr class="odd">
+<td>Habit</td>
+<td>Did the respondent get the habit of regular check-ups from their family or employer?</td>
+</tr>
+<tr class="even">
+<td>FlwHealth</td>
+<td>Does the respondent constantly follow updates on their health measures?</td>
+</tr>
+<tr class="odd">
+<td>PerTrmt</td>
+<td>Is the respondent receiving long-term medical treatment?</td>
+</tr>
+<tr class="even">
+<td>AcqTrmt</td>
+<td>Is a member of the respondent’s family receiving long-term medical treatment?</td>
+</tr>
+<tr class="odd">
+<td>StabHthStt</td>
+<td>Are the respondent and their family all in good health?</td>
+</tr>
+<tr class="even">
+<td>MedCabinet</td>
+<td>Does the respondent keep a medical cabinet and basic medical equipment at home?</td>
+</tr>
+<tr class="odd">
+<td>Tooluseskills</td>
+<td>Does the respondent have the skills to use basic medical equipment?</td>
+</tr>
+<tr class="even">
+<td>ExpCare</td>
+<td>Does the respondent have experience taking care of a sick family member?</td>
+</tr>
+<tr class="odd">
+<td>ExamTools</td>
+<td>Does the respondent’s family regularly take simple medical measurements, like blood pressure or weight?</td>
+</tr>
+<tr class="even">
+<td>UseMon</td>
+<td>If the respondent were provided cash to have a check-up, what would they do? allsoon = use all the money to have a check-up soon, partly = use part of the money for a check-up and save the rest, later = take all the money and have a check-up later</td>
+</tr>
+<tr class="odd">
+<td>Tangibles</td>
+<td>Perceived quality of medical equipment and personnel at check-ups. Scale of 1 to 5, 1=lowest quality</td>
+</tr>
+<tr class="even">
+<td>Reliability</td>
+<td>Perceived ability of examiner to perform medical services that meet the patient’s expertations, scale of 1 to 5</td>
+</tr>
+<tr class="odd">
+<td>Respon</td>
+<td>Perceived timeliness of check-up service, scale of 1 to 5</td>
+</tr>
+<tr class="even">
+<td>Assurance</td>
+<td>Perceived knowledge or ability to assure professional reliance, scale of 1 to 5</td>
+</tr>
+<tr class="odd">
+<td>Empathy</td>
+<td>Perceived thoughtfulness and sense of responsibility of medical staff, scale of 1 to 5</td>
+</tr>
+<tr class="even">
+<td>StChoise</td>
+<td>Respondent’s preferred way of dealing with new symptoms: clinic = go to a clinic, askrel = ask family and relatives for advice, selfstudy = do personal research.</td>
+</tr>
+<tr class="odd">
+<td>CHPerc</td>
+<td>Respondent’s general opinion of public health (good, quite good, bad, unknown)</td>
+</tr>
+<tr class="even">
+<td>SuitFreq</td>
+<td>How often respondent believes check-ups should be done (6m = every 6 months, 12m = every 12 months, 18m = every 18 months, g18m = less often than every 18 months)</td>
+</tr>
+<tr class="odd">
+<td>AffCost</td>
+<td>How much the respondent believes a check-up should cost (low = less than 1 million VND, med = from 1 to 2 million VND, hi = over 2 million VND)</td>
+</tr>
+<tr class="even">
+<td>UseIT</td>
+<td>Is the respondent willing to use information technology to detect health problems, if it’s reliable?</td>
+</tr>
+<tr class="odd">
+<td>AfterIT</td>
+<td>If a healthcare app indicated that the respondent needed to have a check-up, would they arrange one?</td>
+</tr>
+<tr class="even">
+<td>SuffInfo</td>
+<td>Respondent’s rating of the sufficiency of information they received in check-ups, 1 to 5 scale</td>
+</tr>
+<tr class="odd">
+<td>AttractInfo</td>
+<td>Respondent’s rating of the attractiveness of information they received in check-ups, 1 to 5 scale</td>
+</tr>
+<tr class="even">
+<td>ImpressInfo</td>
+<td>Respondent’s rating of the impressiveness of information they received in check-ups, 1 to 5 scale</td>
+</tr>
+<tr class="odd">
+<td>PopularInfo</td>
+<td>Respondent’s rating of the popularity of information they received in check-ups, 1 to 5 scale</td>
+</tr>
+<tr class="even">
+<td>SuitExer</td>
+<td>How much time the respondent thinks people should spend on sports and physical exercise to stay in shape (units not given)</td>
+</tr>
+<tr class="odd">
+<td>EvalExer</td>
+<td>How much time the respondent spends on sports and physical exercise (verysuff = ‘more than enough’, quitesuff = ‘enough’, little = ‘only a little’, trivial = ‘none or almost none’</td>
+</tr>
+<tr class="even">
+<td>Age_gr</td>
+<td>The respondent’s age, broken into one of five categories</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>Suppose the Assistant Minister of Health is interested in increasing the number of people who get annual health exams. The Ministry could simply send reminders or offer incentives to anyone who does not appear for an exam each year. But the budget is limited and they cannot afford to try to convince every possible patient to get a check-up. Also, the Ministry does not know <em>why</em> people do not sign up for exams, and understanding why could help them make policy changes or make their public relations campaigns more effective. (For example, if people tend to think check-ups are a waste of money, their advertising should emphasize how cheap they are; if people don’t believe medical service is high-quality, the advertising should emphasize the expertise and training of doctors.)</p>
+<ol type="1">
+<li>Overall, how do people rate the attractiveness, impressiveness, sufficiency, and popularity of information they receive in checkups? Give summaries of these variables, as well as variables like assurance, reliability, and empathy that indicate how medical personnel may be able to improve.</li>
+<li>Build a classifier to predict whether the respondent had a check-up in the last 12 months (using <code>RecPerExam</code>). Use predictors that plausibly could be related, and discuss which predictors have the strongest relationship with the outcome. Which make a person less likely to get a check-up every twelve months?</li>
+<li>The original paper (see citation below) used logistic regression to evaluate how <code>RecPerExam</code> can be predicted by <code>Wsttime</code>, <code>Wstmon</code>, <code>HthyPriority</code>, <code>FlwHealth</code>, and <code>HealthIns</code>. Try to replicate their analysis and evaluate whether logistic regression is a good modeling choice. How do its results compare to your classifier?</li>
+<li>One plausible hypothesis is that none of these factors matter much unless you have health issues or know someone in their family with health issues. (This is in <code>StabHthStt</code>.) That is, if nobody you know has serious health issues, you may not decide to get check-ups, regardless of how attractive impressive or inexpensive they are. If you do, then the factors do influence your probability of getting a check-up. Test this hypothesis.</li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Q-H Vuong (2017). Survey data on Vietnamese propensity to attend periodic general health examinations. <em>Scientific Data</em> 4 170142. <a href="https://doi.org/10.1038/sdata.2017.142" class="uri">https://doi.org/10.1038/sdata.2017.142</a></p>
+<p>Data available from the Open Science Framework: <a href="https://osf.io/afz2w/" class="uri">https://osf.io/afz2w/</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+  </div>
+</footer>
+
+
+
+</body></html>
