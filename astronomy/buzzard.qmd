@@ -5,7 +5,7 @@ date: February 3, 2023
 description: Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy's mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?
 categories:
   - linear regression
-  - machine learning
+  - nonparametric regression
 ---
 
 ## Motivation
