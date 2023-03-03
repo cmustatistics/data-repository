@@ -1,0 +1,84 @@
+---
+title: Makeup and male attractiveness
+author: Alex Reinhart
+date: November 4, 2022
+description: Makeup is often used by women, but does makeup make men more attractive? This study had participants rate photos of men with and without makeup on.
+categories:
+  - ANOVA
+  - linear regression
+  - hierarchical model
+---
+
+## Motivation
+
+Makeup is often used by women, and indeed society often expects women to wear
+makeup whether they want to or not. Men, however, are not usually expected to
+wear makeup. Because it is unusual, researchers wanted to know if men who wear
+“subtle cosmetics” would be rated as more attractive by viewers.
+
+The basic experiment was simple, as described in the abstract of the paper:
+
+> Twenty men were photographed facing forward, under constant camera and
+> lighting conditions, with neutral expressions, and closed mouths. Each man was
+> photographed twice: once without any cosmetics applied and another time with
+> subtle cosmetics applied by a professional makeup artist. Two hundred
+> participants then rated those 40 images on attractiveness.
+
+Each of the 200 raters rated all 40 images, in random order, so they saw each
+male participant both with and without makeup. The twenty men were recruited
+from the area of Franklin and Marshall College through “word-of-mouth, social
+media, and paper flyers” and paid $10 for their time, while the raters were
+recruited through Amazon Mechanical Turk and paid $0.80 for their time.
+
+## Data
+
+The dataset is provided in two forms. The first form presents the average rating
+for each face with and without makeup, and can be used for simple analyses of
+the effect of makeup. The second form presents every rating as a row, producing
+200 × 40 = 8,000 observations, each annotated with information about the
+participant and the rater.
+
+| Variable | Description |
+|----|-------------|
+| FaceID |	Number identifying the participant whose face was rated |
+| Age |	Age of the participant whose face was rated |
+| Race |	Race of the participant whose face was rated |
+| NoMakeup |	Average rating, by the 200 raters, of the attractiveness of the participant's face without makeup. The scale is from 1 to 7, where 1 = 'Not at all attractive' and 7 = 'Very attractive'. |
+| Makeup |	Average rating, by the 200 raters, of the attractiveness of the participant's face with makeup. The scale is from 1 to 7, where 1 = 'Not at all attractive' and 7 = 'Very attractive'. |
+
+: [male-makeup-faces.csv](../data/male-makeup-faces.csv)
+
+| Variable | Description |
+|----|-------------|
+| Rater_Sex | 	Sex of this rater |
+| Rater_Age |	Age of this rater |
+| Rater_Race |	Race of this rater |
+| Rater |	Number identifying the rater |
+| Participant |	Number identifying the participant whose face was rated |
+| Makeup |	MM if the participant wore makeup in the photo, NM otherwise |
+| rating |	Rating of the attractiveness of the participant's face. The scale is from 1 to 7, where 1 = 'Not at all attractive' and 7 = 'Very attractive'. |
+| Participant_Age |	Age of the participant whose face was rated |
+| Participant_Race |	Race of the participant whose face was rated  |
+
+: [male-makeup-ratings.csv](../data/male-makeup-ratings.csv)
+
+## Questions
+
+1. Conduct a t test or ANOVA analysis on the face dataset. Is there evidence
+   that makeup increases the attractiveness of male faces? How large is the
+   effect, if any?
+2. Of course, different raters may have different standards, tending to rate
+   higher or lower than other raters. Using the full ratings data, build a model
+   that allows ratings to depend both on the person being rated and on the
+   rater, as well as on whether the participant was wearing makeup. Summarize
+   your results.
+3. We could think of raters as merely a sample from the population of possible
+   raters who could rate these faces. Adapt your model into a hierarchical model
+   and summarize your results.
+
+## References
+
+Batres C, Robinson H (2022). Makeup increases attractiveness in male faces. *PLoS
+ONE* 17(11): e0275662. <https://doi.org/10.1371/journal.pone.0275662>
+
+Data available from the Open Science Framework: <https://osf.io/j6zvy/>
