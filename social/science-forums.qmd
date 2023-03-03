@@ -1,0 +1,115 @@
+---
+title: Science Forums
+author: Alex Reinhart
+date: February 22, 2017
+description: A random sample of discussions at a large science discussion forum, with metadata about each.
+categories:
+  - GLMs
+  - classification
+  - linear regression
+---
+
+## Motivation
+
+This dataset covers a random sample of discussion topics at
+[ScienceForums.Net](https://www.scienceforums.net/), a discussion forum which
+has been open since 2002. SFN covers a range of discussion topics, including
+standard science topics like physics and chemistry but also a general discussion
+section, politics, and a rather controversial religion section.
+
+SFN has about 800,000 posts since 2002. Most members are not professional
+scientists, though there are some “resident experts” who are academics or
+industry scientists. There is a team of volunteer moderators who keep
+discussions from getting out of hand, deleting posts or closing discussions as
+necessary. (Generally they try to post warnings rather than deleting anything.)
+
+One section deserves special mention. For some reason, online science forums
+attract the attention of crackpots who believe they can prove the theory of
+relativity wrong or write a new Theory of Everything. SFN gets quite a few of
+them, and their posts get moved to the Speculations section. They tend to refuse
+to listen to evidence or argument, so eventually their topics get closed, but in
+the mean time they attract the attention of many other members who enjoy an easy
+smackdown. So you may notice some unusual trends in Speculations.
+
+## Data
+
+Each row is one topic; each topic can include many posts.
+
+| Variable | Description |
+|----|-------------|
+| tid |	Topic ID. Each new topic is assigned a monotonically increasing ID. |
+| state |	Moderators can close topics if they get out of hand. "closed" indicates the topic is visible but no longer open for discussion. |
+| posts |	Number of posts in the topic which have not been deleted. |
+| views |	Cumulative number of times the topic has been viewed. |
+| duration |	Number of days elapsed between the first and last posts in the topic. |
+| startdate |	Date and time the topic was started. |
+| forum_id |	The forum is divided into subforums. See below for names to go with the IDs. |
+| authors |	Number of distinct authors who participated in the discussion. |
+deleted_posts |	Number of posts in the topic which have been deleted by a moderator. |
+| not_deleted |	If the entire topic has been deleted from view, this will be -1. |
+| pinned |	If 1, the topic has been "pinned" so it always appears at the top of the list of discussions. |
+| author_exp |	The number of days the topic starter was registered before starting the discussion. |
+| author_banned |	Records if the topic starter is currently banned.  |
+
+: [sfn-sample.csv](../data/sfn-sample.csv)
+
+For forum IDs, a categorization is given below.
+
+| Category 	| Forum IDs |
+|-----------|------------|
+| Homework help |	33, 35 |
+| Physics |	6, 7, 8, 9, 10, 18 |
+| Chemistry |	5, 59, 60, 61 |
+| Biology |	4, 15, 20, 52, 14 |
+| Mathematics |	38, 11, 12, 16, 88 |
+| Medicine |	22, 19, 21, 23 |
+| Engineering |	17 |
+| Earth science |	104, 105 |
+| Miscellaneous sciences |	36, 25, 56 |
+| Philosophy and religion |	103, 102, 27 |
+| General discussion |	3 |
+| Politics |	34 |
+| Speculations |	29 |
+
+You may see other forum IDs present; those are staff meetings, announcements,
+and other small one-off forums that may not be representative of the main
+science discussion sections.
+
+## Questions
+
+1. Do some basic EDA. Are there any major outliers? Keep these in mind when you
+   perform your analysis.
+2. Which sections attract the most diverse group of authors to each discussion?
+3. What’s the relationship between views and posts? Does it vary by subforum?
+   Are there discussions which have disproportionately more views than they
+   should? Some discussions are prominent for some strange Google query and get
+   loads of visitors.
+4. Some discussions involve many people over many pages. Some involve the same
+   three people arguing for weeks. Which kind of discussion is more likely to be
+   closed by moderators? Which is more likely to be deleted?
+5. Do discussions with proportionally more deleted posts tend to get closed more
+   often? There’s a natural confounding effect with the length of the
+   discussion, so be sure to control for this.
+6. Perhaps some sections have a lower barrier to entry than others. It’s thought
+   that discussions in Speculations are much easier to join—-very little
+   technical background is required to argue with crackpots—-than discussions in
+   physics, chemistry, or other technical sections. Do you see evidence of this
+   in the data?
+7. Are members who have been registered for longer before starting the topic
+   more successful at starting active discussions?
+8. Moderators would like to know which topics are at greatest risk of needing to
+   be closed. Build a classification model to predict whether a given topic will
+   be closed, using only covariates that would be available while it is active.
+   (Total number of posts wouldn’t be available, for example, but the post rate,
+   number of posts per unique author, or fraction of posts deleted would be.)
+9. Did discussions tend to be more active in the early years of the forum, or
+   are more recent discussions more active? Consider the effect on post counts
+   and the number of authors.
+10. The overall number of posts may vary seasonally for several reasons. Perhaps
+    students post more in the summer, when they have spare time. Alternately,
+    perhaps they post more during the school year, when they have more science
+    questions. Do you see evidence of either trend in the data?
+
+## References
+
+Data collected personally by the author.
