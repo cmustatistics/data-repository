@@ -2,50 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/cmustatistics/data-repository/index.html</loc>
-    <lastmod>2023-03-03T21:13:38.495Z</lastmod>
+    <lastmod>2023-03-03T21:38:42.009Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/external-sources.html</loc>
-    <lastmod>2023-03-03T21:13:39.131Z</lastmod>
+    <lastmod>2023-03-03T21:38:42.653Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/by-method.html</loc>
-    <lastmod>2023-03-03T21:13:39.595Z</lastmod>
+    <lastmod>2023-03-03T21:38:43.153Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/social/science-forums.html</loc>
+    <lastmod>2023-03-03T21:38:43.553Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/submit-data.html</loc>
-    <lastmod>2023-03-03T21:13:39.963Z</lastmod>
+    <lastmod>2023-03-03T21:38:43.909Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/medicine/vietnam-health.html</loc>
-    <lastmod>2023-03-03T21:13:40.391Z</lastmod>
+    <lastmod>2023-03-03T21:38:44.329Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/psychology/male-makeup.html</loc>
-    <lastmod>2023-03-03T21:13:40.743Z</lastmod>
+    <lastmod>2023-03-03T21:38:44.685Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/psychology/hormone-diversity.html</loc>
-    <lastmod>2023-03-03T21:13:41.123Z</lastmod>
+    <lastmod>2023-03-03T21:38:45.061Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/psychology/religion-analytic-thinking.html</loc>
+    <lastmod>2023-03-03T21:38:45.409Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/biology/bug-attraction.html</loc>
-    <lastmod>2023-03-03T21:13:41.531Z</lastmod>
+    <lastmod>2023-03-03T21:38:45.809Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/biology/bird-diversity.html</loc>
-    <lastmod>2023-03-03T21:13:41.911Z</lastmod>
+    <lastmod>2023-03-03T21:38:46.153Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/biology/anage.html</loc>
-    <lastmod>2023-03-03T21:13:42.255Z</lastmod>
+    <lastmod>2023-03-03T21:38:46.489Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/biology/dry-beans.html</loc>
-    <lastmod>2023-03-03T21:13:42.623Z</lastmod>
+    <lastmod>2023-03-03T21:38:46.853Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/astronomy/buzzard.html</loc>
-    <lastmod>2023-03-03T21:13:42.979Z</lastmod>
+    <lastmod>2023-03-03T21:38:47.217Z</lastmod>
   </url>
 </urlset>

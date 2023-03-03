@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Peter Freeman">
-<meta name="dcterms.date" content="2023-02-03">
-<meta name="description" content="Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy’s mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?">
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2017-02-25">
+<meta name="description" content="A controversial study found that encouraging analytic thinking also reduced religious belief. A replication attempt collected much more data to try to confirm the hypothesis; is it supported by the data?">
 
-<title>CMU S&amp;DS Data Repository - Galaxy mass prediction</title>
+<title>CMU S&amp;DS Data Repository - Religion and analytic thinking</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,7 +62,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -105,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Galaxy mass prediction</h1>
+      <h1 class="quarto-secondary-nav-title">Religion and analytic thinking</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -143,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link active">Galaxy mass prediction</a>
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">Galaxy mass prediction</a>
   </div>
 </li>
       </ul>
@@ -208,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">Religion and analytic thinking</a>
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link active">Religion and analytic thinking</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -254,16 +253,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Galaxy mass prediction</h1>
+<h1 class="title d-none d-lg-block">Religion and analytic thinking</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">ANOVA</div>
     <div class="quarto-category">linear regression</div>
-    <div class="quarto-category">nonparametric regression</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy’s mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?
+    A controversial study found that encouraging analytic thinking also reduced religious belief. A replication attempt collected much more data to try to confirm the hypothesis; is it supported by the data?
   </div>
 </div>
 
@@ -273,14 +272,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Peter Freeman </p>
+             <p>Alex Reinhart </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 3, 2023</p>
+      <p class="date">February 25, 2017</p>
     </div>
   </div>
   
@@ -292,14 +291,17 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Estimating the properties of galaxies, and even where they are, is a challenging process. The Rubin Observatory, a sky survey telescope located in Chile, will once it becomes operational image tens of billions of astronomical objects, the vast majority of which will be galaxies that have never been imaged before. Analyses of these data will require sophisticated methodologies, ones that will allow us to first determine where the galaxies are (i.e., how far away they are), and then conditional on the distance, how massive they are. Given galaxy distance and mass data, we can test theories of how the Universe evolves, by comparing simulated galaxy data with these data.</p>
-<p>The Buzzard-V1.0 simulation was used to generate a realistic sample of Rubin Observatory data. In this dataset are measurements for 111,172 galaxies. Developers used these data to benchmark, e.g., methods for estimating galaxy distance. Here, we can assume the distance has been estimated well, and use these data to try to model galaxy mass as a function of brightness and distance.</p>
+<p>In 2012, a study published in <em>Science</em> made the controversial claim that “Analytic Thinking Promotes Religious Disbelief”: people who tend to think analytically report less belief in God. Moreover, the study reported on experiments in which subjects performed tasks intended to make them think more analytically, and found that afterwards, the subjects reported less religious belief.</p>
+<p>This was controversial for the obvious reasons; in the spirit of good science, a separate team of researchers set out to perform one of the key experiments again, with a larger sample size, to test if the reported effect really exists. The original study included several experiments, but the new team focused on one testing whether visual priming (showing people images meant to evoke particular feelings) could have an effect on religious belief by priming people to think more analytically.</p>
+<p>The experiment, conducted exactly as done in the original study, went as follows. Participants were told they were part of a study on memory, and shown four photographs: half saw photographs of Rodin’s famous <a href="https://en.wikipedia.org/wiki/The_Thinker">The Thinker</a> (intended to induce analytic thinking), and half saw photographs of Myron’s <a href="https://en.wikipedia.org/wiki/Discobolus">Discobolus</a>, intended as a neutral control.</p>
+<p>Then, in subsequent demographic questions, they were asked how strongly they believed in God, on a scale of 0 to 100 (0 meaning no belief and 100 meaning absolute belief).</p>
+<p>The replication study collected several times more data than the original study, from four sites: a community college, a private Lutheran university, a private Catholic university, and online (via Amazon’s <a href="https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk">Mechanical Turk</a> service).</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The dataset contains measures of magnitude and magnitude uncertainty in six astronomical bands (<code>u</code> for ultraviolet, <code>g</code> for green, <code>r</code> for red, <code>i</code> for infrared, and <code>z</code> and <code>y</code> for two additional infrared bands). Magnitude is a logarithmic measure of brightness, with an <em>increase</em> of 5 representing a <em>decrease</em> in brightness by a factor of 100, and with a value of zero being represented (roughly) by how the star Vega appears in the night sky. In addition, there is a <code>redshift</code> measured for each galaxy; it represents by how much light from the galaxy is stretched (by the expansion of Universe) as it travels to us. Thus higher redshifts represent larger distances. The last measurement is <code>log.mass</code>, which is the base-10 logarithm of the galaxy stellar mass in units of solar mass; for instance, <code>log.mass = 10</code> means that the galaxy has a mass 10 billion times that of the Sun.</p>
+<p>Each row is one experimental subject, randomized to see either Discobolus or The Thinker.</p>
 <table class="table">
-<caption><a href="../data/Buzzard_DC1.csv">Buzzard_DC1.csv</a></caption>
+<caption><a href="../data/religion-analytic.csv">religion-analytic.csv</a></caption>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -308,72 +310,41 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>u</td>
-<td>Galaxy magnitude in Rubin u band (320.5-393.5 nm)</td>
+<td>condition</td>
+<td>Whether the subject saw Discobolus (‘discus’) or The Thinker (‘thinker’)</td>
 </tr>
 <tr class="even">
-<td>g</td>
-<td>Galaxy magnitude in Rubin g band (401.5-551.9 nm)</td>
+<td>site</td>
+<td>Which site the subject was from</td>
 </tr>
 <tr class="odd">
-<td>r</td>
-<td>Galaxy magnitude in Rubin r band (552.0-691.0 nm)</td>
+<td>religious</td>
+<td>Religious belief, from 0 to 100</td>
 </tr>
 <tr class="even">
-<td>i</td>
-<td>Galaxy magnitude in Rubin i band (691.0-818.0 nm)</td>
+<td>age</td>
+<td>Age of the subject, in years</td>
 </tr>
 <tr class="odd">
-<td>z</td>
-<td>Galaxy magnitude in Rubin z band (818.0-923.5 nm)</td>
-</tr>
-<tr class="even">
-<td>y</td>
-<td>Galaxy magnitude in Rubin y band (923.8-1084.5 nm)</td>
-</tr>
-<tr class="odd">
-<td>u.err</td>
-<td>Uncertainty for u-band magnitude</td>
-</tr>
-<tr class="even">
-<td>g.err</td>
-<td>Uncertainty for g-band magnitude</td>
-</tr>
-<tr class="odd">
-<td>r.err</td>
-<td>Uncertainty for r-band magnitude</td>
-</tr>
-<tr class="even">
-<td>i.err</td>
-<td>Uncertainty for i-band magnitude</td>
-</tr>
-<tr class="odd">
-<td>z.err</td>
-<td>Uncertainty for z-band magnitude</td>
-</tr>
-<tr class="even">
-<td>y.err</td>
-<td>Uncertainty for y-band magnitude</td>
-</tr>
-<tr class="odd">
-<td>log.mass</td>
-<td>Galaxy stellar mass (log-base-10 solar masses)</td>
-</tr>
-<tr class="even">
-<td>redshift</td>
-<td>Galaxy redshift</td>
+<td>gender</td>
+<td>Gender of the subject</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>As noted above, the idea here is to learn a statistical association between measures of magnitude and distance, and galaxy mass.</p>
-<p>One wrinkle here that analysts can exploit is that the data contain standard error estimates for the magnitudes (though not for redshift, for which, in practice, the error would be <span class="math inline">\(\sim 10^{-5}\)</span>).</p>
+<ol type="1">
+<li>Perform basic EDA. Do the demographics of the participants differ by site? What is the distribution of religious beliefs?</li>
+<li>Perform an analysis to determine if religious belief really does vary by condition, as claimed in the original study. Do your results match? What do you conclude?</li>
+<li>Is there any evidence that the effect (if any) differs by site, age or gender?</li>
+</ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Schmidt, Malz, Soo, Almosallam, Brescia, Cavuoti, Cohen-Tanugi, Connolly, DeRose, Freeman, Graham, Iyer, Jarvis, Kalmbach, Kovacs, Lee, Longo, Morrison, Newman, Nourbakhsh, Nuss, Pospisil, Tranin, Wechsler, Zhou, Izbicki, (The LSST Dark Energy Science Collaboration). “Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)”. <em>Monthly Notices of the Royal Astronomical Society</em> 499: 1587–1606. <a href="https://doi.org/10.1093/mnras/staa2799" class="uri">https://doi.org/10.1093/mnras/staa2799</a></p>
+<p>The original experiment was: Gervais WM, Norenzayan A. (2012) Analytic Thinking Promotes Religious Disbelief. <em>Science</em> 336 (6080): 493–496. <a href="https://doi.org/10.1126/science.1215647" class="uri">https://doi.org/10.1126/science.1215647</a></p>
+<p>The replication was: Sanchez C, Sundermeier B, Gray K, Calin-Jageman RJ (2017) Direct replication of Gervais &amp; Norenzayan (2012): No evidence that analytic thinking decreases religious belief. <em>PLoS ONE</em> 12(2): e0172636. <a href="https://doi.org/10.1371/journal.pone.0172636" class="uri">https://doi.org/10.1371/journal.pone.0172636</a></p>
+<p>Replication data obtained from <a href="https://osf.io/qc6rh/" class="uri">https://osf.io/qc6rh/</a> and subsequently converted and cleaned.</p>
 
 
 </section>

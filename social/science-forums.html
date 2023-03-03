@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Peter Freeman">
-<meta name="dcterms.date" content="2023-02-03">
-<meta name="description" content="Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy’s mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?">
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2017-02-22">
+<meta name="description" content="A random sample of discussions at a large science discussion forum, with metadata about each.">
 
-<title>CMU S&amp;DS Data Repository - Galaxy mass prediction</title>
+<title>CMU S&amp;DS Data Repository - Science Forums</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,7 +62,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -105,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Galaxy mass prediction</h1>
+      <h1 class="quarto-secondary-nav-title">Science Forums</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -143,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link active">Galaxy mass prediction</a>
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">Galaxy mass prediction</a>
   </div>
 </li>
       </ul>
@@ -228,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">Science Forums</a>
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link active">Science Forums</a>
   </div>
 </li>
       </ul>
@@ -254,16 +253,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Galaxy mass prediction</h1>
+<h1 class="title d-none d-lg-block">Science Forums</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">GLMs</div>
+    <div class="quarto-category">classification</div>
     <div class="quarto-category">linear regression</div>
-    <div class="quarto-category">nonparametric regression</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy’s mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?
+    A random sample of discussions at a large science discussion forum, with metadata about each.
   </div>
 </div>
 
@@ -273,14 +273,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Peter Freeman </p>
+             <p>Alex Reinhart </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 3, 2023</p>
+      <p class="date">February 22, 2017</p>
     </div>
   </div>
   
@@ -292,14 +292,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Estimating the properties of galaxies, and even where they are, is a challenging process. The Rubin Observatory, a sky survey telescope located in Chile, will once it becomes operational image tens of billions of astronomical objects, the vast majority of which will be galaxies that have never been imaged before. Analyses of these data will require sophisticated methodologies, ones that will allow us to first determine where the galaxies are (i.e., how far away they are), and then conditional on the distance, how massive they are. Given galaxy distance and mass data, we can test theories of how the Universe evolves, by comparing simulated galaxy data with these data.</p>
-<p>The Buzzard-V1.0 simulation was used to generate a realistic sample of Rubin Observatory data. In this dataset are measurements for 111,172 galaxies. Developers used these data to benchmark, e.g., methods for estimating galaxy distance. Here, we can assume the distance has been estimated well, and use these data to try to model galaxy mass as a function of brightness and distance.</p>
+<p>This dataset covers a random sample of discussion topics at <a href="https://www.scienceforums.net/">ScienceForums.Net</a>, a discussion forum which has been open since 2002. SFN covers a range of discussion topics, including standard science topics like physics and chemistry but also a general discussion section, politics, and a rather controversial religion section.</p>
+<p>SFN has about 800,000 posts since 2002. Most members are not professional scientists, though there are some “resident experts” who are academics or industry scientists. There is a team of volunteer moderators who keep discussions from getting out of hand, deleting posts or closing discussions as necessary. (Generally they try to post warnings rather than deleting anything.)</p>
+<p>One section deserves special mention. For some reason, online science forums attract the attention of crackpots who believe they can prove the theory of relativity wrong or write a new Theory of Everything. SFN gets quite a few of them, and their posts get moved to the Speculations section. They tend to refuse to listen to evidence or argument, so eventually their topics get closed, but in the mean time they attract the attention of many other members who enjoy an easy smackdown. So you may notice some unusual trends in Speculations.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The dataset contains measures of magnitude and magnitude uncertainty in six astronomical bands (<code>u</code> for ultraviolet, <code>g</code> for green, <code>r</code> for red, <code>i</code> for infrared, and <code>z</code> and <code>y</code> for two additional infrared bands). Magnitude is a logarithmic measure of brightness, with an <em>increase</em> of 5 representing a <em>decrease</em> in brightness by a factor of 100, and with a value of zero being represented (roughly) by how the star Vega appears in the night sky. In addition, there is a <code>redshift</code> measured for each galaxy; it represents by how much light from the galaxy is stretched (by the expansion of Universe) as it travels to us. Thus higher redshifts represent larger distances. The last measurement is <code>log.mass</code>, which is the base-10 logarithm of the galaxy stellar mass in units of solar mass; for instance, <code>log.mass = 10</code> means that the galaxy has a mass 10 billion times that of the Sun.</p>
+<p>Each row is one topic; each topic can include many posts.</p>
 <table class="table">
-<caption><a href="../data/Buzzard_DC1.csv">Buzzard_DC1.csv</a></caption>
+<caption><a href="../data/sfn-sample.csv">sfn-sample.csv</a></caption>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -308,72 +309,142 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>u</td>
-<td>Galaxy magnitude in Rubin u band (320.5-393.5 nm)</td>
+<td>tid</td>
+<td>Topic ID. Each new topic is assigned a monotonically increasing ID.</td>
 </tr>
 <tr class="even">
-<td>g</td>
-<td>Galaxy magnitude in Rubin g band (401.5-551.9 nm)</td>
+<td>state</td>
+<td>Moderators can close topics if they get out of hand. “closed” indicates the topic is visible but no longer open for discussion.</td>
 </tr>
 <tr class="odd">
-<td>r</td>
-<td>Galaxy magnitude in Rubin r band (552.0-691.0 nm)</td>
+<td>posts</td>
+<td>Number of posts in the topic which have not been deleted.</td>
 </tr>
 <tr class="even">
-<td>i</td>
-<td>Galaxy magnitude in Rubin i band (691.0-818.0 nm)</td>
+<td>views</td>
+<td>Cumulative number of times the topic has been viewed.</td>
 </tr>
 <tr class="odd">
-<td>z</td>
-<td>Galaxy magnitude in Rubin z band (818.0-923.5 nm)</td>
+<td>duration</td>
+<td>Number of days elapsed between the first and last posts in the topic.</td>
 </tr>
 <tr class="even">
-<td>y</td>
-<td>Galaxy magnitude in Rubin y band (923.8-1084.5 nm)</td>
+<td>startdate</td>
+<td>Date and time the topic was started.</td>
 </tr>
 <tr class="odd">
-<td>u.err</td>
-<td>Uncertainty for u-band magnitude</td>
+<td>forum_id</td>
+<td>The forum is divided into subforums. See below for names to go with the IDs.</td>
 </tr>
 <tr class="even">
-<td>g.err</td>
-<td>Uncertainty for g-band magnitude</td>
+<td>authors</td>
+<td>Number of distinct authors who participated in the discussion.</td>
 </tr>
 <tr class="odd">
-<td>r.err</td>
-<td>Uncertainty for r-band magnitude</td>
+<td>deleted_posts</td>
+<td>Number of posts in the topic which have been deleted by a moderator.</td>
 </tr>
 <tr class="even">
-<td>i.err</td>
-<td>Uncertainty for i-band magnitude</td>
+<td>not_deleted</td>
+<td>If the entire topic has been deleted from view, this will be -1.</td>
 </tr>
 <tr class="odd">
-<td>z.err</td>
-<td>Uncertainty for z-band magnitude</td>
+<td>pinned</td>
+<td>If 1, the topic has been “pinned” so it always appears at the top of the list of discussions.</td>
 </tr>
 <tr class="even">
-<td>y.err</td>
-<td>Uncertainty for y-band magnitude</td>
+<td>author_exp</td>
+<td>The number of days the topic starter was registered before starting the discussion.</td>
 </tr>
 <tr class="odd">
-<td>log.mass</td>
-<td>Galaxy stellar mass (log-base-10 solar masses)</td>
-</tr>
-<tr class="even">
-<td>redshift</td>
-<td>Galaxy redshift</td>
+<td>author_banned</td>
+<td>Records if the topic starter is currently banned.</td>
 </tr>
 </tbody>
 </table>
+<p>For forum IDs, a categorization is given below.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Forum IDs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Homework help</td>
+<td>33, 35</td>
+</tr>
+<tr class="even">
+<td>Physics</td>
+<td>6, 7, 8, 9, 10, 18</td>
+</tr>
+<tr class="odd">
+<td>Chemistry</td>
+<td>5, 59, 60, 61</td>
+</tr>
+<tr class="even">
+<td>Biology</td>
+<td>4, 15, 20, 52, 14</td>
+</tr>
+<tr class="odd">
+<td>Mathematics</td>
+<td>38, 11, 12, 16, 88</td>
+</tr>
+<tr class="even">
+<td>Medicine</td>
+<td>22, 19, 21, 23</td>
+</tr>
+<tr class="odd">
+<td>Engineering</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>Earth science</td>
+<td>104, 105</td>
+</tr>
+<tr class="odd">
+<td>Miscellaneous sciences</td>
+<td>36, 25, 56</td>
+</tr>
+<tr class="even">
+<td>Philosophy and religion</td>
+<td>103, 102, 27</td>
+</tr>
+<tr class="odd">
+<td>General discussion</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Politics</td>
+<td>34</td>
+</tr>
+<tr class="odd">
+<td>Speculations</td>
+<td>29</td>
+</tr>
+</tbody>
+</table>
+<p>You may see other forum IDs present; those are staff meetings, announcements, and other small one-off forums that may not be representative of the main science discussion sections.</p>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>As noted above, the idea here is to learn a statistical association between measures of magnitude and distance, and galaxy mass.</p>
-<p>One wrinkle here that analysts can exploit is that the data contain standard error estimates for the magnitudes (though not for redshift, for which, in practice, the error would be <span class="math inline">\(\sim 10^{-5}\)</span>).</p>
+<ol type="1">
+<li>Do some basic EDA. Are there any major outliers? Keep these in mind when you perform your analysis.</li>
+<li>Which sections attract the most diverse group of authors to each discussion?</li>
+<li>What’s the relationship between views and posts? Does it vary by subforum? Are there discussions which have disproportionately more views than they should? Some discussions are prominent for some strange Google query and get loads of visitors.</li>
+<li>Some discussions involve many people over many pages. Some involve the same three people arguing for weeks. Which kind of discussion is more likely to be closed by moderators? Which is more likely to be deleted?</li>
+<li>Do discussions with proportionally more deleted posts tend to get closed more often? There’s a natural confounding effect with the length of the discussion, so be sure to control for this.</li>
+<li>Perhaps some sections have a lower barrier to entry than others. It’s thought that discussions in Speculations are much easier to join—-very little technical background is required to argue with crackpots—-than discussions in physics, chemistry, or other technical sections. Do you see evidence of this in the data?</li>
+<li>Are members who have been registered for longer before starting the topic more successful at starting active discussions?</li>
+<li>Moderators would like to know which topics are at greatest risk of needing to be closed. Build a classification model to predict whether a given topic will be closed, using only covariates that would be available while it is active. (Total number of posts wouldn’t be available, for example, but the post rate, number of posts per unique author, or fraction of posts deleted would be.)</li>
+<li>Did discussions tend to be more active in the early years of the forum, or are more recent discussions more active? Consider the effect on post counts and the number of authors.</li>
+<li>The overall number of posts may vary seasonally for several reasons. Perhaps students post more in the summer, when they have spare time. Alternately, perhaps they post more during the school year, when they have more science questions. Do you see evidence of either trend in the data?</li>
+</ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Schmidt, Malz, Soo, Almosallam, Brescia, Cavuoti, Cohen-Tanugi, Connolly, DeRose, Freeman, Graham, Iyer, Jarvis, Kalmbach, Kovacs, Lee, Longo, Morrison, Newman, Nourbakhsh, Nuss, Pospisil, Tranin, Wechsler, Zhou, Izbicki, (The LSST Dark Energy Science Collaboration). “Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)”. <em>Monthly Notices of the Royal Astronomical Society</em> 499: 1587–1606. <a href="https://doi.org/10.1093/mnras/staa2799" class="uri">https://doi.org/10.1093/mnras/staa2799</a></p>
+<p>Data collected personally by the author.</p>
 
 
 </section>
