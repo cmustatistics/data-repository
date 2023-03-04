@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex Reinhart">
-<meta name="dcterms.date" content="2022-12-08">
-<meta name="description" content="What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.">
+<meta name="dcterms.date" content="2022-07-27">
+<meta name="description" content="Rail trails are a great recreation opportunity, but do homes near them rise in value? A retrospective observational study of house values.">
 
-<title>CMU S&amp;DS Data Repository - Insect attraction to light</title>
+<title>CMU S&amp;DS Data Repository - Rail trails and property values</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Insect attraction to light</h1>
+      <h1 class="quarto-secondary-nav-title">Rail trails and property values</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -149,12 +149,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Biology</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Biology</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">AnAge Longevity Database</a>
@@ -172,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link active">Insect attraction to light</a>
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">Insect attraction to light</a>
   </div>
 </li>
       </ul>
@@ -194,15 +194,15 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Money</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Money</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">Rail trails and property values</a>
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link active">Rail trails and property values</a>
   </div>
 </li>
       </ul>
@@ -278,16 +278,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Insect attraction to light</h1>
+<h1 class="title d-none d-lg-block">Rail trails and property values</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">GLMs</div>
-    <div class="quarto-category">experimental design</div>
+    <div class="quarto-category">linear regression</div>
+    <div class="quarto-category">nonparametric regression</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.
+    Rail trails are a great recreation opportunity, but do homes near them rise in value? A retrospective observational study of house values.
   </div>
 </div>
 
@@ -304,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 8, 2022</p>
+      <p class="date">July 27, 2022</p>
     </div>
   </div>
   
@@ -316,18 +316,23 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>You’ve probably seen that insects seem to be attracted to artificial lights at night. Insects appear to be most attractive to blue and ultraviolet light, and less attracted by red or infrared light.</p>
-<p>Previously, most outdoor high-intensity lighting—such as for street lights and parking lots—used sodium vapor lamps, a type of lamp that is very efficient for large lights but also produces a characteristic orange glow. Many cities and countries, however, are moving towards using light-emitting diodes (LEDs) in outdoor lighting, since they have become affordable and highly efficient. LED lights promise to require less maintenance and cost less to operate. Also, they are not limited to the orange glow of sodium vapor lamps—they can produce whiter light. Some research suggests this is beneficial for safety, since whiter light makes roads and sidewalks easier to see. But it can also have some harms.</p>
-<p>One possible harmful effect is to insects. If LEDs can produce whiter or bluer light, they may be more attractive to insects at night, disrupting their circadian rhythms and potentially even leading to their deaths as they circle lights&nbsp;endlessly.</p>
-<p>This data comes from a study intended to understand how what lights attract insects and what types of insects are most affected, to study the problem. The researchers set up light traps: each trap contained a light bulb and captured any insect attracted by the light to enter the trap.</p>
-<p>The researchers conducted their experiment by setting up six light traps, each with a different light bulb. (One trap contained no bulb, as a control.) The traps were set up each evening at sunset and then checked in the morning after sunrise, and the insects collected identified and counted.</p>
-<p>Traps were set up at three different sites (one urban, two rural). Relevant weather conditions were recorded. The experiment was repeated 32 times: 16 times at the urban site and 8 times at each rural site. This allowed the researchers to rotate which location (within an individual site) each trap was placed in, and allowed them to collect data under varying weather and moon phases. (Since the moon is bright in the night sky, the presence of a bright moon could presumably affect the results.)</p>
+<p>In the late 1800s and early 1900s, numerous rail lines were built across the United States and connected most towns and cities for passenger and cargo service. But as cars became dominant and the Interstate Highway System made long-distance travel by car easier, rail traffic declined, and many rail lines were shut down or abandoned. Some lines were kept by the railroads for future use, while others were sold off.</p>
+<p>Beginning in the 1980s, some unused rail lines began to be converted to rail trails: walking and biking trails along the route of an old rail line. Rail trails tend to be long continuous trails, often paved, and have gentle slopes at most (because trains cannot climb steep hills). This makes them accessible and easy to bike along.</p>
+<p>Some have suggested that rail trails may be an attractive feature for people buying homes, who might be willing to pay more for a home close to a trail where they could walk or bike for fun or for their commute.</p>
+<p>This data was collected from houses sold in Northampton, Massachusetts in 2007. A new rail trail was opened in Northampton in 1984, offering an opportunity to compare the values of homes near the trail and farther from the trail. See the <a href="#references">References</a> below for more detail on the data collection and the history of rail trails in the area, which provides useful context.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Each row of data represents one trap on one night, and records the light bulb used in that trap, its location, the weather conditions, and the insects collected in that trap.</p>
+<p>The data includes 104 homes in the Northampton, Massachusetts area that were sold in 2007. Attributes of the homes were collected (by Hartenian and Horton; see <a href="#references">References</a> below) from several sources:</p>
+<ul>
+<li>Values came from Zillow’s value estimator, which is calculated by Zillow based on sale prices, prices of nearby similar homes, and features of the home</li>
+<li>Distances from the homes to the rail trails were obtained using Google Maps</li>
+<li>Bike and walking scores came from Walkscore.com</li>
+<li>House attributes (such as size and number of rooms) came from the Multiple Listing Service (MLS), which is used by real estate agents to list houses for sale. The values obtained were from 2007</li>
+</ul>
+<p>The data only includes homes with under 0.56 acres of property, and excludes two homes that increased in value more than $500,000 between 1998 and 2007 due to major renovations, which were regarded as outliers.</p>
 <table class="table">
-<caption><a href="../data/bug-attraction.csv">bug-attraction.csv</a></caption>
+<caption><a href="../data/rail-trails.csv">rail-trails.csv</a></caption>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -336,157 +341,143 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Light Type</td>
-<td>Type of light bulb used to attract insects. <code>No</code> means no bulb at all; <code>A</code>, <code>B</code>, and <code>C</code> are all Philips light bulbs whose color can be adjusted by the user; <code>LED</code> is a commercial white LED bulb; and <code>CFL</code> is a commercial compact fluorescent bulb.</td>
+<td>housenum</td>
+<td>A unique number for each house</td>
 </tr>
 <tr class="even">
-<td>Model Lamp</td>
-<td>More detailed description of the light bulb. For <code>A</code>, <code>B</code>, and <code>C</code>, describes the color temperature (K) the bulbs were set to.</td>
+<td>housenum.1</td>
+<td>Accidental duplicate of the housenum column</td>
 </tr>
 <tr class="odd">
-<td>Location</td>
-<td>Location the light trap was placed. Site codes starting with <code>B</code> are urban (the UCLA Botanical Garden); site codes <code>L</code> and <code>S</code> were rural locations (a UCLA field station and a UCLA ranch). Each site has six separate traps, designated by a number.</td>
+<td>adj1998</td>
+<td>Zillow’s estimated value for the home in 1998, in thousands of 2014 dollars</td>
 </tr>
 <tr class="even">
-<td>Site</td>
-<td>Site. <code>BG</code> = botanical garden, <code>LK</code> = La Kretz field station, <code>Stunt</code> = stunt ranch.</td>
+<td>adj2007</td>
+<td>Zillow’s estimated value for the home in 2007, in thousands of 2014 dollars</td>
 </tr>
 <tr class="odd">
-<td>Standardized Moon</td>
-<td>Standardized variable representing the percentage of the moon visible on the night chosen (i.e., the moon phase).</td>
+<td>adj2011</td>
+<td>Zillow’s estimated value for the home in 2011, in thousands of 2014 dollars</td>
 </tr>
 <tr class="even">
-<td>Standardized Mean Temp</td>
-<td>Temperature on the night, standardized.</td>
+<td>price1998</td>
+<td>Zillow’s estimated value for the home in 1998, in thousands of dollars</td>
 </tr>
 <tr class="odd">
-<td>Standardized Mean Humidity</td>
-<td>Humidity on the night, standardized.</td>
+<td>price2007</td>
+<td>Zillow’s estimated value for the home in 2007, in thousands of dollars</td>
 </tr>
 <tr class="even">
-<td>Standardized Max Wind</td>
-<td>Maximum wind speed on the night, standardized.</td>
+<td>price2011</td>
+<td>Zillow’s estimated value for the home in 2011, in thousands of dollars</td>
 </tr>
 <tr class="odd">
-<td>% Moon Visible</td>
-<td>Percentage of moon visible (moon phase).</td>
+<td>price2014</td>
+<td>Zillow’s estimated value for the home in 2014, in thousands of dollars</td>
 </tr>
 <tr class="even">
-<td>Start Tem</td>
-<td>Temperature at the beginning of the night (Celsius)</td>
+<td>diff2014</td>
+<td>Difference in price between 2014 estimate and 1998 estimate, in thousands of 2014 dollars</td>
 </tr>
 <tr class="odd">
-<td>End Temp</td>
-<td>Temperature at the end of the experiment (Celsius)</td>
+<td>pctchange</td>
+<td>Percentage change from adjusted 1998 value to 2014 value (0 means no change)</td>
 </tr>
 <tr class="even">
-<td>Mean Temp</td>
-<td>Mean temperature (Celsius)</td>
+<td>distance</td>
+<td>Distance (miles) to the nearest entry to the rail trail network</td>
 </tr>
 <tr class="odd">
-<td>Humid Start</td>
-<td>Relative humidity at the start of the experiment (%)</td>
+<td>distgroup</td>
+<td>Distance to the rail trail network, categorized as “Closer” (less than or equal to half a mile) or “Farther Away” (more than half a mile)</td>
 </tr>
 <tr class="even">
-<td>Humid End</td>
-<td>Relative humidity at the end of the experiment (%)</td>
+<td>acre</td>
+<td>Number of acres of property</td>
 </tr>
 <tr class="odd">
-<td>Mean Humidity</td>
-<td>Mean humidity (%)</td>
+<td>acregroup</td>
+<td>Indicates if the number of acres is smaller or larger than 1/4 acre</td>
 </tr>
 <tr class="even">
-<td>Max Wind</td>
-<td>Maximum recorded wind speed (m/s)</td>
+<td>bedgroup</td>
+<td>How many bedrooms the home has, categorized to 1-2, 3, or 4+</td>
 </tr>
 <tr class="odd">
-<td>Illumination</td>
-<td>Illumination produced by the light (lux)</td>
+<td>bedrooms</td>
+<td>How many bedrooms the home has</td>
 </tr>
 <tr class="even">
-<td>Diptera</td>
-<td>Number of insects of the order Diptera captured in the trap</td>
+<td>bikescore</td>
+<td>Bike friendliness of the area, estimated by WalkScore.com. 0-100 scale, where 100 indicates high bike-frinedliness, such as flat terrain and good bike lanes.</td>
 </tr>
 <tr class="odd">
-<td>Hymenoptera</td>
-<td>Number of insects of the order Hymenoptera captured in the trap</td>
+<td>walkscore</td>
+<td>Walkability of the area, estimated by WalkScore.com. 0-100 scale, where 100 indicates high walkability, so most daily tasks can be done without a car</td>
 </tr>
 <tr class="even">
-<td>Hemiptera</td>
-<td>Number of insects of the order Hemiptera captured in the trap</td>
+<td>garage_spaces</td>
+<td>Number of garage parking spaces (0-4)</td>
 </tr>
 <tr class="odd">
-<td>Psocoptera</td>
-<td>Number of insects of the order Psocoptera captured in the trap</td>
+<td>garagegroup</td>
+<td>Does the house have garage parking? (yes/no)</td>
 </tr>
 <tr class="even">
-<td>Coleoptera</td>
-<td>Number of insects of the order Coleoptera captured in the trap</td>
+<td>latitude</td>
+<td>House’s latitude</td>
 </tr>
 <tr class="odd">
-<td>Collembola</td>
-<td>Number of insects of the order Collembola captured in the trap</td>
+<td>longitude</td>
+<td>House’s longitude</td>
 </tr>
 <tr class="even">
-<td>Arachnid</td>
-<td>Number of insects of the order Arachnid captured in the trap</td>
+<td>no_full_baths</td>
+<td>Number of full bathrooms (i.e.&nbsp;bathrooms with a shower or bathtub)</td>
 </tr>
 <tr class="odd">
-<td>Thysanura</td>
-<td>Number of insects of the order Thysanura captured in the trap</td>
+<td>no_half_baths</td>
+<td>Number of half baths (i.e.&nbsp;bathrooms with no shower or bathtub)</td>
 </tr>
 <tr class="even">
-<td>Isoptera</td>
-<td>Number of insects of the order Isoptera captured in the trap</td>
+<td>no_rooms</td>
+<td>Number of rooms</td>
 </tr>
 <tr class="odd">
-<td>Lepidoptera</td>
-<td>Number of insects of the order Lepidoptera captured in the trap</td>
+<td>sfgroup</td>
+<td>Whether the home has more or less than 1500 square feet of interior space</td>
 </tr>
 <tr class="even">
-<td>Neuroptera</td>
-<td>Number of insects of the order Neuroptera captured in the trap</td>
+<td>squarefeet</td>
+<td>Square footage of the home’s interior finished space (in thousands of square feet)</td>
 </tr>
 <tr class="odd">
-<td>Larave</td>
-<td>Number of insects of the order Larave captured in the trap</td>
+<td>streetname</td>
+<td>Name of the street the house is on</td>
 </tr>
 <tr class="even">
-<td>Orthoptera</td>
-<td>Number of insects of the order Orthoptera captured in the trap</td>
+<td>streetno</td>
+<td>House number on the street</td>
 </tr>
 <tr class="odd">
-<td>Unident</td>
-<td>Number of unidentified insects captured in the trap</td>
-</tr>
-<tr class="even">
-<td>Total</td>
-<td>Total number of insects captured in the trap</td>
-</tr>
-<tr class="odd">
-<td>Other Orders</td>
-<td>Number of insects of other identified orders captured in the trap</td>
+<td>zip</td>
+<td>ZIP code of the house (leading 0 omitted). 1060 is Northampton, MA; 1062 is Florence, MA.</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>These are adapted from questions used in notes for 36-707.</p>
 <ol type="1">
-<li><p>We are interested in the total number of insects collected in each trap (the <code>Total</code> variable) and how it relates to the light bulb type (<code>Light Type</code>). We also know that the location (<code>Location</code>), moon phase (<code>% Moon Visible</code>), mean night temperature (<code>Mean Temp</code>), and mean humidity (<code>Mean Humidity</code>) might affect insect activity. Conduct an EDA of these variables to determine what relationships the predictors may have with the response.</p></li>
-<li><p>Consider the study design. Because six traps were placed out each night, each with a different bulb (or no bulb), the traps were exposed to the same location, moon phase, temperature, and humidity. No bulb type has data from moon phases that are systematically different from the other bulbs, or was used on nights that were warmer than those for the other bulbs, or anything like that. This is known as a <em>balanced</em> design.</p>
-<p>Comment on what this design choice means. Can location, moon phase, mean temperature, or mean humidity be confounding variables that would bias our estimates of the effect of bulb type? Do we need to incorporate them into our models to obtain an unbiased estimate of the causal effect of bulb type?</p></li>
-<li><p>Obtain the mean number of insects trapped by each bulb. Display the means in a table. Which bulb attracts the fewest insects?</p>
-<p>Note there is one missing count (recorded as <code>NA</code>) that you may need to remove.</p></li>
-<li><p>Select a GLM for the total number of insects collected as a function of bulb type, location, moon phase, temperature, and humidity. Use your EDA to guide your model choice, and produce any necessary diagnostic plots to validate your choice.</p>
-<p>Produce a table of coefficients estimated from your final model, including standard errors. Interpret, in words, the meaning of the coefficient for temperature, giving a 95% confidence interval for the size of the effect.</p></li>
-<li><p>Consider a night where the moon is 60% visible, the humidity is 60%, and the mean temperature is 15 °C. (These are roughly the average values in the data.) Produce a table of the predicted number of insects trapped by each bulb type at the La Kretz station on a night like this, giving 95% confidence intervals for each prediction. Does your result match the table from part 3?</p></li>
+<li>This dataset only includes homes sold in 2007, rather than all homes in Northampton or a random sample of homes. Comment on what biases this might induce and how this might affect our analysis results.</li>
+<li>Conduct a simple analysis using 1998 prices and 2014 prices, and the distance from the homes to the trails. Did homes closer to trails appear to appreciate more?</li>
+<li>Houses close to the trail may differ systematically from those farther away. Conduct a more detailed analysis that controls for home features, such as the size and number of bedrooms, and comment on your conclusions.</li>
 </ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Longcore, Aldern, Eggers, Flores, Franco, Hirshfield-Yamanishi, Petrinec, Yan, and Barroso. “Tuning the white light spectrum of light emitting diode lamps to reduce attraction of nocturnal arthropods”. <em>Philosophical Transactions of the Royal Society B</em> 370: 20140125. <a href="https://doi.org/10.1098/rstb.2014.0125" class="uri">https://doi.org/10.1098/rstb.2014.0125</a></p>
+<p>Ella Hartenian and Nicholas J. Horton (2015). Rail Trails and Property Values: Is There an Association? <em>Journal of Statistics Education</em> 23:2, <a href="https://doi.org/10.1080/10691898.2015.11889735" class="uri">https://doi.org/10.1080/10691898.2015.11889735</a></p>
 
 
 </section>
