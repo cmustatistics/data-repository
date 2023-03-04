@@ -1,0 +1,107 @@
+---
+title: Rail trails and property values
+author: Alex Reinhart
+date: July 27, 2022
+description: Rail trails are a great recreation opportunity, but do homes near them rise in value? A retrospective observational study of house values.
+categories:
+  - linear regression
+  - nonparametric regression
+---
+
+## Motivation
+
+In the late 1800s and early 1900s, numerous rail lines were built across the
+United States and connected most towns and cities for passenger and cargo
+service. But as cars became dominant and the Interstate Highway System made
+long-distance travel by car easier, rail traffic declined, and many rail lines
+were shut down or abandoned. Some lines were kept by the railroads for future
+use, while others were sold off.
+
+Beginning in the 1980s, some unused rail lines began to be converted to rail
+trails: walking and biking trails along the route of an old rail line. Rail
+trails tend to be long continuous trails, often paved, and have gentle slopes at
+most (because trains cannot climb steep hills). This makes them accessible and
+easy to bike along.
+
+Some have suggested that rail trails may be an attractive feature for people
+buying homes, who might be willing to pay more for a home close to a trail where
+they could walk or bike for fun or for their commute.
+
+This data was collected from houses sold in Northampton, Massachusetts in 2007.
+A new rail trail was opened in Northampton in 1984, offering an opportunity to
+compare the values of homes near the trail and farther from the trail. See the
+[References](#references) below for more detail on the data collection and the
+history of rail trails in the area, which provides useful context.
+
+## Data
+
+The data includes 104 homes in the Northampton, Massachusetts area that were
+sold in 2007. Attributes of the homes were collected (by Hartenian and Horton;
+see [References](#references) below) from several sources:
+
+- Values came from Zillow's value estimator, which is calculated by Zillow based
+  on sale prices, prices of nearby similar homes, and features of the home
+- Distances from the homes to the rail trails were obtained using Google Maps
+- Bike and walking scores came from Walkscore.com
+- House attributes (such as size and number of rooms) came from the Multiple
+  Listing Service (MLS), which is used by real estate agents to list houses for
+  sale. The values obtained were from 2007
+
+
+The data only includes homes with under 0.56 acres of property, and excludes two
+homes that increased in value more than $500,000 between 1998 and 2007 due to
+major renovations, which were regarded as outliers.
+
+| Variable | Description |
+|----|-------------|
+| housenum |	A unique number for each house |
+| housenum.1 |	Accidental duplicate of the housenum column |
+| adj1998 |	Zillow's estimated value for the home in 1998, in thousands of 2014 dollars |
+| adj2007 |	Zillow's estimated value for the home in 2007, in thousands of 2014 dollars |
+| adj2011 |	Zillow's estimated value for the home in 2011, in thousands of 2014 dollars |
+| price1998 |	Zillow's estimated value for the home in 1998, in thousands of dollars |
+| price2007 |	Zillow's estimated value for the home in 2007, in thousands of dollars |
+| price2011 |	Zillow's estimated value for the home in 2011, in thousands of dollars |
+| price2014 |	Zillow's estimated value for the home in 2014, in thousands of dollars |
+| diff2014 |	Difference in price between 2014 estimate and 1998 estimate, in thousands of 2014 dollars |
+| pctchange |	Percentage change from adjusted 1998 value to 2014 value (0 means no change) |
+| distance |	Distance (miles) to the nearest entry to the rail trail network |
+| distgroup |	Distance to the rail trail network, categorized as "Closer" (less than or equal to half a mile) or "Farther Away" (more than half a mile) |
+| acre |	Number of acres of property |
+| acregroup |	Indicates if the number of acres is smaller or larger than 1/4 acre |
+| bedgroup |	How many bedrooms the home has, categorized to 1-2, 3, or 4+ |
+| bedrooms |	How many bedrooms the home has |
+| bikescore |	Bike friendliness of the area, estimated by WalkScore.com. 0-100 scale, where 100 indicates high bike-frinedliness, such as flat terrain and good bike lanes. |
+| walkscore |	Walkability of the area, estimated by WalkScore.com. 0-100 scale, where 100 indicates high walkability, so most daily tasks can be done without a car |
+| garage_spaces |	Number of garage parking spaces (0-4) |
+| garagegroup |	Does the house have garage parking? (yes/no) |
+| latitude |	House's latitude |
+| longitude |	House's longitude |
+| no_full_baths |	Number of full bathrooms (i.e. bathrooms with a shower or bathtub) |
+| no_half_baths |	Number of half baths (i.e. bathrooms with no shower or bathtub) |
+| no_rooms |	Number of rooms |
+| sfgroup |	Whether the home has more or less than 1500 square feet of interior space |
+| squarefeet |	Square footage of the home's interior finished space (in thousands of square feet) |
+| streetname |	Name of the street the house is on |
+| streetno |	House number on the street |
+| zip |	ZIP code of the house (leading 0 omitted). 1060 is Northampton, MA; 1062 is Florence, MA.  |
+
+: [rail-trails.csv](../data/rail-trails.csv)
+
+## Questions
+
+1. This dataset only includes homes sold in 2007, rather than all homes in
+   Northampton or a random sample of homes. Comment on what biases this might
+   induce and how this might affect our analysis results.
+2. Conduct a simple analysis using 1998 prices and 2014 prices, and the distance
+   from the homes to the trails. Did homes closer to trails appear to appreciate
+   more?
+3. Houses close to the trail may differ systematically from those farther away.
+   Conduct a more detailed analysis that controls for home features, such as the
+   size and number of bedrooms, and comment on your conclusions.
+
+## References
+
+Ella Hartenian and Nicholas J. Horton (2015). Rail Trails and Property Values:
+Is There an Association? *Journal of Statistics Education* 23:2,
+<https://doi.org/10.1080/10691898.2015.11889735>
