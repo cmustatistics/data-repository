@@ -2,7 +2,7 @@
 title: Serving sizes and plate sizes
 author: Alex Reinhart
 date: September 1, 2019
-description: Do people eat more food if their meals are served on larger plates?
+description: Do people eat more food if their meals are served on larger plates? A randomized experiment with demographic and psychological control variables.
 categories:
   - ANOVA
   - linear regression

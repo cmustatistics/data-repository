@@ -2,7 +2,7 @@
 title: A descriptive dataset title
 author: Your Name
 date: Today's Date (e.g. February 29, 2023)
-description: A one- or two-sentence description of the data and the question to be answered using it.
+description: A one- or two-sentence description of the data and the question to be answered using it. If possible, give a brief summary of the statistical situation, such as indicating if this is a randomized experiment, observational study, large classification task, etc.
 categories:
   - list the relevant
   - statistical methods

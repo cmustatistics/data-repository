@@ -2,7 +2,7 @@
 title: Bird genetic diversity
 author: Alex Reinhart
 date: July 10, 2019
-description: Evolutionary theory suggests that species spread over a wider geographic range should have greater genetic diversity. Does this hold true in birds?
+description: Evolutionary theory suggests that species spread over a wider geographic range should have greater genetic diversity. Does this hold true in birds? An observational study of 387 bird species.
 categories:
   - linear regression
   - hierarchical model
