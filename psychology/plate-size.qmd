@@ -1,0 +1,153 @@
+---
+title: Serving sizes and plate sizes
+author: Alex Reinhart
+date: September 1, 2019
+description: Do people eat more food if their meals are served on larger plates?
+categories:
+  - ANOVA
+  - linear regression
+---
+
+## Motivation
+
+Psychologists and food scientists have, in recent years, produced a great deal
+of research on a simple question: Do people eat more food if their meals are
+served on larger plates?
+
+This question is of real practical importance. The ways food is packaged and
+presented undoubtedly affect how we eat it, and with obesity rates high across
+the Western world, simple ways to reduce overconsumption of food could have
+major public health benefits. Perhaps people overconsume food because they tend
+to eat most of what's on their plates, leading them to eat more when the plate
+is large; if so, general advice to buy smaller plates could have a nontrivial
+effect.
+
+Several experiments suggested this hypothesis is true, and that reducing plate
+size would help. But some of these experiments were conducted by Cornell
+University's Food and Brand Lab, and starting in 2017 researchers [started
+noticing serious problems](https://doi.org/10.1186/s40795-017-0167-x) with the
+lab's publications, including miscalculated test statistics, inconsistencies in
+results, and incorrect descriptions of experimental procedures; since then, many
+of the lab's papers have been retracted entirely, and the lab's director, Brian
+Wansink, resigned from Cornell. It is not clear which conclusions can be trusted
+and which cannot.
+
+This study sought to settle the question by conducting a large, carefully
+designed experiment, whose design and analysis was preregistered so it could not
+be manipulated once data was collected. In the study, participants were
+recruited and told they were participating in an experiment "examining the
+impact of time of the day on a range of mental processes," and that they
+happened to be scheduled for a lunchtime session. They were told not to eat
+anything for three hours before the session; upon arriving, they completed
+various survey tasks, then were invited to serve themselves from a food trolley.
+The size of plate they were provided (small or large) was randomly assigned, and
+the exact quantity of food they consumed was measured (by measuring what was
+left in the trolley and on their plate). The session was also video recorded by
+hidden cameras, so researchers could count how many bites the participants took
+and the rate at which they ate.
+
+## Data
+
+Each row of the dataset is one participant in the study. Beyond quantities of
+food consumed and the rate at which it was consumed, some basic demographic
+information was collected, as well as several standard psychological tasks.
+
+**Note:** A value of -999 means that value was not recorded; a value of -888 on
+a survey question means the participant answered that they would "rather not
+say."
+
+| Variable | Description |
+|----|-------------|
+| Date |	Date this participant participated |
+| ID |	Participant ID number |
+| plate size |	0 = small plate, 1 = large plate |
+| kcal.consumed |	Total number of calories consumed |
+| g.consumed |	Mass of food the participant ate (grams) |
+| g.served |	Mass of food the participant put on their plate (grams) |
+| g.remaining |	Mass of food left on participant's plate (grams) |
+| servings |	Number of times the participant served themself food |
+| meal.duration |	Time from the first bite to the last bite (minutes) |
+| n.bites |	Number of bites taken |
+| bite.size |	Average bite size (total food mass / number of bites, grams) |
+| eat.rate |	Time taken per bite (meal duration / number of bites) |
+| bite.rate |	Number of bites per minute |
+| highest.qual |	Highest educational qualification. 1 = none, 2 = up to 4 GCSEs, 3 = 5 or more GCSEs or 1 A-level, 4 = 2 or more A-levels, 5 = bachelor's degree, 6 = post-graduate degree, 7 = rather not say. |
+| highest.qual.split |	Highest educational qualification discretized |
+| income |	Total household income per year, before tax (self-reported). 1 = up to £4,499; 2 = up to £6,499; 3 = up to £7,499; 4 = up to £9,499; 5 = up to £11,499; 6 = up to £13,499; 7 = up to £15,499; 8 = up to £17,499; 9 = up to £24,999; 10 = up to £29,999; 11 = up to £39,999; 12 = up to £49,999; 13 = up to £74,999; 14 = up to £99,999; 15 = over £100,000 |
+| income.med.split |	0 = total household income below median; 1 = total household income above median. |
+| imd |	Index of Multiple Deprivation of the area where the participant lives. Measures income, unemployment, education, crime, and other factors related to socioeconomic status and the living environment. Small values mean greater deprivation. |
+| imd.med.split |	0 = IMD below median value; 1 = IMD above median value. |
+| ssrt |	Stop Signal Task response time (milliseconds). A task intended to measure participants' response inhibition and impulsivity; slow response times indicate poor impulse control. |
+| BIS-TOTAL |	Total score from the Barratt Impulsiveness Scale. Higher scores indicate greater impulsiveness. |
+| BIS-Q1 |	BIS item 1: 'I plan tasks carefully.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q2 |	BIS item 2: 'I do things without thinking.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q3 |	BIS item 3: 'I make-up my mind quickly.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q4 |	BIS item 4: 'I am happy-go-lucky.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q5 |	BIS item 5: 'I don't pay attention.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q6 |	BIS item 6: 'I have racing thoughts.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q7 |	BIS item 7: 'I plan trips well ahead of time.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q8 |	BIS item 8: 'I am self controlled.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q9 |	BIS item 9: 'I concentrate easily.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q10 |	BIS item 10: 'I save regularly.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q11 |	BIS item 11: 'I squirm at plays or lectures.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q12 |	BIS item 12: 'I am a careful thinker.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q13 |	BIS item 13: 'I plan for job security.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q14 |	BIS item 14: 'I say things without thinking.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q15 |	BIS item 15: 'I like to think about complex problems.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q16 |	BIS item 16: 'I change jobs.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q17 |	BIS item 17: 'I act on impulse.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q18 |	BIS item 18: 'I get easily bored when solving thought problems.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q19 |	BIS item 19: 'I act on the spur of the moment.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q20 |	BIS item 20: 'I am a steady thinker.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q21 |	BIS item 21: 'I change residences.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q22 |	BIS item 22: 'I buy things on impulse.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q23 |	BIS item 23: 'I can only think about one thing at a time.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q24 |	BIS item 24: 'I change hobbies.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q25 |	BIS item 25: 'I spend or charge more than I earn.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q26 |	BIS item 26: 'I often have extraneous thoughts when thinking.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q27 |	BIS item 27: 'I am more interested in the present than the future.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q28 |	BIS item 28: 'I am restless at the theater or lectures.' 1 = rarely/never; 2 = occasionally; 3 = often; 4 = almost always/always. |
+| BIS-Q29 |	BIS item 29: 'I like puzzles.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| BIS-Q30 |	BIS item 30: 'I am future oriented.' 1 = almost always/always; 2 = often; 3 = occasionally; 4 = rarely/never. |
+| line.task.correct |	Number of correct answers to a line orientation task, out of 24 possible. Measures ability to orient objects in space. |
+| gender |	Gender. 1 = male, 2 = female, 3 = other, 4 = rather not say. |
+| age |	Age (years) |
+| ethnicity |	Ethnicity. 1 = white; 2 = mixed white and black, Asian, Caribbean, or other; 3 = Asian; 4 = Black; 5 = other; 6 = rather not say. |
+| ethnicity.dicot |	Ethnicity dicotomized. 0 = white, 1 = non-white. |
+| BMI |	Body mass index |
+| hunger |	How hungry the participant reported being before lunch. 100 point scale. 0 = not at all, 100 = very much. |
+| fullness |	How full the participant reported being before lunch. 100 point scale. |
+| like.food |	How much the participant reported liking the food provided in the study. 100 point scale. |
+| fasting |	Whether the participant fasted for 3 hours before the study, as requested (yes/no).  |
+
+: [plate-size.csv](../data/plate-size.csv)
+
+## Questions
+
+1. The simplest question is also the one that directly answers the study's main
+   question: Did participants given a larger plate eat more, on average, than
+   those given a smaller plate?
+2. Perhaps the effect of plate size varies depending on impulsivity (measured by
+   the Barratt Impulsiveness Scale and the Stop Signal Task) or socioeconomic
+   status (measured by income, education, and the Index of Multiple
+   Deprivation). One could imagine, for example, that people who regularly
+   struggle to get enough food might be more affected by the desire to eat
+   everything on their plate. Conduct an analysis to see if the effect of plate
+   size differs depending on these factors.
+3. The study was designed to have the sample size needed to get 80% statistical
+   power to detect a difference of *d* = 0.5 standard deviations in the amount
+   of food consumed between the two groups. The power analysis did not determine
+   the sample size needed to detect if the effect of plate size differs
+   depending on other factors. Use simulation to determine the power of the
+   study to detect such differences. Is it capable of reliably detecting them?
+
+## References
+
+Daina Kosīte, Laura M. König, Katie De-loyde, Ilse Lee, Emily Pechey, Natasha
+Clarke, Olivia Maynard, Richard W. Morris, Marcus R. Munafò, Theresa M. Marteau,
+Paul C. Fletcher & Gareth J. Hollands (2019). "Plate size and food consumption:
+a pre-registered experimental study in a general population sample,"
+*International Journal of Behavioral Nutrition and Physical Activity* **16**
+no. 75. <https://doi.org/10.1186/s12966-019-0826-1>
+
+Data available from the Open Science Framework: <https://osf.io/k74cu/>
