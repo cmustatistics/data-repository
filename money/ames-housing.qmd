@@ -1,0 +1,136 @@
+---
+title: House prices in Ames, Iowa
+author: Alex Reinhart
+date: August 14, 2019
+description: Records of homes sold in Ames, Iowa, and their sale prices, including detailed covariates that could be used to predict home prices.
+categories:
+  - linear regression
+  - nonparametric regression
+---
+
+## Motivation
+
+Estimating the market value of a house is fairly tricky. It depends on many
+factors: the size of the house, its age, many features of its construction
+quality, amenities like swimming pools and garages, proximity to parks and good
+roads, and many other hard-to-quantify features. But many people depend on
+estimating accurate market values. Realtors estimate values to determine how
+much to ask for a property, or how much to offer to buy a property; banks
+estimate values when issuing a mortgage, to know how much they could sell the
+house for in case the mortgage is foreclosed on; local governments assess values
+to determine property tax bills; and even casual browsers like to know how much
+the house down the street would cost.
+
+But the market price of a house is, by definition, how much someone is willing
+to buy it for. It is not determined by formula but by waiting for someone to buy
+the house. If nobody has bought the house, can we build a prediction system that
+predicts its market value, using features of the house?
+
+## Data
+
+This dataset was produced by the Ames, Iowa Assessor's Office to assess the
+values of houses sold in Ames from 2006 to 2010, and made available by Dean De
+Cock, Truman State University. It covers 2,930 individual sales, recording
+features of the house and its actual sale price.
+
+Most covariates are described below. Additional detail is found in the [data
+documentation file](../data/ames-housing-DataDocumentation.txt).
+
+| Variable | Description |
+|----|-------------|
+| Order |	Observation number |
+| PID |	City parcel identification number |
+| MS.SubClass |	Dwelling type. See documentation file for categories |
+| MS.Zoning |	Zoning of the lot. A = agriculture, C = commercial, FV = floating village residential, I = industrial, RH = residential high density, RL = residential low density, RP = residential low density park, RM = residential medium density |
+| Lot.Frontage |	Linear feet of street connected to the property (such as the street in front of a house) |
+| Lot.Area |	Lot size (square feet) |
+| Street |	Type of road connected to the property. Grvl = Gravel, Pave = Paved. |
+| Alley |	Type of alley connected to the property. (Alleys generally run behind houses and provide garage access.) Grvl = Gravel, Pave = Paved, NA = no alley. |
+| Lot.Shape |	Shape of the property. Reg = Regular, IR1 = Slightly irregular, IR2 = moderately irregular, IR3 = Irregular. |
+| Land.Contour |	Flatness of the property. Lvl = near flat/level, Bnk = banked from street to building, HLS = hillside slope from side to side, Low = in a depression. |
+| Utilities |	Types of utilities available, such as electricity, gas, water, and sewer. AllPub = all public utilities, NoSewr = no sewer (only a septic tank), NoSeWa = no sewer or water, ELO = electricity only. |
+| Lot.Config |	Lot configuration. Inside = inside lot, Corner = corner lot, CulDSac = cul-de-sac, FR2 = street frontage on 2 sides of property, FR3 = street frontage on 3 sides of property. |
+| Land.Slope |	Slope of the property. Gtl = gentle slope, Mod = moderate slope, Sev = severe slope. |
+| Neighborhood |	Location within Ames neighborhoods. Consult documentation file for full names. |
+| Condition.1 |	Proximity to major roads, railroads, or parks (see documentation for details). |
+| Condition.2 |	Same as `Condition.1`, used only if there is more than one feature for this lot. |
+| Bldg.Type |	Type of house. 1Fam = one family detached, 2FmCon = one-family house converted to a duplex, Duplx = Duplex, TwnhsE = townhouse end unit, TwnhsI = townhouse inside unit. |
+| House.Style |	Style of the house. See documentation file. |
+| Overall.Qual |	Overall material and finish of the house. 1 to 10 scale, where 1 = very poor and 10 = very excellent. |
+| Overall.Cond |	Overall condition of the house, on same 1 to 10 scale. |
+| Year.Built |	Year the home was originally built. |
+| Year.Remod.Add |	Year the home was remodeled or added to. Same as the year built if no major remodeling or additions have been done. |
+| Roof.Style |	Type of roof. Flat = flat, Gable = Gable, Gambrel = Gambrel roof, Hip = Hip roof, Mansard = Mansard roof, Shed = shed. |
+| Roof.Matl |	Material used for the roof. ClyTile = clay or tile, CompShg = composite shingles, Membran = membrane, Metal = metal, Roll = roll, Tar&Grv = gravel and tar, WdShake = wood shakes, WdShngl = wood shingles. |
+| Exterior.1st |	Exterior covering on house. See documentation file. |
+| Exterior.2nd |	Second exterior covering, if the house is covered in more than one material. |
+| Mas.Vnr.Type |	If the house is faced with masonry, the type of veneer. BrkCmn = common brick, BrkFace = brick face, CBlock = cinder block, None = none, Stone = stone. |
+| Mas.Vnr.Area |	Area of masonry veneer (square feet) |
+| Exter.Qual |	Quality of material on the exterior. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor. |
+| Exter.Cond |	Current condition of material on the exterior. Same scale. |
+| Foundation |	Type of foundation. BrkTil = brick and tile, CBlock = cinder block, PConc = poured concrete, Slab = concrete slab, Stone = stone, Wood = wood. |
+| Bsmt.Qual |	Height of the basement or crawl space. Ex = excellent (>100 inches), Gd = good (90-99 inches), TA = typical (80-89 inches), Fa = fair (70-79 inches), Po = poor (<70 inches), NA = no basement. |
+| Bsmt.Cond |	General condition of the basement. Ex = excellent, Gd = good, TA = typical (possibly damp), Fa = fair (dampness, cracking, or settling), Po = poor (severe cracking, settling, or wetness), NA = no basement. |
+| Bsmt.Exposure |	Exposure of the basement to the outdoors, such as through walkout doors. Gd = good exposure, Av = average, Mn = minimum, No = no exposure, NA = no basement. |
+| BsmtFin.Type.1 |	Rating of the finished part of the basement. GLQ = good living quarters, ALQ = average living quarters, BLQ = below average living quarters, Rec = average rec room, LwQ = low quality, Unf = unfinished, NA = no basement. |
+| BsmtFin.SF.1 |	Finished square feet in the basement. |
+| BsmtFin.Type.2 |	If there are multiple types of basement finished area, this is the same as `BsmtFin.Type.1` but for the next area. |
+| BsmtFin.SF.2 |	 |
+| Bsmt.Unf.SF |	Area of the basement that is unfinished (square feet) |
+| Total.Bsmt.SF |	Total area of basement (square feet) |
+| Heating |	Type of heating. Floor = floor furnace, GasA = gas forced warm air furnace, GasW = gas hot water or steam heat, Grav = gravity furnace, OthW = hot water or steam heat other than gas, Wall = wall furnace. |
+| Heating.QC |	Heating quality and condition. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor. |
+| Central.Air |	Does the house have central air conditioning? N = no, Y = yes. |
+| Electrical |	Electrical system in the house. SBrkr = standard circuit breakers and sheathed wiring, FuseA = fuse box over 60 amps and sheathed wiring, FuseF = 60 amp fuse box and mostly sheathed wiring, FuseP = 60 amp fuse box and mostly knob & tube wiring, Mix = mixed |
+| X1st.Flr.SF |	First floor area (square feet) |
+| X2nd.Flr.SF |	Second floor area (square feet) |
+| Low.Qual.Fin.SF |	Low quality finished area, all floors (square feet) |
+| Gr.Liv.Area |	Above ground living area (square feet) |
+| Bsmt.Full.Bath |	Number of full bathrooms in the basement |
+| Bsmt.Half.Bath |	Number of half bathrooms in the basement |
+| Full.Bath |	Number of full bathrooms above ground |
+| Half.Bath |	Number of half bathrooms above ground |
+| Bedroom.AbvGr |	Number of bedrooms above ground |
+| Kitchen.AbvGr |	Number of kitchens above ground |
+| Kitchen.Qual |	Kitchen quality. Ex = Excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor. |
+| TotRms.AbvGrd |	Total rooms above ground, not including bathrooms |
+| Functional |	Home functionality. Usually typical. Typ = typical, then deductions in order: Min1, Min2, Mod, Maj1, Maj2, Sev (severely damaged), and Sal (salvage only). |
+| Fireplaces |	Number of fireplaces |
+| Fireplace.Qu |	Fireplace quality. Ex = exceptional masonry fireplace, Good = masonry fireplace on main level, TA = prefabricated fireplace in main living area or masonry fireplace in basement, Fa = prefabricated fireplace in basement, Po = Ben Franklin stove, NA = no fireplace. |
+| Garage.Type |	Type of garage. 2Types = more than one garage type, Attchd = attached to home, Basment = basement garage, BuiltIn = built in to house with room above garage, CarPort = car port, Detchd = detached from home, NA = none. |
+| Garage.Yr.Blt |	Year the garage was built |
+| Garage.Finish |	Interior finish of the garage. Fin = finished, RFn = rough finished, Unf = unfinished, NA = no garage. |
+| Garage.Cars |	Number of cars that fit in the garage |
+| Garage.Area |	Size of the garage (square feet) |
+| Garage.Qual |	Garage quality. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor, NA = no garage. |
+| Garage.Cond |	Garage condition (same scale). |
+| Paved.Drive |	Driveway type. Y = paved, P = partially paved, N = dirt or gravel. |
+| Wood.Deck.SF |	Wood deck area (square feet) |
+| Open.Porch.SF |	Open porch area (square feet) |
+| Enclosed.Porch |	Enclosed porch area (square feet) |
+| X3Ssn.Porch |	Three-season porch area (square feet) |
+| Screen.Porch |	Screened-in porch area (square feet) |
+| Pool.Area |	Pool area (square feet) |
+| Pool.QC |	Pool quality. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, NA = no pool. |
+| Fence |	Fence quality. GdPrv = good privacy, MnPrv = minimum privacy, GdWo = good wood, MnWw = minimum wood/wire, NA = no fence. |
+| Misc.Feature |	Miscellaneous feature not covered in other categories. Elev = elevator, Gar2 = second garage, Othr = other, Shed = shed over 100 square feet, TenC = tennis court, NA = none. |
+| Misc.Val |	Value of the miscellaneous feature (dollars) |
+| Mo.Sold |	Month sold |
+| Yr.Sold |	Year sold |
+| Sale.Type |	Type of sale. Wd = Conventional warranty deed, CWD = cash warranty deed, VWD = VA loan warranty deed, New = house just built and sold, COD = court officer deed or estate, Con = contract with 15% down payment and regular terms, ConLW = contract with low down payment and low interest, ConLI = contract with low interest, ConLD = contract with low down payment, Oth = other. |
+| Sale.Condition |	Condition of sale. Normal = normal; Abnorml = trade, foreclosure, or short sale; AdjLand = adjoining land purchase; Alloca = allocation of two linked properties with separate deeds, such as condos; Family = sale between family members; Partial = home was not completed when last assessed (e.g. it was under construction) |
+| SalePrice |	Price house sold for (dollars)  |
+
+: [ames-housing.csv](../data/ames-housing.csv)
+
+## Questions
+
+1. Use the sale price data and the features of the houses to build a regression
+   or prediction model to predict sale price from house features. Be sure to set
+   aside a test set to test the accuracy of your predictions.
+
+## References
+
+D De Cock (2011). Ames, Iowa: Alternative to the Boston Housing Data as an End
+of Semester Regression Project. *Journal of Statistics Education* 19 (3).
+<https://doi.org/10.1080/10691898.2011.11889627>

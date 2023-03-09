@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - "data/*.csv"
+    - "data/*.txt"
 
 website:
   title: "CMU S&DS Data Repository"
