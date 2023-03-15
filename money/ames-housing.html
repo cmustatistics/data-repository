@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex Reinhart">
-<meta name="dcterms.date" content="2022-12-08">
-<meta name="description" content="What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.">
+<meta name="dcterms.date" content="2019-08-14">
+<meta name="description" content="Records of homes sold in Ames, Iowa, and their sale prices, including detailed covariates that could be used to predict home prices.">
 
-<title>CMU S&amp;DS Data Repository - Insect attraction to light</title>
+<title>CMU S&amp;DS Data Repository - House prices in Ames, Iowa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Insect attraction to light</h1>
+      <h1 class="quarto-secondary-nav-title">House prices in Ames, Iowa</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -149,12 +149,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Biology</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Biology</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">AnAge Longevity Database</a>
@@ -172,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link active">Insect attraction to light</a>
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">Insect attraction to light</a>
   </div>
 </li>
       </ul>
@@ -194,15 +194,15 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Money</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Money</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">House prices in Ames, Iowa</a>
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link active">House prices in Ames, Iowa</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -283,16 +283,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Insect attraction to light</h1>
+<h1 class="title d-none d-lg-block">House prices in Ames, Iowa</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">GLMs</div>
-    <div class="quarto-category">experimental design</div>
+    <div class="quarto-category">linear regression</div>
+    <div class="quarto-category">nonparametric regression</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.
+    Records of homes sold in Ames, Iowa, and their sale prices, including detailed covariates that could be used to predict home prices.
   </div>
 </div>
 
@@ -309,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 8, 2022</p>
+      <p class="date">August 14, 2019</p>
     </div>
   </div>
   
@@ -321,18 +321,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>You’ve probably seen that insects seem to be attracted to artificial lights at night. Insects appear to be most attractive to blue and ultraviolet light, and less attracted by red or infrared light.</p>
-<p>Previously, most outdoor high-intensity lighting—such as for street lights and parking lots—used sodium vapor lamps, a type of lamp that is very efficient for large lights but also produces a characteristic orange glow. Many cities and countries, however, are moving towards using light-emitting diodes (LEDs) in outdoor lighting, since they have become affordable and highly efficient. LED lights promise to require less maintenance and cost less to operate. Also, they are not limited to the orange glow of sodium vapor lamps—they can produce whiter light. Some research suggests this is beneficial for safety, since whiter light makes roads and sidewalks easier to see. But it can also have some harms.</p>
-<p>One possible harmful effect is to insects. If LEDs can produce whiter or bluer light, they may be more attractive to insects at night, disrupting their circadian rhythms and potentially even leading to their deaths as they circle lights&nbsp;endlessly.</p>
-<p>This data comes from a study intended to understand how what lights attract insects and what types of insects are most affected, to study the problem. The researchers set up light traps: each trap contained a light bulb and captured any insect attracted by the light to enter the trap.</p>
-<p>The researchers conducted their experiment by setting up six light traps, each with a different light bulb. (One trap contained no bulb, as a control.) The traps were set up each evening at sunset and then checked in the morning after sunrise, and the insects collected identified and counted.</p>
-<p>Traps were set up at three different sites (one urban, two rural). Relevant weather conditions were recorded. The experiment was repeated 32 times: 16 times at the urban site and 8 times at each rural site. This allowed the researchers to rotate which location (within an individual site) each trap was placed in, and allowed them to collect data under varying weather and moon phases. (Since the moon is bright in the night sky, the presence of a bright moon could presumably affect the results.)</p>
+<p>Estimating the market value of a house is fairly tricky. It depends on many factors: the size of the house, its age, many features of its construction quality, amenities like swimming pools and garages, proximity to parks and good roads, and many other hard-to-quantify features. But many people depend on estimating accurate market values. Realtors estimate values to determine how much to ask for a property, or how much to offer to buy a property; banks estimate values when issuing a mortgage, to know how much they could sell the house for in case the mortgage is foreclosed on; local governments assess values to determine property tax bills; and even casual browsers like to know how much the house down the street would cost.</p>
+<p>But the market price of a house is, by definition, how much someone is willing to buy it for. It is not determined by formula but by waiting for someone to buy the house. If nobody has bought the house, can we build a prediction system that predicts its market value, using features of the house?</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Each row of data represents one trap on one night, and records the light bulb used in that trap, its location, the weather conditions, and the insects collected in that trap.</p>
+<p>This dataset was produced by the Ames, Iowa Assessor’s Office to assess the values of houses sold in Ames from 2006 to 2010, and made available by Dean De Cock, Truman State University. It covers 2,930 individual sales, recording features of the house and its actual sale price.</p>
+<p>Most covariates are described below. Additional detail is found in the <a href="../data/ames-housing-DataDocumentation.txt">data documentation file</a>.</p>
 <table class="table">
-<caption><a href="../data/bug-attraction.csv">bug-attraction.csv</a></caption>
+<caption><a href="../data/ames-housing.csv">ames-housing.csv</a></caption>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -341,157 +338,345 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Light Type</td>
-<td>Type of light bulb used to attract insects. <code>No</code> means no bulb at all; <code>A</code>, <code>B</code>, and <code>C</code> are all Philips light bulbs whose color can be adjusted by the user; <code>LED</code> is a commercial white LED bulb; and <code>CFL</code> is a commercial compact fluorescent bulb.</td>
+<td>Order</td>
+<td>Observation number</td>
 </tr>
 <tr class="even">
-<td>Model Lamp</td>
-<td>More detailed description of the light bulb. For <code>A</code>, <code>B</code>, and <code>C</code>, describes the color temperature (K) the bulbs were set to.</td>
+<td>PID</td>
+<td>City parcel identification number</td>
 </tr>
 <tr class="odd">
-<td>Location</td>
-<td>Location the light trap was placed. Site codes starting with <code>B</code> are urban (the UCLA Botanical Garden); site codes <code>L</code> and <code>S</code> were rural locations (a UCLA field station and a UCLA ranch). Each site has six separate traps, designated by a number.</td>
+<td>MS.SubClass</td>
+<td>Dwelling type. See documentation file for categories</td>
 </tr>
 <tr class="even">
-<td>Site</td>
-<td>Site. <code>BG</code> = botanical garden, <code>LK</code> = La Kretz field station, <code>Stunt</code> = stunt ranch.</td>
+<td>MS.Zoning</td>
+<td>Zoning of the lot. A = agriculture, C = commercial, FV = floating village residential, I = industrial, RH = residential high density, RL = residential low density, RP = residential low density park, RM = residential medium density</td>
 </tr>
 <tr class="odd">
-<td>Standardized Moon</td>
-<td>Standardized variable representing the percentage of the moon visible on the night chosen (i.e., the moon phase).</td>
+<td>Lot.Frontage</td>
+<td>Linear feet of street connected to the property (such as the street in front of a house)</td>
 </tr>
 <tr class="even">
-<td>Standardized Mean Temp</td>
-<td>Temperature on the night, standardized.</td>
+<td>Lot.Area</td>
+<td>Lot size (square feet)</td>
 </tr>
 <tr class="odd">
-<td>Standardized Mean Humidity</td>
-<td>Humidity on the night, standardized.</td>
+<td>Street</td>
+<td>Type of road connected to the property. Grvl = Gravel, Pave = Paved.</td>
 </tr>
 <tr class="even">
-<td>Standardized Max Wind</td>
-<td>Maximum wind speed on the night, standardized.</td>
+<td>Alley</td>
+<td>Type of alley connected to the property. (Alleys generally run behind houses and provide garage access.) Grvl = Gravel, Pave = Paved, NA = no alley.</td>
 </tr>
 <tr class="odd">
-<td>% Moon Visible</td>
-<td>Percentage of moon visible (moon phase).</td>
+<td>Lot.Shape</td>
+<td>Shape of the property. Reg = Regular, IR1 = Slightly irregular, IR2 = moderately irregular, IR3 = Irregular.</td>
 </tr>
 <tr class="even">
-<td>Start Tem</td>
-<td>Temperature at the beginning of the night (Celsius)</td>
+<td>Land.Contour</td>
+<td>Flatness of the property. Lvl = near flat/level, Bnk = banked from street to building, HLS = hillside slope from side to side, Low = in a depression.</td>
 </tr>
 <tr class="odd">
-<td>End Temp</td>
-<td>Temperature at the end of the experiment (Celsius)</td>
+<td>Utilities</td>
+<td>Types of utilities available, such as electricity, gas, water, and sewer. AllPub = all public utilities, NoSewr = no sewer (only a septic tank), NoSeWa = no sewer or water, ELO = electricity only.</td>
 </tr>
 <tr class="even">
-<td>Mean Temp</td>
-<td>Mean temperature (Celsius)</td>
+<td>Lot.Config</td>
+<td>Lot configuration. Inside = inside lot, Corner = corner lot, CulDSac = cul-de-sac, FR2 = street frontage on 2 sides of property, FR3 = street frontage on 3 sides of property.</td>
 </tr>
 <tr class="odd">
-<td>Humid Start</td>
-<td>Relative humidity at the start of the experiment (%)</td>
+<td>Land.Slope</td>
+<td>Slope of the property. Gtl = gentle slope, Mod = moderate slope, Sev = severe slope.</td>
 </tr>
 <tr class="even">
-<td>Humid End</td>
-<td>Relative humidity at the end of the experiment (%)</td>
+<td>Neighborhood</td>
+<td>Location within Ames neighborhoods. Consult documentation file for full names.</td>
 </tr>
 <tr class="odd">
-<td>Mean Humidity</td>
-<td>Mean humidity (%)</td>
+<td>Condition.1</td>
+<td>Proximity to major roads, railroads, or parks (see documentation for details).</td>
 </tr>
 <tr class="even">
-<td>Max Wind</td>
-<td>Maximum recorded wind speed (m/s)</td>
+<td>Condition.2</td>
+<td>Same as <code>Condition.1</code>, used only if there is more than one feature for this lot.</td>
 </tr>
 <tr class="odd">
-<td>Illumination</td>
-<td>Illumination produced by the light (lux)</td>
+<td>Bldg.Type</td>
+<td>Type of house. 1Fam = one family detached, 2FmCon = one-family house converted to a duplex, Duplx = Duplex, TwnhsE = townhouse end unit, TwnhsI = townhouse inside unit.</td>
 </tr>
 <tr class="even">
-<td>Diptera</td>
-<td>Number of insects of the order Diptera captured in the trap</td>
+<td>House.Style</td>
+<td>Style of the house. See documentation file.</td>
 </tr>
 <tr class="odd">
-<td>Hymenoptera</td>
-<td>Number of insects of the order Hymenoptera captured in the trap</td>
+<td>Overall.Qual</td>
+<td>Overall material and finish of the house. 1 to 10 scale, where 1 = very poor and 10 = very excellent.</td>
 </tr>
 <tr class="even">
-<td>Hemiptera</td>
-<td>Number of insects of the order Hemiptera captured in the trap</td>
+<td>Overall.Cond</td>
+<td>Overall condition of the house, on same 1 to 10 scale.</td>
 </tr>
 <tr class="odd">
-<td>Psocoptera</td>
-<td>Number of insects of the order Psocoptera captured in the trap</td>
+<td>Year.Built</td>
+<td>Year the home was originally built.</td>
 </tr>
 <tr class="even">
-<td>Coleoptera</td>
-<td>Number of insects of the order Coleoptera captured in the trap</td>
+<td>Year.Remod.Add</td>
+<td>Year the home was remodeled or added to. Same as the year built if no major remodeling or additions have been done.</td>
 </tr>
 <tr class="odd">
-<td>Collembola</td>
-<td>Number of insects of the order Collembola captured in the trap</td>
+<td>Roof.Style</td>
+<td>Type of roof. Flat = flat, Gable = Gable, Gambrel = Gambrel roof, Hip = Hip roof, Mansard = Mansard roof, Shed = shed.</td>
 </tr>
 <tr class="even">
-<td>Arachnid</td>
-<td>Number of insects of the order Arachnid captured in the trap</td>
+<td>Roof.Matl</td>
+<td>Material used for the roof. ClyTile = clay or tile, CompShg = composite shingles, Membran = membrane, Metal = metal, Roll = roll, Tar&amp;Grv = gravel and tar, WdShake = wood shakes, WdShngl = wood shingles.</td>
 </tr>
 <tr class="odd">
-<td>Thysanura</td>
-<td>Number of insects of the order Thysanura captured in the trap</td>
+<td>Exterior.1st</td>
+<td>Exterior covering on house. See documentation file.</td>
 </tr>
 <tr class="even">
-<td>Isoptera</td>
-<td>Number of insects of the order Isoptera captured in the trap</td>
+<td>Exterior.2nd</td>
+<td>Second exterior covering, if the house is covered in more than one material.</td>
 </tr>
 <tr class="odd">
-<td>Lepidoptera</td>
-<td>Number of insects of the order Lepidoptera captured in the trap</td>
+<td>Mas.Vnr.Type</td>
+<td>If the house is faced with masonry, the type of veneer. BrkCmn = common brick, BrkFace = brick face, CBlock = cinder block, None = none, Stone = stone.</td>
 </tr>
 <tr class="even">
-<td>Neuroptera</td>
-<td>Number of insects of the order Neuroptera captured in the trap</td>
+<td>Mas.Vnr.Area</td>
+<td>Area of masonry veneer (square feet)</td>
 </tr>
 <tr class="odd">
-<td>Larave</td>
-<td>Number of insects of the order Larave captured in the trap</td>
+<td>Exter.Qual</td>
+<td>Quality of material on the exterior. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor.</td>
 </tr>
 <tr class="even">
-<td>Orthoptera</td>
-<td>Number of insects of the order Orthoptera captured in the trap</td>
+<td>Exter.Cond</td>
+<td>Current condition of material on the exterior. Same scale.</td>
 </tr>
 <tr class="odd">
-<td>Unident</td>
-<td>Number of unidentified insects captured in the trap</td>
+<td>Foundation</td>
+<td>Type of foundation. BrkTil = brick and tile, CBlock = cinder block, PConc = poured concrete, Slab = concrete slab, Stone = stone, Wood = wood.</td>
 </tr>
 <tr class="even">
-<td>Total</td>
-<td>Total number of insects captured in the trap</td>
+<td>Bsmt.Qual</td>
+<td>Height of the basement or crawl space. Ex = excellent (&gt;100 inches), Gd = good (90-99 inches), TA = typical (80-89 inches), Fa = fair (70-79 inches), Po = poor (&lt;70 inches), NA = no basement.</td>
 </tr>
 <tr class="odd">
-<td>Other Orders</td>
-<td>Number of insects of other identified orders captured in the trap</td>
+<td>Bsmt.Cond</td>
+<td>General condition of the basement. Ex = excellent, Gd = good, TA = typical (possibly damp), Fa = fair (dampness, cracking, or settling), Po = poor (severe cracking, settling, or wetness), NA = no basement.</td>
+</tr>
+<tr class="even">
+<td>Bsmt.Exposure</td>
+<td>Exposure of the basement to the outdoors, such as through walkout doors. Gd = good exposure, Av = average, Mn = minimum, No = no exposure, NA = no basement.</td>
+</tr>
+<tr class="odd">
+<td>BsmtFin.Type.1</td>
+<td>Rating of the finished part of the basement. GLQ = good living quarters, ALQ = average living quarters, BLQ = below average living quarters, Rec = average rec room, LwQ = low quality, Unf = unfinished, NA = no basement.</td>
+</tr>
+<tr class="even">
+<td>BsmtFin.SF.1</td>
+<td>Finished square feet in the basement.</td>
+</tr>
+<tr class="odd">
+<td>BsmtFin.Type.2</td>
+<td>If there are multiple types of basement finished area, this is the same as <code>BsmtFin.Type.1</code> but for the next area.</td>
+</tr>
+<tr class="even">
+<td>BsmtFin.SF.2</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Bsmt.Unf.SF</td>
+<td>Area of the basement that is unfinished (square feet)</td>
+</tr>
+<tr class="even">
+<td>Total.Bsmt.SF</td>
+<td>Total area of basement (square feet)</td>
+</tr>
+<tr class="odd">
+<td>Heating</td>
+<td>Type of heating. Floor = floor furnace, GasA = gas forced warm air furnace, GasW = gas hot water or steam heat, Grav = gravity furnace, OthW = hot water or steam heat other than gas, Wall = wall furnace.</td>
+</tr>
+<tr class="even">
+<td>Heating.QC</td>
+<td>Heating quality and condition. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor.</td>
+</tr>
+<tr class="odd">
+<td>Central.Air</td>
+<td>Does the house have central air conditioning? N = no, Y = yes.</td>
+</tr>
+<tr class="even">
+<td>Electrical</td>
+<td>Electrical system in the house. SBrkr = standard circuit breakers and sheathed wiring, FuseA = fuse box over 60 amps and sheathed wiring, FuseF = 60 amp fuse box and mostly sheathed wiring, FuseP = 60 amp fuse box and mostly knob &amp; tube wiring, Mix = mixed</td>
+</tr>
+<tr class="odd">
+<td>X1st.Flr.SF</td>
+<td>First floor area (square feet)</td>
+</tr>
+<tr class="even">
+<td>X2nd.Flr.SF</td>
+<td>Second floor area (square feet)</td>
+</tr>
+<tr class="odd">
+<td>Low.Qual.Fin.SF</td>
+<td>Low quality finished area, all floors (square feet)</td>
+</tr>
+<tr class="even">
+<td>Gr.Liv.Area</td>
+<td>Above ground living area (square feet)</td>
+</tr>
+<tr class="odd">
+<td>Bsmt.Full.Bath</td>
+<td>Number of full bathrooms in the basement</td>
+</tr>
+<tr class="even">
+<td>Bsmt.Half.Bath</td>
+<td>Number of half bathrooms in the basement</td>
+</tr>
+<tr class="odd">
+<td>Full.Bath</td>
+<td>Number of full bathrooms above ground</td>
+</tr>
+<tr class="even">
+<td>Half.Bath</td>
+<td>Number of half bathrooms above ground</td>
+</tr>
+<tr class="odd">
+<td>Bedroom.AbvGr</td>
+<td>Number of bedrooms above ground</td>
+</tr>
+<tr class="even">
+<td>Kitchen.AbvGr</td>
+<td>Number of kitchens above ground</td>
+</tr>
+<tr class="odd">
+<td>Kitchen.Qual</td>
+<td>Kitchen quality. Ex = Excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor.</td>
+</tr>
+<tr class="even">
+<td>TotRms.AbvGrd</td>
+<td>Total rooms above ground, not including bathrooms</td>
+</tr>
+<tr class="odd">
+<td>Functional</td>
+<td>Home functionality. Usually typical. Typ = typical, then deductions in order: Min1, Min2, Mod, Maj1, Maj2, Sev (severely damaged), and Sal (salvage only).</td>
+</tr>
+<tr class="even">
+<td>Fireplaces</td>
+<td>Number of fireplaces</td>
+</tr>
+<tr class="odd">
+<td>Fireplace.Qu</td>
+<td>Fireplace quality. Ex = exceptional masonry fireplace, Good = masonry fireplace on main level, TA = prefabricated fireplace in main living area or masonry fireplace in basement, Fa = prefabricated fireplace in basement, Po = Ben Franklin stove, NA = no fireplace.</td>
+</tr>
+<tr class="even">
+<td>Garage.Type</td>
+<td>Type of garage. 2Types = more than one garage type, Attchd = attached to home, Basment = basement garage, BuiltIn = built in to house with room above garage, CarPort = car port, Detchd = detached from home, NA = none.</td>
+</tr>
+<tr class="odd">
+<td>Garage.Yr.Blt</td>
+<td>Year the garage was built</td>
+</tr>
+<tr class="even">
+<td>Garage.Finish</td>
+<td>Interior finish of the garage. Fin = finished, RFn = rough finished, Unf = unfinished, NA = no garage.</td>
+</tr>
+<tr class="odd">
+<td>Garage.Cars</td>
+<td>Number of cars that fit in the garage</td>
+</tr>
+<tr class="even">
+<td>Garage.Area</td>
+<td>Size of the garage (square feet)</td>
+</tr>
+<tr class="odd">
+<td>Garage.Qual</td>
+<td>Garage quality. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, Po = poor, NA = no garage.</td>
+</tr>
+<tr class="even">
+<td>Garage.Cond</td>
+<td>Garage condition (same scale).</td>
+</tr>
+<tr class="odd">
+<td>Paved.Drive</td>
+<td>Driveway type. Y = paved, P = partially paved, N = dirt or gravel.</td>
+</tr>
+<tr class="even">
+<td>Wood.Deck.SF</td>
+<td>Wood deck area (square feet)</td>
+</tr>
+<tr class="odd">
+<td>Open.Porch.SF</td>
+<td>Open porch area (square feet)</td>
+</tr>
+<tr class="even">
+<td>Enclosed.Porch</td>
+<td>Enclosed porch area (square feet)</td>
+</tr>
+<tr class="odd">
+<td>X3Ssn.Porch</td>
+<td>Three-season porch area (square feet)</td>
+</tr>
+<tr class="even">
+<td>Screen.Porch</td>
+<td>Screened-in porch area (square feet)</td>
+</tr>
+<tr class="odd">
+<td>Pool.Area</td>
+<td>Pool area (square feet)</td>
+</tr>
+<tr class="even">
+<td>Pool.QC</td>
+<td>Pool quality. Ex = excellent, Gd = good, TA = typical/average, Fa = fair, NA = no pool.</td>
+</tr>
+<tr class="odd">
+<td>Fence</td>
+<td>Fence quality. GdPrv = good privacy, MnPrv = minimum privacy, GdWo = good wood, MnWw = minimum wood/wire, NA = no fence.</td>
+</tr>
+<tr class="even">
+<td>Misc.Feature</td>
+<td>Miscellaneous feature not covered in other categories. Elev = elevator, Gar2 = second garage, Othr = other, Shed = shed over 100 square feet, TenC = tennis court, NA = none.</td>
+</tr>
+<tr class="odd">
+<td>Misc.Val</td>
+<td>Value of the miscellaneous feature (dollars)</td>
+</tr>
+<tr class="even">
+<td>Mo.Sold</td>
+<td>Month sold</td>
+</tr>
+<tr class="odd">
+<td>Yr.Sold</td>
+<td>Year sold</td>
+</tr>
+<tr class="even">
+<td>Sale.Type</td>
+<td>Type of sale. Wd = Conventional warranty deed, CWD = cash warranty deed, VWD = VA loan warranty deed, New = house just built and sold, COD = court officer deed or estate, Con = contract with 15% down payment and regular terms, ConLW = contract with low down payment and low interest, ConLI = contract with low interest, ConLD = contract with low down payment, Oth = other.</td>
+</tr>
+<tr class="odd">
+<td>Sale.Condition</td>
+<td>Condition of sale. Normal = normal; Abnorml = trade, foreclosure, or short sale; AdjLand = adjoining land purchase; Alloca = allocation of two linked properties with separate deeds, such as condos; Family = sale between family members; Partial = home was not completed when last assessed (e.g.&nbsp;it was under construction)</td>
+</tr>
+<tr class="even">
+<td>SalePrice</td>
+<td>Price house sold for (dollars)</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>These are adapted from questions used in notes for 36-707.</p>
 <ol type="1">
-<li><p>We are interested in the total number of insects collected in each trap (the <code>Total</code> variable) and how it relates to the light bulb type (<code>Light Type</code>). We also know that the location (<code>Location</code>), moon phase (<code>% Moon Visible</code>), mean night temperature (<code>Mean Temp</code>), and mean humidity (<code>Mean Humidity</code>) might affect insect activity. Conduct an EDA of these variables to determine what relationships the predictors may have with the response.</p></li>
-<li><p>Consider the study design. Because six traps were placed out each night, each with a different bulb (or no bulb), the traps were exposed to the same location, moon phase, temperature, and humidity. No bulb type has data from moon phases that are systematically different from the other bulbs, or was used on nights that were warmer than those for the other bulbs, or anything like that. This is known as a <em>balanced</em> design.</p>
-<p>Comment on what this design choice means. Can location, moon phase, mean temperature, or mean humidity be confounding variables that would bias our estimates of the effect of bulb type? Do we need to incorporate them into our models to obtain an unbiased estimate of the causal effect of bulb type?</p></li>
-<li><p>Obtain the mean number of insects trapped by each bulb. Display the means in a table. Which bulb attracts the fewest insects?</p>
-<p>Note there is one missing count (recorded as <code>NA</code>) that you may need to remove.</p></li>
-<li><p>Select a GLM for the total number of insects collected as a function of bulb type, location, moon phase, temperature, and humidity. Use your EDA to guide your model choice, and produce any necessary diagnostic plots to validate your choice.</p>
-<p>Produce a table of coefficients estimated from your final model, including standard errors. Interpret, in words, the meaning of the coefficient for temperature, giving a 95% confidence interval for the size of the effect.</p></li>
-<li><p>Consider a night where the moon is 60% visible, the humidity is 60%, and the mean temperature is 15 °C. (These are roughly the average values in the data.) Produce a table of the predicted number of insects trapped by each bulb type at the La Kretz station on a night like this, giving 95% confidence intervals for each prediction. Does your result match the table from part 3?</p></li>
+<li>Use the sale price data and the features of the houses to build a regression or prediction model to predict sale price from house features. Be sure to set aside a test set to test the accuracy of your predictions.</li>
 </ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Longcore, Aldern, Eggers, Flores, Franco, Hirshfield-Yamanishi, Petrinec, Yan, and Barroso. “Tuning the white light spectrum of light emitting diode lamps to reduce attraction of nocturnal arthropods”. <em>Philosophical Transactions of the Royal Society B</em> 370: 20140125. <a href="https://doi.org/10.1098/rstb.2014.0125" class="uri">https://doi.org/10.1098/rstb.2014.0125</a></p>
+<p>D De Cock (2011). Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project. <em>Journal of Statistics Education</em> 19 (3). <a href="https://doi.org/10.1080/10691898.2011.11889627" class="uri">https://doi.org/10.1080/10691898.2011.11889627</a></p>
 
 
 </section>
