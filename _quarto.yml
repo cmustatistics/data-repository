@@ -17,6 +17,8 @@ website:
   sidebar:
     contents: auto
     collapse-level: 1
+  repo-url: https://github.com/cmustatistics/data-repository
+  repo-actions: [edit, issue]
 
 format:
   html:
