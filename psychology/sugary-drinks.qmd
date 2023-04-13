@@ -6,6 +6,8 @@ description: Public health officials are interested in policies that would reduc
 categories:
   - ANOVA
   - logistic regression
+datafile: sugary-drinks.csv
+datayear: 2017
 ---
 
 ## Motivation
@@ -62,6 +64,15 @@ also asked what their drink options were, to make sure they understood them.
 There were 623 total participants in this study, of whom 362 ordered a drink.
 Each row represents one participant.
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----|-------------|
 | id |	Unique ID for each study participant |
@@ -80,7 +91,7 @@ Each row represents one participant.
 | comprehension_check |	 |
 | failed_comprehension_check |	Did the participant fail a test at the end to make sure they knew what their drink options were? 0: no, 1: yes  |
 
-: [sugary-drinks.csv](../data/sugary-drinks.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

@@ -6,6 +6,8 @@ description: Do people eat more food if their meals are served on larger plates?
 categories:
   - ANOVA
   - linear regression
+datafile: plate-size.csv
+datayear: 2019
 ---
 
 ## Motivation
@@ -56,11 +58,20 @@ information was collected, as well as several standard psychological tasks.
 a survey question means the participant answered that they would "rather not
 say."
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----|-------------|
 | Date |	Date this participant participated |
 | ID |	Participant ID number |
-| plate size |	0 = small plate, 1 = large plate |
+| plate.size |	0 = small plate, 1 = large plate |
 | kcal.consumed |	Total number of calories consumed |
 | g.consumed |	Mass of food the participant ate (grams) |
 | g.served |	Mass of food the participant put on their plate (grams) |
@@ -120,7 +131,9 @@ say."
 | like.food |	How much the participant reported liking the food provided in the study. 100 point scale. |
 | fasting |	Whether the participant fasted for 3 hours before the study, as requested (yes/no).  |
 
-: [plate-size.csv](../data/plate-size.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
+
+
 
 ## Questions
 

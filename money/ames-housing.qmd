@@ -6,6 +6,8 @@ description: Records of homes sold in Ames, Iowa, and their sale prices, includi
 categories:
   - linear regression
   - nonparametric regression
+datayear: 2010
+datafile: ames-housing.csv
 ---
 
 ## Motivation
@@ -32,6 +34,15 @@ This dataset was produced by the Ames, Iowa Assessor's Office to assess the
 values of houses sold in Ames from 2006 to 2010, and made available by Dean De
 Cock, Truman State University. It covers 2,930 individual sales, recording
 features of the house and its actual sale price.
+
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
 
 Most covariates are described below. Additional detail is found in the [data
 documentation file](../data/ames-housing-DataDocumentation.txt).
@@ -121,7 +132,7 @@ documentation file](../data/ames-housing-DataDocumentation.txt).
 | Sale.Condition |	Condition of sale. Normal = normal; Abnorml = trade, foreclosure, or short sale; AdjLand = adjoining land purchase; Alloca = allocation of two linked properties with separate deeds, such as condos; Family = sale between family members; Partial = home was not completed when last assessed (e.g. it was under construction) |
 | SalePrice |	Price house sold for (dollars)  |
 
-: [ames-housing.csv](../data/ames-housing.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

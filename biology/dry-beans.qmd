@@ -2,9 +2,11 @@
 title: Dry beans
 author: Alex Reinhart
 date: December 27, 2021
+datayear: 2020
 description: Sort and classify beans using features extracted from images.
 categories:
   - classification
+datafile: dry-beans.csv
 ---
 
 ## Motivation
@@ -45,6 +47,15 @@ beans by variety.
 
 This dataset contains features from 13,611 beans.
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----------|-------------|
 | Area | 	Area of the bean in the image, measured as the number of pixels it covers in the image |
@@ -65,7 +76,7 @@ This dataset contains features from 13,611 beans.
 | ShapeFactor4 |	4A/(πLl), where A is area, L is major axis length, and l is minor axis length|
 | Class |	Variety of the bean |
 
-: [dry-beans.csv](../data/dry-beans.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

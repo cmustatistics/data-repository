@@ -2,9 +2,11 @@
 title: AnAge Longevity Database
 author: Alex Reinhart
 date: December 27, 2021
+datayear: 2017
 description: The AnAge database includes information on the longevity of thousands of animal species, allowing studies of the factors related to long lifespans.
 categories:
   - linear regression
+datafile: anage.csv
 ---
 
 ## Motivation
@@ -25,6 +27,14 @@ Each observation is one animal species. Note that many variables are missing for
 individual species, so you may need to restrict your analysis to complete
 observations.
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
 
 | Variable | Description |
 |----|-------------|
@@ -42,7 +52,7 @@ observations.
 | Metabolic.rate 	| Typical resting metabolic rate (i.e., rate of energy use), in Watts |
 | Temperature 	| Typical body temperature, in Kelvin  |
 
-: [anage.csv](../data/anage.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 
 ## Questions

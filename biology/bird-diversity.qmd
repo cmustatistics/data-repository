@@ -2,10 +2,12 @@
 title: Bird genetic diversity
 author: Alex Reinhart
 date: July 10, 2019
+datayear: 2019
 description: Evolutionary theory suggests that species spread over a wider geographic range should have greater genetic diversity. Does this hold true in birds? An observational study of 387 bird species.
 categories:
   - linear regression
   - hierarchical model
+datafile: bird-diversity.csv
 ---
 
 ## Motivation
@@ -40,6 +42,15 @@ from a just few islands in the Seychelles, for the Seychelles warbler
 (*Acrocephalus sechellensis*), to enormous ranges of the Southern Ocean for the
 grey-headed albatross (*Thalassarche chrysostoma*).
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----|-------------|
 | Species |	Bird species name |
@@ -52,7 +63,7 @@ grey-headed albatross (*Thalassarche chrysostoma*).
 | Migratory status |	Is this species migratory or does it stay resident in one area? |
 | References |	References for the data for this species  |
 
-: [bird-diversity.csv](../data/bird-diversity.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

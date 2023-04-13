@@ -17,4 +17,4 @@ the data. This means:
   suggested questions.
 
 Datasets are organized by broad subject areas on the left, or you can browse a
-list [by statistical methods used](by-method.qmd).
+[sortable list of all datasets](by-method.qmd).

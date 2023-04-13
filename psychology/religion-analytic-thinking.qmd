@@ -6,6 +6,8 @@ description: A controversial study found that encouraging analytic thinking also
 categories:
   - ANOVA
   - linear regression
+datafile: religion-analytic.csv
+datayear: 2017
 ---
 
 ## Motivation
@@ -47,6 +49,15 @@ Turk](https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk) service).
 Each row is one experimental subject, randomized to see either Discobolus or The
 Thinker.
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----|-------------|
 | condition |	Whether the subject saw Discobolus ('discus') or The Thinker ('thinker') |
@@ -55,7 +66,7 @@ Thinker.
 | age |	Age of the subject, in years |
 | gender |	Gender of the subject  |
 
-: [religion-analytic.csv](../data/religion-analytic.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

@@ -2,10 +2,12 @@
 title: Galaxy mass prediction
 author: Peter Freeman
 date: February 3, 2023
+datayear: 2020
 description: Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy's mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?
 categories:
   - linear regression
   - nonparametric regression
+datafile: Buzzard_DC1.csv
 ---
 
 ## Motivation
@@ -17,6 +19,15 @@ The Buzzard-V1.0 simulation was used to generate a realistic sample of Rubin Obs
 ## Data
 
 The dataset contains measures of magnitude and magnitude uncertainty in six astronomical bands (`u` for ultraviolet, `g` for green, `r` for red, `i` for infrared, and `z` and `y` for two additional infrared bands). Magnitude is a logarithmic measure of brightness, with an *increase* of 5 representing a *decrease* in brightness by a factor of 100, and with a value of zero being represented (roughly) by how the star Vega appears in the night sky. In addition, there is a `redshift` measured for each galaxy; it represents by how much light from the galaxy is stretched (by the expansion of Universe) as it travels to us. Thus higher redshifts represent larger distances. The last measurement is `log.mass`, which is the base-10 logarithm of the galaxy stellar mass in units of solar mass; for instance, `log.mass = 10` means that the galaxy has a mass 10 billion times that of the Sun.
+
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
 
 | Variable | Description |
 | -------- | ----------- |
@@ -35,7 +46,7 @@ The dataset contains measures of magnitude and magnitude uncertainty in six astr
 | log.mass | Galaxy stellar mass (log-base-10 solar masses) |
 | redshift | Galaxy redshift |
 
-: [Buzzard_DC1.csv](../data/Buzzard_DC1.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 
@@ -45,4 +56,10 @@ One wrinkle here that analysts can exploit is that the data contain standard err
 
 ## References
 
-Schmidt, Malz, Soo, Almosallam, Brescia, Cavuoti, Cohen-Tanugi, Connolly, DeRose, Freeman, Graham, Iyer, Jarvis, Kalmbach, Kovacs, Lee, Longo, Morrison, Newman, Nourbakhsh, Nuss, Pospisil, Tranin, Wechsler, Zhou, Izbicki, (The LSST Dark Energy Science Collaboration). "Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)". *Monthly Notices of the Royal Astronomical Society* 499: 1587–1606. <https://doi.org/10.1093/mnras/staa2799>
+Schmidt, Malz, Soo, Almosallam, Brescia, Cavuoti, Cohen-Tanugi, Connolly,
+DeRose, Freeman, Graham, Iyer, Jarvis, Kalmbach, Kovacs, Lee, Longo, Morrison,
+Newman, Nourbakhsh, Nuss, Pospisil, Tranin, Wechsler, Zhou, Izbicki, (The LSST
+Dark Energy Science Collaboration). "Evaluation of probabilistic photometric
+redshift estimation approaches for The Rubin Observatory Legacy Survey of Space
+and Time (LSST)". *Monthly Notices of the Royal Astronomical Society* 499,
+December 2020, pages 1587–1606. <https://doi.org/10.1093/mnras/staa2799>

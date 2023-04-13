@@ -7,6 +7,8 @@ categories:
   - GLMs
   - classification
   - linear regression
+datafile: sfn-sample.csv
+datayear: 2014
 ---
 
 ## Motivation
@@ -33,7 +35,17 @@ smackdown. So you may notice some unusual trends in Speculations.
 
 ## Data
 
-Each row is one topic; each topic can include many posts.
+Each row is one topic; each topic can include many posts. This dataset includes
+a random sample of 10,000 topics.
+
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
 
 | Variable | Description |
 |----|-------------|
@@ -51,7 +63,7 @@ deleted_posts |	Number of posts in the topic which have been deleted by a modera
 | author_exp |	The number of days the topic starter was registered before starting the discussion. |
 | author_banned |	Records if the topic starter is currently banned.  |
 
-: [sfn-sample.csv](../data/sfn-sample.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 For forum IDs, a categorization is given below.
 

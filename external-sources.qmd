@@ -14,4 +14,7 @@ Here are some good outside sources for finding datasets suitable for classes:
   descriptions of open datasets (often large and with unusual structure)
 - [Open Case Studies](https://www.opencasestudies.org/), a collection of data
   analysis case studies showing analyses from conception to conclusion
-- TODO
+- [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php),
+  containing hundreds of datasets suitable for machine learning tasks
+- [TidyTuesday](https://github.com/rfordatascience/tidytuesday), a project
+  collecting datasets for weekly data wrangling and visualization events

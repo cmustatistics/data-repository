@@ -6,6 +6,8 @@ description: What kinds of lights are insects most attracted to? Analyze the res
 categories:
   - GLMs
   - experimental design
+datayear: 2015
+datafile: bug-attraction.csv
 ---
 
 ## Motivation
@@ -53,6 +55,15 @@ Each row of data represents one trap on one night, and records the light bulb
 used in that trap, its location, the weather conditions, and the insects
 collected in that trap.
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----|-------------|
 | Light Type 	| Type of light bulb used to attract insects. `No` means no bulb at all; `A`, `B`, and `C` are all Philips light bulbs whose color can be adjusted by the user; `LED` is a commercial white LED bulb; and `CFL` is a commercial compact fluorescent bulb. |
@@ -88,7 +99,7 @@ collected in that trap.
 | Unident 	| Number of unidentified insects captured in the trap |
 | Total 	| Total number of insects captured in the trap |
 | Other Orders 	| Number of insects of other identified orders captured in the trap  |
-: [bug-attraction.csv](../data/bug-attraction.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 
@@ -136,6 +147,6 @@ These are adapted from questions used in notes for 36-707.
 ## References
 
 Longcore, Aldern, Eggers, Flores, Franco, Hirshfield-Yamanishi, Petrinec, Yan,
-and Barroso. “Tuning the white light spectrum of light emitting diode lamps to
+and Barroso (2015). “Tuning the white light spectrum of light emitting diode lamps to
 reduce attraction of nocturnal arthropods”. *Philosophical Transactions of the
 Royal Society B* 370: 20140125. <https://doi.org/10.1098/rstb.2014.0125>

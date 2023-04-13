@@ -6,6 +6,8 @@ description: Rail trails are a great recreation opportunity, but do homes near t
 categories:
   - linear regression
   - nonparametric regression
+datayear: 2014
+datafile: rail-trails.csv
 ---
 
 ## Motivation
@@ -52,6 +54,15 @@ The data only includes homes with under 0.56 acres of property, and excludes two
 homes that increased in value more than $500,000 between 1998 and 2007 due to
 major renovations, which were regarded as outliers.
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----|-------------|
 | housenum |	A unique number for each house |
@@ -86,7 +97,7 @@ major renovations, which were regarded as outliers.
 | streetno |	House number on the street |
 | zip |	ZIP code of the house (leading 0 omitted). 1060 is Northampton, MA; 1062 is Florence, MA.  |
 
-: [rail-trails.csv](../data/rail-trails.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 
