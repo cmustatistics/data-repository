@@ -1,7 +1,12 @@
 ---
-title: Datasets by Methods
+title: All Datasets
 listing:
   categories: true
   contents:
     - "*/*.qmd"
+  type: table
+  fields: [datayear, date, title, author]
+  field-display-names:
+    datayear: "Data Year"
+    date: "Published"
 ---
