@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -62,6 +62,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 </head>
 
@@ -87,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../by-method.html" aria-current="page">
- <span class="menu-text">Datasets by Methods</span></a>
+ <span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../submit-data.html">
@@ -119,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../by-method.html" class="sidebar-item-text sidebar-link">Datasets by Methods</a>
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">All Datasets</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,7 +275,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -328,6 +335,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>This data includes 387 bird species, along with two measures of their genetic diversity, a measure of the size of their breeding range, their body mass, and whether they are migratory or resident birds. The breeding ranges vary in size from a just few islands in the Seychelles, for the Seychelles warbler (<em>Acrocephalus sechellensis</em>), to enormous ranges of the Southern Ocean for the grey-headed albatross (<em>Thalassarche chrysostoma</em>).</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Species"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Family"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Heterozygosity"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Allelic.richness"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Breeding.range.size"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Body.mass"],"name":[6],"type":["int"],"align":["right"]},{"label":["Latitude"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Migratory.status"],"name":[8],"type":["chr"],"align":["left"]},{"label":["References"],"name":[9],"type":["chr"],"align":["left"]}],"data":[{"1":"Apteryx australis","2":"Struthioniformes","3":"0.596","4":"4.00","5":"2.0088","6":"2321","7":"45.62","8":"Resident","9":"Shepherd and Lambert 2006; Willoughby et al. 2015","_rn_":"1"},{"1":"Tinamus major","2":"Tinamiformes","3":"0.763","4":"8.56","5":"782.5703","6":"1026","7":"1.54","8":"Resident","9":"Hughes 2010; Willoughby et al. 2015","_rn_":"2"},{"1":"Eudyptes chrysolophus","2":"Sphenisciformes","3":"0.776","4":"10.73","5":"14.5674","6":"4485","7":"54.10","8":"Migratory","9":"Hughes 2010; Willoughby et al. 2015","_rn_":"3"},{"1":"Eudyptula minor","2":"Sphenisciformes","3":"0.540","4":"6.38","5":"60.9832","6":"1108","7":"39.27","8":"Resident","9":"Billing et al. 2007; Willoughby et al. 2015","_rn_":"4"},{"1":"Megadyptes antipodes","2":"Sphenisciformes","3":"0.447","4":"3.25","5":"16.6531","6":"5326","7":"47.30","8":"Resident","9":"Boessenkool et al. 2008; Willoughby et al. 2015","_rn_":"5"},{"1":"Pygoscelis adeliae","2":"Sphenisciformes","3":"0.524","4":"10.50","5":"134.0897","6":"4848","7":"63.01","8":"Migratory","9":"Evans and Sheldon 2008; Roeder et al. 2001","_rn_":"6"},{"1":"Spheniscus humboldti","2":"Sphenisciformes","3":"0.759","4":"7.86","5":"9.0311","6":"4366","7":"23.00","8":"Migratory","9":"Evans and Sheldon 2008; Schlosser et al. 2003","_rn_":"7"},{"1":"Spheniscus magellanicus","2":"Sphenisciformes","3":"0.432","4":"8.40","5":"221.8842","6":"4105","7":"41.47","8":"Migratory","9":"Hughes 2010; Willoughby et al. 2015","_rn_":"8"},{"1":"Podiceps grisegena","2":"Podicipediformes","3":"0.833","4":"11.00","5":"6393.0292","6":"1023","7":"53.39","8":"Migratory","9":"Sachs and Hughes 1999; Willoughby et al. 2015","_rn_":"9"},{"1":"Diomedea exulans","2":"Procellariiformes","3":"0.403","4":"5.00","5":"19615.0430","6":"6961","7":"48.16","8":"Migratory","9":"Hughes 2010; Dubois et al. 2005","_rn_":"10"},{"1":"Oceanodroma castro","2":"Procellariiformes","3":"0.443","4":"4.56","5":"10073.5280","6":"46","7":"11.88","8":"Migratory","9":"Sun et al. 2009; Willoughby et al. 2015","_rn_":"11"},{"1":"Oceanodroma leucorhoa","2":"Procellariiformes","3":"0.565","4":"4.40","5":"17449.7600","6":"37","7":"36.78","8":"Migratory","9":"Bicknell et al. 2011; Willoughby et al. 2015","_rn_":"12"},{"1":"Procellaria aequinoctialis","2":"Procellariiformes","3":"0.547","4":"5.30","5":"20158.6220","6":"1213","7":"49.12","8":"Migratory","9":"Evans and Sheldon 2008; Techow and O'Ryan 2004","_rn_":"13"},{"1":"Pterodroma arminjoniana","2":"Procellariiformes","3":"0.480","4":"4.40","5":"2604.1121","6":"394","7":"13.47","8":"Migratory","9":"Brown et al. 2010; Willoughby et al. 2015","_rn_":"14"},{"1":"Puffinus carneipes","2":"Procellariiformes","3":"0.614","4":"6.80","5":"14852.9510","6":"609","7":"33.05","8":"Migratory","9":"Hardesty et al. 2013; Willoughby et al. 2015","_rn_":"15"},{"1":"Puffinus yelkouan","2":"Procellariiformes","3":"0.530","4":"4.63","5":"486.0966","6":"497","7":"39.47","8":"Migratory","9":"Genovart et al. 2012; Willoughby et al. 2015","_rn_":"16"},{"1":"Thalassarche bulleri","2":"Procellariiformes","3":"0.640","4":"6.40","5":"2569.8572","6":"2782","7":"40.92","8":"Migratory","9":"Van Bekkum et al. 2006; Willoughby et al. 2015","_rn_":"17"},{"1":"Thalassarche cauta","2":"Procellariiformes","3":"0.590","4":"4.00","5":"3752.8479","6":"3898","7":"40.09","8":"Migratory","9":"Abbott and Double 2003; Willoughby et al. 2015","_rn_":"18"},{"1":"Thalassarche chrysostoma","2":"Procellariiformes","3":"0.459","4":"4.00","5":"20522.3570","6":"3499","7":"49.84","8":"Migratory","9":"Evans and Sheldon 2008; Willoughby et al. 2015","_rn_":"19"},{"1":"Pelecanus erythrorhynchos","2":"Pelecaniformes","3":"0.647","4":"4.80","5":"292.9164","6":"5609","7":"32.84","8":"Migratory","9":"Hughes 2010; Hickman et al. 2008","_rn_":"20"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
 <table class="table">
 <caption><a href="../data/bird-diversity.csv">bird-diversity.csv</a></caption>
 <thead>
@@ -375,6 +397,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>

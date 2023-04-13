@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -62,6 +62,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 </head>
 
@@ -87,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../by-method.html" aria-current="page">
- <span class="menu-text">Datasets by Methods</span></a>
+ <span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../submit-data.html">
@@ -119,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../by-method.html" class="sidebar-item-text sidebar-link">Datasets by Methods</a>
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">All Datasets</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,7 +275,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -330,6 +337,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>Each row is one experimental subject, randomized to see either Discobolus or The Thinker.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["condition"],"name":[1],"type":["chr"],"align":["left"]},{"label":["site"],"name":[2],"type":["chr"],"align":["left"]},{"label":["religious"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[4],"type":["int"],"align":["right"]},{"label":["gender"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"discus","2":"Online","3":"50","4":"24","5":"Female","_rn_":"1"},{"1":"discus","2":"Online","3":"2","4":"28","5":"Male","_rn_":"2"},{"1":"discus","2":"Online","3":"0","4":"21","5":"Female","_rn_":"3"},{"1":"discus","2":"Online","3":"0","4":"61","5":"Female","_rn_":"4"},{"1":"thinker","2":"Online","3":"20","4":"36","5":"Male","_rn_":"5"},{"1":"thinker","2":"Online","3":"100","4":"46","5":"Female","_rn_":"6"},{"1":"thinker","2":"Online","3":"1","4":"25","5":"Male","_rn_":"7"},{"1":"thinker","2":"Online","3":"20","4":"24","5":"Female","_rn_":"8"},{"1":"discus","2":"Online","3":"100","4":"33","5":"Female","_rn_":"9"},{"1":"thinker","2":"Online","3":"100","4":"61","5":"Male","_rn_":"10"},{"1":"thinker","2":"Online","3":"60","4":"25","5":"Male","_rn_":"11"},{"1":"discus","2":"Online","3":"0","4":"37","5":"Male","_rn_":"12"},{"1":"thinker","2":"Online","3":"0","4":"27","5":"Female","_rn_":"13"},{"1":"thinker","2":"Online","3":"100","4":"21","5":"Female","_rn_":"14"},{"1":"discus","2":"Online","3":"100","4":"48","5":"Female","_rn_":"15"},{"1":"discus","2":"Online","3":"1","4":"55","5":"Female","_rn_":"16"},{"1":"thinker","2":"Online","3":"75","4":"31","5":"Female","_rn_":"17"},{"1":"thinker","2":"Online","3":"5","4":"47","5":"Female","_rn_":"18"},{"1":"discus","2":"Online","3":"95","4":"24","5":"Male","_rn_":"19"},{"1":"discus","2":"Online","3":"80","4":"30","5":"Female","_rn_":"20"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
 <table class="table">
 <caption><a href="../data/religion-analytic.csv">religion-analytic.csv</a></caption>
 <thead>
@@ -361,6 +383,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -62,6 +62,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 </head>
 
@@ -87,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../by-method.html" aria-current="page">
- <span class="menu-text">Datasets by Methods</span></a>
+ <span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../submit-data.html">
@@ -119,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../by-method.html" class="sidebar-item-text sidebar-link">Datasets by Methods</a>
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">All Datasets</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,7 +275,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -325,6 +332,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>Each observation is one animal species. Note that many variables are missing for individual species, so you may need to restrict your analysis to complete observations.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["HAGRID"],"name":[1],"type":["int"],"align":["right"]},{"label":["Kingdom"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Phylum"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Class"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Order"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Family"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Genus"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Species"],"name":[8],"type":["chr"],"align":["left"]},{"label":["Common.name"],"name":[9],"type":["chr"],"align":["left"]},{"label":["Maximum.longevity.yrs"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Body.mass.g"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Metabolic.rate"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["Temperature"],"name":[13],"type":["dbl"],"align":["right"]}],"data":[{"1":"3","2":"Animalia","3":"Arthropoda","4":"Branchiopoda","5":"Diplostraca","6":"Daphniidae","7":"Daphnia","8":"pulicaria","9":"Daphnia","10":"0.19","11":"NA","12":"NA","13":"NA","_rn_":"1"},{"1":"5","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Diptera","6":"Drosophilidae","7":"Drosophila","8":"melanogaster","9":"Fruit fly","10":"0.30","11":"NA","12":"NA","13":"NA","_rn_":"2"},{"1":"6","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Apidae","7":"Apis","8":"mellifera","9":"Honey bee","10":"8.00","11":"NA","12":"NA","13":"NA","_rn_":"3"},{"1":"8","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Formicidae","7":"Cardiocondyla","8":"obscurior","9":"Cardiocondyla obscurior","10":"0.50","11":"NA","12":"NA","13":"NA","_rn_":"4"},{"1":"9","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Formicidae","7":"Lasius","8":"niger","9":"Black garden ant","10":"28.00","11":"NA","12":"NA","13":"NA","_rn_":"5"},{"1":"10","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Formicidae","7":"Pheidole","8":"dentata","9":"Pheidole dentata","10":"0.40","11":"NA","12":"NA","13":"NA","_rn_":"6"},{"1":"11","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Lepidoptera","6":"Nymphalidae","7":"Bicyclus","8":"anynana","9":"Squinting bush brown","10":"0.50","11":"NA","12":"NA","13":"NA","_rn_":"7"},{"1":"12","2":"Animalia","3":"Arthropoda","4":"Malacostraca","5":"Decapoda","6":"Nephropidae","7":"Homarus","8":"americanus","9":"American lobster","10":"100.00","11":"NA","12":"NA","13":"NA","_rn_":"8"},{"1":"15","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bombinatoridae","7":"Bombina","8":"bombina","9":"Firebelly toad","10":"20.00","11":"NA","12":"NA","13":"NA","_rn_":"9"},{"1":"16","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bombinatoridae","7":"Bombina","8":"orientalis","9":"Oriental firebelly toad","10":"15.80","11":"NA","12":"NA","13":"NA","_rn_":"10"},{"1":"17","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bombinatoridae","7":"Bombina","8":"variegata","9":"Yellow-bellied toad","10":"29.00","11":"NA","12":"NA","13":"NA","_rn_":"11"},{"1":"18","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"americanus","9":"American toad","10":"36.00","11":"21.6","12":"0.00829","13":"288","_rn_":"12"},{"1":"19","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"boreas","9":"Western toad","10":"11.50","11":"NA","12":"NA","13":"NA","_rn_":"13"},{"1":"20","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"canorus","9":"Yosemite toad","10":"15.00","11":"NA","12":"NA","13":"NA","_rn_":"14"},{"1":"21","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"cognatus","9":"Great plains toad","10":"10.70","11":"NA","12":"NA","13":"NA","_rn_":"15"},{"1":"22","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"debilis","9":"Green toad","10":"12.40","11":"NA","12":"NA","13":"NA","_rn_":"16"},{"1":"23","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"hemiophrys","9":"Canadian toad","10":"13.30","11":"NA","12":"NA","13":"NA","_rn_":"17"},{"1":"24","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"punctatus","9":"Red-spotted toad","10":"11.30","11":"NA","12":"NA","13":"NA","_rn_":"18"},{"1":"25","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"retiformis","9":"Sonoran green toad","10":"15.30","11":"NA","12":"NA","13":"NA","_rn_":"19"},{"1":"26","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"terrestris","9":"Southern toad","10":"10.00","11":"19.2","12":"0.00698","13":"288","_rn_":"20"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
 <table class="table">
 <caption><a href="../data/anage.csv">anage.csv</a></caption>
 <thead>
@@ -388,6 +410,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>

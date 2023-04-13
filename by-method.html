@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CMU S&amp;DS Data Repository - Datasets by Methods</title>
+<title>CMU S&amp;DS Data Repository - All Datasets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-datayear','listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./by-method.html" aria-current="page">
- <span class="menu-text">Datasets by Methods</span></a>
+ <span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./submit-data.html">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Datasets by Methods</h1>
+      <h1 class="quarto-secondary-nav-title">All Datasets</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./by-method.html" class="sidebar-item-text sidebar-link active">Datasets by Methods</a>
+  <a href="./by-method.html" class="sidebar-item-text sidebar-link active">All Datasets</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -303,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Datasets by Methods</h1>
+<h1 class="title d-none d-lg-block">All Datasets</h1>
 </div>
 
 
@@ -322,499 +322,250 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="linear regression" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1678887112136" data-listing-reading-time-sort="2.025">
-<div class="body">
-<a href="./biology/anage.html">
-<h3 class="no-anchor listing-title">
-AnAge Longevity Database
-</h3>
-<div class="listing-subtitle">
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Published - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Published - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-</div>
-<a href="./biology/anage.html">
-<div class="listing-description">
-<p>The AnAge database includes information on the longevity of thousands of animal species, allowing studies of the factors related to long lifespans.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./biology/anage.html">
-<div class="listing-date">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Data Year
+</th>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Published</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="linear regression" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1681400190882" data-listing-reading-time-sort="2.08" data-listing-title-sort="AnAge Longevity Database" data-listing-filename-sort="anage.qmd">
+<td class="listing-datayear">
+2017
+</td>
+<td class="listing-date">
 Dec 27, 2021
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./biology/anage.html" class="title">AnAge Longevity Database</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="linear regression,hierarchical model" data-listing-date-sort="1562716800000" data-listing-file-modified-sort="1678887112136" data-listing-reading-time-sort="3.04">
-<div class="body">
-<a href="./biology/bird-diversity.html">
-<h3 class="no-anchor listing-title">
-Bird genetic diversity
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('hierarchical model'); return false;">
-hierarchical model
-</div>
-</div>
-<a href="./biology/bird-diversity.html">
-<div class="listing-description">
-<p>Evolutionary theory suggests that species spread over a wider geographic range should have greater genetic diversity. Does this hold true in birds? An observational study of 387 bird species.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./biology/bird-diversity.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="1" data-categories="linear regression,hierarchical model" data-listing-date-sort="1562716800000" data-listing-file-modified-sort="1681400190882" data-listing-reading-time-sort="3.095" data-listing-title-sort="Bird genetic diversity" data-listing-filename-sort="bird-diversity.qmd">
+<td class="listing-datayear">
+2019
+</td>
+<td class="listing-date">
 Jul 10, 2019
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./biology/bird-diversity.html" class="title">Bird genetic diversity</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="classification" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1678887112136" data-listing-reading-time-sort="3.82">
-<div class="body">
-<a href="./biology/dry-beans.html">
-<h3 class="no-anchor listing-title">
-Dry beans
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('classification'); return false;">
-classification
-</div>
-</div>
-<a href="./biology/dry-beans.html">
-<div class="listing-description">
-<p>Sort and classify beans using features extracted from images.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./biology/dry-beans.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="2" data-categories="classification" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1681400190882" data-listing-reading-time-sort="3.875" data-listing-title-sort="Dry beans" data-listing-filename-sort="dry-beans.qmd">
+<td class="listing-datayear">
+2020
+</td>
+<td class="listing-date">
 Dec 27, 2021
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./biology/dry-beans.html" class="title">Dry beans</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1675382400000" data-listing-file-modified-sort="1678887112136" data-listing-reading-time-sort="2.815">
-<div class="body">
-<a href="./astronomy/buzzard.html">
-<h3 class="no-anchor listing-title">
-Galaxy mass prediction
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('nonparametric regression'); return false;">
-nonparametric regression
-</div>
-</div>
-<a href="./astronomy/buzzard.html">
-<div class="listing-description">
-<p>Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy’s mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./astronomy/buzzard.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="3" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1675382400000" data-listing-file-modified-sort="1681400190882" data-listing-reading-time-sort="2.855" data-listing-title-sort="Galaxy mass prediction" data-listing-filename-sort="buzzard.qmd">
+<td class="listing-datayear">
+2020
+</td>
+<td class="listing-date">
 Feb 3, 2023
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./astronomy/buzzard.html" class="title">Galaxy mass prediction</a>
+</td>
+<td class="listing-author">
 Peter Freeman
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="surveys,classification,logistic regression" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1678887112264" data-listing-reading-time-sort="7.16">
-<div class="body">
-<a href="./medicine/vietnam-health.html">
-<h3 class="no-anchor listing-title">
-Health exams in Vietnam
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('surveys'); return false;">
-surveys
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('classification'); return false;">
-classification
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('logistic regression'); return false;">
-logistic regression
-</div>
-</div>
-<a href="./medicine/vietnam-health.html">
-<div class="listing-description">
-<p>As access to health care increases, public health advocates encourage ordinary people to get regular check-ups to detect problems before they become serious (and expensive). But not everyone follows this advice. This survey of people in Vietnam explores the factors leading people to get regular check-ups.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./medicine/vietnam-health.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="4" data-categories="surveys,classification,logistic regression" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="7.215" data-listing-title-sort="Health exams in Vietnam" data-listing-filename-sort="vietnam-health.qmd">
+<td class="listing-datayear">
+2017
+</td>
+<td class="listing-date">
 Dec 8, 2022
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./medicine/vietnam-health.html" class="title">Health exams in Vietnam</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1565740800000" data-listing-file-modified-sort="1678887112264" data-listing-reading-time-sort="9.065">
-<div class="body">
-<a href="./money/ames-housing.html">
-<h3 class="no-anchor listing-title">
-House prices in Ames, Iowa
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('nonparametric regression'); return false;">
-nonparametric regression
-</div>
-</div>
-<a href="./money/ames-housing.html">
-<div class="listing-description">
-<p>Records of homes sold in Ames, Iowa, and their sale prices, including detailed covariates that could be used to predict home prices.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./money/ames-housing.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="5" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1565740800000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="9.12" data-listing-title-sort="House prices in Ames, Iowa" data-listing-filename-sort="ames-housing.qmd">
+<td class="listing-datayear">
+2010
+</td>
+<td class="listing-date">
 Aug 14, 2019
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./money/ames-housing.html" class="title">House prices in Ames, Iowa</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="GLMs,experimental design" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1678887112136" data-listing-reading-time-sort="6.73">
-<div class="body">
-<a href="./biology/bug-attraction.html">
-<h3 class="no-anchor listing-title">
-Insect attraction to light
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('GLMs'); return false;">
-GLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('experimental design'); return false;">
-experimental design
-</div>
-</div>
-<a href="./biology/bug-attraction.html">
-<div class="listing-description">
-<p>What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./biology/bug-attraction.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="6" data-categories="GLMs,experimental design" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1681400190882" data-listing-reading-time-sort="6.79" data-listing-title-sort="Insect attraction to light" data-listing-filename-sort="bug-attraction.qmd">
+<td class="listing-datayear">
+2015
+</td>
+<td class="listing-date">
 Dec 8, 2022
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./biology/bug-attraction.html" class="title">Insect attraction to light</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1667520000000" data-listing-file-modified-sort="1678887112268" data-listing-reading-time-sort="2.935">
-<div class="body">
-<a href="./psychology/male-makeup.html">
-<h3 class="no-anchor listing-title">
-Makeup and male attractiveness
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ANOVA'); return false;">
-ANOVA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('hierarchical model'); return false;">
-hierarchical model
-</div>
-</div>
-<a href="./psychology/male-makeup.html">
-<div class="listing-description">
-<p>Makeup is often used by women, but does makeup make men more attractive? This study had participants rate photos of men with and without makeup on.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./psychology/male-makeup.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="7" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1667520000000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="2.935" data-listing-title-sort="Makeup and male attractiveness" data-listing-filename-sort="male-makeup.qmd">
+<td class="listing-datayear">
+2022
+</td>
+<td class="listing-date">
 Nov 4, 2022
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./psychology/male-makeup.html" class="title">Makeup and male attractiveness</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1658880000000" data-listing-file-modified-sort="1678887112264" data-listing-reading-time-sort="4.495">
-<div class="body">
-<a href="./money/rail-trails.html">
-<h3 class="no-anchor listing-title">
-Rail trails and property values
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('nonparametric regression'); return false;">
-nonparametric regression
-</div>
-</div>
-<a href="./money/rail-trails.html">
-<div class="listing-description">
-<p>Rail trails are a great recreation opportunity, but do homes near them rise in value? A retrospective observational study of house values.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./money/rail-trails.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="8" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1658880000000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="4.55" data-listing-title-sort="Rail trails and property values" data-listing-filename-sort="rail-trails.qmd">
+<td class="listing-datayear">
+2014
+</td>
+<td class="listing-date">
 Jul 27, 2022
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./money/rail-trails.html" class="title">Rail trails and property values</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="ANOVA,linear regression" data-listing-date-sort="1487980800000" data-listing-file-modified-sort="1678887112268" data-listing-reading-time-sort="2.05">
-<div class="body">
-<a href="./psychology/religion-analytic-thinking.html">
-<h3 class="no-anchor listing-title">
-Religion and analytic thinking
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ANOVA'); return false;">
-ANOVA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-</div>
-<a href="./psychology/religion-analytic-thinking.html">
-<div class="listing-description">
-<p>A controversial study found that encouraging analytic thinking also reduced religious belief. A replication attempt collected much more data to try to confirm the hypothesis; is it supported by the data? A simple randomized experiment with continuous outcome and demographic controls.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./psychology/religion-analytic-thinking.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="9" data-categories="ANOVA,linear regression" data-listing-date-sort="1487980800000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="2.105" data-listing-title-sort="Religion and analytic thinking" data-listing-filename-sort="religion-analytic-thinking.qmd">
+<td class="listing-datayear">
+2017
+</td>
+<td class="listing-date">
 Feb 25, 2017
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./psychology/religion-analytic-thinking.html" class="title">Religion and analytic thinking</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="GLMs,classification,linear regression" data-listing-date-sort="1487721600000" data-listing-file-modified-sort="1678887112268" data-listing-reading-time-sort="4.465">
-<div class="body">
-<a href="./social/science-forums.html">
-<h3 class="no-anchor listing-title">
-Science Forums
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('GLMs'); return false;">
-GLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('classification'); return false;">
-classification
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-</div>
-<a href="./social/science-forums.html">
-<div class="listing-description">
-<p>A random sample of discussions at a large science discussion forum, with metadata about each.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./social/science-forums.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="10" data-categories="GLMs,classification,linear regression" data-listing-date-sort="1487721600000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="4.56" data-listing-title-sort="Science Forums" data-listing-filename-sort="science-forums.qmd">
+<td class="listing-datayear">
+2014
+</td>
+<td class="listing-date">
 Feb 22, 2017
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./social/science-forums.html" class="title">Science Forums</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-categories="ANOVA,linear regression" data-listing-date-sort="1567296000000" data-listing-file-modified-sort="1678887112268" data-listing-reading-time-sort="9.37">
-<div class="body">
-<a href="./psychology/plate-size.html">
-<h3 class="no-anchor listing-title">
-Serving sizes and plate sizes
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ANOVA'); return false;">
-ANOVA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-</div>
-<a href="./psychology/plate-size.html">
-<div class="listing-description">
-<p>Do people eat more food if their meals are served on larger plates? A randomized experiment with demographic and psychological control variables.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./psychology/plate-size.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="11" data-categories="ANOVA,linear regression" data-listing-date-sort="1567296000000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="9.42" data-listing-title-sort="Serving sizes and plate sizes" data-listing-filename-sort="plate-size.qmd">
+<td class="listing-datayear">
+2019
+</td>
+<td class="listing-date">
 Sep 1, 2019
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./psychology/plate-size.html" class="title">Serving sizes and plate sizes</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-categories="ANOVA,logistic regression" data-listing-date-sort="1497398400000" data-listing-file-modified-sort="1678887112268" data-listing-reading-time-sort="4.735">
-<div class="body">
-<a href="./psychology/sugary-drinks.html">
-<h3 class="no-anchor listing-title">
-Sugary drinks and portion limits
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ANOVA'); return false;">
-ANOVA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('logistic regression'); return false;">
-logistic regression
-</div>
-</div>
-<a href="./psychology/sugary-drinks.html">
-<div class="listing-description">
-<p>Public health officials are interested in policies that would reduce consumption of sugary drinks. What policies work and what policies backfire? A factorial experiment.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./psychology/sugary-drinks.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="12" data-categories="ANOVA,logistic regression" data-listing-date-sort="1497398400000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="4.79" data-listing-title-sort="Sugary drinks and portion limits" data-listing-filename-sort="sugary-drinks.qmd">
+<td class="listing-datayear">
+2017
+</td>
+<td class="listing-date">
 Jun 14, 2017
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./psychology/sugary-drinks.html" class="title">Sugary drinks and portion limits</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="13" data-categories="linear regression" data-listing-date-sort="1529280000000" data-listing-file-modified-sort="1678887112268" data-listing-reading-time-sort="4.52">
-<div class="body">
-<a href="./psychology/hormone-diversity.html">
-<h3 class="no-anchor listing-title">
-Testosterone and diversity
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-</div>
-<a href="./psychology/hormone-diversity.html">
-<div class="listing-description">
-<p>When students work on group projects, they work better when their groups are diverse. This study asked if that depends on the testosterone level of the group, and if high-testosterone groups benefit less from diversity.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./psychology/hormone-diversity.html">
-<div class="listing-date">
+</td>
+</tr>
+<tr data-index="13" data-categories="linear regression" data-listing-date-sort="1529280000000" data-listing-file-modified-sort="1681400190982" data-listing-reading-time-sort="4.52" data-listing-title-sort="Testosterone and diversity" data-listing-filename-sort="hormone-diversity.qmd">
+<td class="listing-datayear">
+2018
+</td>
+<td class="listing-date">
 Jun 18, 2018
-</div>
-<div class="listing-author">
+</td>
+<td class="listing-title">
+<a href="./psychology/hormone-diversity.html" class="title">Testosterone and diversity</a>
+</td>
+<td class="listing-author">
 Alex Reinhart
-</div>
-</a>
-</div>
-</div>
-</div>
+</td>
+</tr>
+</tbody>
+
+</table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>

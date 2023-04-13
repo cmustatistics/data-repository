@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -62,6 +62,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 </head>
 
@@ -87,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../by-method.html" aria-current="page">
- <span class="menu-text">Datasets by Methods</span></a>
+ <span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../submit-data.html">
@@ -119,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../by-method.html" class="sidebar-item-text sidebar-link">Datasets by Methods</a>
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">All Datasets</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,7 +275,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -328,7 +335,22 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Each row is one topic; each topic can include many posts.</p>
+<p>Each row is one topic; each topic can include many posts. This dataset includes a random sample of 10,000 topics.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["tid"],"name":[1],"type":["int"],"align":["right"]},{"label":["state"],"name":[2],"type":["chr"],"align":["left"]},{"label":["posts"],"name":[3],"type":["int"],"align":["right"]},{"label":["views"],"name":[4],"type":["int"],"align":["right"]},{"label":["duration"],"name":[5],"type":["int"],"align":["right"]},{"label":["startdate"],"name":[6],"type":["chr"],"align":["left"]},{"label":["forum_id"],"name":[7],"type":["int"],"align":["right"]},{"label":["authors"],"name":[8],"type":["int"],"align":["right"]},{"label":["deleted_posts"],"name":[9],"type":["int"],"align":["right"]},{"label":["not_deleted"],"name":[10],"type":["int"],"align":["right"]},{"label":["pinned"],"name":[11],"type":["int"],"align":["right"]},{"label":["author_exp"],"name":[12],"type":["int"],"align":["right"]},{"label":["author_banned"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"19377","2":"open","3":"4","4":"539","5":"1","6":"2006-05-31 20:19:14","7":"19","8":"2","9":"0","10":"1","11":"0","12":"122","13":"0","_rn_":"1"},{"1":"30525","2":"open","3":"3","4":"647","5":"0","6":"2008-05-25 02:30:57","7":"6","8":"3","9":"0","10":"1","11":"0","12":"0","13":"0","_rn_":"2"},{"1":"79046","2":"open","3":"3","4":"244","5":"0","6":"2013-10-02 18:38:15","7":"29","8":"3","9":"0","10":"1","11":"0","12":"37","13":"1","_rn_":"3"},{"1":"52274","2":"open","3":"3","4":"867","5":"2","6":"2010-10-12 12:57:06","7":"5","8":"2","9":"0","10":"1","11":"0","12":"970","13":"0","_rn_":"4"},{"1":"72102","2":"open","3":"3","4":"643","5":"3","6":"2013-01-12 11:47:10","7":"45","8":"2","9":"0","10":"1","11":"0","12":"0","13":"0","_rn_":"5"},{"1":"80035","2":"open","3":"3","4":"315","5":"2","6":"2013-11-13 22:38:17","7":"14","8":"2","9":"0","10":"1","11":"0","12":"0","13":"0","_rn_":"6"},{"1":"78985","2":"open","3":"15","4":"1120","5":"1","6":"2013-09-30 08:52:49","7":"8","8":"5","9":"0","10":"1","11":"0","12":"255","13":"0","_rn_":"7"},{"1":"14955","2":"open","3":"4","4":"419","5":"1","6":"2005-11-22 09:20:02","7":"60","8":"3","9":"0","10":"1","11":"0","12":"837","13":"0","_rn_":"8"},{"1":"13511","2":"open","3":"15","4":"8598","5":"1014","6":"2005-10-04 17:35:24","7":"15","8":"12","9":"0","10":"1","11":"0","12":"515","13":"0","_rn_":"9"},{"1":"3354","2":"open","3":"3","4":"610","5":"1","6":"2004-04-29 08:16:00","7":"7","8":"3","9":"0","10":"1","11":"0","12":"57","13":"0","_rn_":"10"},{"1":"48876","2":"open","3":"4","4":"768","5":"1","6":"2010-05-24 20:24:02","7":"104","8":"4","9":"1","10":"1","11":"0","12":"13","13":"0","_rn_":"11"},{"1":"13625","2":"open","3":"6","4":"475","5":"1","6":"2005-10-07 19:25:10","7":"10","8":"4","9":"0","10":"1","11":"0","12":"276","13":"0","_rn_":"12"},{"1":"25086","2":"open","3":"4","4":"4381","5":"34","6":"2007-06-18 10:30:02","7":"59","8":"4","9":"0","10":"1","11":"0","12":"13","13":"0","_rn_":"13"},{"1":"83841","2":"closed","3":"34","4":"649","5":"2","6":"2014-06-21 18:44:23","7":"29","8":"11","9":"0","10":"1","11":"0","12":"0","13":"1","_rn_":"14"},{"1":"70742","2":"open","3":"4","4":"490","5":"27","6":"2012-11-21 19:03:02","7":"5","8":"2","9":"0","10":"1","11":"0","12":"1071","13":"0","_rn_":"15"},{"1":"51895","2":"open","3":"8","4":"1245","5":"3","6":"2010-09-21 01:24:21","7":"6","8":"6","9":"0","10":"1","11":"0","12":"730","13":"0","_rn_":"16"},{"1":"11964","2":"open","3":"17","4":"2852","5":"3","6":"2005-08-02 11:07:32","7":"60","8":"6","9":"0","10":"1","11":"0","12":"379","13":"0","_rn_":"17"},{"1":"9295","2":"open","3":"6","4":"804","5":"1","6":"2005-04-12 19:41:48","7":"9","8":"3","9":"0","10":"1","11":"0","12":"42","13":"1","_rn_":"18"},{"1":"28435","2":"open","3":"8","4":"1075","5":"1","6":"2008-01-19 17:40:15","7":"18","8":"6","9":"0","10":"1","11":"0","12":"1625","13":"0","_rn_":"19"},{"1":"42897","2":"open","3":"9","4":"1439","5":"0","6":"2009-11-19 16:25:53","7":"16","8":"6","9":"0","10":"1","11":"0","12":"52","13":"0","_rn_":"20"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
 <table class="table">
 <caption><a href="../data/sfn-sample.csv">sfn-sample.csv</a></caption>
 <thead>
@@ -456,6 +478,7 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>You may see other forum IDs present; those are staff meetings, announcements, and other small one-off forums that may not be representative of the main science discussion sections.</p>
+</section>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
