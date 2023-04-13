@@ -10,6 +10,8 @@ categories:
   - with this dataset
   - one per line
   - with two spaces and a hyphen in front
+datayear: Year dataset was collected/produced (YYYY)
+datafile: name-of-data-file.csv
 ---
 
 ## Motivation
@@ -31,18 +33,23 @@ basics](https://quarto.org/docs/authoring/markdown-basics.html).
 Describe the data. What does each row represent? How many rows are there? If
 there is missingness, say how it is coded and why it is present.
 
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
 | Variable | Description |
 |----|-------------|
 | Column name | A description of this variable, including units when possible |
 | Column name 2 | A description of this variable, including units when possible |
 
-: [filename.csv](../data/filename.csv)
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
-For the link above, change filename.csv to the name of the data file. Leave the
-`../data/` part in the link; this is where the data will live in the system.
-
-If there are multiple data files, repeat the table, including the line starting
-with `:`, for each data file.
+If there are multiple data files, repeat the table for each data file.
 
 ## Questions
 
