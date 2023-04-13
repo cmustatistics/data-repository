@@ -47,7 +47,12 @@ each student, along with their testosterone and cortisol levels. The second file
 reports the performance of the teams on their projects. There were 370 students
 in 74 groups.
 
-### Individual Data
+### Individual data
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset(dataset = "hormone-diversity-individual.csv")
+```
 
 | Variable | Description |
 |----|-------------|
@@ -64,6 +69,10 @@ in 74 groups.
 : [hormone-diversity-individual.csv](../data/hormone-diversity-individual.csv)
 
 ### Team data
+
+```{r, echo=FALSE}
+preview_dataset(dataset = "hormone-diversity-teams.csv")
+```
 
 | Variable | Description |
 |----|-------------|
