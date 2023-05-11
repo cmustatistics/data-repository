@@ -16,10 +16,9 @@ datafile: name-of-data-file.csv
 
 ## Motivation
 
-The categories above determine how this dataset is listed on the [datasets by
-methods](http://rosmarus.refsmmat.com/data-repository/by-method.html) page.
-Consult that page for a list of statistical categories already used by other
-datasets.
+The categories above determine how this dataset is listed in the [table of all
+datasets](https://cmustatistics.github.io/data-repository/by-method.html). Consult
+that page for a list of statistical categories already used by other datasets.
 
 In this first section, describe the source of the dataset and what it's about.
 Give any necessary background about it and the research question. See other
