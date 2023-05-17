@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2023-05-17">
+<meta name="description" content="Is low core temperature during surgery associated with poor surgical outcomes or death? Use logistic and survival analysis to study an observational dataset.">
+
+<title>CMU S&amp;DS Data Repository - Core temperature during surgery</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
+ <span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html" rel="" target="">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html" rel="" target="">
+ <span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/core-temperature.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/core-temperature.html">Core temperature during surgery</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Astronomy</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Biology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Medicine</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Money</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Social</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
+  <ul class="collapse">
+  <li><a href="#introductory" id="toc-introductory" class="nav-link" data-scroll-target="#introductory">Introductory</a></li>
+  <li><a href="#advanced-regression" id="toc-advanced-regression" class="nav-link" data-scroll-target="#advanced-regression">Advanced regression</a></li>
+  <li><a href="#survival-analysis" id="toc-survival-analysis" class="nav-link" data-scroll-target="#survival-analysis">Survival analysis</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/core-temperature.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Core temperature during surgery</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">logistic regression</div>
+    <div class="quarto-category">survival analysis</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Is low core temperature during surgery associated with poor surgical outcomes or death? Use logistic and survival analysis to study an observational dataset.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alex Reinhart </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 17, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>During surgery that uses general anesthesia, patients often can have their body temperatures drop significantly. Anesthetics disrupt the body’s automatic mechanisms for maintaining body temperature, and they also tend to reduce the metabolism, meaning the body uses less energy and produces less heat. This can produce what is called “surgical hypothermia” or “inadvertent perioperative hypothermia” (IPH), when the body temperature drops below 36°C (96.8°F) during surgery. IPH can reduce the effectiveness of drugs, increase surgical bleeding, and delay recovery from surgery.</p>
+<p>Researchers wanted to know whether IPH was also associated with surgical site infections (SSIs), which are also a serious problem during surgery. A surgical site infection can cause a patient to stay in the hospital longer or even lead to death. Some research suggested that IPH could increase the risk of SSIs, and so a new study explored whether there was an association between IPH and SSIs in patients who had colorectal surgery.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The dataset includes 7,908 patients who had colorectal surgery at the Cleveland Clinic between 2005 and 2014. Patients were included in the study if their surgery took more than one hour and required general anesthesia, and if their esophogeal core temperature was monitored and sufficient baseline and outcome data was collected.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["YEAR"],"name":[1],"type":["int"],"align":["right"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["FEMALE"],"name":[3],"type":["int"],"align":["right"]},{"label":["BMI"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["CharlsonScore"],"name":[5],"type":["int"],"align":["right"]},{"label":["SurgeryType"],"name":[6],"type":["lgl"],"align":["right"]},{"label":["CHF"],"name":[7],"type":["int"],"align":["right"]},{"label":["VALVE"],"name":[8],"type":["int"],"align":["right"]},{"label":["DM"],"name":[9],"type":["int"],"align":["right"]},{"label":["RENLFAIL"],"name":[10],"type":["int"],"align":["right"]},{"label":["LIVER"],"name":[11],"type":["int"],"align":["right"]},{"label":["METS"],"name":[12],"type":["int"],"align":["right"]},{"label":["TUMOR"],"name":[13],"type":["int"],"align":["right"]},{"label":["COAG"],"name":[14],"type":["int"],"align":["right"]},{"label":["OBESE"],"name":[15],"type":["int"],"align":["right"]},{"label":["WGHTLOSS"],"name":[16],"type":["int"],"align":["right"]},{"label":["LYTES"],"name":[17],"type":["int"],"align":["right"]},{"label":["BLDLOSS"],"name":[18],"type":["int"],"align":["right"]},{"label":["ANEMDEF"],"name":[19],"type":["int"],"align":["right"]},{"label":["DRUG"],"name":[20],"type":["int"],"align":["right"]},{"label":["SteroidHx"],"name":[21],"type":["int"],"align":["right"]},{"label":["ImmunosuppressantHx"],"name":[22],"type":["int"],"align":["right"]},{"label":["SurgDuration"],"name":[23],"type":["int"],"align":["right"]},{"label":["Open"],"name":[24],"type":["int"],"align":["right"]},{"label":["AbsessIntraAb"],"name":[25],"type":["int"],"align":["right"]},{"label":["AbsessPelvic"],"name":[26],"type":["int"],"align":["right"]},{"label":["Cdiff"],"name":[27],"type":["int"],"align":["right"]},{"label":["FascialDehiscence"],"name":[28],"type":["int"],"align":["right"]},{"label":["DelayedHealing"],"name":[29],"type":["int"],"align":["right"]},{"label":["Infection"],"name":[30],"type":["int"],"align":["right"]},{"label":["Sinus"],"name":[31],"type":["int"],"align":["right"]},{"label":["Pneumonia"],"name":[32],"type":["int"],"align":["right"]},{"label":["Pneumonia.aspiration."],"name":[33],"type":["int"],"align":["right"]},{"label":["Sepsis"],"name":[34],"type":["int"],"align":["right"]},{"label":["SSIDeep.fascia."],"name":[35],"type":["int"],"align":["right"]},{"label":["SSIOrganSpace"],"name":[36],"type":["int"],"align":["right"]},{"label":["SSISuperficial.skin."],"name":[37],"type":["int"],"align":["right"]},{"label":["WoundInfection"],"name":[38],"type":["int"],"align":["right"]},{"label":["TWATemp"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["LastReadingTemp"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["EndCaseTemp"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["AnyInfection"],"name":[42],"type":["int"],"align":["right"]},{"label":["SeriousInfection"],"name":[43],"type":["int"],"align":["right"]},{"label":["SuperficialInfection"],"name":[44],"type":["int"],"align":["right"]},{"label":["DurationHosp"],"name":[45],"type":["int"],"align":["right"]},{"label":["LOS"],"name":[46],"type":["int"],"align":["right"]},{"label":["DEAD"],"name":[47],"type":["int"],"align":["right"]}],"data":[{"1":"2009","2":"63.7","3":"0","4":"39.3","5":"2","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"1","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"180","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.8","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"},{"1":"2009","2":"58.7","3":"0","4":"25.3","5":"3","6":"NA","7":"0","8":"0","9":"1","10":"0","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"0","23":"205","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.5","40":"35.6","41":"36.1","42":"0","43":"0","44":"0","45":"5","46":"5","47":"0"},{"1":"2009","2":"84.6","3":"0","4":"31.6","5":"1","6":"NA","7":"0","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","14":"1","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"207","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"35.1","40":"35.0","41":"36.2","42":"1","43":"0","44":"1","45":"10","46":"10","47":"0"},{"1":"2009","2":"35.1","3":"1","4":"25.5","5":"0","6":"NA","7":"0","8":"1","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"1","17":"1","18":"0","19":"1","20":"0","21":"1","22":"0","23":"98","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.0","40":"36.2","41":"36.6","42":"0","43":"0","44":"0","45":"4","46":"4","47":"0"},{"1":"2009","2":"49.3","3":"0","4":"22.2","5":"6","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"0","22":"0","23":"90","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.3","40":"35.4","41":"36.2","42":"0","43":"0","44":"0","45":"1","46":"1","47":"0"},{"1":"2009","2":"62.9","3":"0","4":"33.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"1","22":"0","23":"172","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.8","42":"0","43":"0","44":"0","45":"6","46":"6","47":"0"},{"1":"2009","2":"32.7","3":"1","4":"18.8","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"1","22":"1","23":"316","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.3","40":"37.0","41":"36.0","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"52.6","3":"1","4":"30.9","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"381","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.6","40":"37.0","41":"36.8","42":"0","43":"0","44":"0","45":"9","46":"9","47":"0"},{"1":"2009","2":"57.5","3":"0","4":"21.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"95","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"1","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.5","42":"1","43":"1","44":"0","45":"15","46":"15","47":"0"},{"1":"2009","2":"45.5","3":"1","4":"21.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"255","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.7","40":"35.0","41":"36.0","42":"0","43":"0","44":"0","45":"10","46":"10","47":"0"},{"1":"2009","2":"74.1","3":"1","4":"20.9","5":"2","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"174","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.3","40":"35.4","41":"36.2","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"72.9","3":"0","4":"26.3","5":"6","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"1","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"247","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.7","40":"36.8","41":"36.4","42":"0","43":"0","44":"0","45":"21","46":"21","47":"0"},{"1":"2009","2":"53.0","3":"1","4":"27.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"174","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.5","40":"36.8","41":"36.6","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"49.6","3":"0","4":"28.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"1","23":"154","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.6","40":"36.0","41":"36.3","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"47.5","3":"0","4":"27.5","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"0","22":"0","23":"420","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.9","40":"36.6","41":"36.6","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"},{"1":"2009","2":"51.0","3":"0","4":"24.4","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"1","23":"280","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.3","40":"37.0","41":"37.2","42":"0","43":"0","44":"0","45":"9","46":"9","47":"0"},{"1":"2009","2":"72.0","3":"1","4":"34.6","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"1","17":"0","18":"0","19":"1","20":"0","21":"1","22":"0","23":"242","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.8","40":"35.8","41":"36.3","42":"0","43":"0","44":"0","45":"16","46":"16","47":"0"},{"1":"2009","2":"57.8","3":"0","4":"22.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"249","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.9","40":"37.0","41":"36.8","42":"0","43":"0","44":"0","45":"14","46":"14","47":"0"},{"1":"2009","2":"61.9","3":"0","4":"29.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"374","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"35.7","40":"36.2","41":"37.0","42":"1","43":"0","44":"1","45":"7","46":"7","47":"0"},{"1":"2009","2":"33.7","3":"1","4":"20.5","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"0","23":"291","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.7","40":"37.6","41":"36.9","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<p>The variables include a number of baseline features about the patient and their health before surgery. They also categorize different types of infections after surgery, so specific infections can be analyzed individually, or we can consider all serious or superficial infections together.</p>
+<table class="table">
+<caption><a href="../data/core-temperature.csv">core-temperature.csv</a></caption>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>YEAR</td>
+<td>Year of surgery</td>
+</tr>
+<tr class="even">
+<td>Age</td>
+<td>Patient’s age at the time of the surgery</td>
+</tr>
+<tr class="odd">
+<td>FEMALE</td>
+<td>Patient’s sex at birth (1 = female, 0 = male)</td>
+</tr>
+<tr class="even">
+<td>BMI</td>
+<td>Patient’s body mass index (BMI) at time of surgery</td>
+</tr>
+<tr class="odd">
+<td>CharlsonScore</td>
+<td>Patient’s Charlson Comorbidity Index score (higher numbers indicate more comorbidities that could lead to death)</td>
+</tr>
+<tr class="even">
+<td>SurgeryType</td>
+<td>This was meant to record the type of surgery (such as colostomy, ileostomy, or other procedures), but is missing for all patients</td>
+</tr>
+<tr class="odd">
+<td>CHF</td>
+<td>Does the patient have a history of congestive heart failure? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>VALVE</td>
+<td>Does the patient have a history of peripheral vascular disease? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>DM</td>
+<td>Does the patient have a history of diabetes without chronic complications? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>RENLFAIL</td>
+<td>Does the patient have a history of renal failure? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>LIVER</td>
+<td>Does the patient have a history of liver disease? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>METS</td>
+<td>Does the patient have cancer that has metastasized? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>TUMOR</td>
+<td>Does the patient have a solid tumor that has <em>not</em> metastasized? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>COAG</td>
+<td>Does the patient have coagulopathy (a blood clotting disorder)? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>WGHTLOSS</td>
+<td>Has the patient lost weight? (Time period and amount not specified; 1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>LYTES</td>
+<td>Does the patient have fluid or electrolyte disorders? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>BLDLOSS</td>
+<td>Does the patient have chronic blood loss anemia? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>ANEMDEF</td>
+<td>Does the patient have a deficiency anemia? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>DRUG</td>
+<td>Does the patient abuse drugs? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>SteroidHx</td>
+<td>Did the patient use steroid drugs before surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>ImmunosuppressantHx</td>
+<td>Did the patient use immunosuppressive drugs before surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>SurgDuration</td>
+<td>Duration of the surgery, in minutes</td>
+</tr>
+<tr class="odd">
+<td>Open</td>
+<td>Type of surgery. 1 = open surgery, 0 = laparoscopic (“minimally invasive”) surgery.</td>
+</tr>
+<tr class="even">
+<td>AbsessIntraAb</td>
+<td>Did the patient have an intra-abdominal abscess (caused by infection) after the surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>AbsessPelvic</td>
+<td>Did the patient have a pelvic abscess (caused by infection) after the surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>Cdiff</td>
+<td>Did the patient have a <em>Clostridium difficile</em> infection after the surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>FascialDehiscence</td>
+<td>Did the patient suffer fascial dehiscence after surgery? This occurs when the fascia, which surround the organs in the abdomen and holds them in place, fails to heal after surgery and splits open. (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>DelayedHealing</td>
+<td>Was the patient’s healing after surgery delayed? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>Infection</td>
+<td>Did the patient have a post-surgical infection that doesn’t fit into the other categories? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>Sinus</td>
+<td>Did the patient develop an abdominal sinus after surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>SSIDeep(fascia)</td>
+<td>Did the patient develop a surgical site infection deep in the fascia surrounding the organs? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>SSIOrganSpace</td>
+<td>Did the patient develop a surgical site infection in the space surrounding the organs? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>SSISuperficial(skin)</td>
+<td>Did the patient develop a superficial surgical site infection in the skin around the incision? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>WoundInfection</td>
+<td>Did the patient develop an infection in the wound created in surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>TWATemp</td>
+<td>Time weighted average of the patient’s core temperature during surgery, °C</td>
+</tr>
+<tr class="even">
+<td>LastReadingTemp</td>
+<td>Last recorded core temperature prior to surgery, °C</td>
+</tr>
+<tr class="odd">
+<td>EndCaseTemp</td>
+<td>Patient’s core temperature at the end of surgery, °C</td>
+</tr>
+<tr class="even">
+<td>AnyInfection</td>
+<td>Did the patient develop any kind of infection, serious or superficial, within 30 days of surgery? (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>SeriousInfection</td>
+<td>Did the patient develop a serious infection within 30 days of surgery? This includes the infections in the SSIDeep(fascia), SSIOrganSpace, AbsessIntraAb, AbsessPelvic, Cdiff, Pneumonia, Pneumonia(aspiration), and Sepsis variables. (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>SuperficialInfection</td>
+<td>Did the patient develop a superficial infection within 30 days of surgery? This includes the infections in the SSISuperficial(skin), WoundInfection, and FascialDehiscence variables, as well as perineal wound problems. (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>DurationHosp</td>
+<td>Time the patient stayed in the hospital after surgery, in days</td>
+</tr>
+<tr class="even">
+<td>LOS</td>
+<td>Time the patient stayed in the hospital, including time before surgery, in days</td>
+</tr>
+<tr class="odd">
+<td>DEAD</td>
+<td>Did the patient die in the hospital? (1 = yes, 0 = no)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<section id="introductory" class="level3">
+<h3 class="anchored" data-anchor-id="introductory">Introductory</h3>
+<ol type="1">
+<li>What kind of study is this: experimental or observational? What kinds of conclusions could we draw from the results, and what limitations would there be on our ability to draw causal conclusions?</li>
+<li>Plot the distribution of core temperatures during surgery (<code>TWATemp</code>). Comment on the shape of the distribution and find the median.</li>
+<li>Split the patients into two groups: those with temperatures above the median, and those with temperatures below the median. Calculate the proportion of patients in each group who had serious infections (<code>SeriousInfection</code>), and test whether there is a statistically significant difference.</li>
+<li>Compare these groups in other ways. Do they have different baseline health characteristics, such as age, BMI, and problems like liver or heart disease?</li>
+</ol>
+</section>
+<section id="advanced-regression" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-regression">Advanced regression</h3>
+<ol type="1">
+<li>Fit a logistic regression model to predict serious post-operative infections (<code>SeriousInfection</code>) as a function of core temperature during surgery (<code>TWATemp</code>). Interpret the results of this fit.</li>
+<li>Extend your model to control for the covariates used in the original study: “age, sex, body-mass index, smoking status, Charlson score, duration of surgery, open (vs.&nbsp;laparoscopic), preoperative steroid usage, immunosuppressive drug usage,” and presence of heart failure, vascular disease, diabetes, renal failure, metastatic cancer, solid tumor, coagulopathy, weight loss, fluid and electrolyte disorders, blood loss anemia, deficiency anemia, and drug use. Interpret the results of this model, and compare it to the previous fit. What can you conclude about core temperature during surgery?</li>
+<li>Repeat this logistic regression, but to predict <em>superficial</em> infection instead of serious infection (<code>SuperficialInfection</code>). Comment on your results and compare them to the results for serious infection.</li>
+</ol>
+</section>
+<section id="survival-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="survival-analysis">Survival analysis</h3>
+<ol type="1">
+<li><p>Split the patients into two groups: those with surgical core temperatures above the median, and those with temperatures below the median (using <code>TWATemp</code>). Plot estimated survival curves for the length of time the patient spent in the hospital after surgery (<code>DurationHosp</code>). Patients who died in the hospital are censored; the original study analyzed them as follows:</p>
+<blockquote class="blockquote">
+<p>The patients who died before hospital discharge were considered as never having the event and assigned a censoring time using the observed longest duration among those discharged alive.</p>
+</blockquote>
+<p>Interpret your survival curves in the context of the problem. Which group appears to spend longer in the hospital?</p></li>
+<li><p>Use a Cox proportional hazard model to study the association between core temperature during surgery (<code>TWATemp</code>) and time spent in the hospital after surgery (<code>DurationHosp</code>). Control for the confounding variables listed above (for the logistic regression analysis). Interpret your results.</p></li>
+</ol>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Data first adapted for classroom use by: Homoki, J. and Nowacki AS (2023). “Core Temperature Dataset”, TSHS Resources Portal. Available at <a href="https://www.causeweb.org/tshs/core-temperature/" class="uri">https://www.causeweb.org/tshs/core-temperature/</a>. Released under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> license.</p>
+<p>Original study: Walters, Michael J., et al.&nbsp;(2020). “Intraoperative Core Temperature and Infectious Complications after Colorectal Surgery: A Registry Analysis.” <em>Journal of Clinical Anesthesia</em>, vol.&nbsp;63. <a href="https://doi.org/10.1016/j.jclinane.2020.109758" class="uri">https://doi.org/10.1016/j.jclinane.2020.109758</a></p>
+<p>Further information on surgical hypothermia, its causes, and its effects: Riley C, Andrzejowski J. (2018). “Inadvertent perioperative hypothermia.” <em>BJA Education</em> 18(8), 227-233. <a href="https://doi.org/10.1016%2Fj.bjae.2018.05.003" class="uri">https://doi.org/10.1016%2Fj.bjae.2018.05.003</a>. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7807998/">PubMed Central</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
