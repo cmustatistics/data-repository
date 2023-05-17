@@ -1,0 +1,172 @@
+---
+title: Core temperature during surgery
+author: Alex Reinhart
+date: May 17, 2023
+description: Is low core temperature during surgery associated with poor surgical outcomes or death? Use logistic and survival analysis to study an observational dataset.
+categories:
+  - logistic regression
+  - survival analysis
+datayear: 2020
+datafile: core-temperature.csv
+---
+
+## Motivation
+
+During surgery that uses general anesthesia, patients often can have their body
+temperatures drop significantly. Anesthetics disrupt the body's automatic
+mechanisms for maintaining body temperature, and they also tend to reduce the
+metabolism, meaning the body uses less energy and produces less heat. This can
+produce what is called "surgical hypothermia" or "inadvertent perioperative
+hypothermia" (IPH), when the body temperature drops below 36°C (96.8°F) during
+surgery. IPH can reduce the effectiveness of drugs, increase surgical bleeding,
+and delay recovery from surgery.
+
+Researchers wanted to know whether IPH was also associated with surgical site
+infections (SSIs), which are also a serious problem during surgery. A surgical
+site infection can cause a patient to stay in the hospital longer or even lead
+to death. Some research suggested that IPH could increase the risk of SSIs, and
+so a new study explored whether there was an association between IPH and SSIs
+in patients who had colorectal surgery.
+
+## Data
+
+The dataset includes 7,908 patients who had colorectal surgery at the Cleveland
+Clinic between 2005 and 2014. Patients were included in the study if their
+surgery took more than one hour and required general anesthesia, and if their
+esophogeal core temperature was monitored and sufficient baseline and outcome
+data was collected.
+
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
+The variables include a number of baseline features about the patient and their
+health before surgery. They also categorize different types of infections after
+surgery, so specific infections can be analyzed individually, or we can consider
+all serious or superficial infections together.
+
+| Variable | Description |
+|----|-------------|
+| YEAR | Year of surgery |
+| Age | Patient's age at the time of the surgery |
+| FEMALE | Patient's sex at birth (1 = female, 0 = male) |
+| BMI | Patient's body mass index (BMI) at time of surgery |
+| CharlsonScore | Patient's Charlson Comorbidity Index score (higher numbers indicate more comorbidities that could lead to death) |
+| SurgeryType | This was meant to record the type of surgery (such as colostomy, ileostomy, or other procedures), but is missing for all patients |
+| CHF | Does the patient have a history of congestive heart failure? (1 = yes, 0 = no) |
+| VALVE | Does the patient have a history of peripheral vascular disease? (1 = yes, 0 = no) |
+| DM | Does the patient have a history of diabetes without chronic complications? (1 = yes, 0 = no) |
+| RENLFAIL | Does the patient have a history of renal failure? (1 = yes, 0 = no) |
+| LIVER | Does the patient have a history of liver disease? (1 = yes, 0 = no) |
+| METS | Does the patient have cancer that has metastasized? (1 = yes, 0 = no) |
+| TUMOR | Does the patient have a solid tumor that has *not* metastasized? (1 = yes, 0 = no) |
+| COAG | Does the patient have coagulopathy (a blood clotting disorder)? (1 = yes, 0 = no) |
+| WGHTLOSS | Has the patient lost weight? (Time period and amount not specified; 1 = yes, 0 = no) |
+| LYTES | Does the patient have fluid or electrolyte disorders? (1 = yes, 0 = no) |
+| BLDLOSS | Does the patient have chronic blood loss anemia? (1 = yes, 0 = no) |
+| ANEMDEF | Does the patient have a deficiency anemia? (1 = yes, 0 = no) |
+| DRUG | Does the patient abuse drugs? (1 = yes, 0 = no) |
+| SteroidHx | Did the patient use steroid drugs before surgery? (1 = yes, 0 = no) |
+| ImmunosuppressantHx | Did the patient use immunosuppressive drugs before surgery? (1 = yes, 0 = no) |
+| SurgDuration | Duration of the surgery, in minutes |
+| Open | Type of surgery. 1 = open surgery, 0 = laparoscopic ("minimally invasive") surgery. |
+| AbsessIntraAb | Did the patient have an intra-abdominal abscess (caused by infection) after the surgery? (1 = yes, 0 = no) |
+| AbsessPelvic | Did the patient have a pelvic abscess (caused by infection) after the surgery? (1 = yes, 0 = no) |
+| Cdiff | Did the patient have a *Clostridium difficile* infection after the surgery? (1 = yes, 0 = no) |
+| FascialDehiscence | Did the patient suffer fascial dehiscence after surgery? This occurs when the fascia, which surround the organs in the abdomen and holds them in place, fails to heal after surgery and splits open. (1 = yes, 0 = no) |
+| DelayedHealing | Was the patient's healing after surgery delayed? (1 = yes, 0 = no) |
+| Infection | Did the patient have a post-surgical infection that doesn't fit into the other categories? (1 = yes, 0 = no) |
+| Sinus | Did the patient develop an abdominal sinus after surgery? (1 = yes, 0 = no) |
+| SSIDeep(fascia) | Did the patient develop a surgical site infection deep in the fascia surrounding the organs? (1 = yes, 0 = no) |
+| SSIOrganSpace | Did the patient develop a surgical site infection in the space surrounding the organs? (1 = yes, 0 = no) |
+| SSISuperficial(skin) | Did the patient develop a superficial surgical site infection in the skin around the incision? (1 = yes, 0 = no) |
+| WoundInfection | Did the patient develop an infection in the wound created in surgery? (1 = yes, 0 = no) |
+| TWATemp | Time weighted average of the patient's core temperature during surgery, °C |
+| LastReadingTemp | Last recorded core temperature prior to surgery, °C |
+| EndCaseTemp | Patient's core temperature at the end of surgery, °C |
+| AnyInfection | Did the patient develop any kind of infection, serious or superficial, within 30 days of surgery? (1 = yes, 0 = no) |
+| SeriousInfection | Did the patient develop a serious infection within 30 days of surgery? This includes the infections in the SSIDeep(fascia), SSIOrganSpace, AbsessIntraAb, AbsessPelvic, Cdiff, Pneumonia, Pneumonia(aspiration), and Sepsis variables. (1 = yes, 0 = no) |
+| SuperficialInfection | Did the patient develop a superficial infection within 30 days of surgery? This includes the infections in the SSISuperficial(skin), WoundInfection, and FascialDehiscence variables, as well as perineal wound problems. (1 = yes, 0 = no) |
+| DurationHosp | Time the patient stayed in the hospital after surgery, in days |
+| LOS | Time the patient stayed in the hospital, including time before surgery, in days |
+| DEAD | Did the patient die in the hospital? (1 = yes, 0 = no) |
+
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
+
+
+## Questions
+
+### Introductory
+
+1. What kind of study is this: experimental or observational? What kinds of
+   conclusions could we draw from the results, and what limitations would there
+   be on our ability to draw causal conclusions?
+2. Plot the distribution of core temperatures during surgery (`TWATemp`).
+   Comment on the shape of the distribution and find the median.
+3. Split the patients into two groups: those with temperatures above the median,
+   and those with temperatures below the median. Calculate the proportion of
+   patients in each group who had serious infections (`SeriousInfection`), and
+   test whether there is a statistically significant difference.
+4. Compare these groups in other ways. Do they have different baseline health
+   characteristics, such as age, BMI, and problems like liver or heart disease?
+
+### Advanced regression
+
+1. Fit a logistic regression model to predict serious post-operative infections
+   (`SeriousInfection`) as a function of core temperature during surgery
+   (`TWATemp`). Interpret the results of this fit.
+2. Extend your model to control for the covariates used in the original study:
+   "age, sex, body-mass index, smoking status, Charlson score, duration of
+   surgery, open (vs. laparoscopic), preoperative steroid usage,
+   immunosuppressive drug usage," and presence of heart failure, vascular
+   disease, diabetes, renal failure, metastatic cancer, solid tumor,
+   coagulopathy, weight loss, fluid and electrolyte disorders, blood loss
+   anemia, deficiency anemia, and drug use. Interpret the results of this model,
+   and compare it to the previous fit. What can you conclude about core
+   temperature during surgery?
+3. Repeat this logistic regression, but to predict *superficial* infection
+   instead of serious infection (`SuperficialInfection`). Comment on your
+   results and compare them to the results for serious infection.
+
+### Survival analysis
+
+1. Split the patients into two groups: those with surgical core temperatures
+   above the median, and those with temperatures below the median (using
+   `TWATemp`). Plot estimated survival curves for the length of time the patient
+   spent in the hospital after surgery (`DurationHosp`). Patients who died in
+   the hospital are censored; the original study analyzed them as follows:
+
+   > The patients who died before hospital discharge were considered as never
+   > having the event and assigned a censoring time using the observed longest
+   > duration among those discharged alive.
+
+    Interpret your survival curves in the context of the problem. Which group
+    appears to spend longer in the hospital?
+
+2. Use a Cox proportional hazard model to study the association between core
+   temperature during surgery (`TWATemp`) and time spent in the hospital after
+   surgery (`DurationHosp`). Control for the confounding variables listed above
+   (for the logistic regression analysis). Interpret your results.
+
+
+## References
+
+Data first adapted for classroom use by: Homoki, J. and Nowacki AS (2023). "Core
+Temperature Dataset", TSHS Resources Portal. Available at
+<https://www.causeweb.org/tshs/core-temperature/>. Released under a [CC
+BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+
+Original study: Walters, Michael J., et al. (2020). "Intraoperative Core
+Temperature and Infectious Complications after Colorectal Surgery: A Registry
+Analysis." *Journal of Clinical Anesthesia*, vol. 63.
+<https://doi.org/10.1016/j.jclinane.2020.109758>
+
+Further information on surgical hypothermia, its causes, and its effects: Riley
+C, Andrzejowski J. (2018). "Inadvertent perioperative hypothermia." *BJA
+Education* 18(8), 227-233. <https://doi.org/10.1016%2Fj.bjae.2018.05.003>.
+[PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7807998/).
