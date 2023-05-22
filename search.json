@@ -424,7 +424,7 @@
     "href": "external-sources.html",
     "title": "External Sources",
     "section": "",
-    "text": "Here are some good outside sources for finding datasets suitable for classes:\n\nData is Plural, a weekly newsletter of interesting public datasets.\nStanford Large Network Dataset Collection\nRoyal Society Open Science, an open-access general science journal whose papers have Data Availability statements and often have public data\nScientific Data, a journal publishing descriptions of open datasets (often large and with unusual structure)\nOpen Case Studies, a collection of data analysis case studies showing analyses from conception to conclusion\nUCI Machine Learning Repository, containing hundreds of datasets suitable for machine learning tasks\nTidyTuesday, a project collecting datasets for weekly data wrangling and visualization events"
+    "text": "Here are some good outside sources for finding datasets suitable for classes:\n\nData is Plural, a weekly newsletter of interesting public datasets.\nSCORE Sports Data Repository, a collection of sports datasets for classroom use\nStanford Large Network Dataset Collection\nRoyal Society Open Science, an open-access general science journal whose papers have Data Availability statements and often have public data\nScientific Data, a journal publishing descriptions of open datasets (often large and with unusual structure)\nOpen Case Studies, a collection of data analysis case studies showing analyses from conception to conclusion\nUCI Machine Learning Repository, containing hundreds of datasets suitable for machine learning tasks\nTidyTuesday, a project collecting datasets for weekly data wrangling and visualization events"
   },
   {
     "objectID": "by-method.html",
