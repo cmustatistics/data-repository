@@ -6,6 +6,8 @@ Here are some good outside sources for finding datasets suitable for classes:
 
 - [Data is Plural](https://www.data-is-plural.com/), a weekly newsletter of
   interesting public datasets.
+- [SCORE Sports Data Repository](https://data.scorenetwork.org/), a collection
+  of sports datasets for classroom use
 - [Stanford Large Network Dataset Collection](https://snap.stanford.edu/data/)
 - [Royal Society Open Science](https://royalsocietypublishing.org/journal/rsos),
   an open-access general science journal whose papers have Data Availability
