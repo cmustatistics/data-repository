@@ -1,0 +1,78 @@
+---
+title: Bloodletting
+author: Gordon Weinberg
+date: June 8, 2023
+description:
+  Bloodletting---deliberately withdrawing large amounts of blood from patients---was a common medical practice for centuries, until evidence was finally collected on its efficacy. Use an early dataset to explore its use for pneumonia.
+categories:
+  - logistic regression
+datayear: TODO
+datafile: bloodletting.csv
+---
+
+## Motivation
+
+Physician Pierre Charles Alexandre Louis (1787–1872) provided a now-classic
+analysis which helped to debunk the practice of bloodletting.
+
+In his study, Louis investigated records of pneumonia patients. Bloodletting was
+so common a medical treatment at the time, every patient Louis investigated had
+the bleeding procedure performed on them. But some patients had been given the
+bloodletting later in the course of the pneumonia.
+
+Conventional wisdom at the time was that bloodletting was beneficial, so the
+patients whose bleeding had been delayed should have fared worse than the
+patients who had been given bleeding early in the course of the illness.
+
+## Data
+
+Each row represents one patient in the study. There were 77 total patients.
+
+### Data preview
+
+```{r, echo=FALSE}
+source("../preview_dataset.R")
+preview_dataset()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| Age | The age of the pneumonia patient (only available for patients who died) |
+| DayFirstBled | The day of the illness when bloodletting was first performed |
+| FirstBleeding | A categorical version of `DayFirstBled`, defined as "early" if the day of first bleeding as 1 to 4, "late" if day of first bleeding was 5+ |
+| NumBleedings | The total number of bloodlettings performed on the patient |
+| SickDays | The total duration (in days) of the illness |
+| Outcome | Whether the patient lived or died from the illness|
+
+: [{{< meta datafile >}}](../data/{{< meta datafile >}})
+
+## Questions
+
+1. One of P.C.A. Louis's analyses compared the survival rates of patients bled
+   early to those bled late (`FirstBleeding`). Construct a $2 \times 2$
+   contingency table of the outcome (whether the patient lived or died) and
+   whether the patient was bled early or late. Calculate the survival rate for
+   each group. Interpret your results.
+2. Using your contingency table, conducted a $\chi^2$ test of proportions. Is
+   the survival rate for each group different? State your null hypothesis, test
+   statistic, and *p* value, and interpret your results.
+3. Use a logistic regression model to predict the outcome based on the day
+   bloodletting was first performed (`DayFirstBled`). State the coefficient and
+   give a confidence interval. Do patients have better outcomes if they were
+   bled earlier or later?
+4. It's reasonable to assume that the number of bleedings also matters. Extend
+   your logistic regression to include this (`NumBleedings`) as a covariate.
+   Interpret both coefficients.
+
+
+## References
+
+Original research: Pierre Charles Alexandre Louis (1836), *Researches on the
+Effects of Bloodletting in Some Inflammatory Diseases*, Hilliard, Gray, &
+Company. Translated by C.G. Putnam.
+
+Data extracted by: Alfredo Morabia (1996). "P.C.A. Lewis and the Birth of
+Clinical Epidemiology", *Journal of Clinical Epidemiology* 49 (12), pp.
+1327-1333. <https://doi.org/10.1016/s0895-4356(96)00294-6>
