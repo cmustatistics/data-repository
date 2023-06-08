@@ -14,6 +14,8 @@ Here are some good outside sources for finding datasets suitable for classes:
   statements and often have public data
 - [Scientific Data](https://www.nature.com/sdata/), a journal publishing
   descriptions of open datasets (often large and with unusual structure)
+- [Data in Brief](https://www.sciencedirect.com/journal/data-in-brief), another
+  journal publishing descriptions of open datasets
 - [Open Case Studies](https://www.opencasestudies.org/), a collection of data
   analysis case studies showing analyses from conception to conclusion
 - [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php),
