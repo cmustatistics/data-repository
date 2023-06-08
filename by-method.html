@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -238,6 +239,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Core temperature during surgery</span></a>
   </div>
@@ -338,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(16)</span></div><div class="category" data-category="ANOVA">ANOVA <span class="quarto-category-count">(5)</span></div><div class="category" data-category="GLMs">GLMs <span class="quarto-category-count">(2)</span></div><div class="category" data-category="classification">classification <span class="quarto-category-count">(3)</span></div><div class="category" data-category="experimental design">experimental design <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hierarchical model">hierarchical model <span class="quarto-category-count">(2)</span></div><div class="category" data-category="linear regression">linear regression <span class="quarto-category-count">(11)</span></div><div class="category" data-category="logistic regression">logistic regression <span class="quarto-category-count">(3)</span></div><div class="category" data-category="nonparametric regression">nonparametric regression <span class="quarto-category-count">(3)</span></div><div class="category" data-category="surveys">surveys <span class="quarto-category-count">(1)</span></div><div class="category" data-category="survival analysis">survival analysis <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(17)</span></div><div class="category" data-category="ANOVA">ANOVA <span class="quarto-category-count">(5)</span></div><div class="category" data-category="GLMs">GLMs <span class="quarto-category-count">(2)</span></div><div class="category" data-category="classification">classification <span class="quarto-category-count">(3)</span></div><div class="category" data-category="experimental design">experimental design <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hierarchical model">hierarchical model <span class="quarto-category-count">(2)</span></div><div class="category" data-category="linear regression">linear regression <span class="quarto-category-count">(11)</span></div><div class="category" data-category="logistic regression">logistic regression <span class="quarto-category-count">(4)</span></div><div class="category" data-category="nonparametric regression">nonparametric regression <span class="quarto-category-count">(3)</span></div><div class="category" data-category="surveys">surveys <span class="quarto-category-count">(1)</span></div><div class="category" data-category="survival analysis">survival analysis <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -408,7 +415,7 @@ Data Year
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="linear regression" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1684777121939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="AnAge Longevity Database" data-listing-filename-sort="anage.qmd">
+<tr data-index="0" data-categories="linear regression" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1686243787660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="AnAge Longevity Database" data-listing-filename-sort="anage.qmd">
 <td>
 <span class="listing-datayear">2017</span>
 </td>
@@ -422,7 +429,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="1" data-categories="linear regression,hierarchical model" data-listing-date-sort="1562716800000" data-listing-file-modified-sort="1684777121939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Bird genetic diversity" data-listing-filename-sort="bird-diversity.qmd">
+<tr data-index="1" data-categories="linear regression,hierarchical model" data-listing-date-sort="1562716800000" data-listing-file-modified-sort="1686243787660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Bird genetic diversity" data-listing-filename-sort="bird-diversity.qmd">
 <td>
 <span class="listing-datayear">2019</span>
 </td>
@@ -436,7 +443,21 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="2" data-categories="logistic regression,survival analysis" data-listing-date-sort="1684281600000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Core temperature during surgery" data-listing-filename-sort="core-temperature.qmd">
+<tr data-index="2" data-categories="logistic regression" data-listing-date-sort="1686182400000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Bloodletting" data-listing-filename-sort="bloodletting.qmd">
+<td>
+<span class="listing-datayear">TODO</span>
+</td>
+<td>
+<span class="listing-date">Jun 8, 2023</span>
+</td>
+<td>
+<a href="./medicine/bloodletting.html" class="title listing-title">Bloodletting</a>
+</td>
+<td>
+<span class="listing-author">Gordon Weinberg</span>
+</td>
+</tr>
+<tr data-index="3" data-categories="logistic regression,survival analysis" data-listing-date-sort="1684281600000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Core temperature during surgery" data-listing-filename-sort="core-temperature.qmd">
 <td>
 <span class="listing-datayear">2020</span>
 </td>
@@ -450,7 +471,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="3" data-categories="classification" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1684777121939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Dry beans" data-listing-filename-sort="dry-beans.qmd">
+<tr data-index="4" data-categories="classification" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1686243787664" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Dry beans" data-listing-filename-sort="dry-beans.qmd">
 <td>
 <span class="listing-datayear">2020</span>
 </td>
@@ -464,7 +485,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="4" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1675382400000" data-listing-file-modified-sort="1684777121939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Galaxy mass prediction" data-listing-filename-sort="buzzard.qmd">
+<tr data-index="5" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1675382400000" data-listing-file-modified-sort="1686243787660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Galaxy mass prediction" data-listing-filename-sort="buzzard.qmd">
 <td>
 <span class="listing-datayear">2020</span>
 </td>
@@ -478,7 +499,7 @@ Data Year
 <span class="listing-author">Peter Freeman</span>
 </td>
 </tr>
-<tr data-index="5" data-categories="surveys,classification,logistic regression" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Health exams in Vietnam" data-listing-filename-sort="vietnam-health.qmd">
+<tr data-index="6" data-categories="surveys,classification,logistic regression" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-title-sort="Health exams in Vietnam" data-listing-filename-sort="vietnam-health.qmd">
 <td>
 <span class="listing-datayear">2017</span>
 </td>
@@ -492,7 +513,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="6" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1565740800000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="House prices in Ames, Iowa" data-listing-filename-sort="ames-housing.qmd">
+<tr data-index="7" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1565740800000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="House prices in Ames, Iowa" data-listing-filename-sort="ames-housing.qmd">
 <td>
 <span class="listing-datayear">2010</span>
 </td>
@@ -506,7 +527,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="7" data-categories="GLMs,experimental design" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1684777121939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Insect attraction to light" data-listing-filename-sort="bug-attraction.qmd">
+<tr data-index="8" data-categories="GLMs,experimental design" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1686243787664" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Insect attraction to light" data-listing-filename-sort="bug-attraction.qmd">
 <td>
 <span class="listing-datayear">2015</span>
 </td>
@@ -520,7 +541,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="8" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1667520000000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Makeup and male attractiveness" data-listing-filename-sort="male-makeup.qmd">
+<tr data-index="9" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1667520000000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Makeup and male attractiveness" data-listing-filename-sort="male-makeup.qmd">
 <td>
 <span class="listing-datayear">2022</span>
 </td>
@@ -534,7 +555,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="9" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1658880000000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Rail trails and property values" data-listing-filename-sort="rail-trails.qmd">
+<tr data-index="10" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1658880000000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Rail trails and property values" data-listing-filename-sort="rail-trails.qmd">
 <td>
 <span class="listing-datayear">2014</span>
 </td>
@@ -548,7 +569,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="10" data-categories="ANOVA,linear regression" data-listing-date-sort="1487980800000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Religion and analytic thinking" data-listing-filename-sort="religion-analytic-thinking.qmd">
+<tr data-index="11" data-categories="ANOVA,linear regression" data-listing-date-sort="1487980800000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="Religion and analytic thinking" data-listing-filename-sort="religion-analytic-thinking.qmd">
 <td>
 <span class="listing-datayear">2017</span>
 </td>
@@ -562,7 +583,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="11" data-categories="GLMs,classification,linear regression" data-listing-date-sort="1487721600000" data-listing-file-modified-sort="1684777122059" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Science Forums" data-listing-filename-sort="science-forums.qmd">
+<tr data-index="12" data-categories="GLMs,classification,linear regression" data-listing-date-sort="1487721600000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Science Forums" data-listing-filename-sort="science-forums.qmd">
 <td>
 <span class="listing-datayear">2014</span>
 </td>
@@ -576,7 +597,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="12" data-categories="ANOVA,linear regression" data-listing-date-sort="1567296000000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Serving sizes and plate sizes" data-listing-filename-sort="plate-size.qmd">
+<tr data-index="13" data-categories="ANOVA,linear regression" data-listing-date-sort="1567296000000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Serving sizes and plate sizes" data-listing-filename-sort="plate-size.qmd">
 <td>
 <span class="listing-datayear">2019</span>
 </td>
@@ -590,7 +611,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="13" data-categories="ANOVA,linear regression" data-listing-date-sort="1497484800000" data-listing-file-modified-sort="1684777121939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Spider nuptial gifts and fraud" data-listing-filename-sort="spider-nuptials.qmd">
+<tr data-index="14" data-categories="ANOVA,linear regression" data-listing-date-sort="1497484800000" data-listing-file-modified-sort="1686243787664" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Spider nuptial gifts and fraud" data-listing-filename-sort="spider-nuptials.qmd">
 <td>
 <span class="listing-datayear">2017</span>
 </td>
@@ -604,7 +625,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="14" data-categories="ANOVA,logistic regression" data-listing-date-sort="1497398400000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Sugary drinks and portion limits" data-listing-filename-sort="sugary-drinks.qmd">
+<tr data-index="15" data-categories="ANOVA,logistic regression" data-listing-date-sort="1497398400000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Sugary drinks and portion limits" data-listing-filename-sort="sugary-drinks.qmd">
 <td>
 <span class="listing-datayear">2017</span>
 </td>
@@ -618,7 +639,7 @@ Data Year
 <span class="listing-author">Alex Reinhart</span>
 </td>
 </tr>
-<tr data-index="15" data-categories="linear regression" data-listing-date-sort="1529280000000" data-listing-file-modified-sort="1684777122055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Testosterone and diversity" data-listing-filename-sort="hormone-diversity.qmd">
+<tr data-index="16" data-categories="linear regression" data-listing-date-sort="1529280000000" data-listing-file-modified-sort="1686243787784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-title-sort="Testosterone and diversity" data-listing-filename-sort="hormone-diversity.qmd">
 <td>
 <span class="listing-datayear">2018</span>
 </td>
