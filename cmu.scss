@@ -2,3 +2,8 @@
 /* CMU colors */
 $navbar-bg: #C41230;
 $link-color: #C41230;
+
+/*-- scss:rules --*/
+a.data-file {
+    color: $link-color !important;
+}
