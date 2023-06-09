@@ -324,8 +324,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
-  <li><a href="#individual-data" id="toc-individual-data" class="nav-link" data-scroll-target="#individual-data">Individual data</a></li>
-  <li><a href="#team-data" id="toc-team-data" class="nav-link" data-scroll-target="#team-data">Team data</a></li>
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
   </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -358,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
              <p>Alex Reinhart </p>
           </div>
   </div>
-    
+  
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
@@ -366,9 +366,24 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
   
-    
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/hormone-diversity-individual.csv">hormone-diversity-individual.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/hormone-diversity-teams.csv">hormone-diversity-teams.csv</a>
+          </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2018</p>
+    </div>
+  </div>
+  </div>
+
 
 </header>
 
@@ -385,20 +400,35 @@ ul.task-list li input[type="checkbox"] {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>The first data file contains individual data: the age, gender, and ethnicity of each student, along with their testosterone and cortisol levels. The second file reports the performance of the teams on their projects. There were 370 students in 74 groups.</p>
-<section id="individual-data" class="level3">
-<h3 class="anchored" data-anchor-id="individual-data">Individual data</h3>
-<div class="cell">
-<div class="cell-output-display">
-
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/hormone-diversity-individual.csv "> hormone-diversity-individual.csv </a>
+</h4>
 <div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
+
+<script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["ID"],"name":[1],"type":["int"],"align":["right"]},{"label":["team.id"],"name":[2],"type":["int"],"align":["right"]},{"label":["Age"],"name":[3],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Ethnicity"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Cortisol"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Testosterone"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["log.cortisol"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["log.testosterone"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Country"],"name":[10],"type":["chr"],"align":["left"]}],"data":[{"1":"102","2":"14","3":"26","4":"Male","5":"White","6":"0.163","7":"134.83","8":"-1.8140051","9":"4.904015","10":"USA"},{"1":"103","2":"23","3":"26","4":"Female","5":"Other","6":"0.211","7":"15.28","8":"-1.5558971","9":"2.726545","10":"USA"},{"1":"104","2":"14","3":"26","4":"Male","5":"Hispanic","6":"0.152","7":"96.21","8":"-1.8838748","9":"4.566533","10":"Chile"},{"1":"105","2":"14","3":"25","4":"Female","5":"South Asian","6":"0.287","7":"50.99","8":"-1.2482731","9":"3.931630","10":"India"},{"1":"107","2":"24","3":"27","4":"Male","5":"White","6":"0.141","7":"178.66","8":"-1.9589954","9":"5.185485","10":"France"},{"1":"108","2":"16","3":"27","4":"Male","5":"White","6":"0.184","7":"87.43","8":"-1.6928195","9":"4.470838","10":"Italy"},{"1":"111","2":"21","3":"27","4":"Male","5":"Hispanic","6":"0.329","7":"198.54","8":"-1.1116975","9":"5.290991","10":"Brazil"},{"1":"112","2":"18","3":"30","4":"Male","5":"White","6":"0.360","7":"151.73","8":"-1.0216512","9":"5.022103","10":"USA"},{"1":"118","2":"24","3":"32","4":"Female","5":"White","6":"0.248","7":"142.86","8":"-1.3943265","9":"4.961865","10":"Croatia"},{"1":"119","2":"18","3":"28","4":"Male","5":"White","6":"0.254","7":"541.23","8":"-1.3704210","9":"6.293844","10":"Netherlands"},{"1":"120","2":"28","3":"25","4":"Male","5":"South Asian","6":"0.250","7":"165.31","8":"-1.3862944","9":"5.107822","10":"Canada"},{"1":"121","2":"23","3":"33","4":"Male","5":"South Asian","6":"0.183","7":"87.43","8":"-1.6982691","9":"4.470838","10":"India"},{"1":"122","2":"16","3":"32","4":"Female","5":"White","6":"0.259","7":"67.75","8":"-1.3509272","9":"4.215824","10":"USA"},{"1":"123","2":"19","3":"26","4":"Female","5":"White","6":"0.674","7":"99.49","8":"-0.3945252","9":"4.600057","10":"USA"},{"1":"130","2":"18","3":"30","4":"Male","5":"White","6":"0.234","7":"138.35","8":"-1.4524342","9":"4.929787","10":"Switzerland"},{"1":"132","2":"19","3":"28","4":"Male","5":"White","6":"0.336","7":"255.09","8":"-1.0906441","9":"5.541616","10":"Italy"},{"1":"134","2":"14","3":"28","4":"Female","5":"White","6":"0.205","7":"28.24","8":"-1.5847453","9":"3.340739","10":"USA"},{"1":"135","2":"3","3":"29","4":"Male","5":"White","6":"0.285","7":"134.83","8":"-1.2552661","9":"4.904015","10":"USA"},{"1":"137","2":"18","3":"30","4":"Male","5":"White","6":"0.217","7":"115.85","8":"-1.5278579","9":"4.752296","10":"USA"},{"1":"138","2":"21","3":"31","4":"Male","5":"Asian","6":"0.411","7":"171.46","8":"-0.8891621","9":"5.144350","10":"China"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/hormone-diversity-teams.csv "> hormone-diversity-teams.csv </a>
+</h4>
+<div data-pagedtable="false">
+
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["team.id"],"name":[1],"type":["int"],"align":["right"]},{"label":["team.size"],"name":[2],"type":["int"],"align":["right"]},{"label":["final.performance"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["time.of.day"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["females"],"name":[5],"type":["int"],"align":["right"]},{"label":["final.cash"],"name":[6],"type":["int"],"align":["right"]},{"label":["final.contracts"],"name":[7],"type":["int"],"align":["right"]},{"label":["final.reorders"],"name":[8],"type":["int"],"align":["right"]},{"label":["final.rank"],"name":[9],"type":["int"],"align":["right"]},{"label":["interim.performance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["interim.cash"],"name":[11],"type":["int"],"align":["right"]},{"label":["interim.contracts"],"name":[12],"type":["int"],"align":["right"]},{"label":["interim.reorders"],"name":[13],"type":["int"],"align":["right"]},{"label":["interim.rank"],"name":[14],"type":["int"],"align":["right"]}],"data":[{"1":"2","2":"6","3":"0.50554884","4":"14.25","5":"2","6":"1805166","7":"3","8":"87","9":"5","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"3","2":"5","3":"0.60400713","4":"14.25","5":"1","6":"1894642","7":"3","8":"85","9":"4","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"4","2":"4","3":"-0.45075689","4":"14.25","5":"2","6":"1338256","7":"3","8":"80","9":"12","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"5","2":"4","3":"0.91015481","4":"14.25","5":"2","6":"1998412","7":"3","8":"90","9":"2","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"6","2":"5","3":"0.83157571","4":"14.25","5":"1","6":"1983439","7":"3","8":"90","9":"3","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"9","2":"4","3":"-0.67979406","4":"14.25","5":"1","6":"1524141","7":"2","8":"77","9":"10","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"12","2":"6","3":"0.46787413","4":"14.25","5":"1","6":"1771015","7":"3","8":"90","9":"6","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"14","2":"5","3":"0.10626041","4":"10.75","5":"2","6":"1715843","7":"3","8":"80","9":"8","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"16","2":"5","3":"-0.29895972","4":"10.75","5":"2","6":"1377232","7":"2","8":"100","9":"9","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"18","2":"5","3":"1.10989092","4":"10.75","5":"1","6":"1953814","7":"3","8":"99","9":"1","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"19","2":"3","3":"0.32158222","4":"10.75","5":"1","6":"1788609","7":"3","8":"85","9":"7","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"21","2":"5","3":"-0.93617573","4":"10.75","5":"1","6":"1358222","7":"2","8":"70","9":"10","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"23","2":"5","3":"0.67907470","4":"10.75","5":"1","6":"1929259","7":"3","8":"84","9":"3","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"24","2":"6","3":"-1.04739669","4":"10.75","5":"1","6":"1058115","7":"2","8":"80","9":"11","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"27","2":"5","3":"0.37708080","4":"16.00","5":"2","6":"1870332","7":"3","8":"81","9":"6","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"28","2":"5","3":"1.05422841","4":"16.00","5":"1","6":"2050636","7":"3","8":"92","9":"1","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"30","2":"4","3":"0.01499993","4":"16.00","5":"1","6":"1617638","7":"3","8":"90","9":"11","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"32","2":"5","3":"0.28281482","4":"16.00","5":"1","6":"1662155","7":"3","8":"99","9":"10","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"34","2":"5","3":"0.26076021","4":"16.00","5":"1","6":"1796880","7":"3","8":"85","9":"8","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"35","2":"6","3":"0.59258703","4":"16.00","5":"1","6":"1967580","7":"3","8":"85","9":"5","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
-</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
 <table class="table">
-<caption><a href="../data/hormone-diversity-individual.csv">hormone-diversity-individual.csv</a></caption>
+<caption>hormone-diversity-individual.csv</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -448,21 +478,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="team-data" class="level3">
-<h3 class="anchored" data-anchor-id="team-data">Team data</h3>
-<div class="cell">
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["team.id"],"name":[1],"type":["int"],"align":["right"]},{"label":["team.size"],"name":[2],"type":["int"],"align":["right"]},{"label":["final.performance"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["time.of.day"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["females"],"name":[5],"type":["int"],"align":["right"]},{"label":["final.cash"],"name":[6],"type":["int"],"align":["right"]},{"label":["final.contracts"],"name":[7],"type":["int"],"align":["right"]},{"label":["final.reorders"],"name":[8],"type":["int"],"align":["right"]},{"label":["final.rank"],"name":[9],"type":["int"],"align":["right"]},{"label":["interim.performance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["interim.cash"],"name":[11],"type":["int"],"align":["right"]},{"label":["interim.contracts"],"name":[12],"type":["int"],"align":["right"]},{"label":["interim.reorders"],"name":[13],"type":["int"],"align":["right"]},{"label":["interim.rank"],"name":[14],"type":["int"],"align":["right"]}],"data":[{"1":"2","2":"6","3":"0.50554884","4":"14.25","5":"2","6":"1805166","7":"3","8":"87","9":"5","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"3","2":"5","3":"0.60400713","4":"14.25","5":"1","6":"1894642","7":"3","8":"85","9":"4","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"4","2":"4","3":"-0.45075689","4":"14.25","5":"2","6":"1338256","7":"3","8":"80","9":"12","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"5","2":"4","3":"0.91015481","4":"14.25","5":"2","6":"1998412","7":"3","8":"90","9":"2","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"6","2":"5","3":"0.83157571","4":"14.25","5":"1","6":"1983439","7":"3","8":"90","9":"3","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"9","2":"4","3":"-0.67979406","4":"14.25","5":"1","6":"1524141","7":"2","8":"77","9":"10","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"12","2":"6","3":"0.46787413","4":"14.25","5":"1","6":"1771015","7":"3","8":"90","9":"6","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"14","2":"5","3":"0.10626041","4":"10.75","5":"2","6":"1715843","7":"3","8":"80","9":"8","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"16","2":"5","3":"-0.29895972","4":"10.75","5":"2","6":"1377232","7":"2","8":"100","9":"9","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"18","2":"5","3":"1.10989092","4":"10.75","5":"1","6":"1953814","7":"3","8":"99","9":"1","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"19","2":"3","3":"0.32158222","4":"10.75","5":"1","6":"1788609","7":"3","8":"85","9":"7","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"21","2":"5","3":"-0.93617573","4":"10.75","5":"1","6":"1358222","7":"2","8":"70","9":"10","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"23","2":"5","3":"0.67907470","4":"10.75","5":"1","6":"1929259","7":"3","8":"84","9":"3","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"24","2":"6","3":"-1.04739669","4":"10.75","5":"1","6":"1058115","7":"2","8":"80","9":"11","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"27","2":"5","3":"0.37708080","4":"16.00","5":"2","6":"1870332","7":"3","8":"81","9":"6","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"28","2":"5","3":"1.05422841","4":"16.00","5":"1","6":"2050636","7":"3","8":"92","9":"1","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"30","2":"4","3":"0.01499993","4":"16.00","5":"1","6":"1617638","7":"3","8":"90","9":"11","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"32","2":"5","3":"0.28281482","4":"16.00","5":"1","6":"1662155","7":"3","8":"99","9":"10","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"34","2":"5","3":"0.26076021","4":"16.00","5":"1","6":"1796880","7":"3","8":"85","9":"8","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"},{"1":"35","2":"6","3":"0.59258703","4":"16.00","5":"1","6":"1967580","7":"3","8":"85","9":"5","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
 <table class="table">
-<caption><a href="../data/hormone-diversity-teams.csv">hormone-diversity-teams.csv</a></caption>
+<caption>hormone-diversity-teams.csv</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Variable</th>
