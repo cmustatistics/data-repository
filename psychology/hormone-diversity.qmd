@@ -5,7 +5,11 @@ date: June 18, 2018
 description: When students work on group projects, they work better when their groups are diverse. This study asked if that depends on the testosterone level of the group, and if high-testosterone groups benefit less from diversity.
 categories:
   - linear regression
-datayear: 2018
+data:
+  year: 2018
+  files:
+    - hormone-diversity-individual.csv
+    - hormone-diversity-teams.csv
 ---
 
 ## Motivation
@@ -47,12 +51,14 @@ each student, along with their testosterone and cortisol levels. The second file
 reports the performance of the teams on their projects. There were 370 students
 in 74 groups.
 
-### Individual data
+### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset(dataset = "hormone-diversity-individual.csv")
+preview_datasets()
 ```
+
+### Variable descriptions
 
 | Variable | Description |
 |----|-------------|
@@ -66,13 +72,8 @@ preview_dataset(dataset = "hormone-diversity-individual.csv")
 | log.cortisol 	| Natural logarithm of the participant's cortisol level |
 | log.testosterone	| Natural logarithm of the participant's testosterone level |
 | Country 	| Country of citizenship of the participant  |
-: [hormone-diversity-individual.csv](../data/hormone-diversity-individual.csv)
+: hormone-diversity-individual.csv
 
-### Team data
-
-```{r, echo=FALSE}
-preview_dataset(dataset = "hormone-diversity-teams.csv")
-```
 
 | Variable | Description |
 |----|-------------|
@@ -90,7 +91,7 @@ preview_dataset(dataset = "hormone-diversity-teams.csv")
 | interim.contracts 	 | |
 | interim.reorders 	 | |
 | interim.rank 	 | |
-: [hormone-diversity-teams.csv](../data/hormone-diversity-teams.csv)
+: hormone-diversity-teams.csv
 
 ## Questions
 

@@ -6,8 +6,9 @@ description: Public health officials are interested in policies that would reduc
 categories:
   - ANOVA
   - logistic regression
-datafile: sugary-drinks.csv
-datayear: 2017
+data:
+  files: sugary-drinks.csv
+  year: 2017
 ---
 
 ## Motivation
@@ -66,9 +67,9 @@ Each row represents one participant.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -90,8 +91,6 @@ preview_dataset()
 | ethnicity |	1: African American, 2: American Indian or Alaskan Native, 3: Asian, 4: Caucasian, 5: Hispanic/Latino, 6: Pacific Islander, 7: Other or mixed |
 | comprehension_check |	 |
 | failed_comprehension_check |	Did the participant fail a test at the end to make sure they knew what their drink options were? 0: no, 1: yes  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

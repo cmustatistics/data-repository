@@ -2,12 +2,14 @@
 title: Galaxy mass prediction
 author: Peter Freeman
 date: February 3, 2023
-datayear: 2020
 description: Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy's mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?
 categories:
   - linear regression
   - nonparametric regression
-datafile: Buzzard_DC1.csv
+data:
+  year: 2020
+  files:
+    - Buzzard_DC1.csv
 ---
 
 ## Motivation
@@ -22,9 +24,9 @@ The dataset contains measures of magnitude and magnitude uncertainty in six astr
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -45,8 +47,6 @@ preview_dataset()
 | y.err | Uncertainty for y-band magnitude |
 | log.mass | Galaxy stellar mass (log-base-10 solar masses) |
 | redshift | Galaxy redshift |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

@@ -7,7 +7,11 @@ categories:
   - ANOVA
   - linear regression
   - hierarchical model
-datayear: 2022
+data:
+  files:
+    - male-makeup-faces.csv
+    - male-makeup-ratings.csv
+  year: 2022
 ---
 
 ## Motivation
@@ -35,15 +39,20 @@ recruited through Amazon Mechanical Turk and paid $0.80 for their time.
 
 The dataset is provided in two forms.
 
-### Ratings for each face
-
 The first form presents the average rating for each face (of 20) with and
 without makeup, and can be used for simple analyses of the effect of makeup.
+The second form presents every rating as a row, producing 200 × 40 = 8,000
+observations, each annotated with information about the participant and the
+rater.
 
-```{r, echo=FALSE}
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset(dataset = "male-makeup-faces.csv")
+preview_datasets()
 ```
+
+### Variable descriptions
 
 | Variable | Description |
 |----|-------------|
@@ -54,16 +63,6 @@ preview_dataset(dataset = "male-makeup-faces.csv")
 | Makeup |	Average rating, by the 200 raters, of the attractiveness of the participant's face with makeup. The scale is from 1 to 7, where 1 = 'Not at all attractive' and 7 = 'Very attractive'. |
 
 : [male-makeup-faces.csv](../data/male-makeup-faces.csv)
-
-### All ratings
-
-The second form presents every rating as a row, producing 200 × 40 = 8,000
-observations, each annotated with information about the participant and the
-rater.
-
-```{r, echo=FALSE}
-preview_dataset(dataset = "male-makeup-ratings.csv")
-```
 
 | Variable | Description |
 |----|-------------|

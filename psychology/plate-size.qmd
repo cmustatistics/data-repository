@@ -6,8 +6,9 @@ description: Do people eat more food if their meals are served on larger plates?
 categories:
   - ANOVA
   - linear regression
-datafile: plate-size.csv
-datayear: 2019
+data:
+  files: plate-size.csv
+  year: 2019
 ---
 
 ## Motivation
@@ -60,9 +61,9 @@ say."
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -130,9 +131,6 @@ preview_dataset()
 | fullness |	How full the participant reported being before lunch. 100 point scale. |
 | like.food |	How much the participant reported liking the food provided in the study. 100 point scale. |
 | fasting |	Whether the participant fasted for 3 hours before the study, as requested (yes/no).  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
-
 
 
 ## Questions

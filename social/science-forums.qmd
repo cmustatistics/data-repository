@@ -7,8 +7,9 @@ categories:
   - GLMs
   - classification
   - linear regression
-datafile: sfn-sample.csv
-datayear: 2014
+data:
+  files: sfn-sample.csv
+  year: 2014
 ---
 
 ## Motivation
@@ -40,9 +41,9 @@ a random sample of 10,000 topics.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -62,8 +63,6 @@ deleted_posts |	Number of posts in the topic which have been deleted by a modera
 | pinned |	If 1, the topic has been "pinned" so it always appears at the top of the list of discussions. |
 | author_exp |	The number of days the topic starter was registered before starting the discussion. |
 | author_banned |	Records if the topic starter is currently banned.  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 For forum IDs, a categorization is given below.
 

@@ -5,8 +5,11 @@ listing:
   contents:
     - "*/*.qmd"
   type: table
-  fields: [datayear, date, title, author]
+  fields: [date, title, author]
   field-display-names:
     datayear: "Data Year"
     date: "Published"
 ---
+
+All datasets are listed below. A [downloadable spreadsheet of all
+datasets](cmu-statds-datasets.csv) is also available for more advanced searches.

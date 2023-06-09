@@ -6,8 +6,9 @@ date: June 15, 2017
 categories:
   - ANOVA
   - linear regression
-datayear: 2017
-datafile: spider-lab-gifts.csv
+data:
+  year: 2017
+  files: spider-lab-gifts.csv
 ---
 
 ## Motivation
@@ -50,9 +51,9 @@ these cases.)
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -74,8 +75,6 @@ preview_dataset()
 | MALE MASS AFTER TRIAL (mg) |	Mass of the male spider after making the gift (milligrams) |
 | MALE WEIGHT difference (bef-after) |	Difference between male weight (before - after) |
 | TOT WRAPPING DURATION (sec) |	Total time the male spent wrapping the gift (seconds)  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

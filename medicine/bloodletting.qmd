@@ -3,11 +3,14 @@ title: Bloodletting
 author: Gordon Weinberg
 date: June 8, 2023
 description:
-  Bloodletting---deliberately withdrawing large amounts of blood from patients---was a common medical practice for centuries, until evidence was finally collected on its efficacy. Use an early dataset to explore its use for pneumonia.
+  Bloodletting---deliberately withdrawing large amounts of blood from patients---was a common medical practice for centuries, until evidence was finally collected on its efficacy. Use an early observational dataset to explore its use for pneumonia.
 categories:
   - logistic regression
-datayear: TODO
-datafile: bloodletting.csv
+  - contingency tables
+data:
+  year: 1828
+  files:
+    - bloodletting.csv
 ---
 
 ## Motivation
@@ -30,9 +33,9 @@ Each row represents one patient in the study. There were 77 total patients.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -45,8 +48,6 @@ preview_dataset()
 | NumBleedings | The total number of bloodlettings performed on the patient |
 | SickDays | The total duration (in days) of the illness |
 | Outcome | Whether the patient lived or died from the illness|
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

@@ -3,6 +3,8 @@ project:
   resources:
     - "data/*.csv"
     - "data/*.txt"
+  pre-render: prepare.lua
+  post-render: build-csv.R
 
 website:
   title: "CMU S&DS Data Repository"
@@ -26,6 +28,13 @@ format:
       - cosmo
       - cmu.scss
     toc: true
+    df-print: paged
+
+    filters:
+      - metadata.lua
+
+    template-partials:
+      - _templates/title-metadata.html
 
 execute:
   freeze: auto

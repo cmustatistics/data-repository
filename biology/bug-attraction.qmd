@@ -6,8 +6,9 @@ description: What kinds of lights are insects most attracted to? Analyze the res
 categories:
   - GLMs
   - experimental design
-datayear: 2015
-datafile: bug-attraction.csv
+data:
+  year: 2015
+  files: bug-attraction.csv
 ---
 
 ## Motivation
@@ -57,9 +58,9 @@ collected in that trap.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -99,7 +100,6 @@ preview_dataset()
 | Unident 	| Number of unidentified insects captured in the trap |
 | Total 	| Total number of insects captured in the trap |
 | Other Orders 	| Number of insects of other identified orders captured in the trap  |
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

@@ -6,8 +6,9 @@ description: Rail trails are a great recreation opportunity, but do homes near t
 categories:
   - linear regression
   - nonparametric regression
-datayear: 2014
-datafile: rail-trails.csv
+data:
+  year: 2014
+  files: rail-trails.csv
 ---
 
 ## Motivation
@@ -56,9 +57,9 @@ major renovations, which were regarded as outliers.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -96,8 +97,6 @@ preview_dataset()
 | streetname |	Name of the street the house is on |
 | streetno |	House number on the street |
 | zip |	ZIP code of the house (leading 0 omitted). 1060 is Northampton, MA; 1062 is Florence, MA.  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

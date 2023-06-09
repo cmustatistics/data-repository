@@ -6,8 +6,9 @@ description: A controversial study found that encouraging analytic thinking also
 categories:
   - ANOVA
   - linear regression
-datafile: religion-analytic.csv
-datayear: 2017
+data:
+  files: religion-analytic.csv
+  year: 2017
 ---
 
 ## Motivation
@@ -51,9 +52,9 @@ Thinker.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -65,8 +66,6 @@ preview_dataset()
 | religious |	Religious belief, from 0 to 100 |
 | age |	Age of the subject, in years |
 | gender |	Gender of the subject  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

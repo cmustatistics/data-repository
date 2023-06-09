@@ -6,8 +6,10 @@ description: Is low core temperature during surgery associated with poor surgica
 categories:
   - logistic regression
   - survival analysis
-datayear: 2020
-datafile: core-temperature.csv
+data:
+  files:
+    - core-temperature.csv
+  year: 2020
 ---
 
 ## Motivation
@@ -38,9 +40,9 @@ data was collected.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -95,8 +97,6 @@ all serious or superficial infections together.
 | DurationHosp | Time the patient stayed in the hospital after surgery, in days |
 | LOS | Time the patient stayed in the hospital, including time before surgery, in days |
 | DEAD | Did the patient die in the hospital? (1 = yes, 0 = no) |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 
 ## Questions

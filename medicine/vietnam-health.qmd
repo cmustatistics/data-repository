@@ -7,8 +7,9 @@ categories:
   - surveys
   - classification
   - logistic regression
-datayear: 2017
-datafile: vietnam-health.csv  
+data:
+  year: 2017
+  files: vietnam-health.csv  
 ---
 
 ## Motivation
@@ -39,9 +40,9 @@ This dataset includes all the valid responses.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -98,8 +99,6 @@ preview_dataset()
 | SuitExer 	| How much time the respondent thinks people should spend on sports and physical exercise to stay in shape (units not given) |
 | EvalExer 	| How much time the respondent spends on sports and physical exercise (verysuff = 'more than enough', quitesuff = 'enough', little = 'only a little', trivial = 'none or almost none' |
 | Age_gr 	| The respondent's age, broken into one of five categories  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

@@ -4,3 +4,6 @@ _site/
 /.quarto/
 .DS_Store
 
+# Ignore metadata and CSV export, since those are auto-generated
+metadata.json
+cmu-statds-datasets.csv

@@ -15,3 +15,12 @@ preview_dataset <- function(n = 20, dataset = rmarkdown::metadata$datafile) {
     head(n = n) |>
     rmarkdown::paged_table(options = list(rownames.print = FALSE))
 }
+
+preview_datasets <- function(n = 20, datasets = rmarkdown::metadata$data$files) {
+  for (dataset in datasets) {
+    url <- paste0("https://cmustatistics.github.io/data-repository/data/",
+                  dataset)
+    cat("<h4><a href=\"", url, "\">", dataset, "</a></h4>\n")
+    cat(rmarkdown:::print.paged_df(preview_dataset(n, dataset)))
+  }
+}

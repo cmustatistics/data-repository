@@ -10,8 +10,9 @@ categories:
   - with this dataset
   - one per line
   - with two spaces and a hyphen in front
-datayear: Year dataset was collected/produced (YYYY)
-datafile: name-of-data-file.csv
+data:
+  year: Year dataset was collected/produced (YYYY)
+  files: name-of-data-file.csv
 ---
 
 ## Motivation
@@ -34,9 +35,9 @@ there is missingness, say how it is coded and why it is present.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -45,8 +46,6 @@ preview_dataset()
 |----|-------------|
 | Column name | A description of this variable, including units when possible |
 | Column name 2 | A description of this variable, including units when possible |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 If there are multiple data files, repeat the table for each data file.
 

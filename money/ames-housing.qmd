@@ -6,8 +6,9 @@ description: Records of homes sold in Ames, Iowa, and their sale prices, includi
 categories:
   - linear regression
   - nonparametric regression
-datayear: 2010
-datafile: ames-housing.csv
+data:
+  year: 2010
+  files: ames-housing.csv
 ---
 
 ## Motivation
@@ -37,9 +38,9 @@ features of the house and its actual sale price.
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -131,8 +132,6 @@ documentation file](../data/ames-housing-DataDocumentation.txt).
 | Sale.Type |	Type of sale. Wd = Conventional warranty deed, CWD = cash warranty deed, VWD = VA loan warranty deed, New = house just built and sold, COD = court officer deed or estate, Con = contract with 15% down payment and regular terms, ConLW = contract with low down payment and low interest, ConLI = contract with low interest, ConLD = contract with low down payment, Oth = other. |
 | Sale.Condition |	Condition of sale. Normal = normal; Abnorml = trade, foreclosure, or short sale; AdjLand = adjoining land purchase; Alloca = allocation of two linked properties with separate deeds, such as condos; Family = sale between family members; Partial = home was not completed when last assessed (e.g. it was under construction) |
 | SalePrice |	Price house sold for (dollars)  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 

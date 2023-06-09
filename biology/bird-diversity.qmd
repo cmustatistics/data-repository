@@ -2,12 +2,14 @@
 title: Bird genetic diversity
 author: Alex Reinhart
 date: July 10, 2019
-datayear: 2019
 description: Evolutionary theory suggests that species spread over a wider geographic range should have greater genetic diversity. Does this hold true in birds? An observational study of 387 bird species.
 categories:
   - linear regression
   - hierarchical model
-datafile: bird-diversity.csv
+data:
+  year: 2019
+  files:
+    - bird-diversity.csv
 ---
 
 ## Motivation
@@ -44,9 +46,9 @@ grey-headed albatross (*Thalassarche chrysostoma*).
 
 ### Data preview
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-preview_dataset()
+preview_datasets()
 ```
 
 ### Variable descriptions
@@ -62,8 +64,6 @@ preview_dataset()
 | Latitude |	Mid-point latitude of the species breeding range. (All latitudes are positive, even those in the southern hemisphere.) |
 | Migratory status |	Is this species migratory or does it stay resident in one area? |
 | References |	References for the data for this species  |
-
-: [{{< meta datafile >}}](../data/{{< meta datafile >}})
 
 ## Questions
 
