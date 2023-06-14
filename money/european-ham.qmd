@@ -1,0 +1,140 @@
+---
+title: European protected ham
+author: Alex Reinhart
+date: June 9, 2023
+description: In Europe, some types of ham---like Black Forest ham---can only be legally produced in specific geographic regions. Does the size of those regions affect the price of the ham?
+categories:
+  - ANOVA
+  - linear regression
+  - hierarchical model
+data:
+  year: 2021
+  files: european-ham.csv
+---
+
+## Motivation
+
+In the European Union, there are many foods that have long histories of being
+produced in one specific region. You may be familiar with champagne, produced
+in the historical province of Champagne in northeastern France; products made
+outside this region, even if they are very similar to champagne, cannot be
+called "champagne" and are usually called "sparkling wine".
+
+To protect these local foods, European Union regulations recognize certain
+"geographical indications" (GIs) for food, and restrict the names and labels
+that can be used for certain food items. There are two categories of GI:
+
+- A Protected Designation of Origin (PDO) product must be completely produced
+  within a specific region. For example, only prosciutto from a specific region
+  of Italy can be called "prosciutto di Parma".
+- A Protected Geographic Indication (PGI) product must have at least one stage
+  of production (but not necessarily all) within a specific region. For example,
+  a product can only be called Black Forest ham if part of the production is
+  done within the Black Forest region of Germany.
+
+Additionally, a Traditional Speciality Guaranteed (TSG) product does not have to
+be from a specific region, but must be produced using certain traditional
+techniques or materials. For example, pizza napoletana (Neapolitan pizza) must
+be produced using a traditional method, but can be made anywhere.
+
+Naturally, economists are interested in how this system affects the price of
+protected products. One theory is that a geographically indicated product's
+price is inversely related to the area of the geographic region it can be
+produced in. If the area is very small, there can only be few producers, and the
+exclusivity of the product makes it seem more desirable or higher quality; if
+the area is large, there can be more producers, and the product seems less
+exclusive.
+
+This dataset comes from a study meant to test this theory by using 22 types of
+GI ham (Höhn, Huysmans, and Crombez, 2023).
+
+## Data
+
+The authors write:
+
+> We manually gathered data from online store websites operating in 11 EU
+> countries, namely Austria, Belgium, France, Germany, Ireland, Italy,
+> Luxembourg, the Netherlands, Portugal, Slovenia and Spain. These countries
+> were chosen based on the following criteria. Our study encompasses all
+> countries of origin of an eligible GI ham that have the euro as currency.
+> Also, it includes the Netherlands as a major pig meat producer
+> (Augère-Granier, 2020) and Ireland as a major ham importer (Török & Jambor,
+> 2016).
+
+> We selected 36 online stores of established supermarkets that are present with
+> physical stores in the respective city chosen for delivery, for example,
+> Monoprix in Paris, REWE in Berlin or Coop in Rome. To avoid strong price
+> differences due to strongly different store types we excluded specialty shops
+> focusing on specific product categories. [...] To ensure consistency we only
+> gathered observations on supermarket websites providing home delivery in the
+> respective capital’s centre. We collected these cross-sectional data in April
+> 2021.
+
+Each row of the data represents one type of ham from one particular online
+store. Of the 768 observations, 190 are GI hams (either PDO or PGI), while the
+rest have no geographic restrictions.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| COO | Country of origin of geographical indication (GI) ham, or `NA` if ham is not GI |
+| GI | If ham has geographical indication (GI), 1, otherwise 0 |
+| GI_cluster | Cluster at GI level, or `NA` if not GI. Cluster is the specific geographic indication, such as "Prosciutto di Parma" |
+| GI_label | Whether the ham is Non-GI, PDO (protected designation of origin), or PGI (protected geographical indication) |
+| NonGI | 1 if not labeled PDO or PGI, 0 otherwise |
+| PDO | 1 if the ham is PDO, 0 otherwise |
+| PGI | 1 if the ham is PGI, 0 otherwise |
+| TSG | 1 if the ham is TSG (traditional specialities guaranteed), 0 otherwise |
+| breed | 1 if a special pig breed is used for the ham, 0 otherwise |
+| country | Country in which the ham is sold |
+| domestic | 1 if the ham is domestic to the country, 0 if it is foreign |
+| lnarea | Natural logarithm of the GI area, square kilometers; `NA` for non-GI ham |
+| lnproduction | Natural logarithm of the total production of GI ham by the consortium, tons; only available for certain Italian GI hams, and `NA` otherwise |
+| lnsourcing | Natural logarithm of the area where the pig meat can be sourced, square kilometers |
+| longevity | Years passed since the PDO, PGI, or TSG designation was registered in the European Union, as of April 1, 2021 |
+| maturation | The time the ham is matured, in months |
+| national | 1 if the ham is a national brand, 0 if it is a private label brand (i.e. made for the supermarket under their brand name) |
+| organic | 1 if the product is labeled/certified organic, 0 otherwise |
+| packsize | Size of the ham package, in grams |
+| price | Price of the ham per 100 grams, in Euros |
+| producers | Number of producers of GI ham in the consortium, for hams whose production is reported in `lnproduction` |
+| smoked | 1 if the ham is smoked, 0 otherwise |
+| store | Name of the online store the ham was sold by |
+
+## Questions
+
+1. Are protected hams from different countries priced differently, on average?
+   Conduct an ANOVA of price by country of origin (`COO`), using hams with a
+   geographical indication. Interpret your results.
+2. The authors considered several covariates that also may influence prices:
+   brand of the ham (a named national brand vs. supermarket brand), whether the
+   ham is marked as organic, time taken for the ham to mature, and whether the
+   ham comes from a special pig breed. Add these to your analysis. Comment on
+   the results.
+3. To test their theory about geographic area, the researchers used the `lnarea`
+   variable as part of their model. Fit a regression model predicting price
+   using `lnarea`, the control variables from question 2, and the country of
+   origin. Do the results support the theory?
+4. One concern may be that ham prices within a country of origin may be
+   dependent. One could produce a hierarchical model, where each ham has a mean
+   price that depends on the country of origin and also the geographic area of
+   production. Build a suitable hierarchical model and justify your model
+   choices. Fit the model and interpret your results.
+
+## References
+
+Gero Laurenz Höhn, Martijn Huysmans & Christophe Crombez (2023). "Does *terroir*
+size matter? Protected geographical areas and prices of European hams." *Regional
+Studies*. <https://doi.org/10.1080/00343404.2023.2187365>
+
+Gero Laurenz Höhn, Martijn Huysmans & Christophe Crombez (2023). "Replication
+Data for: Does *Terroir* Size Matter? Protected Geographical Areas and Prices of
+European Hams", <https://doi.org/10.34894/RX0QIN>, DataverseNL, V1.
