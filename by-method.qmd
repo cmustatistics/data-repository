@@ -4,12 +4,12 @@ listing:
   categories: true
   contents:
     - "*/*.qmd"
-  type: table
-  fields: [date, title, author]
+  type: default
+  fields: [date, title, author, description]
   field-display-names:
-    datayear: "Data Year"
     date: "Published"
 ---
 
-All datasets are listed below. A [downloadable spreadsheet of all
-datasets](cmu-statds-datasets.csv) is also available for more advanced searches.
+All datasets are listed below, and can be filtered by statistical method on the
+right. A [downloadable spreadsheet of all datasets](cmu-statds-datasets.csv) is
+also available for more advanced searches.
