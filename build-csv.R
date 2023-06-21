@@ -1,8 +1,10 @@
 # Make a CSV of all datasets, for searching/sorting by advanced users
 
 # Only run when we're rendering the entire site, not an individual data file
-# (e.g. during preview)
-if (!nzchar(Sys.getenv("QUARTO_PROJECT_RENDER_ALL"))) {
+# (e.g. during preview). Don't run on GitHub Actions, as it does not have R
+# packages installed.
+if (!nzchar(Sys.getenv("QUARTO_PROJECT_RENDER_ALL")) ||
+      nzchar(Sys.getenv("CI"))) {
   quit()
 }
 
