@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alex Reinhart">
-<meta name="dcterms.date" content="2023-05-17">
-<meta name="description" content="Is low core temperature during surgery associated with poor surgical outcomes or death? Use logistic and survival analysis to study an observational dataset.">
+<meta name="author" content="Shunyi Zheng">
+<meta name="dcterms.date" content="2023-06-20">
+<meta name="description" content="The World Bank’s World Development Indicators (WDI) compile development information about countries around the world. Using ten years of data, study development, political stability, pollution, and other factors at the national and regional levels.">
 
-<title>CMU S&amp;DS Data Repository - Core temperature during surgery</title>
+<title>CMU S&amp;DS Data Repository - World Development Indicators</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/core-temperature.html">Core temperature during surgery</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../politics/world-bank.html">Politics</a></li><li class="breadcrumb-item"><a href="../politics/world-bank.html">World Development Indicators</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -203,13 +203,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Medicine</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
@@ -218,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link active">
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Core temperature during surgery</span></a>
   </div>
 </li>
@@ -261,16 +261,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Politics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">World Development Indicators</span></a>
   </div>
 </li>
@@ -350,31 +350,26 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
   <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
   </ul></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
-  <ul class="collapse">
-  <li><a href="#introductory" id="toc-introductory" class="nav-link" data-scroll-target="#introductory">Introductory</a></li>
-  <li><a href="#advanced-regression" id="toc-advanced-regression" class="nav-link" data-scroll-target="#advanced-regression">Advanced regression</a></li>
-  <li><a href="#survival-analysis" id="toc-survival-analysis" class="nav-link" data-scroll-target="#survival-analysis">Survival analysis</a></li>
-  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/core-temperature.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/politics/world-bank.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Core temperature during surgery</h1>
+<h1 class="title">World Development Indicators</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">logistic regression</div>
-    <div class="quarto-category">survival analysis</div>
+    <div class="quarto-category">linear regression</div>
+    <div class="quarto-category">ANOVA</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Is low core temperature during surgery associated with poor surgical outcomes or death? Use logistic and survival analysis to study an observational dataset.
+    The World Bank’s World Development Indicators (WDI) compile development information about countries around the world. Using ten years of data, study development, political stability, pollution, and other factors at the national and regional levels.
   </div>
 </div>
 
@@ -384,14 +379,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Alex Reinhart </p>
+             <p>Shunyi Zheng </p>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 17, 2023</p>
+      <p class="date">June 20, 2023</p>
     </div>
   </div>
   
@@ -400,14 +395,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Data files</div>
     <div class="quarto-title-meta-contents">
-            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/core-temperature.csv">core-temperature.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/world-bank.csv">world-bank.csv</a>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Data year</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2020</p>
+      <p class="date">2022</p>
     </div>
   </div>
   </div>
@@ -417,32 +412,30 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>During surgery that uses general anesthesia, patients often can have their body temperatures drop significantly. Anesthetics disrupt the body’s automatic mechanisms for maintaining body temperature, and they also tend to reduce the metabolism, meaning the body uses less energy and produces less heat. This can produce what is called “surgical hypothermia” or “inadvertent perioperative hypothermia” (IPH), when the body temperature drops below 36°C (96.8°F) during surgery. IPH can reduce the effectiveness of drugs, increase surgical bleeding, and delay recovery from surgery.</p>
-<p>Researchers wanted to know whether IPH was also associated with surgical site infections (SSIs), which are also a serious problem during surgery. A surgical site infection can cause a patient to stay in the hospital longer or even lead to death. Some research suggested that IPH could increase the risk of SSIs, and so a new study explored whether there was an association between IPH and SSIs in patients who had colorectal surgery.</p>
+<p>The World Bank compiles a database of World Development Indicators, which compile data from various sources intended to give the most current and accurate data about countries worldwide. Over a thousand different variables are available, updated yearly.</p>
+<p>This dataset compiles a selection of 40 interesting variables for 266 countries and regions across 10 years, from 2013 to 2022.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The dataset includes 7,908 patients who had colorectal surgery at the Cleveland Clinic between 2005 and 2014. Patients were included in the study if their surgery took more than one hour and required general anesthesia, and if their esophogeal core temperature was monitored and sufficient baseline and outcome data was collected.</p>
+<p>Each row represents one country, territory, or region in one year.</p>
+<p>The World Bank includes some geographic groupings, such as “Sub-Saharan Africa” and “Pacific island small states”, as well as individual countries.</p>
+<p>Not all variables are available for all countries in all years, and more recent data is missing more often than older data.</p>
 <section id="data-preview" class="level3">
 <h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
 <h4 class="anchored">
-<a href=" https://cmustatistics.github.io/data-repository/data/core-temperature.csv "> core-temperature.csv </a>
+<a href=" https://cmustatistics.github.io/data-repository/data/world-bank.csv "> world-bank.csv </a>
 </h4>
 <div data-pagedtable="false">
 
 <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["YEAR"],"name":[1],"type":["int"],"align":["right"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["FEMALE"],"name":[3],"type":["int"],"align":["right"]},{"label":["BMI"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["CharlsonScore"],"name":[5],"type":["int"],"align":["right"]},{"label":["SurgeryType"],"name":[6],"type":["lgl"],"align":["right"]},{"label":["CHF"],"name":[7],"type":["int"],"align":["right"]},{"label":["VALVE"],"name":[8],"type":["int"],"align":["right"]},{"label":["DM"],"name":[9],"type":["int"],"align":["right"]},{"label":["RENLFAIL"],"name":[10],"type":["int"],"align":["right"]},{"label":["LIVER"],"name":[11],"type":["int"],"align":["right"]},{"label":["METS"],"name":[12],"type":["int"],"align":["right"]},{"label":["TUMOR"],"name":[13],"type":["int"],"align":["right"]},{"label":["COAG"],"name":[14],"type":["int"],"align":["right"]},{"label":["OBESE"],"name":[15],"type":["int"],"align":["right"]},{"label":["WGHTLOSS"],"name":[16],"type":["int"],"align":["right"]},{"label":["LYTES"],"name":[17],"type":["int"],"align":["right"]},{"label":["BLDLOSS"],"name":[18],"type":["int"],"align":["right"]},{"label":["ANEMDEF"],"name":[19],"type":["int"],"align":["right"]},{"label":["DRUG"],"name":[20],"type":["int"],"align":["right"]},{"label":["SteroidHx"],"name":[21],"type":["int"],"align":["right"]},{"label":["ImmunosuppressantHx"],"name":[22],"type":["int"],"align":["right"]},{"label":["SurgDuration"],"name":[23],"type":["int"],"align":["right"]},{"label":["Open"],"name":[24],"type":["int"],"align":["right"]},{"label":["AbsessIntraAb"],"name":[25],"type":["int"],"align":["right"]},{"label":["AbsessPelvic"],"name":[26],"type":["int"],"align":["right"]},{"label":["Cdiff"],"name":[27],"type":["int"],"align":["right"]},{"label":["FascialDehiscence"],"name":[28],"type":["int"],"align":["right"]},{"label":["DelayedHealing"],"name":[29],"type":["int"],"align":["right"]},{"label":["Infection"],"name":[30],"type":["int"],"align":["right"]},{"label":["Sinus"],"name":[31],"type":["int"],"align":["right"]},{"label":["Pneumonia"],"name":[32],"type":["int"],"align":["right"]},{"label":["Pneumonia.aspiration."],"name":[33],"type":["int"],"align":["right"]},{"label":["Sepsis"],"name":[34],"type":["int"],"align":["right"]},{"label":["SSIDeep.fascia."],"name":[35],"type":["int"],"align":["right"]},{"label":["SSIOrganSpace"],"name":[36],"type":["int"],"align":["right"]},{"label":["SSISuperficial.skin."],"name":[37],"type":["int"],"align":["right"]},{"label":["WoundInfection"],"name":[38],"type":["int"],"align":["right"]},{"label":["TWATemp"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["LastReadingTemp"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["EndCaseTemp"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["AnyInfection"],"name":[42],"type":["int"],"align":["right"]},{"label":["SeriousInfection"],"name":[43],"type":["int"],"align":["right"]},{"label":["SuperficialInfection"],"name":[44],"type":["int"],"align":["right"]},{"label":["DurationHosp"],"name":[45],"type":["int"],"align":["right"]},{"label":["LOS"],"name":[46],"type":["int"],"align":["right"]},{"label":["DEAD"],"name":[47],"type":["int"],"align":["right"]}],"data":[{"1":"2009","2":"63.7","3":"0","4":"39.3","5":"2","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"1","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"180","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.8","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"},{"1":"2009","2":"58.7","3":"0","4":"25.3","5":"3","6":"NA","7":"0","8":"0","9":"1","10":"0","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"0","23":"205","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.5","40":"35.6","41":"36.1","42":"0","43":"0","44":"0","45":"5","46":"5","47":"0"},{"1":"2009","2":"84.6","3":"0","4":"31.6","5":"1","6":"NA","7":"0","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","14":"1","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"207","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"35.1","40":"35.0","41":"36.2","42":"1","43":"0","44":"1","45":"10","46":"10","47":"0"},{"1":"2009","2":"35.1","3":"1","4":"25.5","5":"0","6":"NA","7":"0","8":"1","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"1","17":"1","18":"0","19":"1","20":"0","21":"1","22":"0","23":"98","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.0","40":"36.2","41":"36.6","42":"0","43":"0","44":"0","45":"4","46":"4","47":"0"},{"1":"2009","2":"49.3","3":"0","4":"22.2","5":"6","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"0","22":"0","23":"90","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.3","40":"35.4","41":"36.2","42":"0","43":"0","44":"0","45":"1","46":"1","47":"0"},{"1":"2009","2":"62.9","3":"0","4":"33.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"1","22":"0","23":"172","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.8","42":"0","43":"0","44":"0","45":"6","46":"6","47":"0"},{"1":"2009","2":"32.7","3":"1","4":"18.8","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"1","22":"1","23":"316","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.3","40":"37.0","41":"36.0","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"52.6","3":"1","4":"30.9","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"381","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.6","40":"37.0","41":"36.8","42":"0","43":"0","44":"0","45":"9","46":"9","47":"0"},{"1":"2009","2":"57.5","3":"0","4":"21.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"95","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"1","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.5","42":"1","43":"1","44":"0","45":"15","46":"15","47":"0"},{"1":"2009","2":"45.5","3":"1","4":"21.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"255","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.7","40":"35.0","41":"36.0","42":"0","43":"0","44":"0","45":"10","46":"10","47":"0"},{"1":"2009","2":"74.1","3":"1","4":"20.9","5":"2","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"174","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.3","40":"35.4","41":"36.2","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"72.9","3":"0","4":"26.3","5":"6","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"1","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"247","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.7","40":"36.8","41":"36.4","42":"0","43":"0","44":"0","45":"21","46":"21","47":"0"},{"1":"2009","2":"53.0","3":"1","4":"27.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"174","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.5","40":"36.8","41":"36.6","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"49.6","3":"0","4":"28.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"1","23":"154","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.6","40":"36.0","41":"36.3","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"47.5","3":"0","4":"27.5","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"0","22":"0","23":"420","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.9","40":"36.6","41":"36.6","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"},{"1":"2009","2":"51.0","3":"0","4":"24.4","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"1","23":"280","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.3","40":"37.0","41":"37.2","42":"0","43":"0","44":"0","45":"9","46":"9","47":"0"},{"1":"2009","2":"72.0","3":"1","4":"34.6","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"1","17":"0","18":"0","19":"1","20":"0","21":"1","22":"0","23":"242","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.8","40":"35.8","41":"36.3","42":"0","43":"0","44":"0","45":"16","46":"16","47":"0"},{"1":"2009","2":"57.8","3":"0","4":"22.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"249","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.9","40":"37.0","41":"36.8","42":"0","43":"0","44":"0","45":"14","46":"14","47":"0"},{"1":"2009","2":"61.9","3":"0","4":"29.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"374","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"35.7","40":"36.2","41":"37.0","42":"1","43":"0","44":"1","45":"7","46":"7","47":"0"},{"1":"2009","2":"33.7","3":"1","4":"20.5","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"0","23":"291","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.7","40":"37.6","41":"36.9","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["Country Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Country Code"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Region"],"name":[3],"type":["chr"],"align":["left"]},{"label":["IsCountry"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Income group"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Year"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["GenderEquality"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["PoliticalStability"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["GenderEducation"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["BirthSex"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Income"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["PlanePassengers"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["PlaneDepartures"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["Electricity"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["PM2.5"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["CO2Emissions"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["Unemployment"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["Poverty"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["BattleDeaths"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["CompulsoryEducation"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["Literacy"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["Death"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["Alcohol"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["Diabetes"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["DeathsCD"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["DeathsNCD"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["GDP"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["Internet"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["Population"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["Rural"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["Urban"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["Suicide"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["Homicide"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["Military"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["LegalRights"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["Birth"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["Fertility"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["LandArea"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["ForestArea"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["RuralArea"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["UrbanArea"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["Density"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["TaxRevenue"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["Mobile"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["FixedTelephone"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["GovernmentExpenditure"],"name":[46],"type":["dbl"],"align":["right"]}],"data":[{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2022","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"NA","45":"NA","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2021","7":"NA","8":"-2.52985525","9":"NA","10":"1.052","11":"NA","12":"293213","13":"2865.737","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"35786","20":"9","21":"37.26604","22":"7.344","23":"NA","24":"10.9","25":"NA","26":"NA","27":"14786861638","28":"NA","29":"40099462","30":"73.686","31":"26.314","32":"NA","33":"4.022498","34":"NA","35":"NA","36":"35.842","37":"4.643","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"22678024","45":"145787","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2020","7":"1.5","8":"-2.70502973","9":"0.38689","10":"1.052","11":"NA","12":"449041","13":"4635.714","14":"97.70000","15":"NA","16":"NA","17":"11.710","18":"49.4","19":"20475","20":"9","21":"NA","22":"7.113","23":"NA","24":"NA","25":"NA","26":"NA","27":"20143442151","28":"18.40000","29":"38972230","30":"73.974","31":"26.026","32":"NA","33":"6.594439","34":"4.972825","35":"NA","36":"36.051","37":"4.750","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"59.75228","43":"NA","44":"22678024","45":"145787","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2019","7":"1.5","8":"-2.65553117","9":"NA","10":"1.053","11":"NA","12":"1066747","13":"7334.000","14":"97.70000","15":"NA","16":"0.1608502","17":"11.085","18":"NA","19":"29940","20":"9","21":"NA","22":"6.791","23":"NA","24":"NA","25":"32.930451","26":"49.78108","27":"18904490263","28":"17.60000","29":"37769499","30":"74.246","31":"25.754","32":"4.1","33":"7.180397","34":"4.275736","35":"10","36":"36.466","37":"4.870","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"57.90825","43":"NA","44":"22580071","45":"134636","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2018","7":"1.5","8":"-2.76386428","9":"0.34523","10":"1.053","11":"NA","12":"1125367","13":"10454.000","14":"96.61613","15":"NA","16":"0.1653669","17":"11.110","18":"NA","19":"25676","20":"9","21":"NA","22":"6.981","23":"0.21","24":"NA","25":"NA","26":"NA","27":"18418848300","28":"16.80000","29":"36686784","30":"74.505","31":"25.495","32":"4.1","33":"6.743573","34":"3.724855","35":"10","36":"36.927","37":"5.002","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"56.24823","43":"NA","44":"21976355","45":"127794","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2017","7":"1.5","8":"-2.80108380","9":"NA","10":"1.054","11":"NA","12":"1647425","13":"24207.000","14":"97.70000","15":"56.91081","16":"0.1341869","17":"11.180","18":"NA","19":"19014","20":"9","21":"NA","22":"7.027","23":"NA","24":"NA","25":"NA","26":"NA","27":"18896352022","28":"13.50000","29":"35643418","30":"74.750","31":"25.250","32":"4.1","33":"6.800695","34":"3.652592","35":"9","36":"37.342","37":"5.129","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"54.64854","43":"9.898451","44":"23929713","45":"118769","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2016","7":"1.5","8":"-2.67105389","9":"NA","10":"1.055","11":"NA","12":"1917924","13":"22770.000","14":"97.70000","15":"56.28705","16":"0.1531210","17":"10.086","18":"51.7","19":"17985","20":"9","21":"NA","22":"7.077","23":"NA","24":"NA","25":"NA","26":"NA","27":"18019558182","28":"11.00000","29":"34636207","30":"74.980","31":"25.020","32":"4.0","33":"6.692419","34":"3.680251","35":"9","36":"37.936","37":"5.262","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"53.10428","43":"9.502653","44":"21602982","45":"114192","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2015","7":"1.5","8":"-2.57122183","9":"NA","10":"1.056","11":"17785739176","12":"1929907","13":"23532.000","14":"71.50000","15":"61.25266","16":"0.1761800","17":"8.989","18":"NA","19":"17273","20":"9","21":"NA","22":"7.331","23":"0.21","24":"NA","25":"39.390981","26":"44.21905","27":"19998156214","28":"8.26000","29":"33753499","30":"75.197","31":"24.803","32":"4.0","33":"9.975262","34":"3.833142","35":"9","36":"38.803","37":"5.405","38":"652230","39":"1.852782","40":"636173.2","41":"3993.836","42":"51.75091","43":"7.585382","44":"19709038","45":"110000","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2014","7":"1.5","8":"-2.41106844","9":"0.27600","10":"1.056","11":"NA","12":"2209428","13":"25920.000","14":"89.50000","15":"59.01033","16":"0.1491505","17":"7.910","18":"NA","19":"12284","20":"9","21":"NA","22":"7.395","23":"NA","24":"NA","25":"NA","26":"NA","27":"20550582747","28":"7.00000","29":"32716210","30":"75.413","31":"24.587","32":"3.9","33":"NA","34":"5.109793","35":"9","36":"39.105","37":"5.560","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"50.16054","43":"6.882103","44":"18407168","45":"101931","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2013","7":"1.5","8":"-2.51934910","9":"NA","10":"1.057","11":"NA","12":"2044188","13":"21696.000","14":"68.29065","15":"61.36674","16":"0.1898168","17":"7.949","18":"NA","19":"8056","20":"9","21":"NA","22":"7.478","23":"NA","24":"NA","25":"NA","26":"NA","27":"20564485419","28":"5.90000","29":"31541209","30":"75.627","31":"24.373","32":"4.0","33":"NA","34":"4.311764","35":"9","36":"39.601","37":"5.696","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"48.35903","43":"7.122773","44":"16807156","45":"95769","46":"NA"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2022","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"11.808","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"NA","45":"NA","46":"NA"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2021","7":"NA","8":"0.10944585","9":"1.39256","10":"1.075","11":"NA","12":"193259","13":"1471.000","14":"NA","15":"NA","16":"NA","17":"12.683","18":"NA","19":"NA","20":"9","21":"98.45000","22":"11.325","23":"NA","24":"10.2","25":"NA","26":"NA","27":"18255787479","28":"79.32000","29":"2811666","30":"37.031","31":"62.969","32":"NA","33":"2.311969","34":"4.185888","35":"NA","36":"10.240","37":"1.390","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"17.874386","44":"2635466","45":"197690","46":"1554502405"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2020","7":"NA","8":"0.08755231","9":"1.36876","10":"1.078","11":"NA","12":"124714","13":"1274.000","14":"100.00000","15":"NA","16":"NA","17":"13.067","18":"43.4","19":"NA","20":"9","21":"NA","22":"10.785","23":"NA","24":"NA","25":"NA","26":"NA","27":"15131866271","28":"72.23768","29":"2837849","30":"37.888","31":"62.112","32":"NA","33":"2.127772","34":"3.795233","35":"NA","36":"10.285","37":"1.400","38":"27400","39":"28.791971","40":"NA","41":"NA","42":"103.57113","43":"17.017907","44":"2618880","45":"223469","46":"1437019962"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2019","7":"NA","8":"0.11116863","9":"1.35992","10":"1.081","11":"10337645642","12":"307741","13":"2558.000","14":"100.00000","15":"NA","16":"1.6919681","17":"11.470","18":"46.2","19":"NA","20":"9","21":"NA","22":"8.480","23":"NA","24":"NA","25":"3.023108","26":"93.94089","27":"15401830754","28":"68.55039","29":"2854191","30":"38.771","31":"61.229","32":"4.3","33":"2.261748","34":"4.457659","35":"8","36":"10.343","37":"1.414","38":"27400","39":"28.791971","40":"NA","41":"NA","42":"104.16755","43":"18.144377","44":"2630076","45":"242859","46":"1416306301"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2018","7":"NA","8":"0.37051564","9":"1.36299","10":"1.084","11":"10283960047","12":"303137","13":"2935.000","14":"100.00000","15":"NA","16":"1.7816923","17":"12.300","18":"49.0","19":"NA","20":"9","21":"98.14115","22":"8.308","23":"7.17","24":"NA","25":"NA","26":"NA","27":"15156432310","28":"65.40000","29":"2866376","30":"39.681","31":"60.319","32":"4.5","33":"2.294046","34":"4.029427","35":"8","36":"10.517","37":"1.440","38":"27400","39":"28.791971","40":"NA","41":"NA","42":"104.61226","43":"18.545952","44":"2714878","45":"248631","46":"1376202215"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2017","7":"NA","8":"0.37847477","9":"1.34488","10":"1.087","11":"9916264100","12":"204090","13":"1904.000","14":"99.89000","15":"18.20060","16":"1.7904566","17":"13.620","18":"51.8","19":"NA","20":"9","21":"NA","22":"8.150","23":"NA","24":"NA","25":"NA","26":"NA","27":"13019689337","28":"62.40000","29":"2873457","30":"40.617","31":"59.383","32":"4.7","33":"2.014340","34":"3.805181","35":"8","36":"10.870","37":"1.491","38":"27400","39":"28.792062","40":"NA","41":"NA","42":"104.87069","43":"18.887492","44":"3625699","45":"246720","46":"1366451252"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2016","7":"NA","8":"0.34464467","9":"1.32128","10":"1.088","11":"9707100981","12":"26634","13":"306.000","14":"99.89000","15":"18.18993","16":"1.5566560","17":"15.420","18":"NA","19":"NA","20":"9","21":"NA","22":"8.035","23":"NA","24":"NA","25":"NA","26":"NA","27":"11861199831","28":"59.60000","29":"2876101","30":"41.579","31":"58.421","32":"4.7","33":"2.742043","34":"3.787234","35":"6","36":"11.289","37":"1.551","38":"27400","39":"28.802190","40":"NA","41":"NA","42":"104.96719","43":"17.590230","44":"3369756","45":"248640","46":"1324573422"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2015","7":"NA","8":"0.34612906","9":"1.29878","10":"1.091","11":"9411883298","12":"NA","13":"NA","14":"99.98000","15":"19.51254","16":"1.6038099","17":"17.190","18":"NA","19":"NA","20":"9","21":"NA","22":"7.947","23":"6.74","24":"NA","25":"2.955382","26":"92.91781","27":"11386850130","28":"56.90000","29":"2880703","30":"42.566","31":"57.434","32":"4.8","33":"2.220310","34":"3.778893","35":"6","36":"11.718","37":"1.613","38":"27400","39":"28.802464","40":"27331.6","41":"827.694","42":"105.13515","43":"18.515790","44":"3400955","45":"226718","46":"1265151391"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2014","7":"NA","8":"0.48598623","9":"1.30338","10":"1.094","11":"9404812471","12":"151632","13":"1992.000","14":"99.95000","15":"18.88395","16":"1.6684758","17":"18.050","18":"NA","19":"NA","20":"9","21":"NA","22":"7.868","23":"NA","24":"NA","25":"NA","26":"NA","27":"13228147516","28":"54.30000","29":"2889104","30":"43.577","31":"56.423","32":"5.0","33":"4.646160","34":"4.243785","35":"6","36":"12.150","37":"1.674","38":"27400","39":"28.750511","40":"NA","41":"NA","42":"105.44175","43":"18.301936","44":"3359654","45":"235734","46":"1279274299"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2013","7":"NA","8":"0.09192979","9":"1.28941","10":"1.096","11":"9344283362","12":"865848","13":"11196.000","14":"100.00000","15":"19.93852","16":"1.5321793","17":"15.870","18":"NA","19":"NA","20":"9","21":"NA","22":"7.819","23":"NA","24":"NA","25":"NA","26":"NA","27":"12776220507","28":"51.80000","29":"2895092","30":"44.613","31":"55.387","32":"5.3","33":"4.295095","34":"4.826486","35":"7","36":"12.279","37":"1.697","38":"27400","39":"28.698558","40":"NA","41":"NA","42":"105.66029","43":"16.503271","44":"3685983","45":"281200","46":"1202387045"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </section>
 <section id="variable-descriptions" class="level3">
 <h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
-<p>The variables include a number of baseline features about the patient and their health before surgery. They also categorize different types of infections after surgery, so specific infections can be analyzed individually, or we can consider all serious or superficial infections together.</p>
+<p>These descriptions are adapted directly from the World Bank’s data documentation. Codes in parentheses (such as <code>SE.COM.DURS</code>) are the World Bank codes for these variables. Search for these codes in the data series listed <a href="https://databank.worldbank.org/source/world-development-indicators">in the DataBank</a> to find detailed descriptions of the sources and definitions for each variable.</p>
 <table class="table">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 76%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -451,176 +444,188 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>YEAR</td>
-<td>Year of surgery</td>
+<td>Country Name</td>
+<td>Name of country or region</td>
 </tr>
 <tr class="even">
-<td>Age</td>
-<td>Patient’s age at the time of the surgery</td>
+<td>Country Code</td>
+<td>Unique three-letter code identifying the country</td>
 </tr>
 <tr class="odd">
-<td>FEMALE</td>
-<td>Patient’s sex at birth (1 = female, 0 = male)</td>
+<td>Region</td>
+<td>Geographic region the country is in</td>
 </tr>
 <tr class="even">
-<td>BMI</td>
-<td>Patient’s body mass index (BMI) at time of surgery</td>
+<td>IsCountry</td>
+<td>1 if this row represents a country, 0 if it is an aggregated region (like Sub-Saharan Africa or all high-income countries)</td>
 </tr>
 <tr class="odd">
-<td>CharlsonScore</td>
-<td>Patient’s Charlson Comorbidity Index score (higher numbers indicate more comorbidities that could lead to death)</td>
+<td>Income group</td>
+<td>Country’s income group as of 2023 (high-income, upper-middle-income, lower-middle-income, or low-income), based on its gross national income (GNI), <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups">as defined by the World Bank</a></td>
 </tr>
 <tr class="even">
-<td>SurgeryType</td>
-<td>This was meant to record the type of surgery (such as colostomy, ileostomy, or other procedures), but is missing for all patients</td>
+<td>Year</td>
+<td>Year the values were observed in</td>
 </tr>
 <tr class="odd">
-<td>CHF</td>
-<td>Does the patient have a history of congestive heart failure? (1 = yes, 0 = no)</td>
+<td>Alcohol</td>
+<td>Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age) (SH.ALC.PCAP.LI)</td>
 </tr>
 <tr class="even">
-<td>VALVE</td>
-<td>Does the patient have a history of peripheral vascular disease? (1 = yes, 0 = no)</td>
+<td>BattleDeaths</td>
+<td>Battle-related deaths (number of people) (VC.BTL.DETH)</td>
 </tr>
 <tr class="odd">
-<td>DM</td>
-<td>Does the patient have a history of diabetes without chronic complications? (1 = yes, 0 = no)</td>
+<td>Birth</td>
+<td>Birth rate, crude (per 1,000 people) (SP.DYN.CBRT.IN)</td>
 </tr>
 <tr class="even">
-<td>RENLFAIL</td>
-<td>Does the patient have a history of renal failure? (1 = yes, 0 = no)</td>
+<td>BirthSex</td>
+<td>Sex ratio at birth (male births per female births) (SP.POP.BRTH.MF)</td>
 </tr>
 <tr class="odd">
-<td>LIVER</td>
-<td>Does the patient have a history of liver disease? (1 = yes, 0 = no)</td>
+<td>CO2Emissions</td>
+<td>CO2 emissions (metric tons per capita) (EN.ATM.CO2E.PC)</td>
 </tr>
 <tr class="even">
-<td>METS</td>
-<td>Does the patient have cancer that has metastasized? (1 = yes, 0 = no)</td>
+<td>CompulsoryEducation</td>
+<td>Compulsory education, duration (years) (SE.COM.DURS)</td>
 </tr>
 <tr class="odd">
-<td>TUMOR</td>
-<td>Does the patient have a solid tumor that has <em>not</em> metastasized? (1 = yes, 0 = no)</td>
+<td>Death</td>
+<td>Death rate, crude (per 1,000 people) (SP.DYN.CDRT.IN)</td>
 </tr>
 <tr class="even">
-<td>COAG</td>
-<td>Does the patient have coagulopathy (a blood clotting disorder)? (1 = yes, 0 = no)</td>
+<td>DeathsCD</td>
+<td>Deaths caused by communicable diseases and maternal, prenatal and nutrition conditions (% of total deaths) (SH.DTH.COMM.ZS)</td>
 </tr>
 <tr class="odd">
-<td>WGHTLOSS</td>
-<td>Has the patient lost weight? (Time period and amount not specified; 1 = yes, 0 = no)</td>
+<td>DeathsNCD</td>
+<td>Deaths caused by non-communicable diseases (% of total) (SH.DTH.NCOM.ZS)</td>
 </tr>
 <tr class="even">
-<td>LYTES</td>
-<td>Does the patient have fluid or electrolyte disorders? (1 = yes, 0 = no)</td>
+<td>Density</td>
+<td>Population density (people per sq. km of land area) (EN.POP.DNST)</td>
 </tr>
 <tr class="odd">
-<td>BLDLOSS</td>
-<td>Does the patient have chronic blood loss anemia? (1 = yes, 0 = no)</td>
+<td>Diabetes</td>
+<td>Diabetes prevalence (% of population ages 20 to 79) (SH.STA.DIAB.ZS)</td>
 </tr>
 <tr class="even">
-<td>ANEMDEF</td>
-<td>Does the patient have a deficiency anemia? (1 = yes, 0 = no)</td>
+<td>Electricity</td>
+<td>Access to electricity (% of population) (EG.ELC.ACCS.ZS)</td>
 </tr>
 <tr class="odd">
-<td>DRUG</td>
-<td>Does the patient abuse drugs? (1 = yes, 0 = no)</td>
+<td>Fertility</td>
+<td>Fertility rate, total (births per woman) (SP.DYN.TFRT.IN)</td>
 </tr>
 <tr class="even">
-<td>SteroidHx</td>
-<td>Did the patient use steroid drugs before surgery? (1 = yes, 0 = no)</td>
+<td>FixedTelephone</td>
+<td>Fixed telephone subscriptions (IT.MLT.MAIN)</td>
 </tr>
 <tr class="odd">
-<td>ImmunosuppressantHx</td>
-<td>Did the patient use immunosuppressive drugs before surgery? (1 = yes, 0 = no)</td>
+<td>ForestArea</td>
+<td>Forest area (% of land area) (AG.LND.FRST.ZS)</td>
 </tr>
 <tr class="even">
-<td>SurgDuration</td>
-<td>Duration of the surgery, in minutes</td>
+<td>GDP</td>
+<td>Gross domestic product (current US$) (NY.GDP.MKTP.CD)</td>
 </tr>
 <tr class="odd">
-<td>Open</td>
-<td>Type of surgery. 1 = open surgery, 0 = laparoscopic (“minimally invasive”) surgery.</td>
+<td>GenderEducation</td>
+<td>Gender parity index (GPI) for tertiary education enrollment: ratio of women to men enrolled (SE.ENR.TERT.FM.ZS)</td>
 </tr>
 <tr class="even">
-<td>AbsessIntraAb</td>
-<td>Did the patient have an intra-abdominal abscess (caused by infection) after the surgery? (1 = yes, 0 = no)</td>
+<td>GenderEquality</td>
+<td>CPIA gender equality rating, measuring whether the government has programs and institutions to promote gender equality in education, health, the economy, and the law (1=low to 6=high) (IQ.CPA.GNDR.XQ)</td>
 </tr>
 <tr class="odd">
-<td>AbsessPelvic</td>
-<td>Did the patient have a pelvic abscess (caused by infection) after the surgery? (1 = yes, 0 = no)</td>
+<td>GovernmentExpenditure</td>
+<td>General government final consumption expenditure (constant 2015 US$) (NE.CON.GOVT.KD)</td>
 </tr>
 <tr class="even">
-<td>Cdiff</td>
-<td>Did the patient have a <em>Clostridium difficile</em> infection after the surgery? (1 = yes, 0 = no)</td>
+<td>Homicide</td>
+<td>Intentional homicides (per 100,000 people) (VC.IHR.PSRC.P5)</td>
 </tr>
 <tr class="odd">
-<td>FascialDehiscence</td>
-<td>Did the patient suffer fascial dehiscence after surgery? This occurs when the fascia, which surround the organs in the abdomen and holds them in place, fails to heal after surgery and splits open. (1 = yes, 0 = no)</td>
+<td>Income</td>
+<td>Adjusted net national income (constant 2015 US$) (NY.ADJ.NNTY.KD)</td>
 </tr>
 <tr class="even">
-<td>DelayedHealing</td>
-<td>Was the patient’s healing after surgery delayed? (1 = yes, 0 = no)</td>
+<td>Internet</td>
+<td>Individuals using the Internet (% of population) (IT.NET.USER.ZS)</td>
 </tr>
 <tr class="odd">
-<td>Infection</td>
-<td>Did the patient have a post-surgical infection that doesn’t fit into the other categories? (1 = yes, 0 = no)</td>
+<td>LandArea</td>
+<td>Land area (sq. km) (AG.LND.TOTL.K2)</td>
 </tr>
 <tr class="even">
-<td>Sinus</td>
-<td>Did the patient develop an abdominal sinus after surgery? (1 = yes, 0 = no)</td>
+<td>LegalRights</td>
+<td>Strength of legal rights index (0=weak to 12=strong) (IC.LGL.CRED.XQ)</td>
 </tr>
 <tr class="odd">
-<td>SSIDeep(fascia)</td>
-<td>Did the patient develop a surgical site infection deep in the fascia surrounding the organs? (1 = yes, 0 = no)</td>
+<td>Literacy</td>
+<td>Literacy rate, adult total (% of people ages 15 and above) (SE.ADT.LITR.ZS)</td>
 </tr>
 <tr class="even">
-<td>SSIOrganSpace</td>
-<td>Did the patient develop a surgical site infection in the space surrounding the organs? (1 = yes, 0 = no)</td>
+<td>Military</td>
+<td>Military expenditure (% of general government expenditure) (MS.MIL.XPND.ZS)</td>
 </tr>
 <tr class="odd">
-<td>SSISuperficial(skin)</td>
-<td>Did the patient develop a superficial surgical site infection in the skin around the incision? (1 = yes, 0 = no)</td>
+<td>Mobile</td>
+<td>Mobile cellular subscriptions (IT.CEL.SETS)</td>
 </tr>
 <tr class="even">
-<td>WoundInfection</td>
-<td>Did the patient develop an infection in the wound created in surgery? (1 = yes, 0 = no)</td>
+<td>PM2.5</td>
+<td>PM2.5 air pollution, mean annual exposure (micrograms per cubic meter) (EN.ATM.PM25.MC.M3)</td>
 </tr>
 <tr class="odd">
-<td>TWATemp</td>
-<td>Time weighted average of the patient’s core temperature during surgery, °C</td>
+<td>PlaneDepartures</td>
+<td>Number of takeoffs of planes operated by air carriers registered in this country, domestically or from foreign airports (IS.AIR.DPRT)</td>
 </tr>
 <tr class="even">
-<td>LastReadingTemp</td>
-<td>Last recorded core temperature prior to surgery, °C</td>
+<td>PlanePassengers</td>
+<td>Number of passengers carried by air carriers registered in this country (IS.AIR.PSGR)</td>
 </tr>
 <tr class="odd">
-<td>EndCaseTemp</td>
-<td>Patient’s core temperature at the end of surgery, °C</td>
+<td>PoliticalStability</td>
+<td>Political stability and absence of violence/terrorism score (normalized as a <em>z</em> score) (PV.EST)</td>
 </tr>
 <tr class="even">
-<td>AnyInfection</td>
-<td>Did the patient develop any kind of infection, serious or superficial, within 30 days of surgery? (1 = yes, 0 = no)</td>
+<td>Population</td>
+<td>Population, total (SP.POP.TOTL)</td>
 </tr>
 <tr class="odd">
-<td>SeriousInfection</td>
-<td>Did the patient develop a serious infection within 30 days of surgery? This includes the infections in the SSIDeep(fascia), SSIOrganSpace, AbsessIntraAb, AbsessPelvic, Cdiff, Pneumonia, Pneumonia(aspiration), and Sepsis variables. (1 = yes, 0 = no)</td>
+<td>Poverty</td>
+<td>Percentage of population who are multidimensionally poor (% of total population) (SI.POV.MDIM)</td>
 </tr>
 <tr class="even">
-<td>SuperficialInfection</td>
-<td>Did the patient develop a superficial infection within 30 days of surgery? This includes the infections in the SSISuperficial(skin), WoundInfection, and FascialDehiscence variables, as well as perineal wound problems. (1 = yes, 0 = no)</td>
+<td>Rural</td>
+<td>Rural population (% of total population) (SP.RUR.TOTL.ZS)</td>
 </tr>
 <tr class="odd">
-<td>DurationHosp</td>
-<td>Time the patient stayed in the hospital after surgery, in days</td>
+<td>RuralArea</td>
+<td>Rural land area (sq. km) (AG.LND.TOTL.RU.K2)</td>
 </tr>
 <tr class="even">
-<td>LOS</td>
-<td>Time the patient stayed in the hospital, including time before surgery, in days</td>
+<td>Suicide</td>
+<td>Suicide mortality rate (per 100,000 population) (SH.STA.SUIC.P5)</td>
 </tr>
 <tr class="odd">
-<td>DEAD</td>
-<td>Did the patient die in the hospital? (1 = yes, 0 = no)</td>
+<td>TaxRevenue</td>
+<td>Tax revenue (% of GDP) (GC.TAX.TOTL.GD.ZS)</td>
+</tr>
+<tr class="even">
+<td>Unemployment</td>
+<td>Unemployment, total (% of total labor force) (modeled ILO estimate) (SL.UEM.TOTL.ZS)</td>
+</tr>
+<tr class="odd">
+<td>Urban</td>
+<td>Urban population (% of total population) (SP.URB.TOTL.IN.ZS)</td>
+</tr>
+<tr class="even">
+<td>UrbanArea</td>
+<td>Urban land area (sq. km) (AG.LND.TOTL.UR.K2)</td>
 </tr>
 </tbody>
 </table>
@@ -628,40 +633,30 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<section id="introductory" class="level3">
-<h3 class="anchored" data-anchor-id="introductory">Introductory</h3>
+<p>Many questions can be explored with this dataset. The questions below are intended merely as a starting point; instructors and students can undoubtedly find many other interesting relationships to explore.</p>
 <ol type="1">
-<li>What kind of study is this: experimental or observational? What kinds of conclusions could we draw from the results, and what limitations would there be on our ability to draw causal conclusions?</li>
-<li>Plot the distribution of core temperatures during surgery (<code>TWATemp</code>). Comment on the shape of the distribution and find the median.</li>
-<li>Split the patients into two groups: those with temperatures above the median, and those with temperatures below the median. Calculate the proportion of patients in each group who had serious infections (<code>SeriousInfection</code>), and test whether there is a statistically significant difference.</li>
-<li>Compare these groups in other ways. Do they have different baseline health characteristics, such as age, BMI, and problems like liver or heart disease?</li>
+<li><p>Explore the differences between income groups. For example, does the percentage of people using the Internet vary between income groups? Use graphical EDA or an ANOVA to study the differences, picking one year (such as</p>
+<ol start="2016" type="1">
+<li>to focus on.</li>
 </ol>
-</section>
-<section id="advanced-regression" class="level3">
-<h3 class="anchored" data-anchor-id="advanced-regression">Advanced regression</h3>
-<ol type="1">
-<li>Fit a logistic regression model to predict serious post-operative infections (<code>SeriousInfection</code>) as a function of core temperature during surgery (<code>TWATemp</code>). Interpret the results of this fit.</li>
-<li>Extend your model to control for the covariates used in the original study: “age, sex, body-mass index, smoking status, Charlson score, duration of surgery, open (vs.&nbsp;laparoscopic), preoperative steroid usage, immunosuppressive drug usage,” and presence of heart failure, vascular disease, diabetes, renal failure, metastatic cancer, solid tumor, coagulopathy, weight loss, fluid and electrolyte disorders, blood loss anemia, deficiency anemia, and drug use. Interpret the results of this model, and compare it to the previous fit. What can you conclude about core temperature during surgery?</li>
-<li>Repeat this logistic regression, but to predict <em>superficial</em> infection instead of serious infection (<code>SuperficialInfection</code>). Comment on your results and compare them to the results for serious infection.</li>
+<p>(Fertility, alcohol consumption, forest area, and other variables may also be interesting to compare by income group.)</p></li>
+<li><p>Explore the relationship between Internet access and political stability for all countries in 2016. Is there a positive or negative relationship? Fit a regression model and interpret the coefficients.</p>
+<p>Now control for the country’s income group. Test whether an interaction term is necessary. Interpret the results. What does this interaction imply? Use a plot of the relationships to illustrate your results.</p></li>
+<li><p>Many other relationships between variables could be explored in EDA, regression, or ANOVA. For instance:</p>
+<ul>
+<li>Carbon dioxide emissions and PM 2.5 exposure, and how this relationship depends on GDP or income group</li>
+<li>Gender parity in education (<code>GenderEducation</code>) and gender equality promotion by government policy (<code>GenderEquality</code>)</li>
+<li>The strength of legal rights (<code>LegalRights</code>) and political instability and violence (<code>PoliticalStability</code>)</li>
+<li>Deaths in battle (<code>BattleDeaths</code>) and political stability (<code>PoliticalStability</code>)</li>
+<li>Years of compulsory education (<code>CompulsoryEducation</code>) and literacy rate (<code>Literacy</code>)</li>
+</ul></li>
+<li><p>Other variables may change over time in interesting ways, such as airplane travel (<code>PlaneDepartures</code> and <code>PlanePassengers</code>), forest area (<code>ForestArea</code>), and diabetes prevalence (<code>Diabetes</code>).</p></li>
+<li><p>For any research question involving hypothesis tests, consider: What population can this data be said to be drawn from? Are tests necessary to generalize to that population?</p></li>
 </ol>
-</section>
-<section id="survival-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="survival-analysis">Survival analysis</h3>
-<ol type="1">
-<li><p>Split the patients into two groups: those with surgical core temperatures above the median, and those with temperatures below the median (using <code>TWATemp</code>). Plot estimated survival curves for the length of time the patient spent in the hospital after surgery (<code>DurationHosp</code>). Patients who died in the hospital are censored; the original study analyzed them as follows:</p>
-<blockquote class="blockquote">
-<p>The patients who died before hospital discharge were considered as never having the event and assigned a censoring time using the observed longest duration among those discharged alive.</p>
-</blockquote>
-<p>Interpret your survival curves in the context of the problem. Which group appears to spend longer in the hospital?</p></li>
-<li><p>Use a Cox proportional hazard model to study the association between core temperature during surgery (<code>TWATemp</code>) and time spent in the hospital after surgery (<code>DurationHosp</code>). Control for the confounding variables listed above (for the logistic regression analysis). Interpret your results.</p></li>
-</ol>
-</section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Data first adapted for classroom use by: Homoki, J. and Nowacki AS (2023). “Core Temperature Dataset”, TSHS Resources Portal. Available at <a href="https://www.causeweb.org/tshs/core-temperature/" class="uri">https://www.causeweb.org/tshs/core-temperature/</a>. Released under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> license.</p>
-<p>Original study: Walters, Michael J., et al.&nbsp;(2020). “Intraoperative Core Temperature and Infectious Complications after Colorectal Surgery: A Registry Analysis.” <em>Journal of Clinical Anesthesia</em>, vol.&nbsp;63. <a href="https://doi.org/10.1016/j.jclinane.2020.109758" class="uri">https://doi.org/10.1016/j.jclinane.2020.109758</a></p>
-<p>Further information on surgical hypothermia, its causes, and its effects: Riley C, Andrzejowski J. (2018). “Inadvertent perioperative hypothermia.” <em>BJA Education</em> 18(8), 227-233. <a href="https://doi.org/10.1016%2Fj.bjae.2018.05.003" class="uri">https://doi.org/10.1016%2Fj.bjae.2018.05.003</a>. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7807998/">PubMed Central</a>.</p>
+<p>The World Development Indicators were downloaded from the DataBank service at <a href="https://databank.worldbank.org/source/world-development-indicators" class="uri">https://databank.worldbank.org/source/world-development-indicators</a>. All values are for the years 2013-2022. World Bank data is <a href="https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets">provided under a Creative Commons Attribution 4.0 International License</a>.</p>
 
 
 </section>
