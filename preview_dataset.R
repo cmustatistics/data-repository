@@ -1,3 +1,5 @@
+library(readr)
+
 #' Produce a nice preview table of the chosen dataset
 #'
 #' Reads the name of the data file from the `datafile` attribute of the page
@@ -11,7 +13,9 @@
 #' @return A `paged_df` object that is automatically formatted by R Markdown as
 #'   a nice table.
 preview_dataset <- function(n = 20, dataset = rmarkdown::metadata$datafile) {
-  read.csv(paste0("../data/", dataset)) |>
+  read_csv(paste0("../data/", dataset),
+           guess_max = Inf,
+           show_col_types = FALSE) |>
     head(n = n) |>
     rmarkdown::paged_table(options = list(rownames.print = FALSE))
 }
