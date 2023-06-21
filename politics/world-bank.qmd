@@ -1,0 +1,150 @@
+---
+title: World Development Indicators
+author: Shunyi Zheng
+date: June 20, 2023
+description: The World Bank's World Development Indicators (WDI) compile development information about countries around the world. Using ten years of data, study development, political stability, pollution, and other factors at the national and regional levels.
+categories:
+  - linear regression
+  - ANOVA
+data:
+  year: 2022
+  files: world-bank.csv
+---
+
+## Motivation
+
+The World Bank compiles a database of World Development Indicators, which
+compile data from various sources intended to give the most current and accurate
+data about countries worldwide. Over a thousand different variables are
+available, updated yearly.
+
+This dataset compiles a selection of 40 interesting variables for 266 countries
+and regions across 10 years, from 2013 to 2022.
+
+## Data
+
+Each row represents one country, territory, or region in one year.
+
+The World Bank includes some geographic groupings, such as "Sub-Saharan Africa"
+and "Pacific island small states", as well as individual countries.
+
+Not all variables are available for all countries in all years, and more recent
+data is missing more often than older data.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+These descriptions are adapted directly from the World Bank's data
+documentation. Codes in parentheses (such as `SE.COM.DURS`) are the World Bank
+codes for these variables. Search for these codes in the data series listed [in
+the
+DataBank](https://databank.worldbank.org/source/world-development-indicators) to
+find detailed descriptions of the sources and definitions for each variable.
+
+| Variable | Description |
+|----|-------------|
+| Country Name | Name of country or region |
+| Country Code | Unique three-letter code identifying the country |
+| Region | Geographic region the country is in |
+| IsCountry | 1 if this row represents a country, 0 if it is an aggregated region (like Sub-Saharan Africa or all high-income countries) |
+| Income group | Country's income group as of 2023 (high-income, upper-middle-income, lower-middle-income, or low-income), based on its gross national income (GNI), [as defined by the World Bank](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups) |
+| Year | Year the values were observed in |
+| Alcohol | Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age) (SH.ALC.PCAP.LI) |
+| BattleDeaths | Battle-related deaths (number of people) (VC.BTL.DETH) |
+| Birth | Birth rate, crude (per 1,000 people) (SP.DYN.CBRT.IN) |
+| BirthSex | Sex ratio at birth (male births per female births) (SP.POP.BRTH.MF) |
+| CO2Emissions | CO2 emissions (metric tons per capita) (EN.ATM.CO2E.PC) |
+| CompulsoryEducation | Compulsory education, duration (years) (SE.COM.DURS) |
+| Death | Death rate, crude (per 1,000 people) (SP.DYN.CDRT.IN) |
+| DeathsCD | Deaths caused by communicable diseases and maternal, prenatal and nutrition conditions (% of total deaths) (SH.DTH.COMM.ZS) |
+| DeathsNCD | Deaths caused by non-communicable diseases (% of total) (SH.DTH.NCOM.ZS) |
+| Density | Population density (people per sq. km of land area) (EN.POP.DNST) |
+| Diabetes | Diabetes prevalence (% of population ages 20 to 79) (SH.STA.DIAB.ZS) |
+| Electricity | Access to electricity (% of population) (EG.ELC.ACCS.ZS) |
+| Fertility | Fertility rate, total (births per woman) (SP.DYN.TFRT.IN) |
+| FixedTelephone | Fixed telephone subscriptions (IT.MLT.MAIN) |
+| ForestArea | Forest area (% of land area) (AG.LND.FRST.ZS) |
+| GDP | Gross domestic product (current US\$) (NY.GDP.MKTP.CD) |
+| GenderEducation | Gender parity index (GPI) for tertiary education enrollment: ratio of women to men enrolled (SE.ENR.TERT.FM.ZS) |
+| GenderEquality | CPIA gender equality rating, measuring whether the government has programs and institutions to promote gender equality in education, health, the economy, and the law (1=low to 6=high) (IQ.CPA.GNDR.XQ) |
+| GovernmentExpenditure | General government final consumption expenditure (constant 2015 US\$) (NE.CON.GOVT.KD) |
+| Homicide | Intentional homicides (per 100,000 people) (VC.IHR.PSRC.P5) |
+| Income | Adjusted net national income (constant 2015 US$) (NY.ADJ.NNTY.KD) |
+| Internet | Individuals using the Internet (% of population) (IT.NET.USER.ZS) |
+| LandArea | Land area (sq. km) (AG.LND.TOTL.K2) |
+| LegalRights | Strength of legal rights index (0=weak to 12=strong) (IC.LGL.CRED.XQ) |
+| Literacy | Literacy rate, adult total (% of people ages 15 and above) (SE.ADT.LITR.ZS) |
+| Military | Military expenditure (% of general government expenditure) (MS.MIL.XPND.ZS) |
+| Mobile | Mobile cellular subscriptions (IT.CEL.SETS) |
+| PM2.5 | PM2.5 air pollution, mean annual exposure (micrograms per cubic meter) (EN.ATM.PM25.MC.M3) |
+| PlaneDepartures | Number of takeoffs of planes operated by air carriers registered in this country, domestically or from foreign airports (IS.AIR.DPRT) |
+| PlanePassengers | Number of passengers carried by air carriers registered in this country (IS.AIR.PSGR) |
+| PoliticalStability | Political stability and absence of violence/terrorism score (normalized as a *z* score) (PV.EST) |
+| Population | Population, total (SP.POP.TOTL) |
+| Poverty | Percentage of population who are multidimensionally poor (% of total population) (SI.POV.MDIM) |
+| Rural | Rural population (% of total population) (SP.RUR.TOTL.ZS) |
+| RuralArea | Rural land area (sq. km) (AG.LND.TOTL.RU.K2) |
+| Suicide | Suicide mortality rate (per 100,000 population) (SH.STA.SUIC.P5) |
+| TaxRevenue | Tax revenue (% of GDP) (GC.TAX.TOTL.GD.ZS) |
+| Unemployment | Unemployment, total (% of total labor force) (modeled ILO estimate) (SL.UEM.TOTL.ZS) |
+| Urban | Urban population (% of total population) (SP.URB.TOTL.IN.ZS) |
+| UrbanArea | Urban land area (sq. km) (AG.LND.TOTL.UR.K2) |
+
+
+## Questions
+
+Many questions can be explored with this dataset. The questions below are
+intended merely as a starting point; instructors and students can undoubtedly
+find many other interesting relationships to explore.
+
+1. Explore the differences between income groups. For example, does the
+   percentage of people using the Internet vary between income groups? Use
+   graphical EDA or an ANOVA to study the differences, picking one year (such as
+   2016) to focus on.
+
+   (Fertility, alcohol consumption, forest area, and other variables may also be
+   interesting to compare by income group.)
+
+2. Explore the relationship between Internet access and political stability for
+   all countries in 2016. Is there a positive or negative relationship? Fit a
+   regression model and interpret the coefficients.
+
+   Now control for the country's income group. Test whether an interaction term
+   is necessary. Interpret the results. What does this interaction imply? Use a
+   plot of the relationships to illustrate your results.
+
+3. Many other relationships between variables could be explored in EDA,
+   regression, or ANOVA. For instance:
+
+   - Carbon dioxide emissions and PM 2.5 exposure, and how this relationship
+     depends on GDP or income group
+   - Gender parity in education (`GenderEducation`) and gender equality
+     promotion by government policy (`GenderEquality`)
+   - The strength of legal rights (`LegalRights`) and political instability and
+     violence (`PoliticalStability`)
+   - Deaths in battle (`BattleDeaths`) and political stability
+     (`PoliticalStability`)
+   - Years of compulsory education (`CompulsoryEducation`) and literacy rate
+     (`Literacy`)
+
+4. Other variables may change over time in interesting ways, such as airplane
+   travel (`PlaneDepartures` and `PlanePassengers`), forest area (`ForestArea`),
+   and diabetes prevalence (`Diabetes`).
+
+5. For any research question involving hypothesis tests, consider: What
+   population can this data be said to be drawn from? Are tests necessary to
+   generalize to that population?
+
+## References
+
+The World Development Indicators were downloaded from the DataBank service at
+<https://databank.worldbank.org/source/world-development-indicators>. All values
+are for the years 2013-2022. World Bank data is [provided under a Creative
+Commons Attribution 4.0 International
+License](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets).
