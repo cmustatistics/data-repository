@@ -105,8 +105,8 @@ find many other interesting relationships to explore.
 
 1. Explore the differences between income groups. For example, does the
    percentage of people using the Internet vary between income groups? Use
-   graphical EDA or an ANOVA to study the differences, picking one year (such as
-   2016) to focus on.
+   graphical EDA or an ANOVA to study the differences, picking one year to focus
+   on.
 
    (Fertility, alcohol consumption, forest area, and other variables may also be
    interesting to compare by income group.)
