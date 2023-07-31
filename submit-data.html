@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.427">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -281,6 +281,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Testosterone and diversity</span></a>
   </div>
@@ -338,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#getting-started-with-quarto" id="toc-getting-started-with-quarto" class="nav-link active" data-scroll-target="#getting-started-with-quarto">Getting Started with Quarto</a></li>
   <li><a href="#the-dataset-template" id="toc-the-dataset-template" class="nav-link" data-scroll-target="#the-dataset-template">The Dataset Template</a></li>
   <li><a href="#submitting" id="toc-submitting" class="nav-link" data-scroll-target="#submitting">Submitting</a></li>
   </ul>
@@ -371,11 +377,13 @@ ul.task-list li input[type="checkbox"] {
 <li>The data must be publicly shareable. There should not be any licensing restrictions that prevent us from sharing it, or any human subjects ethics concerns or other limitations. Look for datasets marked as being in the public domain or with licenses like the Creative Commons Attribution (CC-BY) license.</li>
 <li>The data should be in a standard, easy-to-use format, like CSV. If you have to clean the data from an original form, include the R script you used to clean it with your submission.</li>
 <li>There should be good motivation for interesting analyses of the data that would be appropriate for a course.</li>
-<li>The data should be of reasonable size. GitHub does not allow files greater than 100 MB, and large files can be inconvenient for students. Files larger than a few megabytes should be compressed when practical. R (<code>read.csv()</code>) and Python (<code>pandas.read_csv()</code>) can read <code>.csv.gz</code> files directly, so gzip compression is a good choice for larger files.</li>
+<li>The data should be less than 100 MB, as large sizes pose technical problems and are inconvenient for students. Files larger than a few megabytes should be compressed when practical. R (<code>read.csv()</code>) and Python (<code>pandas.read_csv()</code>) can read <code>.csv.gz</code> files directly, so gzip compression is a good choice for larger files.</li>
 </ul>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>This website is built using the Quarto system and automatically rendered into a website. To contribute a dataset, you only need to fill out a template file with the dataset information.</p>
+<p>The simplest way to submit data is to use our <a href="https://docs.google.com/forms/d/e/1FAIpQLScQgxgq7bFnKicoS0I2DdKGscGoJLvO5EG20_NYkKPEsOB8Yg/viewform?usp=sf_link">online submission form</a>. Provide the requested information and hit Submit; we’ll review the submission and eventually add it to the site, if it’s suitable.</p>
+<p>If you’re familiar with R Markdown or Quarto, you can instead prepare the data description page yourself from a template. Read on for detailed instructions.</p>
+<section id="getting-started-with-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-quarto">Getting Started with Quarto</h2>
+<p>This website is built using the <a href="https://quarto.org">Quarto</a> system and automatically rendered into a website. Data description pages can be made directly from a template file we provide.</p>
 <p>You can get the template in two ways:</p>
 <ol type="1">
 <li>Copy the <a href="https://github.com/cmustatistics/data-repository/blob/main/_dataset-template.qmd"><code>_dataset-template.qmd</code> file from our GitHub repository</a> and save it on your computer. Once you’re done, you can email us the file and the data.</li>
@@ -392,7 +400,7 @@ ul.task-list li input[type="checkbox"] {
 <li>A description of the data and the variables. It should be clear what each row of data represents and what all variables mean. Units of measure should be included whenever possible.</li>
 <li>References to the original source. If the source is an academic paper and the data is deposited in a third-party repository (such as Zenodo, Figshare, or Dryad), include references to both the paper and the archived dataset. When available, include the DOIs of the references.</li>
 </ul>
-<p>The template is meant to prevent a common problem with course datasets: they get passed down from instructor to instructor, and eventually all information about the original source is lost. The dataset may be presented to students without context or important details (like units), and the instructor may not be able to find the original data or references to answer questions about the data.</p>
+<p>The template is meant to prevent a common problem with course datasets: they get passed down from instructor to instructor, and eventually all information about the original source is lost. The dataset may be presented to students without context or important details (like units), and the instructor may not be able to find the original data or references to answer questions about the data. By providing sufficient detail, we can make datasets reusable for years to come.</p>
 </section>
 <section id="submitting" class="level2">
 <h2 class="anchored" data-anchor-id="submitting">Submitting</h2>

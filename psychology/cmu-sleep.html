@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alex Reinhart">
-<meta name="dcterms.date" content="2017-06-14">
-<meta name="description" content="Public health officials are interested in policies that would reduce consumption of sugary drinks. What policies work and what policies backfire? A factorial experiment.">
+<meta name="author" content="Shunyi Zheng">
+<meta name="dcterms.date" content="2023-07-25">
+<meta name="description" content="Does nightly sleep duration predict change in end-of-semester grade point average (GPA)? First-year college students from three independent universities provided sleep actigraphy for a month early in their spring academic term across five studies.">
 
-<title>CMU S&amp;DS Data Repository - Sugary drinks and portion limits</title>
+<title>CMU S&amp;DS Data Repository - Nightly sleep time and GPA in first-years</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/sugary-drinks.html">Sugary drinks and portion limits</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Nightly sleep time and GPA in first-years</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -287,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
   </div>
 </li>
@@ -317,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link active">
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sugary drinks and portion limits</span></a>
   </div>
 </li>
@@ -359,23 +359,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/sugary-drinks.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/cmu-sleep.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sugary drinks and portion limits</h1>
+<h1 class="title">Nightly sleep time and GPA in first-years</h1>
   <div class="quarto-categories">
     <div class="quarto-category">ANOVA</div>
-    <div class="quarto-category">logistic regression</div>
+    <div class="quarto-category">linear regression</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Public health officials are interested in policies that would reduce consumption of sugary drinks. What policies work and what policies backfire? A factorial experiment.
+    Does nightly sleep duration predict change in end-of-semester grade point average (GPA)? First-year college students from three independent universities provided sleep actigraphy for a month early in their spring academic term across five studies.
   </div>
 </div>
 
@@ -385,14 +385,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Alex Reinhart </p>
+             <p>Shunyi Zheng </p>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 14, 2017</p>
+      <p class="date">July 25, 2023</p>
     </div>
   </div>
   
@@ -401,14 +401,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Data files</div>
     <div class="quarto-title-meta-contents">
-            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/sugary-drinks.csv">sugary-drinks.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/cmu-sleep.csv">cmu-sleep.csv</a>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Data year</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2017</p>
+      <p class="date">2019</p>
     </div>
   </div>
   </div>
@@ -418,34 +418,67 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Excess consumption of sugary drinks–soda, lemonade, sweet tea, and everything in between–has been blamed for a variety of health problems, like diabetes and obesity, which collectively cause billions of dollars of health costs each year. Some governments are taking action to reduce consumption of sugary drinks; most famously, the New York City Board of Health passed a regulation in 2012 banning the sale of sugary drinks in containers larger than 16 ounces. Naturally there was a backlash, and eventually a court case ruled the board <a href="https://harvardlawreview.org/2015/03/new-york-statewide-coalition-of-hispanic-chambers-of-commerce-v-new-york-city-department-of-health-and-mental-hygiene/">didn’t have the authority to make such a rule</a>.</p>
-<p>Regardless of New York’s legal troubles, and setting aside the question of whether sugary drinks are solely to blame for the health problems they contribute to, we can ask the question “What kinds of regulations or serving suggestions would make people drink smaller amounts?” Perhaps by limiting size, changing serving methods, or with other small changes we could encourage people to drink less without an outright ban.</p>
-<p>Researchers conducted a series of experiments to try different strategies. The dataset here is from one of those experiments.</p>
-<p>Participants were invited to the lab for 90 minutes, during which they sat in a cubicle and completed surveys and tasks for other unrelated psychological studies. The experimenters provided them a bag of potato chips at the start to make them thirsty, then offered them iced tea or lemonade during the experiment; they were given a small amount of money at the start to use to buy the drinks, and paid per drink.</p>
-<p>There were two different manipulations. Participants were randomly assigned to receive one of two sets of options:</p>
-<ol type="1">
-<li>A medium drink in a 16 ounce cup, or a large drink in a 24 ounce cup (“typical” condition), or</li>
-<li>A medium drink in a 16 ounce cup, or a large drink served in two separate 12 ounce cups (the “bundled” condition).</li>
-</ol>
-<p>There were also two options for service, randomly assigned. Either</p>
-<ol type="1">
-<li>A research assistant walked to each cubicle, asking each participant what they’d like to drink (“waiter-served”), or</li>
-<li>Participants walked to the back of the lab to buy their drinks (“self-served”).</li>
-</ol>
-<p>After the 90 minutes were up, the experimenters recorded how many ounces each participant drank (by weighing their cups), how many calories they drank, what kind of drinks they ordered, and a few demographic variables. Participants were also asked what their drink options were, to make sure they understood them.</p>
+<p>For many reasons, it’s important for students to succeed during their first year of college. Success during the first year affects whether students will stay to complete the rest of their degree, and college GPA seems to predict future success in jobs. Universities often invest large amounts of time and money to help students adapt to college during their first year, through special programs, tutoring, orientation sessions, and so on.</p>
+<p>Besides programs offered by universities, we can also ask what students can do to improve their chances. One potential factor is sleep. College students often have poor sleep habits, staying up late and sleeping short hours, and a great deal of research suggests that lack of sleep can harm cognitive performance. It seems reasonable, then, to study how sleep habits in college students are related to their grade point averages (GPAs).</p>
+<p>To assess this, <a href="https://doi.org/10.1073/pnas.2209123120">this study</a> recruited first-year students at three universities:</p>
+<ul>
+<li>Carnegie Mellon University (CMU), a STEM-focused private university</li>
+<li>The University of Washington (UW), a large public university</li>
+<li>Notre Dame University (ND), a private Catholic university</li>
+</ul>
+<p>Each student participant was given a device to track their sleep patterns for a month early in their spring academic term. The researchers then obtained grade data from the university registrars, along with demographic information about the students. The demographic information included other factors that might be related to the students’ GPAs, such as whether they were first-generation students whose parents never attended college, so these factors could be controlled for.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>There were 623 total participants in this study, of whom 362 ordered a drink. Each row represents one participant.</p>
+<p>There were a total of 634 participants in this study, who each received a Fitbit to track their sleep and physical activity. Students’ GPAs were collected from the university registrar. Each data row represents one participant.</p>
+<p>Using the Fitbit data, the researchers extracted sleep “episodes”, which are simply time periods where the Fitbit reported the participant as sleeping. They only counted episodes at least 20 minutes long, separated by at least 5 minutes from other episodes. Gaps smaller than 5 minutes were ignored, so if a student slept for several hours, woke for a few minutes, and then slept again, this was counted as a single episode.</p>
+<p>The longest sleep episode between noon of one day and noon of the next was considered the “main” episode; anything else was considered “daytime sleep”. For example, if a student slept from 4pm to 5pm, then again from 2am to 8am, the 2-8am window was the “main” episode (6 hours long), and the 4-5pm window was counted as 1 hour of daytime sleep. The beginning of the main episode was counted as the student’s “bedtime”, so in this example, the student’s bedtime was 2am.</p>
+<p>The data is divided into five separate studies, by university and semester:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Study</th>
+<th>University</th>
+<th>Semester</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Carnegie Mellon University</td>
+<td>Spring 2018</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>University of Washington</td>
+<td>Spring 2018</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>University of Washington</td>
+<td>Spring 2019</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Notre Dame University</td>
+<td>Spring 2016</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Carnegie Mellon University</td>
+<td>Spring 2017</td>
+</tr>
+</tbody>
+</table>
 <section id="data-preview" class="level3">
 <h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
 <h4 class="anchored">
-<a href=" https://cmustatistics.github.io/data-repository/data/sugary-drinks.csv "> sugary-drinks.csv </a>
+<a href=" https://cmustatistics.github.io/data-repository/data/cmu-sleep.csv "> cmu-sleep.csv </a>
 </h4>
 <div data-pagedtable="false">
 
 <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["id"],"name":[1],"type":["int"],"align":["right"]},{"label":["IV_condition"],"name":[2],"type":["int"],"align":["right"]},{"label":["IV_service_dummy"],"name":[3],"type":["int"],"align":["right"]},{"label":["IV_portion_dummy"],"name":[4],"type":["int"],"align":["right"]},{"label":["IV_service_dummy_by_IV_portion_dummy"],"name":[5],"type":["int"],"align":["right"]},{"label":["DV_order_at_all"],"name":[6],"type":["int"],"align":["right"]},{"label":["DV_order_large"],"name":[7],"type":["int"],"align":["right"]},{"label":["DV_ounces_consumed"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["DV_calories_consumed"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["flavor"],"name":[10],"type":["int"],"align":["right"]},{"label":["sex"],"name":[11],"type":["int"],"align":["right"]},{"label":["age"],"name":[12],"type":["int"],"align":["right"]},{"label":["ethnicity"],"name":[13],"type":["int"],"align":["right"]},{"label":["comprehension_check"],"name":[14],"type":["int"],"align":["right"]},{"label":["failed_comprehension_check"],"name":[15],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"27","13":"4","14":"NA","15":"0"},{"1":"2","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"32","13":"3","14":"NA","15":"0"},{"1":"3","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"25","13":"4","14":"NA","15":"0"},{"1":"4","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"24","13":"4","14":"NA","15":"0"},{"1":"5","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"34","13":"3","14":"NA","15":"0"},{"1":"6","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"23","13":"4","14":"NA","15":"0"},{"1":"7","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"24","13":"4","14":"NA","15":"0"},{"1":"8","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"27","13":"4","14":"NA","15":"0"},{"1":"9","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"20","13":"6","14":"NA","15":"0"},{"1":"10","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"21","13":"5","14":"NA","15":"0"},{"1":"11","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"25","13":"3","14":"NA","15":"0"},{"1":"12","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"22","13":"4","14":"NA","15":"0"},{"1":"13","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"25","13":"3","14":"NA","15":"0"},{"1":"14","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"28","13":"3","14":"NA","15":"0"},{"1":"15","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"20","13":"4","14":"NA","15":"0"},{"1":"16","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"22","13":"5","14":"NA","15":"0"},{"1":"17","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"27","13":"3","14":"NA","15":"0"},{"1":"18","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"23","13":"3","14":"NA","15":"0"},{"1":"19","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"1","12":"20","13":"4","14":"NA","15":"0"},{"1":"20","2":"3","3":"1","4":"0","5":"0","6":"0","7":"NA","8":"0","9":"0","10":"NA","11":"2","12":"24","13":"4","14":"NA","15":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["subject_id"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["study"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["cohort"],"name":[3],"type":["chr"],"align":["left"]},{"label":["demo_race"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["demo_gender"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["demo_firstgen"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["bedtime_mssd"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TotalSleepTime"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["midpoint_sleep"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["frac_nights_with_data"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["daytime_sleep"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["cum_gpa"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["term_gpa"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["term_units"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["Zterm_units_ZofZ"],"name":[15],"type":["dbl"],"align":["right"]}],"data":[{"1":"185","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.11672695","8":"432.2000","9":"458.6600","10":"0.8620690","11":"24.160000","12":"3.00","13":"3.38","14":"73","15":"4.055295"},{"1":"158","2":"5","3":"lac1","4":"0","5":"1","6":"0","7":"0.14168084","8":"391.9310","9":"364.4655","10":"1.0000000","11":"13.137931","12":"3.66","13":"2.60","14":"64","15":"2.482534"},{"1":"209","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"1.52928949","8":"344.3043","9":"560.8913","10":"0.7931034","11":"14.956522","12":"3.57","13":"3.07","14":"63","15":"2.307783"},{"1":"102","2":"5","3":"lac1","4":"0","5":"1","6":"1","7":"0.13014845","8":"392.6207","9":"416.4828","10":"1.0000000","11":"54.551724","12":"3.61","13":"3.56","14":"61","15":"1.958281"},{"1":"174","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.13018090","8":"423.4211","9":"368.7632","10":"0.6551724","11":"10.526316","12":"3.21","13":"4.00","14":"61","15":"1.958281"},{"1":"184","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.20948302","8":"397.4000","9":"353.5800","10":"0.8620690","11":"22.360000","12":"3.20","13":"3.36","14":"60","15":"1.783529"},{"1":"255","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.67548899","8":"348.5926","9":"434.7037","10":"0.9310345","11":"20.518519","12":"3.40","13":"3.19","14":"60","15":"1.783529"},{"1":"265","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.12962196","8":"422.1111","9":"414.8333","10":"0.9310345","11":"17.037037","12":"3.86","13":"3.28","14":"60","15":"1.783529"},{"1":"343","2":"5","3":"lac1","4":"1","5":"0","6":"0","7":"1.47697874","8":"454.3214","9":"423.8214","10":"0.9655172","11":"52.678571","12":"3.79","13":"3.50","14":"60","15":"1.783529"},{"1":"137","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.08500035","8":"308.9655","9":"334.7931","10":"1.0000000","11":"85.482759","12":"3.53","13":"2.55","14":"59","15":"1.608778"},{"1":"279","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.16851757","8":"314.5862","9":"479.3621","10":"1.0000000","11":"21.413793","12":"3.61","13":"3.49","14":"59","15":"1.608778"},{"1":"220","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.06482756","8":"382.1923","9":"463.5769","10":"0.8965517","11":"2.269231","12":"3.82","13":"3.76","14":"58","15":"1.434027"},{"1":"337","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.08935587","8":"389.7241","9":"447.8621","10":"1.0000000","11":"14.551724","12":"3.33","13":"3.74","14":"58","15":"1.434027"},{"1":"323","2":"5","3":"lac1","4":"1","5":"0","6":"0","7":"0.22408907","8":"365.7241","9":"519.4655","10":"1.0000000","11":"27.551724","12":"4.00","13":"4.00","14":"58","15":"1.434027"},{"1":"216","2":"5","3":"lac1","4":"1","5":"1","6":"1","7":"0.14106718","8":"360.0000","9":"372.1379","10":"1.0000000","11":"34.068966","12":"3.16","13":"3.56","14":"57","15":"1.259276"},{"1":"125","2":"5","3":"lac1","4":"1","5":"0","6":"1","7":"0.24689661","8":"366.7586","9":"431.6724","10":"1.0000000","11":"10.241379","12":"3.00","13":"3.20","14":"57","15":"1.259276"},{"1":"211","2":"5","3":"lac1","4":"1","5":"1","6":"0","7":"0.23503401","8":"292.1034","9":"424.0345","10":"1.0000000","11":"9.379310","12":"3.77","13":"2.78","14":"57","15":"1.259276"},{"1":"316","2":"5","3":"lac1","4":"0","5":"1","6":"0","7":"0.17674415","8":"446.1304","9":"383.1957","10":"0.7931034","11":"23.130435","12":"3.71","13":"2.83","14":"57","15":"1.259276"},{"1":"178","2":"5","3":"lac1","4":"1","5":"0","6":"0","7":"2.04304444","8":"371.7273","9":"451.0455","10":"0.3793103","11":"42.909091","12":"3.82","13":"3.78","14":"57","15":"1.259276"},{"1":"153","2":"5","3":"lac1","4":"1","5":"1","6":"1","7":"0.03977112","8":"439.5517","9":"366.1379","10":"1.0000000","11":"12.241379","12":"3.10","13":"3.30","14":"56","15":"1.084525"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </section>
@@ -464,64 +497,64 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>id</td>
-<td>Unique ID for each study participant</td>
+<td>subject_id</td>
+<td>Unique ID of the subject</td>
 </tr>
 <tr class="even">
-<td>IV_condition</td>
-<td>Experimental condition assigned. 1: waiter-served, typical. 2: waiter-served, bundled. 3: self-served, typical. 4: self-served, bundled</td>
+<td>study</td>
+<td>Study number, as shown in the table above</td>
 </tr>
 <tr class="odd">
-<td>IV_service_dummy</td>
-<td>0 for waiter-served, 1 for self-served</td>
+<td>cohort</td>
+<td>Codename of the cohort that the subject belongs to</td>
 </tr>
 <tr class="even">
-<td>IV_portion_dummy</td>
-<td>0 for typical drink portions, 1 for bundled drink portions</td>
+<td>demo_race</td>
+<td>Binary label for underrepresented and non-underrepresented students (underrepresented = 0, non-underpresented = 1). Students were considered underrepresented if either parent was Black, Hispanic or Latino, Native American, or Pacific Islander. Students were non-underrepresented if neither parent was from an underrepresented category (i.e., both parents had White or Asian ancestry).</td>
 </tr>
 <tr class="odd">
-<td>IV_service_dummy_by_IV_portion_dummy</td>
-<td>Interaction of the two previous dummy variables (1 if both are 1).</td>
+<td>demo_gender</td>
+<td>Gender of the subject (male = 0, female = 1), as reported by their institution.</td>
 </tr>
 <tr class="even">
-<td>DV_order_at_all</td>
-<td>1 if the participant ordered any drinks at all</td>
+<td>demo_firstgen</td>
+<td>First-generation status (non-first gen = 0, first-gen = 1). Students were considered first-generation if neither parent completed any college (i.e., high school diploma or less)</td>
 </tr>
 <tr class="odd">
-<td>DV_order_large</td>
-<td>1 if they ordered the large size, 0 if they ordered medium. Left blank if they didn’t order any drinks</td>
+<td>bedtime_mssd</td>
+<td>Mean successive squared difference of bedtime. This measures bedtime variability, and is calculated as the average of the squared difference of bedtime on consecutive nights within the timeframe of the study. For example, if we had four successive nights of sleep, we calculated bedtime MSSD by computing the average of (night 2 bedtime – night 1 bedtime)^2, (night 3 bedtime – night 2 bedtime)^2, and (night 4 bedtime – night 3 bedtime)^2. Compared to calculating standard deviation, this measure of variability is more precise in that it takes into account temporal aspects of the data.</td>
 </tr>
 <tr class="even">
-<td>DV_ounces_consumed</td>
-<td>Total number of ounces consumed by the participant</td>
+<td>TotalSleepTime</td>
+<td>Time in bed (the difference between wake time and bedtime) minus the length of total awake/restlessness in the main sleep episode, in minutes</td>
 </tr>
 <tr class="odd">
-<td>DV_calories_consumed</td>
-<td>Total number of calories consumed by the participant</td>
+<td>midpoint_sleep</td>
+<td>Computed as the midpoint of bedtime and wake time, in minutes since midnight</td>
 </tr>
 <tr class="even">
-<td>flavor</td>
-<td>0: Snapple lemon tea, 1: Vitamin Water squeezed lemonade. Left blank if the participant did not order a drink.</td>
+<td>frac_nights_with_data</td>
+<td>Fraction of nights with captured data for the subject. (Some students may not have worn their Fitbits every night, or the battery may have died.)</td>
 </tr>
 <tr class="odd">
-<td>sex</td>
-<td>1: male, 2: female</td>
+<td>daytime_sleep</td>
+<td>The sum of all the sleep time outside of the range of the main sleep episode, including short naps or sleep that occurred during the daytime.</td>
 </tr>
 <tr class="even">
-<td>age</td>
-<td>Age, in years</td>
+<td>cum_gpa</td>
+<td>Cumulative GPA (out of 4.0), for semesters before the one being studied. (Since these students are first-years during their spring semester, this is usually just their fall GPA. UW has quarters, so this includes both fall and winter quarters at UW.)</td>
 </tr>
 <tr class="odd">
-<td>ethnicity</td>
-<td>1: African American, 2: American Indian or Alaskan Native, 3: Asian, 4: Caucasian, 5: Hispanic/Latino, 6: Pacific Islander, 7: Other or mixed</td>
+<td>term_gpa</td>
+<td>End-of-term GPA (out of 4.0) for the semester being studied</td>
 </tr>
 <tr class="even">
-<td>comprehension_check</td>
-<td></td>
+<td>term_units</td>
+<td>Number of course units carried in the term</td>
 </tr>
 <tr class="odd">
-<td>failed_comprehension_check</td>
-<td>Did the participant fail a test at the end to make sure they knew what their drink options were? 0: no, 1: yes</td>
+<td>Zterm_units_ZofZ</td>
+<td>Because of the different term unit systems across universities, a z-scored units variable was first computed for each study cohort individually (study cohorts 1, 2, 3, and 5; was not captured in study cohort 4, Notre Dame). Then, the 5 variables were combined into one single variable “term_units_Z_combined”. Each value in this variable represents each students relative standing in term units relative to their cohort. Finally, a z-score of this variable, “Zterm_units_ZofZ” was computed, to standardize and pool across cohorts and for simplicity and interpretability.</td>
 </tr>
 </tbody>
 </table>
@@ -530,19 +563,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <ol type="1">
-<li><p>Perform basic EDA. What fraction of people ordered drinks, and of those who did, what fraction ordered medium or large? Which type of drink was most popular? Does there seem to be any difference depending on their drink options or service style?</p></li>
-<li><p>Build a model to predict whether each participant orders a large drink, depending on the portion (typical vs.&nbsp;bundled) and the type of service (waiter-served or self service). Consider including an interaction if necessary.</p>
-<p>Did the portion type or service type affect drink orders? In what way?</p></li>
-<li><p>Participants didn’t necessarily finish the drinks they ordered. Analyze the number of calories they consumed, depending on the portion type and type of service. Again, consider including an interaction if it seems necessary.</p>
-<p>The researchers hypothesized that bundling may reduce consumption, since having drinks in two separate cups makes it easier to realize how much you’re drinking. Is there evidence to support this? Does it seem to matter whether participants had to give their order to an assistant or served themselves?</p>
-<p>Repeat your analysis, this time only including those who did not fail the comprehension check at the end, which checked that they correctly understood their drink options. Are the results consistent?</p></li>
-<li><p>The experiment wasn’t intended for this purpose, but we can conduct a purely exploratory analysis using this data to explore drink preferences. Of those participants who ordered a drink, how many favored Snapple and how many favored lemonade? Do preferences depend on sex, age, or ethnicity? Build a model to predict the flavor of drink a participant ordered. How accurate is it?</p></li>
+<li>Create plots comparing the term GPAs by gender, race, and first generation status, which may all be related to academic success. Then, conduct one-way ANOVA analyses to see whether GPA differs across different groups.</li>
+<li>Create a boxplot comparing the average total sleep time across schools.</li>
+<li>Find the average total sleep time for each school. Conduct a One-Way ANOVA analysis to see whether total sleep time differs across different schools.</li>
+<li>Explore the linear relationship between total sleep time and term GPA. Is the relationship significant, controlling for cumulative GPA?</li>
+<li>A student from CMU has 360 hours of total sleep time. What is his/her predicted GPA?</li>
 </ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Leslie K. John, Grant E. Donnelly, and Christina A. Roberto (2017). Psychologically Informed Implementations of Sugary-Drink Portion Limits. <em>Psychological Science</em> 28 (5) 620-629. <a href="https://doi.org/10.1177/0956797617692041" class="uri">https://doi.org/10.1177/0956797617692041</a></p>
-<p>Data available from the Open Science Framework, at <a href="https://osf.io/93m8y" class="uri">https://osf.io/93m8y</a></p>
+<p>Creswell, J. D., Tumminia, M. J., Price, S., Sefidgar, Y., Cohen, S., Ren, Y., Brown, J., Dey, A. K., Dutcher, J. M., Villalba, D., Mankoff, J., Xu, X., Creswell, K., Doryab, A., Mattingly, S., Striegel, A., Hachen, D., Martinez, G., &amp; Lovett, M. C. (2023). Nightly sleep duration predicts grade point average in the first year of college. <em>Proceedings of the National Academy of Sciences of the United States of America</em>, 120(8), e2209123120. <a href="https://doi.org/10.1073/pnas.2209123120" class="uri">https://doi.org/10.1073/pnas.2209123120</a>.</p>
 
 
 </section>
