@@ -2,6 +2,11 @@
 title: Submit a Dataset
 ---
 
+The simplest way to submit data is to use our [online submission
+form](https://docs.google.com/forms/d/e/1FAIpQLScQgxgq7bFnKicoS0I2DdKGscGoJLvO5EG20_NYkKPEsOB8Yg/viewform?usp=sf_link).
+Provide the requested information and hit Submit; we'll review the submission
+and eventually add it to the site, if it's suitable.
+
 Our overall goal is to provide a collection of useful, real-world datasets from
 a variety of application areas that can be used as in-class examples, homework
 assignments, or course projects. The repository can always use new datasets, so
@@ -22,11 +27,6 @@ we welcome submissions. Datasets should meet a few requirements:
   can read `.csv.gz` files directly, so gzip compression is a good choice for
   larger files.
 
-
-The simplest way to submit data is to use our [online submission
-form](https://docs.google.com/forms/d/e/1FAIpQLScQgxgq7bFnKicoS0I2DdKGscGoJLvO5EG20_NYkKPEsOB8Yg/viewform?usp=sf_link).
-Provide the requested information and hit Submit; we'll review the submission
-and eventually add it to the site, if it's suitable.
 
 If you're familiar with R Markdown or Quarto, you can instead prepare the data
 description page yourself from a template. Read on for detailed instructions.
