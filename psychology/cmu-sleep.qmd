@@ -1,0 +1,124 @@
+---
+title: Nightly sleep time and GPA in first-years
+author: Shunyi Zheng
+date: July 25, 2023
+description: Does nightly sleep duration predict change in end-of-semester grade point average (GPA)? First-year college students from three independent universities provided sleep actigraphy for a month early in their spring academic term across five studies.
+categories:
+  - ANOVA
+  - linear regression
+data:
+  year: 2019
+  files: cmu-sleep.csv
+---
+
+## Motivation
+
+For many reasons, it's important for students to succeed during their first year
+of college. Success during the first year affects whether students will stay to
+complete the rest of their degree, and college GPA seems to predict future
+success in jobs. Universities often invest large amounts of time and money to
+help students adapt to college during their first year, through special
+programs, tutoring, orientation sessions, and so on.
+
+Besides programs offered by universities, we can also ask what students can do
+to improve their chances. One potential factor is sleep. College students often
+have poor sleep habits, staying up late and sleeping short hours, and a great
+deal of research suggests that lack of sleep can harm cognitive performance. It
+seems reasonable, then, to study how sleep habits in college students are
+related to their grade point averages (GPAs).
+
+To assess this, [this study](https://doi.org/10.1073/pnas.2209123120) recruited
+first-year students at three universities:
+
+* Carnegie Mellon University (CMU), a STEM-focused private university
+* The University of Washington (UW), a large public university
+* Notre Dame University (ND), a private Catholic university
+
+Each student participant was given a device to track their sleep patterns for a
+month early in their spring academic term. The researchers then obtained
+grade data from the university registrars, along with demographic information
+about the students. The demographic information included other factors that
+might be related to the students' GPAs, such as whether they were
+first-generation students whose parents never attended college, so these factors
+could be controlled for.
+
+## Data
+
+There were a total of 634 participants in this study, who each received a Fitbit
+to track their sleep and physical activity. Students' GPAs were collected from
+the university registrar. Each data row represents one participant.
+
+Using the Fitbit data, the researchers extracted sleep "episodes", which are
+simply time periods where the Fitbit reported the participant as sleeping. They
+only counted episodes at least 20 minutes long, separated by at least 5 minutes
+from other episodes. Gaps smaller than 5 minutes were ignored, so if a student
+slept for several hours, woke for a few minutes, and then slept again, this was
+counted as a single episode.
+
+The longest sleep episode between noon of one day and noon of the next was
+considered the "main" episode; anything else was considered "daytime sleep". For
+example, if a student slept from 4pm to 5pm, then again from 2am to 8am, the
+2-8am window was the "main" episode (6 hours long), and the 4-5pm window was
+counted as 1 hour of daytime sleep. The beginning of the main episode was
+counted as the student's "bedtime", so in this example, the student's bedtime
+was 2am.
+
+The data is divided into five separate studies, by university and semester:
+
+| Study | University | Semester |
+|-------|------------|----------|
+| 1 | Carnegie Mellon University | Spring 2018 |
+| 2 | University of Washington | Spring 2018 |
+| 3 | University of Washington | Spring 2019 |
+| 4 | Notre Dame University | Spring 2016 |
+| 5 | Carnegie Mellon University | Spring 2017 |
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| subject_id | Unique ID of the subject |
+| study | Study number, as shown in the table above |
+| cohort | Codename of the cohort that the subject belongs to |
+| demo_race | Binary label for underrepresented and non-underrepresented students (underrepresented = 0, non-underpresented = 1). Students were considered underrepresented if either parent was Black, Hispanic or Latino, Native American, or Pacific Islander. Students were non-underrepresented if neither parent was from an underrepresented category (i.e., both parents had White or Asian ancestry). |
+| demo_gender | Gender of the subject (male = 0, female = 1), as reported by their institution. |
+| demo_firstgen | First-generation status (non-first gen = 0, first-gen = 1). Students were considered first-generation if neither parent completed any college (i.e., high school diploma or less) |
+| bedtime_mssd | Mean successive squared difference of bedtime. This measures bedtime variability, and is calculated as the average of the squared difference of bedtime on consecutive nights within the timeframe of the study. For example, if we had four successive nights of sleep, we calculated bedtime MSSD by computing the average of (night 2 bedtime – night 1 bedtime)^2, (night 3 bedtime – night 2 bedtime)^2, and (night 4 bedtime – night 3 bedtime)^2. Compared to calculating standard deviation, this measure of variability is more precise in that it takes into account temporal aspects of the data. |
+| TotalSleepTime | Time in bed (the difference between wake time and bedtime) minus the length of total awake/restlessness in the main sleep episode, in minutes |
+| midpoint_sleep | Computed as the midpoint of bedtime and wake time, in minutes since midnight |
+| frac_nights_with_data | Fraction of nights with captured data for the subject. (Some students may not have worn their Fitbits every night, or the battery may have died.) |
+| daytime_sleep | The sum of all the sleep time outside of the range of the main sleep episode, including short naps or sleep that occurred during the daytime. |
+| cum_gpa | Cumulative GPA (out of 4.0), for semesters before the one being studied. (Since these students are first-years during their spring semester, this is usually just their fall GPA. UW has quarters, so this includes both fall and winter quarters at UW.) |
+| term_gpa | End-of-term GPA (out of 4.0) for the semester being studied |
+| term_units | Number of course units carried in the term |
+| Zterm_units_ZofZ | Because of the different term unit systems across universities, a z-scored units variable was first computed for each study cohort individually (study cohorts 1, 2, 3, and 5; was not captured in study cohort 4, Notre Dame). Then, the 5 variables were combined into one single variable “term_units_Z_combined”. Each value in this variable represents each students relative standing in term units relative to their cohort. Finally, a z-score of this variable, “Zterm_units_ZofZ” was computed, to standardize and pool across cohorts and for simplicity and interpretability.|
+
+## Questions
+
+1. Create plots comparing the term GPAs by gender, race, and first generation
+   status, which may all be related to academic success. Then, conduct one-way
+   ANOVA analyses to see whether GPA differs across different groups.
+2. Create a boxplot comparing the average total sleep time across schools.
+3. Find the average total sleep time for each school. Conduct a One-Way ANOVA
+   analysis to see whether total sleep time differs across different schools.
+4. Explore the linear relationship between total sleep time and term GPA. Is the
+   relationship significant, controlling for cumulative GPA?
+5. A student from CMU has 360 hours of total sleep time. What is his/her
+   predicted GPA?
+
+## References
+
+Creswell, J. D., Tumminia, M. J., Price, S., Sefidgar, Y., Cohen, S., Ren, Y.,
+Brown, J., Dey, A. K., Dutcher, J. M., Villalba, D., Mankoff, J., Xu, X.,
+Creswell, K., Doryab, A., Mattingly, S., Striegel, A., Hachen, D., Martinez, G.,
+& Lovett, M. C. (2023). Nightly sleep duration predicts grade point average in
+the first year of college. *Proceedings of the National Academy of Sciences of
+the United States of America*, 120(8), e2209123120.
+<https://doi.org/10.1073/pnas.2209123120>.
