@@ -16,18 +16,27 @@ we welcome submissions. Datasets should meet a few requirements:
   it with your submission.
 - There should be good motivation for interesting analyses of the data that
   would be appropriate for a course.
-- The data should be of reasonable size. GitHub does not allow files greater
-  than 100 MB, and large files can be inconvenient for students. Files larger
-  than a few megabytes should be compressed when practical. R (`read.csv()`) and
-  Python (`pandas.read_csv()`) can read `.csv.gz` files directly, so gzip
-  compression is a good choice for larger files.
+- The data should be less than 100 MB, as large sizes pose technical problems
+  and are inconvenient for students. Files larger than a few megabytes should be
+  compressed when practical. R (`read.csv()`) and Python (`pandas.read_csv()`)
+  can read `.csv.gz` files directly, so gzip compression is a good choice for
+  larger files.
 
 
-## Getting Started
+The simplest way to submit data is to use our [online submission
+form](https://docs.google.com/forms/d/e/1FAIpQLScQgxgq7bFnKicoS0I2DdKGscGoJLvO5EG20_NYkKPEsOB8Yg/viewform?usp=sf_link).
+Provide the requested information and hit Submit; we'll review the submission
+and eventually add it to the site, if it's suitable.
 
-This website is built using the Quarto system and automatically rendered into a
-website. To contribute a dataset, you only need to fill out a template file with
-the dataset information.
+If you're familiar with R Markdown or Quarto, you can instead prepare the data
+description page yourself from a template. Read on for detailed instructions.
+
+
+## Getting Started with Quarto
+
+This website is built using the [Quarto](https://quarto.org) system and
+automatically rendered into a website. Data description pages can be made
+directly from a template file we provide.
 
 You can get the template in two ways:
 
@@ -69,7 +78,8 @@ The template is meant to prevent a common problem with course datasets: they get
 passed down from instructor to instructor, and eventually all information about
 the original source is lost. The dataset may be presented to students without
 context or important details (like units), and the instructor may not be able to
-find the original data or references to answer questions about the data.
+find the original data or references to answer questions about the data. By
+providing sufficient detail, we can make datasets reusable for years to come.
 
 ## Submitting
 
