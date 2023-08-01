@@ -522,15 +522,15 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>bedtime_mssd</td>
-<td>Mean successive squared difference of bedtime. This measures bedtime variability, and is calculated as the average of the squared difference of bedtime on consecutive nights within the timeframe of the study. For example, if we had four successive nights of sleep, we calculated bedtime MSSD by computing the average of (night 2 bedtime – night 1 bedtime)^2, (night 3 bedtime – night 2 bedtime)^2, and (night 4 bedtime – night 3 bedtime)^2. Compared to calculating standard deviation, this measure of variability is more precise in that it takes into account temporal aspects of the data.</td>
+<td>Mean successive squared difference of bedtime. This measures bedtime variability, and is calculated as the average of the squared difference of bedtime on consecutive nights. For example, if we had four successive nights of sleep, we calculated bedtime MSSD by computing the average of (night 2 bedtime – night 1 bedtime)^2, (night 3 bedtime – night 2 bedtime)^2, and (night 4 bedtime – night 3 bedtime)^2. Times are in units of hours. Compared to calculating standard deviation, this looks at change from day to day, not change relative to an overall mean</td>
 </tr>
 <tr class="even">
 <td>TotalSleepTime</td>
-<td>Time in bed (the difference between wake time and bedtime) minus the length of total awake/restlessness in the main sleep episode, in minutes</td>
+<td>Average time in bed (the difference between wake time and bedtime) minus the length of total awake/restlessness in the main sleep episode, in minutes</td>
 </tr>
 <tr class="odd">
 <td>midpoint_sleep</td>
-<td>Computed as the midpoint of bedtime and wake time, in minutes since midnight</td>
+<td>Average midpoint of bedtime and wake time, in minutes after 11 pm (for example, 364 is 5:04 am)</td>
 </tr>
 <tr class="even">
 <td>frac_nights_with_data</td>
@@ -538,7 +538,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>daytime_sleep</td>
-<td>The sum of all the sleep time outside of the range of the main sleep episode, including short naps or sleep that occurred during the daytime.</td>
+<td>Average sleep time outside of the range of the main sleep episode, including short naps or sleep that occurred during the daytime, in minutes</td>
 </tr>
 <tr class="even">
 <td>cum_gpa</td>
@@ -554,7 +554,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>Zterm_units_ZofZ</td>
-<td>Because of the different term unit systems across universities, a z-scored units variable was first computed for each study cohort individually (study cohorts 1, 2, 3, and 5; was not captured in study cohort 4, Notre Dame). Then, the 5 variables were combined into one single variable “term_units_Z_combined”. Each value in this variable represents each students relative standing in term units relative to their cohort. Finally, a z-score of this variable, “Zterm_units_ZofZ” was computed, to standardize and pool across cohorts and for simplicity and interpretability.</td>
+<td>Because each university counts units differently, each student’s units were Z-scored relative to the mean and standard deviation of all students in their study cohort. This score represented the student’s load relative to the average amount of units. The Z-scores for the cohorts were then combined and Z-scored again. 0 represents an average load, while positive values are above-average loads and negative values are below average.</td>
 </tr>
 </tbody>
 </table>
