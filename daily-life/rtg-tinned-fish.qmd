@@ -1,0 +1,101 @@
+---
+title: RTG tinned fish
+author: Shunyi (Jess) Zheng
+date: August 8, 2023
+description: The Rainbow Tomatoes Garden sells hundreds of kinds of canned
+  seafood, and produces a complete table including 27 different attributes, from
+  Latin name to sodium content. Write code to clean the data, then analyze
+  factors affecting price and composition.
+categories:
+  - logistic regression
+  - data cleaning
+  - ANOVA
+data:
+  year: 2023
+  files: rtg-tinned-fish.csv
+---
+
+## Motivation
+
+[Rainbow Tomatoes Garden](https://rainbowtomatoesgarden.com/) (RTG) is an online
+farm stand that offers the largest selection of tinned fish in the world. Tinned
+(canned) fish is popular in many cultures worldwide, and there are many
+varieties containing different seafoods, different preparations, and even sauces
+and spices added directly to the can.
+
+RTG created this canned fish dataset in order to present to its customers the
+variety of options they offer, so customers can more easily find products they'd
+like. We need to clean the data to use it, but once we do, we'll use it to study
+the different types of tinned fish available worldwide.
+
+## Data
+
+There are a total of 702 rows in the data, with each row corresponding to a
+different canned seafood product.
+
+### Data preview
+
+```{r, results="asis", message=FALSE, echo=FALSE}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| Name (caveats to the data) | Name of the product |
+| RTG $ | Price of the canned product |
+| Oil/Water Used | Whether the fish is canned with water, some kind of oil, or vinegar |
+| Type of Fish | The type of seafood used in the product (not necessarily a fish) |
+| Latin Name | Latin name (species) of the seafood |
+| Country Origin | The country of origin of the seafood |
+| Brand | The brand name of the canned seafood |
+| Has Salt | Whether the product contains salt |
+| Has Sugar | Whether the product contains sugar |
+| Sauces/Inclusions | The type of sauces or seasonings contained in the product |
+| Boneless | Whether the product is boneless ("NA" means the seafood does not contain bones at all, so there are none to remove; for instance, scallops do not have bones) |
+| Skinless | Whether the product is skinless ("NA" means the seafood does not have any skin/scales to remove, such as for mussels or squid) |
+| Pieces/Tin | The number of pieces contained per tin |
+| Tin Size (in grams unless otherwise noted) | Weight of the product in grams |
+| Tin Size (in oz unless otherwise noted) | Weight of the product in oz |
+| Smoked | Whether the product is smoked (including all methods of getting the flavor into the product) |
+| Grilled/Seared | Whether the product is grilled or seared |
+| Citrus | Whether the product contains citrus (everything from slices of fruit to lemon essence) |
+| Garlic | Whether the product contains garlic |
+| Chili Pepper | Whether the product contains chili peppers |
+| Tomato | Whether the product contains tomatoes |
+| Dairy |  Whether the product contains dairy |
+| Gluten |  Whether the product contains gluten |
+| Organic | Whether the product contains some amount of certified organic agricultural products |
+| Kosher Cert | Whether the product is Kosher certified |
+| Servings/Tin| The amount of servings per tin |
+| Sodium/Serv (mg) | The amount of sodium per serving |
+| % RDA Sodium | Percentage of recommended daily use of sodium, per serving |
+
+## Questions
+
+1. Since this is a manually entered dataset, to begin statistical analysis on
+   this dataset, one needs to first perform some data cleaning. For example,
+   most sodium amounts are numbers, but a few rows contain the string "< 1g". In
+   other variables, missing values are given several different ways, such as by
+   being left blank, "?", or "NA".
+
+   Load the data and carefully review the types of all variables you'll need for
+   your analysis. Write the necessary code to correct or filter unusual values.
+2. Conduct an exploratory data analysis. What is the distribution of prices?
+   Prices per unit weight? Which countries of origin are most common?
+3. On average, how much more sodium does the salted tinned fish contain than
+   unsalted fish?
+4. Use ANOVA to test whether the price (per unit weight) of tinned fish varies
+   by country, controlling for the type of fish.
+5. Use logistic regression to explore the odds that the product contains added
+   sugar. Which factors are most strongly associated with added sugar?
+
+
+## References
+
+Data from:
+<https://rainbowtomatoesgarden.com/index.php/choosing-a-tin/>
+
+Data downloaded August 8, 2023.
