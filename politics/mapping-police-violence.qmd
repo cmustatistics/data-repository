@@ -1,1 +1,26 @@
+---
+title: Mapping Police Violence
+author: Jessica Zhiyu Guo
+date: Aug 7, 2023
+description: MPV generally includes all incidents where a civilian is killed at the hands of law enforcement in the US.
+categories:
 
+data:
+  year: 2023
+  files: Mapping Police Violence.csv
+---
+
+## Motivation
+
+
+
+## Data
+
+
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
