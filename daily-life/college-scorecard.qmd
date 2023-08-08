@@ -1,0 +1,116 @@
+---
+title: US College Scorecard
+author: Alex Reinhart
+date: August 8, 2023
+description: An extensive survey of American colleges and universities, recording the demographics of their graduates, typical salaries, and much more.
+categories:
+  - linear regression
+  - ANOVA
+data:
+  year: 2023
+  files:
+    - college-scorecard-institution.csv.gz
+    - college-scorecard-dictionary.csv
+---
+
+## Motivation
+
+The United States Department of Education maintains a [College
+Scorecard](https://collegescorecard.ed.gov/) website, tracking thousands of
+colleges and universities across the US, their demographics, graduation rates,
+tuition costs, student loans, and much more, including average salaries after
+graduation. The data is presented on a handy website with search features, maps,
+comparison charts and graphs, and various other tools so students choosing
+between colleges can make an informed choice.
+
+This dataset is a portion of the complete College Scorecard dataset, giving
+information about institutions, their costs, the federal financial aid received
+by students, and the debt those students have after college. Note that the
+financial data only includes students who receive federal grants or loans,
+because they’re the only students the government has full information for.
+
+## Data
+
+The dataset includes about 6,500 rows, each row representing an American college
+or university. There are over 3,000 columns.
+
+There are a lot of variables, so the data dictionary is provided as a separate
+CSV. The dictionary lists every column and its meaning. For columns that can be
+factors, it gives the complete meaning of every factor level.
+
+### Data preview
+
+Because the dataset is so large, this preview shows only the dictionary
+describing the variables. The main dataset is linked to above, under "Data
+Files".
+
+```{r, results="asis", message=FALSE, echo=FALSE}
+source("../preview_dataset.R")
+preview_datasets(n = 100, datasets = "college-scorecard-dictionary.csv")
+```
+
+### Variable descriptions
+
+The dictionary contains the full list of variables. This is an extract of a few
+useful variables.
+
+| Variable | Description |
+|----|-------------|
+| INSTNM | 	Institution name |
+| STABBR | 	Abbreviated name of the state the institution is in |
+| PREDDEG |	Predominant type of degree awarded. 0: not classified, 1: certificates, 2: associate’s degrees, 3: bachelor’s degrees, 4: entirely graduate degrees. |
+| CONTROL |	1: public school, 2: private nonprofit school, 3: private for-profit school. |
+| SATVRMID |	Midpoint of SAT critical reading scores of students |
+| SATMTMID |	Midpoint of SAT math scores of students |
+| SATWRMID |	Midpoint of SAT writing scores of students |
+| ACTCMMID |	Midpoint of the ACT cumulative score of students |
+| ACTENMID |	Midpoint of ACT English scores |
+| ACTMTMID |	Midpoint of ACT math scores |
+| ACTWRMID |	Midpoint of ACT writing scores |
+| COUNT_ED |	Number of students whose earnings data is represented here |
+| UGDS |	Total enrollment of undergraduate students |
+| NPT4_PUB |	Average net price (in-state tuition, fees, and living expenses, minus all financial aid) for public schools |
+| NPT4_PRIV |	Average net price (tuition, fees, and living expenses, minus all financial aid) for private schools |
+| PCTPELL |	Fraction of all undergraduates who received a federal Pell grant for tuition |
+| PCTFLOAN |	Fraction of all undergraduates receiving a federal student loan |
+| MD_EARN_WNE_P10 |	Median earnings (dollars) of students working and not enrolled, 10 years after entry |
+| GRAD_DEPT_MDN_SUPP |	Median debt of those who completed their degrees |
+| GRAD_DEPT_MDN10YR_SUPP |	Median debt of those who completed their degrees, in terms of the monthly payments they’d have to make to pay it off over 10 years |
+| RPY_3YR_RT_SUPP |	Fraction of students who are actively repaying their loans, of those not granted deferment (e.g. because they have no job or entered graduate school), after three years |
+
+Variables starting with `PCIP` record the fraction of degrees awarded in each of a
+broad range of academic fields, from education to engineering; consult the data
+dictionary for the full listing. There are also a number of additional variables
+breaking down information by ethnicity, such as the `UGDS` variables. You should
+explore the data file and the data dictionary for other variables you might find
+interesting to use in your analyses.
+
+## Questions
+
+1. Do some EDA. What range of earnings do students have after graduation? What
+   range of debts? Does higher debt tend to pay off with higher earnings? Is
+   higher cost associated with better earnings after graduation? Explore these
+   questions, and others that seem interesting in the data, with charts and
+   graphs.
+2. Build a model to predict earnings of students after graduation
+   (`MD_EARN_WNE_P10`) using incoming test scores, the type of school (public or
+   private), total enrollment, net costs, and debt load. Do more expensive
+   schools seem to pay off — that is, result in higher earnings — when
+   controlling for the scores of the entering students? Is this relationship the
+   same between public and private schools?
+3. Private for-profit schools have been widely criticized for delivering poor
+   educations with high tuition rates, leading students to frequently default on
+   their debts. Are repayment rates (`RPY_3YR_RT_SUPP`) significantly different
+   between public, private non-profit, and private for-profit schools? What
+   about median earnings?
+4. Devise a single “score”, which you can calculate using the data available,
+   which measures the “cost-effectiveness” of each school, in terms of the
+   earnings graduates get, adjusted for their incoming test scores, versus the
+   price, debt rates, and financial aid amounts. You can calculate this score in
+   any way that seems reasonable to you. Test it out by ranking the top ten or
+   twenty most cost-effective schools, and see if the results seem reasonable.
+
+## References
+
+[College Scorecard Data](https://collegescorecard.ed.gov/data), from the United
+States Department of Education. This is the April 25, 2023 version.
