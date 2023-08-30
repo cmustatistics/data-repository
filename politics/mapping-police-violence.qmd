@@ -46,7 +46,8 @@ The dataset codebook from Mapping Police Violence (https://mappingpoliceviolence
 
 | race  |	Race of victim according to news/official reports |
 | date |	Date of lethal action on victim |
-| city |	City of where incident took place |
+| city |	City where incident took place |
+
 | state  |	State where incident took place |
 | county  |	County of where incident took place |
 | agency_responsible|	Agency of law enforcement officer who took lethal action and responsible for killing |
