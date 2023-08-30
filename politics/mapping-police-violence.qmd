@@ -34,7 +34,8 @@ preview_datasets()
 ```
 
 ## Variable Descriptions
-The dataset codebook from Mapping Police Violence (https://mappingpoliceviolence.org/files/MappingPoliceViolence_Methodology.pdf) and U.S. Census Bureau (https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2022/cc-est2022-alldata.pdf) contains the full list of variables. This is an extract of a few useful variables from both tables. Note that many variables can have multiple values, seperated by commas in the mapping police violence dataset.
+The [dataset codebook from Mapping Police Violence](https://mappingpoliceviolence.org/files/MappingPoliceViolence_Methodology.pdf) and the [U.S. Census Bureau documentation](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2022/cc-est2022-alldata.pdf) contain the full list of variables. This is an extract of a few useful variables from both tables. Note that many variables can have multiple values, separated by commas in the Mapping Police Violence dataset.
+
 
 #### Mapping Police Violence
 | Variable | Description |
