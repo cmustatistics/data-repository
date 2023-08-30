@@ -49,7 +49,8 @@ The dataset codebook from Mapping Police Violence (https://mappingpoliceviolence
 | city |	City where incident took place |
 
 | state  |	State where incident took place |
-| county  |	County of where incident took place |
+| county  |	County where incident took place |
+
 | agency_responsible|	Agency of law enforcement officer who took lethal action and responsible for killing |
 | cause_of_death |	Highest level of force used by law enforcement officer: Gun/Taser/Taser, Gunshot/Unknown/Vehicle/Vehicle, Gunshot/Other Physical Force|
 | signs_of_mental_illness|	Indicates whether official/news reports mentioned any signs of mental illness or mental health crises: Yes/No/Unknown/Drug or Alcohol Use|
