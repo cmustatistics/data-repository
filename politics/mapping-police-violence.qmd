@@ -39,7 +39,8 @@ The dataset codebook from Mapping Police Violence (https://mappingpoliceviolence
 #### Mapping Police Violence
 | Variable | Description |
 |----|-------------|
-| name | 	Name of victim killed by law |
+| name | 	Name of victim killed by law enforcement |
+
 | age | Age of victim at time of death |
 | gender  |	Indicated gender by news/official reports |
 | race  |	Race of victim according to news/official reports |
