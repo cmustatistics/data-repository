@@ -10,7 +10,7 @@ categories:
 data:
   year: 2023
   files: 
-  - Mapping Police Violence.csv
+  - mapping-police-violence.csv
   - cc-est2022-all.csv
 ---
 
