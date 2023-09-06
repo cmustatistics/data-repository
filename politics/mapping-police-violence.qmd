@@ -1,72 +1,118 @@
 ---
 title: Mapping Police Violence
 author: Jessica Zhiyu Guo
-date: Aug 7, 2023
-description: The data is collected by Campaign Zero. An incident of "police violence" is defined by Campaign Zero as "any incident where a law enforcement officer (off-duty or on-duty) applies, on a civilian, lethal force resulting in the civilian being killed whether it is considered 'justified' or 'unjustified' by the U.S. Criminal Legal System."
+date: September 6, 2023
+description: Each year in the United States, around 1,000 people are killed by police. Some of these deaths are accidental, in traffic accidents and other incidents; some are deliberate killings considered legally justified by authorities; and others are considered unjustified or even lead to the prosecution of the police officer. Explore data on over 10,000 such killings to identify patterns in the people killed, the stated reasons for their killings, and the situations leading to their deaths.
 categories:
   - GLMs
   - linear regression
   - logistic regression
 data:
   year: 2023
-  files: 
-  - mapping-police-violence.csv
-  - cc-est2022-all.csv
+  files:
+  - mapping-police-violence.csv.gz
+  - county-census-2020.csv.gz
 ---
 
 ## Motivation
-Race and policing are some of the most inescapable topics in today's America. Mapping Police Violence dataset aims to provide a fuller landscape of police violence, expanding the definition to include various causes of death and beyond the scope of previous governmental and other databases of a similar kind (eg. Fatal Force/The Washington Post). It is the most comprehensive dataset detailing all kinds of police violence incidents and helps us understand the scale of police violence and the differences across race/ethnicity and different geographical locations. We can also combine this with the 2020 Census data on the county level to understand the prevalence of police violence and racial/ethnic differences in prevalence in different counties. The methodology is last updated on Oct 3, 2022, and the dataset is downloaded on Aug 7, 2023.
+
+Race and policing are some of the most inescapable topics in today's America.
+There are large political arguments over the proper role of police, the effect
+of their tactics on historically disadvantaged groups, and their perceived
+biases. These controversies are amplified by a number of police killings of
+unarmed people, particularly African Americans, which have led to massive
+protests over the excessive use of force and sometimes to the prosecution of the
+officers involved.
+
+There is no central government database recording all police uses of force, or
+even all killings by police officers. Several journalistic and advocacy groups
+have attempted to fill the gaps by compiling government data and news reporting
+to build large datasets including police killings and the circumstances
+surrounding them.
+
+This dataset, [Mapping Police Violence](https://mappingpoliceviolence.org/), is
+compiled by the advocacy group [Campaign Zero](https://campaignzero.org/). It
+builds on other databases, such as one compiled by the Washington Post, to
+include information from news reporting and other sources to provide additional
+context about each death. It is the most comprehensive dataset detailing
+all kinds of police violence incidents and helps us understand the scale of
+police violence and the differences across race/ethnicity and different
+geographical locations.
+
+We can also combine this with the 2020 Census data on the county level to
+understand the prevalence of police violence and racial/ethnic differences in
+prevalence in different counties. The methodology is last updated on Oct 3,
+2022, and the dataset is downloaded on Aug 7, 2023.
 
 
 ## Data
-Each row represents one victim in an incident of police violence
 
-Mapping Police Violence include detailed descriptions of each incident, including date and victim's age, race, gender, and an image. It also includes more details about the incident including the location to the street address, the cause of death (can be multiple), circumstances, agency responsible, initial reasons, officer names and history, and so on. 
+Each row represents one death in an incident of police violence. There are
+11,861 deaths recorded from 2012 to 2023.
 
-Not all variables are available for all incidents, for older incidents, some data around prosecution (and its result) for the officer could be available.
+Mapping Police Violence include detailed descriptions of each incident,
+including date and victim's age, race, gender, and an image. It also includes
+more details about the incident including the location to the street address,
+the cause of death (can be multiple), circumstances, agency responsible, initial
+reasons, officer names and history, and so on.
 
+The Census data provides 2020 demographic information for each county. It can be
+joined with the police violence data using the `FIPS` column, which uniquely
+identifies counties, though some incidents of violence do not have a county
+recorded or the county could not be matched to a FIPS code.
 
-## Data preview
+Not all variables are available for all incidents. For older incidents, some
+data around prosecution (and its result) for the officer could be available.
+
+### Data preview
 
 ```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
 preview_datasets()
 ```
 
-## Variable Descriptions
-The [dataset codebook from Mapping Police Violence](https://mappingpoliceviolence.org/files/MappingPoliceViolence_Methodology.pdf) and the [U.S. Census Bureau documentation](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2022/cc-est2022-alldata.pdf) contain the full list of variables. This is an extract of a few useful variables from both tables. Note that many variables can have multiple values, separated by commas in the Mapping Police Violence dataset.
+### Variable Descriptions
+
+The [dataset codebook from Mapping Police
+Violence](https://mappingpoliceviolence.org/files/MappingPoliceViolence_Methodology.pdf)
+and the [U.S. Census Bureau
+documentation](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2022/cc-est2022-alldata.pdf)
+contain the full list of variables. This is an extract of a few useful variables
+from both tables. Note that many variables can have multiple values, separated
+by commas, in the Mapping Police Violence dataset.
 
 
 #### Mapping Police Violence
+
 | Variable | Description |
 |----|-------------|
 | name | 	Name of victim killed by law enforcement |
-
 | age | Age of victim at time of death |
 | gender  |	Victim's indicated gender by news/official reports |
-
 | race  |	Race of victim according to news/official reports |
-| date |	Date of lethal action on victim |
+| date |	Date of lethal action on victim, in MM/DD/YYYY format |
 | city |	City where incident took place |
-
 | state  |	State where incident took place |
 | county  |	County where incident took place |
-
+| FIPS | FIPS code identifying the county where the incident took place. Not available when county is not given, if county is spelled incorrectly, or in most incidents in Connecticut and Alaska, which have unusual county systems |
 | agency_responsible|	Agency of law enforcement officer who took lethal action and responsible for killing |
-| cause_of_death |	Highest level of force used by law enforcement officer: Gun/Taser/Taser, Gunshot/Unknown/Vehicle/Vehicle, Gunshot/Other Physical Force|
+| cause_of_death |	Cause of death of the victim, such as gunshot, Taser, vehicle, or drowning. Multiple reasons can be separated by commas |
 | signs_of_mental_illness|	Indicates whether official/news reports mentioned any signs of mental illness or mental health crises: Yes/No/Unknown/Drug or Alcohol Use|
 | allegedly_armed |	Indicates whether victim was armed according to news/official sources: Allegedly Armed/Unarmed/Unclear/Vehicle |
-| off_duty_killing |	Indicates whether officer was working in an official capacity at the time lethal action was taken |
+| off_duty_killing | Indicates whether officer was working in an official capacity at the time lethal action was taken |
 | encounter_type |	Initial reported reason(s) for police to be on the scene prior to using deadly force |
 | officer_names  |	Name of officer responsible for highest level of force|
 | officer_races  |	Race of officer responsible for highest level of force |
 | officer_known_past_shootings |	Indicates if officer has had a previous incident of police violence in the database |
 
-#### Census (CC-EST2022-ALLDATA-[ST-FIPS]: Annual County Resident Population Estimates by Age, Sex, Race, and Hispanic Origin: April 1, 2020 to July 1, 2022)
+#### Census Annual County Resident Population Estimates by Age, Sex, Race, and Hispanic Origin
+
 | Variable | Description |
 |----|-------------|
 | STNAME | 	State Name  |
 | CTYNAME| County Name  |
+| FIPS | FIPS code identifying the county |
+| TOT_POP | Total population |
 | NHWA_MALE/NHWA_FEMALE  | Not Hispanic, White alone male/female population |
 | NHBA_MALE/NHBA_FEMALE  |	Not Hispanic, Black or African American alone male/female population  |
 | NHIA_MALE/NHIA_FEMALE |	Not Hispanic, American Indian and Alaska Native alone male/female population|
@@ -76,51 +122,38 @@ The [dataset codebook from Mapping Police Violence](https://mappingpoliceviolenc
 | H_MALE/H_FEMALE|	Hispanic male/female population|
 
 ## Questions
-1. Do some EDA. What's the age and gender distribution of victims? What are the most common encounter types in the dataset? What are the most common causes of death? Explore these questions, and others that seem interesting in the data, with charts and graphs.
-2. One main question we would like to explore is that whether the demographic composition of the locality affects the occurrences of police violence. We have incorporated demographic data from the census on the county level with 7 groups (non-Hispanic White, non-Hispanic Black, non-Hispanic Asian, non-Hispanic American Indian/Alaskan Native, non-Hispanic Native Hawaiian or other Pacific Islanders, non-Hispanic two or more races, and Hispanic) with the code below. Build a model predicting the count of police violence in each county in the dataset based on their racial/ethnic minority percentage and other factors you think might be relevant, what does the result suggest?
-3. Another argument people often make is that officers responsible for police violence against minorities often bear no consequences for their actions. Based on this data, build a logistic model to predict the likelihood of the police officer(s) responsible being charged with all factors you think might be relevant, what does the result suggest?
-4. Some people suggest that sign(s) of mental health issues and/or drug use might also affect how police respond to a person, say we categorize any mentioning of a gunshot in the cause of death as an indicator for a higher level of force used, does our data seem to support this claim? 
-5. Similarly, does the perception of the individual being armed appear to influence the extent of force employed by the police?
 
-```{r,echo=TRUE,message=FALSE,warning=FALSE}
-library(dplyr)
-mpv <- read.csv("Mapping Police Violence.csv", sep = ",", header = T)
-colnames(mpv)[1] <- c("name")
-cc <- read.csv("cc-est2022-all.csv", sep = ",", header = T)
-cc <- cc %>% filter(YEAR == "1") %>% # selecting base year (2020)
-  select(STNAME, CTYNAME, NHWA_MALE,NHWA_FEMALE, #non hisp, white alone
-                                            NHBA_MALE,NHBA_FEMALE, #nh, black alone
-                                            NHAA_MALE, NHAA_FEMALE, #nh, asian alone
-                                            NHIA_MALE,NHIA_FEMALE, #nh, native alone
-                                            NHNA_MALE,NHNA_FEMALE, #nh, pacific is alone
-                                            NHTOM_MALE,NHTOM_FEMALE, #nh, multiple races
-                                            H_MALE, H_FEMALE) %>% #hispanic
-  mutate(WA = NHWA_MALE+NHWA_FEMALE, BA = NHBA_MALE+NHBA_FEMALE,
-         AA = NHAA_MALE+NHAA_FEMALE, IA = NHIA_MALE+NHIA_FEMALE,
-         NP = NHNA_MALE+NHNA_FEMALE, H = H_MALE+H_FEMALE) %>% 
-  select(WA, BA, AA, IA, NP, H, STNAME, CTYNAME)
-
-
-cc$CTYNAME = gsub(" Parish", "", cc$CTYNAME) #removing Parish from names
-cc$CTYNAME = gsub(" County", "", cc$CTYNAME) #removing County 
-cc$CTYNAME = gsub(" Borough", "", cc$CTYNAME) #removing Borough (AK)
-cc$CTYNAME = gsub(" Census Area", "", cc$CTYNAME) #removing Census Area (AK)
-cc$CTYNAME = gsub("-", " ", cc$CTYNAME) #changing - to space
-
-mpv$county = gsub(" Parish", "", mpv$county) #removing Parish from names
-mpv$county = gsub(" County", "", mpv$county) #removing County
-mpv$county = gsub(" Census Area","", mpv$county) #removing Census Area (AK)
-mpv$county = gsub(" Borough", "", mpv$county) #removing Borough (AK) 
-mpv$county = gsub("-", " ", mpv$county) #changing - to space
-
-
-mpv$state = state.name[match(mpv$state, state.abb)]
-
-df = left_join(mpv, cc, by = c("state" = "STNAME", "county" = "CTYNAME"), 
-               multiple = "any")
-
-```
+1. Do some EDA. What's the age and gender distribution of victims? What are the
+   most common encounter types in the dataset? What are the most common causes
+   of death? Explore these questions, and others that seem interesting in the
+   data, with charts and graphs.
+2. One main question we would like to explore is that whether the demographic
+   composition of the locality affects the occurrences of police violence. We
+   can use the Census data to provide information on 7 groups (non-Hispanic
+   White, non-Hispanic Black, non-Hispanic Asian, non-Hispanic American
+   Indian/Alaskan Native, non-Hispanic Native Hawaiian or other Pacific
+   Islanders, non-Hispanic two or more races, and Hispanic) in each county.
+   Build a model predicting the count of police violence in each county in the
+   dataset based on their racial/ethnic minority percentage and other factors
+   you think might be relevant. What does the result suggest?
+3. Another argument people often make is that officers responsible for police
+   violence against minorities often bear no consequences for their actions.
+   Based on this data, build a logistic model to predict the likelihood of the
+   police officer(s) responsible being charged with all factors you think might
+   be relevant. What does the result suggest?
+4. Some people suggest that signs of mental health issues and/or drug use might
+   also affect how police respond to a person, say we categorize any mentioning
+   of a gunshot in the cause of death as an indicator for a higher level of
+   force used. Does the data seem to support this claim?
+5. Similarly, does the perception of the individual being armed appear to
+   influence the extent of force employed by the police?
 
 ## References
-- https://mappingpoliceviolence.org/, data retrieved on Aug 7, 2023.
-- https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2022/cc-est2022-alldata.pdf
+
+Police violence data aggregated by [Mapping Police
+Violence](https://mappingpoliceviolence.org/). Data retrieved on August 7, 2023.
+
+Census data from the US Census Bureau's [County Population by
+Characteristics](https://www.census.gov/data/tables/time-series/demo/popest/2020s-counties-detail.html)
+data. [Technical
+documentation](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2020-2022/cc-est2022-alldata.pdf).
