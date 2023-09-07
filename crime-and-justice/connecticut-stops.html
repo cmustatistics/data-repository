@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gordon Weinberg">
-<meta name="dcterms.date" content="2023-06-08">
-<meta name="description" content="Bloodletting—deliberately withdrawing large amounts of blood from patients—was a common medical practice for centuries, until evidence was finally collected on its efficacy. Use an early observational dataset to explore its use for pneumonia.">
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2019-02-09">
+<meta name="description" content="Records for every traffic stop made by the Connecticut State Police over several years, including the reason for the stop and demographic details. Use classifiers to study whether stop and search decisions show signs of bias.">
 
-<title>CMU S&amp;DS Data Repository - Bloodletting</title>
+<title>CMU S&amp;DS Data Repository - Traffic stops in Connecticut</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,8 +66,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -115,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Bloodletting</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../crime-and-justice/connecticut-stops.html">Crime and Justice</a></li><li class="breadcrumb-item"><a href="../crime-and-justice/connecticut-stops.html">Traffic stops in Connecticut</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -205,16 +203,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Crime and Justice</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Traffic stops in Connecticut</span></a>
   </div>
 </li>
@@ -245,16 +243,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Medicine</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link active">
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bloodletting</span></a>
   </div>
 </li>
@@ -407,23 +405,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/bloodletting.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/crime-and-justice/connecticut-stops.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bloodletting</h1>
+<h1 class="title">Traffic stops in Connecticut</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">classification</div>
     <div class="quarto-category">logistic regression</div>
-    <div class="quarto-category">contingency tables</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Bloodletting—deliberately withdrawing large amounts of blood from patients—was a common medical practice for centuries, until evidence was finally collected on its efficacy. Use an early observational dataset to explore its use for pneumonia.
+    Records for every traffic stop made by the Connecticut State Police over several years, including the reason for the stop and demographic details. Use classifiers to study whether stop and search decisions show signs of bias.
   </div>
 </div>
 
@@ -433,14 +431,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Gordon Weinberg </p>
+             <p>Alex Reinhart </p>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 8, 2023</p>
+      <p class="date">February 9, 2019</p>
     </div>
   </div>
   
@@ -449,14 +447,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Data files</div>
     <div class="quarto-title-meta-contents">
-            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/bloodletting.csv">bloodletting.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/connecticut-stops.csv.gz">connecticut-stops.csv.gz</a>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Data year</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1828</p>
+      <p class="date">2015</p>
     </div>
   </div>
   </div>
@@ -466,22 +464,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Physician Pierre Charles Alexandre Louis (1787–1872) provided a now-classic analysis which helped to debunk the practice of bloodletting.</p>
-<p>In his study, Louis investigated records of pneumonia patients. Bloodletting was so common a medical treatment at the time, every patient Louis investigated had the bleeding procedure performed on them. But some patients had been given the bloodletting later in the course of the pneumonia.</p>
-<p>Conventional wisdom at the time was that bloodletting was beneficial, so the patients whose bleeding had been delayed should have fared worse than the patients who had been given bleeding early in the course of the illness.</p>
+<p>In the United States, police officers routinely make traffic stops for a variety of reasons, like speeding, reckless driving, or use of cell phones while driving. They’re one of the main ways ordinary people interact with police, and while most traffic stops are completely routine, others are more serious, leading to searches, arrests, and sometimes violence.</p>
+<p>Because traffic stops are so common, they’re also widely scrutinized. Some allege that officers are racially biased in who they stop, which vehicles they choose to search, or who they decide to give tickets instead of warnings to. Until recent years, detailed data was not available to help answer these allegations, but new initiatives have begun to collect extensive data from police departments across many states.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Each row represents one patient in the study. There were 77 total patients.</p>
+<p>This dataset records all traffic stops made by the Connecticut State Police (not the police departments of individual towns and cities) from October 2013 to March 2015, amounting to nearly 320,000 traffic stops. Each row is one stop.</p>
+<p>The data summarizes each stop, including driver demographics, the reason for the stop, and whether a search was conducted or contraband was found.</p>
 <section id="data-preview" class="level3">
 <h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
 <h4 class="anchored">
-<a href=" https://cmustatistics.github.io/data-repository/data/bloodletting.csv "> bloodletting.csv </a>
+<a href=" https://cmustatistics.github.io/data-repository/data/connecticut-stops.csv.gz "> connecticut-stops.csv.gz </a>
 </h4>
 <div data-pagedtable="false">
 
 <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Age"],"name":[1],"type":["int"],"align":["right"]},{"label":["DayFirstBled"],"name":[2],"type":["int"],"align":["right"]},{"label":["FirstBleeding"],"name":[3],"type":["chr"],"align":["left"]},{"label":["NumBleedings"],"name":[4],"type":["int"],"align":["right"]},{"label":["SickDays"],"name":[5],"type":["int"],"align":["right"]},{"label":["Outcome"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"NA","2":"1","3":"early","4":"3","5":"10","6":"lived"},{"1":"NA","2":"1","3":"early","4":"2","5":"12","6":"lived"},{"1":"NA","2":"1","3":"early","4":"2","5":"14","6":"lived"},{"1":"NA","2":"2","3":"early","4":"3","5":"7","6":"lived"},{"1":"NA","2":"2","3":"early","4":"2","5":"10","6":"lived"},{"1":"NA","2":"2","3":"early","4":"2","5":"12","6":"lived"},{"1":"NA","2":"3","3":"early","4":"3","5":"19","6":"lived"},{"1":"NA","2":"3","3":"early","4":"3","5":"29","6":"lived"},{"1":"NA","2":"3","3":"early","4":"2","5":"20","6":"lived"},{"1":"NA","2":"3","3":"early","4":"NA","5":"20","6":"lived"},{"1":"NA","2":"3","3":"early","4":"3","5":"16","6":"lived"},{"1":"NA","2":"3","3":"early","4":"4","5":"17","6":"lived"},{"1":"NA","2":"4","3":"early","4":"3","5":"19","6":"lived"},{"1":"NA","2":"4","3":"early","4":"2","5":"12","6":"lived"},{"1":"NA","2":"4","3":"early","4":"2","5":"15","6":"lived"},{"1":"NA","2":"4","3":"early","4":"4","5":"22","6":"lived"},{"1":"NA","2":"4","3":"early","4":"4","5":"12","6":"lived"},{"1":"NA","2":"4","3":"early","4":"2","5":"21","6":"lived"},{"1":"NA","2":"4","3":"early","4":"3","5":"25","6":"lived"},{"1":"NA","2":"4","3":"early","4":"4","5":"28","6":"lived"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["state"],"name":[2],"type":["chr"],"align":["left"]},{"label":["stop_date"],"name":[3],"type":["date"],"align":["right"]},{"label":["stop_time"],"name":[4],"type":["time"],"align":["right"]},{"label":["location_raw"],"name":[5],"type":["chr"],"align":["left"]},{"label":["county_name"],"name":[6],"type":["chr"],"align":["left"]},{"label":["county_fips"],"name":[7],"type":["chr"],"align":["left"]},{"label":["fine_grained_location"],"name":[8],"type":["chr"],"align":["left"]},{"label":["police_department"],"name":[9],"type":["chr"],"align":["left"]},{"label":["driver_gender"],"name":[10],"type":["chr"],"align":["left"]},{"label":["driver_age_raw"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["driver_age"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["driver_race_raw"],"name":[13],"type":["chr"],"align":["left"]},{"label":["driver_race"],"name":[14],"type":["chr"],"align":["left"]},{"label":["violation_raw"],"name":[15],"type":["chr"],"align":["left"]},{"label":["violation"],"name":[16],"type":["chr"],"align":["left"]},{"label":["search_conducted"],"name":[17],"type":["lgl"],"align":["right"]},{"label":["search_type_raw"],"name":[18],"type":["chr"],"align":["left"]},{"label":["search_type"],"name":[19],"type":["chr"],"align":["left"]},{"label":["contraband_found"],"name":[20],"type":["lgl"],"align":["right"]},{"label":["stop_outcome"],"name":[21],"type":["chr"],"align":["left"]},{"label":["is_arrested"],"name":[22],"type":["lgl"],"align":["right"]},{"label":["officer_id"],"name":[23],"type":["chr"],"align":["left"]},{"label":["stop_duration"],"name":[24],"type":["chr"],"align":["left"]}],"data":[{"1":"CT-2013-00001","2":"CT","3":"2013-10-01","4":"00:01:00","5":"westport","6":"Fairfield County","7":"09001","8":"00000 N I 95 (WESTPORT, T158) X 18 LL","9":"State Police","10":"F","11":"69","12":"69","13":"Black","14":"Black","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000002754","24":"1-15 min"},{"1":"CT-2013-00002","2":"CT","3":"2013-10-01","4":"00:02:00","5":"mansfield","6":"Tolland County","7":"09013","8":"rte 195 storrs","9":"State Police","10":"M","11":"20","12":"20","13":"White","14":"White","15":"Moving Violation","16":"Moving violation","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000001903","24":"1-15 min"},{"1":"CT-2013-00003","2":"CT","3":"2013-10-01","4":"00:07:00","5":"franklin","6":"New London County","7":"09011","8":"Rt 32/whippoorwill","9":"State Police","10":"M","11":"34","12":"34","13":"Hispanic","14":"Hispanic","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000002711","24":"1-15 min"},{"1":"CT-2013-00004","2":"CT","3":"2013-10-01","4":"00:10:00","5":"danbury","6":"Fairfield County","7":"09001","8":"I-84","9":"State Police","10":"M","11":"46","12":"46","13":"Black","14":"Black","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Written Warning","22":"FALSE","23":"113658284","24":"1-15 min"},{"1":"CT-2013-00005","2":"CT","3":"2013-10-01","4":"00:10:00","5":"east hartford","6":"Hartford County","7":"09003","8":"00000 W I 84 (EAST HARTFORD, T043)E.OF XT.56","9":"State Police","10":"M","11":"30","12":"30","13":"White","14":"White","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"830814942","24":"1-15 min"},{"1":"CT-2013-00006","2":"CT","3":"2013-10-01","4":"00:10:00","5":"trumbull","6":"Fairfield County","7":"09001","8":"rt 8","9":"State Police","10":"M","11":"25","12":"25","13":"Black","14":"Black","15":"Defective Lights","16":"Lights","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"230931989","24":"1-15 min"},{"1":"CT-2013-00007","2":"CT","3":"2013-10-01","4":"00:11:00","5":"harwinton","6":"Litchfield County","7":"09005","8":"rt4 rt 72","9":"State Police","10":"M","11":"27","12":"27","13":"White","14":"White","15":"Other","16":"Other","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000002241","24":"1-15 min"},{"1":"CT-2013-00008","2":"CT","3":"2013-10-01","4":"00:13:00","5":"westport","6":"Fairfield County","7":"09001","8":"95 x 18sb","9":"State Police","10":"M","11":"48","12":"48","13":"White","14":"White","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000002754","24":"1-15 min"},{"1":"CT-2013-00009","2":"CT","3":"2013-10-01","4":"00:15:00","5":"manchester","6":"Hartford County","7":"09003","8":"00000 S WILBUR CROSS HWY (MANCHESTER, T077)","9":"State Police","10":"M","11":"25","12":"25","13":"White","14":"White","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000001920","24":"1-15 min"},{"1":"CT-2013-00010","2":"CT","3":"2013-10-01","4":"00:16:00","5":"beacon falls","6":"New Haven County","7":"09009","8":"rt 8 exit 25","9":"State Police","10":"M","11":"32","12":"32","13":"White","14":"White","15":"Moving Violation","16":"Moving violation","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000003026","24":"1-15 min"},{"1":"CT-2013-00011","2":"CT","3":"2013-10-01","4":"00:20:00","5":"westport","6":"Fairfield County","7":"09001","8":"00000 S I 95 (WESTPORT, T158) X18 LL","9":"State Police","10":"F","11":"48","12":"48","13":"Black","14":"Black","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000002754","24":"1-15 min"},{"1":"CT-2013-00012","2":"CT","3":"2013-10-01","4":"00:21:00","5":"beacon falls","6":"New Haven County","7":"09009","8":"Rt 8 sb x24","9":"State Police","10":"F","11":"27","12":"27","13":"Hispanic","14":"Hispanic","15":"Defective Lights","16":"Lights","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000002951","24":"1-15 min"},{"1":"CT-2013-00013","2":"CT","3":"2013-10-01","4":"00:27:00","5":"westbrook","6":"Middlesex County","7":"09007","8":"95 N 64-65 WESTBROOK","9":"State Police","10":"M","11":"32","12":"32","13":"White","14":"White","15":"Defective Lights","16":"Lights","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000002751","24":"1-15 min"},{"1":"CT-2013-00014","2":"CT","3":"2013-10-01","4":"00:27:00","5":"westport","6":"Fairfield County","7":"09001","8":"00000 S I 95 (WESTPORT, T158)","9":"State Police","10":"M","11":"27","12":"27","13":"White","14":"White","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000002754","24":"1-15 min"},{"1":"CT-2013-00015","2":"CT","3":"2013-10-01","4":"00:28:00","5":"bridgeport","6":"Fairfield County","7":"09001","8":"I-95 B EXIT 28","9":"State Police","10":"F","11":"20","12":"20","13":"Black","14":"Black","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"961269420","24":"1-15 min"},{"1":"CT-2013-00016","2":"CT","3":"2013-10-01","4":"00:28:00","5":"mansfield","6":"Tolland County","7":"09013","8":"rte 195","9":"State Police","10":"F","11":"21","12":"21","13":"Black","14":"Black","15":"Other","16":"Other","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000001903","24":"1-15 min"},{"1":"CT-2013-00017","2":"CT","3":"2013-10-01","4":"00:28:00","5":"waterbury","6":"New Haven County","7":"09009","8":"Rt 8 south, exit 30","9":"State Police","10":"M","11":"67","12":"67","13":"White","14":"White","15":"Other","16":"Other","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000002230","24":"1-15 min"},{"1":"CT-2013-00018","2":"CT","3":"2013-10-01","4":"00:29:00","5":"union","6":"Tolland County","7":"09013","8":"x73","9":"State Police","10":"M","11":"42","12":"42","13":"Hispanic","14":"Hispanic","15":"Other","16":"Other","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000002715","24":"1-15 min"},{"1":"CT-2013-00019","2":"CT","3":"2013-10-01","4":"00:30:00","5":"windham","6":"Windham County","7":"09015","8":"rt 203","9":"State Police","10":"M","11":"21","12":"21","13":"White","14":"White","15":"Speed Related","16":"Speeding","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Verbal Warning","22":"FALSE","23":"1000002591","24":"1-15 min"},{"1":"CT-2013-00020","2":"CT","3":"2013-10-01","4":"00:34:00","5":"hebron","6":"Tolland County","7":"09013","8":"rt 66","9":"State Police","10":"M","11":"23","12":"23","13":"White","14":"White","15":"Other","16":"Other","17":"FALSE","18":"NA","19":"NA","20":"FALSE","21":"Ticket","22":"FALSE","23":"1000002242","24":"1-15 min"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </section>
@@ -500,28 +498,100 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Age</td>
-<td>The age of the pneumonia patient (only available for patients who died)</td>
+<td>id</td>
+<td>A unique ID assigned to each stop.</td>
 </tr>
 <tr class="even">
-<td>DayFirstBled</td>
-<td>The day of the illness when bloodletting was first performed</td>
+<td>state</td>
+<td>The state in which each stop occurred (always CT, for Connecticut, in this data)</td>
 </tr>
 <tr class="odd">
-<td>FirstBleeding</td>
-<td>A categorical version of <code>DayFirstBled</code>, defined as “early” if the day of first bleeding as 1 to 4, “late” if day of first bleeding was 5+</td>
+<td>stop_date</td>
+<td>Date of the traffic stop (YYYY-MM-DD)</td>
 </tr>
 <tr class="even">
-<td>NumBleedings</td>
-<td>The total number of bloodlettings performed on the patient</td>
+<td>stop_time</td>
+<td>Time the stop occurred (24-hour time, HH:MM)</td>
 </tr>
 <tr class="odd">
-<td>SickDays</td>
-<td>The total duration (in days) of the illness</td>
+<td>location_raw</td>
+<td>Location name from original records, used to identify the county</td>
 </tr>
 <tr class="even">
-<td>Outcome</td>
-<td>Whether the patient lived or died from the illness</td>
+<td>county_name</td>
+<td>County in which the stop occurred</td>
+</tr>
+<tr class="odd">
+<td>county_fips</td>
+<td>The unique FIPS ID code for the county</td>
+</tr>
+<tr class="even">
+<td>fine_grained_location</td>
+<td>A more detailed location, not in a standardized format</td>
+</tr>
+<tr class="odd">
+<td>police_department</td>
+<td>Name of the police department making the stop</td>
+</tr>
+<tr class="even">
+<td>driver_gender</td>
+<td>Gender of the driver, as recorded by the officer making the stop</td>
+</tr>
+<tr class="odd">
+<td>driver_age_raw</td>
+<td>Driver’s age from the original dataset. Not always in a consistent format</td>
+</tr>
+<tr class="even">
+<td>driver_age</td>
+<td>Driver’s age; NA if under 15 or greater than 99</td>
+</tr>
+<tr class="odd">
+<td>driver_race_raw</td>
+<td>The driver’s race, as recorded by the officer. Not in a standard format.</td>
+</tr>
+<tr class="even">
+<td>driver_race</td>
+<td>The driver’s race, standardized to these options: White, Black, Hispanic, Asian, Other, and NA (unknown). Asian includes Asian, Pacific Islander, and Indian. Native Americans are listed as Other, and anyone with Hispanic ethnicity is listed as Hispanic.</td>
+</tr>
+<tr class="odd">
+<td>violation_raw</td>
+<td>The violation for which the driver was stopped, from the original data</td>
+</tr>
+<tr class="even">
+<td>violation</td>
+<td>The violation broken into standard categories, like Speeding, Lights, or Moving violation. Some stops involve multiple violations, separated by commas.</td>
+</tr>
+<tr class="odd">
+<td>search_conducted</td>
+<td>TRUE if the officer searched the vehicle; FALSE otherwise.</td>
+</tr>
+<tr class="even">
+<td>search_type_raw</td>
+<td>Justification for the search, if conducted, as written by the police agency</td>
+</tr>
+<tr class="odd">
+<td>search_type</td>
+<td>Justification for the search broken down into consistent categories like Consent (driver gave consent). Many are listed as Other with no reason given</td>
+</tr>
+<tr class="even">
+<td>contraband_found</td>
+<td>Whether the search found contraband (like drugs). TRUE or FALSE, and FALSE if no search was performed.</td>
+</tr>
+<tr class="odd">
+<td>stop_outcome</td>
+<td>The result of the stop: arrest, ticket, warning, and so on.</td>
+</tr>
+<tr class="even">
+<td>is_arrested</td>
+<td>Whether an arrest was made (TRUE or FALSE).</td>
+</tr>
+<tr class="odd">
+<td>officer_id</td>
+<td>A unique ID for the officer making the stop.</td>
+</tr>
+<tr class="even">
+<td>stop_duration</td>
+<td>Duration of the stop, broken into categories (1-5 min, 16-30 min, and so on).</td>
 </tr>
 </tbody>
 </table>
@@ -530,16 +600,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <ol type="1">
-<li>One of P.C.A. Louis’s analyses compared the survival rates of patients bled early to those bled late (<code>FirstBleeding</code>). Construct a <span class="math inline">\(2 \times 2\)</span> contingency table of the outcome (whether the patient lived or died) and whether the patient was bled early or late. Calculate the survival rate for each group. Interpret your results.</li>
-<li>Using your contingency table, conducted a <span class="math inline">\(\chi^2\)</span> test of proportions. Is the survival rate for each group different? State your null hypothesis, test statistic, and <em>p</em> value, and interpret your results.</li>
-<li>Use a logistic regression model to predict the outcome based on the day bloodletting was first performed (<code>DayFirstBled</code>). State the coefficient and give a confidence interval. Do patients have better outcomes if they were bled earlier or later?</li>
-<li>It’s reasonable to assume that the number of bleedings also matters. Extend your logistic regression to include this (<code>NumBleedings</code>) as a covariate. Interpret both coefficients.</li>
+<li><p>Conduct an exploratory analysis of the data. What stop types are most common? Is there variation by race or gender? What types of stop are most likely to lead to a ticket?</p></li>
+<li><p>One way to look for racial discrimination in the decision to search a vehicle is called the “outcome test”. If officers do not discriminate, and instead use only objective evidence to decide a car should be searched for drugs, then the rate at which they find drugs should be the same across racial groups. But if officers unfairly target a racial group for searches, they may conduct more searches of drivers in that group without finding any drugs.</p>
+<p>Build a model to predict whether contraband is found after a search is conducted, using race and other appropriate covariates. Does the outcome test appear to show discrimination? Carefully explain the caveats of your results, discussing confounding variables and mentioning other types of data you would like to have.</p></li>
+<li><p>Is there any evidence that traffic stops are most common certain times of year or on certain days of the week? Before conducting your analysis, make some hypotheses about what you expect to find. (Do you think officers would be less likely to make traffic stops in the cold winter months, for example?)</p></li>
 </ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Original research: Pierre Charles Alexandre Louis (1836), <em>Researches on the Effects of Bloodletting in Some Inflammatory Diseases</em>, Hilliard, Gray, &amp; Company. Translated by C.G. Putnam.</p>
-<p>Data extracted by: Alfredo Morabia (1996). “P.C.A. Lewis and the Birth of Clinical Epidemiology”, <em>Journal of Clinical Epidemiology</em> 49 (12), pp. 1327-1333. <a href="https://doi.org/10.1016/s0895-4356(96)00294-6" class="uri">https://doi.org/10.1016/s0895-4356(96)00294-6</a></p>
+<p>Data collected and cleaned by the <a href="https://openpolicing.stanford.edu/">Stanford Open Policing Project</a>, released under the <a href="https://opendatacommons.org/licenses/by/summary/">Open Data Commons Attribution License</a>. Code and data descriptions <a href="https://github.com/5harad/openpolicing">available on GitHub</a>. The Open Policing Project has released similar data files for many other states.</p>
+<p>For a rigorous analysis of this data, see E. Pierson, C. Simoiu, J. Overgoor, S. Corbett-Davies, D. Jenson, A. Shoemaker, V. Ramachandran, P. Barghouty, C. Phillips, R. Shroff, and S. Goel. (2020) “A large-scale analysis of racial disparities in police stops across the United States”. <em>Nature Human Behavior</em> 4, 736-745. <a href="https://doi.org/10.1038/s41562-020-0858-1" class="uri">https://doi.org/10.1038/s41562-020-0858-1</a></p>
 
 
 </section>
