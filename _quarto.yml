@@ -30,6 +30,9 @@ format:
     toc: true
     df-print: paged
 
+    include-in-header:
+      - matomo-analytics.html
+
     filters:
       - metadata.lua
 
