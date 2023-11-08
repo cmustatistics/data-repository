@@ -105,7 +105,9 @@ by commas, in the Mapping Police Violence dataset.
 | officer_races  |	Race of officer responsible for highest level of force |
 | officer_known_past_shootings |	Indicates if officer has had a previous incident of police violence in the database |
 
-#### Census Annual County Resident Population Estimates by Age, Sex, Race, and Hispanic Origin
+#### Census County Resident Population Estimates by Sex, Race, and Hispanic Origin
+
+Census estimates for April 1, 2020, for all age groups.
 
 | Variable | Description |
 |----|-------------|
