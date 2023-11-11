@@ -1,0 +1,151 @@
+---
+title: Resenting moral rebels
+author: Alex Reinhart
+date: February 24, 2017
+description: We usually applaud people who rebel against the status quo for moral
+    reasons -- but those involved in the status quo do not. An experiment
+    attempts to understand why this is.
+categories:
+  - ANOVA
+data:
+  year: 2015
+  files:
+    - moral-rebels.csv
+---
+
+## Motivation
+
+In 2008, three psychologists published a paper in the *Journal of Personality
+and Social Psychology* about "moral rebels": people who, despite being under
+pressure to conform, instead rebel to do what they think is morally right.
+Consider [Frank Serpico](https://en.wikipedia.org/wiki/Frank_Serpico), for
+example, a New York Police Department officer in the 1960s and early 70s who,
+aware many fellow officers were corrupt, finally spoke out and brought evidence
+to the *New York Times*, leading to reform; or
+[Oskar Schindler](https://en.wikipedia.org/wiki/Oskar_Schindler), a Nazi Party
+member who nonetheless worked to save the lives of 1,200 Jewish workers during
+the Holocaust.
+
+The psychologists observed that moral rebels, though widely admired by
+outsiders, are often not well-appreciated by their peers who were involved in
+the activities they rebelled against. (Frank Serpico, for example, was shot,
+possibly in a set-up by other police officers.) They hypothesized that peers of
+moral rebels feel threatened: accepting the rebel would mean admitting their own
+behavior was wrong, and it is easier to condemn the rebel than to admit you have
+done wrong.
+
+The psychologists performed several experiments to test their hypothesis. We're
+interested in experiment 4, which tested the hypothesis that
+self-affirmation---performing some activity to make you feel good about
+yourself---would make it easier to accept the rebel. Their experiment found
+evidence for this hypothesis.
+
+Here's the experiment. Participants (undergraduate students) were assigned to
+one of three experimental conditions: obedient, rebel control, or rebel
+self-affirmation. They were then asked to imagine that a burglary had just
+occurred, and they were then given three photographs of potential suspects,
+along with descriptions of each suspect. The participants, on the basis of the
+photographs and descriptions, were supposed to choose which suspect was most
+likely the burglar, and fill out a form indicating why they made this choice.
+
+Two of the photographs depicted white men. The third was "Steven Jones", an
+African American man, whose description indicated he had a previous criminal
+record and no alibi---the descriptions were designed to make him the most
+likely suspect.
+
+After making the choice and filling out the form, participants were shown a form
+purportedly from someone else who participated in the study (though it was
+actually prepared by the experimenters). Those in the "obedient" condition were
+shown a form picking Steven Jones as the burglar. Those in both "rebel"
+conditions were shown a form by someone stating "I refuse to make a choice here"
+on the grounds that it's "offensive to make a black man the obvious suspect".
+Participants were then asked a series of questions about the other participant
+whose form they viewed.
+
+The crucial difference was between the "rebel control" and the "rebel
+self-affirmation" groups. Participants in the "rebel self-affirmation", between
+filling in their own form and viewing the fake form, were asked to write a short
+essay about "a recent experience in which you demonstrated a quality of value
+that is very important to you and which made you feel good about yourself."
+Participants in the other two groups, as a placebo, were just asked to describe
+what they had eaten in the past two days.
+
+This dataset presents the results of a replication of this experiment, conducted
+as part of the
+[Reproducibility Project: Psychology](https://osf.io/ezcuj/wiki/home/), a
+massive project to redo experiments from 100 different papers from psychological
+journals, to determine if their results hold up when tested again. Our goal is
+to see if the self-affirmation task made participants feel better about the
+rebel than those in the control group.
+
+## Data
+
+The data file contains results from 75 participants: 20 in the obedient
+condition, 28 in rebel control, and 27 in rebel self-affirmation. (Assignment to
+conditions was done randomly.) The replication, instead of using undergraduate
+students, used participants from Amazon's
+[Mechanical Turk service](https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk),
+who completed the task entirely online.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+Variable | Description
+---------|------------
+`Condition` | Which group the participant was in (Obedient, Rebel Affirmed, or Rebel Control)
+`Gender` | Participant's self-reported sex (1 = male, 2 = female)
+`Ethnicity` | Participant's self-reported ethnicity (1 = White, 2 = Asian, 3 = Hispanic, 4 = Native American, 5 = Hawaiian/Pacific Islander, 6 = African American)
+`YOB` | Participant's year of birth
+`Other.Work` | "How much would you like to work on a project with the other participant?"
+`Other.Friend` | "How much would you like the other participant as a friend?"
+`Other.Respect` | "How much do you respect the other participant?"
+`AboutGuess` | "What do you think this study was about?"
+`FoodList` | For those in the "obedient" and "rebel control" groups, the foods they ate over the past two days
+`ExplainChoice` | Explanation of their choice of suspect in the task
+`ValueDescription` | For those in the "rebel self-affirmation group", the story they wrote about the value they demonstrated
+`ValueName` | For those in the "rebel self-affirmation" group, the value they demonstrated
+`ValueImportance` | How important that value is to them
+`Choice.happy` | How happy participants were with their choice (after seeing the other participant's choice)
+`Self.Work` | Along with `Self.Friend` and `Self.Respect`, their answer to how they felt the other participant would feel about working with them, being their friend, or respecting them
+
+There are a range of columns like `Intelligent`, `Strong`, `Moral` and so on,
+which reflect the participant's ratings of the *other* (fake) participant. Those
+labeled `Self.Moral`, `Self.happy` and so on are their ratings of themselves.
+
+The original psychologists combined `Other.Work`, `Other.Friend`, and
+`Other.Respect` into a combined score by averaging them.
+
+## Questions
+
+1. Is there a difference in how participants viewed the *other* participant
+   (based on the `Other.Work`, `Other.Friend`, and `Other.Respect` scores),
+   depending on which `Condition` they were in? Does the data support the
+   psychologists' original hypothesis?
+
+2. What about participants impressions of how moral the other participant was?
+   What does this mean for the research hypothesis?
+
+3. Repeat your analysis from question 1, but using `Self.Work`, `Self.Friend`,
+   and `Self.Respect`. Interpret and explain your results.
+
+4. Think about the experimental design. Does it adequately test the
+   psychological hypotheses? Are there any threats to its validity or
+   generalizability?
+
+## References
+
+B Monin, PJ Sawyer, MJ Marquez (2008). The rejection of moral rebels: resenting
+those who do the right thing. *Journal of Personality and Social Psychology*,
+95.1: 76-93. <https://doi.org/10.1037/0022-3514.95.1.76>
+
+Replicated as part of: Open Science Collaboration (2015). Estimating the
+reproducibility of psychological science. *Science*, 349 (6251), aac4716.
+<https://doi.org/10.1126/science.aac4716>
+
+Replication data available from <https://osf.io/pz0my/>.
