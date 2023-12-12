@@ -1,123 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/cmustatistics/data-repository/medicine/bloodletting.html</loc>
-    <lastmod>2023-11-30T19:53:29.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/medicine/core-temperature.html</loc>
-    <lastmod>2023-11-30T19:53:28.724Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/psychology/hormone-diversity.html</loc>
-    <lastmod>2023-11-30T19:53:27.636Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/psychology/moral-rebels.html</loc>
-    <lastmod>2023-11-30T19:53:26.560Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/psychology/male-makeup.html</loc>
-    <lastmod>2023-11-30T19:53:25.252Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/astronomy/buzzard.html</loc>
-    <lastmod>2023-11-30T19:53:24.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/crime-and-justice/mapping-police-violence.html</loc>
-    <lastmod>2023-11-30T19:53:23.448Z</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/cmustatistics/data-repository/biology/anage.html</loc>
-    <lastmod>2023-11-30T19:53:22.312Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/biology/bug-attraction.html</loc>
-    <lastmod>2023-11-30T19:53:21.388Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/biology/bird-diversity.html</loc>
-    <lastmod>2023-11-30T19:53:20.324Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/politics/world-bank.html</loc>
-    <lastmod>2023-11-30T19:53:18.528Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/social/science-forums.html</loc>
-    <lastmod>2023-11-30T19:53:17.304Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/external-sources.html</loc>
-    <lastmod>2023-11-30T19:53:16.492Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/money/european-ham.html</loc>
-    <lastmod>2023-11-30T19:53:15.316Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/daily-life/rtg-tinned-fish.html</loc>
-    <lastmod>2023-11-30T19:53:14.184Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/daily-life/college-scorecard.html</loc>
-    <lastmod>2023-11-30T19:53:13.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/money/rail-trails.html</loc>
-    <lastmod>2023-11-30T19:53:14.736Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/money/ames-housing.html</loc>
-    <lastmod>2023-11-30T19:53:16.164Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/index.html</loc>
-    <lastmod>2023-11-30T19:53:16.784Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/politics/standard-cities.html</loc>
-    <lastmod>2023-11-30T19:53:17.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/by-method.html</loc>
-    <lastmod>2023-11-30T19:53:19.876Z</lastmod>
+    <lastmod>2023-12-12T17:50:09.898Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/biology/dry-beans.html</loc>
-    <lastmod>2023-11-30T19:53:20.800Z</lastmod>
+    <lastmod>2023-12-12T17:50:09.066Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/biology/spider-nuptials.html</loc>
-    <lastmod>2023-11-30T19:53:21.892Z</lastmod>
+    <lastmod>2023-12-12T17:50:08.034Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/cmustatistics/data-repository/crime-and-justice/connecticut-stops.html</loc>
-    <lastmod>2023-11-30T19:53:22.824Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/cmustatistics/data-repository/submit-data.html</loc>
-    <lastmod>2023-11-30T19:53:23.864Z</lastmod>
+    <loc>https://github.com/cmustatistics/data-repository/psychology/hormone-diversity.html</loc>
+    <lastmod>2023-12-12T17:50:07.034Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/psychology/sugary-drinks.html</loc>
-    <lastmod>2023-11-30T19:53:24.796Z</lastmod>
+    <lastmod>2023-12-12T17:50:06.082Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/psychology/plate-size.html</loc>
-    <lastmod>2023-11-30T19:53:26.028Z</lastmod>
+    <lastmod>2023-12-12T17:50:05.174Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/cmustatistics/data-repository/psychology/cmu-sleep.html</loc>
-    <lastmod>2023-11-30T19:53:27.120Z</lastmod>
+    <loc>https://github.com/cmustatistics/data-repository/submit-data.html</loc>
+    <lastmod>2023-12-12T17:50:03.886Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/cmustatistics/data-repository/psychology/religion-analytic-thinking.html</loc>
-    <lastmod>2023-11-30T19:53:28.044Z</lastmod>
+    <loc>https://github.com/cmustatistics/data-repository/social/science-forums.html</loc>
+    <lastmod>2023-12-12T17:50:02.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/external-sources.html</loc>
+    <lastmod>2023-12-12T17:50:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/cmustatistics/data-repository/medicine/vietnam-health.html</loc>
-    <lastmod>2023-11-30T19:53:29.412Z</lastmod>
+    <lastmod>2023-12-12T17:50:00.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/politics/standard-cities.html</loc>
+    <lastmod>2023-12-12T17:49:58.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/crime-and-justice/connecticut-stops.html</loc>
+    <lastmod>2023-12-12T17:49:57.810Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/money/rail-trails.html</loc>
+    <lastmod>2023-12-12T17:49:56.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/money/european-ham.html</loc>
+    <lastmod>2023-12-12T17:49:55.342Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/daily-life/college-scorecard.html</loc>
+    <lastmod>2023-12-12T17:49:54.518Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/astronomy/buzzard.html</loc>
+    <lastmod>2023-12-12T17:49:53.230Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/daily-life/rtg-tinned-fish.html</loc>
+    <lastmod>2023-12-12T17:49:54.018Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/index.html</loc>
+    <lastmod>2023-12-12T17:49:54.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/money/ames-housing.html</loc>
+    <lastmod>2023-12-12T17:49:56.170Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/crime-and-justice/mapping-police-violence.html</loc>
+    <lastmod>2023-12-12T17:49:57.318Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/politics/world-bank.html</loc>
+    <lastmod>2023-12-12T17:49:58.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/medicine/bloodletting.html</loc>
+    <lastmod>2023-12-12T17:49:59.370Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/medicine/core-temperature.html</loc>
+    <lastmod>2023-12-12T17:50:00.726Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/by-method.html</loc>
+    <lastmod>2023-12-12T17:50:02.370Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/social/elite-college-admissions.html</loc>
+    <lastmod>2023-12-12T17:50:03.498Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/psychology/cmu-sleep.html</loc>
+    <lastmod>2023-12-12T17:50:04.426Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/psychology/religion-analytic-thinking.html</loc>
+    <lastmod>2023-12-12T17:50:05.586Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/psychology/male-makeup.html</loc>
+    <lastmod>2023-12-12T17:50:06.530Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/psychology/moral-rebels.html</loc>
+    <lastmod>2023-12-12T17:50:07.542Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/biology/bug-attraction.html</loc>
+    <lastmod>2023-12-12T17:50:08.598Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/cmustatistics/data-repository/biology/bird-diversity.html</loc>
+    <lastmod>2023-12-12T17:50:09.490Z</lastmod>
   </url>
 </urlset>
