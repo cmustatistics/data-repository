@@ -2,7 +2,8 @@
 title: Elite college admissions
 author: Jessica Zhiyu Guo
 date: November 8, 2023
-description: Oppprtunity Insights, a research group at Harvard, has recently published a never-seen-before dataset linking college admission data, socioeconomic status, and students' post-graduation outcomes through different sources to provide a comprehensive picture on how elite private colleges' admission practices. It is no secret that in what the researchers define as "Ivy Plus" colleges, students from the top 1% are overly represented comparing to their share of the population. This research sheds light on how elite private colleges favor high-income students and how admission and matriculation from these college affect students' downstream outcomes in income, grad school attendance, and employment.
+description:
+  We know that students at elite universities tend to be from high-income families, and that graduates are more likely to end up in high-status or high-income jobs. But very little public data has been available on university admissions practices. This dataset, collected by Opportunity Insights, gives extensive detail on college application and admission rates for 139 colleges and universities across the United States, including data on the incomes of students. How do admissions practices vary by institution, and are wealthy students overrepresented?
 categories:
   - EDA
   - ANOVA
@@ -22,7 +23,7 @@ positions](https://www.insidehighered.com/quicktakes/2022/08/31/22-tenure-track-
 One aspect of equality is the institutions students attend. Consider the "Ivy
 Plus" universities, which are all eight [Ivy
 League](https://en.wikipedia.org/wiki/Ivy_League) schools plus MIT, Stanford,
-Duke, and Chicago. although less than half of one percent of Americans attend
+Duke, and Chicago. Although less than half of one percent of Americans attend
 Ivy-Plus colleges, they account for more than 10% of Fortune 500 CEOs, a quarter
 of U.S. Senators, half of all Rhodes scholars, and three-fourths of Supreme
 Court justices appointed in the last half-century.
@@ -77,14 +78,19 @@ application, also with respect to specific test score bands for each college and
 in/out-of state. Colleges are categorized into six tiers: Ivy Plus, other elite
 schools (public and private), highly selective public/private, and selective
 public/private, with selectivity generally in descending order. It also notes
-whether a college is public and/or flagship, note that flagship means public
+whether a college is public and/or flagship, where "flagship" means public
 flagship universities. Furthermore, they also report the relative application
 rate for each income bin within specific test bands, which are 50-point bands
 that had the most attendees in each school tier/category.
 
-Note that since private schools typically don't differentiate
-in-state/out-of-state applications, they largely have any estimate related to
-that as missing.
+Several values are reported in "test-score-reweighted" form. These values
+control for SAT score: they are calculated separately for each SAT score value,
+then averaged with weights based on the distribution of SAT scores at the
+institution.
+
+Note that since private schools typically don't differentiate between in-state
+and out-of-state applications, they largely have any estimate related to that as
+missing.
 
 ::: {.callout-tip}
 
@@ -105,26 +111,45 @@ source("../preview_dataset.R")
 preview_datasets()
 ```
 
-### Variable Descriptions
+To better illustrate the data, this plot shows the relative attendance rate
+(`rel_attend`) for two institutions, split by parental income level:
+
+```{r college-graphic, message=FALSE, echo=FALSE}
+colleges <- read_csv("../data/CollegeAdmissions_Data.csv.gz")
+
+library(ggplot2)
+library(dplyr)
+
+colleges |>
+  filter(name %in% c("Harvard University", "Ohio State University")) |>
+  ggplot(aes(x = par_income_lab, y = rel_attend, fill = name)) +
+  geom_col(position = "dodge") +
+  labs(x = "Parental income group", y = "Relative attendance rate",
+       fill = "Institution") +
+  theme(legend.position = "bottom")
+```
+
+### Variable descriptions
 
 The [dataset codebook from Opportunity
 Insights](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Codebook.pdf)
 contains the full list of variables. This is an extract of a few useful
-variables that we focus our analysis on.
+variables:
 
 | Variable | Description |
 |----|-------------|
-| super_opeid|	Institution ID. Based on OPEIDs (Office of Postsecondary Education Identifiers), which can be matched to other US government datasets on colleges. All are 6 digits, padded with initial 0s if the number is less than 6 digits. |
+| super_opeid |	Institution ID. Based on OPEIDs (Office of Postsecondary Education Identifiers), which can be matched to other US government datasets on colleges. All are 6 digits, padded with initial 0s if the number is less than 6 digits. |
 | name | Name of college (or college group) |
 | par_income_bin (par_income_lab) | Parent household income group (and the label) based on percentile in the income distribution of all households with children born in the same year. |
-| rel_apply  | Test-score-reweighted relative application rate |
-| attend (rel_attend) |	Test-score-reweighted absolute (and relative) attendance rate |
+| rel_apply  | Test-score-reweighted relative application rate: the ratio of the number of students who applied to the school from this income bin to the number who would apply if all students with the same test scores applied at the same rate, regardless of parent income |
+| attend | Test-score-reweighted absolute attendance rate: the fraction of students attending this institution among all students in the income bin |
+| rel_attend |	Test-score-reweighted relative attendance rate: the absolute attendance rate divided by the mean attendance rate across all parental income bins for this institution |
 | rel_att_cond_app | The ratio of `rel_attend` to `rel_apply` |
-| rel_apply_sat| Relative application rate for specific test score band based on school tier/category |
+| rel_apply_sat | Relative application rate for specific test score band based on school tier/category. The test score band is a 50-point band that had the most attendees in this school's tier (`test_band_tier` variable). |
 | attend_sat (rel_attend_sat) | Absolute (and relative) attendance rate for specific test score band based on school tier/category|
-| rel_att_cond_app_sat | Relative attendance rate, conditional on application, for specific test score band based on school tier/category|
-|rel_apply_instate (rel_apply_oostate) | Test-score-reweighted relative application rate for in-state (out-of-state) students|
-| tier (tier_name) | Ivy Plus, other elite schools (public and private), highly selective public/private, and selective public/private |
+| rel_att_cond_app_sat | Relative attendance rate, conditional on application, for specific test score band based on school tier/category |
+| rel_apply_instate (rel_apply_oostate) | Test-score-reweighted relative application rate for in-state (out-of-state) students |
+| tier (tier_name) | Category of this institution: Ivy Plus, other elite schools (public and private), highly selective public/private, and selective public/private |
 | flagship | Indicator for public flagship universities|
 | public | Indicator for public universities|
 | test_band_tier | School group for the test-score band statistics |
@@ -162,8 +187,11 @@ doi:[10.3386/w31492](https://doi.org/10.3386/w31492)
 - [Data Codebook](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Codebook.pdf)
 
 
-[22% of Tenure-Track Professors Have a Parent With a Ph.D.](https://www.insidehighered.com/quicktakes/2022/08/31/22-tenure-track-professors-have-parent-phd)
+Relevant news stories and court cases:
 
-[University of Chicago agrees to $13.5M settlement in financial aid case](https://www.washingtonpost.com/education/2023/08/16/university-of-chicago-settlement-financial-aid-lawsuit/)
-
-[Henry v. Brown University](https://www.courtlistener.com/docket/62017107/1/henry-v-brown-university/)
+- [22% of Tenure-Track Professors Have a Parent With a
+  Ph.D.](https://www.insidehighered.com/quicktakes/2022/08/31/22-tenure-track-professors-have-parent-phd)
+- [University of Chicago agrees to $13.5M settlement in financial aid
+  case](https://www.washingtonpost.com/education/2023/08/16/university-of-chicago-settlement-financial-aid-lawsuit/)
+- [Henry v. Brown
+  University](https://www.courtlistener.com/docket/62017107/1/henry-v-brown-university/)
