@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - "data/*.csv"
+    - "data/*.csv.gz"
     - "data/*.txt"
   pre-render: prepare.lua
   post-render: build-csv.R
