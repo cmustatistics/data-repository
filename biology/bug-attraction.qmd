@@ -42,13 +42,13 @@ with a different light bulb. (One trap contained no bulb, as a control.) The
 traps were set up each evening at sunset and then checked in the morning after
 sunrise, and the insects collected identified and counted.
 
-Traps were set up at three different sites (one urban, two rural). Relevant
+Traps were set up at three different locations (one urban, two rural). Relevant
 weather conditions were recorded. The experiment was repeated 32 times: 16 times
-at the urban site and 8 times at each rural site. This allowed the researchers
-to rotate which location (within an individual site) each trap was placed in,
-and allowed them to collect data under varying weather and moon phases. (Since
-the moon is bright in the night sky, the presence of a bright moon could
-presumably affect the results.)
+at the urban location and 8 times at each rural location. This allowed the
+researchers to rotate which site (within an individual location) each trap was
+placed in, and allowed them to collect data under varying weather and moon
+phases. (Since the moon is bright in the night sky, the presence of a bright
+moon could presumably affect the results.)
 
 ## Data
 
@@ -69,8 +69,8 @@ preview_datasets()
 |----|-------------|
 | Light Type 	| Type of light bulb used to attract insects. `No` means no bulb at all; `A`, `B`, and `C` are all Philips light bulbs whose color can be adjusted by the user; `LED` is a commercial white LED bulb; and `CFL` is a commercial compact fluorescent bulb. |
 | Model Lamp 	| More detailed description of the light bulb. For `A`, `B`, and `C`, describes the color temperature (K) the bulbs were set to. |
-| Location 	| Location the light trap was placed. Site codes starting with `B` are urban (the UCLA Botanical Garden); site codes `L` and `S` were rural locations (a UCLA field station and a UCLA ranch). Each site has six separate traps, designated by a number. |
-| Site 	| Site. `BG` = botanical garden, `LK` = La Kretz field station, `Stunt` = stunt ranch. |
+| Location 	| Location the light trap was placed. `BG` = botanical garden, `LK` = La Kretz field station, `Stunt` = stunt ranch.  |
+| Site 	| Each location has six separate trap sites, designated by a number. Site codes starting with `B` are urban (the UCLA Botanical Garden); site codes `L` and `S` were rural locations (a UCLA field station and a UCLA ranch). |
 | Standardized Moon 	| Standardized variable representing the percentage of the moon visible on the night chosen (i.e., the moon phase). |
 | Standardized Mean Temp 	| Temperature on the night, standardized. |
 | Standardized Mean Humidity	| Humidity on the night, standardized. |
