@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,7 +84,6 @@ ul.task-list li input[type="checkbox"] {
   })();
 </script>
 <!-- End Matomo Code -->
-
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
@@ -88,9 +94,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -102,42 +108,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/anage.html">Biology</a></li><li class="breadcrumb-item"><a href="../biology/dry-beans.html">Dry beans</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/anage.html">Biology</a></li><li class="breadcrumb-item"><a href="../biology/dry-beans.html">Dry beans</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -422,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -438,12 +444,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/biology/dry-beans.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/biology/dry-beans.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/anage.html">Biology</a></li><li class="breadcrumb-item"><a href="../biology/dry-beans.html">Dry beans</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Dry beans</h1>
   <div class="quarto-categories">
@@ -494,6 +500,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p>The common bean (<em>Phaseolus vulgaris</em>) is a plant widely cultivated for its dry seeds—beans. The species has long been cultivated for food and has developed into many varieties; many common beans, such as kidney beans, pinto beans, navy beans, and wax beans, are all varieties of the common bean. Because there are many varieties within the species, there are many varieties of seed that farmers can choose to plant, and each variety is suited for different growing climates and for different markets.</p>
@@ -510,7 +517,6 @@ ul.task-list li input[type="checkbox"] {
 <a href=" https://cmustatistics.github.io/data-repository/data/dry-beans.csv "> dry-beans.csv </a>
 </h4>
 <div data-pagedtable="false">
-
 <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["Area"],"name":[1],"type":["int"],"align":["right"]},{"label":["Perimeter"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["MajorAxisLength"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["MinorAxisLength"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["AspectRation"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Eccentricity"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["ConvexArea"],"name":[7],"type":["int"],"align":["right"]},{"label":["EquivDiameter"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Extent"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Solidity"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["roundness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Compactness"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["ShapeFactor1"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["ShapeFactor2"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["ShapeFactor3"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["ShapeFactor4"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["Class"],"name":[17],"type":["chr"],"align":["left"]}],"data":[{"1":"28395","2":"610.291","3":"208.1781","4":"173.8887","5":"1.197191","6":"0.5498122","7":"28715","8":"190.1411","9":"0.7639225","10":"0.9888560","11":"0.9580271","12":"0.9133578","13":"0.007331506","14":"0.003147289","15":"0.8342224","16":"0.9987239","17":"SEKER"},{"1":"28734","2":"638.018","3":"200.5248","4":"182.7344","5":"1.097356","6":"0.4117853","7":"29172","8":"191.2728","9":"0.7839681","10":"0.9849856","11":"0.8870336","12":"0.9538608","13":"0.006978659","14":"0.003563624","15":"0.9098505","16":"0.9984303","17":"SEKER"},{"1":"29380","2":"624.110","3":"212.8261","4":"175.9311","5":"1.209713","6":"0.5627273","7":"29690","8":"193.4109","9":"0.7781132","10":"0.9895588","11":"0.9478495","12":"0.9087742","13":"0.007243912","14":"0.003047733","15":"0.8258706","16":"0.9990661","17":"SEKER"},{"1":"30008","2":"645.884","3":"210.5580","4":"182.5165","5":"1.153638","6":"0.4986160","7":"30724","8":"195.4671","9":"0.7826813","10":"0.9766957","11":"0.9039364","12":"0.9283288","13":"0.007016729","14":"0.003214562","15":"0.8617944","16":"0.9941988","17":"SEKER"},{"1":"30140","2":"620.134","3":"201.8479","4":"190.2793","5":"1.060798","6":"0.3336797","7":"30417","8":"195.8965","9":"0.7730980","10":"0.9908932","11":"0.9848771","12":"0.9705155","13":"0.006697010","14":"0.003664972","15":"0.9419004","16":"0.9991661","17":"SEKER"},{"1":"30279","2":"634.927","3":"212.5606","4":"181.5102","5":"1.171067","6":"0.5204007","7":"30600","8":"196.3477","9":"0.7756885","10":"0.9895098","11":"0.9438518","12":"0.9237260","13":"0.007020065","14":"0.003152779","15":"0.8532696","16":"0.9992358","17":"SEKER"},{"1":"30477","2":"670.033","3":"211.0502","4":"184.0391","5":"1.146768","6":"0.4894779","7":"30970","8":"196.9886","9":"0.7624015","10":"0.9840814","11":"0.8530799","12":"0.9333736","13":"0.006924899","14":"0.003242016","15":"0.8711862","16":"0.9990487","17":"SEKER"},{"1":"30519","2":"629.727","3":"212.9968","4":"182.7372","5":"1.165591","6":"0.5137596","7":"30847","8":"197.1243","9":"0.7706818","10":"0.9893669","11":"0.9671092","12":"0.9254804","13":"0.006979152","14":"0.003158285","15":"0.8565140","16":"0.9983446","17":"SEKER"},{"1":"30685","2":"635.681","3":"213.5341","4":"183.1571","5":"1.165852","6":"0.5140809","7":"31044","8":"197.6597","9":"0.7715615","10":"0.9884358","11":"0.9542398","12":"0.9256585","13":"0.006958910","14":"0.003151550","15":"0.8568437","16":"0.9989530","17":"SEKER"},{"1":"30834","2":"631.934","3":"217.2278","4":"180.8975","5":"1.200834","6":"0.5536422","7":"31120","8":"198.1390","9":"0.7836828","10":"0.9908098","11":"0.9702782","12":"0.9121254","13":"0.007045074","14":"0.003008040","15":"0.8319728","16":"0.9990611","17":"SEKER"},{"1":"30917","2":"640.765","3":"213.5601","4":"184.4399","5":"1.157885","6":"0.5041024","7":"31280","8":"198.4055","9":"0.7708053","10":"0.9883951","11":"0.9462582","12":"0.9290383","13":"0.006907529","14":"0.003174220","15":"0.8631122","16":"0.9993844","17":"SEKER"},{"1":"31091","2":"638.558","3":"210.4863","4":"188.3268","5":"1.117665","6":"0.4466219","7":"31458","8":"198.9630","9":"0.7863773","10":"0.9883337","11":"0.9581728","12":"0.9452543","13":"0.006770006","14":"0.003333984","15":"0.8935057","16":"0.9986397","17":"SEKER"},{"1":"31107","2":"640.594","3":"214.6485","4":"184.9693","5":"1.160455","6":"0.5073659","7":"31423","8":"199.0142","9":"0.7610461","10":"0.9899437","11":"0.9525818","12":"0.9271632","13":"0.006900329","14":"0.003145388","15":"0.8596315","16":"0.9975640","17":"SEKER"},{"1":"31158","2":"642.626","3":"216.4848","4":"183.6443","5":"1.178827","6":"0.5295143","7":"31492","8":"199.1773","9":"0.7987592","10":"0.9893941","11":"0.9481190","12":"0.9200520","13":"0.006947970","14":"0.003071052","15":"0.8464956","16":"0.9978718","17":"SEKER"},{"1":"31158","2":"641.105","3":"212.0670","4":"187.1930","5":"1.132879","6":"0.4699242","7":"31474","8":"199.1773","9":"0.7813135","10":"0.9899600","11":"0.9526231","12":"0.9392189","13":"0.006806181","14":"0.003267010","15":"0.8821321","16":"0.9993489","17":"SEKER"},{"1":"31178","2":"636.888","3":"212.9759","4":"186.5621","5":"1.141582","6":"0.4823522","7":"31520","8":"199.2412","9":"0.7641105","10":"0.9891497","11":"0.9658996","12":"0.9355105","13":"0.006830968","14":"0.003227429","15":"0.8751799","16":"0.9990897","17":"SEKER"},{"1":"31202","2":"644.454","3":"215.6407","4":"184.4717","5":"1.168964","6":"0.5178712","7":"31573","8":"199.3179","9":"0.7791929","10":"0.9882495","11":"0.9440792","12":"0.9243055","13":"0.006911118","14":"0.003111647","15":"0.8543407","16":"0.9986933","17":"SEKER"},{"1":"31203","2":"639.782","3":"215.0677","4":"184.8749","5":"1.163315","6":"0.5109468","7":"31558","8":"199.3211","9":"0.7629842","10":"0.9887509","11":"0.9579485","12":"0.9267828","13":"0.006892534","14":"0.003136682","15":"0.8589264","16":"0.9992020","17":"SEKER"},{"1":"31272","2":"638.666","3":"212.4503","4":"187.5359","5":"1.132851","6":"0.4698835","7":"31593","8":"199.5413","9":"0.7703222","10":"0.9898395","11":"0.9634250","12":"0.9392377","13":"0.006793627","14":"0.003261246","15":"0.8821674","16":"0.9993644","17":"SEKER"},{"1":"31335","2":"635.011","3":"216.7901","4":"184.1634","5":"1.177161","6":"0.5275867","7":"31599","8":"199.7422","9":"0.7742772","10":"0.9916453","11":"0.9765108","12":"0.9213624","13":"0.006918465","14":"0.003075469","15":"0.8489086","16":"0.9993025","17":"SEKER"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
@@ -697,10 +703,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -710,8 +733,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -723,7 +755,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -767,6 +922,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -792,6 +948,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -857,12 +1039,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/biology/dry-beans.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

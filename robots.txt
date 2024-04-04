@@ -1,1 +1,1 @@
-Sitemap: https://github.com/cmustatistics/data-repository/sitemap.xml
+Sitemap: https://cmustatistics.github.io/data-repository/sitemap.xml

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,7 +84,6 @@ ul.task-list li input[type="checkbox"] {
   })();
 </script>
 <!-- End Matomo Code -->
-
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
@@ -88,9 +94,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -102,42 +108,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/moral-rebels.html">Resenting moral rebels</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/moral-rebels.html">Resenting moral rebels</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -422,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -438,12 +444,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/moral-rebels.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/moral-rebels.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/moral-rebels.html">Resenting moral rebels</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Resenting moral rebels</h1>
   <div class="quarto-categories">
@@ -494,6 +500,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p>In 2008, three psychologists published a paper in the <em>Journal of Personality and Social Psychology</em> about “moral rebels”: people who, despite being under pressure to conform, instead rebel to do what they think is morally right. Consider <a href="https://en.wikipedia.org/wiki/Frank_Serpico">Frank Serpico</a>, for example, a New York Police Department officer in the 1960s and early 70s who, aware many fellow officers were corrupt, finally spoke out and brought evidence to the <em>New York Times</em>, leading to reform; or <a href="https://en.wikipedia.org/wiki/Oskar_Schindler">Oskar Schindler</a>, a Nazi Party member who nonetheless worked to save the lives of 1,200 Jewish workers during the Holocaust.</p>
@@ -514,7 +521,6 @@ ul.task-list li input[type="checkbox"] {
 <a href=" https://cmustatistics.github.io/data-repository/data/moral-rebels.csv "> moral-rebels.csv </a>
 </h4>
 <div data-pagedtable="false">
-
 <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["Condition"],"name":[1],"type":["chr"],"align":["left"]},{"label":["White"],"name":[2],"type":["chr"],"align":["left"]},{"label":["SubID"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Gender"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Ethnicity"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["YOB"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["TookBreak"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["TookSeriously"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["AboutGuess"],"name":[9],"type":["chr"],"align":["left"]},{"label":["Comments"],"name":[10],"type":["chr"],"align":["left"]},{"label":["ExplainChoice"],"name":[11],"type":["chr"],"align":["left"]},{"label":["FoodList"],"name":[12],"type":["chr"],"align":["left"]},{"label":["ValueName"],"name":[13],"type":["chr"],"align":["left"]},{"label":["ValueImportance"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["ValueDescription"],"name":[15],"type":["chr"],"align":["left"]},{"label":["RandomTime"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["DescOther"],"name":[17],"type":["chr"],"align":["left"]},{"label":["Other.Work"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["Other.Friend"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["Other.Respect"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["Intelligent"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["Strong"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["Pleasant"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["Funny"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["Confident"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["Mature"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["Active"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["Kind"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["Nice"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["Warm"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["Honest"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["Fair"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["Moral"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["Independent"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["Self.Moral"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["Self.disappointed"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["Self.good"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["Self.uncomfortable"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["Self.happywself"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["Self.determined"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["Self.annoyed"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["Self.happy"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["Self.guilty"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["Self.comfortable"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["Self.peaceful"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["Self.uneasy"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["Self.disgusted"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["Self.excited"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["Self.pleased"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["Self.energetic"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["Self.angry"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["Self.bothered"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["Self.friendly"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["Self.dissatisfied"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["Self.fatigued"],"name":[55],"type":["dbl"],"align":["right"]},{"label":["Self.selfcrit"],"name":[56],"type":["dbl"],"align":["right"]},{"label":["Self.optimistic"],"name":[57],"type":["dbl"],"align":["right"]},{"label":["Self.secure"],"name":[58],"type":["dbl"],"align":["right"]},{"label":["Self.lonely"],"name":[59],"type":["dbl"],"align":["right"]},{"label":["Choice.happy"],"name":[60],"type":["dbl"],"align":["right"]},{"label":["Choice.representative"],"name":[61],"type":["dbl"],"align":["right"]},{"label":["Choice.anyone"],"name":[62],"type":["dbl"],"align":["right"]},{"label":["Choice.sufficientinfo"],"name":[63],"type":["dbl"],"align":["right"]},{"label":["Choice.nochoice"],"name":[64],"type":["dbl"],"align":["right"]},{"label":["Self.Work"],"name":[65],"type":["dbl"],"align":["right"]},{"label":["Self.Friend"],"name":[66],"type":["dbl"],"align":["right"]},{"label":["Self.Respect"],"name":[67],"type":["dbl"],"align":["right"]}],"data":[{"1":"Obedient","2":"NO-WHITE","3":"A2696V6A6VADDF","4":"1","5":"3","6":"1984","7":"1","8":"5","9":"How one bases what he thinks of others on account of their decisions.","10":"I should have answered the 1st question better.....","11":"Weak alabi and had a screw driver /","12":"Meat and beans, burgers , mostly soda, some water, chicken and tortilla, cereal","13":"NA","14":"NA","15":"NA","16":"12.437","17":"To me, he seems real educated. He knew how to post his answer properly and gave strong reasons for his answer.","18":"4","19":"4","20":"6","21":"7","22":"7","23":"5","24":"2","25":"6","26":"7","27":"4","28":"4","29":"4","30":"3","31":"6","32":"6","33":"6","34":"6","35":"70","36":"7","37":"2","38":"6","39":"2","40":"2","41":"5","42":"4","43":"6","44":"2","45":"2","46":"6","47":"4","48":"2","49":"2","50":"2","51":"5","52":"5","53":"2","54":"7","55":"6","56":"6","57":"2","58":"2","59":"7","60":"7","61":"7","62":"7","63":"7","64":"7","65":"4","66":"5","67":"6"},{"1":"Obedient","2":"NA","3":"A3M9BSMNRLS7R2","4":"2","5":"1","6":"1966","7":"1","8":"5","9":"How a person's demographics affects their decisions.","10":"NA","11":"He has previously been convicted of a burglary, has a screwdriver in his pocket and although he is unemployed, he has $400 cash in his possession.","12":"Water, limeade, milk, chocolate milk, pancakes, rice and beans, beef and tomatoes, mango, Toblerone chocolate bar, ham and cheese sandwich, avocado, soup with rice, hamburger, cookie, ice cream bar, orange soda.","13":"NA","14":"NA","15":"NA","16":"20.636","17":"I think the person is educated, but grammar is not used properly in her home based on her use of \"He's got no real alibi.\". Words were spelled correctly which indicates she is a more detailed person.","18":"4","19":"4","20":"4","21":"6","22":"4","23":"5","24":"4","25":"5","26":"4","27":"5","28":"4","29":"4","30":"4","31":"4","32":"5","33":"4","34":"5","35":"85","36":"1","37":"6","38":"1","39":"6","40":"6","41":"1","42":"6","43":"1","44":"6","45":"6","46":"1","47":"3","48":"NA","49":"6","50":"5","51":"1","52":"1","53":"6","54":"1","55":"2","56":"2","57":"6","58":"6","59":"5","60":"6","61":"6","62":"6","63":"5","64":"6","65":"5","66":"5","67":"5"},{"1":"Obedient","2":"NA","3":"A1LGEODK01A8RM","4":"1","5":"1","6":"1990","7":"1","8":"5","9":"How honest a person can be with themselves and the world.","10":"Thanks for the survey.","11":"Steven has a serious record, was caught with oddly valuable possessions, and has a weak alibi.","12":"Roast beef, lots of coffee, peach iced tea, sandwiches, toast, lemon water, spaghetti, cereal, oatmeal.","13":"NA","14":"NA","15":"NA","16":"15.808","17":"I think, like me, he chose AFTER reading the criminal records. It's so easy to stereotype and sadly many people can only think one way.","18":"6","19":"5","20":"6","21":"7","22":"6","23":"6","24":"4","25":"5","26":"7","27":"7","28":"6","29":"6","30":"6","31":"7","32":"7","33":"7","34":"6","35":"90","36":"1","37":"5","38":"1","39":"5","40":"5","41":"1","42":"1","43":"1","44":"6","45":"4","46":"1","47":"1","48":"1","49":"1","50":"3","51":"1","52":"1","53":"5","54":"1","55":"NA","56":"NA","57":"1","58":"5","59":"1","60":"7","61":"7","62":"4","63":"7","64":"4","65":"6","66":"5","67":"6"},{"1":"Obedient","2":"NA","3":"AUH2TOW6SNFVY","4":"2","5":"1","6":"1989","7":"1","8":"5","9":"The study was about how we align ourselves with peers","10":"NA","11":"I chose Steven Jones because of his previous record, evidence found, and potential motive (unemployed, needing money).","12":"Cupcakes / Frozen yogurt / Chicken & rice bowl / Candy / Spaghetti / Diet Soda / Oatmeal / Cookies / Pizza / Salad / Beer / Chocolate Chip Waffles / Tortilla / Cheese / BBQ sandwich / Cinnamon rolls","13":"NA","14":"NA","15":"NA","16":"10.820","17":"She seems to be aware of the obvious.  She seems younger than me (which she is, based on the year she was born). She didn't really dig deep with her responses, but I agree with what she's saying and don't feel like anything said was unreasonable.","18":"5","19":"4","20":"6","21":"6","22":"6","23":"5","24":"6","25":"5","26":"3","27":"3","28":"5","29":"5","30":"5","31":"6","32":"6","33":"6","34":"5","35":"86","36":"2","37":"6","38":"1","39":"6","40":"6","41":"2","42":"6","43":"2","44":"6","45":"6","46":"1","47":"1","48":"6","49":"5","50":"5","51":"1","52":"1","53":"6","54":"1","55":"3","56":"2","57":"6","58":"6","59":"1","60":"7","61":"7","62":"7","63":"7","64":"7","65":"5","66":"4","67":"6"},{"1":"Obedient","2":"NA","3":"A36WKYYMSGQXN7","4":"2","5":"1","6":"1982","7":"1","8":"5","9":"I think it was about race and previous histories of people","10":"NA","11":"Based on past history, no alibi, no emplyment, items he had when apprehended","12":"Hot tea, pepsi, water, coffee, milk, chicken pita, pizza, grapes, suckers, mac n cheese, cereal","13":"NA","14":"NA","15":"NA","16":"12.317","17":"I think that the other participant sounds a lot like myself. She used reasoning to come to the conclusion about who might have did the burglary. It sounds like she understands how people work. My first impression is that she is a smart woman. I believe that if I met her we would be alike and get along.","18":"7","19":"6","20":"7","21":"7","22":"5","23":"1","24":"1","25":"1","26":"1","27":"3","28":"1","29":"1","30":"1","31":"1","32":"1","33":"1","34":"1","35":"70","36":"3","37":"6","38":"2","39":"3","40":"6","41":"5","42":"3","43":"1","44":"3","45":"2","46":"6","47":"5","48":"4","49":"2","50":"4","51":"5","52":"2","53":"7","54":"2","55":"7","56":"5","57":"4","58":"3","59":"6","60":"7","61":"7","62":"5","63":"7","64":"6","65":"5","66":"5","67":"6"},{"1":"Obedient","2":"NA","3":"A2VN8Q8X7WWIM","4":"1","5":"1","6":"1957","7":"1","8":"5","9":"bigotry","10":"none","11":"Jones is pretty clearly a prime suspect. Although I dont like the looks of the other two either. They look very shifty to me.","12":"McD's garbage: burger, fish, fries, Coke, apple pies.","13":"NA","14":"NA","15":"NA","16":"24.095","17":"I think he or she most be a bigot and hates blacks. I also feel she/he distrusts all men in general. Especially white cracker looking fellows like suspect 1 and 2 above. He/she is also 5ft4in to 6ft2in tall weiging 150 to 200 pounds. Dark hair, probably needs s have someplace on the body too. I suspect he/she also smells of McD food.","18":"4","19":"4","20":"4","21":"5","22":"4","23":"5","24":"5","25":"7","26":"6","27":"7","28":"5","29":"5","30":"6","31":"4","32":"5","33":"5","34":"5","35":"100","36":"1","37":"7","38":"1","39":"7","40":"7","41":"1","42":"7","43":"1","44":"7","45":"7","46":"1","47":"1","48":"3","49":"4","50":"1","51":"1","52":"2","53":"3","54":"1","55":"2","56":"3","57":"7","58":"7","59":"1","60":"4","61":"4","62":"4","63":"4","64":"4","65":"4","66":"4","67":"4"},{"1":"Obedient","2":"NA","3":"A1ET2J1PIP0RGO","4":"1","5":"1","6":"1979","7":"1","8":"5","9":"making decisions and forming impressions about other people","10":"NA","11":"He had previous criminal record, and he had too much cash on him and a screwdriver.","12":"wine,beer,water,milk,fried chicken,eggs,bread,salad,sprouts,fruit.","13":"NA","14":"NA","15":"NA","16":"20.314","17":"He is a student, he is rational, and fair.He makes good judgments,  he is not shy.","18":"5","19":"4","20":"5","21":"7","22":"5","23":"5","24":"5","25":"5","26":"5","27":"5","28":"6","29":"5","30":"5","31":"7","32":"7","33":"7","34":"6","35":"60","36":"1","37":"6","38":"1","39":"4","40":"4","41":"1","42":"6","43":"1","44":"6","45":"6","46":"1","47":"1","48":"3","49":"5","50":"5","51":"1","52":"1","53":"4","54":"1","55":"2","56":"1","57":"6","58":"6","59":"2","60":"7","61":"7","62":"7","63":"7","64":"7","65":"4","66":"4","67":"4"},{"1":"Obedient","2":"NA","3":"NA","4":"1","5":"1","6":"1967","7":"1","8":"5","9":"the way people form oppinions about one another.","10":"Maybe make one of the other suspects look a little worse!","11":"he has a record for burglery, he had alot of money and a screw driver on him, maybe he used the screwdriver to help him get the money.","12":"pizza, coke,biscutes and gravy, two eegs,oatmeal,coffee, water","13":"NA","14":"NA","15":"NA","16":"34.514","17":"I think the other person is not very well educated because of his writing syle (he got no), maybe he's from the hood. He kind of seemed like he could realate to the suspect.","18":"6","19":"5","20":"6","21":"4","22":"5","23":"4","24":"4","25":"5","26":"3","27":"4","28":"4","29":"4","30":"3","31":"4","32":"7","33":"7","34":"6","35":"50","36":"1","37":"4","38":"1","39":"6","40":"3","41":"1","42":"3","43":"1","44":"3","45":"3","46":"1","47":"1","48":"2","49":"3","50":"2","51":"1","52":"1","53":"1","54":"1","55":"4","56":"2","57":"3","58":"7","59":"1","60":"7","61":"7","62":"7","63":"7","64":"7","65":"3","66":"2","67":"5"},{"1":"Obedient","2":"NA","3":"A34R36EOWJZ7U9","4":"1","5":"1","6":"1965","7":"1","8":"5","9":"If people are prejudice towards blacks?","10":"I no further thoughts at this time.","11":"I chose steven not because he is black but because he was already arrested a few years back for the same crime. the others mark had no previous record and the worst peter had was a speeding ticket.","12":"soda and v-8 juice / chicken / donuts / fish / rice crackers  / ice cream / cheese / hamburgers","13":"NA","14":"NA","15":"NA","16":"21.846","17":"I don't know he seems rather intelligent and level headed capable of sound resoning and judgment.I guess I would not mind meeting the man in person. I really do not have that much more to say given the limited amount of information that I receaved about him.","18":"6","19":"5","20":"NA","21":"6","22":"5","23":"5","24":"5","25":"5","26":"6","27":"5","28":"5","29":"6","30":"5","31":"6","32":"6","33":"6","34":"6","35":"81","36":"2","37":"4","38":"2","39":"3","40":"6","41":"3","42":"4","43":"1","44":"4","45":"3","46":"3","47":"1","48":"3","49":"4","50":"3","51":"2","52":"3","53":"4","54":"2","55":"5","56":"2","57":"3","58":"4","59":"1","60":"7","61":"5","62":"7","63":"7","64":"7","65":"5","66":"5","67":"6"},{"1":"Obedient","2":"NA","3":"AHXO376ALG8WN","4":"2","5":"1","6":"1992","7":"1","8":"5","9":"Judging others, which is not quite right cause I did not judge that dude cause he was black.  I dislike white rich old business dudes way more than criminals.","10":"Maybe make the attitudes questionare a bit simpler to understand/ follow, by adding lines or color stripes.  It's hard to tell which bubble you're filling in.","11":"He has a previous record.  And he is unemployed so he has the most reason to need the money.","12":"2 breakfast toquitos, glass of oj, special chocolate chip cookies :D, bowl of caramel vanilla ice cream, salad, bowl of fruit and yogurt special K, soy milk, 2 cheese burritos and rice, cheese manicotti, capri sun, lots of bottled water and iced tea","13":"NA","14":"NA","15":"NA","16":"7.015","17":"She is probably similar to me as she is a year younger than me and has the same reasonable deductions about the suspect that I do.  She simply wrote more than I did. I really have no idea what she is like because she wrote her opinion on a possible criminal, that tells me basically nothing about her.","18":"2","19":"5","20":"6","21":"5","22":"5","23":"5","24":"4","25":"5","26":"3","27":"5","28":"5","29":"5","30":"5","31":"6","32":"7","33":"4","34":"4","35":"79","36":"1","37":"7","38":"1","39":"7","40":"7","41":"1","42":"7","43":"1","44":"7","45":"7","46":"1","47":"1","48":"5","49":"6","50":"3","51":"1","52":"1","53":"6","54":"1","55":"3","56":"1","57":"7","58":"7","59":"1","60":"6","61":"6","62":"7","63":"7","64":"7","65":"3","66":"5","67":"7"},{"1":"Obedient","2":"NA","3":"A2WJGI7XNUBRND","4":"1","5":"1","6":"1965","7":"1","8":"5","9":"to see if we have black shame????","10":"NA","11":"The amount of money and the screwdriver, no alibi( unless he can give detailed description of what he watched and prior record.","12":"chinken finger / pop tarts / party mix / pizza / 2 liters mountain dew / 2 20 oz bottles of water /","13":"NA","14":"NA","15":"NA","16":"12.065","17":"freshman in college. Educated. Well spoken.  Might be interested to meet him for a few drinks.","18":"6","19":"6","20":"6","21":"7","22":"5","23":"6","24":"5","25":"6","26":"6","27":"6","28":"5","29":"6","30":"5","31":"6","32":"5","33":"6","34":"6","35":"91","36":"3","37":"6","38":"2","39":"5","40":"6","41":"3","42":"5","43":"1","44":"5","45":"6","46":"1","47":"1","48":"3","49":"6","50":"5","51":"1","52":"2","53":"6","54":"1","55":"5","56":"5","57":"6","58":"5","59":"2","60":"6","61":"7","62":"7","63":"4","64":"6","65":"6","66":"6","67":"6"},{"1":"Obedient","2":"NA","3":"A3LUOS92H4EZVP","4":"1","5":"1","6":"1982","7":"1","8":"5","9":"I think the study was about how people judge others and what carries the most weight with them, in regards to their decisions and perspectives.","10":"I found it interesting how the logical, very obvious choice of the #1 suspect was the only black guy.  I imagine that is part of the study, to see how many people include race as a contributing factor.  By the way, while I noted his race and thought these thoughts as I was choosing my #1 suspect, race was not a factor in my decision.","11":"Steven Jones was the only suspect with an alibi that included him being alone.  He also is the only suspect with a previous record that amounts to anything over a traffic violation, and it was for burglary.  He possessed $400 in cash and a screwdriver when he was apprehended, which is highly suspicious.  He also happens to be unemployed, whereas the other two are not.","12":"turkey and cheese sandwich; eggs; french toast; pop; milk; water; lasagna; pizza; fast food double cheeseburger","13":"NA","14":"NA","15":"NA","16":"23.010","17":"The other participant is at least fairly intelligent and is a logical, reasonable person.  He is a \"regular\" guy that is both hard-working and likes to hang out and blow off steam with friends.  He is a good guy who is laid-back but also isn't afraid to speak his mind.  If I met him, it would likely be a positive encounter, as we seem to have a lot in common.","18":"6","19":"6","20":"6","21":"6","22":"6","23":"6","24":"6","25":"7","26":"6","27":"7","28":"6","29":"6","30":"5","31":"7","32":"7","33":"6","34":"7","35":"99","36":"1","37":"5","38":"1","39":"5","40":"4","41":"1","42":"5","43":"1","44":"6","45":"5","46":"1","47":"1","48":"1","49":"6","50":"6","51":"1","52":"1","53":"5","54":"1","55":"1","56":"1","57":"6","58":"6","59":"3","60":"7","61":"7","62":"6","63":"7","64":"6","65":"6","66":"6","67":"6"},{"1":"Obedient","2":"NA","3":"A32TBIJ0LPVZR9","4":"1","5":"1","6":"1988","7":"1","8":"5","9":"BIAS","10":"NA","11":"prior record, screwdriver, 400 in cash no job","12":"2 hamburgers. potatos, cantaloupe, strawberrys tootsie rolls waffles, grapefruit. oranges, steak macaroni, okra","13":"NA","14":"NA","15":"NA","16":"7.936","17":"hes a rational person, he thinks the same thing i think","18":"7","19":"7","20":"7","21":"3","22":"6","23":"6","24":"3","25":"5","26":"6","27":"5","28":"4","29":"4","30":"3","31":"3","32":"7","33":"6","34":"6","35":"88","36":"4","37":"4","38":"3","39":"3","40":"4","41":"4","42":"4","43":"4","44":"3","45":"4","46":"4","47":"4","48":"4","49":"4","50":"4","51":"5","52":"5","53":"4","54":"4","55":"4","56":"5","57":"5","58":"5","59":"4","60":"7","61":"7","62":"7","63":"7","64":"7","65":"7","66":"7","67":"7"},{"1":"Obedient","2":"NA","3":"alckhav3y6c07","4":"2","5":"1","6":"1969","7":"1","8":"4","9":"how people view others as related to their background","10":"nothing","11":"He had done time for burglary previously.  He was unemployed and might have been stealing stuff to sell for cash.","12":"spahetti, breadsticks, lemonade, green beans, hamburger, water, orange, bagel, smoked sausage, potatoes, water, applesauce, turkey sandwich, potato chips, orange, water, bagel, banana","13":"NA","14":"NA","15":"NA","16":"23.907","17":"white, intelligent, outgoing, pretty, well-liked.  Enjoys being with people.  They are very logical.  They would be very social.  Like going out with friends and being the life of the party.","18":"5","19":"5","20":"5","21":"2","22":"2","23":"2","24":"2","25":"2","26":"2","27":"2","28":"2","29":"2","30":"2","31":"2","32":"2","33":"2","34":"2","35":"75","36":"2","37":"6","38":"2","39":"5","40":"6","41":"2","42":"5","43":"2","44":"4","45":"5","46":"2","47":"3","48":"4","49":"5","50":"4","51":"2","52":"2","53":"5","54":"3","55":"4","56":"4","57":"5","58":"5","59":"3","60":"5","61":"5","62":"4","63":"3","64":"5","65":"5","66":"5","67":"5"},{"1":"Obedient","2":"NA","3":"A3OA2641Y3ICVR","4":"2","5":"1","6":"1971","7":"1","8":"5","9":"Impressions","10":"very interesting survey.  With my short and precise answers to why I chose the suspect, I wonder if someone completing this task thinks of me as brusque and unfriendly.  Or maybe they think I'm dumb!  I would love to find out what their opinion of me is!","11":"Steven Jones.  Caught with a screwdriver, flimsy alibi, unemployed, and his prior record.","12":"Strawberry Yogurt and a low fat energy bar.  Two bites of blueberry cobbler.  Two Doritos tacos from Taco bell.  Shrimp Bisque.  Lean Cuisine Salisbury Steak dinner.  Low fat cottage cheese with sugar free pineapple chunks.  Low sugar orange juice.  Soda water.  black coffee. Low sugar Gatorade.","13":"NA","14":"NA","15":"NA","16":"9.209","17":"I imagine this person (I see her as a white female) is a college student who is active in a few extracurricular campus activities (clubs, societies, etc.) but not in a sorority.  This young lady is intelligent and well-spoken, but speaks softly.  She doesn't smoke or do drugs, and enjoys walking and hiking.  In social situations I can picture her as friendly, but a little reserved until you get to know her.  But given a subject she cares about, she is a good conversationalist.","18":"4","19":"3","20":"6","21":"6","22":"5","23":"7","24":"5","25":"6","26":"5","27":"7","28":"6","29":"6","30":"6","31":"6","32":"7","33":"6","34":"6","35":"50","36":"1","37":"6","38":"1","39":"6","40":"5","41":"1","42":"6","43":"1","44":"6","45":"6","46":"1","47":"1","48":"5","49":"6","50":"5","51":"1","52":"1","53":"5","54":"1","55":"1","56":"1","57":"5","58":"6","59":"1","60":"7","61":"5","62":"6","63":"7","64":"6","65":"3","66":"3","67":"5"},{"1":"Obedient","2":"NA","3":"A15KLPHCF8PO8E","4":"1","5":"1","6":"1966","7":"1","8":"4","9":"Something about race?","10":"As a liberal white person, I was a little uncomfortable that you made me pick the black guy! :)","11":"Has a record, has a lot of cash on hand, alibi is worse than the others'","12":"Ummmm... I just drank some Kool-Aid a few minutes ago. Supper was an egg and bologna sandwich and 2 clementines. Had some cereal around 3:00. Breakfast around 12:30; sandwich and cottage cheese. Some-odd 30 oz. of coffee this morning. Late last night had hamburger helper; also had that for supper, with creamed corn. Lunch yesterday; don't remember. Plenty of coffee.","13":"NA","14":"NA","15":"NA","16":"14.550","17":"Well, he reasoned a lot like I did. He uses English pretty well, so is probably pretty well educated.","18":"4","19":"4","20":"5","21":"5","22":"4","23":"4","24":"4","25":"5","26":"4","27":"4","28":"4","29":"4","30":"4","31":"4","32":"5","33":"4","34":"4","35":"65","36":"1","37":"4","38":"1","39":"3","40":"5","41":"1","42":"4","43":"1","44":"5","45":"5","46":"1","47":"1","48":"1","49":"1","50":"2","51":"1","52":"1","53":"1","54":"1","55":"1","56":"1","57":"4","58":"5","59":"1","60":"5","61":"5","62":"6","63":"5","64":"6","65":"4","66":"4","67":"5"},{"1":"Obedient","2":"NA","3":"A24B7YHXL0V66A","4":"1","5":"1","6":"1993","7":"1","8":"4","9":"It was a good study to see if race had anything to do with it.","10":"No, thank you!","11":"I picked Steven Jones because he was home alone with no others to verify he was there. He had $400 on him at the time, and he had a previous record of burglary.","12":"Salad, pizza, coke, water","13":"NA","14":"NA","15":"NA","16":"4.367","17":"A collage student whom is of a middle class.","18":"6","19":"5","20":"4","21":"2","22":"3","23":"2","24":"3","25":"3","26":"3","27":"2","28":"3","29":"3","30":"2","31":"2","32":"2","33":"3","34":"3","35":"82","36":"7","37":"6","38":"3","39":"7","40":"4","41":"2","42":"5","43":"2","44":"6","45":"5","46":"3","47":"1","48":"4","49":"5","50":"3","51":"1","52":"2","53":"6","54":"2","55":"6","56":"5","57":"5","58":"6","59":"4","60":"7","61":"5","62":"6","63":"7","64":"7","65":"6","66":"5","67":"4"},{"1":"Obedient","2":"NA","3":"A22HFXBKN3HFN7","4":"2","5":"1","6":"1979","7":"1","8":"5","9":"how people form impressions of other people","10":"no","11":"has a previous record, had a lot of money and a tool on him, and didn't have a good alibi.","12":"tuna sandwich, soda, water, oatmeal, bananas, strawberries, cookies, artichokes, watermelon, fish, chocolate, milk.","13":"NA","14":"NA","15":"NA","16":"12.738","17":"smart, thorough, articulate, perfectionist, good student, active social life. praobably has a good relationship with some family if not all and has supportive friends.","18":"6","19":"2","20":"6","21":"6","22":"5","23":"5","24":"3","25":"6","26":"5","27":"6","28":"4","29":"4","30":"3","31":"5","32":"5","33":"6","34":"6","35":"61","36":"6","37":"1","38":"3","39":"1","40":"2","41":"3","42":"1","43":"1","44":"2","45":"1","46":"3","47":"3","48":"1","49":"1","50":"1","51":"2","52":"2","53":"2","54":"3","55":"5","56":"4","57":"1","58":"2","59":"6","60":"7","61":"6","62":"6","63":"6","64":"6","65":"2","66":"1","67":"2"},{"1":"Obedient","2":"NA","3":"A37QR6OQV71GNJ","4":"1","5":"1","6":"1979","7":"1","8":"5","9":"i think this study was about decision making and our perception of our own decisions","10":"NA","11":"alibi can't be verified / prior conviction for burglary / large amount of cash on person, plus a tool that can be used to break and enter","12":"on Wed / breakfast sandwich, coffee, banana / roast beef sandwich, iced tea / fried rice, chicken, milk / chips and dip /  / on Thur / breakfast sandwich, coffee, apple / chicken salad sandwich, iced tea / pizza and hot wings, soda","13":"NA","14":"NA","15":"NA","16":"10.418","17":"My first impression of the other person is that they have sound deductive and reasoning skills, and can articulate their conclusions in a clear and concise manner.  I think I would probably get along with this person if we should ever meet.  Compare our answers - as they say, \"Great minds think alike\"","18":"6","19":"6","20":"5","21":"7","22":"4","23":"4","24":"5","25":"6","26":"6","27":"5","28":"4","29":"4","30":"4","31":"4","32":"2","33":"4","34":"5","35":"70","36":"1","37":"7","38":"1","39":"7","40":"7","41":"1","42":"7","43":"1","44":"7","45":"7","46":"1","47":"1","48":"5","49":"7","50":"6","51":"1","52":"1","53":"7","54":"1","55":"4","56":"1","57":"7","58":"7","59":"1","60":"7","61":"7","62":"6","63":"6","64":"7","65":"6","66":"6","67":"6"},{"1":"Obedient","2":"NA","3":"A3E08GRFJJAT2S","4":"1","5":"1","6":"1971","7":"1","8":"4","9":"How people would evaluate someone making a similar descision to thiers who is slightly similar to them in a superfical way.","10":"na","11":"Not much of an alibi, lots of money on him and unemployed, previos convictions for the same crime.","12":"water. Ate hamburgers, spagettii, macaroni and cheese, cherry pie, orange, raisins, lettuce, tomoatoes, pickles,","13":"NA","14":"NA","15":"NA","16":"11.122","17":"Less educated, not a deep thinker, probably southern and likely religious. All in all, unpleasant inside and out with a real concern for making things very simplistic and easy to undestand, suspisious that everyone is out to get him.","18":"2","19":"1","20":"1","21":"2","22":"3","23":"1","24":"1","25":"1","26":"3","27":"6","28":"5","29":"3","30":"4","31":"5","32":"5","33":"5","34":"4","35":"25","36":"2","37":"2","38":"4","39":"3","40":"6","41":"3","42":"2","43":"1","44":"5","45":"3","46":"4","47":"2","48":"2","49":"3","50":"2","51":"3","52":"5","53":"2","54":"3","55":"7","56":"6","57":"5","58":"5","59":"5","60":"7","61":"7","62":"7","63":"6","64":"2","65":"2","66":"1","67":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
@@ -698,10 +704,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -711,8 +734,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -724,7 +756,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -768,6 +923,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -793,6 +949,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -858,12 +1040,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/moral-rebels.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,7 +84,6 @@ ul.task-list li input[type="checkbox"] {
   })();
 </script>
 <!-- End Matomo Code -->
-
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
@@ -88,9 +94,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -102,42 +108,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../politics/standard-cities.html">Politics</a></li><li class="breadcrumb-item"><a href="../politics/world-bank.html">World Development Indicators</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../politics/standard-cities.html">Politics</a></li><li class="breadcrumb-item"><a href="../politics/world-bank.html">World Development Indicators</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -422,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -438,12 +444,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/politics/world-bank.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/politics/world-bank.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../politics/standard-cities.html">Politics</a></li><li class="breadcrumb-item"><a href="../politics/world-bank.html">World Development Indicators</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">World Development Indicators</h1>
   <div class="quarto-categories">
@@ -495,6 +501,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p>The World Bank compiles a database of World Development Indicators, which compile data from various sources intended to give the most current and accurate data about countries worldwide. Over a thousand different variables are available, updated yearly.</p>
@@ -511,7 +518,6 @@ ul.task-list li input[type="checkbox"] {
 <a href=" https://cmustatistics.github.io/data-repository/data/world-bank.csv "> world-bank.csv </a>
 </h4>
 <div data-pagedtable="false">
-
 <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["Country Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Country Code"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Region"],"name":[3],"type":["chr"],"align":["left"]},{"label":["IsCountry"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Income group"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Year"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["GenderEquality"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["PoliticalStability"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["GenderEducation"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["BirthSex"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Income"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["PlanePassengers"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["PlaneDepartures"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["Electricity"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["PM2.5"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["CO2Emissions"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["Unemployment"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["Poverty"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["BattleDeaths"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["CompulsoryEducation"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["Literacy"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["Death"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["Alcohol"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["Diabetes"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["DeathsCD"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["DeathsNCD"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["GDP"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["Internet"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["Population"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["Rural"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["Urban"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["Suicide"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["Homicide"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["Military"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["LegalRights"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["Birth"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["Fertility"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["LandArea"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["ForestArea"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["RuralArea"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["UrbanArea"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["Density"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["TaxRevenue"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["Mobile"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["FixedTelephone"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["GovernmentExpenditure"],"name":[46],"type":["dbl"],"align":["right"]}],"data":[{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2022","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"NA","45":"NA","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2021","7":"NA","8":"-2.52985525","9":"NA","10":"1.052","11":"NA","12":"293213","13":"2865.737","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"35786","20":"9","21":"37.26604","22":"7.344","23":"NA","24":"10.9","25":"NA","26":"NA","27":"14786861638","28":"NA","29":"40099462","30":"73.686","31":"26.314","32":"NA","33":"4.022498","34":"NA","35":"NA","36":"35.842","37":"4.643","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"22678024","45":"145787","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2020","7":"1.5","8":"-2.70502973","9":"0.38689","10":"1.052","11":"NA","12":"449041","13":"4635.714","14":"97.70000","15":"NA","16":"NA","17":"11.710","18":"49.4","19":"20475","20":"9","21":"NA","22":"7.113","23":"NA","24":"NA","25":"NA","26":"NA","27":"20143442151","28":"18.40000","29":"38972230","30":"73.974","31":"26.026","32":"NA","33":"6.594439","34":"4.972825","35":"NA","36":"36.051","37":"4.750","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"59.75228","43":"NA","44":"22678024","45":"145787","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2019","7":"1.5","8":"-2.65553117","9":"NA","10":"1.053","11":"NA","12":"1066747","13":"7334.000","14":"97.70000","15":"NA","16":"0.1608502","17":"11.085","18":"NA","19":"29940","20":"9","21":"NA","22":"6.791","23":"NA","24":"NA","25":"32.930451","26":"49.78108","27":"18904490263","28":"17.60000","29":"37769499","30":"74.246","31":"25.754","32":"4.1","33":"7.180397","34":"4.275736","35":"10","36":"36.466","37":"4.870","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"57.90825","43":"NA","44":"22580071","45":"134636","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2018","7":"1.5","8":"-2.76386428","9":"0.34523","10":"1.053","11":"NA","12":"1125367","13":"10454.000","14":"96.61613","15":"NA","16":"0.1653669","17":"11.110","18":"NA","19":"25676","20":"9","21":"NA","22":"6.981","23":"0.21","24":"NA","25":"NA","26":"NA","27":"18418848300","28":"16.80000","29":"36686784","30":"74.505","31":"25.495","32":"4.1","33":"6.743573","34":"3.724855","35":"10","36":"36.927","37":"5.002","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"56.24823","43":"NA","44":"21976355","45":"127794","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2017","7":"1.5","8":"-2.80108380","9":"NA","10":"1.054","11":"NA","12":"1647425","13":"24207.000","14":"97.70000","15":"56.91081","16":"0.1341869","17":"11.180","18":"NA","19":"19014","20":"9","21":"NA","22":"7.027","23":"NA","24":"NA","25":"NA","26":"NA","27":"18896352022","28":"13.50000","29":"35643418","30":"74.750","31":"25.250","32":"4.1","33":"6.800695","34":"3.652592","35":"9","36":"37.342","37":"5.129","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"54.64854","43":"9.898451","44":"23929713","45":"118769","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2016","7":"1.5","8":"-2.67105389","9":"NA","10":"1.055","11":"NA","12":"1917924","13":"22770.000","14":"97.70000","15":"56.28705","16":"0.1531210","17":"10.086","18":"51.7","19":"17985","20":"9","21":"NA","22":"7.077","23":"NA","24":"NA","25":"NA","26":"NA","27":"18019558182","28":"11.00000","29":"34636207","30":"74.980","31":"25.020","32":"4.0","33":"6.692419","34":"3.680251","35":"9","36":"37.936","37":"5.262","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"53.10428","43":"9.502653","44":"21602982","45":"114192","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2015","7":"1.5","8":"-2.57122183","9":"NA","10":"1.056","11":"17785739176","12":"1929907","13":"23532.000","14":"71.50000","15":"61.25266","16":"0.1761800","17":"8.989","18":"NA","19":"17273","20":"9","21":"NA","22":"7.331","23":"0.21","24":"NA","25":"39.390981","26":"44.21905","27":"19998156214","28":"8.26000","29":"33753499","30":"75.197","31":"24.803","32":"4.0","33":"9.975262","34":"3.833142","35":"9","36":"38.803","37":"5.405","38":"652230","39":"1.852782","40":"636173.2","41":"3993.836","42":"51.75091","43":"7.585382","44":"19709038","45":"110000","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2014","7":"1.5","8":"-2.41106844","9":"0.27600","10":"1.056","11":"NA","12":"2209428","13":"25920.000","14":"89.50000","15":"59.01033","16":"0.1491505","17":"7.910","18":"NA","19":"12284","20":"9","21":"NA","22":"7.395","23":"NA","24":"NA","25":"NA","26":"NA","27":"20550582747","28":"7.00000","29":"32716210","30":"75.413","31":"24.587","32":"3.9","33":"NA","34":"5.109793","35":"9","36":"39.105","37":"5.560","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"50.16054","43":"6.882103","44":"18407168","45":"101931","46":"NA"},{"1":"Afghanistan","2":"AFG","3":"South Asia","4":"1","5":"Low income","6":"2013","7":"1.5","8":"-2.51934910","9":"NA","10":"1.057","11":"NA","12":"2044188","13":"21696.000","14":"68.29065","15":"61.36674","16":"0.1898168","17":"7.949","18":"NA","19":"8056","20":"9","21":"NA","22":"7.478","23":"NA","24":"NA","25":"NA","26":"NA","27":"20564485419","28":"5.90000","29":"31541209","30":"75.627","31":"24.373","32":"4.0","33":"NA","34":"4.311764","35":"9","36":"39.601","37":"5.696","38":"652230","39":"1.852782","40":"NA","41":"NA","42":"48.35903","43":"7.122773","44":"16807156","45":"95769","46":"NA"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2022","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"11.808","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"NA","45":"NA","46":"NA"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2021","7":"NA","8":"0.10944585","9":"1.39256","10":"1.075","11":"NA","12":"193259","13":"1471.000","14":"NA","15":"NA","16":"NA","17":"12.683","18":"NA","19":"NA","20":"9","21":"98.45000","22":"11.325","23":"NA","24":"10.2","25":"NA","26":"NA","27":"18255787479","28":"79.32000","29":"2811666","30":"37.031","31":"62.969","32":"NA","33":"2.311969","34":"4.185888","35":"NA","36":"10.240","37":"1.390","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"17.874386","44":"2635466","45":"197690","46":"1554502405"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2020","7":"NA","8":"0.08755231","9":"1.36876","10":"1.078","11":"NA","12":"124714","13":"1274.000","14":"100.00000","15":"NA","16":"NA","17":"13.067","18":"43.4","19":"NA","20":"9","21":"NA","22":"10.785","23":"NA","24":"NA","25":"NA","26":"NA","27":"15131866271","28":"72.23768","29":"2837849","30":"37.888","31":"62.112","32":"NA","33":"2.127772","34":"3.795233","35":"NA","36":"10.285","37":"1.400","38":"27400","39":"28.791971","40":"NA","41":"NA","42":"103.57113","43":"17.017907","44":"2618880","45":"223469","46":"1437019962"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2019","7":"NA","8":"0.11116863","9":"1.35992","10":"1.081","11":"10337645642","12":"307741","13":"2558.000","14":"100.00000","15":"NA","16":"1.6919681","17":"11.470","18":"46.2","19":"NA","20":"9","21":"NA","22":"8.480","23":"NA","24":"NA","25":"3.023108","26":"93.94089","27":"15401830754","28":"68.55039","29":"2854191","30":"38.771","31":"61.229","32":"4.3","33":"2.261748","34":"4.457659","35":"8","36":"10.343","37":"1.414","38":"27400","39":"28.791971","40":"NA","41":"NA","42":"104.16755","43":"18.144377","44":"2630076","45":"242859","46":"1416306301"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2018","7":"NA","8":"0.37051564","9":"1.36299","10":"1.084","11":"10283960047","12":"303137","13":"2935.000","14":"100.00000","15":"NA","16":"1.7816923","17":"12.300","18":"49.0","19":"NA","20":"9","21":"98.14115","22":"8.308","23":"7.17","24":"NA","25":"NA","26":"NA","27":"15156432310","28":"65.40000","29":"2866376","30":"39.681","31":"60.319","32":"4.5","33":"2.294046","34":"4.029427","35":"8","36":"10.517","37":"1.440","38":"27400","39":"28.791971","40":"NA","41":"NA","42":"104.61226","43":"18.545952","44":"2714878","45":"248631","46":"1376202215"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2017","7":"NA","8":"0.37847477","9":"1.34488","10":"1.087","11":"9916264100","12":"204090","13":"1904.000","14":"99.89000","15":"18.20060","16":"1.7904566","17":"13.620","18":"51.8","19":"NA","20":"9","21":"NA","22":"8.150","23":"NA","24":"NA","25":"NA","26":"NA","27":"13019689337","28":"62.40000","29":"2873457","30":"40.617","31":"59.383","32":"4.7","33":"2.014340","34":"3.805181","35":"8","36":"10.870","37":"1.491","38":"27400","39":"28.792062","40":"NA","41":"NA","42":"104.87069","43":"18.887492","44":"3625699","45":"246720","46":"1366451252"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2016","7":"NA","8":"0.34464467","9":"1.32128","10":"1.088","11":"9707100981","12":"26634","13":"306.000","14":"99.89000","15":"18.18993","16":"1.5566560","17":"15.420","18":"NA","19":"NA","20":"9","21":"NA","22":"8.035","23":"NA","24":"NA","25":"NA","26":"NA","27":"11861199831","28":"59.60000","29":"2876101","30":"41.579","31":"58.421","32":"4.7","33":"2.742043","34":"3.787234","35":"6","36":"11.289","37":"1.551","38":"27400","39":"28.802190","40":"NA","41":"NA","42":"104.96719","43":"17.590230","44":"3369756","45":"248640","46":"1324573422"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2015","7":"NA","8":"0.34612906","9":"1.29878","10":"1.091","11":"9411883298","12":"NA","13":"NA","14":"99.98000","15":"19.51254","16":"1.6038099","17":"17.190","18":"NA","19":"NA","20":"9","21":"NA","22":"7.947","23":"6.74","24":"NA","25":"2.955382","26":"92.91781","27":"11386850130","28":"56.90000","29":"2880703","30":"42.566","31":"57.434","32":"4.8","33":"2.220310","34":"3.778893","35":"6","36":"11.718","37":"1.613","38":"27400","39":"28.802464","40":"27331.6","41":"827.694","42":"105.13515","43":"18.515790","44":"3400955","45":"226718","46":"1265151391"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2014","7":"NA","8":"0.48598623","9":"1.30338","10":"1.094","11":"9404812471","12":"151632","13":"1992.000","14":"99.95000","15":"18.88395","16":"1.6684758","17":"18.050","18":"NA","19":"NA","20":"9","21":"NA","22":"7.868","23":"NA","24":"NA","25":"NA","26":"NA","27":"13228147516","28":"54.30000","29":"2889104","30":"43.577","31":"56.423","32":"5.0","33":"4.646160","34":"4.243785","35":"6","36":"12.150","37":"1.674","38":"27400","39":"28.750511","40":"NA","41":"NA","42":"105.44175","43":"18.301936","44":"3359654","45":"235734","46":"1279274299"},{"1":"Albania","2":"ALB","3":"Europe & Central Asia","4":"1","5":"Upper middle income","6":"2013","7":"NA","8":"0.09192979","9":"1.28941","10":"1.096","11":"9344283362","12":"865848","13":"11196.000","14":"100.00000","15":"19.93852","16":"1.5321793","17":"15.870","18":"NA","19":"NA","20":"9","21":"NA","22":"7.819","23":"NA","24":"NA","25":"NA","26":"NA","27":"12776220507","28":"51.80000","29":"2895092","30":"44.613","31":"55.387","32":"5.3","33":"4.295095","34":"4.826486","35":"7","36":"12.279","37":"1.697","38":"27400","39":"28.698558","40":"NA","41":"NA","42":"105.66029","43":"16.503271","44":"3685983","45":"281200","46":"1202387045"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
@@ -823,10 +829,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -836,8 +859,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -849,7 +881,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -893,6 +1048,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -918,6 +1074,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -983,12 +1165,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/politics/world-bank.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

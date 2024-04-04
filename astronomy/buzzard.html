@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,12 +84,38 @@ ul.task-list li input[type="checkbox"] {
   })();
 </script>
 <!-- End Matomo Code -->
-
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -90,9 +123,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -104,42 +137,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../astronomy/buzzard.html">Astronomy</a></li><li class="breadcrumb-item"><a href="../astronomy/buzzard.html">Galaxy mass prediction</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../astronomy/buzzard.html">Astronomy</a></li><li class="breadcrumb-item"><a href="../astronomy/buzzard.html">Galaxy mass prediction</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -424,7 +457,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -440,12 +473,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/astronomy/buzzard.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/astronomy/buzzard.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../astronomy/buzzard.html">Astronomy</a></li><li class="breadcrumb-item"><a href="../astronomy/buzzard.html">Galaxy mass prediction</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Galaxy mass prediction</h1>
   <div class="quarto-categories">
@@ -497,6 +530,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p>Estimating the properties of galaxies, and even where they are, is a challenging process. The Rubin Observatory, a sky survey telescope located in Chile, will once it becomes operational image tens of billions of astronomical objects, the vast majority of which will be galaxies that have never been imaged before. Analyses of these data will require sophisticated methodologies, ones that will allow us to first determine where the galaxies are (i.e., how far away they are), and then conditional on the distance, how massive they are. Given galaxy distance and mass data, we can test theories of how the Universe evolves, by comparing simulated galaxy data with these data.</p>
@@ -511,7 +545,6 @@ ul.task-list li input[type="checkbox"] {
 <a href=" https://cmustatistics.github.io/data-repository/data/Buzzard_DC1.csv "> Buzzard_DC1.csv </a>
 </h4>
 <div data-pagedtable="false">
-
 <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["u"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["g"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["r"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["i"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["z"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["y"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["u.err"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["g.err"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["r.err"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["i.err"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["z.err"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["y.err"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["log.mass"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["redshift"],"name":[14],"type":["dbl"],"align":["right"]}],"data":[{"1":"17.8313","2":"16.9077","3":"16.4431","4":"16.2099","5":"16.0613","6":"15.8732","7":"0.0050","8":"0.0050","9":"0.0050","10":"0.0050","11":"0.0050","12":"0.0050","13":"9.430220","14":"0.038356"},{"1":"19.0731","2":"17.7448","3":"16.9789","4":"16.5288","5":"16.2551","6":"15.9531","7":"0.0051","8":"0.0050","9":"0.0050","10":"0.0050","11":"0.0050","12":"0.0050","13":"10.119041","14":"0.058309"},{"1":"21.6380","2":"21.0106","3":"20.8286","4":"20.6283","5":"20.6552","6":"20.5280","7":"0.0068","8":"0.0051","9":"0.0050","10":"0.0051","11":"0.0052","12":"0.0064","13":"7.684077","14":"0.063701"},{"1":"20.5474","2":"19.5542","3":"19.2387","4":"19.0568","5":"19.0887","6":"18.9865","7":"0.0055","8":"0.0050","9":"0.0050","10":"0.0050","11":"0.0050","12":"0.0051","13":"8.426640","14":"0.059006"},{"1":"21.2378","2":"20.6876","3":"20.5661","4":"20.4371","5":"20.4799","6":"20.4503","7":"0.0061","8":"0.0051","9":"0.0050","10":"0.0051","11":"0.0052","12":"0.0063","13":"7.683522","14":"0.063202"},{"1":"22.4627","2":"21.4597","3":"21.0484","4":"20.8274","5":"20.7639","6":"20.6385","7":"0.0102","8":"0.0052","9":"0.0051","10":"0.0051","11":"0.0053","12":"0.0067","13":"7.876722","14":"0.057773"},{"1":"23.8221","2":"22.8950","3":"22.5779","4":"22.3543","5":"22.3225","6":"22.2038","7":"0.0279","8":"0.0064","9":"0.0056","10":"0.0062","11":"0.0085","12":"0.0191","13":"7.168159","14":"0.061548"},{"1":"23.0491","2":"22.1536","3":"21.8791","4":"21.6889","5":"21.7044","6":"21.6381","7":"0.0152","8":"0.0055","9":"0.0052","10":"0.0054","11":"0.0064","12":"0.0124","13":"7.394987","14":"0.063769"},{"1":"23.6742","2":"23.0346","3":"22.7857","4":"22.6116","5":"22.5813","6":"22.5462","7":"0.0261","8":"0.0067","9":"0.0058","10":"0.0068","11":"0.0101","12":"0.0254","13":"6.952377","14":"0.061427"},{"1":"23.5684","2":"22.6635","3":"22.3825","4":"22.1811","5":"22.1842","6":"22.1003","7":"0.0228","8":"0.0060","9":"0.0054","10":"0.0059","11":"0.0078","12":"0.0180","13":"7.255099","14":"0.066216"},{"1":"22.8421","2":"21.9752","3":"21.6568","4":"21.4507","5":"21.3821","6":"21.2972","7":"0.0131","8":"0.0054","9":"0.0051","10":"0.0053","11":"0.0058","12":"0.0096","13":"7.560222","14":"0.062465"},{"1":"22.2700","2":"20.9800","3":"20.3657","4":"20.0249","5":"19.8772","6":"19.6650","7":"0.0091","8":"0.0051","9":"0.0050","10":"0.0050","11":"0.0051","12":"0.0053","13":"8.586022","14":"0.059334"},{"1":"22.9572","2":"22.1043","3":"21.8311","4":"21.6471","5":"21.6476","6":"21.6021","7":"0.0145","8":"0.0055","9":"0.0052","10":"0.0054","11":"0.0062","12":"0.0120","13":"7.427043","14":"0.064125"},{"1":"22.6374","2":"21.7366","3":"21.3624","4":"21.0996","5":"21.0509","6":"20.8953","7":"0.0114","8":"0.0053","9":"0.0051","10":"0.0052","11":"0.0054","12":"0.0076","13":"7.776103","14":"0.062879"},{"1":"23.1683","2":"22.1660","3":"21.7659","4":"21.5328","5":"21.4497","6":"21.3112","7":"0.0165","8":"0.0055","9":"0.0052","10":"0.0053","11":"0.0059","12":"0.0097","13":"7.596584","14":"0.058733"},{"1":"23.6326","2":"22.9130","3":"22.6335","4":"22.4592","5":"22.3878","6":"22.2816","7":"0.0245","8":"0.0065","9":"0.0056","10":"0.0064","11":"0.0090","12":"0.0210","13":"6.942297","14":"0.054228"},{"1":"23.4712","2":"22.7874","3":"22.5011","4":"22.3258","5":"22.3120","6":"22.2042","7":"0.0216","8":"0.0062","9":"0.0055","10":"0.0062","11":"0.0085","12":"0.0193","13":"6.967766","14":"0.053939"},{"1":"23.3684","2":"22.8134","3":"22.6760","4":"22.5266","5":"22.5769","6":"22.5126","7":"0.0200","8":"0.0063","9":"0.0057","10":"0.0066","11":"0.0100","12":"0.0257","13":"6.958870","14":"0.071244"},{"1":"19.8519","2":"18.4482","3":"17.6682","4":"17.2535","5":"17.0104","6":"16.8052","7":"0.0052","8":"0.0050","9":"0.0050","10":"0.0050","11":"0.0050","12":"0.0050","13":"10.264154","14":"0.087994"},{"1":"19.0211","2":"17.9570","3":"17.3694","4":"16.9993","5":"16.7874","6":"16.5896","7":"0.0051","8":"0.0050","9":"0.0050","10":"0.0050","11":"0.0050","12":"0.0050","13":"10.020722","14":"0.085530"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
@@ -679,10 +712,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -692,8 +742,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -705,7 +764,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -749,6 +931,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -774,6 +957,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -839,12 +1048,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/astronomy/buzzard.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,7 +84,6 @@ ul.task-list li input[type="checkbox"] {
   })();
 </script>
 <!-- End Matomo Code -->
-
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
@@ -88,9 +94,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -102,42 +108,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../money/ames-housing.html">Money</a></li><li class="breadcrumb-item"><a href="../money/rail-trails.html">Rail trails and property values</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../money/ames-housing.html">Money</a></li><li class="breadcrumb-item"><a href="../money/rail-trails.html">Rail trails and property values</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -422,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -438,12 +444,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/money/rail-trails.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/money/rail-trails.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../money/ames-housing.html">Money</a></li><li class="breadcrumb-item"><a href="../money/rail-trails.html">Rail trails and property values</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Rail trails and property values</h1>
   <div class="quarto-categories">
@@ -495,6 +501,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p>In the late 1800s and early 1900s, numerous rail lines were built across the United States and connected most towns and cities for passenger and cargo service. But as cars became dominant and the Interstate Highway System made long-distance travel by car easier, rail traffic declined, and many rail lines were shut down or abandoned. Some lines were kept by the railroads for future use, while others were sold off.</p>
@@ -518,7 +525,6 @@ ul.task-list li input[type="checkbox"] {
 <a href=" https://cmustatistics.github.io/data-repository/data/rail-trails.csv "> rail-trails.csv </a>
 </h4>
 <div data-pagedtable="false">
-
 <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["housenum"],"name":[1],"type":["int"],"align":["right"]},{"label":["acre"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["acregroup"],"name":[3],"type":["chr"],"align":["left"]},{"label":["adj1998"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["adj2007"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["adj2011"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["bedgroup"],"name":[7],"type":["chr"],"align":["left"]},{"label":["bedrooms"],"name":[8],"type":["int"],"align":["right"]},{"label":["bikescore"],"name":[9],"type":["int"],"align":["right"]},{"label":["diff2014"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["distance"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["distgroup"],"name":[12],"type":["chr"],"align":["left"]},{"label":["garage_spaces"],"name":[13],"type":["int"],"align":["right"]},{"label":["garagegroup"],"name":[14],"type":["chr"],"align":["left"]},{"label":["housenum.1"],"name":[15],"type":["int"],"align":["right"]},{"label":["latitude"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["longitude"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["no_full_baths"],"name":[18],"type":["int"],"align":["right"]},{"label":["no_half_baths"],"name":[19],"type":["int"],"align":["right"]},{"label":["no_rooms"],"name":[20],"type":["int"],"align":["right"]},{"label":["pctchange"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["price1998"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["price2007"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["price2011"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["price2014"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["sfgroup"],"name":[26],"type":["chr"],"align":["left"]},{"label":["squarefeet"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["streetname"],"name":[28],"type":["chr"],"align":["left"]},{"label":["streetno"],"name":[29],"type":["int"],"align":["right"]},{"label":["walkscore"],"name":[30],"type":["int"],"align":["right"]},{"label":["zip"],"name":[31],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"0.28","3":"> 1/4 acre","4":"148.3625","5":"233.8418","6":"191.8211","7":"3 beds","8":"3","9":"35","10":"62.36645","11":"2.40000000","12":"Farther Away","13":"2","14":"yes","15":"1","16":"42.31533","17":"-72.69397","18":"1","19":"0","20":"5","21":"42.036518","22":"101.5","23":"203.5","24":"181.1","25":"210.729","26":"<= 1500 sf","27":"0.966","28":"Acrebrook Drive","29":"406","30":"9","31":"1062"},{"1":"2","2":"0.29","3":"> 1/4 acre","4":"135.2072","5":"261.4203","6":"206.9677","7":"3 beds","8":"3","9":"44","10":"68.96375","11":"1.97000000","12":"Farther Away","13":"1","14":"yes","15":"2","16":"42.29856","17":"-72.67474","18":"1","19":"0","20":"5","21":"51.005956","22":"92.5","23":"227.5","24":"195.4","25":"204.171","26":"<= 1500 sf","27":"0.960","28":"Autumn Dr","29":"57","30":"5","31":"1062"},{"1":"3","2":"0.36","3":"> 1/4 acre","4":"256.5283","5":"401.0359","6":"347.9472","7":"3 beds","8":"3","9":"66","10":"82.13365","11":"0.04337121","12":"Closer","13":"2","14":"yes","15":"3","16":"42.34379","17":"-72.68023","18":"2","19":"1","20":"7","21":"32.017377","22":"175.5","23":"349.0","24":"328.5","25":"338.662","26":"> 1500 sf","27":"1.725","28":"Bridge Road","29":"31","30":"46","31":"1062"},{"1":"4","2":"0.26","3":"> 1/4 acre","4":"231.6795","5":"305.0861","6":"257.4915","7":"3 beds","8":"3","9":"61","10":"44.57055","11":"0.55473485","12":"Farther Away","13":"1","14":"yes","15":"4","16":"42.34446","17":"-72.67221","18":"1","19":"1","20":"6","21":"19.238025","22":"158.5","23":"265.5","24":"243.1","25":"276.250","26":"> 1500 sf","27":"1.727","28":"Bridge Road","29":"200","30":"40","31":"1060"},{"1":"5","2":"0.31","3":"> 1/4 acre","4":"271.8762","5":"298.7660","6":"236.6253","7":"4+ beds","8":"4","9":"53","10":"-102.70320","11":"0.59659091","12":"Farther Away","13":"0","14":"no","15":"5","16":"42.34253","17":"-72.66437","18":"1","19":"0","20":"6","21":"-37.775723","22":"186.0","23":"260.0","24":"223.4","25":"169.173","26":"> 1500 sf","27":"1.576","28":"Bridge Road","29":"395","30":"32","31":"1062"},{"1":"6","2":"0.31","3":"> 1/4 acre","4":"192.9444","5":"275.7840","6":"243.2982","7":"3 beds","8":"3","9":"36","10":"18.54260","11":"1.88000000","12":"Farther Away","13":"1","14":"yes","15":"6","16":"42.31874","17":"-72.69097","18":"1","19":"1","20":"6","21":"9.610333","22":"132.0","23":"240.0","24":"229.7","25":"211.487","26":"<= 1500 sf","27":"1.320","28":"Brierwood Drive","29":"23","30":"12","31":"1062"},{"1":"7","2":"0.08","3":"<= 1/4 acre","4":"171.0189","5":"303.9370","6":"297.9530","7":"3 beds","8":"3","9":"97","10":"140.43710","11":"0.44488636","12":"Closer","13":"0","14":"no","15":"7","16":"42.32311","17":"-72.63352","18":"1","19":"0","20":"6","21":"82.117883","22":"117.0","23":"264.5","24":"281.3","25":"311.456","26":"<= 1500 sf","27":"1.202","28":"Bright Avenue","29":"18","30":"82","31":"1060"},{"1":"8","2":"0.11","3":"<= 1/4 acre","4":"213.4082","5":"380.9266","6":"378.7699","7":"4+ beds","8":"4","9":"95","10":"164.44880","11":"0.44488636","12":"Closer","13":"0","14":"no","15":"8","16":"42.32299","17":"-72.63357","18":"1","19":"1","20":"9","21":"77.058332","22":"146.0","23":"331.5","24":"357.6","25":"377.857","26":"> 1500 sf","27":"2.136","28":"Bright Street","29":"23","30":"88","31":"1060"},{"1":"9","2":"0.31","3":"> 1/4 acre","4":"427.5473","5":"336.1117","6":"260.2454","7":"4+ beds","8":"5","9":"38","10":"-199.86625","11":"1.93000000","12":"Farther Away","13":"0","14":"no","15":"9","16":"42.31543","17":"-72.67020","18":"2","19":"0","20":"7","21":"-46.747172","22":"292.5","23":"292.5","24":"245.7","25":"227.681","26":"> 1500 sf","27":"1.918","28":"Burts Pit Rd","29":"497","30":"15","31":"1062"},{"1":"10","2":"0.27","3":"> 1/4 acre","4":"163.7104","5":"249.9292","6":"212.7933","7":"3 beds","8":"3","9":"30","10":"60.65560","11":"2.87303030","12":"Farther Away","13":"0","14":"no","15":"10","16":"42.31036","17":"-72.69491","18":"1","19":"0","20":"5","21":"37.050548","22":"112.0","23":"217.5","24":"200.9","25":"224.366","26":"<= 1500 sf","27":"1.008","28":"Burts Pit Rd","29":"1086","30":"9","31":"1062"},{"1":"11","2":"0.27","3":"> 1/4 acre","4":"177.5966","5":"271.7622","6":"215.9709","7":"3 beds","8":"3","9":"46","10":"41.18845","11":"0.75662879","12":"Farther Away","13":"0","14":"no","15":"11","16":"42.34567","17":"-72.66867","18":"2","19":"0","20":"5","21":"23.192145","22":"121.5","23":"236.5","24":"203.9","25":"218.785","26":"<= 1500 sf","27":"1.296","28":"Carolyn Street","29":"14","30":"35","31":"1062"},{"1":"12","2":"0.51","3":"> 1/4 acre","4":"200.9837","5":"309.1079","6":"277.2986","7":"3 beds","8":"3","9":"38","10":"68.63625","11":"1.41000000","12":"Farther Away","13":"2","14":"yes","15":"12","16":"42.31905","17":"-72.66492","18":"1","19":"0","20":"7","21":"34.150149","22":"137.5","23":"269.0","24":"261.8","25":"269.620","26":"<= 1500 sf","27":"1.432","28":"Clement St","29":"21","30":"20","31":"1062"},{"1":"13","2":"0.23","3":"<= 1/4 acre","4":"238.2571","5":"471.1310","6":"434.4838","7":"4+ beds","8":"4","9":"79","10":"209.58490","11":"1.42155303","12":"Farther Away","13":"0","14":"no","15":"13","16":"42.31061","17":"-72.63324","18":"2","19":"0","20":"8","21":"87.965857","22":"163.0","23":"410.0","24":"410.2","25":"447.842","26":"> 1500 sf","27":"2.040","28":"Columbus Ave","29":"46","30":"68","31":"1060"},{"1":"14","2":"0.11","3":"<= 1/4 acre","4":"263.8369","5":"448.7235","6":"394.6579","7":"3 beds","8":"3","9":"85","10":"122.60915","11":"0.24678030","12":"Closer","13":"0","14":"no","15":"14","16":"42.32616","17":"-72.63985","18":"1","19":"1","20":"6","21":"46.471579","22":"180.5","23":"390.5","24":"372.6","25":"386.446","26":"> 1500 sf","27":"1.604","28":"Crescent Street","29":"156","30":"65","31":"1060"},{"1":"15","2":"0.15","3":"<= 1/4 acre","4":"331.8059","5":"564.2081","6":"450.6896","7":"4+ beds","8":"4","9":"74","10":"196.30810","11":"0.39602273","12":"Closer","13":"0","14":"no","15":"15","16":"42.32570","17":"-72.64074","18":"2","19":"0","20":"9","21":"59.163535","22":"227.0","23":"491.0","24":"425.5","25":"528.114","26":"> 1500 sf","27":"2.278","28":"Crescent Street","29":"176","30":"68","31":"1060"},{"1":"16","2":"0.23","3":"<= 1/4 acre","4":"167.3647","5":"256.8238","6":"215.3354","7":"3 beds","8":"3","9":"36","10":"53.85535","11":"1.56723485","12":"Farther Away","13":"0","14":"no","15":"16","16":"42.32094","17":"-72.67951","18":"1","19":"0","20":"6","21":"32.178450","22":"114.5","23":"223.5","24":"203.3","25":"221.220","26":"<= 1500 sf","27":"1.208","28":"Crestview Dr","29":"15","30":"20","31":"1062"},{"1":"17","2":"0.23","3":"<= 1/4 acre","4":"217.0625","5":"321.7480","6":"310.9811","7":"4+ beds","8":"5","9":"37","10":"103.14355","11":"1.67670454","12":"Farther Away","13":"0","14":"no","15":"17","16":"42.31967","17":"-72.67858","18":"2","19":"0","20":"7","21":"47.517915","22":"148.5","23":"280.0","24":"293.6","25":"320.206","26":"> 1500 sf","27":"1.744","28":"Crestview Dr","29":"64","30":"17","31":"1062"},{"1":"18","2":"0.23","3":"<= 1/4 acre","4":"154.9402","5":"238.4383","6":"201.6717","7":"3 beds","8":"3","9":"36","10":"24.54680","11":"1.59867424","12":"Farther Away","13":"0","14":"no","15":"18","16":"42.32053","17":"-72.67921","18":"1","19":"0","20":"5","21":"15.842757","22":"106.0","23":"207.5","24":"190.4","25":"179.487","26":"<= 1500 sf","27":"1.008","28":"Crestview Drive","29":"31","30":"17","31":"1062"},{"1":"19","2":"0.31","3":"<= 1/4 acre","4":"225.8327","5":"337.8354","6":"250.3949","7":"4+ beds","8":"4","9":"79","10":"17.80635","11":"0.10303030","12":"Closer","13":"0","14":"no","15":"19","16":"42.30813","17":"-72.64600","18":"1","19":"1","20":"8","21":"7.884754","22":"154.5","23":"294.0","24":"236.4","25":"243.639","26":"> 1500 sf","27":"1.922","28":"Earle St","29":"184","30":"49","31":"1060"},{"1":"20","2":"0.07","3":"<= 1/4 acre","4":"204.6380","5":"318.8752","6":"328.6698","7":"4+ beds","8":"4","9":"94","10":"121.02800","11":"0.33750000","12":"Closer","13":"0","14":"no","15":"20","16":"42.31159","17":"-72.63503","18":"2","19":"0","20":"8","21":"59.142486","22":"140.0","23":"277.5","24":"310.3","25":"325.666","26":"> 1500 sf","27":"2.100","28":"Edgewood Terrace","29":"1","30":"80","31":"1060"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
@@ -761,10 +767,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -774,8 +797,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -787,7 +819,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -831,6 +986,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -856,6 +1012,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -921,12 +1103,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/money/rail-trails.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

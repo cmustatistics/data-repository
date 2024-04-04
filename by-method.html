@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -110,15 +117,42 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -130,42 +164,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="./by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="./submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="./external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./by-method.html">All Datasets</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./by-method.html">All Datasets</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -450,7 +484,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -477,6 +511,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <p>All datasets are listed below, and can be filtered by statistical method on the right. A <a href="cmu-statds-datasets.csv">downloadable spreadsheet of all datasets</a> is also available for more advanced searches.</p>
 
 
@@ -484,22 +519,20 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="linear regression" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="0" data-categories="linear regression" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="410">
 <div class="body">
-<a href="./biology/anage.html">
 <h3 class="no-anchor listing-title">
-AnAge Longevity Database
+<a href="./biology/anage.html" class="no-external">AnAge Longevity Database</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./biology/anage.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>The AnAge database includes information on the longevity of thousands of animal species, allowing studies of the factors related to long lifespans.</p>
+<a href="./biology/anage.html" class="no-external">The AnAge database includes information on the longevity of thousands of animal species, allowing studies of the factors related to long lifespans.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./biology/anage.html">
+<a href="./biology/anage.html" class="no-external">
 <div class="listing-date">
 Dec 27, 2021
 </div>
@@ -509,22 +542,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="linear regression,hierarchical model" data-listing-date-sort="1562716800000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="1" data-categories="linear regression,hierarchical model" data-listing-date-sort="1562716800000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="613">
 <div class="body">
-<a href="./biology/bird-diversity.html">
 <h3 class="no-anchor listing-title">
-Bird genetic diversity
+<a href="./biology/bird-diversity.html" class="no-external">Bird genetic diversity</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./biology/bird-diversity.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Evolutionary theory suggests that species spread over a wider geographic range should have greater genetic diversity. Does this hold true in birds? An observational study of 387 bird species.</p>
+<a href="./biology/bird-diversity.html" class="no-external">Evolutionary theory suggests that species spread over a wider geographic range should have greater genetic diversity. Does this hold true in birds? An observational study of 387 bird species.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./biology/bird-diversity.html">
+<a href="./biology/bird-diversity.html" class="no-external">
 <div class="listing-date">
 Jul 10, 2019
 </div>
@@ -534,22 +565,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="logistic regression,contingency tables" data-listing-date-sort="1686182400000" data-listing-file-modified-sort="1706035298945" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="2" data-categories="logistic regression,contingency tables" data-listing-date-sort="1686182400000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="419">
 <div class="body">
-<a href="./medicine/bloodletting.html">
 <h3 class="no-anchor listing-title">
-Bloodletting
+<a href="./medicine/bloodletting.html" class="no-external">Bloodletting</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./medicine/bloodletting.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Bloodletting—deliberately withdrawing large amounts of blood from patients—was a common medical practice for centuries, until evidence was finally collected on its efficacy. Use an early observational dataset to explore its use for pneumonia.</p>
+<a href="./medicine/bloodletting.html" class="no-external">Bloodletting—deliberately withdrawing large amounts of blood from patients—was a common medical practice for centuries, until evidence was finally collected on its efficacy. Use an early observational dataset to explore its use for pneumonia.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./medicine/bloodletting.html">
+<a href="./medicine/bloodletting.html" class="no-external">
 <div class="listing-date">
 Jun 8, 2023
 </div>
@@ -559,22 +588,20 @@ Gordon Weinberg
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="logistic regression,survival analysis" data-listing-date-sort="1684281600000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="3" data-categories="logistic regression,survival analysis" data-listing-date-sort="1684281600000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1590">
 <div class="body">
-<a href="./medicine/core-temperature.html">
 <h3 class="no-anchor listing-title">
-Core temperature during surgery
+<a href="./medicine/core-temperature.html" class="no-external">Core temperature during surgery</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./medicine/core-temperature.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Is low core temperature during surgery associated with poor surgical outcomes or death? Use logistic and survival analysis to study an observational dataset.</p>
+<a href="./medicine/core-temperature.html" class="no-external">Is low core temperature during surgery associated with poor surgical outcomes or death? Use logistic and survival analysis to study an observational dataset.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./medicine/core-temperature.html">
+<a href="./medicine/core-temperature.html" class="no-external">
 <div class="listing-date">
 May 17, 2023
 </div>
@@ -584,22 +611,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="classification" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="4" data-categories="classification" data-listing-date-sort="1640563200000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="769">
 <div class="body">
-<a href="./biology/dry-beans.html">
 <h3 class="no-anchor listing-title">
-Dry beans
+<a href="./biology/dry-beans.html" class="no-external">Dry beans</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./biology/dry-beans.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Sort and classify beans using features extracted from images.</p>
+<a href="./biology/dry-beans.html" class="no-external">Sort and classify beans using features extracted from images.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./biology/dry-beans.html">
+<a href="./biology/dry-beans.html" class="no-external">
 <div class="listing-date">
 Dec 27, 2021
 </div>
@@ -609,22 +634,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="EDA,ANOVA" data-listing-date-sort="1699401600000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="5" data-categories="EDA,ANOVA" data-listing-date-sort="1699401600000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1316">
 <div class="body">
-<a href="./social/elite-college-admissions.html">
 <h3 class="no-anchor listing-title">
-Elite college admissions
+<a href="./social/elite-college-admissions.html" class="no-external">Elite college admissions</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./social/elite-college-admissions.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>We know that students at elite universities tend to be from high-income families, and that graduates are more likely to end up in high-status or high-income jobs. But very little public data has been available on university admissions practices. This dataset, collected by Opportunity Insights, gives extensive detail on college application and admission rates for 139 colleges and universities across the United States, including data on the incomes of students. How do admissions practices vary by institution, and are wealthy students overrepresented?</p>
+<a href="./social/elite-college-admissions.html" class="no-external">We know that students at elite universities tend to be from high-income families, and that graduates are more likely to end up in high-status or high-income jobs. But very little public data has been available on university admissions practices. This dataset, collected by Opportunity Insights, gives extensive detail on college application and admission rates for 139 colleges and universities across the United States, including data on the incomes of students. How do admissions practices vary by institution, and are wealthy students overrepresented?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./social/elite-college-admissions.html">
+<a href="./social/elite-college-admissions.html" class="no-external">
 <div class="listing-date">
 Nov 8, 2023
 </div>
@@ -634,22 +657,20 @@ Jessica Zhiyu Guo
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1686268800000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="6" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1686268800000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1123">
 <div class="body">
-<a href="./money/european-ham.html">
 <h3 class="no-anchor listing-title">
-European protected ham
+<a href="./money/european-ham.html" class="no-external">European protected ham</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./money/european-ham.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>In Europe, some types of ham—like Black Forest ham—can only be legally produced in specific geographic regions. Does the size of those regions affect the price of the ham?</p>
+<a href="./money/european-ham.html" class="no-external">In Europe, some types of ham—like Black Forest ham—can only be legally produced in specific geographic regions. Does the size of those regions affect the price of the ham?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./money/european-ham.html">
+<a href="./money/european-ham.html" class="no-external">
 <div class="listing-date">
 Jun 9, 2023
 </div>
@@ -659,22 +680,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="EDA,clustering" data-listing-date-sort="1694044800000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="7" data-categories="EDA,clustering" data-listing-date-sort="1694044800000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="851">
 <div class="body">
-<a href="./politics/standard-cities.html">
 <h3 class="no-anchor listing-title">
-Fiscally standardized cities
+<a href="./politics/standard-cities.html" class="no-external">Fiscally standardized cities</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./politics/standard-cities.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Extensive financial data on over 200 of the largest cities in the United States for over 40 years. Which cities spend the most or the least on government services?</p>
+<a href="./politics/standard-cities.html" class="no-external">Extensive financial data on over 200 of the largest cities in the United States for over 40 years. Which cities spend the most or the least on government services?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./politics/standard-cities.html">
+<a href="./politics/standard-cities.html" class="no-external">
 <div class="listing-date">
 Sep 7, 2023
 </div>
@@ -684,22 +703,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1675382400000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="8" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1675382400000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="565">
 <div class="body">
-<a href="./astronomy/buzzard.html">
 <h3 class="no-anchor listing-title">
-Galaxy mass prediction
+<a href="./astronomy/buzzard.html" class="no-external">Galaxy mass prediction</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./astronomy/buzzard.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy’s mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?</p>
+<a href="./astronomy/buzzard.html" class="no-external">Galaxies span a range of masses. Can students learn a statistical model that associates a galaxy’s mass with its brightness as measured at six wavelengths along with an estimate of its distance from the Earth?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./astronomy/buzzard.html">
+<a href="./astronomy/buzzard.html" class="no-external">
 <div class="listing-date">
 Feb 3, 2023
 </div>
@@ -709,22 +726,20 @@ Peter Freeman
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="surveys,classification,logistic regression" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="9" data-categories="surveys,classification,logistic regression" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1437">
 <div class="body">
-<a href="./medicine/vietnam-health.html">
 <h3 class="no-anchor listing-title">
-Health exams in Vietnam
+<a href="./medicine/vietnam-health.html" class="no-external">Health exams in Vietnam</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./medicine/vietnam-health.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>As access to health care increases, public health advocates encourage ordinary people to get regular check-ups to detect problems before they become serious (and expensive). But not everyone follows this advice. This survey of people in Vietnam explores the factors leading people to get regular check-ups.</p>
+<a href="./medicine/vietnam-health.html" class="no-external">As access to health care increases, public health advocates encourage ordinary people to get regular check-ups to detect problems before they become serious (and expensive). But not everyone follows this advice. This survey of people in Vietnam explores the factors leading people to get regular check-ups.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./medicine/vietnam-health.html">
+<a href="./medicine/vietnam-health.html" class="no-external">
 <div class="listing-date">
 Dec 8, 2022
 </div>
@@ -734,22 +749,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1565740800000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="10" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1565740800000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1818">
 <div class="body">
-<a href="./money/ames-housing.html">
 <h3 class="no-anchor listing-title">
-House prices in Ames, Iowa
+<a href="./money/ames-housing.html" class="no-external">House prices in Ames, Iowa</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./money/ames-housing.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Records of homes sold in Ames, Iowa, and their sale prices, including detailed covariates that could be used to predict home prices.</p>
+<a href="./money/ames-housing.html" class="no-external">Records of homes sold in Ames, Iowa, and their sale prices, including detailed covariates that could be used to predict home prices.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./money/ames-housing.html">
+<a href="./money/ames-housing.html" class="no-external">
 <div class="listing-date">
 Aug 14, 2019
 </div>
@@ -759,22 +772,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="GLMs,experimental design" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="11" data-categories="GLMs,experimental design" data-listing-date-sort="1670457600000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1353">
 <div class="body">
-<a href="./biology/bug-attraction.html">
 <h3 class="no-anchor listing-title">
-Insect attraction to light
+<a href="./biology/bug-attraction.html" class="no-external">Insect attraction to light</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./biology/bug-attraction.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.</p>
+<a href="./biology/bug-attraction.html" class="no-external">What kinds of lights are insects most attracted to? Analyze the results of a factorial experiment using light traps.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./biology/bug-attraction.html">
+<a href="./biology/bug-attraction.html" class="no-external">
 <div class="listing-date">
 Dec 8, 2022
 </div>
@@ -784,22 +795,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1667520000000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="12" data-categories="ANOVA,linear regression,hierarchical model" data-listing-date-sort="1667520000000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="594">
 <div class="body">
-<a href="./psychology/male-makeup.html">
 <h3 class="no-anchor listing-title">
-Makeup and male attractiveness
+<a href="./psychology/male-makeup.html" class="no-external">Makeup and male attractiveness</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./psychology/male-makeup.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Makeup is often used by women, but does makeup make men more attractive? This study had participants rate photos of men with and without makeup on.</p>
+<a href="./psychology/male-makeup.html" class="no-external">Makeup is often used by women, but does makeup make men more attractive? This study had participants rate photos of men with and without makeup on.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./psychology/male-makeup.html">
+<a href="./psychology/male-makeup.html" class="no-external">
 <div class="listing-date">
 Nov 4, 2022
 </div>
@@ -809,22 +818,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="GLMs,linear regression,logistic regression" data-listing-date-sort="1693958400000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="13" data-categories="GLMs,linear regression,logistic regression" data-listing-date-sort="1693958400000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1108">
 <div class="body">
-<a href="./crime-and-justice/mapping-police-violence.html">
 <h3 class="no-anchor listing-title">
-Mapping Police Violence
+<a href="./crime-and-justice/mapping-police-violence.html" class="no-external">Mapping Police Violence</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./crime-and-justice/mapping-police-violence.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Each year in the United States, around 1,000 people are killed by police. Some of these deaths are accidental, in traffic accidents and other incidents; some are deliberate killings considered legally justified by authorities; and others are considered unjustified or even lead to the prosecution of the police officer. Explore data on over 10,000 such killings to identify patterns in the people killed, the stated reasons for their killings, and the situations leading to their deaths.</p>
+<a href="./crime-and-justice/mapping-police-violence.html" class="no-external">Each year in the United States, around 1,000 people are killed by police. Some of these deaths are accidental, in traffic accidents and other incidents; some are deliberate killings considered legally justified by authorities; and others are considered unjustified or even lead to the prosecution of the police officer. Explore data on over 10,000 such killings to identify patterns in the people killed, the stated reasons for their killings, and the situations leading to their deaths.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./crime-and-justice/mapping-police-violence.html">
+<a href="./crime-and-justice/mapping-police-violence.html" class="no-external">
 <div class="listing-date">
 Sep 6, 2023
 </div>
@@ -834,22 +841,20 @@ Jessica Zhiyu Guo
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="ANOVA,linear regression" data-listing-date-sort="1690243200000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="14" data-categories="ANOVA,linear regression" data-listing-date-sort="1690243200000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1123">
 <div class="body">
-<a href="./psychology/cmu-sleep.html">
 <h3 class="no-anchor listing-title">
-Nightly sleep time and GPA in first-years
+<a href="./psychology/cmu-sleep.html" class="no-external">Nightly sleep time and GPA in first-years</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./psychology/cmu-sleep.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Does nightly sleep duration predict change in end-of-semester grade point average (GPA)? First-year college students from three independent universities provided sleep actigraphy for a month early in their spring academic term across five studies.</p>
+<a href="./psychology/cmu-sleep.html" class="no-external">Does nightly sleep duration predict change in end-of-semester grade point average (GPA)? First-year college students from three independent universities provided sleep actigraphy for a month early in their spring academic term across five studies.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./psychology/cmu-sleep.html">
+<a href="./psychology/cmu-sleep.html" class="no-external">
 <div class="listing-date">
 Jul 25, 2023
 </div>
@@ -859,22 +864,20 @@ Shunyi Zheng
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="logistic regression,data cleaning,ANOVA" data-listing-date-sort="1691452800000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="15" data-categories="logistic regression,data cleaning,ANOVA" data-listing-date-sort="1691452800000" data-listing-file-modified-sort="1712256690218" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="672">
 <div class="body">
-<a href="./daily-life/rtg-tinned-fish.html">
 <h3 class="no-anchor listing-title">
-RTG tinned fish
+<a href="./daily-life/rtg-tinned-fish.html" class="no-external">RTG tinned fish</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./daily-life/rtg-tinned-fish.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>The Rainbow Tomatoes Garden sells hundreds of kinds of canned seafood, and produces a complete table including 27 different attributes, from Latin name to sodium content. Write code to clean the data, then analyze factors affecting price and composition.</p>
+<a href="./daily-life/rtg-tinned-fish.html" class="no-external">The Rainbow Tomatoes Garden sells hundreds of kinds of canned seafood, and produces a complete table including 27 different attributes, from Latin name to sodium content. Write code to clean the data, then analyze factors affecting price and composition.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./daily-life/rtg-tinned-fish.html">
+<a href="./daily-life/rtg-tinned-fish.html" class="no-external">
 <div class="listing-date">
 Aug 8, 2023
 </div>
@@ -884,22 +887,20 @@ Shunyi (Jess) Zheng
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1658880000000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="16" data-categories="linear regression,nonparametric regression" data-listing-date-sort="1658880000000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="904">
 <div class="body">
-<a href="./money/rail-trails.html">
 <h3 class="no-anchor listing-title">
-Rail trails and property values
+<a href="./money/rail-trails.html" class="no-external">Rail trails and property values</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./money/rail-trails.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Rail trails are a great recreation opportunity, but do homes near them rise in value? A retrospective observational study of house values.</p>
+<a href="./money/rail-trails.html" class="no-external">Rail trails are a great recreation opportunity, but do homes near them rise in value? A retrospective observational study of house values.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./money/rail-trails.html">
+<a href="./money/rail-trails.html" class="no-external">
 <div class="listing-date">
 Jul 27, 2022
 </div>
@@ -909,22 +910,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="ANOVA,linear regression" data-listing-date-sort="1487980800000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="17" data-categories="ANOVA,linear regression" data-listing-date-sort="1487980800000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="415">
 <div class="body">
-<a href="./psychology/religion-analytic-thinking.html">
 <h3 class="no-anchor listing-title">
-Religion and analytic thinking
+<a href="./psychology/religion-analytic-thinking.html" class="no-external">Religion and analytic thinking</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./psychology/religion-analytic-thinking.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>A controversial study found that encouraging analytic thinking also reduced religious belief. A replication attempt collected much more data to try to confirm the hypothesis; is it supported by the data? A simple randomized experiment with continuous outcome and demographic controls.</p>
+<a href="./psychology/religion-analytic-thinking.html" class="no-external">A controversial study found that encouraging analytic thinking also reduced religious belief. A replication attempt collected much more data to try to confirm the hypothesis; is it supported by the data? A simple randomized experiment with continuous outcome and demographic controls.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./psychology/religion-analytic-thinking.html">
+<a href="./psychology/religion-analytic-thinking.html" class="no-external">
 <div class="listing-date">
 Feb 25, 2017
 </div>
@@ -934,22 +933,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="ANOVA" data-listing-date-sort="1487894400000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="18" data-categories="ANOVA" data-listing-date-sort="1487894400000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="975">
 <div class="body">
-<a href="./psychology/moral-rebels.html">
 <h3 class="no-anchor listing-title">
-Resenting moral rebels
+<a href="./psychology/moral-rebels.html" class="no-external">Resenting moral rebels</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./psychology/moral-rebels.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>We usually applaud people who rebel against the status quo for moral reasons – but those involved in the status quo do not. An experiment attempts to understand why this is.</p>
+<a href="./psychology/moral-rebels.html" class="no-external">We usually applaud people who rebel against the status quo for moral reasons – but those involved in the status quo do not. An experiment attempts to understand why this is.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./psychology/moral-rebels.html">
+<a href="./psychology/moral-rebels.html" class="no-external">
 <div class="listing-date">
 Feb 24, 2017
 </div>
@@ -959,22 +956,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="GLMs,classification,linear regression" data-listing-date-sort="1487721600000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="19" data-categories="GLMs,classification,linear regression" data-listing-date-sort="1487721600000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="906">
 <div class="body">
-<a href="./social/science-forums.html">
 <h3 class="no-anchor listing-title">
-Science Forums
+<a href="./social/science-forums.html" class="no-external">Science Forums</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./social/science-forums.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>A random sample of discussions at a large science discussion forum, with metadata about each.</p>
+<a href="./social/science-forums.html" class="no-external">A random sample of discussions at a large science discussion forum, with metadata about each.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./social/science-forums.html">
+<a href="./social/science-forums.html" class="no-external">
 <div class="listing-date">
 Feb 22, 2017
 </div>
@@ -984,22 +979,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="ANOVA,linear regression" data-listing-date-sort="1567296000000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="20" data-categories="ANOVA,linear regression" data-listing-date-sort="1567296000000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1878">
 <div class="body">
-<a href="./psychology/plate-size.html">
 <h3 class="no-anchor listing-title">
-Serving sizes and plate sizes
+<a href="./psychology/plate-size.html" class="no-external">Serving sizes and plate sizes</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./psychology/plate-size.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Do people eat more food if their meals are served on larger plates? A randomized experiment with demographic and psychological control variables.</p>
+<a href="./psychology/plate-size.html" class="no-external">Do people eat more food if their meals are served on larger plates? A randomized experiment with demographic and psychological control variables.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./psychology/plate-size.html">
+<a href="./psychology/plate-size.html" class="no-external">
 <div class="listing-date">
 Sep 1, 2019
 </div>
@@ -1009,22 +1002,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="ANOVA,linear regression" data-listing-date-sort="1497484800000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="21" data-categories="ANOVA,linear regression" data-listing-date-sort="1497484800000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="906">
 <div class="body">
-<a href="./biology/spider-nuptials.html">
 <h3 class="no-anchor listing-title">
-Spider nuptial gifts and fraud
+<a href="./biology/spider-nuptials.html" class="no-external">Spider nuptial gifts and fraud</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./biology/spider-nuptials.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Male spiders give “gifts” of silk-wrapped food to female spiders to convince them to mate. Sometimes, they may cheat by gifting something other than food. Under what conditions do they cheat, and how much silk do they use to wrap fake gifts? Analyze an experiment on spiders in the lab.</p>
+<a href="./biology/spider-nuptials.html" class="no-external">Male spiders give “gifts” of silk-wrapped food to female spiders to convince them to mate. Sometimes, they may cheat by gifting something other than food. Under what conditions do they cheat, and how much silk do they use to wrap fake gifts? Analyze an experiment on spiders in the lab.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./biology/spider-nuptials.html">
+<a href="./biology/spider-nuptials.html" class="no-external">
 <div class="listing-date">
 Jun 15, 2017
 </div>
@@ -1034,22 +1025,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="ANOVA,logistic regression" data-listing-date-sort="1497398400000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="22" data-categories="ANOVA,logistic regression" data-listing-date-sort="1497398400000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="974">
 <div class="body">
-<a href="./psychology/sugary-drinks.html">
 <h3 class="no-anchor listing-title">
-Sugary drinks and portion limits
+<a href="./psychology/sugary-drinks.html" class="no-external">Sugary drinks and portion limits</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./psychology/sugary-drinks.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Public health officials are interested in policies that would reduce consumption of sugary drinks. What policies work and what policies backfire? A factorial experiment.</p>
+<a href="./psychology/sugary-drinks.html" class="no-external">Public health officials are interested in policies that would reduce consumption of sugary drinks. What policies work and what policies backfire? A factorial experiment.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./psychology/sugary-drinks.html">
+<a href="./psychology/sugary-drinks.html" class="no-external">
 <div class="listing-date">
 Jun 14, 2017
 </div>
@@ -1059,22 +1048,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="linear regression" data-listing-date-sort="1529280000000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="23" data-categories="linear regression" data-listing-date-sort="1529280000000" data-listing-file-modified-sort="1712256690450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="906">
 <div class="body">
-<a href="./psychology/hormone-diversity.html">
 <h3 class="no-anchor listing-title">
-Testosterone and diversity
+<a href="./psychology/hormone-diversity.html" class="no-external">Testosterone and diversity</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./psychology/hormone-diversity.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>When students work on group projects, they work better when their groups are diverse. This study asked if that depends on the testosterone level of the group, and if high-testosterone groups benefit less from diversity.</p>
+<a href="./psychology/hormone-diversity.html" class="no-external">When students work on group projects, they work better when their groups are diverse. This study asked if that depends on the testosterone level of the group, and if high-testosterone groups benefit less from diversity.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./psychology/hormone-diversity.html">
+<a href="./psychology/hormone-diversity.html" class="no-external">
 <div class="listing-date">
 Jun 18, 2018
 </div>
@@ -1084,22 +1071,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="classification,logistic regression" data-listing-date-sort="1549670400000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="24" data-categories="classification,logistic regression" data-listing-date-sort="1549670400000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="866">
 <div class="body">
-<a href="./crime-and-justice/connecticut-stops.html">
 <h3 class="no-anchor listing-title">
-Traffic stops in Connecticut
+<a href="./crime-and-justice/connecticut-stops.html" class="no-external">Traffic stops in Connecticut</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./crime-and-justice/connecticut-stops.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Records for every traffic stop made by the Connecticut State Police over several years, including the reason for the stop and demographic details. Use classifiers to study whether stop and search decisions show signs of bias.</p>
+<a href="./crime-and-justice/connecticut-stops.html" class="no-external">Records for every traffic stop made by the Connecticut State Police over several years, including the reason for the stop and demographic details. Use classifiers to study whether stop and search decisions show signs of bias.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./crime-and-justice/connecticut-stops.html">
+<a href="./crime-and-justice/connecticut-stops.html" class="no-external">
 <div class="listing-date">
 Feb 9, 2019
 </div>
@@ -1109,22 +1094,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-categories="linear regression,ANOVA" data-listing-date-sort="1691452800000" data-listing-file-modified-sort="1706035298713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="25" data-categories="linear regression,ANOVA" data-listing-date-sort="1691452800000" data-listing-file-modified-sort="1712256690214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="836">
 <div class="body">
-<a href="./daily-life/college-scorecard.html">
 <h3 class="no-anchor listing-title">
-US College Scorecard
+<a href="./daily-life/college-scorecard.html" class="no-external">US College Scorecard</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./daily-life/college-scorecard.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>An extensive survey of American colleges and universities, recording the demographics of their graduates, typical salaries, and much more.</p>
+<a href="./daily-life/college-scorecard.html" class="no-external">An extensive survey of American colleges and universities, recording the demographics of their graduates, typical salaries, and much more.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./daily-life/college-scorecard.html">
+<a href="./daily-life/college-scorecard.html" class="no-external">
 <div class="listing-date">
 Aug 8, 2023
 </div>
@@ -1134,22 +1117,20 @@ Alex Reinhart
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-categories="linear regression,ANOVA" data-listing-date-sort="1687219200000" data-listing-file-modified-sort="1706035298949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="26" data-categories="linear regression,ANOVA" data-listing-date-sort="1687219200000" data-listing-file-modified-sort="1712256690446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1090">
 <div class="body">
-<a href="./politics/world-bank.html">
 <h3 class="no-anchor listing-title">
-World Development Indicators
+<a href="./politics/world-bank.html" class="no-external">World Development Indicators</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./politics/world-bank.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>The World Bank’s World Development Indicators (WDI) compile development information about countries around the world. Using ten years of data, study development, political stability, pollution, and other factors at the national and regional levels.</p>
+<a href="./politics/world-bank.html" class="no-external">The World Bank’s World Development Indicators (WDI) compile development information about countries around the world. Using ten years of data, study development, political stability, pollution, and other factors at the national and regional levels.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./politics/world-bank.html">
+<a href="./politics/world-bank.html" class="no-external">
 <div class="listing-date">
 Jun 20, 2023
 </div>
@@ -1246,10 +1227,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1259,8 +1257,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1272,7 +1279,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1316,6 +1446,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1341,6 +1472,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1406,12 +1563,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/by-method.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/by-method.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

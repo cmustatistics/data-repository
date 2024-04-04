@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,7 +84,6 @@ ul.task-list li input[type="checkbox"] {
   })();
 </script>
 <!-- End Matomo Code -->
-
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
@@ -88,9 +94,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -102,42 +108,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/vietnam-health.html">Health exams in Vietnam</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/vietnam-health.html">Health exams in Vietnam</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -422,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -438,12 +444,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/vietnam-health.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/vietnam-health.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/vietnam-health.html">Health exams in Vietnam</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Health exams in Vietnam</h1>
   <div class="quarto-categories">
@@ -496,6 +502,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p>Medical care for serious diseases can be very expensive, and in countries without established socialized medical systems it can impose serious hardships on patients. Ideally, patients would get regular check-ups (or “general health examinations”, GHEs) so that serious conditions could be detected and treated early, before they cause serious problems. This would save money and improve public health.</p>
@@ -511,7 +518,6 @@ ul.task-list li input[type="checkbox"] {
 <a href=" https://cmustatistics.github.io/data-repository/data/vietnam-health.csv "> vietnam-health.csv </a>
 </h4>
 <div data-pagedtable="false">
-
 <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["date"],"name":[2],"type":["int"],"align":["right"]},{"label":["Age"],"name":[3],"type":["int"],"align":["right"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Jobstt"],"name":[5],"type":["chr"],"align":["left"]},{"label":["MaritalStt"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Edu"],"name":[7],"type":["chr"],"align":["left"]},{"label":["height"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["weight"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["place"],"name":[10],"type":["chr"],"align":["left"]},{"label":["BMI"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["HealthIns"],"name":[12],"type":["chr"],"align":["left"]},{"label":["RecExam"],"name":[13],"type":["chr"],"align":["left"]},{"label":["RecPerExam"],"name":[14],"type":["chr"],"align":["left"]},{"label":["ReaExam"],"name":[15],"type":["chr"],"align":["left"]},{"label":["Wsttime"],"name":[16],"type":["chr"],"align":["left"]},{"label":["Wstmon"],"name":[17],"type":["chr"],"align":["left"]},{"label":["DiscDisease"],"name":[18],"type":["chr"],"align":["left"]},{"label":["Lessbelqual"],"name":[19],"type":["chr"],"align":["left"]},{"label":["NotImp"],"name":[20],"type":["chr"],"align":["left"]},{"label":["HthyPriority"],"name":[21],"type":["chr"],"align":["left"]},{"label":["ComSubsidy"],"name":[22],"type":["chr"],"align":["left"]},{"label":["Habit"],"name":[23],"type":["chr"],"align":["left"]},{"label":["FlwHealth"],"name":[24],"type":["chr"],"align":["left"]},{"label":["PerTrmt"],"name":[25],"type":["chr"],"align":["left"]},{"label":["AcqTrmt"],"name":[26],"type":["chr"],"align":["left"]},{"label":["StabHthStt"],"name":[27],"type":["chr"],"align":["left"]},{"label":["MedCabinet"],"name":[28],"type":["chr"],"align":["left"]},{"label":["Tooluseskills"],"name":[29],"type":["chr"],"align":["left"]},{"label":["ExpCare"],"name":[30],"type":["chr"],"align":["left"]},{"label":["ExamTools"],"name":[31],"type":["chr"],"align":["left"]},{"label":["UseMon"],"name":[32],"type":["chr"],"align":["left"]},{"label":["Tangibles"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["Reliability"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["Respon"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["Assurance"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["Empathy"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["StChoise"],"name":[38],"type":["chr"],"align":["left"]},{"label":["CHPerc"],"name":[39],"type":["chr"],"align":["left"]},{"label":["SuitFreq"],"name":[40],"type":["chr"],"align":["left"]},{"label":["AffCost"],"name":[41],"type":["chr"],"align":["left"]},{"label":["UseIT"],"name":[42],"type":["chr"],"align":["left"]},{"label":["AfterIT"],"name":[43],"type":["chr"],"align":["left"]},{"label":["SuffInfo"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["AttractInfo"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["ImpressInfo"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["PopularInfo"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["SuitExer"],"name":[48],"type":["chr"],"align":["left"]},{"label":["EvalExer"],"name":[49],"type":["chr"],"align":["left"]},{"label":["Age_gr"],"name":[50],"type":["chr"],"align":["left"]}],"data":[{"1":"m00001","2":"20160919","3":"19","4":"female","5":"student","6":"unmarried","7":"Grad","8":"155","9":"43","10":"hanoi","11":"17.89802","12":"yes","13":"less12","14":"less12","15":"request","16":"yes","17":"yes","18":"yes","19":"no","20":"yes","21":"yes","22":"yes","23":"no","24":"yes","25":"never","26":"yes","27":"yes","28":"no","29":"yes","30":"yes","31":"yes","32":"partly","33":"2","34":"2","35":"2","36":"2","37":"1","38":"selfstudy","39":"quite","40":"12m","41":"low","42":"yes","43":"yes","44":"4","45":"3","46":"2","47":"4","48":"210","49":"quitesuff","50":"18-29"},{"1":"m00002","2":"20160919","3":"20","4":"female","5":"student","6":"unmarried","7":"Grad","8":"158","9":"42","10":"hanoi","11":"16.82423","12":"yes","13":"unknow","14":"unknow","15":"request","16":"no","17":"no","18":"no","19":"no","20":"no","21":"yes","22":"no","23":"yes","24":"yes","25":"never","26":"yes","27":"no","28":"no","29":"no","30":"yes","31":"yes","32":"allsoon","33":"2","34":"3","35":"1","36":"2","37":"1","38":"clinic","39":"bad","40":"g18m","41":"low","42":"no","43":"yes","44":"1","45":"1","46":"3","47":"2","48":"unknown","49":"trivial","50":"18-29"},{"1":"m00003","2":"20160919","3":"24","4":"female","5":"unstable","6":"unmarried","7":"Grad","8":"163","9":"46","10":"hanoi","11":"17.31341","12":"yes","13":"unknow","14":"g24","15":"request","16":"no","17":"no","18":"no","19":"no","20":"no","21":"yes","22":"no","23":"yes","24":"no","25":"yes","26":"yes","27":"no","28":"no","29":"no","30":"yes","31":"yes","32":"allsoon","33":"1","34":"1","35":"4","36":"2","37":"3","38":"askrel","39":"bad","40":"6m","41":"low","42":"no","43":"no","44":"2","45":"2","46":"1","47":"5","48":"210","49":"little","50":"18-29"},{"1":"m00004","2":"20160919","3":"20","4":"female","5":"student","6":"unmarried","7":"Grad","8":"150","9":"40","10":"hanoi","11":"17.77778","12":"yes","13":"less12","14":"less12","15":"request","16":"yes","17":"yes","18":"no","19":"no","20":"yes","21":"yes","22":"yes","23":"no","24":"no","25":"never","26":"yes","27":"yes","28":"yes","29":"yes","30":"yes","31":"no","32":"partly","33":"3","34":"3","35":"2","36":"3","37":"2","38":"selfstudy","39":"quite","40":"12m","41":"low","42":"yes","43":"yes","44":"4","45":"2","46":"3","47":"1","48":"unknown","49":"little","50":"18-29"},{"1":"m00005","2":"20160919","3":"23","4":"male","5":"stable","6":"unmarried","7":"Grad","8":"165","9":"50","10":"hanoi","11":"18.36547","12":"yes","13":"b1224","14":"b1224","15":"volunteer","16":"no","17":"no","18":"no","19":"no","20":"yes","21":"yes","22":"no","23":"no","24":"yes","25":"never","26":"yes","27":"yes","28":"no","29":"no","30":"yes","31":"no","32":"partly","33":"3","34":"3","35":"3","36":"3","37":"3","38":"selfstudy","39":"quite","40":"18m","41":"med","42":"yes","43":"yes","44":"3","45":"3","46":"4","47":"2","48":"840","49":"trivial","50":"18-29"},{"1":"m00006","2":"20160919","3":"19","4":"female","5":"student","6":"unmarried","7":"Grad","8":"150","9":"42","10":"hanoi","11":"18.66667","12":"yes","13":"g24","14":"b1224","15":"volunteer","16":"yes","17":"yes","18":"yes","19":"yes","20":"no","21":"yes","22":"yes","23":"no","24":"no","25":"never","26":"yes","27":"no","28":"no","29":"yes","30":"yes","31":"no","32":"later","33":"1","34":"1","35":"1","36":"2","37":"1","38":"askrel","39":"bad","40":"12m","41":"low","42":"yes","43":"yes","44":"5","45":"1","46":"2","47":"3","48":"210","49":"quitesuff","50":"18-29"},{"1":"m00007","2":"20160919","3":"20","4":"male","5":"student","6":"unmarried","7":"Grad","8":"170","9":"53","10":"hanoi","11":"18.33910","12":"yes","13":"less12","14":"b1224","15":"noti.disease","16":"no","17":"no","18":"yes","19":"yes","20":"yes","21":"yes","22":"no","23":"no","24":"no","25":"never","26":"yes","27":"yes","28":"no","29":"yes","30":"yes","31":"no","32":"later","33":"3","34":"3","35":"3","36":"2","37":"2","38":"askrel","39":"quite","40":"12m","41":"low","42":"maybe","43":"yes","44":"4","45":"4","46":"3","47":"4","48":"720","49":"quitesuff","50":"18-29"},{"1":"m00008","2":"20160919","3":"22","4":"female","5":"student","6":"unmarried","7":"Grad","8":"158","9":"50","10":"hanoi","11":"20.02884","12":"yes","13":"b1224","14":"b1224","15":"adv.sig","16":"yes","17":"yes","18":"yes","19":"no","20":"yes","21":"yes","22":"yes","23":"no","24":"no","25":"never","26":"never","27":"yes","28":"yes","29":"no","30":"no","31":"yes","32":"partly","33":"3","34":"2","35":"2","36":"3","37":"3","38":"selfstudy","39":"quite","40":"6m","41":"low","42":"maybe","43":"maybe","44":"3","45":"2","46":"3","47":"2","48":"unknown","49":"little","50":"18-29"},{"1":"m00009","2":"20160919","3":"21","4":"female","5":"student","6":"unmarried","7":"Grad","8":"153","9":"41","10":"hanoi","11":"17.51463","12":"no","13":"less12","14":"unknow","15":"adv.sig","16":"yes","17":"yes","18":"no","19":"no","20":"yes","21":"yes","22":"yes","23":"no","24":"no","25":"never","26":"yes","27":"yes","28":"no","29":"no","30":"no","31":"no","32":"allsoon","33":"5","34":"4","35":"4","36":"5","37":"5","38":"askrel","39":"bad","40":"6m","41":"hi","42":"no","43":"no","44":"2","45":"1","46":"2","47":"3","48":"210","49":"quitesuff","50":"18-29"},{"1":"m00010","2":"20160919","3":"48","4":"female","5":"other","6":"married","7":"Second","8":"150","9":"50","10":"hanoi","11":"22.22222","12":"no","13":"less12","14":"less12","15":"volunteer","16":"no","17":"no","18":"no","19":"no","20":"no","21":"yes","22":"no","23":"yes","24":"yes","25":"never","26":"yes","27":"yes","28":"no","29":"yes","30":"yes","31":"yes","32":"allsoon","33":"1","34":"2","35":"1","36":"2","37":"1","38":"clinic","39":"bad","40":"6m","41":"hi","42":"no","43":"no","44":"5","45":"4","46":"4","47":"4","48":"unknown","49":"little","50":"40-49"},{"1":"m00011","2":"20160919","3":"30","4":"female","5":"other","6":"married","7":"Second","8":"151","9":"50","10":"hanoi","11":"21.92886","12":"yes","13":"less12","14":"unknow","15":"adv.sig","16":"yes","17":"yes","18":"no","19":"no","20":"yes","21":"yes","22":"yes","23":"no","24":"yes","25":"yes","26":"yes","27":"yes","28":"yes","29":"yes","30":"yes","31":"yes","32":"allsoon","33":"3","34":"4","35":"1","36":"4","37":"2","38":"selfstudy","39":"unknown","40":"12m","41":"hi","42":"yes","43":"yes","44":"4","45":"3","46":"4","47":"4","48":"unknown","49":"trivial","50":"30-39"},{"1":"m00012","2":"20160919","3":"33","4":"male","5":"stable","6":"married","7":"Hi","8":"164","9":"56","10":"hanoi","11":"20.82094","12":"no","13":"less12","14":"unknow","15":"adv.sig","16":"yes","17":"no","18":"no","19":"yes","20":"yes","21":"yes","22":"no","23":"no","24":"no","25":"never","26":"never","27":"yes","28":"no","29":"no","30":"no","31":"no","32":"later","33":"4","34":"4","35":"3","36":"4","37":"4","38":"clinic","39":"unknown","40":"g18m","41":"low","42":"yes","43":"maybe","44":"4","45":"3","46":"3","47":"4","48":"420","49":"quitesuff","50":"30-39"},{"1":"m00013","2":"20160919","3":"31","4":"female","5":"stable","6":"married","7":"Second","8":"155","9":"54","10":"hanoi","11":"22.47659","12":"yes","13":"less12","14":"less12","15":"volunteer","16":"yes","17":"no","18":"no","19":"no","20":"yes","21":"yes","22":"yes","23":"no","24":"no","25":"never","26":"yes","27":"no","28":"no","29":"yes","30":"yes","31":"yes","32":"later","33":"4","34":"3","35":"3","36":"4","37":"2","38":"clinic","39":"unknown","40":"12m","41":"low","42":"no","43":"no","44":"3","45":"4","46":"3","47":"3","48":"unknown","49":"trivial","50":"30-39"},{"1":"m00014","2":"20160919","3":"20","4":"female","5":"other","6":"married","7":"Grad","8":"160","9":"60","10":"hanoi","11":"23.43750","12":"yes","13":"less12","14":"less12","15":"volunteer","16":"no","17":"no","18":"no","19":"no","20":"yes","21":"yes","22":"yes","23":"yes","24":"yes","25":"never","26":"never","27":"yes","28":"no","29":"yes","30":"yes","31":"yes","32":"allsoon","33":"4","34":"4","35":"4","36":"5","37":"4","38":"clinic","39":"unknown","40":"6m","41":"low","42":"yes","43":"yes","44":"4","45":"3","46":"5","47":"4","48":"210","49":"quitesuff","50":"18-29"},{"1":"m00015","2":"20160919","3":"25","4":"female","5":"student","6":"unmarried","7":"Grad","8":"160","9":"49","10":"hanoi","11":"19.14062","12":"yes","13":"b1224","14":"b1224","15":"adv.sig","16":"yes","17":"no","18":"yes","19":"yes","20":"no","21":"yes","22":"yes","23":"yes","24":"no","25":"never","26":"never","27":"yes","28":"yes","29":"yes","30":"yes","31":"yes","32":"allsoon","33":"3","34":"3","35":"3","36":"4","37":"3","38":"askrel","39":"bad","40":"6m","41":"med","42":"yes","43":"yes","44":"3","45":"3","46":"3","47":"3","48":"unknown","49":"little","50":"18-29"},{"1":"m00016","2":"20160919","3":"28","4":"male","5":"unstable","6":"married","7":"Hi","8":"170","9":"62","10":"hanoi","11":"21.45329","12":"no","13":"less12","14":"less12","15":"volunteer","16":"no","17":"yes","18":"yes","19":"no","20":"no","21":"yes","22":"yes","23":"no","24":"yes","25":"never","26":"never","27":"yes","28":"no","29":"yes","30":"yes","31":"yes","32":"allsoon","33":"5","34":"3","35":"2","36":"3","37":"4","38":"askrel","39":"bad","40":"12m","41":"med","42":"maybe","43":"yes","44":"3","45":"4","46":"4","47":"5","48":"420","49":"quitesuff","50":"18-29"},{"1":"m00017","2":"20160919","3":"28","4":"male","5":"stable","6":"married","7":"Grad","8":"170","9":"61","10":"hanoi","11":"21.10727","12":"yes","13":"less12","14":"b1224","15":"adv.sig","16":"yes","17":"yes","18":"yes","19":"no","20":"yes","21":"yes","22":"yes","23":"yes","24":"yes","25":"yes","26":"never","27":"yes","28":"yes","29":"yes","30":"yes","31":"yes","32":"allsoon","33":"3","34":"3","35":"2","36":"4","37":"2","38":"selfstudy","39":"bad","40":"12m","41":"med","42":"no","43":"yes","44":"4","45":"3","46":"4","47":"4","48":"490","49":"quitesuff","50":"18-29"},{"1":"m00018","2":"20160919","3":"29","4":"female","5":"stable","6":"married","7":"Grad","8":"160","9":"52","10":"hanoi","11":"20.31250","12":"no","13":"less12","14":"unknow","15":"adv.sig","16":"yes","17":"yes","18":"yes","19":"no","20":"yes","21":"yes","22":"yes","23":"no","24":"no","25":"never","26":"never","27":"yes","28":"yes","29":"yes","30":"no","31":"yes","32":"allsoon","33":"5","34":"5","35":"4","36":"5","37":"5","38":"clinic","39":"unknown","40":"6m","41":"med","42":"maybe","43":"maybe","44":"5","45":"5","46":"5","47":"5","48":"unknown","49":"trivial","50":"18-29"},{"1":"m00019","2":"20160919","3":"48","4":"female","5":"housewife","6":"married","7":"Hi","8":"158","9":"60","10":"hanoi","11":"24.03461","12":"no","13":"less12","14":"unknow","15":"adv.sig","16":"no","17":"no","18":"no","19":"no","20":"yes","21":"yes","22":"no","23":"no","24":"no","25":"never","26":"never","27":"yes","28":"yes","29":"yes","30":"yes","31":"yes","32":"later","33":"4","34":"5","35":"4","36":"4","37":"5","38":"clinic","39":"unknown","40":"6m","41":"hi","42":"yes","43":"no","44":"4","45":"5","46":"4","47":"5","48":"unknown","49":"trivial","50":"40-49"},{"1":"m00020","2":"20160919","3":"29","4":"female","5":"stable","6":"married","7":"Grad","8":"155","9":"63","10":"hanoi","11":"26.22268","12":"yes","13":"less12","14":"b1224","15":"volunteer","16":"no","17":"yes","18":"yes","19":"yes","20":"no","21":"yes","22":"yes","23":"yes","24":"yes","25":"never","26":"yes","27":"yes","28":"yes","29":"yes","30":"yes","31":"yes","32":"allsoon","33":"2","34":"2","35":"4","36":"3","37":"4","38":"selfstudy","39":"bad","40":"12m","41":"hi","42":"yes","43":"yes","44":"3","45":"3","46":"2","47":"3","48":"240","49":"little","50":"18-29"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
@@ -833,10 +839,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -846,8 +869,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -859,7 +891,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -903,6 +1058,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -928,6 +1084,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -993,12 +1175,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/vietnam-health.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

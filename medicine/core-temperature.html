@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -77,7 +84,6 @@ ul.task-list li input[type="checkbox"] {
   })();
 </script>
 <!-- End Matomo Code -->
-
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
@@ -88,9 +94,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CMU S&amp;DS Data Repository</span>
     </a>
@@ -102,42 +108,42 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../by-method.html" rel="" target="" aria-current="page">
- <span class="menu-text">All Datasets</span></a>
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../submit-data.html" rel="" target="">
- <span class="menu-text">Submit a Dataset</span></a>
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../external-sources.html" rel="" target="">
- <span class="menu-text">External Sources</span></a>
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/core-temperature.html">Core temperature during surgery</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/core-temperature.html">Core temperature during surgery</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -422,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -443,12 +449,12 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/core-temperature.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/core-temperature.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/core-temperature.html">Core temperature during surgery</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Core temperature during surgery</h1>
   <div class="quarto-categories">
@@ -500,6 +506,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p>During surgery that uses general anesthesia, patients often can have their body temperatures drop significantly. Anesthetics disrupt the body’s automatic mechanisms for maintaining body temperature, and they also tend to reduce the metabolism, meaning the body uses less energy and produces less heat. This can produce what is called “surgical hypothermia” or “inadvertent perioperative hypothermia” (IPH), when the body temperature drops below 36°C (96.8°F) during surgery. IPH can reduce the effectiveness of drugs, increase surgical bleeding, and delay recovery from surgery.</p>
@@ -514,7 +521,6 @@ ul.task-list li input[type="checkbox"] {
 <a href=" https://cmustatistics.github.io/data-repository/data/core-temperature.csv "> core-temperature.csv </a>
 </h4>
 <div data-pagedtable="false">
-
 <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["YEAR"],"name":[1],"type":["int"],"align":["right"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["FEMALE"],"name":[3],"type":["int"],"align":["right"]},{"label":["BMI"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["CharlsonScore"],"name":[5],"type":["int"],"align":["right"]},{"label":["SurgeryType"],"name":[6],"type":["lgl"],"align":["right"]},{"label":["CHF"],"name":[7],"type":["int"],"align":["right"]},{"label":["VALVE"],"name":[8],"type":["int"],"align":["right"]},{"label":["DM"],"name":[9],"type":["int"],"align":["right"]},{"label":["RENLFAIL"],"name":[10],"type":["int"],"align":["right"]},{"label":["LIVER"],"name":[11],"type":["int"],"align":["right"]},{"label":["METS"],"name":[12],"type":["int"],"align":["right"]},{"label":["TUMOR"],"name":[13],"type":["int"],"align":["right"]},{"label":["COAG"],"name":[14],"type":["int"],"align":["right"]},{"label":["OBESE"],"name":[15],"type":["int"],"align":["right"]},{"label":["WGHTLOSS"],"name":[16],"type":["int"],"align":["right"]},{"label":["LYTES"],"name":[17],"type":["int"],"align":["right"]},{"label":["BLDLOSS"],"name":[18],"type":["int"],"align":["right"]},{"label":["ANEMDEF"],"name":[19],"type":["int"],"align":["right"]},{"label":["DRUG"],"name":[20],"type":["int"],"align":["right"]},{"label":["SteroidHx"],"name":[21],"type":["int"],"align":["right"]},{"label":["ImmunosuppressantHx"],"name":[22],"type":["int"],"align":["right"]},{"label":["SurgDuration"],"name":[23],"type":["int"],"align":["right"]},{"label":["Open"],"name":[24],"type":["int"],"align":["right"]},{"label":["AbsessIntraAb"],"name":[25],"type":["int"],"align":["right"]},{"label":["AbsessPelvic"],"name":[26],"type":["int"],"align":["right"]},{"label":["Cdiff"],"name":[27],"type":["int"],"align":["right"]},{"label":["FascialDehiscence"],"name":[28],"type":["int"],"align":["right"]},{"label":["DelayedHealing"],"name":[29],"type":["int"],"align":["right"]},{"label":["Infection"],"name":[30],"type":["int"],"align":["right"]},{"label":["Sinus"],"name":[31],"type":["int"],"align":["right"]},{"label":["Pneumonia"],"name":[32],"type":["int"],"align":["right"]},{"label":["Pneumonia.aspiration."],"name":[33],"type":["int"],"align":["right"]},{"label":["Sepsis"],"name":[34],"type":["int"],"align":["right"]},{"label":["SSIDeep.fascia."],"name":[35],"type":["int"],"align":["right"]},{"label":["SSIOrganSpace"],"name":[36],"type":["int"],"align":["right"]},{"label":["SSISuperficial.skin."],"name":[37],"type":["int"],"align":["right"]},{"label":["WoundInfection"],"name":[38],"type":["int"],"align":["right"]},{"label":["TWATemp"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["LastReadingTemp"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["EndCaseTemp"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["AnyInfection"],"name":[42],"type":["int"],"align":["right"]},{"label":["SeriousInfection"],"name":[43],"type":["int"],"align":["right"]},{"label":["SuperficialInfection"],"name":[44],"type":["int"],"align":["right"]},{"label":["DurationHosp"],"name":[45],"type":["int"],"align":["right"]},{"label":["LOS"],"name":[46],"type":["int"],"align":["right"]},{"label":["DEAD"],"name":[47],"type":["int"],"align":["right"]}],"data":[{"1":"2009","2":"63.7","3":"0","4":"39.3","5":"2","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"1","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"180","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.8","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"},{"1":"2009","2":"58.7","3":"0","4":"25.3","5":"3","6":"NA","7":"0","8":"0","9":"1","10":"0","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"0","23":"205","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.5","40":"35.6","41":"36.1","42":"0","43":"0","44":"0","45":"5","46":"5","47":"0"},{"1":"2009","2":"84.6","3":"0","4":"31.6","5":"1","6":"NA","7":"0","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","14":"1","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"207","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"35.1","40":"35.0","41":"36.2","42":"1","43":"0","44":"1","45":"10","46":"10","47":"0"},{"1":"2009","2":"35.1","3":"1","4":"25.5","5":"0","6":"NA","7":"0","8":"1","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"1","17":"1","18":"0","19":"1","20":"0","21":"1","22":"0","23":"98","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.0","40":"36.2","41":"36.6","42":"0","43":"0","44":"0","45":"4","46":"4","47":"0"},{"1":"2009","2":"49.3","3":"0","4":"22.2","5":"6","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"0","22":"0","23":"90","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.3","40":"35.4","41":"36.2","42":"0","43":"0","44":"0","45":"1","46":"1","47":"0"},{"1":"2009","2":"62.9","3":"0","4":"33.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"1","22":"0","23":"172","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.8","42":"0","43":"0","44":"0","45":"6","46":"6","47":"0"},{"1":"2009","2":"32.7","3":"1","4":"18.8","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"1","22":"1","23":"316","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.3","40":"37.0","41":"36.0","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"52.6","3":"1","4":"30.9","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"381","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.6","40":"37.0","41":"36.8","42":"0","43":"0","44":"0","45":"9","46":"9","47":"0"},{"1":"2009","2":"57.5","3":"0","4":"21.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"95","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"1","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.4","40":"36.4","41":"36.5","42":"1","43":"1","44":"0","45":"15","46":"15","47":"0"},{"1":"2009","2":"45.5","3":"1","4":"21.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"255","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.7","40":"35.0","41":"36.0","42":"0","43":"0","44":"0","45":"10","46":"10","47":"0"},{"1":"2009","2":"74.1","3":"1","4":"20.9","5":"2","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"174","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.3","40":"35.4","41":"36.2","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"72.9","3":"0","4":"26.3","5":"6","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"1","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"247","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.7","40":"36.8","41":"36.4","42":"0","43":"0","44":"0","45":"21","46":"21","47":"0"},{"1":"2009","2":"53.0","3":"1","4":"27.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"174","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.5","40":"36.8","41":"36.6","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"49.6","3":"0","4":"28.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"1","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"1","23":"154","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.6","40":"36.0","41":"36.3","42":"0","43":"0","44":"0","45":"7","46":"7","47":"0"},{"1":"2009","2":"47.5","3":"0","4":"27.5","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"1","20":"0","21":"0","22":"0","23":"420","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.9","40":"36.6","41":"36.6","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"},{"1":"2009","2":"51.0","3":"0","4":"24.4","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"1","23":"280","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.3","40":"37.0","41":"37.2","42":"0","43":"0","44":"0","45":"9","46":"9","47":"0"},{"1":"2009","2":"72.0","3":"1","4":"34.6","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"1","17":"0","18":"0","19":"1","20":"0","21":"1","22":"0","23":"242","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"35.8","40":"35.8","41":"36.3","42":"0","43":"0","44":"0","45":"16","46":"16","47":"0"},{"1":"2009","2":"57.8","3":"0","4":"22.0","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"249","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.9","40":"37.0","41":"36.8","42":"0","43":"0","44":"0","45":"14","46":"14","47":"0"},{"1":"2009","2":"61.9","3":"0","4":"29.3","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"0","19":"0","20":"0","21":"0","22":"0","23":"374","24":"1","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"35.7","40":"36.2","41":"37.0","42":"1","43":"0","44":"1","45":"7","46":"7","47":"0"},{"1":"2009","2":"33.7","3":"1","4":"20.5","5":"0","6":"NA","7":"0","8":"0","9":"0","10":"0","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"1","22":"0","23":"291","24":"0","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"0","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"36.7","40":"37.6","41":"36.9","42":"0","43":"0","44":"0","45":"8","46":"8","47":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
@@ -831,10 +837,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -844,8 +867,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -857,7 +889,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -901,6 +1056,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -926,6 +1082,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -991,12 +1173,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</div>
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/core-temperature.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
