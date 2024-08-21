@@ -1,0 +1,106 @@
+---
+title: Bias in soccer refereeing
+author: Shiyu Wu and Alex Reinhart
+date: June 25, 2024
+description: Are dark-skinned soccer players more likely to receive red cards than those with light skin? Use observational data on several thousand players and referees to examine the association. This data was used in the Many Analysts, One Data Set project exploring how different analysis teams produce different statistical results.
+categories:
+  - GLMs
+data:
+  year: 2018
+  files: many-analysts.csv.gz
+---
+
+## Motivation
+
+Bias in decision-making is a critical issue in various fields, including sports.
+In soccer, referees have significant influence over the outcomes of matches
+through their decisions to issue yellow or red cards to players. Red cards, in
+particular, have severe consequences as they result in the player’s ejection
+from the game and leave their team short-handed. This raises important questions
+about the fairness and impartiality of referees’ decisions.
+
+This dataset compiles information about several thousand players in European
+soccer leagues, the referees who officiated their matches, and the number of
+yellow and red cards given by each referee to each player. Player photos were
+visually rated for skin color by two raters, allowing us to examine whether
+soccer players with dark skin are more likely to receive red cards.
+
+The data was compiled as part of the Many Analysts, One Data Set project, which
+gave the data to 29 different teams to analyze. This allowed the researchers to
+examine how different analysis choices by each team affected their results;
+teams used methods varying from simple linear regression to complicated
+hierarchical generalized linear models, and obtained often contradictory
+results, demonstrating that apparently innocuous analysis choices can cause
+large changes in results.
+
+## Data
+
+The data contains information on all soccer players in the male divisions of the
+English, German, French, and Spanish soccer leagues in the 2012-13 season. Each
+row represents a pair: one player and one referee. Players often played multiple
+matches officiated by the same referee, which would be grouped together into one row.
+
+The data contains about 2,000 players and about 3,000 referees, totaling 146,000
+unique pairs with data. Each row contains information about how many games the
+player played with that referee, how many red cards were given to the player by
+the referee, and so on; plus metadata about the player and referee.
+
+Two variables measure implicit and explicit racial bias in the referee's home
+country. These are based on average scores from people who took bias tests
+conducted online by [Project
+Implicit](https://implicit.harvard.edu/implicit/index.jsp); the referees
+themselves did not take bias tests.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| playerShort      | Unique player identifier |
+| player           | Player's full name |
+| club             | Player's club/team |
+| leagueCountry    | Country of the league the player belongs to |
+| birthday         | Player's birth date (DD.MM.YYYY) |
+| height           | Player's height in centimeters |
+| weight           | Player's weight in kilograms |
+| position         | Player's position on the team (e.g. Goalkeeper, Defensive Midfielder, etc.) |
+| games            | Number of games played by this player with this referee |
+| victories        | Of those games, the number won by the player's team |
+| ties             | Of those games, the number tied by the player's team |
+| defeats          | Of those games, the number lost by the player's team |
+| goals            | Number of goals scored by this player |
+| yellowCards      | Number of yellow cards received by this player from this referee |
+| yellowReds       | Number of double yellow cards received by this player from this referee |
+| redCards         | Number of red cards received by this player from this referee |
+| photoID          | ID of the player's photo |
+| rater1           | Rating of player's skin tone by the first rater (1 to 5 scale, where 1 is "very light skin" and 5 is "very dark skin") |
+| rater2           | Rating of player's skin tone by the second rater (1 to 5 scale) |
+| refNum           | Referee's identification number |
+| refCountry       | Referee's country identification number |
+| Alpha_3          | Referee's country three-letter code |
+| meanIAT          | Mean implicit bias score (from the Implicit Association Test) for the referee's country; larger values indicate higher implicit bias |
+| nIAT             | Sample size for the IAT score in the referee's country |
+| seIAT            | Standard error for the IAT score |
+| meanExp          | Mean explicit bias score for the referee's country; higher feelings indicate higher explicit bias |
+| nExp             | Sample size for the explicit bias score in that country |
+| seExp            | Standard error for the explicit bias score |
+
+## Questions
+
+The original primary research question was "whether soccer players with dark
+skin tone are more likely than those with light skin tone to receive red
+cards from referees". Conduct an analysis and report your results.
+
+## References
+
+Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey,
+E., ... Nosek, B. A. (2018). “Many analysts, one data set: Making transparent
+how variations in analytic choices affect results”. *Advances in Methods and
+Practices in Psychological Science*, 1(3), 337–356.
+<https://doi.org/10.1177/2515245917747646>
