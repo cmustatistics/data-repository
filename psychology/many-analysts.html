@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shiyu Wu and Alex Reinhart">
+<meta name="dcterms.date" content="2024-06-25">
+<meta name="description" content="Are dark-skinned soccer players more likely to receive red cards than those with light skin? Use observational data on several thousand players and referees to examine the association. This data was used in the Many Analysts, One Data Set project exploring how different analysis teams produce different statistical results.">
+
+<title>Bias in soccer refereeing – CMU S&amp;DS Data Repository</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.refsmmat.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/many-analysts.html">Bias in soccer refereeing</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Astronomy</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Biology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Crime and Justice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Traffic stops in Connecticut</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/mapping-police-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping Police Violence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Daily Life</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/college-scorecard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">US College Scorecard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/rtg-tinned-fish.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RTG tinned fish</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Medicine</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Money</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/european-ham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European protected ham</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Politics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/standard-cities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fiscally standardized cities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">World Development Indicators</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Bias in soccer refereeing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/moral-rebels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resenting moral rebels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Social</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/elite-college-admissions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elite college admissions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/many-analysts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/many-analysts.html">Bias in soccer refereeing</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Bias in soccer refereeing</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">GLMs</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Are dark-skinned soccer players more likely to receive red cards than those with light skin? Use observational data on several thousand players and referees to examine the association. This data was used in the Many Analysts, One Data Set project exploring how different analysis teams produce different statistical results.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shiyu Wu and Alex Reinhart </p>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 25, 2024</p>
+    </div>
+  </div>
+  
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/many-analysts.csv.gz">many-analysts.csv.gz</a>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2018</p>
+    </div>
+  </div>
+  </div>
+
+
+</header>
+
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Bias in decision-making is a critical issue in various fields, including sports. In soccer, referees have significant influence over the outcomes of matches through their decisions to issue yellow or red cards to players. Red cards, in particular, have severe consequences as they result in the player’s ejection from the game and leave their team short-handed. This raises important questions about the fairness and impartiality of referees’ decisions.</p>
+<p>This dataset compiles information about several thousand players in European soccer leagues, the referees who officiated their matches, and the number of yellow and red cards given by each referee to each player. Player photos were visually rated for skin color by two raters, allowing us to examine whether soccer players with dark skin are more likely to receive red cards.</p>
+<p>The data was compiled as part of the Many Analysts, One Data Set project, which gave the data to 29 different teams to analyze. This allowed the researchers to examine how different analysis choices by each team affected their results; teams used methods varying from simple linear regression to complicated hierarchical generalized linear models, and obtained often contradictory results, demonstrating that apparently innocuous analysis choices can cause large changes in results.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data contains information on all soccer players in the male divisions of the English, German, French, and Spanish soccer leagues in the 2012-13 season. Each row represents a pair: one player and one referee. Players often played multiple matches officiated by the same referee, which would be grouped together into one row.</p>
+<p>The data contains about 2,000 players and about 3,000 referees, totaling 146,000 unique pairs with data. Each row contains information about how many games the player played with that referee, how many red cards were given to the player by the referee, and so on; plus metadata about the player and referee.</p>
+<p>Two variables measure implicit and explicit racial bias in the referee’s home country. These are based on average scores from people who took bias tests conducted online by <a href="https://implicit.harvard.edu/implicit/index.jsp">Project Implicit</a>; the referees themselves did not take bias tests.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/many-analysts.csv.gz "> many-analysts.csv.gz </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["playerShort"],"name":[1],"type":["chr"],"align":["left"]},{"label":["player"],"name":[2],"type":["chr"],"align":["left"]},{"label":["club"],"name":[3],"type":["chr"],"align":["left"]},{"label":["leagueCountry"],"name":[4],"type":["chr"],"align":["left"]},{"label":["birthday"],"name":[5],"type":["chr"],"align":["left"]},{"label":["height"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["weight"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["position"],"name":[8],"type":["chr"],"align":["left"]},{"label":["games"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["victories"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["ties"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["defeats"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["goals"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["yellowCards"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["yellowReds"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["redCards"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["photoID"],"name":[17],"type":["chr"],"align":["left"]},{"label":["rater1"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["rater2"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["refNum"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["refCountry"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["Alpha_3"],"name":[22],"type":["chr"],"align":["left"]},{"label":["meanIAT"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["nIAT"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["seIAT"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["meanExp"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["nExp"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["seExp"],"name":[28],"type":["dbl"],"align":["right"]}],"data":[{"1":"lucas-wilchez","2":"Lucas Wilchez","3":"Real Zaragoza","4":"Spain","5":"31.08.1983","6":"177","7":"72","8":"Attacking Midfielder","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"95212.jpg","18":"0.25","19":"0.50","20":"1","21":"1","22":"GRC","23":"0.3263915","24":"712","25":"0.0005641124","26":"0.3960000","27":"750","28":"0.002696490"},{"1":"john-utaka","2":"John Utaka","3":"Montpellier HSC","4":"France","5":"08.01.1982","6":"179","7":"82","8":"Right Winger","9":"1","10":"0","11":"0","12":"1","13":"0","14":"1","15":"0","16":"0","17":"1663.jpg","18":"0.75","19":"0.75","20":"2","21":"2","22":"ZMB","23":"0.2033747","24":"40","25":"0.0108748941","26":"-0.2040816","27":"49","28":"0.061504404"},{"1":"abdon-prats","2":"Abdón Prats","3":"RCD Mallorca","4":"Spain","5":"17.12.1992","6":"181","7":"79","8":"NA","9":"1","10":"0","11":"1","12":"0","13":"0","14":"1","15":"0","16":"0","17":"NA","18":"NA","19":"NA","20":"3","21":"3","22":"ESP","23":"0.3698936","24":"1785","25":"0.0002294896","26":"0.5882973","27":"1897","28":"0.001001647"},{"1":"pablo-mari","2":"Pablo Marí","3":"RCD Mallorca","4":"Spain","5":"31.08.1993","6":"191","7":"87","8":"Center Back","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"NA","18":"NA","19":"NA","20":"3","21":"3","22":"ESP","23":"0.3698936","24":"1785","25":"0.0002294896","26":"0.5882973","27":"1897","28":"0.001001647"},{"1":"ruben-pena","2":"Rubén Peña","3":"Real Valladolid","4":"Spain","5":"18.07.1991","6":"172","7":"70","8":"Right Midfielder","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"NA","18":"NA","19":"NA","20":"3","21":"3","22":"ESP","23":"0.3698936","24":"1785","25":"0.0002294896","26":"0.5882973","27":"1897","28":"0.001001647"},{"1":"aaron-hughes","2":"Aaron Hughes","3":"Fulham FC","4":"England","5":"08.11.1979","6":"182","7":"71","8":"Center Back","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"3868.jpg","18":"0.25","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"aleksandar-kolarov","2":"Aleksandar Kolarov","3":"Manchester City","4":"England","5":"10.11.1985","6":"187","7":"80","8":"Left Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"47704.jpg","18":"0.00","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"alexander-tettey","2":"Alexander Tettey","3":"Norwich City","4":"England","5":"04.04.1986","6":"180","7":"68","8":"Defensive Midfielder","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"22356.jpg","18":"1.00","19":"1.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"anders-lindegaard","2":"Anders Lindegaard","3":"Manchester United","4":"England","5":"13.04.1984","6":"193","7":"80","8":"Goalkeeper","9":"1","10":"0","11":"1","12":"0","13":"0","14":"0","15":"0","16":"0","17":"16528.jpg","18":"0.25","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"andreas-beck","2":"Andreas Beck","3":"1899 Hoffenheim","4":"Germany","5":"13.03.1987","6":"180","7":"70","8":"Right Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"36499.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"antonio-rukavina","2":"Antonio Rukavina","3":"Real Valladolid","4":"Spain","5":"26.01.1984","6":"177","7":"74","8":"Right Fullback","9":"2","10":"2","11":"0","12":"0","13":"0","14":"1","15":"0","16":"0","17":"59786.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"ashkan-dejagah","2":"Ashkan Dejagah","3":"Fulham FC","4":"England","5":"05.07.1986","6":"181","7":"74","8":"Left Winger","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"23229.jpg","18":"0.50","19":"0.50","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"benedikt-hoewedes","2":"Benedikt Höwedes","3":"FC Schalke 04","4":"Germany","5":"29.02.1988","6":"187","7":"80","8":"Center Back","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"59387.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"chris-baird","2":"Chris Baird","3":"Fulham FC","4":"England","5":"25.02.1982","6":"186","7":"77","8":"Defensive Midfielder","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"8252.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"chris-brunt","2":"Chris Brunt","3":"West Bromwich Albion","4":"England","5":"14.12.1984","6":"185","7":"74","8":"NA","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"33783.jpg","18":"0.00","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"daniel-schwaab","2":"Daniel Schwaab","3":"Bayer Leverkusen","4":"Germany","5":"23.08.1988","6":"186","7":"76","8":"Right Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"57169.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"dennis-aogo","2":"Dennis Aogo","3":"Hamburger SV","4":"Germany","5":"14.01.1987","6":"184","7":"85","8":"Left Fullback","9":"1","10":"1","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"26844.jpg","18":"0.50","19":"0.50","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"george-mccartney","2":"George McCartney","3":"West Ham United","4":"England","5":"29.04.1981","6":"180","7":"74","8":"Left Fullback","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"8255.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"gylfi-sigurdsson","2":"Gylfi Sigurðsson","3":"Tottenham Hotspur","4":"England","5":"08.09.1989","6":"186","7":"77","8":"Attacking Midfielder","9":"1","10":"0","11":"1","12":"0","13":"1","14":"0","15":"0","16":"0","17":"99196.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"ivan-obradovic","2":"Ivan Obradović","3":"Real Zaragoza","4":"Spain","5":"25.07.1988","6":"181","7":"74","8":"Left Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"1","15":"0","16":"0","17":"86306.jpg","18":"0.00","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>playerShort</td>
+<td>Unique player identifier</td>
+</tr>
+<tr class="even">
+<td>player</td>
+<td>Player’s full name</td>
+</tr>
+<tr class="odd">
+<td>club</td>
+<td>Player’s club/team</td>
+</tr>
+<tr class="even">
+<td>leagueCountry</td>
+<td>Country of the league the player belongs to</td>
+</tr>
+<tr class="odd">
+<td>birthday</td>
+<td>Player’s birth date (DD.MM.YYYY)</td>
+</tr>
+<tr class="even">
+<td>height</td>
+<td>Player’s height in centimeters</td>
+</tr>
+<tr class="odd">
+<td>weight</td>
+<td>Player’s weight in kilograms</td>
+</tr>
+<tr class="even">
+<td>position</td>
+<td>Player’s position on the team (e.g.&nbsp;Goalkeeper, Defensive Midfielder, etc.)</td>
+</tr>
+<tr class="odd">
+<td>games</td>
+<td>Number of games played by this player with this referee</td>
+</tr>
+<tr class="even">
+<td>victories</td>
+<td>Of those games, the number won by the player’s team</td>
+</tr>
+<tr class="odd">
+<td>ties</td>
+<td>Of those games, the number tied by the player’s team</td>
+</tr>
+<tr class="even">
+<td>defeats</td>
+<td>Of those games, the number lost by the player’s team</td>
+</tr>
+<tr class="odd">
+<td>goals</td>
+<td>Number of goals scored by this player</td>
+</tr>
+<tr class="even">
+<td>yellowCards</td>
+<td>Number of yellow cards received by this player from this referee</td>
+</tr>
+<tr class="odd">
+<td>yellowReds</td>
+<td>Number of double yellow cards received by this player from this referee</td>
+</tr>
+<tr class="even">
+<td>redCards</td>
+<td>Number of red cards received by this player from this referee</td>
+</tr>
+<tr class="odd">
+<td>photoID</td>
+<td>ID of the player’s photo</td>
+</tr>
+<tr class="even">
+<td>rater1</td>
+<td>Rating of player’s skin tone by the first rater (1 to 5 scale, where 1 is “very light skin” and 5 is “very dark skin”)</td>
+</tr>
+<tr class="odd">
+<td>rater2</td>
+<td>Rating of player’s skin tone by the second rater (1 to 5 scale)</td>
+</tr>
+<tr class="even">
+<td>refNum</td>
+<td>Referee’s identification number</td>
+</tr>
+<tr class="odd">
+<td>refCountry</td>
+<td>Referee’s country identification number</td>
+</tr>
+<tr class="even">
+<td>Alpha_3</td>
+<td>Referee’s country three-letter code</td>
+</tr>
+<tr class="odd">
+<td>meanIAT</td>
+<td>Mean implicit bias score (from the Implicit Association Test) for the referee’s country; larger values indicate higher implicit bias</td>
+</tr>
+<tr class="even">
+<td>nIAT</td>
+<td>Sample size for the IAT score in the referee’s country</td>
+</tr>
+<tr class="odd">
+<td>seIAT</td>
+<td>Standard error for the IAT score</td>
+</tr>
+<tr class="even">
+<td>meanExp</td>
+<td>Mean explicit bias score for the referee’s country; higher feelings indicate higher explicit bias</td>
+</tr>
+<tr class="odd">
+<td>nExp</td>
+<td>Sample size for the explicit bias score in that country</td>
+</tr>
+<tr class="even">
+<td>seExp</td>
+<td>Standard error for the explicit bias score</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>The original primary research question was “whether soccer players with dark skin tone are more likely than those with light skin tone to receive red cards from referees”. Conduct an analysis and report your results.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., … Nosek, B. A. (2018). “Many analysts, one data set: Making transparent how variations in analytic choices affect results”. <em>Advances in Methods and Practices in Psychological Science</em>, 1(3), 337–356. <a href="https://doi.org/10.1177/2515245917747646" class="uri">https://doi.org/10.1177/2515245917747646</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/many-analysts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
