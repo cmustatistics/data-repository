@@ -61,7 +61,7 @@ preview_datasets()
 | place 	| Place the survey was conducted |
 | BMI 	| Body mass index, calculated from height and weight |
 | HealthIns 	| Whether the respondent has health insurance |
-| RecExam 	| Time since the respondent last visited a doctor with symptoms of a disease (less12 = less than 12 months, b1224 = between 12 and 24 months, g24 = over 24 months, unknown = respondent doesn't know) |
+| RecExam 	| Time since the respondent last visited a doctor with symptoms of a disease (less12 = less than 12 months, b1224 = between 12 and 24 months, g24 = over 24 months, unknow \[sic\] = respondent doesn't know) |
 | RecPerExam 	| Time since respondent last visited a doctor for a check-up, not prompted by a specific illness. Coded in the same way |
 | ReaExam 	| Reason for their last check-up (noti.disease = concern over illness or epidemic, adv.sig = worrying symptoms, request = requested by an employer or insurance company, volunteer = no immediate reason) |
 | Wsttime 	| Does the respondent believe check-ups are a waste of time? |
