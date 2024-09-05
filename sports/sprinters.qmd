@@ -1,0 +1,73 @@
+---
+title: Sprint 100m times
+author: Will Townes
+date: August 30, 2024
+description: The 1000 fastest times ever recorded for the 100m sprint, in men's and women's track.
+categories:
+  - data cleaning
+  - EDA
+  - split/apply/combine
+data:
+  year: 2021
+  files: 
+  - sprint_m.txt
+  - sprint_w.txt
+---
+
+## Motivation
+
+This data was scraped from [http://www.alltime-athletics.com/m_100ok.htm](http://www.alltime-athletics.com/m_100ok.htm)
+and [http://www.alltime-athletics.com/w_100ok.htm](http://www.alltime-athletics.com/w_100ok.htm). 
+It has been used as a practice for split-apply-combine operations in classes.
+
+## Data
+
+Each row is a record for the 100m sprint. There are two files, one for males
+and one for females. The formats are the same in each file. Each file contains
+1000 data points.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+rt<-function(x){
+  read.table(file.path("../data",x), sep="\t", quote="", header=TRUE)
+}
+datasets<-sapply(c("sprint_m.txt","sprint_w.txt"),rt,simplify=FALSE)
+preview_datasets(datasets=datasets)
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| Rank | Ranking of the time |
+| Time | Number of seconds to complete the 100m sprint |
+| Wind | Windspeed in meters per second. Positive number is a tailwind. |
+| Name | Name of the sprinter. |
+| Country | Country the sprinter represented. |
+| Birthdate | When the sprinter was born (format DD.MM.YY) |
+| City | Where the race took place. |
+| Date | When the race took place (format DD.MM.YYYY) |
+
+The format is the same in both data files.
+
+## Questions
+
+Since the birthdate is listed with only two digits for the year, this
+is a good opportunity for checking for outliers with graphs and data cleaning.
+Also, there are plenty of ways to split-apply-combine the data to practice
+with pandas or dplyr operations. For example, find the fastest time achieved
+by each country, or examine whether the fastest time in a given year has been
+decreasing over time. Is the fastest time correlated with the wind speed? 
+Are certain cities more likely to produce fast times?
+
+## References
+
+Give references to the original source here, such as by pasting the journal
+citation:
+
+http://www.alltime-athletics.com
+
+Copyright held by Peter Larsson, email: `kl78vc` at `alltime-athletics.com`. 
+Approval was granted on Sept 2024.
