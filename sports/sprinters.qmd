@@ -1,8 +1,8 @@
 ---
-title: Sprint 100m times
+title: Fastest 100m sprint times
 author: Will Townes
 date: August 30, 2024
-description: The 1000 fastest times ever recorded for the 100m sprint, in men's and women's track.
+description: Explore the 1,000 fastest times ever recorded for the 100m sprint, in men's and women's track, cleaning the data and conducting EDA.
 categories:
   - data cleaning
   - EDA
@@ -16,25 +16,27 @@ data:
 
 ## Motivation
 
-This data was scraped from [http://www.alltime-athletics.com/m_100ok.htm](http://www.alltime-athletics.com/m_100ok.htm)
-and [http://www.alltime-athletics.com/w_100ok.htm](http://www.alltime-athletics.com/w_100ok.htm). 
-It has been used as a practice for split-apply-combine operations in classes.
+This data comes from a compilation of official times for runners in 100m sprint
+events around the world.
 
 ## Data
 
-Each row is a record for the 100m sprint. There are two files, one for males
-and one for females. The formats are the same in each file. Each file contains
-1000 data points.
+There are two files, one for men and one for women. Each contains the top 1,000
+times (as of 2021) for men or women in the 100m sprint. Each row represents one
+time.
+
+Both data files are in tab-separated format.
 
 ### Data preview
 
 ```{r, echo=FALSE, results="asis"}
 source("../preview_dataset.R")
-rt<-function(x){
-  read.table(file.path("../data",x), sep="\t", quote="", header=TRUE)
+rt <- function(x) {
+  read.table(file.path("../data", x), sep = "\t", quote = "", header = TRUE)
 }
-datasets<-sapply(c("sprint_m.txt","sprint_w.txt"),rt,simplify=FALSE)
-preview_datasets(datasets=datasets)
+datasets <- sapply(c("sprint_m.txt", "sprint_w.txt"), rt, simplify = FALSE)
+
+preview_datasets(datasets = datasets)
 ```
 
 ### Variable descriptions
@@ -42,7 +44,7 @@ preview_datasets(datasets=datasets)
 | Variable | Description |
 |----|-------------|
 | Rank | Ranking of the time |
-| Time | Number of seconds to complete the 100m sprint |
+| Time | Number of seconds to complete the 100m sprint. Times have an "A" suffix if the event was at an altitude greater than 1,000 meters above sea level (e.g. "10.36A"). |
 | Wind | Windspeed in meters per second. Positive number is a tailwind. |
 | Name | Name of the sprinter. |
 | Country | Country the sprinter represented. |
@@ -54,20 +56,43 @@ The format is the same in both data files.
 
 ## Questions
 
-Since the birthdate is listed with only two digits for the year, this
-is a good opportunity for checking for outliers with graphs and data cleaning.
-Also, there are plenty of ways to split-apply-combine the data to practice
-with pandas or dplyr operations. For example, find the fastest time achieved
-by each country, or examine whether the fastest time in a given year has been
-decreasing over time. Is the fastest time correlated with the wind speed? 
-Are certain cities more likely to produce fast times?
+This dataset provides many opportunities for data cleaning, wrangling, and EDA.
+For instance, in data cleaning:
+
+1. The `Time` column contains a suffix to indicate if the event was at altitude.
+   Create a new `Altitude` column that is true if the event was at altitude, and
+   adjust `Time` to contain only the time as a number.
+2. Some of the text columns contain special characters encoded as [HTML
+   entities](https://developer.mozilla.org/en-US/docs/Glossary/Character_reference).
+   For instance, ü is written `&uuml;`. Use a package that can decode these to
+   convert the text back to a readable format.
+3. Convert the `Birthdate` and `Date` columns to your programming language's
+   date objects (such as `datetime.date` in Python or `Date` objects in R). How
+   do you handle two-digit years and determine which century they occurred in?
+
+
+For data wrangling and split-apply-combine operations:
+
+1. Find the fastest time achieved by runners of each country.
+2. Find the fastest time recorded each year. Is this increasing or decreasing
+   over time?
+3. Which sprinters have the most times in the top 1,000?
+
+
+For EDA:
+
+1. Is the race time correlated with the wind speed? Do tailwinds make runners
+   faster?
+2. Do certain cities have faster average times than others?
+
 
 ## References
 
-Give references to the original source here, such as by pasting the journal
-citation:
+Data scraped from Peter Larsson's [Track and Field all-time Performances
+Homepage](http://www.alltime-athletics.com):
 
-http://www.alltime-athletics.com
+- [Men's 100 meters](http://www.alltime-athletics.com/m_100ok.htm)
+- [Women's 100 meters](http://www.alltime-athletics.com/w_100ok.htm)
 
 Copyright held by Peter Larsson, email: `kl78vc` at `alltime-athletics.com`. 
-Approval was granted on Sept 2024.
+Approval to redistribute was granted in September 2024.
