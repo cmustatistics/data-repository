@@ -6,6 +6,6 @@ _site/
 
 # Ignore metadata, since it is auto-generated
 metadata.json
-.Rproj.user
 
-_freeze
+# RStudio project data
+.Rproj.user
