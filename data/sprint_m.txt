@@ -1,0 +1,1001 @@
+Rank	Time	Wind	Name	Country	Birthdate	City	Date
+1	9.58	+0.9	Usain Bolt	JAM	21.08.86	Berlin	16.08.2009
+2	9.63	+1.5	Usain Bolt	JAM	21.08.86	London	05.08.2012
+3	9.69	0.0	Usain Bolt	JAM	21.08.86	Beijing	16.08.2008
+3	9.69	+2.0	Tyson Gay	USA	09.08.82	Shanghai	20.09.2009
+3	9.69	-0.1	Yohan Blake	JAM	26.12.89	Lausanne	23.08.2012
+6	9.71	+0.9	Tyson Gay	USA	09.08.82	Berlin	16.08.2009
+7	9.72	+1.7	Usain Bolt	JAM	21.08.86	New York City	31.05.2008
+7	9.72	+0.2	Asafa Powell	JAM	23.11.82	Lausanne	02.09.2008
+9	9.74	+1.7	Asafa Powell	JAM	23.11.82	Rieti	09.09.2007
+9	9.74	+0.9	Justin Gatlin	USA	10.02.82	Ad-Dawhah	15.05.2015
+11	9.75	+1.1	Yohan Blake	JAM	26.12.89	Kingston	29.06.2012
+11	9.75	+1.5	Yohan Blake	JAM	26.12.89	London	05.08.2012
+11	9.75	+0.9	Justin Gatlin	USA	10.02.82	Roma	04.06.2015
+11	9.75	+1.4	Justin Gatlin	USA	10.02.82	Lausanne	09.07.2015
+15	9.76	+1.8	Usain Bolt	JAM	21.08.86	Kingston	03.05.2008
+15	9.76	+1.3	Usain Bolt	JAM	21.08.86	Bruxelles	16.09.2011
+15	9.76	-0.1	Usain Bolt	JAM	21.08.86	Roma	31.05.2012
+15	9.76	+1.4	Yohan Blake	JAM	26.12.89	Z&uuml;rich	30.08.2012
+15	9.76	+0.6	Christian Coleman	USA	06.03.96	Ad-Dawhah	28.09.2019
+20	9.77	+1.6	Asafa Powell	JAM	23.11.82	Ath&iacute;nai	14.06.2005
+20	9.77	+1.5	Asafa Powell	JAM	23.11.82	Gateshead	11.06.2006
+20	9.77	+1.0	Asafa Powell	JAM	23.11.82	Z&uuml;rich	18.08.2006
+20	9.77	+1.6	Tyson Gay	USA	09.08.82	Eugene	28.06.2008
+20	9.77	-1.3	Usain Bolt	JAM	21.08.86	Bruxelles	05.09.2008
+20	9.77	+0.9	Asafa Powell	JAM	23.11.82	Rieti	07.09.2008
+20	9.77	+0.4	Tyson Gay	USA	09.08.82	Roma	10.07.2009
+20	9.77	-0.3	Usain Bolt	JAM	21.08.86	Moskva	11.08.2013
+20	9.77	+0.6	Justin Gatlin	USA	10.02.82	Bruxelles	05.09.2014
+20	9.77	+0.9	Justin Gatlin	USA	10.02.82	Beijing	23.08.2015
+20	9.77	+1.5	Trayvon Bromell	USA	10.07.95	Miramar	05.06.2021
+31	9.78	0.0	Asafa Powell	JAM	23.11.82	Rieti	09.09.2007
+31	9.78	-0.4	Tyson Gay	USA	09.08.82	London	13.08.2010
+31	9.78	+0.9	Nesta Carter	JAM	11.10.85	Rieti	29.08.2010
+31	9.78	+1.0	Asafa Powell	JAM	23.11.82	Lausanne	30.06.2011
+31	9.78	-0.3	Justin Gatlin	USA	10.02.82	Monaco	17.07.2015
+36	9.79	+0.1	Maurice Greene	USA	23.07.74	Ath&iacute;nai	16.06.1999
+36	9.79	-0.2	Usain Bolt	JAM	21.08.86	Saint-Denis	17.07.2009
+36	9.79	+0.1	Tyson Gay	USA	09.08.82	Bruxelles	27.08.2010
+36	9.79	+1.1	Tyson Gay	USA	09.08.82	Clermont	04.06.2011
+36	9.79	+0.6	Usain Bolt	JAM	21.08.86	Oslo	07.06.2012
+36	9.79	+1.5	Justin Gatlin	USA	10.02.82	London	05.08.2012
+36	9.79	-0.5	Usain Bolt	JAM	21.08.86	Beijing	23.08.2015
+36	9.79	-0.3	Christian Coleman	USA	06.03.96	Bruxelles	31.08.2018
+44	9.80	+0.2	Maurice Greene	USA	23.07.74	Sevilla	22.08.1999
+44	9.80	+1.3	Steve Mullings	JAM	29.11.82	Eugene	04.06.2011
+44	9.80	+1.8	Justin Gatlin	USA	10.02.82	Eugene	24.06.2012
+44	9.80	+0.6	Usain Bolt	JAM	21.08.86	Bruxelles	06.09.2013
+44	9.80	+0.1	Justin Gatlin	USA	10.02.82	Lausanne	03.07.2014
+44	9.80	-0.5	Justin Gatlin	USA	10.02.82	Beijing	23.08.2015
+44	9.80	+1.6	Justin Gatlin	USA	10.02.82	Eugene	03.07.2016
+44	9.80	+0.8	Trayvon Bromell	USA	10.07.95	Eugene	20.06.2021
+44	9.80	+0.1	Lamont Marcell Jacobs	ITA	26.09.94	Tokyo	01.08.2021
+53	9.81	0.0	Usain Bolt	JAM	21.08.86	Z&uuml;rich	28.08.2009
+53	9.81	+1.3	Asafa Powell	JAM	23.11.82	Saint-Denis	04.07.2015
+53	9.81	+0.2	Usain Bolt	JAM	21.08.86	Rio de Janeiro	14.08.2016
+53	9.81	-0.1	Christian Coleman	USA	06.03.96	Palo Alto	30.06.2019
+57	9.82	-0.2	Maurice Greene	USA	23.07.74	Edmonton	05.08.2001
+57	9.82	0.0	Asafa Powell	JAM	23.11.82	Monaco	29.07.2008
+57	9.82	+1.4	Asafa Powell	JAM	23.11.82	Rieti	07.09.2008
+57	9.82	+1.4	Asafa Powell	JAM	23.11.82	Szczecin	15.09.2009
+57	9.82	+0.6	Asafa Powell	JAM	23.11.82	Roma	10.06.2010
+57	9.82	+0.5	Usain Bolt	JAM	21.08.86	Lausanne	08.07.2010
+57	9.82	0.0	Yohan Blake	JAM	26.12.89	Z&uuml;rich	08.09.2011
+57	9.82	+0.1	Yohan Blake	JAM	26.12.89	Berlin	11.09.2011
+57	9.82	+1.8	Usain Bolt	JAM	21.08.86	Kingston	05.05.2012
+57	9.82	+0.7	Justin Gatlin	USA	10.02.82	London	05.08.2012
+57	9.82	+1.7	Richard Thompson	TTO	07.06.85	Port of Spain	21.06.2014
+57	9.82	-0.1	Justin Gatlin	USA	10.02.82	Linz	14.07.2014
+57	9.82	+1.3	Christian Coleman	USA	06.03.96	Eugene	07.06.2017
+70	9.83	-0.3	Asafa Powell	JAM	23.11.82	Stuttgart	22.09.2007
+70	9.83	-0.5	Usain Bolt	JAM	21.08.86	Z&uuml;rich	29.08.2008
+70	9.83	-1.3	Asafa Powell	JAM	23.11.82	Bruxelles	05.09.2008
+70	9.83	-0.5	Asafa Powell	JAM	23.11.82	Ostrava	27.05.2010
+70	9.83	+0.7	Justin Gatlin	USA	10.02.82	Rieti	07.09.2014
+70	9.83	+1.7	Justin Gatlin	USA	10.02.82	Eugene	03.07.2016
+70	9.83	+0.9	Su Bingtian	CHN	29.08.89	Tokyo	01.08.2021
+70	9.83	+0.9	Ronnie Baker	USA	15.10.93	Tokyo	01.08.2021
+78	9.84	+0.7	Donovan Bailey	CAN	16.12.67	Atlanta	27.07.1996
+78	9.84	+0.2	Bruny Surin	CAN	12.07.67	Sevilla	22.08.1999
+78	9.84	+1.8	Asafa Powell	JAM	23.11.82	Kingston	07.05.2005
+78	9.84	+1.0	Tyson Gay	USA	09.08.82	Z&uuml;rich	18.08.2006
+78	9.84	-0.5	Tyson Gay	USA	09.08.82	Indianapolis	22.06.2007
+78	9.84	-0.3	Asafa Powell	JAM	23.11.82	Bruxelles	14.09.2007
+78	9.84	+0.9	Asafa Powell	JAM	23.11.82	Berlin	16.08.2009
+78	9.84	-0.3	Usain Bolt	JAM	21.08.86	Saint-Denis	16.07.2010
+78	9.84	0.0	Tyson Gay	USA	09.08.82	Stockholm	06.08.2010
+78	9.84	+0.5	Yohan Blake	JAM	26.12.89	Georgetown	09.05.2012
+78	9.84	+1.8	Asafa Powell	JAM	23.11.82	Kingston	09.05.2015
+78	9.84	+1.3	Trayvon Bromell	USA	10.07.95	Eugene	25.06.2015
+78	9.84	+0.9	Asafa Powell	JAM	23.11.82	Kingston	26.06.2015
+78	9.84	+1.6	Trayvon Bromell	USA	10.07.95	Eugene	03.07.2016
+78	9.84	+1.2	Akani Simbine	RSA	21.09.93	Sz&eacute;kesfeh&eacute;rv&aacute;r	06.07.2021
+78	9.84	+0.1	Fred Kerley	USA	07.05.95	Tokyo	01.08.2021
+78	9.84	+0.9	Lamont Marcell Jacobs	ITA	26.09.94	Tokyo	01.08.2021
+95	9.85	+1.2	Leroy Burrell	USA	21.02.67	Lausanne	06.07.1994
+95	9.85	+0.8	Maurice Greene	USA	23.07.74	Roma	07.07.1999
+95	9.85	+0.6	Justin Gatlin	USA	10.02.82	Ath&iacute;nai	22.08.2004
+95	9.85	+0.6	Asafa Powell	JAM	23.11.82	Ostrava	09.06.2005
+95	9.85	+1.7	Olusoji Adekotunbo Fasuba	NGR	09.07.84	Ad-Dawhah	12.05.2006
+95	9.85	+0.1	Asafa Powell	JAM	23.11.82	Saint-Denis	08.07.2006
+95	9.85	+0.5	Asafa Powell	JAM	23.11.82	Roma	14.07.2006
+95	9.85	-0.5	Tyson Gay	USA	09.08.82	Osaka	26.08.2007
+95	9.85	+1.7	Tyson Gay	USA	09.08.82	New York City	31.05.2008
+95	9.85	-0.1	Usain Bolt	JAM	21.08.86	Kingston	28.06.2008
+95	9.85	-0.1	Usain Bolt	JAM	21.08.86	Beijing	16.08.2008
+95	9.85	+2.0	Asafa Powell	JAM	23.11.82	Shanghai	20.09.2009
+95	9.85	+0.1	Nesta Carter	JAM	11.10.85	Bruxelles	27.08.2010
+95	9.85	+1.3	Mike Rodgers	USA	24.04.85	Eugene	04.06.2011
+95	9.85	+1.0	Richard Thompson	TTO	07.06.85	Port of Spain	13.08.2011
+95	9.85	+0.1	Usain Bolt	JAM	21.08.86	Zagreb	13.09.2011
+95	9.85	+0.6	Asafa Powell	JAM	23.11.82	Oslo	07.06.2012
+95	9.85	+1.6	Yohan Blake	JAM	26.12.89	Luzern	17.07.2012
+95	9.85	+1.7	Yohan Blake	JAM	26.12.89	London	05.08.2012
+95	9.85	+0.2	Usain Bolt	JAM	21.08.86	London	26.07.2013
+95	9.85	-0.3	Justin Gatlin	USA	10.02.82	Moskva	11.08.2013
+95	9.85	+0.9	Christian Coleman	USA	06.03.96	Oslo	13.06.2019
+95	9.85	+1.5	Marvin Bracy	USA	15.12.93	Miramar	05.06.2021
+95	9.85	+0.8	Ronnie Baker	USA	15.10.93	Eugene	20.06.2021
+95	9.85	-0.4	Marvin Bracy	USA	15.12.93	Memphis	15.08.2021
+120	9.86	+1.2	Carl Lewis	USA	01.07.61	Tokyo	25.08.1991
+120	9.86	-0.4	Frank Fredericks	NAM	02.10.67	Lausanne	03.07.1996
+120	9.86	+0.2	Maurice Greene	USA	23.07.74	Ath&iacute;nai	03.08.1997
+120	9.86	+1.8	Ato Boldon	TTO	30.12.73	Walnut	19.04.1998
+120	9.86	-0.4	Ato Boldon	TTO	30.12.73	Ath&iacute;nai	17.06.1998
+120	9.86	+0.1	Ato Boldon	TTO	30.12.73	Ath&iacute;nai	16.06.1999
+120	9.86	+0.4	Ato Boldon	TTO	30.12.73	Lausanne	02.07.1999
+120	9.86	-0.2	Maurice Greene	USA	23.07.74	Berlin	01.09.2000
+120	9.86	+0.6	Francis Obikwelu	POR	22.11.78	Ath&iacute;nai	22.08.2004
+120	9.86	+0.2	Asafa Powell	JAM	23.11.82	Stockholm	25.07.2006
+120	9.86	-0.5	Asafa Powell	JAM	23.11.82	Berlin	03.09.2006
+120	9.86	-0.2	Usain Bolt	JAM	21.08.86	Kingston	27.06.2009
+120	9.86	+0.1	Usain Bolt	JAM	21.08.86	Daegu	19.05.2010
+120	9.86	+1.0	Nesta Carter	JAM	11.10.85	Nottwil	08.08.2010
+120	9.86	+2.0	Asafa Powell	JAM	23.11.82	Budapest	30.07.2011
+120	9.86	+1.4	Keston Bledman	TTO	08.03.88	Port of Spain	23.06.2012
+120	9.86	+1.8	Tyson Gay	USA	09.08.82	Eugene	24.06.2012
+120	9.86	+1.1	Usain Bolt	JAM	21.08.86	Kingston	29.06.2012
+120	9.86	+0.3	Usain Bolt	JAM	21.08.86	Bruxelles	07.09.2012
+120	9.86	-0.4	Justin Gatlin	USA	10.02.82	Ostrava	17.06.2014
+120	9.86	+1.1	Keston Bledman	TTO	08.03.88	Port of Spain	27.06.2015
+120	9.86	+1.3	Jimmy Vicaut	FRA	27.02.92	Saint-Denis	04.07.2015
+120	9.86	+0.9	Mike Rodgers	USA	24.04.85	Beijing	23.08.2015
+120	9.86	+1.8	Jimmy Vicaut	FRA	27.02.92	Montreuil	07.06.2016
+120	9.86	+2.0	Trayvon Bromell	USA	10.07.95	Eugene	03.07.2016
+120	9.86	+0.2	Usain Bolt	JAM	21.08.86	Rio de Janeiro	14.08.2016
+120	9.86	+0.9	Noah Lyles	USA	18.07.97	Shanghai	18.05.2019
+120	9.86	+0.9	Christian Coleman	USA	06.03.96	Shanghai	18.05.2019
+120	9.86	+0.8	Divine Oduduru	NGR	07.10.96	Austin	07.06.2019
+120	9.86	+1.6	Michael Norman	USA	03.12.97	Fort Worth	20.07.2020
+120	9.86	+0.8	Fred Kerley	USA	07.05.95	Eugene	20.06.2021
+120	9.86	+0.6	Ferdinand Omurwa	KEN	02.01.96	Andorf	14.08.2021
+152	9.87	+0.3	Linford Christie	GBR	02.04.60	Stuttgart	15.08.1993
+152	9.87	+1.9	Frank Fredericks	NAM	02.10.67	Helsinki	25.06.1996
+152	9.87	+1.3	Ato Boldon	TTO	30.12.73	Ath&iacute;nai	02.08.1997
+152	9.87A	-0.2	Obadele Thompson	BAR	30.03.76	Johannesburg	11.09.1998
+152	9.87	+0.6	Maurice Greene	USA	23.07.74	Stockholm	30.07.1999
+152	9.87	-0.3	Maurice Greene	USA	23.07.74	Sydney	23.09.2000
+152	9.87	+0.6	Maurice Greene	USA	23.07.74	Ath&iacute;nai	22.08.2004
+152	9.87	+0.2	Asafa Powell	JAM	23.11.82	Bruxelles	03.09.2004
+152	9.87	+0.7	Asafa Powell	JAM	23.11.82	Gateshead	31.08.2008
+152	9.87	+0.4	Asafa Powell	JAM	23.11.82	Stuttgart	13.09.2008
+152	9.87	+0.4	Justin Gatlin	USA	10.02.82	Ad-Dawhah	11.05.2012
+152	9.87	+1.0	Usain Bolt	JAM	21.08.86	London	05.08.2012
+152	9.87	+1.8	Nesta Carter	JAM	11.10.85	Madrid	13.07.2013
+152	9.87	0.0	Justin Gatlin	USA	10.02.82	Beijing	21.05.2014
+152	9.87	+1.6	Asafa Powell	JAM	23.11.82	Austin	23.08.2014
+152	9.87	0.0	Tyson Gay	USA	09.08.82	Eugene	26.06.2015
+152	9.87	0.0	Asafa Powell	JAM	23.11.82	Luzern	14.07.2015
+152	9.87	0.0	Asafa Powell	JAM	23.11.82	Bellinzona	21.07.2015
+152	9.87	-1.2	Usain Bolt	JAM	21.08.86	London	24.07.2015
+152	9.87	-0.8	Usain Bolt	JAM	21.08.86	London	24.07.2015
+152	9.87	-0.1	Ronnie Baker	USA	15.10.93	Chorz&oacute;w	22.08.2018
+152	9.87	-0.1	Justin Gatlin	USA	10.02.82	Palo Alto	30.06.2019
+174	9.88	+1.2	Leroy Burrell	USA	21.02.67	Tokyo	25.08.1991
+174	9.88	-0.1	Ato Boldon	TTO	30.12.73	Kuala Lumpur	17.09.1998
+174	9.88	+2.0	Ato Boldon	TTO	30.12.73	Oslo	13.07.2001
+174	9.88	+1.8	Shawn Crawford	USA	14.01.78	Eugene	19.06.2004
+174	9.88	+0.4	Justin Gatlin	USA	10.02.82	Helsinki	07.08.2005
+174	9.88	+2.0	Tyson Gay	USA	09.08.82	R&eacute;thymno	21.07.2006
+174	9.88	+1.1	Tyson Gay	USA	09.08.82	Ath&iacute;nai	16.09.2006
+174	9.88	+0.4	Asafa Powell	JAM	23.11.82	Stockholm	22.07.2008
+174	9.88	+0.4	Asafa Powell	JAM	23.11.82	Roma	10.07.2009
+174	9.88	0.0	Asafa Powell	JAM	23.11.82	Z&uuml;rich	28.08.2009
+174	9.88	-0.2	Tyson Gay	USA	09.08.82	Thessalon&iacute;ki	12.09.2009
+174	9.88	+1.2	Asafa Powell	JAM	23.11.82	Ostrava	27.05.2010
+174	9.88	+1.0	Walter Dix	USA	31.01.86	Nottwil	08.08.2010
+174	9.88	+0.9	Ryan Bailey	USA	13.04.89	Rieti	29.08.2010
+174	9.88	+1.0	Michael Frater	JAM	06.10.82	Lausanne	30.06.2011
+174	9.88	+1.0	Usain Bolt	JAM	21.08.86	Monaco	22.07.2011
+174	9.88	+0.4	Asafa Powell	JAM	23.11.82	Ad-Dawhah	11.05.2012
+174	9.88	+1.1	Asafa Powell	JAM	23.11.82	Kingston	29.06.2012
+174	9.88	+1.5	Ryan Bailey	USA	13.04.89	London	04.08.2012
+174	9.88	+1.5	Ryan Bailey	USA	13.04.89	London	05.08.2012
+174	9.88	+1.5	Tyson Gay	USA	09.08.82	Eugene	30.05.2015
+174	9.88	+1.4	Mike Rodgers	USA	24.04.85	Madrid	11.07.2015
+174	9.88	+1.0	Usain Bolt	JAM	21.08.86	Kingston	11.06.2016
+174	9.88	+1.9	Jimmy Vicaut	FRA	27.02.92	Angers	25.06.2016
+174	9.88	+1.1	Noah Lyles	USA	18.07.97	Des Moines	22.06.2018
+174	9.88	+0.8	Ronnie Baker	USA	15.10.93	Paris	30.06.2018
+174	9.88	-0.3	Christian Coleman	USA	06.03.96	Ad-Dawhah	28.09.2019
+174	9.88	+1.5	Trayvon Bromell	USA	10.07.95	Jacksonville	30.04.2021
+174	9.88	+1.9	Ronnie Baker	USA	15.10.93	Eugene	19.06.2021
+203	9.89	+0.7	Frank Fredericks	NAM	02.10.67	Atlanta	27.07.1996
+203	9.89	+0.8	Ato Boldon	TTO	30.12.73	Modesto	10.05.1997
+203	9.89	+1.5	Bruny Surin	CAN	12.07.67	Montr&eacute;al	01.08.1998
+203	9.89	+0.9	Maurice Greene	USA	23.07.74	Roma	12.07.2002
+203	9.89	0.0	Shawn Crawford	USA	14.01.78	Ath&iacute;nai	21.08.2004
+203	9.89	+0.6	Shawn Crawford	USA	14.01.78	Ath&iacute;nai	22.08.2004
+203	9.89	+1.0	Justin Gatlin	USA	10.02.82	London	22.07.2005
+203	9.89	+0.9	Asafa Powell	JAM	23.11.82	Stuttgart	09.09.2006
+203	9.89	+1.6	Travis Padgett	USA	13.12.86	Eugene	28.06.2008
+203	9.89	+1.6	Darvis Patton	USA	04.12.77	Eugene	28.06.2008
+203	9.89	+0.4	Usain Bolt	JAM	21.08.86	Stockholm	22.07.2008
+203	9.89	0.0	Richard Thompson	TTO	07.06.85	Beijing	16.08.2008
+203	9.89	+1.1	Asafa Powell	JAM	23.11.82	Szczecin	17.09.2008
+203	9.89	+0.2	Usain Bolt	JAM	21.08.86	Berlin	16.08.2009
+203	9.89	+2.0	Darvis Patton	USA	04.12.77	Shanghai	20.09.2009
+203	9.89	-0.4	Yohan Blake	JAM	26.12.89	London	13.08.2010
+203	9.89	+2.0	Steve Mullings	JAM	29.11.82	Clermont	21.05.2011
+203	9.89	+1.3	Ngonidzashe Makusha	ZIM	11.03.87	Des Moines	10.06.2011
+203	9.89	+1.3	Nesta Carter	JAM	11.10.85	Bruxelles	16.09.2011
+203	9.89	+0.9	Keston Bledman	TTO	08.03.88	Orlando	26.05.2012
+203	9.89	+1.1	Justin Gatlin	USA	10.02.82	Des Moines	21.06.2013
+203	9.89	+1.9	Akani Simbine	RSA	21.09.93	Sz&eacute;kesfeh&eacute;rv&aacute;r	18.07.2016
+203	9.89	+0.2	Justin Gatlin	USA	10.02.82	Rio de Janeiro	14.08.2016
+203	9.89	+1.4	Mike Rodgers	USA	24.04.85	Des Moines	21.06.2018
+203	9.89	+0.7	Noah Lyles	USA	18.07.97	Des Moines	22.06.2018
+203	9.89	+0.6	Justin Gatlin	USA	10.02.82	Ad-Dawhah	28.09.2019
+203	9.89	+0.2	Isiah Young	USA	05.01.90	Clermont	30.05.2021
+203	9.89	+0.8	Kenneth Bednarek	USA	14.10.98	Eugene	20.06.2021
+203	9.89	+0.1	Andre De Grasse	CAN	10.11.94	Tokyo	01.08.2021
+232	9.90	+1.9	Leroy Burrell	USA	21.02.67	New York City	14.06.1991
+232	9.90	+0.7	Ato Boldon	TTO	30.12.73	Atlanta	27.07.1996
+232	9.90	+0.2	Maurice Greene	USA	23.07.74	Indianapolis	13.06.1997
+232	9.90	+1.0	Maurice Greene	USA	23.07.74	Lausanne	02.07.1997
+232	9.90	0.0	Ato Boldon	TTO	30.12.73	Stuttgart	13.07.1997
+232	9.90	+1.3	Maurice Greene	USA	23.07.74	Ath&iacute;nai	02.08.1997
+232	9.90	+0.5	Maurice Greene	USA	23.07.74	Ath&iacute;nai	03.08.1997
+232	9.90	+0.2	Frank Fredericks	NAM	02.10.67	Bruxelles	22.08.1997
+232	9.90	+0.3	Maurice Greene	USA	23.07.74	Stockholm	05.08.1998
+232	9.90	+0.3	Maurice Greene	USA	23.07.74	Eugene	21.06.2001
+232	9.90	+1.1	Maurice Greene	USA	23.07.74	Lausanne	04.07.2001
+232	9.90	+0.5	Asafa Powell	JAM	23.11.82	Roma	13.07.2007
+232	9.90	+1.0	Asafa Powell	JAM	23.11.82	Kingston	27.06.2008
+232	9.90	-0.4	Asafa Powell	JAM	23.11.82	Bruxelles	04.09.2009
+232	9.90	-0.2	Asafa Powell	JAM	23.11.82	Thessalon&iacute;ki	12.09.2009
+232	9.90	+2.0	Steve Mullings	JAM	29.11.82	Starkville	16.04.2011
+232	9.90	+0.6	Asafa Powell	JAM	23.11.82	Kingston	24.06.2011
+232	9.90	+1.0	Nesta Carter	JAM	11.10.85	Monaco	22.07.2011
+232	9.90	+1.8	Asafa Powell	JAM	23.11.82	Budapest	30.07.2011
+232	9.90	+1.6	Yohan Blake	JAM	26.12.89	Kingston	14.04.2012
+232	9.90	+1.3	Justin Gatlin	USA	10.02.82	Eugene	02.06.2012
+232	9.90	+0.7	Yohan Blake	JAM	26.12.89	New York City	09.06.2012
+232	9.90	+1.7	Justin Gatlin	USA	10.02.82	Eugene	23.06.2012
+232	9.90	+0.4	Nickel Ashmeade	JAM	07.04.90	Moskva	11.08.2013
+232	9.90	-0.3	Usain Bolt	JAM	21.08.86	Z&uuml;rich	29.08.2013
+232	9.90	+0.6	Mike Rodgers	USA	24.04.85	Bruxelles	06.09.2013
+232	9.90	+0.7	Asafa Powell	JAM	23.11.82	Rieti	07.09.2014
+232	9.90	+1.5	Mike Rodgers	USA	24.04.85	Eugene	30.05.2015
+232	9.90	+1.7	Trayvon Bromell	USA	10.07.95	Eugene	10.06.2015
+232	9.90	-0.8	Mike Rodgers	USA	24.04.85	London	24.07.2015
+232	9.90	+0.9	Yohan Blake	JAM	26.12.89	Kingston	23.06.2017
+232	9.90	+1.1	Ronnie Baker	USA	15.10.93	Des Moines	22.06.2018
+232	9.90	+0.2	Ronnie Baker	USA	15.10.93	London	21.07.2018
+232	9.90	+0.1	Ronnie Baker	USA	15.10.93	London	21.07.2018
+232	9.90	+0.6	Andre De Grasse	CAN	10.11.94	Ad-Dawhah	28.09.2019
+232	9.90	+1.4	Trayvon Bromell	USA	10.07.95	Clermont	24.07.2020
+232	9.90	-0.3	Trayvon Bromell	USA	10.07.95	Eugene	20.06.2021
+232	9.90	+0.9	Akani Simbine	RSA	21.09.93	Tokyo	01.08.2021
+270	9.91	+1.9	Linford Christie	GBR	02.04.60	Victoria	23.08.1994
+270	9.91	+1.3	Donovan Bailey	CAN	16.12.67	Montr&eacute;al	15.07.1995
+270	9.91	+1.5	Dennis Mitchell	USA	20.02.66	Milano	07.09.1996
+270	9.91	+1.0	Frank Fredericks	NAM	02.10.67	Lausanne	02.07.1997
+270	9.91	+0.5	Donovan Bailey	CAN	16.12.67	Ath&iacute;nai	03.08.1997
+270	9.91	+0.2	Donovan Bailey	CAN	16.12.67	Ath&iacute;nai	03.08.1997
+270	9.91	-0.2	Maurice Greene	USA	23.07.74	Sevilla	21.08.1999
+270	9.91	-0.4	Maurice Greene	USA	23.07.74	Osaka	13.05.2000
+270	9.91	-0.3	Maurice Greene	USA	23.07.74	Ath&iacute;nai	11.06.2001
+270	9.91	-0.1	Asafa Powell	JAM	23.11.82	Kingston	26.06.2004
+270	9.91	0.0	Maurice Greene	USA	23.07.74	Sacramento	11.07.2004
+270	9.91	-0.3	Asafa Powell	JAM	23.11.82	London	30.07.2004
+270	9.91	-0.6	Asafa Powell	JAM	23.11.82	London	28.07.2006
+270	9.91	+0.9	Leonard Scott	USA	19.01.80	Stuttgart	09.09.2006
+270	9.91	-0.5	Derrick Atkins	BAH	05.01.84	Osaka	26.08.2007
+270	9.91	+0.3	Asafa Powell	JAM	23.11.82	Beijing	16.08.2008
+270	9.91	0.0	Walter Dix	USA	31.01.86	Beijing	16.08.2008
+270	9.91	-0.2	Daniel Bailey	ANT	09.09.86	Saint-Denis	17.07.2009
+270	9.91	-1.7	Usain Bolt	JAM	21.08.86	London	24.07.2009
+270	9.91	+2.0	Nesta Carter	JAM	11.10.85	Shanghai	20.09.2009
+270	9.91	-0.3	Asafa Powell	JAM	23.11.82	Saint-Denis	16.07.2010
+270	9.91	+0.1	Yohan Blake	JAM	26.12.89	Bruxelles	27.08.2010
+270	9.91	+0.6	Usain Bolt	JAM	21.08.86	Roma	26.05.2011
+270	9.91	-0.2	Usain Bolt	JAM	21.08.86	Ostrava	31.05.2011
+270	9.91	+0.4	Asafa Powell	JAM	23.11.82	Birmingham	10.07.2011
+270	9.91	-0.1	Asafa Powell	JAM	23.11.82	Roma	31.05.2012
+270	9.91	+0.7	Churandy Martina	NED	03.07.84	London	05.08.2012
+270	9.91	+0.1	Justin Gatlin	USA	10.02.82	Beijing	21.05.2013
+270	9.91	+1.1	James Dasaolu	GBR	05.09.87	Birmingham	13.07.2013
+270	9.91	+0.4	Justin Gatlin	USA	10.02.82	Roma	05.06.2014
+270	9.91	+1.0	Mike Rodgers	USA	24.04.85	London	20.07.2014
+270	9.91	+1.8	Femi Ogunode	QAT	15.05.91	Wuhan	04.06.2015
+270	9.91	+0.9	Nickel Ashmeade	JAM	07.04.90	Kingston	26.06.2015
+270	9.91	+0.5	Trayvon Bromell	USA	10.07.95	Beijing	22.08.2015
+270	9.91	+0.6	Femi Ogunode	QAT	15.05.91	Gainesville	22.04.2016
+270	9.91	+0.2	Andre De Grasse	CAN	10.11.94	Rio de Janeiro	14.08.2016
+270	9.91	+1.0	Julian Forte	JAM	07.01.93	Berlin	27.08.2017
+270	9.91	+0.4	Zharnel Hughes	GBR	13.07.95	Kingston	09.06.2018
+270	9.91	+0.2	Su Bingtian	CHN	29.08.89	Madrid	22.06.2018
+270	9.91	+0.8	Jimmy Vicaut	FRA	27.02.92	Paris	30.06.2018
+270	9.91	+0.8	Su Bingtian	CHN	29.08.89	Paris	30.06.2018
+270	9.91	+0.3	Justin Gatlin	USA	10.02.82	Monaco	12.07.2019
+270	9.91A	+1.7	Akani Simbine	RSA	21.09.93	Pretoria	14.03.2020
+270	9.91	+2.0	Fred Kerley	USA	07.05.95	Miami	24.04.2021
+270	9.91	+0.8	Micah Williams	USA	12.11.01	Eugene	20.06.2021
+270	9.91	+0.3	Ronnie Baker	USA	15.10.93	Monaco	09.07.2021
+270	9.91	+0.6	Andre De Grasse	CAN	10.11.94	Tokyo	31.07.2021
+317	9.92	+1.1	Carl Lewis	USA	01.07.61	Seoul	24.09.1988
+317	9.92	+1.2	Linford Christie	GBR	02.04.60	Tokyo	25.08.1991
+317	9.92	+0.3	Andre Cason	USA	20.01.69	Stuttgart	15.08.1993
+317	9.92	+0.8	Ato Boldon	TTO	30.12.73	Eugene	01.06.1996
+317	9.92	+1.1	Dennis Mitchell	USA	20.02.66	Atlanta	15.06.1996
+317	9.92	+0.8	Jon Drummond	USA	09.09.68	Indianapolis	12.06.1997
+317	9.92	+0.2	Tim Montgomery	USA	28.01.75	Indianapolis	13.06.1997
+317	9.92	+0.2	Maurice Greene	USA	23.07.74	Bruxelles	22.08.1997
+317	9.92	+0.7	Ato Boldon	TTO	30.12.73	Monaco	08.08.1998
+317	9.92	-0.3	Maurice Greene	USA	23.07.74	Lausanne	25.08.1998
+317	9.92A	-0.2	Seun Ogunkoya	NGR	28.12.77	Johannesburg	11.09.1998
+317	9.92	+1.1	Bruny Surin	CAN	12.07.67	N&uuml;rnberg	13.06.1999
+317	9.92	+1.0	Tim Harden	USA	27.01.74	Luzern	05.07.1999
+317	9.92	0.0	Justin Gatlin	USA	10.02.82	Sacramento	11.07.2004
+317	9.92	+0.9	Tyson Gay	USA	09.08.82	Stuttgart	09.09.2006
+317	9.92	+0.6	Usain Bolt	JAM	21.08.86	Port of Spain	17.05.2008
+317	9.92	+0.1	Usain Bolt	JAM	21.08.86	Beijing	15.08.2008
+317	9.92	+0.2	Walter Dix	USA	31.01.86	Lausanne	02.09.2008
+317	9.92	-0.3	Tyson Gay	USA	09.08.82	Zagreb	01.09.2010
+317	9.92	+1.3	Nesta Carter	JAM	11.10.85	Eugene	04.06.2011
+317	9.92	+2.0	Christophe Lemaitre	FRA	11.06.90	Albi	29.07.2011
+317	9.92	-1.4	Yohan Blake	JAM	26.12.89	Daegu	28.08.2011
+317	9.92	+1.5	Asafa Powell	JAM	23.11.82	Kingston	29.06.2012
+317	9.92	+0.1	Usain Bolt	JAM	21.08.86	Moskva	11.08.2013
+317	9.92	0.0	Justin Gatlin	USA	10.02.82	Shanghai	18.05.2014
+317	9.92	-0.1	Mike Rodgers	USA	24.04.85	Linz	14.07.2014
+317	9.92	+1.7	Mike Rodgers	USA	24.04.85	Eugene	25.06.2015
+317	9.92	+1.4	Asafa Powell	JAM	23.11.82	Lausanne	09.07.2015
+317	9.92	+1.4	Tyson Gay	USA	09.08.82	Lausanne	09.07.2015
+317	9.92	+0.7	Jimmy Vicaut	FRA	27.02.92	Villeneuve d'Ascq	11.07.2015
+317	9.92	-1.2	Mike Rodgers	USA	24.04.85	London	24.07.2015
+317	9.92	-0.8	Kemar Bailey-Cole	JAM	10.01.92	London	24.07.2015
+317	9.92	+0.3	Jimmy Vicaut	FRA	27.02.92	Beijing	22.08.2015
+317	9.92	-0.5	Andre De Grasse	CAN	10.11.94	Beijing	23.08.2015
+317	9.92	-0.5	Trayvon Bromell	USA	10.07.95	Beijing	23.08.2015
+317	9.92A	+0.9	Jak Ali Harvey	TUR	04.05.89	Erzurum	12.06.2016
+317	9.92	+1.9	Asafa Powell	JAM	23.11.82	Sz&eacute;kesfeh&eacute;rv&aacute;r	18.07.2016
+317	9.92	+0.2	Andre De Grasse	CAN	10.11.94	Rio de Janeiro	14.08.2016
+317	9.92A	+1.2	Akani Simbine	RSA	21.09.93	Pretoria	18.03.2017
+317	9.92	-0.8	Justin Gatlin	USA	10.02.82	London	05.08.2017
+317	9.92	+1.7	Mike Rodgers	USA	24.04.85	Praha	04.06.2018
+317	9.92	+0.7	Isiah Young	USA	05.01.90	Montverde	09.06.2018
+317	9.92	+0.3	Jimmy Vicaut	FRA	27.02.92	Marseille	16.06.2018
+317	9.92	+0.4	Mike Rodgers	USA	24.04.85	Bellinzona	18.07.2018
+317	9.92	+0.8	Su Bingtian	CHN	29.08.89	Jakarta	26.08.2018
+317	9.92	+0.2	Justin Gatlin	USA	10.02.82	Lausanne	05.07.2019
+317	9.92	+0.3	Noah Lyles	USA	18.07.97	Monaco	12.07.2019
+317	9.92	+1.5	Trayvon Bromell	USA	10.07.95	Irvine	14.05.2021
+317	9.92	+0.7	Fred Kerley	USA	07.05.95	Eugene	20.06.2021
+366	9.93A	+1.4	Calvin Smith	USA	08.01.61	Air Force Academy	03.07.1983
+366	9.93	+1.0	Carl Lewis	USA	01.07.61	Roma	30.08.1987
+366	9.93	+1.1	Carl Lewis	USA	01.07.61	Z&uuml;rich	17.08.1988
+366	9.93	+1.9	Carl Lewis	USA	01.07.61	New York City	14.06.1991
+366	9.93	+1.3	Carl Lewis	USA	01.07.61	Tokyo	25.08.1991
+366	9.93	-0.6	Michael Marsh	USA	04.08.67	Walnut	18.04.1992
+366	9.93	+1.3	Ato Boldon	TTO	30.12.73	Walnut	21.04.1996
+366	9.93	-0.4	Donovan Bailey	CAN	16.12.67	Lausanne	03.07.1996
+366	9.93	+1.1	Frank Fredericks	NAM	02.10.67	Atlanta	26.07.1996
+366	9.93	-0.6	Ato Boldon	TTO	30.12.73	Atlanta	27.07.1996
+366	9.93	+0.5	Frank Fredericks	NAM	02.10.67	Ath&iacute;nai	03.08.1997
+366	9.93	-0.4	Frank Fredericks	NAM	02.10.67	Ath&iacute;nai	17.06.1998
+366	9.93	+1.5	Donovan Bailey	CAN	16.12.67	Montr&eacute;al	01.08.1998
+366	9.93	+0.4	Maurice Greene	USA	23.07.74	Lausanne	02.07.1999
+366	9.93	+0.3	Maurice Greene	USA	23.07.74	Sacramento	14.07.2000
+366	9.93	+1.8	Patrick Johnson	AUS	26.09.72	Mito	05.05.2003
+366	9.93	+1.8	Maurice Greene	USA	23.07.74	Eugene	19.06.2004
+366	9.93	+0.8	Shawn Crawford	USA	14.01.78	Sacramento	11.07.2004
+366	9.93	0.0	Shawn Crawford	USA	14.01.78	Sacramento	11.07.2004
+366	9.93	-0.5	Asafa Powell	JAM	23.11.82	Z&uuml;rich	06.08.2004
+366	9.93	0.0	Francis Obikwelu	POR	22.11.78	Ath&iacute;nai	21.08.2004
+366	9.93	-0.2	Maurice Greene	USA	23.07.74	Ath&iacute;nai	21.08.2004
+366	9.93	+1.1	Olusoji Adekotunbo Fasuba	NGR	09.07.84	Ad-Dawhah	12.05.2006
+366	9.93	0.0	Walter Dix	USA	31.01.86	Sacramento	08.06.2007
+366	9.93	-0.1	Richard Thompson	TTO	07.06.85	Auburn	18.05.2008
+366	9.93	+0.3	Richard Thompson	TTO	07.06.85	Beijing	16.08.2008
+366	9.93	0.0	Churandy Martina	AHO	03.07.84	Beijing	16.08.2008
+366	9.93	+1.1	Ivory Williams	USA	02.05.85	R&eacute;thymno	20.07.2009
+366	9.93	-0.2	Tyson Gay	USA	09.08.82	Berlin	16.08.2009
+366	9.93	+0.9	Daniel Bailey	ANT	09.09.86	Berlin	16.08.2009
+366	9.93	+0.9	Richard Thompson	TTO	07.06.85	Berlin	16.08.2009
+366	9.93	+0.6	Asafa Powell	JAM	23.11.82	Roma	26.05.2011
+366	9.93	+1.0	Keston Bledman	TTO	08.03.88	Clermont	04.06.2011
+366	9.93	+0.4	Nesta Carter	JAM	11.10.85	Birmingham	10.07.2011
+366	9.93	+0.3	Justin Gatlin	USA	10.02.82	Daegu	16.05.2012
+366	9.93	+1.3	Nickel Ashmeade	JAM	07.04.90	Eugene	02.06.2012
+366	9.93	+0.7	Keston Bledman	TTO	08.03.88	New York City	09.06.2012
+366	9.93	+1.8	Ryan Bailey	USA	13.04.89	Eugene	24.06.2012
+366	9.93	+0.7	Ryan Bailey	USA	13.04.89	Stockholm	17.08.2012
+366	9.93	+0.4	Kemar Bailey-Cole	JAM	10.01.92	Moskva	11.08.2013
+366	9.93	+0.1	Mike Rodgers	USA	24.04.85	Moskva	11.08.2013
+366	9.93	+1.8	Kemarley Brown	JAM	20.07.92	Walnut	17.05.2014
+366	9.93	+0.1	Tyson Gay	USA	09.08.82	Lausanne	03.07.2014
+366	9.93	+0.6	Mike Rodgers	USA	24.04.85	Bruxelles	05.09.2014
+366	9.93	+0.4	Femi Ogunode	QAT	15.05.91	Incheon	28.09.2014
+366	9.93	+1.8	Ryan Bailey	USA	13.04.89	Kingston	09.05.2015
+366	9.93	+1.7	Clayton Vaughn	USA	15.05.92	Mobile	10.05.2015
+366	9.93	+2.0	Marvin Bracy	USA	15.12.93	Birmingham	07.06.2015
+366	9.93	+1.4	Femi Ogunode	QAT	15.05.91	Rieti	13.09.2015
+366	9.93	+1.9	Kim Collins	SKN	05.04.76	Bottrop	29.05.2016
+366	9.93	+1.0	Justin Gatlin	USA	10.02.82	Roma	02.06.2016
+366	9.93	+0.2	Yohan Blake	JAM	26.12.89	Rio de Janeiro	14.08.2016
+366	9.93A	+2.0	Akani Simbine	RSA	21.09.93	Pretoria	04.03.2017
+366	9.93	+0.4	Yohan Blake	JAM	26.12.89	Kingston	20.05.2017
+366	9.93	+0.8	Cameron Burrell	USA	11.09.94	Eugene	07.06.2017
+366	9.93	+1.6	Christopher Belcher	USA	29.01.94	Eugene	07.06.2017
+366	9.93	+0.2	Christian Coleman	USA	06.03.96	Sacramento	22.06.2017
+366	9.93	-0.4	Ronnie Baker	USA	15.10.93	Roma	31.05.2018
+366	9.93	+0.4	Noah Lyles	USA	18.07.97	Kingston	09.06.2018
+366	9.93	+1.9	Isiah Young	USA	05.01.90	Des Moines	21.06.2018
+366	9.93	+1.4	Cameron Burrell	USA	11.09.94	Des Moines	21.06.2018
+366	9.93	+0.2	Akani Simbine	RSA	21.09.93	London	21.07.2018
+366	9.93	+0.1	Zharnel Hughes	GBR	13.07.95	London	21.07.2018
+366	9.93	-0.3	Ronnie Baker	USA	15.10.93	Bruxelles	31.08.2018
+366	9.93	+0.8	Cravon Gillespie	USA	31.07.96	Austin	07.06.2019
+366	9.93	+0.5	Akani Simbine	RSA	21.09.93	London	20.07.2019
+366	9.93	+1.9	Arthur Gue Ciss&eacute;	CIV	29.12.96	Leverkusen	24.07.2019
+366	9.93	+0.6	Akani Simbine	RSA	21.09.93	Ad-Dawhah	28.09.2019
+366	9.93	+1.9	Fred Kerley	USA	07.05.95	Eugene	19.06.2021
+366	9.93	+0.1	Akani Simbine	RSA	21.09.93	Tokyo	01.08.2021
+436	9.94	+0.8	Leroy Burrell	USA	21.02.67	Houston	16.06.1989
+436	9.94	+1.1	Leroy Burrell	USA	21.02.67	Tokyo	25.08.1991
+436	9.94	+0.3	Andre Cason	USA	20.01.69	Stuttgart	15.08.1993
+436	9.94	+0.2	Davidson Ezinwa	NGR	22.11.71	Linz	04.07.1994
+436	9.94	+1.9	Dennis Mitchell	USA	20.02.66	Oslo	22.07.1994
+436	9.94	+0.5	Dennis Mitchell	USA	20.02.66	Durham	13.08.1994
+436	9.94	-0.4	Ato Boldon	TTO	30.12.73	Lausanne	03.07.1996
+436	9.94	-0.5	Frank Fredericks	NAM	02.10.67	Atlanta	27.07.1996
+436	9.94	+0.5	Donovan Bailey	CAN	16.12.67	N&uuml;rnberg	13.06.1997
+436	9.94	+0.2	Tim Montgomery	USA	28.01.75	Ath&iacute;nai	03.08.1997
+436	9.94	+0.2	Tim Montgomery	USA	28.01.75	Bruxelles	22.08.1997
+436	9.94	+1.9	Jon Drummond	USA	09.09.68	New Orleans	19.06.1998
+436	9.94	+0.1	Seun Ogunkoya	NGR	28.12.77	Dakar	19.08.1998
+436	9.94	-0.3	Maurice Greene	USA	23.07.74	Bruxelles	28.08.1998
+436	9.94	+1.3	Frank Fredericks	NAM	02.10.67	Sydney	20.02.1999
+436	9.94	-1.0	Maurice Greene	USA	23.07.74	Z&uuml;rich	11.08.2000
+436	9.94	-0.2	Bernard Williams	USA	19.01.78	Edmonton	05.08.2001
+436	9.94A	-0.2	Frank Fredericks	NAM	02.10.67	Windhoek	13.04.2002
+436	9.94	+1.8	Shawn Crawford	USA	14.01.78	Suita	11.05.2002
+436	9.94	+1.4	Maurice Greene	USA	23.07.74	Carson	01.06.2003
+436	9.94	-0.5	Maurice Greene	USA	23.07.74	Z&uuml;rich	06.08.2004
+436	9.94	+0.6	Asafa Powell	JAM	23.11.82	Ath&iacute;nai	22.08.2004
+436	9.94	+1.0	Leonard Scott	USA	19.01.80	London	22.07.2005
+436	9.94	+0.9	Asafa Powell	JAM	23.11.82	Oslo	15.06.2007
+436	9.94	+1.6	Ivory Williams	USA	02.05.85	Eugene	28.06.2008
+436	9.94	-0.5	Asafa Powell	JAM	23.11.82	London	25.07.2008
+436	9.94	+0.3	Churandy Martina	AHO	03.07.84	Beijing	16.08.2008
+436	9.94	+1.7	Mike Rodgers	USA	24.04.85	Eugene	07.06.2009
+436	9.94	+0.6	Darvis Patton	USA	04.12.77	Zagreb	31.08.2009
+436	9.94	-0.6	Tyson Gay	USA	09.08.82	Daegu	25.09.2009
+436	9.94	-1.7	Tyson Gay	USA	09.08.82	Gateshead	10.07.2010
+436	9.94	+1.3	Darvis Patton	USA	04.12.77	Eugene	04.06.2011
+436	9.94	+1.3	Michael Frater	JAM	06.10.82	Eugene	04.06.2011
+436	9.94	+1.3	Walter Dix	USA	31.01.86	Eugene	24.06.2011
+436	9.94	+1.8	Mike Rodgers	USA	24.04.85	Eugene	24.06.2012
+436	9.94	+1.1	Michael Frater	JAM	06.10.82	Kingston	29.06.2012
+436	9.94	+0.7	Asafa Powell	JAM	23.11.82	London	05.08.2012
+436	9.94	+1.5	Churandy Martina	AHO	03.07.84	London	05.08.2012
+436	9.94	+0.8	Justin Gatlin	USA	10.02.82	Roma	06.06.2013
+436	9.94	-1.2	Usain Bolt	JAM	21.08.86	Kingston	21.06.2013
+436	9.94	-0.4	Justin Gatlin	USA	10.02.82	Monaco	19.07.2013
+436	9.94	-0.2	Justin Gatlin	USA	10.02.82	Moskva	11.08.2013
+436	9.94	-0.3	Nickel Ashmeade	JAM	07.04.90	Z&uuml;rich	29.08.2013
+436	9.94	+0.6	Nesta Carter	JAM	11.10.85	Bruxelles	06.09.2013
+436	9.94	+0.6	Justin Gatlin	USA	10.02.82	Bruxelles	06.09.2013
+436	9.94	+1.7	Diondre Batson	USA	13.07.92	Eugene	25.06.2015
+436	9.94	+1.4	Andrew Fisher	JAM	15.12.91	Madrid	11.07.2015
+436	9.94	-0.5	Mike Rodgers	USA	24.04.85	Beijing	23.08.2015
+436	9.94	0.0	Justin Gatlin	USA	10.02.82	Shanghai	14.05.2016
+436	9.94	-0.1	Justin Gatlin	USA	10.02.82	Beijing	18.05.2016
+436	9.94	+1.0	Ameer Webb	USA	19.03.91	Roma	02.06.2016
+436	9.94	+1.8	Marvin Bracy	USA	15.12.93	Montverde	11.06.2016
+436	9.94	+1.0	Nickel Ashmeade	JAM	07.04.90	Kingston	11.06.2016
+436	9.94	+1.0	Yohan Blake	JAM	26.12.89	Kingston	11.06.2016
+436	9.94	+1.7	Jimmy Vicaut	FRA	27.02.92	Angers	25.06.2016
+436	9.94	+1.2	Trayvon Bromell	USA	10.07.95	Eugene	02.07.2016
+436	9.94	0.0	Justin Gatlin	USA	10.02.82	Rio de Janeiro	14.08.2016
+436	9.94	+0.2	Akani Simbine	RSA	21.09.93	Rio de Janeiro	14.08.2016
+436	9.94	+0.4	Asafa Powell	JAM	23.11.82	Z&uuml;rich	01.09.2016
+436	9.94A	+0.2	Akani Simbine	RSA	21.09.93	Potchefstroom	21.04.2017
+436	9.94	+0.9	Wayde van Niekerk	RSA	15.07.92	Velenje	20.06.2017
+436	9.94	-0.8	Christian Coleman	USA	06.03.96	London	05.08.2017
+436	9.94	-0.2	Arthur Gue Ciss&eacute;	CIV	29.12.96	Leverkusen	16.06.2018
+436	9.94	+1.2	Ronnie Baker	USA	15.10.93	Des Moines	22.06.2018
+436	9.94	+0.8	Akani Simbine	RSA	21.09.93	Paris	30.06.2018
+436	9.94	+0.3	Mike Rodgers	USA	24.04.85	Bellinzona	18.07.2018
+436	9.94	+0.1	Akani Simbine	RSA	21.09.93	London	21.07.2018
+436	9.94	-0.5	Christian Coleman	USA	06.03.96	Birmingham	18.08.2018
+436	9.94	-0.5	Reece Prescod	GBR	29.02.96	Birmingham	18.08.2018
+436	9.94	-0.3	Yohan Blake	JAM	26.12.89	Bruxelles	31.08.2018
+436	9.94	+0.8	Divine Oduduru	NGR	07.10.96	Waco	20.04.2019
+436	9.94	+1.4	Ronnie Baker	USA	15.10.93	Austin	27.03.2021
+436	9.94	+1.6	Jo'Vaughn Martin	USA	15.07.99	Gainesville	17.04.2021
+436	9.94A	+1.3	Gift Leotlela	RSA	12.05.98	Johannesburg	14.05.2021
+436	9.94	+0.5	Isiah Young	USA	05.01.90	Boston	23.05.2021
+436	9.94	+0.7	Ronnie Baker	USA	15.10.93	Eugene	20.06.2021
+436	9.94	+0.1	Lamont Marcell Jacobs	ITA	26.09.94	Tokyo	31.07.2021
+436	9.94	+0.1	Fred Kerley	USA	07.05.95	Bruxelles	03.09.2021
+514	9.95A	+0.3	Jim Hines	USA	10.09.46	Ciudad de M&eacute;xico	14.10.1968
+514	9.95	+1.2	Frank Fredericks	NAM	02.10.67	Tokyo	25.08.1991
+514	9.95A	+1.9	Olapade Adeniken	NGR	19.08.69	El Paso	16.04.1994
+514	9.95	+1.3	Michael Marsh	USA	04.08.67	Walnut	21.04.1996
+514	9.95	+1.1	Frank Fredericks	NAM	02.10.67	Saint-Denis	03.06.1996
+514	9.95	-0.3	Ato Boldon	TTO	30.12.73	Atlanta	26.07.1996
+514	9.95	+1.5	Donovan Bailey	CAN	16.12.67	Milano	07.09.1996
+514	9.95	+0.7	Frank Fredericks	NAM	02.10.67	Villeneuve d'Ascq	29.06.1997
+514	9.95	+0.6	Ato Boldon	TTO	30.12.73	Stockholm	07.07.1997
+514	9.95	+0.2	Frank Fredericks	NAM	02.10.67	Ath&iacute;nai	03.08.1997
+514	9.95	+0.2	Frank Fredericks	NAM	02.10.67	Oslo	09.07.1998
+514	9.95	+0.8	Vincent Henderson	USA	20.10.72	Leverkusen	09.08.1998
+514	9.95	-0.2	Bruny Surin	CAN	12.07.67	Sevilla	21.08.1999
+514	9.95	+1.0	Ato Boldon	TTO	30.12.73	Lausanne	05.07.2000
+514	9.95	+1.8	Joshua J. Johnson	USA	10.05.76	Walnut	21.04.2002
+514	9.95	+0.6	Deji Aliu	NGR	22.11.75	Abuja	12.10.2003
+514	9.95	+1.8	John Capel	USA	27.10.78	Eugene	19.06.2004
+514	9.95	+0.2	Asafa Powell	JAM	23.11.82	Ath&iacute;nai	22.08.2004
+514	9.95	-0.6	Asafa Powell	JAM	23.11.82	Kingston	06.05.2006
+514	9.95	+0.3	Derrick Atkins	BAH	05.01.84	Ath&iacute;nai	02.07.2007
+514	9.95	+1.6	Rodney Martin	USA	22.12.82	Eugene	28.06.2008
+514	9.95	-0.1	Walter Dix	USA	31.01.86	Beijing	16.08.2008
+514	9.95	0.0	Asafa Powell	JAM	23.11.82	Beijing	16.08.2008
+514	9.95	-0.4	Asafa Powell	JAM	23.11.82	Berlin	15.08.2009
+514	9.95	-0.2	Asafa Powell	JAM	23.11.82	Berlin	16.08.2009
+514	9.95	0.0	Darvis Patton	USA	04.12.77	Z&uuml;rich	28.08.2009
+514	9.95	+0.8	Ivory Williams	USA	02.05.85	Lawrence	17.04.2010
+514	9.95	-0.3	Yohan Blake	JAM	26.12.89	Saint-Denis	16.07.2010
+514	9.95	-0.8	Trell Kimmons	USA	13.07.85	Z&uuml;rich	19.08.2010
+514	9.95	+1.1	Ryan Bailey	USA	13.04.89	Rieti	29.08.2010
+514	9.95	+0.9	Mario Forsythe	JAM	30.10.85	Rieti	29.08.2010
+514	9.95	+0.3	Asafa Powell	JAM	23.11.82	Shanghai	15.05.2011
+514	9.95	+0.9	Yohan Blake	JAM	26.12.89	Montreuil	07.06.2011
+514	9.95	+1.0	Christophe Lemaitre	FRA	11.06.90	Stockholm	18.06.2011
+514	9.95	+1.3	Mike Rodgers	USA	24.04.85	Eugene	23.06.2011
+514	9.95	+1.3	Justin Gatlin	USA	10.02.82	Eugene	24.06.2011
+514	9.95	+1.0	Christophe Lemaitre	FRA	11.06.90	Lausanne	30.06.2011
+514	9.95	+1.0	Asafa Powell	JAM	23.11.82	Birmingham	10.07.2011
+514	9.95	-1.6	Yohan Blake	JAM	26.12.89	London	05.08.2011
+514	9.95	-0.4	Yohan Blake	JAM	26.12.89	Daegu	28.08.2011
+514	9.95	0.0	Asafa Powell	JAM	23.11.82	Z&uuml;rich	08.09.2011
+514	9.95	+1.5	Nesta Carter	JAM	11.10.85	Kingston	29.06.2012
+514	9.95	+1.8	Kemar Hyman	CAY	11.10.89	Madrid	07.07.2012
+514	9.95	-0.1	Nesta Carter	JAM	11.10.85	Lausanne	23.08.2012
+514	9.95	+1.4	Nesta Carter	JAM	11.10.85	Z&uuml;rich	30.08.2012
+514	9.95	+0.8	Usain Bolt	JAM	21.08.86	Roma	06.06.2013
+514	9.95	+0.9	Jimmy Vicaut	FRA	27.02.92	Paris	13.07.2013
+514	9.95	+0.3	Jimmy Vicaut	FRA	27.02.92	Paris	13.07.2013
+514	9.95	-0.3	Nesta Carter	JAM	11.10.85	Moskva	11.08.2013
+514	9.95	+1.7	Jimmy Vicaut	FRA	27.02.92	Aix-les-Bains	18.05.2014
+514	9.95	+1.4	Richard Thompson	TTO	07.06.85	Hengelo	08.06.2014
+514	9.95	+0.6	Asafa Powell	JAM	23.11.82	Bruxelles	05.09.2014
+514	9.95	+0.2	Marvin Bracy	USA	15.12.93	Beijing	20.05.2015
+514	9.95	+1.5	Andre De Grasse	CAN	10.11.94	Edmonton	03.07.2015
+514	9.95	-0.1	Asafa Powell	JAM	23.11.82	Beijing	22.08.2015
+514	9.95	+1.4	Yohan Blake	JAM	26.12.89	Kingston	16.04.2016
+514	9.95	+0.4	Yohan Blake	JAM	26.12.89	Kingston	01.07.2016
+514	9.95	+0.7	Yohan Blake	JAM	26.12.89	Kingston	01.07.2016
+514	9.95	+1.7	Christian Coleman	USA	06.03.96	Eugene	03.07.2016
+514	9.95	+0.2	Jimmy Vicaut	FRA	27.02.92	Rio de Janeiro	14.08.2016
+514	9.95A	+1.2	Thando Roto	RSA	26.09.95	Pretoria	18.03.2017
+514	9.95A	-0.7	Akani Simbine	RSA	21.09.93	Potchefstroom	21.04.2017
+514	9.95	-0.7	Justin Gatlin	USA	10.02.82	Sacramento	23.06.2017
+514	9.95	+0.7	Usain Bolt	JAM	21.08.86	Monaco	21.07.2017
+514	9.95	-0.8	Usain Bolt	JAM	21.08.86	London	05.08.2017
+514	9.95	+0.1	Yohan Blake	JAM	26.12.89	London	21.07.2018
+514	9.95	0.0	Zharnel Hughes	GBR	13.07.95	Berlin	07.08.2018
+514	9.95	+0.9	Akani Simbine	RSA	21.09.93	Shanghai	18.05.2019
+514	9.95	+0.5	Zharnel Hughes	GBR	13.07.95	London	20.07.2019
+514	9.95	+1.5	Lamont Marcell Jacobs	ITA	26.09.94	Savona	13.05.2021
+514	9.95	+2.0	Ryota Yamagata	JPN	10.06.92	Tottori	06.06.2021
+514	9.95	+1.9	Noah Lyles	USA	18.07.97	Eugene	19.06.2021
+514	9.95	+0.1	Yohan Blake	JAM	26.12.89	Marietta	09.07.2021
+514	9.95	+0.1	Ronnie Baker	USA	15.10.93	Tokyo	01.08.2021
+588	9.96	+0.1	Mel Lattany	USA	10.08.59	Athens GA	05.05.1984
+588	9.96	+0.4	Carl Lewis	USA	01.07.61	Indianapolis	15.07.1988
+588	9.96	+1.9	Carl Lewis	USA	01.07.61	Indianapolis	15.07.1988
+588	9.96	+0.7	Leroy Burrell	USA	21.02.67	Villeneuve d'Ascq	29.06.1990
+588	9.96A	+1.2	Leroy Burrell	USA	21.02.67	Sestriere	08.08.1990
+588	9.96	0.0	Leroy Burrell	USA	21.02.67	Lausanne	10.07.1991
+588	9.96	+1.2	Raymond Stewart	JAM	18.03.65	Tokyo	25.08.1991
+588	9.96	-0.6	Davidson Ezinwa	NGR	22.11.71	Walnut	18.04.1992
+588	9.96	+0.5	Linford Christie	GBR	02.04.60	Barcelona	01.08.1992
+588	9.96	-0.1	Andre Cason	USA	20.01.69	Stuttgart	14.08.1993
+588	9.96	+1.5	Maurice Greene	USA	23.07.74	Indianapolis	12.06.1997
+588	9.96	+1.6	Tim Montgomery	USA	28.01.75	Indianapolis	12.06.1997
+588	9.96	+0.8	Kareem Streete-Thompson	USA	30.03.73	Indianapolis	12.06.1997
+588	9.96A	+0.4	Frank Fredericks	NAM	02.10.67	Johannesburg	27.03.1998
+588	9.96	+0.6	Maurice Greene	USA	23.07.74	New Orleans	19.06.1998
+588	9.96	+0.2	Maurice Greene	USA	23.07.74	Oslo	09.07.1998
+588	9.96	-1.0	Maurice Greene	USA	23.07.74	Uniondale	21.07.1998
+588	9.96	+0.3	Ato Boldon	TTO	30.12.73	Stockholm	05.08.1998
+588	9.96	+0.7	Donovan Bailey	CAN	16.12.67	Monaco	08.08.1998
+588	9.96	-0.6	Seun Ogunkoya	NGR	28.12.77	Z&uuml;rich	12.08.1998
+588	9.96	0.0	Ato Boldon	TTO	30.12.73	Kuala Lumpur	17.09.1998
+588	9.96	-0.1	Frank Fredericks	NAM	02.10.67	Kuala Lumpur	17.09.1998
+588	9.96	+0.6	Obadele Thompson	BAR	30.03.76	Stockholm	30.07.1999
+588	9.96	-0.7	Maurice Greene	USA	23.07.74	Sevilla	22.08.1999
+588	9.96	-0.3	Bruny Surin	CAN	12.07.67	Sevilla	22.08.1999
+588	9.96	-0.2	Jon Drummond	USA	09.09.68	Berlin	01.09.2000
+588	9.96	-0.1	Maurice Greene	USA	23.07.74	Osaka	12.05.2001
+588	9.96	+0.3	Bernard Williams	USA	19.01.78	Eugene	21.06.2001
+588	9.96	-0.4	Maurice Greene	USA	23.07.74	Saint-Denis	06.07.2001
+588	9.96	+0.8	Justin Gatlin	USA	10.02.82	Sacramento	11.07.2004
+588	9.96	+0.2	Justin Gatlin	USA	10.02.82	Ath&iacute;nai	21.08.2004
+588	9.96	+1.0	Marc Burns	TTO	07.01.83	Port of Spain	25.06.2005
+588	9.96	+0.6	Justin Gatlin	USA	10.02.82	Roma	08.07.2005
+588	9.96	+1.6	Asafa Powell	JAM	23.11.82	Oslo	02.06.2006
+588	9.96	-0.5	Tyson Gay	USA	09.08.82	Berlin	03.09.2006
+588	9.96	-0.5	Asafa Powell	JAM	23.11.82	Osaka	26.08.2007
+588	9.96	0.0	Wallace Spearmon	USA	24.12.84	Shanghai	28.09.2007
+588	9.96	+1.2	Travis Padgett	USA	13.12.86	Clemson	10.05.2008
+588	9.96	+0.4	Asafa Powell	JAM	23.11.82	Port of Spain	21.06.2008
+588	9.96	+1.7	Walter Dix	USA	31.01.86	Eugene	28.06.2008
+588	9.96	-0.1	Tyson Gay	USA	09.08.82	Roma	10.07.2009
+588	9.96	+0.4	Daniel Bailey	ANT	09.09.86	Roma	10.07.2009
+588	9.96	+0.2	Daniel Bailey	ANT	09.09.86	Berlin	16.08.2009
+588	9.96	+0.5	Yohan Blake	JAM	26.12.89	Lausanne	08.07.2010
+588	9.96	-1.6	Tyson Gay	USA	09.08.82	Gateshead	10.07.2010
+588	9.96	-1.7	Asafa Powell	JAM	23.11.82	Gateshead	10.07.2010
+588	9.96	+0.1	Nesta Carter	JAM	11.10.85	Berlin	22.08.2010
+588	9.96	+1.1	Mike Rodgers	USA	24.04.85	Oxford MS	23.04.2011
+588	9.96	+1.1	Nickel Ashmeade	JAM	07.04.90	Clermont	04.06.2011
+588	9.96	+0.9	Christophe Lemaitre	FRA	11.06.90	Montreuil	07.06.2011
+588	9.96	+1.4	Harry Adams	USA	27.11.89	Des Moines	06.06.2012
+588	9.96	+1.4	Richard Thompson	TTO	07.06.85	Port of Spain	23.06.2012
+588	9.96	+1.8	Darvis Patton	USA	04.12.77	Eugene	24.06.2012
+588	9.96	+1.5	Yohan Blake	JAM	26.12.89	Kingston	29.06.2012
+588	9.96	+1.0	Ryan Bailey	USA	13.04.89	London	05.08.2012
+588	9.96	+0.3	Nesta Carter	JAM	11.10.85	Bruxelles	07.09.2012
+588	9.96	+0.1	Mike Rodgers	USA	24.04.85	Beijing	21.05.2013
+588	9.96	+1.5	Kemar Bailey-Cole	JAM	10.01.92	Kingston	08.06.2013
+588	9.96	+2.0	Mike Rodgers	USA	24.04.85	Lausanne	04.07.2013
+588	9.96	-0.4	Dentarius Locke	USA	12.12.89	Monaco	19.07.2013
+588	9.96	-0.3	Justin Gatlin	USA	10.02.82	Z&uuml;rich	29.08.2013
+588	9.96	+1.4	Chijindu Ujah	GBR	05.03.94	Hengelo	08.06.2014
+588	9.96	+1.0	Kim Collins	SKN	05.04.76	London	20.07.2014
+588	9.96	+2.0	Nesta Carter	JAM	11.10.85	Stockholm	21.08.2014
+588	9.96	-0.3	Kemar Bailey-Cole	JAM	10.01.92	Z&uuml;rich	28.08.2014
+588	9.96	+0.6	Kemar Bailey-Cole	JAM	10.01.92	Bruxelles	05.09.2014
+588	9.96	+0.9	Mike Rodgers	USA	24.04.85	Ad-Dawhah	15.05.2015
+588	9.96	+1.3	Quentin Butler	USA	18.09.92	Eugene	25.06.2015
+588	9.96	0.0	Trayvon Bromell	USA	10.07.95	Eugene	26.06.2015
+588	9.96	-0.8	Chijindu Ujah	GBR	05.03.94	London	24.07.2015
+588	9.96	-0.2	Usain Bolt	JAM	21.08.86	Beijing	22.08.2015
+588	9.96	-0.4	Usain Bolt	JAM	21.08.86	Beijing	23.08.2015
+588	9.96	-0.4	Tyson Gay	USA	09.08.82	Beijing	23.08.2015
+588	9.96	-0.4	Andre De Grasse	CAN	10.11.94	Beijing	23.08.2015
+588	9.96	+0.3	Asafa Powell	JAM	23.11.82	Zagreb	08.09.2015
+588	9.96A	+0.4	Akani Simbine	RSA	21.09.93	Pretoria	08.03.2016
+588	9.96	+1.6	Senoj-Jay Givans	JAM	30.12.93	Eugene	08.06.2016
+588	9.96	+2.0	Aaron Brown	CAN	27.05.92	Montverde	11.06.2016
+588	9.96	+0.7	Nickel Ashmeade	JAM	07.04.90	Kingston	01.07.2016
+588	9.96	+0.3	Jimmy Vicaut	FRA	27.02.92	London	22.07.2016
+588	9.96	+2.0	Joel Fearon	GBR	11.10.88	Bedford	30.07.2016
+588	9.96	+0.2	Ben Youssef Meit&eacute;	CIV	11.11.86	Rio de Janeiro	14.08.2016
+588	9.96	+0.5	Asafa Powell	JAM	23.11.82	Lausanne	25.08.2016
+588	9.96	-0.1	Ben Youssef Meit&eacute;	CIV	11.11.86	Saint-Denis	27.08.2016
+588	9.96	+1.7	Christian Coleman	USA	06.03.96	Lexington	25.05.2017
+588	9.96	+0.2	Justin Gatlin	USA	10.02.82	Lausanne	06.07.2017
+588	9.96	+1.2	Isiah Young	USA	05.01.90	Montverde	09.06.2018
+588	9.96	+0.2	Mike Rodgers	USA	24.04.85	London	21.07.2018
+588	9.96	+0.2	Tyquendo Tracey	JAM	10.06.93	London	21.07.2018
+588	9.96	0.0	Reece Prescod	GBR	29.02.96	Berlin	07.08.2018
+588	9.96	+0.4	Yohan Blake	JAM	26.12.89	Kingston	21.06.2019
+588	9.96	-0.4	Zharnel Hughes	GBR	13.07.95	London	20.07.2019
+588	9.96	-0.1	Christian Coleman	USA	06.03.96	Des Moines	26.07.2019
+588	9.96	+1.7	Aaron Brown	CAN	27.05.92	Montr&eacute;al	26.07.2019
+588	9.96	+1.6	Raymond Ekevwo	NGR	23.03.99	Rabat	27.08.2019
+588	9.96	+0.3	Akani Simbine	RSA	21.09.93	Roma	17.09.2020
+588	9.96	+1.9	Cravon Gillespie	USA	31.07.96	Walnut	09.05.2021
+588	9.96	+1.4	Fred Kerley	USA	07.05.95	Ostrava	19.05.2021
+588	9.96	-0.3	Kenneth Bednarek	USA	14.10.98	Eugene	20.06.2021
+588	9.96	-0.1	Fred Kerley	USA	07.05.95	Tokyo	01.08.2021
+588	9.96	+0.4	Ferdinand Omurwa	KEN	02.01.96	Andorf	14.08.2021
+689	9.97	+1.5	Carl Lewis	USA	01.07.61	Modesto	14.05.1983
+689	9.97	+1.6	Calvin Smith	USA	08.01.61	Z&uuml;rich	24.08.1983
+689	9.97	+1.1	Calvin Smith	USA	08.01.61	Z&uuml;rich	17.08.1988
+689	9.97	+0.6	Carl Lewis	USA	01.07.61	Seoul	24.09.1988
+689	9.97	+1.1	Linford Christie	GBR	02.04.60	Seoul	24.09.1988
+689	9.97	+1.0	Raymond Stewart	JAM	18.03.65	Waco	20.05.1989
+689	9.97	+1.2	Olapade Adeniken	NGR	19.08.69	Austin	04.04.1992
+689	9.97	+1.7	Olapade Adeniken	NGR	19.08.69	Austin	05.06.1992
+689	9.97	-1.3	Leroy Burrell	USA	21.02.67	Barcelona	01.08.1992
+689	9.97	+0.9	Linford Christie	GBR	02.04.60	Stuttgart	15.08.1993
+689	9.97	+0.2	Dennis Mitchell	USA	20.02.66	Linz	04.07.1994
+689	9.97	+0.9	Dennis Mitchell	USA	20.02.66	Stockholm	12.07.1994
+689	9.97	+1.3	Bruny Surin	CAN	12.07.67	Montr&eacute;al	15.07.1995
+689	9.97	+1.0	Donovan Bailey	CAN	16.12.67	G&ouml;teborg	06.08.1995
+689	9.97A	+0.1	Linford Christie	GBR	02.04.60	Johannesburg	23.09.1995
+689	9.97	+2.0	Michael Marsh	USA	04.08.67	Indianapolis	12.06.1997
+689	9.97	+1.0	Donovan Bailey	CAN	16.12.67	Lausanne	02.07.1997
+689	9.97	+1.5	Seun Ogunkoya	NGR	28.12.77	Formia	13.07.1997
+689	9.97	+1.2	Frank Fredericks	NAM	02.10.67	Kingston	19.09.1997
+689	9.97	+2.0	Frank Fredericks	NAM	02.10.67	Ath&iacute;nai	17.06.1998
+689	9.97	0.0	Frank Fredericks	NAM	02.10.67	Roma	14.07.1998
+689	9.97	+0.1	Frank Fredericks	NAM	02.10.67	Dakar	19.08.1998
+689	9.97	+1.0	Ato Boldon	TTO	30.12.73	Stuttgart	06.06.1999
+689	9.97	-0.1	Ato Boldon	TTO	30.12.73	Ath&iacute;nai	16.06.1999
+689	9.97	+0.1	Bruny Surin	CAN	12.07.67	Ath&iacute;nai	16.06.1999
+689	9.97	-0.6	Maurice Greene	USA	23.07.74	London	07.08.1999
+689	9.97	+0.2	Dwain Chambers	GBR	05.04.78	Sevilla	22.08.1999
+689	9.97	+0.7	Maurice Greene	USA	23.07.74	Roma	30.06.2000
+689	9.97	+1.0	Francis Obikwelu	NGR	22.11.78	Lausanne	05.07.2000
+689	9.97	-1.0	Obadele Thompson	BAR	30.03.76	Z&uuml;rich	11.08.2000
+689	9.97	-0.3	Ato Boldon	TTO	30.12.73	Ath&iacute;nai	11.06.2001
+689	9.97	-0.2	Maurice Greene	USA	23.07.74	Ath&iacute;nai	10.06.2002
+689	9.97	+0.1	Maurice Greene	USA	23.07.74	Monaco	19.07.2002
+689	9.97	+2.0	Jon Drummond	USA	09.09.68	Paris	14.09.2002
+689	9.97	+1.3	Justin Gatlin	USA	10.02.82	Z&uuml;rich	15.08.2003
+689	9.97	+1.3	John Capel	USA	27.10.78	Z&uuml;rich	15.08.2003
+689	9.97	+0.6	Uchenna Emedolu	NGR	17.09.76	Abuja	12.10.2003
+689	9.97	-0.3	Maurice Greene	USA	23.07.74	London	30.07.2004
+689	9.97	+0.2	Francis Obikwelu	POR	22.11.78	Ath&iacute;nai	22.08.2004
+689	9.97	+0.2	Maurice Greene	USA	23.07.74	Ath&iacute;nai	22.08.2004
+689	9.97	+1.5	Justin Gatlin	USA	10.02.82	Yokohama	23.09.2004
+689	9.97	+0.2	Tyson Gay	USA	09.08.82	Stockholm	25.07.2006
+689	9.97	+1.0	Leonard Scott	USA	19.01.80	Z&uuml;rich	18.08.2006
+689	9.97	+0.5	Asafa Powell	JAM	23.11.82	Beograd	29.05.2007
+689	9.97	-1.1	Tyson Gay	USA	09.08.82	Indianapolis	22.06.2007
+689	9.97	+1.9	Richard Thompson	TTO	07.06.85	Fayetteville	31.05.2008
+689	9.97	-0.1	Asafa Powell	JAM	23.11.82	Kingston	28.06.2008
+689	9.97	-0.5	Marc Burns	TTO	07.01.83	London	25.07.2008
+689	9.97	-0.1	Marc Burns	TTO	07.01.83	Beijing	16.08.2008
+689	9.97	0.0	Michael Frater	JAM	06.10.82	Beijing	16.08.2008
+689	9.97	-0.1	Churandy Martina	AHO	03.07.84	Hengelo	01.06.2009
+689	9.97	-0.2	Asafa Powell	JAM	23.11.82	Kingston	27.06.2009
+689	9.97	+0.4	Daniel Bailey	ANT	09.09.86	Roma	10.07.2009
+689	9.97	+0.6	Mike Rodgers	USA	24.04.85	Zagreb	31.08.2009
+689	9.97	0.0	Usain Bolt	JAM	21.08.86	Stockholm	06.08.2010
+689	9.97	+0.9	Christophe Lemaitre	FRA	11.06.90	Rieti	29.08.2010
+689	9.97	+2.0	Ngonidzashe Makusha	ZIM	11.03.87	Durham	23.04.2011
+689	9.97	-0.2	Steve Mullings	JAM	29.11.82	Ostrava	31.05.2011
+689	9.97	+1.3	Justin Gatlin	USA	10.02.82	Eugene	04.06.2011
+689	9.97	+1.3	Rakieem Salaam	USA	05.04.90	Des Moines	10.06.2011
+689	9.97	+0.5	Daniel Bailey	ANT	09.09.86	Strasbourg	12.06.2011
+689	9.97	+0.6	Yohan Blake	JAM	26.12.89	Kingston	24.06.2011
+689	9.97	+0.5	Nickel Ashmeade	JAM	07.04.90	Orlando	26.05.2012
+689	9.97	+0.7	Justin Gatlin	USA	10.02.82	London	04.08.2012
+689	9.97	+1.4	Ryan Bailey	USA	13.04.89	Z&uuml;rich	30.08.2012
+689	9.97	+0.3	Kemar Bailey-Cole	JAM	10.01.92	Bruxelles	07.09.2012
+689	9.97	+1.2	Justin Gatlin	USA	10.02.82	Ad-Dawhah	10.05.2013
+689	9.97	+1.9	Dentarius Locke	USA	12.12.89	Eugene	05.06.2013
+689	9.97	-0.5	Nesta Carter	JAM	11.10.85	Kingston	21.06.2013
+689	9.97	+2.0	Kim Collins	SKN	05.04.76	Lausanne	04.07.2013
+689	9.97	-0.2	Nesta Carter	JAM	11.10.85	Moskva	11.08.2013
+689	9.97	+0.4	James Dasaolu	GBR	05.09.87	Moskva	11.08.2013
+689	9.97	+0.1	Mike Rodgers	USA	24.04.85	Zagreb	03.09.2013
+689	9.97	+1.8	Trayvon Bromell	USA	10.07.95	Eugene	13.06.2014
+689	9.97	+0.3	Nickel Ashmeade	JAM	07.04.90	Glasgow	11.07.2014
+689	9.97	+0.3	Mike Rodgers	USA	24.04.85	Glasgow	11.07.2014
+689	9.97	+0.6	Andre De Grasse	CAN	10.11.94	Westwood	17.05.2015
+689	9.97	+1.1	Femi Ogunode	QAT	15.05.91	Wuhan	03.06.2015
+689	9.97	+1.0	Marvin Bracy	USA	15.12.93	Birmingham	07.06.2015
+689	9.97	+2.0	Adam Gemili	GBR	06.10.93	Birmingham	07.06.2015
+689	9.97	+2.0	Mike Rodgers	USA	24.04.85	Birmingham	07.06.2015
+689	9.97	0.0	Mike Rodgers	USA	24.04.85	Eugene	26.06.2015
+689	9.97	+0.9	Kemar Bailey-Cole	JAM	10.01.92	Kingston	26.06.2015
+689	9.97	+0.8	Henricho Bruintjies	RSA	16.07.93	La Chaux-de-Fonds	05.07.2015
+689	9.97	0.0	Akani Simbine	RSA	21.09.93	Gwangju	09.07.2015
+689	9.97	+1.3	Mike Rodgers	USA	24.04.85	Madrid	11.07.2015
+689	9.97	-0.3	Tyson Gay	USA	09.08.82	Monaco	17.07.2015
+689	9.97	-0.2	Mike Rodgers	USA	24.04.85	Beijing	22.08.2015
+689	9.97	-0.4	Asafa Powell	JAM	23.11.82	Beijing	23.08.2015
+689	9.97	-0.1	Mike Rodgers	USA	24.04.85	Beijing	18.05.2016
+689	9.97	+2.0	Tyson Gay	USA	09.08.82	Montverde	11.06.2016
+689	9.97	+1.7	Richard Thompson	TTO	07.06.85	Port of Spain	25.06.2016
+689	9.97	+0.2	Ben Youssef Meit&eacute;	CIV	11.11.86	Rio de Janeiro	14.08.2016
+689	9.97	+0.6	Christian Coleman	USA	06.03.96	Columbia	13.05.2017
+689	9.97	+0.5	Jimmy Vicaut	FRA	27.02.92	Dijon	21.05.2017
+689	9.97	+0.6	Yohan Blake	JAM	26.12.89	Kingston	10.06.2017
+689	9.97	+1.5	Isiah Young	USA	05.01.90	Sacramento	22.06.2017
+689	9.97	+1.5	Ramil Guliyev	TUR	29.05.90	Bursa	06.07.2017
+689	9.97	+0.4	Christian Coleman	USA	06.03.96	London	05.08.2017
+689	9.97	0.0	Chijindu Ujah	GBR	05.03.94	Z&uuml;rich	24.08.2017
+689	9.97	0.0	Ben Youssef Meit&eacute;	CIV	11.11.86	Z&uuml;rich	24.08.2017
+689	9.97	+0.5	Ronnie Baker	USA	15.10.93	Torrance	21.04.2018
+689	9.97	+0.9	Jaylen Bacon	USA	05.08.96	Sacramento	25.05.2018
+689	9.97	+0.9	Xie Zhenye	CHN	17.08.93	Montreuil	19.06.2018
+689	9.97	+1.7	Barakat Al-Harthi	OMA	15.06.88	Amman	09.07.2018
+689	9.97	+0.8	Zharnel Hughes	GBR	13.07.95	London	21.07.2018
+689	9.97	+0.4	Jimmy Vicaut	FRA	27.02.92	Berlin	07.08.2018
+689	9.97	+0.2	Cravon Gillespie	USA	31.07.96	Tucson	12.05.2019
+689	9.97	+0.9	Reece Prescod	GBR	29.02.96	Shanghai	18.05.2019
+689	9.97	+0.8	Abdul Hakim Sani Brown	JPN	06.03.99	Austin	07.06.2019
+689	9.97	+0.9	Zharnel Hughes	GBR	13.07.95	Kingston	08.06.2019
+689	9.97	-0.1	Zharnel Hughes	GBR	13.07.95	Palo Alto	30.06.2019
+689	9.97	+0.5	Yohan Blake	JAM	26.12.89	London	20.07.2019
+689	9.97	+1.6	Mike Rodgers	USA	24.04.85	Madrid	25.08.2019
+689	9.97	+1.6	Arthur Gue Ciss&eacute;	CIV	29.12.96	Rabat	27.08.2019
+689	9.97	0.0	Justin Gatlin	USA	10.02.82	Bellinzona	01.09.2019
+689	9.97	+1.4	Andre De Grasse	CAN	10.11.94	Berlin	01.09.2019
+689	9.97	+0.6	Yohan Blake	JAM	26.12.89	Ad-Dawhah	28.09.2019
+689	9.97	+1.9	Andre De Grasse	CAN	10.11.94	Clermont	24.07.2020
+689	9.97	+1.5	Benjamin Azamati-Kwaku	GHA	14.01.98	Austin	26.03.2021
+689	9.97	+1.9	Kyree King	USA	09.07.94	Miramar	10.04.2021
+689	9.97	+0.7	Noah Lyles	USA	18.07.97	Eugene	20.06.2021
+689	9.97	+0.6	Fred Kerley	USA	07.05.95	Tokyo	31.07.2021
+689	9.97	+0.1	Trayvon Bromell	USA	10.07.95	Bruxelles	03.09.2021
+813	9.98A	+0.6	Silvio Leonard	CUB	20.09.55	Guadalajara	11.08.1977
+813	9.98	+1.6	Carl Lewis	USA	01.07.61	Modesto	11.05.1985
+813	9.98	+0.3	Daniel Effiong	NGR	17.06.72	Stuttgart	15.08.1993
+813	9.98	+1.6	Andre Cason	USA	20.01.69	Knoxville	15.06.1994
+813	9.98	+0.2	Davidson Ezinwa	NGR	22.11.71	Linz	04.07.1994
+813	9.98	+1.8	Linford Christie	GBR	02.04.60	Victoria	23.08.1994
+813	9.98	+0.6	Dennis Mitchell	USA	20.02.66	Atlanta	15.06.1996
+813	9.98	-0.1	Jon Drummond	USA	09.09.68	Atlanta	15.06.1996
+813	9.98	0.0	Donovan Bailey	CAN	16.12.67	Montr&eacute;al	21.06.1996
+813	9.98	+1.4	Percival Spencer	JAM	24.02.75	Kingston	20.06.1997
+813	9.98	-0.7	Frank Fredericks	NAM	02.10.67	Z&uuml;rich	13.08.1997
+813	9.98	+0.1	Jon Drummond	USA	09.09.68	Berlin	01.09.1998
+813	9.98	0.0	Frank Fredericks	NAM	02.10.67	Kuala Lumpur	17.09.1998
+813	9.98	+1.6	Leonard Myles-Mills	GHA	05.09.73	Boise	05.06.1999
+813	9.98	+0.4	Jason Gardener	GBR	18.09.75	Lausanne	02.07.1999
+813	9.98	+0.4	Coby Miller	USA	19.10.76	Durham	02.06.2000
+813	9.98	+2.0	Francis Obikwelu	NGR	22.11.78	Braga	21.06.2000
+813	9.98	-0.8	Maurice Greene	USA	23.07.74	London	22.07.2001
+813	9.98	-0.2	Ato Boldon	TTO	30.12.73	Edmonton	05.08.2001
+813	9.98	+0.6	Francis Obikwelu	NGR	22.11.78	Berlin	31.08.2001
+813	9.98	+1.4	Coby Miller	USA	19.10.76	Portland	18.05.2002
+813	9.98	+0.2	Kim Collins	SKN	05.04.76	Manchester	27.07.2002
+813	9.98	+1.6	Kim Collins	SKN	05.04.76	Z&uuml;rich	16.08.2002
+813	9.98	+2.0	Kim Collins	SKN	05.04.76	Paris	14.09.2002
+813	9.98	0.0	Deji Aliu	NGR	22.11.75	Abuja	19.07.2003
+813	9.98	-0.2	Maurice Greene	USA	23.07.74	London	30.07.2004
+813	9.98	-1.6	Asafa Powell	JAM	23.11.82	Monaco	18.09.2004
+813	9.98	+1.9	Asafa Powell	JAM	23.11.82	Ath&iacute;nai	14.06.2005
+813	9.98	-0.9	Asafa Powell	JAM	23.11.82	Oslo	02.06.2006
+813	9.98	+2.0	Derrick Atkins	BAH	05.01.84	Berkeley	28.04.2007
+813	9.98	+1.9	Tyson Gay	USA	09.08.82	Indianapolis	21.06.2007
+813	9.98	+1.0	Nesta Carter	JAM	11.10.85	Stockholm	22.07.2008
+813	9.98	0.0	Darvis Patton	USA	04.12.77	Monaco	29.07.2008
+813	9.98	+0.2	Nesta Carter	JAM	11.10.85	Lausanne	02.09.2008
+813	9.98	+1.4	Michael Frater	JAM	06.10.82	Rieti	07.09.2008
+813	9.98	+0.4	Asafa Powell	JAM	23.11.82	Roma	10.07.2009
+813	9.98	+0.1	Tyson Gay	USA	09.08.82	Berlin	15.08.2009
+813	9.98	+0.2	Darvis Patton	USA	04.12.77	Berlin	16.08.2009
+813	9.98	-0.2	Richard Thompson	TTO	07.06.85	Berlin	16.08.2009
+813	9.98	0.0	Mike Rodgers	USA	24.04.85	Z&uuml;rich	28.08.2009
+813	9.98	0.0	Walter Dix	USA	31.01.86	Tallahassee	08.05.2010
+813	9.98	+1.3	Christophe Lemaitre	FRA	11.06.90	Valence	09.07.2010
+813	9.98	+1.1	Christophe Lemaitre	FRA	11.06.90	Rieti	29.08.2010
+813	9.98	+0.9	Michael Frater	JAM	06.10.82	Rieti	29.08.2010
+813	9.98	+0.5	Yohan Blake	JAM	26.12.89	Strasbourg	12.06.2011
+813	9.98	+0.6	Michael Frater	JAM	06.10.82	Kingston	24.06.2011
+813	9.98	+0.6	Nesta Carter	JAM	11.10.85	Kingston	24.06.2011
+813	9.98	+1.0	Rakieem Salaam	USA	05.04.90	Auburn	21.04.2012
+813	9.98	+1.5	Richard Thompson	TTO	07.06.85	London	05.08.2012
+813	9.98	+1.9	Gabriel Mvumvure	ZIM	23.02.88	Montverde	08.06.2013
+813	9.98	+1.1	Charles Silmon	USA	04.07.91	Des Moines	21.06.2013
+813	9.98	-1.2	Kemar Bailey-Cole	JAM	10.01.92	Kingston	21.06.2013
+813	9.98	+1.1	Mike Rodgers	USA	24.04.85	Des Moines	21.06.2013
+813	9.98	+0.2	Mike Rodgers	USA	24.04.85	London	26.07.2013
+813	9.98	-0.1	Mike Rodgers	USA	24.04.85	Moskva	10.08.2013
+813	9.98	-0.3	Kemar Bailey-Cole	JAM	10.01.92	Moskva	11.08.2013
+813	9.98	-0.3	Nickel Ashmeade	JAM	07.04.90	Moskva	11.08.2013
+813	9.98	-0.3	Jimmy Vicaut	FRA	27.02.92	Z&uuml;rich	29.08.2013
+813	9.98	+0.6	Kemar Bailey-Cole	JAM	10.01.92	Bruxelles	06.09.2013
+813	9.98A	+1.4	Simon Magakwe	RSA	14.05.86	Pretoria	12.04.2014
+813	9.98	+0.1	Mike Rodgers	USA	24.04.85	Lausanne	03.07.2014
+813	9.98	+0.3	Nesta Carter	JAM	11.10.85	Glasgow	11.07.2014
+813	9.98	-0.6	Usain Bolt	JAM	21.08.86	Warszawa	23.08.2014
+813	9.98	+1.8	Nesta Carter	JAM	11.10.85	Kingston	09.05.2015
+813	9.98	+0.9	Jimmy Vicaut	FRA	27.02.92	Roma	04.06.2015
+813	9.98	+0.9	Mike Rodgers	USA	24.04.85	Roma	04.06.2015
+813	9.98	+1.7	Andre De Grasse	CAN	10.11.94	Eugene	10.06.2015
+813	9.98	+1.8	Kim Collins	SKN	05.04.76	Basseterre	13.06.2015
+813	9.98	+1.0	Asafa Powell	JAM	23.11.82	Kingston	25.06.2015
+813	9.98	+0.9	Nesta Carter	JAM	11.10.85	Kingston	26.06.2015
+813	9.98	-0.8	Jimmy Vicaut	FRA	27.02.92	London	24.07.2015
+813	9.98	-0.4	Justin Gatlin	USA	10.02.82	Bruxelles	11.09.2015
+813	9.98	-0.4	Femi Ogunode	QAT	15.05.91	Bruxelles	11.09.2015
+813	9.98A	+1.5	Wayde van Niekerk	RSA	15.07.92	Bloemfontein	12.03.2016
+813	9.98	-0.4	Usain Bolt	JAM	21.08.86	Ostrava	20.05.2016
+813	9.98	+1.0	Asafa Powell	JAM	23.11.82	Kingston	11.06.2016
+813	9.98	+1.6	Marvin Bracy	USA	15.12.93	Eugene	03.07.2016
+813	9.98	+0.2	Akani Simbine	RSA	21.09.93	Rio de Janeiro	14.08.2016
+813	9.98A	+1.1	Akani Simbine	RSA	21.09.93	Pretoria	18.03.2017
+813	9.98	+2.0	Odean Skeen	JAM	28.08.94	Auburn	22.04.2017
+813	9.98	+0.4	Ronnie Baker	USA	15.10.93	Kingston	20.05.2017
+813	9.98	-0.2	Christian Coleman	USA	06.03.96	Lexington	26.05.2017
+813	9.98	-0.7	Christian Coleman	USA	06.03.96	Sacramento	23.06.2017
+813	9.98	+0.9	Justin Gatlin	USA	10.02.82	Sz&eacute;kesfeh&eacute;rv&aacute;r	04.07.2017
+813	9.98	+0.2	Ben Youssef Meit&eacute;	CIV	11.11.86	Lausanne	06.07.2017
+813	9.98	-0.3	Chijindu Ujah	GBR	05.03.94	Rabat	16.07.2017
+813	9.98	+0.7	Isiah Young	USA	05.01.90	Monaco	21.07.2017
+813	9.98	+0.4	Usain Bolt	JAM	21.08.86	London	05.08.2017
+813	9.98	+1.8	Yoshihide Kiryu	JPN	15.12.95	Fukui	09.09.2017
+813	9.98	+1.9	Andre Ewers	JAM	07.06.95	Tampa	25.05.2018
+813	9.98	-0.5	Akani Simbine	RSA	21.09.93	Madrid	22.06.2018
+813	9.98	+0.2	Xie Zhenye	CHN	17.08.93	La Chaux-de-Fonds	01.07.2018
+813	9.98	-0.4	Christian Coleman	USA	06.03.96	Rabat	13.07.2018
+813	9.98	-0.4	Ronnie Baker	USA	15.10.93	Rabat	13.07.2018
+813	9.98	+0.1	Mike Rodgers	USA	24.04.85	London	21.07.2018
+813	9.98	+0.1	Tyquendo Tracey	JAM	10.06.93	London	21.07.2018
+813	9.98	-0.5	Noah Lyles	USA	18.07.97	Birmingham	18.08.2018
+813	9.98	+1.0	Roberto Skyers	CUB	12.11.91	Camag&uuml;ey	22.02.2019
+813	9.98	+0.3	Yohan Blake	JAM	26.12.89	Clermont	05.05.2019
+813	9.98	+1.3	Mario Burke	BAR	18.03.97	Austin	05.06.2019
+813	9.98	+0.5	Yuki Koike	JPN	13.05.95	London	20.07.2019
+813	9.98	+1.1	Andre De Grasse	CAN	10.11.94	Montr&eacute;al	26.07.2019
+813	9.98	-0.4	Noah Lyles	USA	18.07.97	Z&uuml;rich	29.08.2019
+813	9.98	+0.1	Christian Coleman	USA	06.03.96	Ad-Dawhah	27.09.2019
+813	9.98	+1.9	Justin Gatlin	USA	10.02.82	Miramar	10.04.2021
+813	9.98	+1.4	Justin Gatlin	USA	10.02.82	Gainesville	17.04.2021
+813	9.98	-0.9	Su Bingtian	CHN	29.08.89	Zhaoqing	24.04.2021
+813	9.98	+0.8	Su Bingtian	CHN	29.08.89	Shaoxing	11.06.2021
+813	9.98	+1.2	Yohan Blake	JAM	26.12.89	Kingston	25.06.2021
+813	9.98	+0.3	Akani Simbine	RSA	21.09.93	Monaco	09.07.2021
+813	9.98	+0.4	Trayvon Bromell	USA	10.07.95	Gateshead	13.07.2021
+813	9.98	+0.3	Enoch Adegoke	NGR	08.03.00	Tokyo	31.07.2021
+813	9.98	-0.2	Zharnel Hughes	GBR	13.07.95	Tokyo	01.08.2021
+813	9.98	-0.1	Andre De Grasse	CAN	10.11.94	Tokyo	01.08.2021
+813	9.98	+0.1	Su Bingtian	CHN	29.08.89	Tokyo	01.08.2021
+813	9.98	-1.0	Marvin Bracy	USA	15.12.93	Memphis	15.08.2021
+813	9.98	+0.1	Michael Norman	USA	03.12.97	Bruxelles	03.09.2021
+930	9.99	+1.3	Carl Lewis	USA	01.07.61	Houston	06.05.1984
+930	9.99	+0.2	Carl Lewis	USA	01.07.61	Los Angeles	04.08.1984
+930	9.99	+0.9	Carl Lewis	USA	01.07.61	Z&uuml;rich	22.08.1984
+930	9.99	+1.4	Carl Lewis	USA	01.07.61	Seoul	23.09.1988
+930	9.99	+1.1	Calvin Smith	USA	08.01.61	Seoul	24.09.1988
+930	9.99	+1.1	Dennis Mitchell	USA	20.02.66	Tokyo	25.08.1991
+930	9.99	+1.1	Linford Christie	GBR	02.04.60	Tokyo	25.08.1991
+930	9.99	+1.5	Andre Cason	USA	20.01.69	Koblenz	11.09.1991
+930	9.99	+1.0	Daniel Effiong	NGR	17.06.72	Odessa	21.05.1993
+930	9.99	+0.3	Dennis Mitchell	USA	20.02.66	Stuttgart	15.08.1993
+930	9.99	+1.2	Davidson Ezinwa	NGR	22.11.71	Lausanne	06.07.1994
+930	9.99	+1.2	Dennis Mitchell	USA	20.02.66	Lausanne	06.07.1994
+930	9.99	+1.9	Jon Drummond	USA	09.09.68	Oslo	22.07.1994
+930	9.99	+0.5	Jon Drummond	USA	09.09.68	Durham	13.08.1994
+930	9.99	+1.5	Jon Drummond	USA	09.09.68	Rieti	28.08.1994
+930	9.99	+0.9	Donovan Bailey	CAN	16.12.67	Baton Rouge	22.04.1995
+930	9.99	+1.0	Frank Fredericks	NAM	02.10.67	Villeneuve d'Ascq	25.05.1996
+930	9.99	-0.3	Jon Drummond	USA	09.09.68	Atlanta	14.06.1996
+930	9.99	+0.7	Dennis Mitchell	USA	20.02.66	Atlanta	27.07.1996
+930	9.99	0.0	Donovan Bailey	CAN	16.12.67	Burnaby	18.05.1997
+930	9.99	+1.2	Tim Montgomery	USA	28.01.75	Ath&iacute;nai	02.08.1997
+930	9.99	+0.5	Frank Fredericks	NAM	02.10.67	Ath&iacute;nai	02.08.1997
+930	9.99	-0.7	Maurice Greene	USA	23.07.74	Z&uuml;rich	13.08.1997
+930	9.99	+0.4	Tim Montgomery	USA	28.01.75	Monaco	16.08.1997
+930	9.99	-0.7	Donovan Bailey	CAN	16.12.67	K&ouml;ln	24.08.1997
+930	9.99	+0.3	Frank Fredericks	NAM	02.10.67	Berlin	26.08.1997
+930	9.99	-0.5	Maurice Greene	USA	23.07.74	Sydney	28.02.1998
+930	9.99	0.0	Ato Boldon	TTO	30.12.73	Roma	14.07.1998
+930	9.99	+0.1	Ato Boldon	TTO	30.12.73	Berlin	01.09.1998
+930	9.99	+1.1	Dwain Chambers	GBR	05.04.78	N&uuml;rnberg	13.06.1999
+930	9.99	-0.7	Maurice Greene	USA	23.07.74	Z&uuml;rich	11.08.1999
+930	9.99A	0.0	Leonard Myles-Mills	GHA	05.09.73	Johannesburg	15.09.1999
+930	9.99	+0.4	Bernard Williams	USA	19.01.78	Durham	02.06.2000
+930	9.99	-0.3	Ato Boldon	TTO	30.12.73	Sydney	23.09.2000
+930	9.99	+1.1	Ato Boldon	TTO	30.12.73	Lausanne	04.07.2001
+930	9.99	+2.0	Bernard Williams	USA	19.01.78	Oslo	13.07.2001
+930	9.99	-0.2	Dwain Chambers	GBR	05.04.78	Edmonton	05.08.2001
+930	9.99A	+0.6	Shawn Crawford	USA	14.01.78	Pretoria	12.04.2002
+930	9.99	+0.5	Brian Lewis	USA	05.12.74	Cayenne	04.05.2002
+930	9.99	+0.7	Maurice Greene	USA	23.07.74	Palo Alto	21.06.2002
+930	9.99	+0.4	Maurice Greene	USA	23.07.74	Saint-Denis	05.07.2002
+930	9.99	+0.1	Bernard Williams	USA	19.01.78	Monaco	19.07.2002
+930	9.99	+1.5	Mickey Grimes	USA	10.10.76	Z&uuml;rich	15.08.2003
+930	9.99	+1.3	Kim Collins	SKN	05.04.76	Z&uuml;rich	15.08.2003
+930	9.99	+1.8	Asafa Powell	JAM	23.11.82	Spanish Town	12.06.2004
+930	9.99	0.0	Coby Miller	USA	19.10.76	Sacramento	11.07.2004
+930	9.99	-0.2	Asafa Powell	JAM	23.11.82	Ath&iacute;nai	21.08.2004
+930	9.99	+0.2	Shawn Crawford	USA	14.01.78	Bruxelles	03.09.2004
+930	9.99	+1.6	Abdul Aziz Zakari	GHA	02.09.76	Ath&iacute;nai	14.06.2005
+930	9.99	+1.0	Shawn Crawford	USA	14.01.78	Carson	25.06.2005
+930	9.99	+1.0	Darrel Brown	TTO	11.10.84	Port of Spain	25.06.2005
+930	9.99	+1.8	Ronald Pognon	FRA	16.11.82	Lausanne	05.07.2005
+930	9.99	-1.0	Justin Gatlin	USA	10.02.82	Helsinki	07.08.2005
+930	9.99	0.0	Justin Gatlin	USA	10.02.82	Bruxelles	26.08.2005
+930	9.99	+0.5	Abdul Aziz Zakari	GHA	02.09.76	Rieti	28.08.2005
+930	9.99	+1.3	Francis Obikwelu	POR	22.11.78	G&ouml;teborg	08.08.2006
+930	9.99	+1.0	Marcus Brunson	USA	24.04.78	Z&uuml;rich	18.08.2006
+930	9.99	+0.3	Asafa Powell	JAM	23.11.82	Bruxelles	25.08.2006
+930	9.99	+0.9	Samuel Francis	QAT	27.03.87	Amman	26.07.2007
+930	9.99	+1.6	Mark Jelks	USA	10.04.84	Eugene	28.06.2008
+930	9.99	-0.1	Churandy Martina	AHO	03.07.84	Beijing	15.08.2008
+930	9.99	0.0	Richard Thompson	TTO	07.06.85	Beijing	15.08.2008
+930	9.99	-0.5	Walter Dix	USA	31.01.86	Z&uuml;rich	29.08.2008
+930	9.99	-0.3	Daniel Bailey	ANT	09.09.86	Bel&eacute;m	24.05.2009
+930	9.99	+0.4	Lerone Clarke	JAM	12.06.81	Z&uuml;rich	28.08.2009
+930	9.99	-1.5	Asafa Powell	JAM	23.11.82	Rieti	06.09.2009
+930	9.99	+1.1	Dwain Chambers	GBR	05.04.78	Bergen	19.06.2010
+930	9.99	+1.1	Mario Forsythe	JAM	30.10.85	Rieti	29.08.2010
+930	9.99	+2.0	Travis Padgett	USA	13.12.86	Clermont	21.05.2011
+930	9.99	+1.3	Mike Rodgers	USA	24.04.85	Eugene	24.06.2011
+930	9.99	+1.0	Nesta Carter	JAM	11.10.85	Lausanne	30.06.2011

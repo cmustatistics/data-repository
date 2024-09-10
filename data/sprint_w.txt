@@ -1,0 +1,1001 @@
+Rank	Time	Wind	Name	Country	Birthdate	City	Date
+1	10.49	0.0	Florence Griffith-Joyner	USA	21.12.59	Indianapolis	16.07.1988
+2	10.54	+0.9	Elaine Thompson-Herah	JAM	28.06.92	Eugene	21.08.2021
+3	10.60	+1.7	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Lausanne	26.08.2021
+4	10.61	+1.2	Florence Griffith-Joyner	USA	21.12.59	Indianapolis	17.07.1988
+4	10.61	-0.6	Elaine Thompson-Herah	JAM	28.06.92	Tokyo	31.07.2021
+6	10.62	+1.0	Florence Griffith-Joyner	USA	21.12.59	Seoul	24.09.1988
+7	10.63	+1.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	05.06.2021
+8	10.64	+1.2	Carmelita Jeter	USA	24.11.79	Shanghai	20.09.2009
+8	10.64	+1.7	Elaine Thompson-Herah	JAM	28.06.92	Lausanne	26.08.2021
+10	10.65A	+1.1	Marion Jones	USA	12.10.75	Johannesburg	12.09.1998
+11	10.67	-0.1	Carmelita Jeter	USA	24.11.79	Thessalon&iacute;ki	13.09.2009
+12	10.70	+1.6	Florence Griffith-Joyner	USA	21.12.59	Indianapolis	17.07.1988
+12	10.70	-0.1	Marion Jones	USA	12.10.75	Sevilla	22.08.1999
+12	10.70	+2.0	Carmelita Jeter	USA	24.11.79	Eugene	04.06.2011
+12	10.70	+0.6	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	29.06.2012
+12	10.70	+0.3	Elaine Thompson-Herah	JAM	28.06.92	Kingston	01.07.2016
+17	10.71	+0.1	Marion Jones	USA	12.10.75	Chengdu	12.05.1998
+17	10.71	+2.0	Marion Jones	USA	12.10.75	New Orleans	19.06.1998
+17	10.71	-0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Moskva	12.08.2013
+17	10.71	+0.5	Elaine Thompson-Herah	JAM	28.06.92	Rio de Janeiro	13.08.2016
+17	10.71	+0.8	Elaine Thompson-Herah	JAM	28.06.92	Kingston	23.06.2017
+17	10.71	+0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Ad-Dawhah	29.09.2019
+17	10.71	+1.0	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	25.06.2021
+17	10.71	+0.6	Elaine Thompson-Herah	JAM	28.06.92	Sz&eacute;kesfeh&eacute;rv&aacute;r	06.07.2021
+25	10.72	+2.0	Marion Jones	USA	12.10.75	New Orleans	20.06.1998
+25	10.72	0.0	Marion Jones	USA	12.10.75	Monaco	08.08.1998
+25	10.72	0.0	Marion Jones	USA	12.10.75	Lausanne	25.08.1998
+25	10.72	-0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Bruxelles	06.09.2013
+25	10.72	+0.6	Elaine Thompson-Herah	JAM	28.06.92	Bruxelles	09.09.2016
+25	10.72	+1.6	Sha'Carri Richardson	USA	25.03.00	Miramar	10.04.2021
+25	10.72	+1.3	Elaine Thompson-Herah	JAM	28.06.92	Paris	28.08.2021
+32	10.73	+2.0	Christine Arron	FRA	13.09.73	Budapest	19.08.1998
+32	10.73	+0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Berlin	17.08.2009
+32	10.73	+0.6	Elaine Thompson-Herah	JAM	28.06.92	Kingston	21.06.2019
+32	10.73	+0.6	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	21.06.2019
+32	10.73	+0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Tokyo	31.07.2021
+32	10.73	+0.9	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Eugene	21.08.2021
+38	10.74	+1.3	Merlene Ottey	JAM	10.05.60	Milano	07.09.1996
+38	10.74	+0.2	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Saint-Denis	04.07.2015
+38	10.74	+1.0	English Gardner	USA	22.04.92	Eugene	03.07.2016
+38	10.74	+0.2	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Lausanne	05.07.2019
+38	10.74	+1.1	Sha'Carri Richardson	USA	25.03.00	Walnut	09.05.2021
+38	10.74	-0.6	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Tokyo	31.07.2021
+44	10.75	+0.6	Marion Jones	USA	12.10.75	Roma	14.07.1998
+44	10.75	+0.4	Kerron Stewart	JAM	16.04.84	Roma	10.07.2009
+44	10.75	+0.1	Kerron Stewart	JAM	16.04.84	Berlin	17.08.2009
+44	10.75	+1.5	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	04.08.2012
+44	10.75	+1.6	Sha'Carri Richardson	USA	25.03.00	Austin	08.06.2019
+49	10.76	+1.7	Evelyn Ashford	USA	15.04.57	Z&uuml;rich	22.08.1984
+49	10.76	+0.9	Marion Jones	USA	12.10.75	Bruxelles	22.08.1997
+49	10.76	+0.3	Marion Jones	USA	12.10.75	Sevilla	21.08.1999
+49	10.76	+1.1	Veronica Campbell-Brown	JAM	16.05.82	Ostrava	31.05.2011
+49	10.76	-0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Beijing	24.08.2015
+49	10.76	0.0	Elaine Thompson-Herah	JAM	28.06.92	Tokyo	31.07.2021
+49	10.76	-0.6	Shericka Jackson	JAM	16.07.94	Tokyo	31.07.2021
+49	10.76	+0.9	Shericka Jackson	JAM	16.07.94	Eugene	21.08.2021
+57	10.77	+0.9	Irina Privalova	RUS	12.11.68	Lausanne	06.07.1994
+57	10.77	-0.9	Marion Jones	USA	12.10.75	Z&uuml;rich	12.08.1998
+57	10.77	+0.7	Ivet Lalova-Collio	BUL	18.05.84	Plovdiv	19.06.2004
+57	10.77	+0.7	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	27.07.2013
+57	10.77	-1.2	Sha'Carri Richardson	USA	25.03.00	Walnut	09.05.2021
+57	10.77	+0.9	Shericka Jackson	JAM	16.07.94	Kingston	25.06.2021
+63	10.78A	+1.0	Dawn Sowell	USA	27.03.66	Provo	03.06.1989
+63	10.78	+1.7	Merlene Ottey	JAM	10.05.60	Sevilla	30.05.1990
+63	10.78	+0.4	Merlene Ottey	JAM	10.05.60	Paris	03.09.1994
+63	10.78	+1.1	Marion Jones	USA	12.10.75	London	05.08.2000
+63	10.78	+1.8	Torri Edwards	USA	31.01.77	Eugene	28.06.2008
+63	10.78	0.0	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Beijing	17.08.2008
+63	10.78	+0.8	Veronica Campbell-Brown	JAM	16.05.82	Eugene	03.07.2010
+63	10.78	+0.4	Carmelita Jeter	USA	24.11.79	Bruxelles	16.09.2011
+63	10.78	+1.5	Carmelita Jeter	USA	24.11.79	London	04.08.2012
+63	10.78	+1.6	Murielle Ahour&eacute;	CIV	23.08.87	Montverde	11.06.2016
+63	10.78	+1.0	Tianna Bartoletta	USA	30.08.85	Eugene	03.07.2016
+63	10.78	+1.0	Tori Bowie	USA	27.08.90	Eugene	03.07.2016
+63	10.78	+0.8	Elaine Thompson-Herah	JAM	28.06.92	Lausanne	25.08.2016
+63	10.78	-0.3	Elaine Thompson-Herah	JAM	28.06.92	Shanghai	13.05.2017
+63	10.78	+0.7	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	21.07.2019
+63	10.78	-0.3	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Tokyo	30.07.2021
+79	10.79A	+0.6	Evelyn Ashford	USA	15.04.57	Colorado Springs	03.07.1983
+79	10.79	+1.7	Merlene Ottey	JAM	10.05.60	Vigo	23.07.1991
+79	10.79	0.0	Li Xuemei	CHN	05.01.77	Shanghai	18.10.1997
+79	10.79	-0.6	Marion Jones	USA	12.10.75	Osaka	09.05.1998
+79	10.79	-0.1	Inger Miller	USA	12.06.72	Sevilla	22.08.1999
+79	10.79	-0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Berlin	17.08.2009
+79	10.79	+1.1	Blessing Okagbare	NGR	09.10.88	London	27.07.2013
+79	10.79	+1.5	English Gardner	USA	22.04.92	Eugene	26.06.2015
+79	10.79	+0.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	26.06.2015
+79	10.79	-0.2	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Tokyo	31.07.2021
+79	10.79	-0.2	Shericka Jackson	JAM	16.07.94	Tokyo	31.07.2021
+90	10.80	+1.6	Merlene Ottey	JAM	10.05.60	Salamanca	13.07.1992
+90	10.80	-0.8	Marion Jones	USA	12.10.75	Bruxelles	28.08.1998
+90	10.80	+1.1	Marion Jones	USA	12.10.75	Lausanne	02.07.1999
+90	10.80	+1.4	Marion Jones	USA	12.10.75	London	07.08.1999
+90	10.80	+0.7	Kerron Stewart	JAM	16.04.84	Kingston	28.06.2008
+90	10.80	+0.8	Tori Bowie	USA	27.08.90	Monaco	18.07.2014
+90	10.80	+0.2	Blessing Okagbare	NGR	09.10.88	Saint-Denis	04.07.2015
+90	10.80	+0.7	Tori Bowie	USA	27.08.90	Ad-Dawhah	06.05.2016
+90	10.80	-0.2	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Ad-Dawhah	28.09.2019
+99	10.81	+1.7	Marlies G&ouml;hr	GDR	21.03.58	Berlin	08.06.1983
+99	10.81	+1.2	Evelyn Ashford	USA	15.04.57	Indianapolis	17.07.1988
+99	10.81	+0.8	Marion Jones	USA	12.10.75	Berlin	26.08.1997
+99	10.81	+1.3	Christine Arron	FRA	13.09.73	Budapest	19.08.1998
+99	10.81	+0.2	Marion Jones	USA	12.10.75	Berlin	01.09.1998
+99	10.81	+0.1	Inger Miller	USA	12.06.72	Sevilla	22.08.1999
+99	10.81	+1.0	Carmelita Jeter	USA	24.11.79	Kingston	05.05.2012
+99	10.81	+1.5	Veronica Campbell-Brown	JAM	16.05.82	London	04.08.2012
+99	10.81	+0.7	Carmelita Jeter	USA	24.11.79	Birmingham	26.08.2012
+99	10.81	+1.7	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Eugene	30.05.2015
+99	10.81	+1.7	Murielle Ahour&eacute;	CIV	23.08.87	Eugene	30.05.2015
+99	10.81	+1.2	Tori Bowie	USA	27.08.90	Eugene	26.06.2015
+99	10.81	-0.3	Dafne Schippers	NED	15.06.92	Beijing	24.08.2015
+99	10.81	+1.5	English Gardner	USA	22.04.92	Eugene	28.05.2016
+99	10.81	-0.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Ad-Dawhah	29.09.2019
+114	10.82	+1.4	Merlene Ottey	JAM	10.05.60	Berlin	17.08.1990
+114	10.82	+2.0	Irina Privalova	RUS	12.11.68	Moskva	22.06.1992
+114	10.82	-1.0	Gail Devers	USA	19.11.66	Barcelona	01.08.1992
+114	10.82	+1.5	Gail Devers	USA	19.11.66	Lausanne	07.07.1993
+114	10.82	-0.3	Gail Devers	USA	19.11.66	Stuttgart	16.08.1993
+114	10.82	-0.3	Merlene Ottey	JAM	10.05.60	Stuttgart	16.08.1993
+114	10.82	+0.4	Gwen Torrence	USA	12.06.65	Paris	03.09.1994
+114	10.82	+1.1	Gwen Torrence	USA	12.06.65	Atlanta	15.06.1996
+114	10.82	-0.5	Marion Jones	USA	12.10.75	Oslo	09.07.1998
+114	10.82	-0.3	Zhanna Block	UKR	06.07.72	Edmonton	06.08.2001
+114	10.82	-0.7	Sherone Simpson	JAM	12.08.84	Kingston	24.06.2006
+114	10.82	+0.4	Carmelita Jeter	USA	24.11.79	Monaco	22.07.2010
+114	10.82	+0.6	Veronica Campbell-Brown	JAM	16.05.82	Kingston	29.06.2012
+114	10.82	+1.7	Tori Bowie	USA	27.08.90	Eugene	30.05.2015
+114	10.82	+0.5	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Beijing	24.08.2015
+114	10.82	+0.9	Michelle-Lee Ahye	TTO	10.04.92	Port of Spain	24.06.2017
+114	10.82	+1.1	Elaine Thompson-Herah	JAM	28.06.92	Kingston	25.06.2021
+114	10.82	+1.0	Shericka Jackson	JAM	16.07.94	Kingston	25.06.2021
+114	10.82	+0.6	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Sz&eacute;kesfeh&eacute;rv&aacute;r	06.07.2021
+114	10.82	+0.1	Elaine Thompson-Herah	JAM	28.06.92	Tokyo	30.07.2021
+134	10.83	+1.7	Marita Koch	GDR	18.02.57	Berlin	08.06.1983
+134	10.83	0.0	Sheila Echols	USA	02.10.64	Indianapolis	16.07.1988
+134	10.83	-1.0	Juliet Cuthbert	JAM	09.04.64	Barcelona	01.08.1992
+134	10.83	0.0	Gwen Torrence	USA	12.06.65	Bruxelles	19.08.1994
+134	10.83	+1.3	Gail Devers	USA	19.11.66	Milano	07.09.1996
+134	10.83	+0.4	Marion Jones	USA	12.10.75	Ath&iacute;nai	03.08.1997
+134	10.83	+0.9	Merlene Ottey	JAM	10.05.60	Bruxelles	22.08.1997
+134	10.83	-0.4	Merlene Ottey	JAM	10.05.60	Tokyo	06.09.1997
+134	10.83	+2.0	Irina Privalova	RUS	12.11.68	Budapest	19.08.1998
+134	10.83	+0.4	Marion Jones	USA	12.10.75	Moskva	05.09.1998
+134	10.83	-0.1	Marion Jones	USA	12.10.75	Sevilla	22.08.1999
+134	10.83	+0.1	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Sevilla	22.08.1999
+134	10.83	-1.3	Marion Jones	USA	12.10.75	Bruxelles	25.08.2000
+134	10.83	+0.4	Zhanna Block	UKR	06.07.72	Heusden-Zolder	20.07.2002
+134	10.83	-0.1	Carmelita Jeter	USA	24.11.79	Berlin	17.08.2009
+134	10.83	-0.4	Carmelita Jeter	USA	24.11.79	Daegu	25.09.2009
+134	10.83	+0.8	Carmelita Jeter	USA	24.11.79	Eugene	03.07.2010
+134	10.83	+1.5	Carmelita Jeter	USA	24.11.79	London	03.08.2012
+134	10.83	0.0	Carmelita Jeter	USA	24.11.79	London	04.08.2012
+134	10.83	-0.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Z&uuml;rich	30.08.2012
+134	10.83	+1.6	Kelly-Ann Baptiste	TTO	14.10.86	Port of Spain	22.06.2013
+134	10.83	-0.2	Dafne Schippers	NED	15.06.92	Beijing	24.08.2015
+134	10.83	+0.7	Dafne Schippers	NED	15.06.92	Ad-Dawhah	06.05.2016
+134	10.83	+1.6	Veronica Campbell-Brown	JAM	16.05.82	Montverde	11.06.2016
+134	10.83	+0.5	Tori Bowie	USA	27.08.90	Rio de Janeiro	13.08.2016
+134	10.83	+1.1	Murielle Ahour&eacute;	CIV	23.08.87	Montverde	10.06.2017
+134	10.83	+0.1	Dina Asher-Smith	GBR	04.12.95	Ad-Dawhah	29.09.2019
+134	10.83	+0.9	Teahna Daniels	USA	25.03.97	Eugene	21.08.2021
+162	10.84	+1.7	Marlies G&ouml;hr	GDR	21.03.58	Z&uuml;rich	22.08.1984
+162	10.84	0.0	Merlene Ottey	JAM	10.05.60	Lausanne	10.07.1991
+162	10.84	+0.2	Merlene Ottey	JAM	10.05.60	Berlin	10.09.1991
+162	10.84	+1.3	Chioma Ajunwa	NGR	25.12.70	Lagos	11.04.1992
+162	10.84	-1.0	Irina Privalova	RUS	12.11.68	Barcelona	01.08.1992
+162	10.84	+1.4	Gwen Torrence	USA	12.06.65	G&ouml;teborg	07.08.1995
+162	10.84	-0.5	Gail Devers	USA	19.11.66	Bruxelles	23.08.1996
+162	10.84	+0.3	Marion Jones	USA	12.10.75	Linz	05.07.1998
+162	10.84	-0.1	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Sevilla	22.08.1999
+162	10.84	-0.7	Marion Jones	USA	12.10.75	Osaka	13.05.2000
+162	10.84	+0.6	Zhanna Block	UKR	06.07.72	R&eacute;thymno	07.07.2002
+162	10.84	+1.9	Chandra Sturrup	BAH	12.09.71	Lausanne	05.07.2005
+162	10.84	-0.1	Kerron Stewart	JAM	16.04.84	Berlin	17.08.2009
+162	10.84	+1.8	Kelly-Ann Baptiste	TTO	14.10.86	Clermont	05.06.2010
+162	10.84	+0.3	Veronica Campbell-Brown	JAM	16.05.82	Kingston	24.06.2011
+162	10.84	+1.5	English Gardner	USA	22.04.92	Eugene	30.05.2015
+162	10.84	+1.5	Elaine Thompson-Herah	JAM	28.06.92	Eugene	30.05.2015
+162	10.84	+1.4	Kelly-Ann Baptiste	TTO	14.10.86	Port of Spain	27.06.2015
+162	10.84	+1.1	Veronica Campbell-Brown	JAM	16.05.82	Montverde	10.06.2017
+162	10.84	-0.2	Elaine Thompson-Herah	JAM	28.06.92	London	06.08.2017
+162	10.84	+1.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Ad-Dawhah	28.05.2021
+162	10.84	+1.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	25.06.2021
+162	10.84	+1.0	Elaine Thompson-Herah	JAM	28.06.92	Kingston	25.06.2021
+162	10.84	+1.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Tokyo	30.07.2021
+186	10.85	+1.6	Evelyn Ashford	USA	15.04.57	Indianapolis	17.07.1988
+186	10.85	+2.0	Anelia Nuneva	BUL	30.06.62	Sofia	02.09.1988
+186	10.85	+1.5	Merlene Ottey	JAM	10.05.60	Rieti	09.09.1990
+186	10.85	+0.9	Gwen Torrence	USA	12.06.65	Lausanne	06.07.1994
+186	10.85	+0.9	Gwen Torrence	USA	12.06.65	G&ouml;teborg	07.08.1995
+186	10.85	+1.4	Merlene Ottey	JAM	10.05.60	G&ouml;teborg	07.08.1995
+186	10.85	+1.6	Gwen Torrence	USA	12.06.65	Atlanta	18.05.1996
+186	10.85	+0.4	Zhanna Block	UKR	06.07.72	Ath&iacute;nai	03.08.1997
+186	10.85	+0.8	Merlene Ottey	JAM	10.05.60	Berlin	26.08.1997
+186	10.85	+1.5	Christine Arron	FRA	13.09.73	Montauban	05.08.1998
+186	10.85	+0.4	Veronica Campbell-Brown	JAM	16.05.82	Z&uuml;rich	19.08.2005
+186	10.85	+1.0	Muna Lee	USA	30.10.81	Eugene	28.06.2008
+186	10.85	+0.7	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	28.06.2008
+186	10.85	+0.4	Veronica Campbell-Brown	JAM	16.05.82	Bruxelles	16.09.2011
+186	10.85	+1.2	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	04.08.2012
+186	10.85	+1.5	Tianna Bartoletta	USA	30.08.85	London	04.08.2012
+186	10.85	+2.0	Barbara Pierre	USA	28.04.87	Des Moines	21.06.2013
+186	10.85	+1.8	English Gardner	USA	22.04.92	Des Moines	21.06.2013
+186	10.85	+1.1	Barbara Pierre	USA	28.04.87	London	27.07.2013
+186	10.85	+1.6	Michelle-Lee Ahye	TTO	10.04.92	Port of Spain	21.06.2014
+186	10.85	+0.3	Blessing Okagbare	NGR	09.10.88	Glasgow	28.07.2014
+186	10.85	+0.2	Elaine Thompson-Herah	JAM	28.06.92	Kingston	01.07.2016
+186	10.85	+2.0	Aleia Hobbs	USA	24.02.96	Baton Rouge	28.04.2017
+186	10.85	+0.1	Tori Bowie	USA	27.08.90	London	06.08.2017
+186	10.85	+1.5	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Ad-Dawhah	04.05.2018
+186	10.85	0.0	Dina Asher-Smith	GBR	04.12.95	Berlin	07.08.2018
+186	10.85	-0.3	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Ad-Dawhah	28.09.2019
+186	10.85	+0.2	Elaine Thompson-Herah	JAM	28.06.92	Roma	17.09.2020
+214	10.86	+0.4	Marlies G&ouml;hr	GDR	21.03.58	Potsdam	05.05.1984
+214	10.86	+2.0	Marlies G&ouml;hr	GDR	21.03.58	Berlin	22.09.1985
+214	10.86	+0.8	Anelia Nuneva	BUL	30.06.62	Beograd	17.06.1987
+214	10.86	+0.6	Silke M&ouml;ller	GER	20.06.64	Potsdam	20.08.1987
+214	10.86	0.0	Diane Williams	USA	14.12.60	Indianapolis	16.07.1988
+214	10.86	-1.0	Gwen Torrence	USA	12.06.65	Barcelona	01.08.1992
+214	10.86	+0.9	Gwen Torrence	USA	12.06.65	Bruxelles	03.09.1993
+214	10.86	-0.2	Marion Jones	USA	12.10.75	Helsinki	13.06.1998
+214	10.86	-0.3	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Sevilla	21.08.1999
+214	10.86	+0.7	Inger Miller	USA	12.06.72	Sevilla	21.08.1999
+214	10.86	+0.1	Chandra Sturrup	BAH	12.09.71	Nassau	21.07.2000
+214	10.86	+1.2	Chryste Gaines	USA	14.09.70	Monaco	14.09.2003
+214	10.86	+0.7	Carmelita Jeter	USA	24.11.79	Z&uuml;rich	28.08.2009
+214	10.86	+1.9	Carmelita Jeter	USA	24.11.79	Kingston	07.05.2011
+214	10.86	+2.0	Marshevet Hooker	USA	25.09.84	Eugene	04.06.2011
+214	10.86	+1.0	Kelly-Ann Baptiste	TTO	14.10.86	Kingston	05.05.2012
+214	10.86	-0.1	Carmelita Jeter	USA	24.11.79	Lausanne	23.08.2012
+214	10.86	-0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Lausanne	23.08.2012
+214	10.86	+0.1	Blessing Okagbare	NGR	09.10.88	London	27.07.2013
+214	10.86	+2.0	Veronica Campbell-Brown	JAM	16.05.82	Montverde	07.06.2014
+214	10.86	+1.2	English Gardner	USA	22.04.92	Eugene	26.06.2015
+214	10.86	-0.3	Tori Bowie	USA	27.08.90	Beijing	24.08.2015
+214	10.86	+0.5	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Rio de Janeiro	13.08.2016
+214	10.86	+0.5	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Rio de Janeiro	13.08.2016
+214	10.86	+0.1	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	London	06.08.2017
+214	10.86	+0.9	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	22.08.2020
+214	10.86	+0.6	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Sz&eacute;kesfeh&eacute;rv&aacute;r	06.07.2021
+241	10.87	+1.9	Marlies G&ouml;hr	GDR	21.03.58	Dresden	26.07.1984
+241	10.87	+1.1	Merlene Ottey	JAM	10.05.60	Walnut	31.05.1987
+241	10.87	+0.2	Anelia Nuneva	BUL	30.06.62	Sofia	02.09.1988
+241	10.87	+0.2	Merlene Ottey	JAM	10.05.60	Roma	17.07.1991
+241	10.87	-1.0	Merlene Ottey	JAM	10.05.60	Z&uuml;rich	07.08.1991
+241	10.87	-0.2	Merlene Ottey	JAM	10.05.60	Barcelona	20.09.1991
+241	10.87	-0.3	Merlene Ottey	JAM	10.05.60	Stuttgart	16.08.1993
+241	10.87	-0.3	Gwen Torrence	USA	12.06.65	Stuttgart	16.08.1993
+241	10.87	0.0	Gwen Torrence	USA	12.06.65	Monaco	02.08.1994
+241	10.87	0.0	Gwen Torrence	USA	12.06.65	Durham	13.08.1994
+241	10.87	-0.3	Marion Jones	USA	12.10.75	Malm&ouml;	03.08.1998
+241	10.87	+2.0	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Budapest	19.08.1998
+241	10.87	+0.3	Sherone Simpson	JAM	12.08.84	Roma	14.07.2006
+241	10.87	+0.7	Sherone Simpson	JAM	12.08.84	Kingston	28.06.2008
+241	10.87	0.0	Veronica Campbell-Brown	JAM	16.05.82	London	26.07.2008
+241	10.87	+2.0	Kerron Stewart	JAM	16.04.84	Eugene	04.06.2011
+241	10.87	+1.6	Marshevet Hooker	USA	25.09.84	Eugene	23.06.2011
+241	10.87	+1.7	English Gardner	USA	22.04.92	Des Moines	21.06.2013
+241	10.87	+1.8	Octavious Freeman	USA	20.04.92	Des Moines	21.06.2013
+241	10.87	-0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Moskva	12.08.2013
+241	10.87	+1.7	Blessing Okagbare	NGR	09.10.88	Eugene	30.05.2015
+241	10.87	+0.9	Tori Bowie	USA	27.08.90	Beijing	24.08.2015
+241	10.87	+0.8	Elaine Thompson-Herah	JAM	28.06.92	Roma	02.06.2016
+241	10.87	+0.3	Elaine Thompson-Herah	JAM	28.06.92	Rabat	16.07.2017
+241	10.87	+0.8	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	London	06.08.2017
+241	10.87	+0.8	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Ad-Dawhah	29.09.2019
+241	10.87	+0.5	Dina Asher-Smith	GBR	04.12.95	Ad-Dawhah	29.09.2019
+241	10.87	+1.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	08.08.2020
+241	10.87	0.0	Elaine Thompson-Herah	JAM	28.06.92	Ad-Dawhah	25.09.2020
+241	10.87	+1.3	Natasha Morrison	JAM	17.11.92	Miami	24.04.2021
+241	10.87	+1.2	Elaine Thompson-Herah	JAM	28.06.92	Miramar	05.06.2021
+272	10.88	+2.0	Marlies G&ouml;hr	GDR	21.03.58	Dresden	01.07.1977
+272	10.88	+1.9	Marlies G&ouml;hr	GDR	21.03.58	Karl-Marx-Stadt	09.07.1982
+272	10.88	+1.9	Evelyn Ashford	USA	15.04.57	Rieti	07.09.1986
+272	10.88	+1.6	Evelyn Ashford	USA	15.04.57	Seoul	24.09.1988
+272	10.88	+1.0	Florence Griffith-Joyner	USA	21.12.59	Seoul	24.09.1988
+272	10.88	+0.2	Merlene Ottey	JAM	10.05.60	Oslo	06.07.1991
+272	10.88	-1.0	Merlene Ottey	JAM	10.05.60	Barcelona	01.08.1992
+272	10.88	+0.8	Gail Devers	USA	19.11.66	Berlin	26.08.1997
+272	10.88	0.0	Marion Jones	USA	12.10.75	Paris	29.07.1998
+272	10.88	-1.0	Marion Jones	USA	12.10.75	Sacramento	15.07.2000
+272	10.88	-0.1	Chryste Gaines	USA	14.09.70	Bruxelles	05.09.2003
+272	10.88	+0.4	Lauryn Williams	USA	11.09.83	Z&uuml;rich	19.08.2005
+272	10.88	+1.2	Veronica Campbell-Brown	JAM	16.05.82	Clermont	14.06.2008
+272	10.88	+0.7	Veronica Campbell-Brown	JAM	16.05.82	Kingston	28.06.2008
+272	10.88	-1.5	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	27.06.2009
+272	10.88	+0.5	Carmelita Jeter	USA	24.11.79	Bruxelles	04.09.2009
+272	10.88	+1.7	Carmelita Jeter	USA	24.11.79	Eugene	23.06.2011
+272	10.88	+1.2	Michelle-Lee Ahye	TTO	10.04.92	Port of Spain	21.06.2014
+272	10.88	+0.5	Tori Bowie	USA	27.08.90	Beijing	23.08.2015
+272	10.88	+0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Rio de Janeiro	13.08.2016
+272	10.88	+0.6	Elaine Thompson-Herah	JAM	28.06.92	Rio de Janeiro	13.08.2016
+272	10.88	+0.9	Kelly-Ann Baptiste	TTO	14.10.86	Port of Spain	24.06.2017
+272	10.88	+1.9	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Eugene	26.05.2018
+272	10.88	-0.5	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	08.06.2019
+272	10.88	-0.3	Dina Asher-Smith	GBR	04.12.95	Bruxelles	06.09.2019
+272	10.88	+0.3	Elaine Thompson-Herah	JAM	28.06.92	Kingston	08.08.2020
+298	10.89	+0.7	Marlies G&ouml;hr	GDR	21.03.58	Erfurt	01.06.1984
+298	10.89	-0.1	Florence Griffith-Joyner	USA	21.12.59	San Diego	25.06.1988
+298	10.89	+2.0	Marlies G&ouml;hr	GDR	21.03.58	Neubrandenburg	09.07.1988
+298	10.89	+1.8	Katrin Krabbe	GER	22.11.69	Berlin	20.07.1988
+298	10.89	+1.8	Katrin Krabbe	GER	22.11.69	Split	28.08.1990
+298	10.89	-0.1	Merlene Ottey	JAM	10.05.60	Tokyo	26.08.1991
+298	10.89	+1.6	Juliet Cuthbert	JAM	09.04.64	Salamanca	13.07.1992
+298	10.89	+1.9	Irina Privalova	RUS	12.11.68	Moskva	18.07.1992
+298	10.89	+0.6	Merlene Ottey	JAM	10.05.60	Bruxelles	28.08.1992
+298	10.89	-0.3	Gwen Torrence	USA	12.06.65	Stuttgart	16.08.1993
+298	10.89	+0.4	Gwen Torrence	USA	12.06.65	Linz	04.07.1994
+298	10.89	-0.1	Gail Devers	USA	19.11.66	Berlin	30.08.1996
+298	10.89	+0.5	Gail Devers	USA	19.11.66	Lausanne	02.07.1997
+298	10.89	0.0	Liu Xiaomei	CHN	11.01.72	Shanghai	18.10.1997
+298	10.89	+2.0	Chryste Gaines	USA	14.09.70	New Orleans	20.06.1998
+298	10.89	0.0	Chandra Sturrup	BAH	12.09.71	Roma	11.07.2003
+298	10.89	-0.1	Chryste Gaines	USA	14.09.70	Z&uuml;rich	15.08.2003
+298	10.89	-0.2	Sherone Simpson	JAM	12.08.84	Stuttgart	10.09.2006
+298	10.89	+1.0	Veronica Campbell-Brown	JAM	16.05.82	Kingston	23.06.2007
+298	10.89	-0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Thessalon&iacute;ki	13.09.2009
+298	10.89	+1.2	Veronica Campbell-Brown	JAM	16.05.82	Shanghai	20.09.2009
+298	10.89	0.0	Veronica Campbell-Brown	JAM	16.05.82	Z&uuml;rich	19.08.2010
+298	10.89	0.0	Carmelita Jeter	USA	24.11.79	Z&uuml;rich	19.08.2010
+298	10.89	0.0	Veronica Campbell-Brown	JAM	16.05.82	London	04.08.2012
+298	10.89	+1.5	Allyson Felix	USA	18.11.85	London	04.08.2012
+298	10.89	+0.5	Blessing Okagbare	NGR	09.10.88	Beijing	24.08.2015
+298	10.89	-0.2	Veronica Campbell-Brown	JAM	16.05.82	Beijing	24.08.2015
+298	10.89	+0.1	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Monaco	20.07.2018
+298	10.89	+0.6	Elaine Thompson-Herah	JAM	28.06.92	Roma	06.06.2019
+298	10.89	+0.4	Elaine Thompson-Herah	JAM	28.06.92	Kingston	21.06.2019
+298	10.89	+1.3	Twanisha Terry	USA	24.01.99	College Station	29.05.2021
+298	10.89	+0.6	Blessing Okagbare	NGR	09.10.88	Sz&eacute;kesfeh&eacute;rv&aacute;r	06.07.2021
+330	10.90A	+0.6	Evelyn Ashford	USA	15.04.57	Colorado Springs	22.07.1981
+330	10.90	+1.1	Marlies G&ouml;hr	GDR	21.03.58	Karl-Marx-Stadt	16.06.1983
+330	10.90	+1.4	Anelia Nuneva	BUL	30.06.62	Dr&aacute;ma	08.08.1987
+330	10.90	-0.4	Anelia Nuneva	BUL	30.06.62	Sofia	15.08.1987
+330	10.90	-0.5	Silke M&ouml;ller	GER	20.06.64	Roma	30.08.1987
+330	10.90	-0.6	Merlene Ottey	JAM	10.05.60	Monaco	07.08.1993
+330	10.90	+1.9	Irina Privalova	RUS	12.11.68	Stockholm	12.07.1994
+330	10.90	+1.4	Irina Privalova	RUS	12.11.68	G&ouml;teborg	07.08.1995
+330	10.90	+0.5	Marion Jones	USA	12.10.75	Lausanne	02.07.1997
+330	10.90	+0.7	Zhanna Block	UKR	06.07.72	Ath&iacute;nai	02.08.1997
+330	10.90	+0.6	Li Xuemei	CHN	05.01.77	Shanghai	17.10.1997
+330	10.90	-0.8	Marion Jones	USA	12.10.75	Uniondale	19.07.1998
+330	10.90	+1.4	Glory Alozie	NGR	30.12.77	La Laguna	05.06.1999
+330	10.90	+1.0	Zhanna Block	UKR	06.07.72	Bruxelles	30.08.2002
+330	10.90	+2.0	Torri Edwards	USA	31.01.77	Carson	20.05.2007
+330	10.90	-0.7	Veronica Campbell-Brown	JAM	16.05.82	Shanghai	28.09.2007
+330	10.90	+1.0	Torri Edwards	USA	31.01.77	Eugene	28.06.2008
+330	10.90	+1.0	Lauryn Williams	USA	11.09.83	Eugene	28.06.2008
+330	10.90	+0.1	Carmelita Jeter	USA	24.11.79	Berlin	17.08.2009
+330	10.90	-0.1	Kerron Stewart	JAM	16.04.84	Thessalon&iacute;ki	13.09.2009
+330	10.90	+1.8	Shalonda Solomon	USA	19.12.85	Clermont	05.06.2010
+330	10.90	-1.4	Carmelita Jeter	USA	24.11.79	Daegu	29.08.2011
+330	10.90	+0.4	Kelly-Ann Baptiste	TTO	14.10.86	Bruxelles	16.09.2011
+330	10.90	+0.7	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Birmingham	26.08.2012
+330	10.90	+1.7	Octavious Freeman	USA	20.04.92	Des Moines	21.06.2013
+330	10.90	+0.1	Barbara Pierre	USA	28.04.87	London	27.07.2013
+330	10.90	+1.0	Elaine Thompson-Herah	JAM	28.06.92	Madrid	11.07.2015
+330	10.90	+0.9	Kelly-Ann Baptiste	TTO	14.10.86	Beijing	24.08.2015
+330	10.90	+1.8	English Gardner	USA	22.04.92	Eugene	02.07.2016
+330	10.90	-0.2	Dafne Schippers	NED	15.06.92	Amsterdam	08.07.2016
+330	10.90	+1.0	Tori Bowie	USA	27.08.90	Rio de Janeiro	13.08.2016
+330	10.90	+1.0	Michelle-Lee Ahye	TTO	10.04.92	Rio de Janeiro	13.08.2016
+330	10.90	+0.3	Dafne Schippers	NED	15.06.92	Rio de Janeiro	13.08.2016
+330	10.90	+0.6	English Gardner	USA	22.04.92	Rio de Janeiro	13.08.2016
+330	10.90	+0.5	Dafne Schippers	NED	15.06.92	Rio de Janeiro	13.08.2016
+330	10.90	+1.6	Tori Bowie	USA	27.08.90	Sacramento	22.06.2017
+330	10.90	+0.3	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Rabat	16.07.2017
+330	10.90	+1.5	Blessing Okagbare	NGR	09.10.88	Ad-Dawhah	04.05.2018
+330	10.90	+1.9	Aleia Hobbs	USA	24.02.96	Tampa	25.05.2018
+330	10.90	+1.9	Murielle Ahour&eacute;	CIV	23.08.87	Eugene	26.05.2018
+330	10.90	+1.3	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Lausanne	05.07.2018
+330	10.90	+0.1	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Ad-Dawhah	29.09.2019
+330	10.90	+1.1	Blessing Okagbare	NGR	09.10.88	Ad-Dawhah	28.05.2021
+330	10.90	+1.8	Ajla Del Ponte	SUI	15.07.96	La Chaux-de-Fonds	14.08.2021
+330	10.90	+0.9	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Eugene	21.08.2021
+375	10.91	+1.0	Marlies G&ouml;hr	GDR	21.03.58	Dresden	01.07.1982
+375	10.91	+0.6	Marlies G&ouml;hr	GDR	21.03.58	Berlin	31.07.1983
+375	10.91	-0.5	Marlies G&ouml;hr	GDR	21.03.58	Berlin	20.07.1984
+375	10.91	+0.2	Evelyn Ashford	USA	15.04.57	Moskva	06.07.1986
+375	10.91	+0.2	Heike Drechsler	GER	16.12.64	Moskva	06.07.1986
+375	10.91	+0.8	Marlies G&ouml;hr	GDR	21.03.58	Stuttgart	27.08.1986
+375	10.91	+0.2	Anelia Nuneva	BUL	30.06.62	Stara Zagora	01.08.1987
+375	10.91	+1.7	Heike Drechsler	GER	16.12.64	Oslo	02.07.1988
+375	10.91	+1.2	Gwen Torrence	USA	12.06.65	Indianapolis	17.07.1988
+375	10.91	+1.4	Florence Griffith-Joyner	USA	21.12.59	Tokyo	07.10.1988
+375	10.91	+1.6	Dawn Sowell	USA	27.03.66	Houston	16.06.1989
+375	10.91	+0.7	Merlene Ottey	JAM	10.05.60	Duisburg	12.06.1991
+375	10.91	+0.5	Katrin Krabbe	GER	22.11.69	Hannover	27.07.1991
+375	10.91	-0.4	Katrin Krabbe	GER	22.11.69	Tokyo	26.08.1991
+375	10.91	+1.1	Gail Devers	USA	19.11.66	Atlanta	15.06.1996
+375	10.91	-0.4	Marion Jones	USA	12.10.75	Tokyo	06.09.1997
+375	10.91	+1.6	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Kalam&aacute;ta	22.05.1999
+375	10.91	+1.1	Sevatheda Fynes	BAH	17.10.74	Lausanne	02.07.1999
+375	10.91	+1.0	Marion Jones	USA	12.10.75	Roma	30.06.2000
+375	10.91	+0.9	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Lausanne	05.07.2000
+375	10.91	-0.3	Inger Miller	USA	12.06.72	Monaco	10.08.2000
+375	10.91	-0.3	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Edmonton	06.08.2001
+375	10.91	-0.1	Zhanna Block	UKR	06.07.72	Luzern	26.06.2002
+375	10.91	+1.5	Debbie Ferguson-McKenzie	BAH	16.01.76	Manchester	27.07.2002
+375	10.91	0.0	Veronica Campbell-Brown	JAM	16.05.82	Monaco	19.09.2004
+375	10.91	+1.9	Lauryn Williams	USA	11.09.83	Lausanne	05.07.2005
+375	10.91	+2.0	Veronica Campbell-Brown	JAM	16.05.82	Carson	20.05.2007
+375	10.91	+0.9	Veronica Campbell-Brown	JAM	16.05.82	New York City	31.05.2008
+375	10.91	+0.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Roma	10.07.2009
+375	10.91	0.0	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Monaco	28.07.2009
+375	10.91	+0.6	Kelly-Ann Baptiste	TTO	14.10.86	Saint-Denis	08.07.2011
+375	10.91	+1.7	Alexandra Anderson	USA	28.01.87	Des Moines	21.06.2013
+375	10.91	+1.8	Alexandra Anderson	USA	28.01.87	Des Moines	21.06.2013
+375	10.91	+1.5	Murielle Ahour&eacute;	CIV	23.08.87	Sotteville-l&egrave;s-Rouen	08.07.2013
+375	10.91	+2.0	Tori Bowie	USA	27.08.90	Sacramento	27.06.2014
+375	10.91	-0.3	Veronica Campbell-Brown	JAM	16.05.82	Beijing	24.08.2015
+375	10.91	+0.7	Veronica Campbell-Brown	JAM	16.05.82	Ad-Dawhah	06.05.2016
+375	10.91	+1.2	Tori Bowie	USA	27.08.90	Herzogenaurach	14.05.2016
+375	10.91	+1.8	Tori Bowie	USA	27.08.90	Eugene	02.07.2016
+375	10.91	+0.1	Elaine Thompson-Herah	JAM	28.06.92	Paris	01.07.2017
+375	10.91	+0.2	Tori Bowie	USA	27.08.90	London	06.08.2017
+375	10.91	-0.2	Ros&acirc;ngela Santos	BRA	20.12.90	London	06.08.2017
+375	10.91	0.0	Aleia Hobbs	USA	24.02.96	Eugene	07.06.2018
+375	10.91	+1.6	Murielle Ahour&eacute;	CIV	23.08.87	Oslo	07.06.2018
+375	10.91	+0.6	Aleia Hobbs	USA	24.02.96	Des Moines	22.06.2018
+375	10.91	+0.2	Dina Asher-Smith	GBR	04.12.95	Lausanne	05.07.2019
+375	10.91	+0.5	Dina Asher-Smith	GBR	04.12.95	London	21.07.2019
+375	10.91	+0.7	Aleia Hobbs	USA	24.02.96	Baton Rouge	24.04.2021
+375	10.91	+0.4	Shericka Jackson	JAM	16.07.94	Kingston	24.06.2021
+375	10.91	+0.7	Dina Asher-Smith	GBR	04.12.95	Manchester	26.06.2021
+375	10.91	-0.3	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Oslo	01.07.2021
+375	10.91	+1.3	Ajla Del Ponte	SUI	15.07.96	Tokyo	30.07.2021
+375	10.91	-0.6	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Tokyo	31.07.2021
+428	10.92	+1.3	Evelyn Ashford	USA	15.04.57	Berlin	17.08.1984
+428	10.92	+1.0	Merlene Ottey	JAM	10.05.60	Walnut	28.04.1985
+428	10.92	+1.2	Marlies G&ouml;hr	GDR	21.03.58	Halle	11.06.1985
+428	10.92	-0.6	Anelia Nuneva	BUL	30.06.62	Moskva	07.06.1987
+428	10.92	+0.8	Merlene Ottey	JAM	10.05.60	Budapest	06.07.1987
+428	10.92	+1.1	Anelia Nuneva	BUL	30.06.62	Zagreb	02.06.1988
+428	10.92	+0.9	Heike Drechsler	GER	16.12.64	Dresden	11.06.1988
+428	10.92	0.0	Alice Brown	USA	20.09.60	Indianapolis	16.07.1988
+428	10.92	0.0	Merlene Ottey	JAM	10.05.60	Bruxelles	19.08.1994
+428	10.92	+1.9	Merlene Ottey	JAM	10.05.60	Lausanne	05.07.1995
+428	10.92	+0.6	Merlene Ottey	JAM	10.05.60	Moskva	07.06.1996
+428	10.92	+1.1	D'Andre Hill	USA	19.04.73	Atlanta	15.06.1996
+428	10.92	-0.5	Gail Devers	USA	19.11.66	Atlanta	26.07.1996
+428	10.92	+1.0	Gwen Torrence	USA	12.06.65	Monaco	10.08.1996
+428	10.92	+0.4	Gail Devers	USA	19.11.66	Linz	21.08.1996
+428	10.92	+0.1	Marion Jones	USA	12.10.75	Indianapolis	12.06.1997
+428	10.92	+0.9	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Budapest	19.08.1998
+428	10.92	+2.0	Zhanna Block	UKR	06.07.72	Budapest	19.08.1998
+428	10.92	-0.9	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Ath&iacute;nai	16.06.1999
+428	10.92	-0.2	Marion Jones	USA	12.10.75	Sacramento	14.07.2000
+428	10.92	+0.1	Yuliya Nesterenko	BLR	15.06.79	Ath&iacute;nai	21.08.2004
+428	10.92	-0.2	Veronica Campbell-Brown	JAM	16.05.82	Monaco	09.09.2005
+428	10.92	0.0	Sherone Simpson	JAM	12.08.84	Berlin	03.09.2006
+428	10.92	+0.1	Veronica Campbell-Brown	JAM	16.05.82	Ath&iacute;nai	13.07.2008
+428	10.92	+1.2	Kerron Stewart	JAM	16.04.84	Kingston	02.05.2009
+428	10.92	-0.1	Carmelita Jeter	USA	24.11.79	London	25.07.2009
+428	10.92	-0.3	Kerron Stewart	JAM	16.04.84	Berlin	16.08.2009
+428	10.92	+1.2	Veronica Campbell-Brown	JAM	16.05.82	Shanghai	15.05.2011
+428	10.92	+0.7	Allyson Felix	USA	18.11.85	Ad-Dawhah	11.05.2012
+428	10.92	-0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	New York City	09.06.2012
+428	10.92	+0.9	Carmelita Jeter	USA	24.11.79	Eugene	23.06.2012
+428	10.92	+1.0	Blessing Okagbare	NGR	09.10.88	London	04.08.2012
+428	10.92	+1.0	Tianna Bartoletta	USA	30.08.85	London	04.08.2012
+428	10.92	-0.2	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Saint-Denis	06.07.2013
+428	10.92	+1.5	Barbara Pierre	USA	28.04.87	Madrid	13.07.2013
+428	10.92	+2.0	Tianna Bartoletta	USA	30.08.85	Sacramento	27.06.2014
+428	10.92	+1.0	Elaine Thompson-Herah	JAM	28.06.92	Kingston	11.04.2015
+428	10.92	+1.4	Jenna Prandini	USA	20.11.92	Walnut	18.04.2015
+428	10.92	+1.5	Jenna Prandini	USA	20.11.92	Eugene	26.06.2015
+428	10.92	+1.2	Jasmine Todd	USA	23.12.93	Eugene	26.06.2015
+428	10.92	+1.6	Barbara Pierre	USA	28.04.87	Toronto	21.07.2015
+428	10.92	+0.1	Dafne Schippers	NED	15.06.92	London	25.07.2015
+428	10.92	+0.8	English Gardner	USA	22.04.92	Roma	02.06.2016
+428	10.92	+0.5	Michelle-Lee Ahye	TTO	10.04.92	Rio de Janeiro	13.08.2016
+428	10.92	+0.4	Elaine Thompson-Herah	JAM	28.06.92	Bruxelles	01.09.2017
+428	10.92	+1.5	Aleia Hobbs	USA	24.02.96	Knoxville	13.05.2018
+428	10.92	+1.6	Dina Asher-Smith	GBR	04.12.95	Oslo	07.06.2018
+428	10.92	+0.7	Dina Asher-Smith	GBR	04.12.95	London	21.07.2019
+428	10.92	+0.8	Elaine Thompson-Herah	JAM	28.06.92	Kingston	22.08.2020
+428	10.92	+1.4	Cambrea Sturgis	USA	27.03.99	Jacksonville	29.05.2021
+428	10.92	+0.8	Dina Asher-Smith	GBR	04.12.95	Hengelo	06.06.2021
+428	10.92	+1.7	Shericka Jackson	JAM	16.07.94	Lausanne	26.08.2021
+480	10.93	+2.0	Marlies G&ouml;hr	GDR	21.03.58	Dresden	24.05.1980
+480	10.93	+0.1	Evelyn Ashford	USA	15.04.57	Westwood	07.08.1982
+480	10.93	+1.6	Evelyn Ashford	USA	15.04.57	Roma	31.08.1984
+480	10.93	+1.1	Merlene Ottey	JAM	10.05.60	Los Angeles	08.06.1985
+480	10.93	+1.8	Ewa Kasprzyk	POL	07.09.57	Grudziadz	27.06.1986
+480	10.93	+1.6	Evelyn Ashford	USA	15.04.57	Berlin	15.08.1986
+480	10.93	-0.2	Marlies G&ouml;hr	GDR	21.03.58	Neubrandenburg	10.06.1987
+480	10.93	-0.8	Anelia Nuneva	BUL	30.06.62	Sofia	15.08.1987
+480	10.93	0.0	Merlene Ottey	JAM	10.05.60	K&ouml;ln	16.08.1987
+480	10.93	+1.5	Dawn Sowell	USA	27.03.66	Austin	07.04.1989
+480	10.93	-1.2	Merlene Ottey	JAM	10.05.60	Z&uuml;rich	15.08.1990
+480	10.93	+1.5	Irina Privalova	RUS	12.11.68	Berlin	21.08.1992
+480	10.93	-0.9	Merlene Ottey	JAM	10.05.60	Z&uuml;rich	04.08.1993
+480	10.93	+0.4	Merlene Ottey	JAM	10.05.60	Atlanta	27.07.1996
+480	10.93	+1.3	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Hani&aacute;	14.06.2000
+480	10.93	-0.1	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Ath&iacute;nai	08.07.2000
+480	10.93	-0.4	Marion Jones	USA	12.10.75	Sacramento	15.07.2000
+480	10.93	+0.3	Zhanna Block	UKR	06.07.72	Oslo	28.07.2000
+480	10.93	+0.6	Zhanna Block	UKR	06.07.72	Ath&iacute;nai	11.06.2001
+480	10.93	+1.0	Tayna Lawrence	JAM	17.09.75	Bruxelles	30.08.2002
+480	10.93	+0.9	Torri Edwards	USA	31.01.77	Saint-Denis	24.08.2003
+480	10.93	-0.1	Yuliya Nesterenko	BLR	15.06.79	Ath&iacute;nai	21.08.2004
+480	10.93	+0.1	Veronica Campbell-Brown	JAM	16.05.82	Ath&iacute;nai	21.08.2004
+480	10.93	+1.3	Lauryn Williams	USA	11.09.83	Helsinki	08.08.2005
+480	10.93	-0.2	Christine Arron	FRA	13.09.73	Monaco	09.09.2005
+480	10.93	+1.2	Veronica Campbell-Brown	JAM	16.05.82	New York City	02.06.2007
+480	10.93	+1.5	Allyson Felix	USA	18.11.85	Ad-Dawhah	09.05.2008
+480	10.93	+1.0	Marshevet Hooker	USA	25.09.84	Eugene	28.06.2008
+480	10.93	+1.3	Kerron Stewart	JAM	16.04.84	Ad-Dawhah	08.05.2009
+480	10.93	-1.5	Kerron Stewart	JAM	16.04.84	Kingston	27.06.2009
+480	10.93	+1.2	Kelly-Ann Baptiste	TTO	14.10.86	Gateshead	10.07.2010
+480	10.93	-0.4	Carmelita Jeter	USA	24.11.79	London	06.08.2011
+480	10.93	+1.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	14.07.2012
+480	10.93	+0.7	Blessing Okagbare	NGR	09.10.88	London	03.08.2012
+480	10.93	-0.1	Kelly-Ann Baptiste	TTO	14.10.86	Lausanne	23.08.2012
+480	10.93	+0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Shanghai	18.05.2013
+480	10.93	+1.8	Jeneba Tarmoh	USA	27.09.89	Des Moines	21.06.2013
+480	10.93	-0.2	Blessing Okagbare	NGR	09.10.88	Saint-Denis	06.07.2013
+480	10.93	+0.7	Carmelita Jeter	USA	24.11.79	London	27.07.2013
+480	10.93	+1.1	Kelly-Ann Baptiste	TTO	14.10.86	London	27.07.2013
+480	10.93	-0.3	Murielle Ahour&eacute;	CIV	23.08.87	Moskva	12.08.2013
+480	10.93	+0.1	Blessing Okagbare	NGR	09.10.88	Glasgow	28.07.2014
+480	10.93	+1.2	Jeneba Tarmoh	USA	27.09.89	Eugene	26.06.2015
+480	10.93	-0.2	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Stockholm	30.07.2015
+480	10.93	-1.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Z&uuml;rich	03.09.2015
+480	10.93	+0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	01.07.2016
+480	10.93	-1.2	Elaine Thompson-Herah	JAM	28.06.92	Birmingham	20.08.2017
+480	10.93	+0.4	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Bruxelles	01.09.2017
+480	10.93	+1.5	Elaine Thompson-Herah	JAM	28.06.92	Ad-Dawhah	04.05.2018
+480	10.93	+0.4	Aleia Hobbs	USA	24.02.96	Knoxville	12.05.2018
+480	10.93	-0.1	Dina Asher-Smith	GBR	04.12.95	Stockholm	10.06.2018
+480	10.93	+0.2	Dina Asher-Smith	GBR	04.12.95	Berlin	07.08.2018
+480	10.93	-0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	21.06.2019
+480	10.93	+0.2	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Lausanne	05.07.2019
+480	10.93	+0.1	Elaine Thompson-Herah	JAM	28.06.92	Ad-Dawhah	29.09.2019
+535	10.94	+1.4	Marlies G&ouml;hr	GDR	21.03.58	Dresden	12.08.1978
+535	10.94A	+0.6	Diane Williams	USA	14.12.60	Colorado Springs	03.07.1983
+535	10.94	-0.1	Evelyn Ashford	USA	15.04.57	Berlin	17.08.1984
+535	10.94	+0.6	Merlene Ottey	JAM	10.05.60	Modesto	11.05.1985
+535	10.94	+1.6	Merlene Ottey	JAM	10.05.60	Indianapolis	15.06.1985
+535	10.94	-0.3	Marlies G&ouml;hr	GDR	21.03.58	Leipzig	09.08.1985
+535	10.94	+1.0	Heike Drechsler	GER	16.12.64	Dresden	16.08.1986
+535	10.94A	+2.0	Evelyn Ashford	USA	15.04.57	Sestriere	11.08.1988
+535	10.94	+1.0	Marlies G&ouml;hr	GDR	21.03.58	Potsdam	08.09.1988
+535	10.94	+1.0	Carlette Guidry	USA	04.09.68	New York City	14.06.1991
+535	10.94	+1.7	Merlene Ottey	JAM	10.05.60	Kingston	28.06.1991
+535	10.94	-0.1	Katrin Krabbe	GER	22.11.69	Tokyo	27.08.1991
+535	10.94	0.0	Gwen Torrence	USA	12.06.65	Z&uuml;rich	19.08.1992
+535	10.94	+1.2	Merlene Ottey	JAM	10.05.60	Oslo	10.07.1993
+535	10.94	+0.9	Irina Privalova	RUS	12.11.68	Bruxelles	03.09.1993
+535	10.94	+0.9	Merlene Ottey	JAM	10.05.60	G&ouml;teborg	07.08.1995
+535	10.94	0.0	Gail Devers	USA	19.11.66	Atlanta	26.07.1996
+535	10.94	-0.7	Gail Devers	USA	19.11.66	Atlanta	27.07.1996
+535	10.94	-0.7	Merlene Ottey	JAM	10.05.60	Atlanta	27.07.1996
+535	10.94	-0.1	Merlene Ottey	JAM	10.05.60	Berlin	30.08.1996
+535	10.94	+0.1	Merlene Ottey	JAM	10.05.60	Tokyo	16.09.1996
+535	10.94	-0.1	Marion Jones	USA	12.10.75	Ath&iacute;nai	03.08.1997
+535	10.94	+0.7	Zhanna Block	UKR	06.07.72	Sevilla	21.08.1999
+535	10.94	-0.1	Gail Devers	USA	19.11.66	Sevilla	22.08.1999
+535	10.94	+0.9	Zhanna Block	UKR	06.07.72	Lausanne	05.07.2000
+535	10.94	-2.3	Zhanna Block	UKR	06.07.72	Edmonton	06.08.2001
+535	10.94	+1.0	Chryste Gaines	USA	14.09.70	Bruxelles	30.08.2002
+535	10.94	+0.9	Yuliya Nesterenko	BLR	15.06.79	Ath&iacute;nai	20.08.2004
+535	10.94	+1.9	Christine Arron	FRA	13.09.73	Lausanne	05.07.2005
+535	10.94	+0.9	Marshevet Hooker	USA	25.09.84	New York City	31.05.2008
+535	10.94	+1.3	Torri Edwards	USA	31.01.77	Eugene	08.06.2008
+535	10.94	-0.7	Kerron Stewart	JAM	16.04.84	Monaco	29.07.2008
+535	10.94	+0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Stuttgart	14.09.2008
+535	10.94	+1.7	Kelly-Ann Baptiste	TTO	14.10.86	Port of Spain	20.06.2009
+535	10.94	-0.4	Carmelita Jeter	USA	24.11.79	Berlin	16.08.2009
+535	10.94	+1.4	Carmelita Jeter	USA	24.11.79	Kingston	01.05.2010
+535	10.94	+1.9	Kelly-Ann Baptiste	TTO	14.10.86	Kingston	07.05.2011
+535	10.94	+0.7	Veronica Campbell-Brown	JAM	16.05.82	Ad-Dawhah	11.05.2012
+535	10.94	+0.6	Kerron Stewart	JAM	16.04.84	Kingston	29.06.2012
+535	10.94	+1.5	Veronica Campbell-Brown	JAM	16.05.82	London	03.08.2012
+535	10.94	+1.2	Allyson Felix	USA	18.11.85	London	04.08.2012
+535	10.94	+1.5	Kelly-Ann Baptiste	TTO	14.10.86	London	04.08.2012
+535	10.94	+1.8	Barbara Pierre	USA	28.04.87	Des Moines	21.06.2013
+535	10.94	+1.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	27.07.2013
+535	10.94	-0.5	English Gardner	USA	22.04.92	Moskva	11.08.2013
+535	10.94	-0.3	Carmelita Jeter	USA	24.11.79	Moskva	12.08.2013
+535	10.94	+1.8	Dafne Schippers	NED	15.06.92	Hengelo	24.05.2015
+535	10.94	+1.2	Tianna Bartoletta	USA	30.08.85	Eugene	26.06.2015
+535	10.94	+1.5	Tianna Bartoletta	USA	30.08.85	Eugene	28.05.2016
+535	10.94	+1.5	Michelle-Lee Ahye	TTO	10.04.92	Port of Spain	25.06.2016
+535	10.94	-0.5	Dafne Schippers	NED	15.06.92	Monaco	15.07.2016
+535	10.94	+0.3	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Rio de Janeiro	13.08.2016
+535	10.94	+0.5	English Gardner	USA	22.04.92	Rio de Janeiro	13.08.2016
+535	10.94	-0.1	Schillonie Calvert	JAM	27.07.88	Phoenix	10.06.2017
+535	10.94	+0.3	Tori Bowie	USA	27.08.90	Sacramento	23.06.2017
+535	10.94	-1.4	Elaine Thompson-Herah	JAM	28.06.92	London	09.07.2017
+535	10.94	+1.0	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Birmingham	20.08.2017
+535	10.94	+0.6	Dina Asher-Smith	GBR	04.12.95	Roma	06.06.2019
+535	10.94	+0.6	Briana Williams	JAM	21.03.02	Kingston	21.06.2019
+535	10.94	+1.7	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Lausanne	26.08.2021
+595	10.95	+1.0	B&auml;rbel W&ouml;ckel	GDR	21.03.55	Dresden	01.07.1982
+595	10.95	-0.2	Marlies G&ouml;hr	GDR	21.03.58	Praha	16.08.1984
+595	10.95	+0.1	Marlies G&ouml;hr	GDR	21.03.58	Moskva	17.08.1985
+595	10.95	-0.1	Evelyn Ashford	USA	15.04.57	Z&uuml;rich	13.08.1986
+595	10.95	-0.4	Marlies G&ouml;hr	GDR	21.03.58	Praha	27.06.1987
+595	10.95	+0.7	Heike Drechsler	GER	16.12.64	Roma	30.08.1987
+595	10.95	+1.7	Dawn Sowell	USA	27.03.66	Houston	16.06.1989
+595	10.95	+1.3	Merlene Ottey	JAM	10.05.60	Villeneuve d'Ascq	25.06.1989
+595	10.95	+1.2	Gail Devers	USA	19.11.66	Walnut	18.04.1992
+595	10.95	+0.6	Irina Privalova	RUS	12.11.68	Bruxelles	28.08.1992
+595	10.95	+0.9	Merlene Ottey	JAM	10.05.60	Lausanne	06.07.1994
+595	10.95	+0.5	Gwen Torrence	USA	12.06.65	Sankt Peterburg	24.07.1994
+595	10.95	-0.1	Gwen Torrence	USA	12.06.65	K&ouml;ln	21.08.1994
+595	10.95	+1.3	Merlene Ottey	JAM	10.05.60	Oslo	05.07.1996
+595	10.95	-0.4	Merlene Ottey	JAM	10.05.60	Bellinzona	12.07.1996
+595	10.95	-0.8	Merlene Ottey	JAM	10.05.60	Z&uuml;rich	14.08.1996
+595	10.95	+2.0	Christine Arron	FRA	13.09.73	Bonneuil-sur-Marne	24.05.1998
+595	10.95	+1.4	Li Xuemei	CHN	05.01.77	Beijing	06.06.1998
+595	10.95	+1.9	Chandra Sturrup	BAH	12.09.71	Nassau	20.06.1998
+595	10.95	+1.1	Chryste Gaines	USA	14.09.70	Stockholm	05.08.1998
+595	10.95	0.0	Chryste Gaines	USA	14.09.70	Monaco	08.08.1998
+595	10.95	-0.8	Christine Arron	FRA	13.09.73	Bruxelles	28.08.1998
+595	10.95	-0.1	Zhanna Block	UKR	06.07.72	Sevilla	22.08.1999
+595	10.95	-0.1	Gail Devers	USA	19.11.66	Sevilla	22.08.1999
+595	10.95	-1.2	Marion Jones	USA	12.10.75	Z&uuml;rich	11.08.2000
+595	10.95	+0.1	Chandra Sturrup	BAH	12.09.71	Bruxelles	24.08.2001
+595	10.95	+0.3	Tayna Lawrence	JAM	17.09.75	Monaco	19.07.2002
+595	10.95	-0.5	Chryste Gaines	USA	14.09.70	Z&uuml;rich	16.08.2002
+595	10.95	+1.6	Christine Arron	FRA	13.09.73	Sotteville-l&egrave;s-Rouen	16.07.2004
+595	10.95	+1.3	Veronica Campbell-Brown	JAM	16.05.82	Helsinki	08.08.2005
+595	10.95	+1.7	Christine Arron	FRA	13.09.73	Paris	03.09.2005
+595	10.95	+0.3	Sherone Simpson	JAM	12.08.84	Bruxelles	25.08.2006
+595	10.95	+2.0	Me'Lisa Barber	USA	04.10.80	Carson	20.05.2007
+595	10.95A	+1.8	Simone Facey	JAM	07.05.85	Boulder	18.05.2008
+595	10.95	0.0	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	26.07.2008
+595	10.95	-0.7	Sherone Simpson	JAM	12.08.84	Monaco	29.07.2008
+595	10.95	+0.1	Veronica Campbell-Brown	JAM	16.05.82	Berlin	17.08.2009
+595	10.95	+0.3	Carmelita Jeter	USA	24.11.79	Gateshead	10.07.2010
+595	10.95	+1.2	Carmelita Jeter	USA	24.11.79	Shanghai	15.05.2011
+595	10.95	+2.0	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Eugene	04.06.2011
+595	10.95	+1.8	Veronica Campbell-Brown	JAM	16.05.82	Kingston	24.06.2011
+595	10.95	+0.6	Veronica Campbell-Brown	JAM	16.05.82	Saint-Denis	08.07.2011
+595	10.95	+0.4	Carmelita Jeter	USA	24.11.79	Georgetown	08.05.2013
+595	10.95	+1.1	Murielle Ahour&eacute;	CIV	23.08.87	London	27.07.2013
+595	10.95	-0.4	Carmelita Jeter	USA	24.11.79	Moskva	12.08.2013
+595	10.95	-0.4	Murielle Ahour&eacute;	CIV	23.08.87	Moskva	12.08.2013
+595	10.95	+0.9	Sherone Simpson	JAM	12.08.84	Toronto	22.07.2015
+595	10.95	+1.7	Jenna Prandini	USA	20.11.92	Norwalk	16.04.2016
+595	10.95	+1.0	Morolake Akinosun	USA	17.05.94	Eugene	03.07.2016
+595	10.95	+0.8	Dafne Schippers	NED	15.06.92	Azusa	14.04.2017
+595	10.95	+1.3	Gina L&uuml;ckenkemper	GER	21.11.96	London	05.08.2017
+595	10.95	+1.1	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Montreuil	19.06.2018
+595	10.95	+1.1	Mujinga Kambundji	SUI	17.06.92	Zofingen	13.07.2018
+595	10.95	+1.6	Kayla White	USA	24.09.96	Austin	08.06.2019
+595	10.95	-0.6	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	21.07.2019
+595	10.95	-0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Bruxelles	06.09.2019
+595	10.95	+1.1	Sha'Carri Richardson	USA	25.03.00	Montverde	10.08.2020
+595	10.95	+1.3	Natasha Morrison	JAM	17.11.92	Kingston	05.06.2021
+595	10.95	+0.1	Mujinga Kambundji	SUI	17.06.92	Tokyo	30.07.2021
+654	10.96	-1.3	Evelyn Ashford	USA	15.04.57	Knoxville	19.06.1982
+654	10.96	+0.9	Marlies G&ouml;hr	GDR	21.03.58	Erfurt	12.05.1984
+654	10.96	+0.8	Silke M&ouml;ller	GER	20.06.64	Jena	27.06.1986
+654	10.96	+0.9	Heike Drechsler	GER	16.12.64	Dresden	16.08.1986
+654	10.96	0.0	Florence Griffith-Joyner	USA	21.12.59	K&ouml;ln	16.08.1987
+654	10.96	+0.4	Anelia Nuneva	BUL	30.06.62	Kvarnsveden	19.06.1988
+654	10.96	+0.9	Heike Drechsler	GER	16.12.64	Stockholm	05.07.1988
+654	10.96	+0.5	Heike Drechsler	GER	16.12.64	Seoul	24.09.1988
+654	10.96	0.0	Anelia Nuneva	BUL	30.06.62	Seoul	24.09.1988
+654	10.96	+1.3	Dawn Sowell	USA	27.03.66	Villeneuve d'Ascq	25.06.1989
+654	10.96	0.0	Gwen Torrence	USA	12.06.65	Lausanne	10.07.1991
+654	10.96	+1.2	Marie-Jos&eacute; P&eacute;rec	FRA	09.05.68	Dijon	27.07.1991
+654	10.96	+0.2	Gwen Torrence	USA	12.06.65	Berlin	10.09.1991
+654	10.96	+2.0	Galina Malchugina	RUS	17.12.62	Moskva	22.06.1992
+654	10.96	+1.4	Gail Devers	USA	19.11.66	Villeneuve d'Ascq	02.07.1993
+654	10.96	+1.5	Merlene Ottey	JAM	10.05.60	Lausanne	07.07.1993
+654	10.96	-0.3	Irina Privalova	RUS	12.11.68	Stuttgart	16.08.1993
+654	10.96	+0.9	Irina Privalova	RUS	12.11.68	G&ouml;teborg	07.08.1995
+654	10.96	+1.8	Gwen Torrence	USA	12.06.65	Eugene	26.05.1996
+654	10.96	+0.9	Gail Devers	USA	19.11.66	Atlanta	14.06.1996
+654	10.96	+0.9	Chryste Gaines	USA	14.09.70	Atlanta	14.06.1996
+654	10.96	+1.1	Inger Miller	USA	12.06.72	Atlanta	15.06.1996
+654	10.96	+1.1	Chryste Gaines	USA	14.09.70	Atlanta	15.06.1996
+654	10.96	-0.7	Gwen Torrence	USA	12.06.65	Atlanta	27.07.1996
+654	10.96	-0.8	Gwen Torrence	USA	12.06.65	Z&uuml;rich	14.08.1996
+654	10.96	+1.4	Merlene Ottey	JAM	10.05.60	Kingston	20.06.1997
+654	10.96	+0.3	Marion Jones	USA	12.10.75	Ath&iacute;nai	02.08.1997
+654	10.96	-1.2	Merlene Ottey	JAM	10.05.60	Z&uuml;rich	13.08.1997
+654	10.96	+0.9	Gail Devers	USA	19.11.66	Bruxelles	22.08.1997
+654	10.96	+1.2	Chryste Gaines	USA	14.09.70	New Orleans	19.06.1998
+654	10.96	-0.5	Chandra Sturrup	BAH	12.09.71	Nassau	18.06.1999
+654	10.96	+1.0	Eldece Clarke-Lewis	BAH	13.02.65	Fort-de-France	29.04.2000
+654	10.96	+0.1	Debbie Ferguson-McKenzie	BAH	16.01.76	Nassau	21.07.2000
+654	10.96	-1.2	Inger Miller	USA	12.06.72	Z&uuml;rich	11.08.2000
+654	10.96	+0.5	Zhanna Block	UKR	06.07.72	Saint-Denis	06.07.2001
+654	10.96	+0.1	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Bruxelles	24.08.2001
+654	10.96	+0.7	Chryste Gaines	USA	14.09.70	Palo Alto	21.06.2002
+654	10.96	+0.4	Muriel Hurtis	FRA	25.03.79	Annecy	22.06.2002
+654	10.96	+0.3	Chandra Sturrup	BAH	12.09.71	Oslo	27.06.2003
+654	10.96	-0.1	Lauryn Williams	USA	11.09.83	Ath&iacute;nai	21.08.2004
+654	10.96	-0.3	Veronica Campbell-Brown	JAM	16.05.82	Carson	22.05.2005
+654	10.96	+0.4	Christine Arron	FRA	13.09.73	Helsinki	08.08.2005
+654	10.96	+1.2	Torri Edwards	USA	31.01.77	New York City	02.06.2007
+654	10.96	+0.9	Kerron Stewart	JAM	16.04.84	Kingston	03.05.2008
+654	10.96	+1.0	Allyson Felix	USA	18.11.85	Eugene	28.06.2008
+654	10.96	+0.9	Carmelita Jeter	USA	24.11.79	Walnut	18.04.2009
+654	10.96	+0.4	Veronica Campbell-Brown	JAM	16.05.82	Ath&iacute;nai	13.07.2009
+654	10.96	+1.4	Kerron Stewart	JAM	16.04.84	Kingston	01.05.2010
+654	10.96	+0.8	Ivet Lalova-Collio	BUL	18.05.84	Sliven	02.07.2011
+654	10.96	+1.9	Kimberlyn Duncan	USA	02.08.91	Baton Rouge	13.05.2012
+654	10.96	+1.4	Tianna Bartoletta	USA	30.08.85	Eugene	23.06.2012
+654	10.96	+0.9	Tianna Bartoletta	USA	30.08.85	Eugene	23.06.2012
+654	10.96	0.0	Blessing Okagbare	NGR	09.10.88	Monaco	20.07.2012
+654	10.96	+0.4	Kelly-Ann Baptiste	TTO	14.10.86	London	03.08.2012
+654	10.96	+0.9	English Gardner	USA	22.04.92	Eugene	07.06.2013
+654	10.96	+0.9	Kerron Stewart	JAM	16.04.84	Kingston	21.06.2013
+654	10.96	+2.0	Aurieyall Scott	USA	18.05.92	Des Moines	21.06.2013
+654	10.96	-0.4	Veronica Campbell-Brown	JAM	16.05.82	Kingston	27.06.2014
+654	10.96	+0.8	Veronica Campbell-Brown	JAM	16.05.82	Monaco	18.07.2014
+654	10.96	+1.2	Jenna Prandini	USA	20.11.92	Eugene	26.06.2015
+654	10.96	+0.9	Natasha Morrison	JAM	17.11.92	Beijing	24.08.2015
+654	10.96	+1.0	Jenna Prandini	USA	20.11.92	Eugene	03.07.2016
+654	10.96	-1.0	Dafne Schippers	NED	15.06.92	Amsterdam	08.07.2016
+654	10.96	-1.3	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	London	23.07.2016
+654	10.96	-0.7	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	London	23.07.2016
+654	10.96	-0.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Rio de Janeiro	12.08.2016
+654	10.96	+1.0	Christania Williams	JAM	17.10.94	Rio de Janeiro	13.08.2016
+654	10.96	+0.3	Mikiah Brisco	USA	14.07.96	Eugene	10.06.2017
+654	10.96	+0.1	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Paris	01.07.2017
+654	10.96	-0.4	Dafne Schippers	NED	15.06.92	London	09.07.2017
+654	10.96	+0.1	Dafne Schippers	NED	15.06.92	London	06.08.2017
+654	10.96	+1.5	Murielle Ahour&eacute;	CIV	23.08.87	Ad-Dawhah	04.05.2018
+654	10.96	+0.6	Ashley Henderson	USA	04.12.95	Des Moines	22.06.2018
+654	10.96	+0.9	Jenna Prandini	USA	20.11.92	Toronto	11.08.2018
+654	10.96	+1.5	Kayla White	USA	24.09.96	Greensboro	04.05.2019
+654	10.96	+0.5	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	London	21.07.2019
+654	10.96	-0.9	Dina Asher-Smith	GBR	04.12.95	Birmingham	24.08.2019
+654	10.96	-0.1	Dina Asher-Smith	GBR	04.12.95	Ad-Dawhah	28.09.2019
+654	10.96	+0.7	Tamara Clark	USA	09.01.99	Baton Rouge	24.04.2021
+654	10.96	+1.2	Tianna Bartoletta	USA	30.08.85	Miramar	05.06.2021
+654	10.96	+1.1	Javianne Oliver	USA	26.12.94	Eugene	18.06.2021
+654	10.96	+1.0	Elaine Thompson-Herah	JAM	28.06.92	Kingston	24.06.2021
+654	10.96	-0.3	Daryll Neita	GBR	29.08.96	Tokyo	30.07.2021
+654	10.96	+0.3	Mujinga Kambundji	SUI	17.06.92	Tokyo	31.07.2021
+654	10.96	+0.9	Javianne Oliver	USA	26.12.94	Eugene	21.08.2021
+654	10.96	+0.9	Mujinga Kambundji	SUI	17.06.92	Eugene	21.08.2021
+654	10.96	+1.7	Daryll Neita	GBR	29.08.96	Lausanne	26.08.2021
+741	10.97	+0.8	Marlies G&ouml;hr	GDR	21.03.58	Dresden	13.06.1979
+741	10.97	+0.9	Evelyn Ashford	USA	15.04.57	Walnut	16.06.1979
+741	10.97	-1.0	Evelyn Ashford	USA	15.04.57	San Diego	08.03.1982
+741	10.97	+1.5	Marlies G&ouml;hr	GDR	21.03.58	Tokyo	24.09.1982
+741	10.97	-0.5	Marlies G&ouml;hr	GDR	21.03.58	Helsinki	08.08.1983
+741	10.97	-1.2	Evelyn Ashford	USA	15.04.57	Los Angeles	05.08.1984
+741	10.97	-0.8	Marlies G&ouml;hr	GDR	21.03.58	Tokyo	14.09.1984
+741	10.97	-0.3	Marita Koch	GDR	18.02.57	Leipzig	09.08.1985
+741	10.97	+1.9	Heike Drechsler	GER	16.12.64	Potsdam	11.06.1986
+741	10.97	+0.8	Merlene Ottey	JAM	10.05.60	Lausanne	15.09.1987
+741	10.97	0.0	Gail Devers	USA	19.11.66	Indianapolis	16.07.1988
+741	10.97	+0.9	Merlene Ottey	JAM	10.05.60	Hengelo	12.08.1990
+741	10.97	-0.1	Gwen Torrence	USA	12.06.65	K&ouml;ln	08.09.1991
+741	10.97	-0.5	Gwen Torrence	USA	12.06.65	New Orleans	20.06.1992
+741	10.97	+1.5	Gwen Torrence	USA	12.06.65	Lausanne	07.07.1993
+741	10.97	+0.2	Mary Onyali	NGR	03.02.68	Stuttgart	15.08.1993
+741	10.97	+1.1	D'Andre Hill	USA	19.04.73	Atlanta	15.06.1996
+741	10.97	-0.3	Gwen Torrence	USA	12.06.65	Lausanne	03.07.1996
+741	10.97	+0.4	Gwen Torrence	USA	12.06.65	Atlanta	27.07.1996
+741	10.97	-1.1	Marion Jones	USA	12.10.75	Indianapolis	13.06.1997
+741	10.97	-1.2	Marion Jones	USA	12.10.75	Z&uuml;rich	13.08.1997
+741	10.97	+1.1	Debbie Ferguson-McKenzie	BAH	16.01.76	Stockholm	05.08.1998
+741	10.97A	+1.1	Chandra Sturrup	BAH	12.09.71	Johannesburg	12.09.1998
+741	10.97	+0.5	Christine Arron	FRA	13.09.73	Paris	19.06.1999
+741	10.97	0.0	Zhanna Block	UKR	06.07.72	Saint-Denis	03.07.1999
+741	10.97	-0.1	Christine Arron	FRA	13.09.73	Sevilla	22.08.1999
+741	10.97	+1.7	Chryste Gaines	USA	14.09.70	Ath&iacute;nai	28.06.2000
+741	10.97	+0.1	Pauline Davis-Thompson	BAH	09.07.66	Nassau	21.07.2000
+741	10.97	+1.1	Inger Miller	USA	12.06.72	London	05.08.2000
+741	10.97	-1.3	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Edmonton	05.08.2001
+741	10.97	0.0	Zhanna Block	UKR	06.07.72	Poznan	18.08.2002
+741	10.97	+1.4	Debbie Ferguson-McKenzie	BAH	16.01.76	Paris	14.09.2002
+741	10.97	+1.2	Debbie Ferguson-McKenzie	BAH	16.01.76	Durban	11.04.2003
+741	10.97	-0.1	Chandra Sturrup	BAH	12.09.71	Z&uuml;rich	15.08.2003
+741	10.97	+1.0	Lauryn Williams	USA	11.09.83	Austin	11.06.2004
+741	10.97	+0.1	LaTasha Colander	USA	23.08.76	Sacramento	10.07.2004
+741	10.97	-0.1	Veronica Campbell-Brown	JAM	16.05.82	Ath&iacute;nai	21.08.2004
+741	10.97	+0.4	Veronica Campbell-Brown	JAM	16.05.82	Kingston	25.06.2005
+741	10.97	+0.4	Sherone Simpson	JAM	12.08.84	Kingston	25.06.2005
+741	10.97	+0.4	Chandra Sturrup	BAH	12.09.71	Z&uuml;rich	19.08.2005
+741	10.97	+0.3	Christine Arron	FRA	13.09.73	Bruxelles	26.08.2005
+741	10.97	+0.1	Sherone Simpson	JAM	12.08.84	Ath&iacute;nai	16.09.2006
+741	10.97	-0.7	Sanya Richards-Ross	USA	26.02.85	Shanghai	28.09.2007
+741	10.97	+0.9	Muna Lee	USA	30.10.81	New York City	31.05.2008
+741	10.97	+0.7	Carmelita Jeter	USA	24.11.79	Eugene	27.06.2008
+741	10.97	+1.8	Mechelle Lewis	USA	20.09.80	Eugene	28.06.2008
+741	10.97	+1.3	Carmelita Jeter	USA	24.11.79	R&eacute;thymno	20.07.2009
+741	10.97	0.0	Debbie Ferguson-McKenzie	BAH	16.01.76	Monaco	28.07.2009
+741	10.97	+1.2	LaShauntea Moore	USA	31.07.83	Maring&aacute;	30.05.2010
+741	10.97	0.0	Marshevet Hooker	USA	25.09.84	Z&uuml;rich	19.08.2010
+741	10.97	+0.3	Kerron Stewart	JAM	16.04.84	Kingston	24.06.2011
+741	10.97	-0.4	Kelly-Ann Baptiste	TTO	14.10.86	London	06.08.2011
+741	10.97	-1.4	Veronica Campbell-Brown	JAM	16.05.82	Daegu	29.08.2011
+741	10.97	-0.1	Tianna Bartoletta	USA	30.08.85	New York City	09.06.2012
+741	10.97	+0.7	Tianna Bartoletta	USA	30.08.85	London	03.08.2012
+741	10.97	-0.4	Carmelita Jeter	USA	24.11.79	Z&uuml;rich	30.08.2012
+741	10.97	-0.1	Kerron Stewart	JAM	16.04.84	Moskva	12.08.2013
+741	10.97	-0.3	English Gardner	USA	22.04.92	Moskva	12.08.2013
+741	10.97	-0.3	Kerron Stewart	JAM	16.04.84	Moskva	12.08.2013
+741	10.97	-0.3	Alexandra Anderson	USA	28.01.87	Bruxelles	06.09.2013
+741	10.97	+1.1	Veronica Campbell-Brown	JAM	16.05.82	Kingston	27.06.2014
+741	10.97	+0.8	Murielle Ahour&eacute;	CIV	23.08.87	Monaco	18.07.2014
+741	10.97	+0.8	Blessing Okagbare	NGR	09.10.88	Monaco	18.07.2014
+741	10.97	-2.5	Michelle-Lee Ahye	TTO	10.04.92	Gainesville	03.04.2015
+741	10.97	+0.2	Elaine Thompson-Herah	JAM	28.06.92	Kingston	09.05.2015
+741	10.97	+0.2	English Gardner	USA	22.04.92	Saint-Denis	04.07.2015
+741	10.97	-0.2	Michelle-Lee Ahye	TTO	10.04.92	Beijing	24.08.2015
+741	10.97	+0.3	Christania Williams	JAM	17.10.94	Kingston	01.07.2016
+741	10.97	+0.6	Dafne Schippers	NED	15.06.92	Bruxelles	09.09.2016
+741	10.97	-1.4	Dafne Schippers	NED	15.06.92	London	09.07.2017
+741	10.97	+0.8	Elaine Thompson-Herah	JAM	28.06.92	Birmingham	20.08.2017
+741	10.97	-1.2	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	Birmingham	20.08.2017
+741	10.97	+1.7	Aleia Hobbs	USA	24.02.96	Des Moines	21.06.2018
+741	10.97	-0.5	Dina Asher-Smith	GBR	04.12.95	Birmingham	30.06.2018
+741	10.97	+1.3	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	25.05.2019
+741	10.97	+1.2	Blessing Okagbare	NGR	09.10.88	Eugene	24.04.2021
+741	10.97	+1.8	Javianne Oliver	USA	26.12.94	Walnut	09.05.2021
+741	10.97	+1.2	Briana Williams	JAM	21.03.02	Miramar	05.06.2021
+741	10.97	+1.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Kingston	24.06.2021
+741	10.97	+1.2	Dina Asher-Smith	GBR	04.12.95	Manchester	26.06.2021
+741	10.97	-0.6	Ajla Del Ponte	SUI	15.07.96	Tokyo	31.07.2021
+741	10.97	+1.7	Ajla Del Ponte	SUI	15.07.96	Lausanne	26.08.2021
+741	10.97	+1.3	Shericka Jackson	JAM	16.07.94	Paris	28.08.2021
+824	10.98	+0.9	Marlies G&ouml;hr	GDR	21.03.58	Potsdam	10.05.1980
+824	10.98	+0.6	Merlene Ottey	JAM	10.05.60	Indianapolis	15.06.1985
+824	10.98	+0.1	Marina Zhirova	RUS	06.06.63	Moskva	17.08.1985
+824	10.98	+1.2	Marlies G&ouml;hr	GDR	21.03.58	Stuttgart	27.08.1986
+824	10.98	-0.7	Anelia Nuneva	BUL	30.06.62	Moskva	07.06.1987
+824	10.98	+0.8	Angela Bailey	CAN	28.02.62	Budapest	06.07.1987
+824	10.98	-0.6	Merlene Ottey	JAM	10.05.60	Nice	13.07.1987
+824	10.98	+0.7	Gail Devers	USA	19.11.66	Berlin	21.08.1987
+824	10.98	+1.6	Natalya Voronova	RUS	09.07.65	Seoul	24.09.1988
+824	10.98	0.0	Merlene Ottey	JAM	10.05.60	Formia	06.07.1990
+824	10.98	-0.3	Merlene Ottey	JAM	10.05.60	Stockholm	03.07.1991
+824	10.98	+0.2	Irina Privalova	RUS	12.11.68	Oslo	06.07.1991
+824	10.98	-1.5	Merlene Ottey	JAM	10.05.60	Rieti	06.09.1991
+824	10.98	-1.1	Irina Privalova	RUS	12.11.68	Barcelona	31.07.1992
+824	10.98	-0.8	Juliet Cuthbert	JAM	09.04.64	Barcelona	01.08.1992
+824	10.98	+1.2	Gwen Torrence	USA	12.06.65	Oslo	10.07.1993
+824	10.98	-0.9	Gwen Torrence	USA	12.06.65	Z&uuml;rich	04.08.1993
+824	10.98	+0.5	Irina Privalova	RUS	12.11.68	Sankt Peterburg	24.07.1994
+824	10.98	+0.2	Gwen Torrence	USA	12.06.65	Atlanta	15.06.1996
+824	10.98	+1.1	Gail Devers	USA	19.11.66	Atlanta	15.06.1996
+824	10.98	+1.3	Inger Miller	USA	12.06.72	Oslo	05.07.1996
+824	10.98	+1.0	Gail Devers	USA	19.11.66	Monaco	10.08.1996
+824	10.98	+0.2	Merlene Ottey	JAM	10.05.60	K&ouml;ln	16.08.1996
+824	10.98	+0.9	Marion Jones	USA	12.10.75	Indianapolis	12.06.1997
+824	10.98	+1.9	Debbie Ferguson-McKenzie	BAH	16.01.76	Nassau	20.06.1998
+824	10.98	0.0	Christine Arron	FRA	13.09.73	Paris	29.07.1998
+824	10.98	+1.1	Debbie Ferguson-McKenzie	BAH	16.01.76	Boise	04.06.1999
+824	10.98	+1.4	Zhanna Block	UKR	06.07.72	London	07.08.1999
+824	10.98	-0.1	Zhanna Block	UKR	06.07.72	Sevilla	22.08.1999
+824	10.98	+1.7	Sevatheda Fynes	BAH	17.10.74	Bellinzona	01.09.1999
+824	10.98	+0.6	Myriam Mani	CMR	21.05.77	Ath&iacute;nai	11.06.2001
+824	10.98	+0.1	Chryste Gaines	USA	14.09.70	Monaco	20.07.2001
+824	10.98	0.0	Chandra Sturrup	BAH	12.09.71	Saint-Denis	23.08.2003
+824	10.98	-0.1	Torri Edwards	USA	31.01.77	Bruxelles	05.09.2003
+824	10.98	+1.3	Christine Arron	FRA	13.09.73	Helsinki	08.08.2005
+824	10.98	+0.1	Sherone Simpson	JAM	12.08.84	Saint-Denis	08.07.2006
+824	10.98	+0.7	Allyson Felix	USA	18.11.85	Eugene	27.06.2008
+824	10.98	+0.4	Kerron Stewart	JAM	16.04.84	Beijing	16.08.2008
+824	10.98	0.0	Sherone Simpson	JAM	12.08.84	Beijing	17.08.2008
+824	10.98	0.0	Kerron Stewart	JAM	16.04.84	Beijing	17.08.2008
+824	10.98	+0.5	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Bruxelles	04.09.2009
+824	10.98	+1.7	Kelly-Ann Baptiste	TTO	14.10.86	Port of Spain	26.06.2010
+824	10.98	+0.4	Veronica Campbell-Brown	JAM	16.05.82	Monaco	22.07.2010
+824	10.98	-1.4	Kelly-Ann Baptiste	TTO	14.10.86	Daegu	29.08.2011
+824	10.98	+1.0	Kerron Stewart	JAM	16.04.84	Kingston	05.05.2012
+824	10.98	+0.6	Kelly-Ann Baptiste	TTO	14.10.86	Port of Spain	23.06.2012
+824	10.98	+1.7	Jeneba Tarmoh	USA	27.09.89	Des Moines	21.06.2013
+824	10.98	+0.1	Murielle Ahour&eacute;	CIV	23.08.87	London	27.07.2013
+824	10.98	+0.5	Carrie Russel	JAM	18.10.90	Z&uuml;rich	29.08.2013
+824	10.98	-0.3	Michelle-Lee Ahye	TTO	10.04.92	Lausanne	03.07.2014
+824	10.98	-0.3	Murielle Ahour&eacute;	CIV	23.08.87	Lausanne	03.07.2014
+824	10.98	+0.2	Kelly-Ann Baptiste	TTO	14.10.86	Gainesville	24.04.2015
+824	10.98	+0.9	Blessing Okagbare	NGR	09.10.88	Shanghai	17.05.2015
+824	10.98	+2.0	Candace Hill	USA	11.02.99	Shoreline	20.06.2015
+824	10.98	+1.5	Jeneba Tarmoh	USA	27.09.89	Eugene	26.06.2015
+824	10.98	+0.1	Blessing Okagbare	NGR	09.10.88	London	25.07.2015
+824	10.98	-1.2	Michelle-Lee Ahye	TTO	10.04.92	Beijing	23.08.2015
+824	10.98	-0.2	Murielle Ahour&eacute;	CIV	23.08.87	Beijing	24.08.2015
+824	10.98	-0.3	Michelle-Lee Ahye	TTO	10.04.92	Beijing	24.08.2015
+824	10.98	-1.4	Blessing Okagbare	NGR	09.10.88	Z&uuml;rich	03.09.2015
+824	10.98	-0.8	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Padova	06.09.2015
+824	10.98	+0.7	Morolake Akinosun	USA	17.05.94	Sacramento	22.06.2017
+824	10.98	+0.8	Dafne Schippers	NED	15.06.92	London	06.08.2017
+824	10.98	+0.1	Murielle Ahour&eacute;	CIV	23.08.87	London	06.08.2017
+824	10.98	+0.1	Elaine Thompson-Herah	JAM	28.06.92	London	06.08.2017
+824	10.98	+0.3	Ashley Henderson	USA	04.12.95	Tucson	28.04.2018
+824	10.98	+1.5	Carina Horn	RSA	09.03.89	Ad-Dawhah	04.05.2018
+824	10.98	+1.8	Aleia Hobbs	USA	24.02.96	Tampa	25.05.2018
+824	10.98	+1.9	Elaine Thompson-Herah	JAM	28.06.92	Eugene	26.05.2018
+824	10.98	+1.5	Shania Collins	USA	14.11.96	Eugene	07.06.2018
+824	10.98	+0.6	Jenna Prandini	USA	20.11.92	Des Moines	22.06.2018
+824	10.98	+0.1	Shelly-Ann Fraser-Pryce	JAM	27.12.86	London	21.07.2018
+824	10.98	+0.2	Gina L&uuml;ckenkemper	GER	21.11.96	Berlin	07.08.2018
+824	10.98	0.0	Gina L&uuml;ckenkemper	GER	21.11.96	Berlin	07.08.2018
+824	10.98	+1.6	Twanisha Terry	USA	24.01.99	Austin	08.06.2019
+824	10.98	+0.7	Marie-Jos&eacute;e Ta Lou	CIV	18.11.88	London	21.07.2019
+824	10.98	-0.2	Elaine Thompson-Herah	JAM	28.06.92	Paris	24.08.2019
+824	10.98	+1.4	Shaunae Miller-Uibo	BAH	15.04.94	Clermont	24.07.2020
+824	10.98	+0.8	Natasha Morrison	JAM	17.11.92	TGABAH	24.04.2021
+824	10.98	0.0	Tamara Clark	USA	09.01.99	Jacksonville	29.05.2021
+824	10.98	+0.1	Kemba Nelson	JAM	23.02.00	College Station	29.05.2021
+824	10.98	+1.0	Briana Williams	JAM	21.03.02	Jacksonville	31.05.2021
+824	10.98	-0.1	Blessing Okagbare	NGR	09.10.88	Samor&iacute;n	02.06.2021
+824	10.98	+0.3	Teahna Daniels	USA	25.03.97	Tokyo	31.07.2021
+908	10.99	+2.0	Marita Koch	GDR	18.02.57	Dresden	24.05.1980
+908	10.99	0.0	Evelyn Ashford	USA	15.04.57	Westwood	10.05.1981
+908	10.99A	0.0	Evelyn Ashford	USA	15.04.57	Colorado Springs	22.07.1981
+908	10.99	+1.9	B&auml;rbel W&ouml;ckel	GDR	21.03.55	Jena	29.05.1982
+908	10.99	+1.1	Marita Koch	GDR	18.02.57	Karl-Marx-Stadt	16.06.1983
+908	10.99	-0.6	Evelyn Ashford	USA	15.04.57	Helsinki	08.08.1983
+908	10.99	+0.1	Marlies G&ouml;hr	GDR	21.03.58	Berlin	15.07.1984
+908	10.99	-0.1	Florence Griffith-Joyner	USA	21.12.59	Berlin	17.08.1984
+908	10.99	+1.6	Marlies G&ouml;hr	GDR	21.03.58	Neubrandenburg	07.06.1985
+908	10.99	-0.3	Silke M&ouml;ller	GER	20.06.64	Leipzig	09.08.1985
+908	10.99	+2.0	Silke M&ouml;ller	GER	20.06.64	Berlin	22.09.1985
+908	10.99	+1.3	Valerie Brisco	USA	06.07.60	Westwood	17.05.1986
+908	10.99	+1.0	Heike Drechsler	GER	16.12.64	Potsdam	05.06.1987
+908	10.99	-0.5	Merlene Ottey	JAM	10.05.60	Paris	16.07.1987
+908	10.99	+1.8	Silke M&ouml;ller	GER	20.06.64	Budapest	15.09.1987
+908	10.99	-1.0	Merlene Ottey	JAM	10.05.60	Monaco	17.09.1987
+908	10.99	+1.1	Florence Griffith-Joyner	USA	21.12.59	Santa Monica	12.06.1988
+908	10.99	+1.3	Sheila Echols	USA	02.10.64	Indianapolis	17.07.1988
+908	10.99	+1.0	Heike Drechsler	GER	16.12.64	Potsdam	08.09.1988
+908	10.99	0.0	Gwen Torrence	USA	12.06.65	Seoul	24.09.1988
+908	10.99	+1.6	Marlies G&ouml;hr	GDR	21.03.58	Seoul	24.09.1988
+908	10.99	+0.5	Evelyn Ashford	USA	15.04.57	Seoul	25.09.1988
+908	10.99	+0.1	Dawn Sowell	USA	27.03.66	Lausanne	27.06.1989
+908	10.99	+0.4	Merlene Ottey	JAM	10.05.60	Nice	10.07.1989
+908	10.99	+1.4	Katrin Krabbe	GER	22.11.69	Berlin	17.08.1990
+908	10.99	+0.4	Merlene Ottey	JAM	10.05.60	Padova	16.09.1990
+908	10.99	NA	Merlene Ottey	JAM	10.05.60	1h1	28.06.1991
+908	10.99	-0.1	Gwen Torrence	USA	12.06.65	Tokyo	26.08.1991
+908	10.99	-3.0	Katrin Krabbe	GER	22.11.69	Tokyo	27.08.1991
+908	10.99	+0.4	Zhanna Block	UKR	06.07.72	Linz	04.07.1994
+908	10.99	-0.2	Gwen Torrence	USA	12.06.65	Atlanta	14.06.1996
+908	10.99	0.0	D'Andre Hill	USA	19.04.73	Atlanta	14.06.1996
+908	10.99	+0.6	Gail Devers	USA	19.11.66	Atlanta	14.06.1996
+908	10.99	+0.2	Gwen Torrence	USA	12.06.65	K&ouml;ln	16.08.1996
+908	10.99	+0.8	Gail Devers	USA	19.11.66	Indianapolis	12.06.1997
+908	10.99	+0.7	Beverly McDonald	JAM	15.02.70	Ad-Dawhah	07.05.1998
+908	10.99	+1.0	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	R&eacute;thymno	30.05.1998
+908	10.99	+0.7	Christine Arron	FRA	13.09.73	Saint-Denis	04.06.1998
+908	10.99	+0.8	Christine Arron	FRA	13.09.73	G&eacute;n&egrave;ve	20.06.1998
+908	10.99	-0.8	Christine Arron	FRA	13.09.73	Villeneuve d'Ascq	11.07.1998
+908	10.99	+0.4	Christine Arron	FRA	13.09.73	Nice	16.07.1998
+908	10.99	+0.3	Merlene Ottey	JAM	10.05.60	Hechtel	07.08.1999
+908	10.99	+1.0	Christine Arron	FRA	13.09.73	Roma	30.06.2000
+908	10.99	+1.3	Gail Devers	USA	19.11.66	Sacramento	14.07.2000
+908	10.99	+1.2	Mary Onyali	NGR	03.02.68	La Chaux-de-Fonds	13.08.2000
+908	10.99	-1.2	Merlene Ottey	JAM	10.05.60	Thessalon&iacute;ki	30.08.2000
+908	10.99	+1.0	Ekater&iacute;ni Th&aacute;nou	GRE	01.02.75	Sydney	22.09.2000
+908	10.99	+0.5	Chandra Sturrup	BAH	12.09.71	Saint-Denis	06.07.2001
+908	10.99	-1.0	Chandra Sturrup	BAH	12.09.71	Z&uuml;rich	17.08.2001
+908	10.99	+0.1	Zhanna Block	UKR	06.07.72	Bruxelles	24.08.2001
+908	10.99	+1.4	Tayna Lawrence	JAM	17.09.75	Paris	14.09.2002
+908	10.99	+1.3	Chryste Gaines	USA	14.09.70	London	08.08.2003
+908	10.99	+0.9	Zhanna Block	UKR	06.07.72	Saint-Denis	24.08.2003
+908	10.99	+0.3	Yuliya Nesterenko	BLR	15.06.79	Ath&iacute;nai	20.08.2004
+908	10.99	+0.4	Christine Arron	FRA	13.09.73	Z&uuml;rich	19.08.2005
+908	10.99	+1.0	Veronica Campbell-Brown	JAM	16.05.82	Carson	21.05.2006
+908	10.99	-0.1	Veronica Campbell-Brown	JAM	16.05.82	Osaka	27.08.2007
+908	10.99	+1.3	Sherone Simpson	JAM	12.08.84	Eugene	08.06.2008
+908	10.99	+1.3	Kerron Stewart	JAM	16.04.84	Eugene	08.06.2008
+908	10.99	+0.6	Kerron Stewart	JAM	16.04.84	Kingston	27.06.2008
+908	10.99	+0.1	Kerron Stewart	JAM	16.04.84	Oslo	03.07.2009
+908	10.99	+0.4	Chandra Sturrup	BAH	12.09.71	Roma	10.07.2009
+908	10.99	+0.2	Kerron Stewart	JAM	16.04.84	Saint-Denis	17.07.2009
+908	10.99	+0.1	Veronica Campbell-Brown	JAM	16.05.82	Berlin	16.08.2009
+908	10.99	+0.8	LaShauntea Moore	USA	31.07.83	Eugene	03.07.2010
+908	10.99	-0.6	Carmelita Jeter	USA	24.11.79	Lausanne	08.07.2010
+908	10.99	+1.4	Marshevet Hooker	USA	25.09.84	Nottwil	08.08.2010
+908	10.99	+1.1	Marshevet Hooker	USA	25.09.84	London	14.08.2010
+908	10.99	-0.1	Carmelita Jeter	USA	24.11.79	Walnut	16.04.2011
+908	10.99	+1.8	Damola Osayomi	NGR	26.07.86	S&atilde;o Paulo	22.05.2011
+908	10.99	-1.4	Shelly-Ann Fraser-Pryce	JAM	27.12.86	Daegu	29.08.2011
+908	10.99	+1.4	Blessing Okagbare	NGR	09.10.88	London	14.07.2012
+908	10.99	0.0	Tianna Bartoletta	USA	30.08.85	Monaco	20.07.2012
+908	10.99	-0.1	Veronica Campbell-Brown	JAM	16.05.82	Lausanne	23.08.2012
+908	10.99	+0.1	Kelly-Ann Baptiste	TTO	14.10.86	London	27.07.2013
+908	10.99	-0.3	Carrie Russel	JAM	18.10.90	Bruxelles	06.09.2013
+908	10.99	-1.2	Veronica Campbell-Brown	JAM	16.05.82	Sz&eacute;kesfeh&eacute;rv&aacute;r	07.07.2015
+908	10.99	+0.9	&Aacute;ngela Tenorio	ECU	27.01.96	Toronto	22.07.2015
+908	10.99	+0.1	Dina Asher-Smith	GBR	04.12.95	London	25.07.2015
+908	10.99	-0.3	Dafne Schippers	NED	15.06.92	London	25.07.2015
+908	10.99	+1.7	Hannah Cunliffe	USA	09.01.96	Norwalk	16.04.2016
+908	10.99	+2.0	Murielle Ahour&eacute;	CIV	23.08.87	Durban	23.06.2016
+908	10.99	+2.0	Morolake Akinosun	USA	17.05.94	Eugene	02.07.2016
+908	10.99	-0.7	Michelle-Lee Ahye	TTO	10.04.92	London	23.07.2016
+908	10.99	+0.5	Dafne Schippers	NED	15.06.92	Roma	08.06.2017
+908	10.99	+1.4	Barbara Pierre	USA	28.04.87	Sacramento	22.06.2017
+908	10.99	+0.7	Elaine Thompson-Herah	JAM	28.06.92	Kingston	23.06.2017
+908	10.99	-1.4	Blessing Okagbare	NGR	09.10.88	London	09.07.2017
+908	10.99	+0.2	Murielle Ahour&eacute;	CIV	23.08.87	London	06.08.2017
+908	10.99	+1.7	Twanisha Terry	USA	24.01.99	Torrance	21.04.2018
+908	10.99	+1.5	Shania Collins	USA	14.11.96	Knoxville	13.05.2018
+908	10.99	+1.8	Dezerea Bryant	USA	27.04.93	Des Moines	21.06.2018
+908	10.99	+1.2	Wei Yongli	CHN	11.10.91	La Chaux-de-Fonds	01.07.2018
