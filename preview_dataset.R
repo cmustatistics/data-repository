@@ -1,3 +1,4 @@
+library(cli)
 
 default_csv_loader <- function(dataset_name) {
   readr::read_csv(file.path("../data", dataset_name), guess_max = Inf,
@@ -22,12 +23,13 @@ preview_dataset <- function(n = 20, dataset = rmarkdown::metadata$datafile) {
     if (tolower(tools::file_ext(dataset)) == "csv") {
       df <- default_csv_loader(dataset)
     } else {
-      stop("preview by filename only implemented for csv files")
+      cli_abort(c("Preview by filename is only implemented for CSV files",
+                  x = "Unable to load {.path {dataset}}"))
     }
   } else if (is.data.frame(dataset)) {
     df <- dataset
   } else {
-    stop("invalid dataset type, must be a string or a data frame")
+    cli_abort("Invalid dataset type; must be a string or a data frame")
   }
   df |>
     head(n = n) |>
