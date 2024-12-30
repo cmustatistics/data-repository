@@ -20,7 +20,9 @@ default_csv_loader <- function(dataset_name) {
 #'   a nice table.
 preview_dataset <- function(n = 20, dataset = rmarkdown::metadata$datafile) {
   if (is.character(dataset)) {
-    if (tolower(tools::file_ext(dataset)) == "csv") {
+    # allow .csv or .csv.gz (or .bz2 or other formats supported by readr)
+    if (tolower(tools::file_ext(dataset)) == "csv" ||
+          tolower(tools::file_ext(tools::file_path_sans_ext(dataset))) == "csv") {
       df <- default_csv_loader(dataset)
     } else {
       cli_abort(c("Preview by filename is only implemented for CSV files",
