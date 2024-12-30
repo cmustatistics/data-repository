@@ -1,0 +1,147 @@
+---
+title: January 6th insurrectionists
+author: Alex Reinhart
+date: December 30, 2024
+description: Replicate a political science analysis of "the local political, economic, and social conditions of the communities that sent insurrectionists to the US Capitol in support of Donald Trump", using observational data on counties in the United States and the number of their residents charged with crimes related to the January 6, 2021, attack on the United States Capitol.
+categories:
+  - GLMs
+  - EDA
+data:
+  year: 2024
+  files: jan-6-insurrectionists.csv
+---
+
+## Motivation
+
+Following the 2020 United States presidential election, in which the incumbent
+Donald Trump was defeated by Joe Biden, conspiracy theories spread about the
+election results being falsified. Then-President Trump encouraged the theories
+and insisted he had won the election. Ultimately, when Congress met on January
+6, 2021, to certify the results of the election, a mob of Trump's supporters
+formed and attacked the Capitol building in an attempt to prevent the
+certification of the results. The attack ultimately failed to change the outcome of
+the election, but led to the death of one rioter, numerous injuries of rioters
+and police officers, and possibly contributed to the later deaths of several
+police officers.
+
+After the attack, hundreds of the rioters were charged with federal crimes for
+their role in the attack. This dataset comes from a research project studying
+those charged: where did they come from, and what were "the local political,
+economic, and social conditions of the communities" they came from that might
+explain their choice to attend the riot?
+
+## Data
+
+Each row of the data gives one county in the United States. The primary outcome
+variable is the number of people in the county who were charged (as of April
+2023) with a role in the insurrection; the remaining variables give social,
+political, and economic information about the county.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+The data file is presented as it was archived by the researchers, but not all
+variables were documented. Undocumented variables are listed as "unknown".
+Others have a description but it is unclear what it means, as the variable is
+not otherwise used in the paper or supplementary analysis; these are listed as
+"unclear".
+
+| Variable | Description |
+|----|-------------|
+| `fips` | County FIPS code (a unique numeric identifier for each county in the United States) |
+| `State2` | Two-letter abbreviation for the state |
+| `county` | County name (note this may not be unique, as some county names appear in multiple states) |
+| `rural_code_2013` | How urban or rural the county is, according to the 2013 [NCHS Urban-Rural Classification Scheme](https://www.cdc.gov/nchs/data-analysis-tools/urban-rural.html) (1 = most urban, 6 = most rural) |
+| `insurrectcount` | Number of people from this county criminally charged for their role in the insurrection (as of April 2023) |
+| `distx_dc` | Distance from the county center to Washington, DC (kilometers) |
+| `_ID` | Unknown |
+| `_CX` | Unknown |
+| `_CY` | Unknown |
+| `insurrectbinary` | Whether at least 1 person was charged (binary version of `insurrectcount`) |
+| `urban` | Whether the county is a medium or larger metropolitan area, according to the NCHS Urban-Rural Classification Scheme |
+| `distdc` | Distance from county center to Washington, DC (1,000s of kilometers) |
+| `ym1` through `ym28` | Unknown |
+| `county_name` | County name formatted with the state name, e.g., "Apache County, Arizona" |
+| `pop_white_nh_2020` | Non-Hispanic White population, 2020 Census |
+| `pop_tot_2020` | Total population, 2020 Census |
+| `pop_white_nh_2010` | Non-Hispanic White population, 2010 Census |
+| `pop_tot_2010` | Total population, 2010 Census |
+| `pct_white_nh_2010` | Percent of population that is non-Hispanic White, 2010 |
+| `pctnhwhite2020` | Percent of population that is non-Hispanic White, 2020 |
+| `wpdecline` | Percentage decline in White population, 2010 to 2020 |
+| `countypop` | County population, 100,000s |
+| `votes_trump_2020` | Trump votes in the county in the 2020 election |
+| `pcttrump2020` | Percent votes for Trump in the 2020 election |
+| `pct_biden2020` | Percent votes for Biden in the 2020 election |
+| `trump2020vromney` | Percent votes for Trump in 2020 minus the percent votes for Romney in 2012 |
+| `state` | Full name of state |
+| `cntydem` | County votes for the Democratic candidate for the House of Representatives |
+| `cntyrep` | County votes for the Republican candidate for the House of Representatives |
+| `cntyoth` | County votes for other candidates for the House of Representatives |
+| `cntytot` | Total votes cast for the House of Representatives |
+| `pctrcdd` | [Unclear] % County REP Vote Share in DEM District |
+| `pctobjected2020` | [Unclear] % of County Voters Represented by Objector |
+| `pctrcrd` | [Unclear] % County REP Vote Share in REP District |
+| `objected` | Indicator of whether the county's Congressional representative objected to the 2020 vote results |
+| `unemp_15_20` | Average county unemployment from 2015-2020 |
+| `mfgempdecline2` | Decline in share of jobs in manufacturing, 1970-2020, with missing values preserved |
+| `mfg_loss_state` | Average decline in share of jobs in manufacturing for this state, 1970-2020 |
+| `mfgempdecline` | Decline in share of jobs in manufacturing, 1970-2020, with missing values imputed "using the data for other counties in the same state" |
+| `TrumpAdvantage` | 2020 vote margin for Trump, percentage points |
+| `BidenAdvantage` | 2020 vote margin for Biden, percentage points |
+| `competitive` | Binary indicator of whether "the margin of victory in the 2020 House congressional vote was within 5%" |
+| `BidenWonBy20` | Binary indicator of whether Biden won this county in the 2020 election by a 20% margin or more |
+
+
+## Questions
+
+1. Conduct exploratory data analysis (EDA), using maps and scatterplots to
+   explore relationships in the data. Also examine the distribution of key
+   variables, such as county population---how will its distribution affect your
+   analysis?
+2. The first question studied in the research was "whether white population
+   decline or manufacturing loss predicted county-level insurrectionists":
+
+   > The theory is straightforward: long-term manufacturing job loss in a
+   > community makes it more likely that some people within that county will
+   > face economic insecurity and become more likely to not only vote for
+   > populist political candidates but also to become violent supporters of
+   > them. In the case of Jan 6, the greater the local decline in manufacturing
+   > and associated loss in manufacturing income, the deeper is the commitment
+   > to Trump as the most likely leader to bring prosperity back to their
+   > communities and the greater was the willingness to use extra-democratic and
+   > even violent means to retain him in power will have been. If counties with
+   > more manufacturing decline were associated with higher rates of arrested
+   > insurrectionists, it would be consistent with the economic mechanism.
+
+   Conduct an analysis to test this theory. Be sure to account for county
+   population: more populous counties may send more insurrectionists due to
+   their size, even in the same economic conditions. Distance from Washington,
+   D.C., is also a factor, as it is more difficult for people farther from
+   Washington to travel there even if they would like to do so.
+
+3. The original analysis used a negative binomial regression with a log link
+   (similar to a Poisson GLM with a log link). To control for county population,
+   the authors added it as a control variable. Write out the regression equation
+   and derive the relationship between the number of insurrectionists per unit
+   population and the population size. Does including population as a control
+   correctly model the rate? If not, what transformation is required?
+
+## References
+
+- Pape RA, Larson KD, Ruby KG (2024). "The Political Geography of the January 6
+  Insurrectionists". *PS: Political Science & Politics* 57 (3), 329-339.
+  <https://doi.org/10.1017/S1049096524000040>
+- Pape, Robert A.; Larson, Kyle D.; Ruby, Keven G., 2024, "Replication Data for:
+  The Political Geography of the January 6 Insurrectionists", Harvard Dataverse.
+  <https://doi.org/10.7910/DVN/KOOIRH>
+- Weakliem, D (2024). [The problem is you?, part
+  1](http://justthesocialfacts.blogspot.com/2024/04/the-problem-is-you-part-1.html).
+  Blog post evaluating the research and discussing its choice of population
+  control variable.
