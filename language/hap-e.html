@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2025-01-10">
+<meta name="description" content="The Human-AI Parallel Corpus contains millions of words of text written by humans and by large language models (LLMs) such as OpenAI’s GPT-4o and Meta’s Llama 3. The texts have been annotated to identify rhetorical features, allowing comparison of the writing style of the different LLMs.">
+
+<title>Human-AI Parallel Corpus – CMU S&amp;DS Data Repository</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3da27a7ff2ef2fd80750eef7fb03552b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.refsmmat.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../language/hap-e.html">Language</a></li><li class="breadcrumb-item"><a href="../language/hap-e.html">Human-AI Parallel Corpus</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Astronomy</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Biology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Crime and Justice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Traffic stops in Connecticut</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/mapping-police-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping Police Violence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Daily Life</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/college-scorecard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">US College Scorecard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/rtg-tinned-fish.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RTG tinned fish</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Language</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../language/hap-e.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Human-AI Parallel Corpus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Medicine</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Money</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/european-ham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European protected ham</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Politics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/jan-6-insurrectionists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">January 6th insurrectionists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/standard-cities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fiscally standardized cities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">World Development Indicators</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bias in soccer refereeing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/moral-rebels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resenting moral rebels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Social</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/data-viz-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey of data visualization courses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/elite-college-admissions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elite college admissions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Sports</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/sprinters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fastest 100m sprint times</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
+  <li><a href="#questions-1" id="toc-questions-1" class="nav-link" data-scroll-target="#questions-1">Questions</a>
+  <ul class="collapse">
+  <li><a href="#eda" id="toc-eda" class="nav-link" data-scroll-target="#eda">EDA</a></li>
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">Classification</a></li>
+  <li><a href="#multivariate-analysis" id="toc-multivariate-analysis" class="nav-link" data-scroll-target="#multivariate-analysis">Multivariate analysis</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/language/hap-e.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../language/hap-e.html">Language</a></li><li class="breadcrumb-item"><a href="../language/hap-e.html">Human-AI Parallel Corpus</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Human-AI Parallel Corpus</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">EDA</div>
+    <div class="quarto-category">multivariate analysis</div>
+    <div class="quarto-category">text data</div>
+    <div class="quarto-category">classification</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    The Human-AI Parallel Corpus contains millions of words of text written by humans and by large language models (LLMs) such as OpenAI’s GPT-4o and Meta’s Llama 3. The texts have been annotated to identify rhetorical features, allowing comparison of the writing style of the different LLMs.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alex Reinhart </p>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 10, 2025</p>
+    </div>
+  </div>
+  
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/hap-e-biber.csv.gz">hap-e-biber.csv.gz</a>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024</p>
+    </div>
+  </div>
+  </div>
+
+
+</header>
+
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>As large language models (LLMs) like ChatGPT grew increasingly popular, most attention focused on their ability to do tasks, like summarizing text or doing math homework problems. But many noticed that the writing style of ChatGPT, Gemini, Claude, and similar models was distinct. Words like “delve” and “underscore” became known as the hallmarks of LLMs. This data comes from a project to analyze the writing style of LLMs in more detail by studying linguistic and rhetorical features of their writing, such as their use of present participles, contractions, or the passive voice. Using a corpus of thousands of human-written texts, various LLMs were prompted to generate text in similar styles, allowing direct comparisons.</p>
+<p>The corpus contains text written by two different groups of models: OpenAI’s GPT-4o, used to power ChatGPT starting in 2024, and Meta’s Llama 3, which is released publicly and widely used to power many different AI products. The models are in several sizes, referring to the size of neural network used to generate their text output. GPT-4o has two sizes, GPT-4o Mini and the regular size; each Llama version comes in 8B and 70B (8 billion and 70 billion parameter) sizes.</p>
+<p>Some of the included LLMs are “base” or “pre-trained” models. These have been trained on massive corpora of text to predict the most likely next word in a sentence, allowing them to be used to generate realistic-sounding text. Prompted with a chunk of human text, they will generate a plausible continuation of it. The Llama models marked “base” are base models.</p>
+<p>The rest of the included LLMs have been “instruction-tuned”, meaning that after the basic pre-training process, they have been tuned to answer questions, follow instructions, and complete tasks. The details of this process are proprietary, so AI companies do not explain the exact training steps and tasks used, but typically this process involves giving the LLMs tasks (such as summarizing a text or solving a math problem), rating its output, and using the ratings to tweak the model to better perform on the tasks. Instruction-tuned LLMs are the ones you may have interacted with through ChatGPT, Claude, Gemini, and similar tools. The GPT-4o models in this data are all instruction-tuned, as are the Llama models marked “instruct”.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The Human-AI Parallel English Corpus (HAP-E) is based on 12,000 original texts, scraped from various online sources. There are 2,000 texts from each of six different text-types:</p>
+<ul>
+<li><strong>Academic</strong> writing from a corpus of open-access academic papers published by Elsevier</li>
+<li><strong>News</strong> from a corpus of online news articles published by US-based news organizations</li>
+<li><strong>Fiction</strong> from novels and short stories in the public domain and available on <a href="https://gutenberg.org/">Project Gutenberg</a> (which hosts work that is out-of-copyright, so typically from before the 1930s)</li>
+<li><strong>Spoken</strong> word from a corpus of podcast transcriptions</li>
+<li><strong>Blog</strong> posts from a corpus of posts from blogger.com</li>
+<li><strong>TV/movie scripts</strong> drawn from two corpora of scripts</li>
+</ul>
+<p>Two chunks were extracted from each text. The first chunk of approximately 500 words was used to prompt the LLMs, by asking them to write the next 500 words in the same style. The second chunk of 500 words was compared to the version written by the LLMs. There were six LLMs used:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>LLM</th>
+<th>Version</th>
+<th>Instruction-tuned?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GPT-4o Mini</td>
+<td>2024-07-18</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>GPT-4o</td>
+<td>2024-08-06</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Llama 3</td>
+<td>8B</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Llama 3</td>
+<td>8B Instruct</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Llama 3</td>
+<td>70B</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Llama 3</td>
+<td>70B Instruct</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>GPT-4o Mini and Llama 3 8B are smaller models with fewer parameters; GPT-4o and Llama 3 70B are larger and more capable.</p>
+<p>Occasionally the LLMs refused to complete the writing task, for instance if the text was violent or sexually explicit, or generated very short output. Short outputs were filtered out and only texts where all LLMs provided output were kept, leaving <span class="math inline">\(n = 8290\)</span> texts.</p>
+<p>Each chunk—the human first and second chunk and the 500-word chunks generated by the LLMs—was then analyzed with the <a href="https://cran.r-project.org/package=pseudobibeR">pseudobibeR</a> package, which calculates the rate of 66 different rhetorical features in the texts. These are the variables provided in the data, listed below.</p>
+<p>Each row of data represents one 500-word chunk of text. As there were 8,290 texts, each with two human chunks and six LLM chunks, there are <span class="math inline">\(8290 \times 8 =
+66320\)</span> rows.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/hap-e-biber.csv.gz "> hap-e-biber.csv.gz </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["doc_id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["source"],"name":[2],"type":["chr"],"align":["left"]},{"label":["f_01_past_tense"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["f_02_perfect_aspect"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["f_03_present_tense"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["f_04_place_adverbials"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["f_05_time_adverbials"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["f_06_first_person_pronouns"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["f_07_second_person_pronouns"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["f_08_third_person_pronouns"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["f_09_pronoun_it"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["f_10_demonstrative_pronoun"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["f_11_indefinite_pronouns"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["f_12_proverb_do"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["f_13_wh_question"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["f_14_nominalizations"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["f_15_gerunds"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["f_16_other_nouns"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["f_17_agentless_passives"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["f_18_by_passives"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["f_19_be_main_verb"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["f_20_existential_there"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["f_21_that_verb_comp"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["f_22_that_adj_comp"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["f_23_wh_clause"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["f_24_infinitives"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["f_25_present_participle"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["f_26_past_participle"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["f_27_past_participle_whiz"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["f_28_present_participle_whiz"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["f_29_that_subj"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["f_30_that_obj"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["f_31_wh_subj"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["f_32_wh_obj"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["f_33_pied_piping"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["f_34_sentence_relatives"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["f_35_because"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["f_36_though"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["f_37_if"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["f_38_other_adv_sub"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["f_39_prepositions"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["f_40_adj_attr"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["f_41_adj_pred"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["f_42_adverbs"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["f_44_mean_word_length"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["f_45_conjuncts"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["f_46_downtoners"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["f_47_hedges"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["f_48_amplifiers"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["f_49_emphatics"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["f_50_discourse_particles"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["f_51_demonstratives"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["f_52_modal_possibility"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["f_53_modal_necessity"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["f_54_modal_predictive"],"name":[55],"type":["dbl"],"align":["right"]},{"label":["f_55_verb_public"],"name":[56],"type":["dbl"],"align":["right"]},{"label":["f_56_verb_private"],"name":[57],"type":["dbl"],"align":["right"]},{"label":["f_57_verb_suasive"],"name":[58],"type":["dbl"],"align":["right"]},{"label":["f_58_verb_seem"],"name":[59],"type":["dbl"],"align":["right"]},{"label":["f_59_contractions"],"name":[60],"type":["dbl"],"align":["right"]},{"label":["f_60_that_deletion"],"name":[61],"type":["dbl"],"align":["right"]},{"label":["f_61_stranded_preposition"],"name":[62],"type":["dbl"],"align":["right"]},{"label":["f_62_split_infinitive"],"name":[63],"type":["dbl"],"align":["right"]},{"label":["f_63_split_auxiliary"],"name":[64],"type":["dbl"],"align":["right"]},{"label":["f_64_phrasal_coordination"],"name":[65],"type":["dbl"],"align":["right"]},{"label":["f_65_clausal_coordination"],"name":[66],"type":["dbl"],"align":["right"]},{"label":["f_66_neg_synthetic"],"name":[67],"type":["dbl"],"align":["right"]},{"label":["f_67_neg_analytic"],"name":[68],"type":["dbl"],"align":["right"]}],"data":[{"1":"acad_0001","2":"gpt-4o-2024-08-06","3":"0.000000","4":"0.000000","5":"57.37705","6":"0.000000","7":"0.000000","8":"0.000000","9":"0","10":"10.245902","11":"6.147541","12":"4.098361","13":"0.000000","14":"0","15":"0.000000","16":"81.96721","17":"2.049180","18":"243.8525","19":"6.147541","20":"2.049180","21":"14.344262","22":"0.000000","23":"2.049180","24":"0.000000","25":"0.000000","26":"10.245902","27":"10.245902","28":"0.000000","29":"2.049180","30":"2.049180","31":"16.393443","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"0.000000","37":"0","38":"0.000000","39":"0.000000","40":"4.098361","41":"81.96721","42":"100.40984","43":"8.196721","44":"59.42623","45":"6.258197","46":"4.098361","47":"6.147541","48":"0","49":"2.049180","50":"10.245902","51":"0","52":"6.147541","53":"22.540984","54":"4.098361","55":"0.000000","56":"6.147541","57":"14.344262","58":"8.196721","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"2.049180","64":"10.245902","65":"26.639344","66":"6.147541","67":"2.04918","68":"10.245902"},{"1":"acad_0002","2":"gpt-4o-2024-08-06","3":"1.908397","4":"3.816794","5":"38.16794","6":"5.725191","7":"0.000000","8":"0.000000","9":"0","10":"1.908397","11":"3.816794","12":"0.000000","13":"0.000000","14":"0","15":"1.908397","16":"78.24427","17":"1.908397","18":"297.7099","19":"3.816794","20":"0.000000","21":"9.541985","22":"0.000000","23":"0.000000","24":"0.000000","25":"0.000000","26":"3.816794","27":"1.908397","28":"0.000000","29":"3.816794","30":"1.908397","31":"1.908397","32":"0.000000","33":"1.908397","34":"0","35":"0.000000","36":"1.908397","37":"0","38":"0.000000","39":"0.000000","40":"5.725191","41":"118.32061","42":"95.41985","43":"3.816794","44":"51.52672","45":"6.318702","46":"7.633588","47":"1.908397","48":"0","49":"0.000000","50":"3.816794","51":"0","52":"13.358779","53":"20.992366","54":"0.000000","55":"0.000000","56":"1.908397","57":"3.816794","58":"0.000000","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"3.816794","65":"24.809160","66":"0.000000","67":"0.00000","68":"3.816794"},{"1":"acad_0003","2":"gpt-4o-2024-08-06","3":"9.380863","4":"1.876173","5":"52.53283","6":"0.000000","7":"1.876173","8":"16.885553","9":"0","10":"3.752345","11":"5.628518","12":"3.752345","13":"0.000000","14":"0","15":"0.000000","16":"82.55159","17":"13.133208","18":"230.7692","19":"11.257036","20":"5.628518","21":"3.752345","22":"0.000000","23":"7.504690","24":"0.000000","25":"0.000000","26":"0.000000","27":"5.628518","28":"0.000000","29":"3.752345","30":"1.876173","31":"5.628518","32":"0.000000","33":"0.000000","34":"0","35":"3.752345","36":"0.000000","37":"0","38":"0.000000","39":"0.000000","40":"7.504690","41":"142.58912","42":"97.56098","43":"3.752345","44":"67.54221","45":"6.024528","46":"9.380863","47":"9.380863","48":"0","49":"1.876173","50":"0.000000","51":"0","52":"11.257036","53":"7.504690","54":"0.000000","55":"0.000000","56":"5.628518","57":"15.009381","58":"3.752345","59":"1.876173","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"1.876173","65":"7.504690","66":"1.876173","67":"0.00000","68":"9.380863"},{"1":"acad_0004","2":"gpt-4o-2024-08-06","3":"2.150538","4":"0.000000","5":"34.40860","6":"6.451613","7":"0.000000","8":"4.301075","9":"0","10":"10.752688","11":"0.000000","12":"6.451613","13":"0.000000","14":"0","15":"2.150538","16":"96.77419","17":"19.354839","18":"212.9032","19":"8.602151","20":"0.000000","21":"4.301075","22":"0.000000","23":"2.150538","24":"0.000000","25":"4.301075","26":"8.602151","27":"15.053763","28":"0.000000","29":"6.451613","30":"0.000000","31":"0.000000","32":"2.150538","33":"4.301075","34":"0","35":"4.301075","36":"2.150538","37":"0","38":"0.000000","39":"0.000000","40":"8.602151","41":"111.82796","42":"111.82796","43":"4.301075","44":"70.96774","45":"6.665948","46":"6.451613","47":"0.000000","48":"0","49":"2.150538","50":"8.602151","51":"0","52":"6.451613","53":"38.709677","54":"0.000000","55":"0.000000","56":"2.150538","57":"21.505376","58":"12.903226","59":"0.000000","60":"0.000000","61":"2.150538","62":"0","63":"0.000000","64":"6.451613","65":"19.354839","66":"0.000000","67":"0.00000","68":"0.000000"},{"1":"acad_0005","2":"gpt-4o-2024-08-06","3":"1.869159","4":"1.869159","5":"44.85981","6":"3.738318","7":"0.000000","8":"3.738318","9":"0","10":"7.476636","11":"7.476636","12":"1.869159","13":"0.000000","14":"0","15":"0.000000","16":"67.28972","17":"5.607477","18":"285.9813","19":"7.476636","20":"1.869159","21":"5.607477","22":"0.000000","23":"1.869159","24":"0.000000","25":"0.000000","26":"14.953271","27":"14.953271","28":"0.000000","29":"1.869159","30":"3.738318","31":"9.345794","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"0.000000","37":"0","38":"0.000000","39":"0.000000","40":"1.869159","41":"125.23364","42":"119.62617","43":"1.869159","44":"41.12150","45":"5.952562","46":"5.607477","47":"3.738318","48":"0","49":"1.869159","50":"1.869159","51":"0","52":"13.084112","53":"9.345794","54":"0.000000","55":"0.000000","56":"7.476636","57":"18.691589","58":"3.738318","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"1.869159","64":"5.607477","65":"24.299065","66":"3.738318","67":"0.00000","68":"3.738318"},{"1":"acad_0006","2":"gpt-4o-2024-08-06","3":"10.040161","4":"2.008032","5":"42.16867","6":"0.000000","7":"2.008032","8":"2.008032","9":"0","10":"2.008032","11":"14.056225","12":"4.016064","13":"0.000000","14":"0","15":"0.000000","16":"30.12048","17":"10.040161","18":"301.2048","19":"8.032129","20":"2.008032","21":"6.024096","22":"0.000000","23":"6.024096","24":"0.000000","25":"4.016064","26":"12.048193","27":"12.048193","28":"0.000000","29":"0.000000","30":"2.008032","31":"4.016064","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"0.000000","37":"0","38":"0.000000","39":"2.008032","40":"12.048193","41":"120.48193","42":"112.44980","43":"4.016064","44":"56.22490","45":"5.983838","46":"12.048193","47":"0.000000","48":"0","49":"2.008032","50":"4.016064","51":"0","52":"12.048193","53":"16.064257","54":"0.000000","55":"0.000000","56":"8.032129","57":"10.040161","58":"10.040161","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"8.032129","65":"4.016064","66":"0.000000","67":"0.00000","68":"2.008032"},{"1":"acad_0007","2":"gpt-4o-2024-08-06","3":"2.020202","4":"0.000000","5":"36.36364","6":"2.020202","7":"2.020202","8":"2.020202","9":"0","10":"12.121212","11":"2.020202","12":"6.060606","13":"2.020202","14":"0","15":"0.000000","16":"88.88889","17":"12.121212","18":"256.5657","19":"8.080808","20":"4.040404","21":"2.020202","22":"0.000000","23":"0.000000","24":"0.000000","25":"2.020202","26":"16.161616","27":"10.101010","28":"0.000000","29":"2.020202","30":"2.020202","31":"0.000000","32":"0.000000","33":"2.020202","34":"0","35":"0.000000","36":"4.040404","37":"0","38":"0.000000","39":"0.000000","40":"0.000000","41":"129.29293","42":"64.64646","43":"2.020202","44":"56.56566","45":"6.310062","46":"6.060606","47":"2.020202","48":"0","49":"2.020202","50":"0.000000","51":"0","52":"18.181818","53":"16.161616","54":"0.000000","55":"0.000000","56":"2.020202","57":"14.141414","58":"0.000000","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"8.080808","65":"22.222222","66":"2.020202","67":"0.00000","68":"2.020202"},{"1":"acad_0008","2":"gpt-4o-2024-08-06","3":"3.696858","4":"0.000000","5":"40.66543","6":"0.000000","7":"0.000000","8":"0.000000","9":"0","10":"22.181146","11":"1.848429","12":"0.000000","13":"0.000000","14":"0","15":"1.848429","16":"51.75601","17":"5.545287","18":"290.2033","19":"0.000000","20":"0.000000","21":"7.393715","22":"1.848429","23":"1.848429","24":"0.000000","25":"0.000000","26":"20.332717","27":"11.090573","28":"0.000000","29":"5.545287","30":"1.848429","31":"11.090573","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"3.696858","37":"0","38":"0.000000","39":"0.000000","40":"1.848429","41":"114.60259","42":"70.24030","43":"3.696858","44":"48.05915","45":"6.130112","46":"9.242144","47":"0.000000","48":"0","49":"5.545287","50":"1.848429","51":"0","52":"18.484288","53":"22.181146","54":"3.696858","55":"3.696858","56":"1.848429","57":"12.939002","58":"3.696858","59":"0.000000","60":"1.848429","61":"0.000000","62":"0","63":"1.848429","64":"7.393715","65":"12.939002","66":"1.848429","67":"0.00000","68":"1.848429"},{"1":"acad_0009","2":"gpt-4o-2024-08-06","3":"3.731343","4":"0.000000","5":"46.64179","6":"7.462687","7":"1.865672","8":"0.000000","9":"0","10":"13.059701","11":"11.194030","12":"0.000000","13":"0.000000","14":"0","15":"0.000000","16":"54.10448","17":"1.865672","18":"307.8358","19":"0.000000","20":"0.000000","21":"18.656716","22":"3.731343","23":"0.000000","24":"3.731343","25":"0.000000","26":"14.925373","27":"1.865672","28":"3.731343","29":"7.462687","30":"0.000000","31":"1.865672","32":"0.000000","33":"1.865672","34":"0","35":"0.000000","36":"0.000000","37":"0","38":"0.000000","39":"0.000000","40":"3.731343","41":"128.73134","42":"97.01493","43":"7.462687","44":"33.58209","45":"5.844991","46":"3.731343","47":"0.000000","48":"0","49":"0.000000","50":"1.865672","51":"0","52":"13.059701","53":"3.731343","54":"1.865672","55":"0.000000","56":"1.865672","57":"3.731343","58":"3.731343","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"1.865672","65":"22.388060","66":"5.597015","67":"0.00000","68":"1.865672"},{"1":"acad_0010","2":"gpt-4o-2024-08-06","3":"0.000000","4":"5.976096","5":"47.80876","6":"0.000000","7":"0.000000","8":"1.992032","9":"0","10":"0.000000","11":"7.968127","12":"0.000000","13":"0.000000","14":"0","15":"0.000000","16":"59.76096","17":"5.976096","18":"298.8048","19":"3.984064","20":"1.992032","21":"7.968127","22":"1.992032","23":"3.984064","24":"0.000000","25":"0.000000","26":"11.952191","27":"5.976096","28":"0.000000","29":"3.984064","30":"3.984064","31":"3.984064","32":"0.000000","33":"0.000000","34":"0","35":"1.992032","36":"1.992032","37":"0","38":"0.000000","39":"0.000000","40":"1.992032","41":"131.47410","42":"105.57769","43":"1.992032","44":"29.88048","45":"6.501002","46":"3.984064","47":"1.992032","48":"0","49":"0.000000","50":"0.000000","51":"0","52":"9.960159","53":"3.984064","54":"0.000000","55":"1.992032","56":"7.968127","57":"5.976096","58":"5.976096","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"1.992032","65":"21.912351","66":"3.984064","67":"0.00000","68":"1.992032"},{"1":"acad_0011","2":"gpt-4o-2024-08-06","3":"3.976143","4":"1.988072","5":"35.78529","6":"1.988072","7":"1.988072","8":"0.000000","9":"0","10":"3.976143","11":"5.964215","12":"3.976143","13":"0.000000","14":"0","15":"0.000000","16":"51.68986","17":"11.928429","18":"274.3539","19":"1.988072","20":"0.000000","21":"0.000000","22":"0.000000","23":"5.964215","24":"0.000000","25":"0.000000","26":"3.976143","27":"11.928429","28":"0.000000","29":"1.988072","30":"5.964215","31":"3.976143","32":"0.000000","33":"0.000000","34":"0","35":"1.988072","36":"0.000000","37":"0","38":"0.000000","39":"0.000000","40":"1.988072","41":"135.18887","42":"139.16501","43":"0.000000","44":"51.68986","45":"6.306163","46":"9.940358","47":"5.964215","48":"0","49":"0.000000","50":"1.988072","51":"0","52":"3.976143","53":"17.892644","54":"0.000000","55":"0.000000","56":"5.964215","57":"9.940358","58":"5.964215","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"1.988072","64":"5.964215","65":"9.940358","66":"0.000000","67":"0.00000","68":"5.964215"},{"1":"acad_0012","2":"gpt-4o-2024-08-06","3":"0.000000","4":"0.000000","5":"45.55315","6":"4.338395","7":"2.169197","8":"4.338395","9":"0","10":"6.507592","11":"4.338395","12":"4.338395","13":"0.000000","14":"0","15":"0.000000","16":"75.92191","17":"4.338395","18":"247.2885","19":"2.169197","20":"0.000000","21":"8.676790","22":"2.169197","23":"0.000000","24":"0.000000","25":"0.000000","26":"8.676790","27":"6.507592","28":"0.000000","29":"6.507592","30":"6.507592","31":"4.338395","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"0.000000","37":"0","38":"0.000000","39":"2.169197","40":"6.507592","41":"104.12148","42":"130.15184","43":"4.338395","44":"47.72234","45":"6.363834","46":"6.507592","47":"4.338395","48":"0","49":"0.000000","50":"2.169197","51":"0","52":"17.353579","53":"17.353579","54":"2.169197","55":"4.338395","56":"0.000000","57":"10.845987","58":"0.000000","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"2.169197","65":"36.876356","66":"2.169197","67":"0.00000","68":"4.338395"},{"1":"acad_0013","2":"gpt-4o-2024-08-06","3":"6.160164","4":"0.000000","5":"34.90760","6":"0.000000","7":"4.106776","8":"4.106776","9":"0","10":"2.053388","11":"6.160164","12":"2.053388","13":"0.000000","14":"0","15":"0.000000","16":"63.65503","17":"16.427105","18":"238.1930","19":"0.000000","20":"0.000000","21":"2.053388","22":"0.000000","23":"4.106776","24":"0.000000","25":"2.053388","26":"16.427105","27":"8.213552","28":"0.000000","29":"10.266940","30":"6.160164","31":"4.106776","32":"2.053388","33":"2.053388","34":"0","35":"0.000000","36":"0.000000","37":"0","38":"0.000000","39":"0.000000","40":"6.160164","41":"125.25667","42":"133.47023","43":"4.106776","44":"51.33470","45":"6.572895","46":"4.106776","47":"4.106776","48":"0","49":"0.000000","50":"10.266940","51":"0","52":"18.480493","53":"18.480493","54":"0.000000","55":"2.053388","56":"4.106776","57":"12.320329","58":"4.106776","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"2.053388","64":"4.106776","65":"12.320329","66":"4.106776","67":"0.00000","68":"4.106776"},{"1":"acad_0014","2":"gpt-4o-2024-08-06","3":"0.000000","4":"1.984127","5":"35.71429","6":"0.000000","7":"0.000000","8":"7.936508","9":"0","10":"3.968254","11":"3.968254","12":"5.952381","13":"0.000000","14":"0","15":"0.000000","16":"45.63492","17":"15.873016","18":"277.7778","19":"5.952381","20":"0.000000","21":"11.904762","22":"0.000000","23":"5.952381","24":"0.000000","25":"1.984127","26":"15.873016","27":"9.920635","28":"0.000000","29":"7.936508","30":"3.968254","31":"0.000000","32":"0.000000","33":"1.984127","34":"0","35":"0.000000","36":"0.000000","37":"0","38":"0.000000","39":"0.000000","40":"1.984127","41":"136.90476","42":"99.20635","43":"5.952381","44":"49.60317","45":"6.315895","46":"7.936508","47":"1.984127","48":"0","49":"0.000000","50":"5.952381","51":"0","52":"11.904762","53":"13.888889","54":"1.984127","55":"0.000000","56":"7.936508","57":"7.936508","58":"5.952381","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"1.984127","64":"3.968254","65":"27.777778","66":"1.984127","67":"0.00000","68":"3.968254"},{"1":"acad_0015","2":"gpt-4o-2024-08-06","3":"0.000000","4":"1.855288","5":"37.10575","6":"0.000000","7":"0.000000","8":"3.710575","9":"0","10":"0.000000","11":"7.421150","12":"3.710575","13":"0.000000","14":"0","15":"0.000000","16":"70.50093","17":"12.987013","18":"256.0297","19":"7.421150","20":"0.000000","21":"1.855288","22":"0.000000","23":"3.710575","24":"0.000000","25":"3.710575","26":"16.697588","27":"12.987013","28":"0.000000","29":"3.710575","30":"3.710575","31":"5.565863","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"1.855288","37":"0","38":"1.855288","39":"0.000000","40":"1.855288","41":"120.59369","42":"109.46197","43":"1.855288","44":"46.38219","45":"6.678439","46":"9.276438","47":"0.000000","48":"0","49":"0.000000","50":"3.710575","51":"0","52":"14.842301","53":"18.552876","54":"1.855288","55":"1.855288","56":"1.855288","57":"7.421150","58":"3.710575","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"9.276438","65":"25.974026","66":"0.000000","67":"0.00000","68":"0.000000"},{"1":"acad_0016","2":"gpt-4o-2024-08-06","3":"0.000000","4":"2.028398","5":"38.53955","6":"4.056795","7":"0.000000","8":"0.000000","9":"0","10":"10.141988","11":"2.028398","12":"4.056795","13":"0.000000","14":"0","15":"0.000000","16":"85.19270","17":"10.141988","18":"259.6349","19":"6.085193","20":"0.000000","21":"12.170385","22":"2.028398","23":"0.000000","24":"0.000000","25":"2.028398","26":"12.170385","27":"16.227181","28":"0.000000","29":"6.085193","30":"8.113590","31":"6.085193","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"2.028398","37":"0","38":"0.000000","39":"0.000000","40":"8.113590","41":"117.64706","42":"111.56187","43":"6.085193","44":"40.56795","45":"6.660569","46":"8.113590","47":"2.028398","48":"0","49":"0.000000","50":"2.028398","51":"0","52":"14.198783","53":"14.198783","54":"2.028398","55":"0.000000","56":"4.056795","57":"16.227181","58":"4.056795","59":"0.000000","60":"2.028398","61":"2.028398","62":"0","63":"0.000000","64":"2.028398","65":"24.340771","66":"4.056795","67":"0.00000","68":"2.028398"},{"1":"acad_0017","2":"gpt-4o-2024-08-06","3":"1.949318","4":"0.000000","5":"54.58090","6":"1.949318","7":"0.000000","8":"21.442495","9":"0","10":"9.746589","11":"7.797271","12":"1.949318","13":"0.000000","14":"0","15":"0.000000","16":"66.27680","17":"3.898635","18":"265.1072","19":"5.847953","20":"1.949318","21":"13.645224","22":"0.000000","23":"0.000000","24":"0.000000","25":"0.000000","26":"13.645224","27":"7.797271","28":"1.949318","29":"5.847953","30":"0.000000","31":"13.645224","32":"1.949318","33":"0.000000","34":"0","35":"1.949318","36":"0.000000","37":"0","38":"0.000000","39":"1.949318","40":"5.847953","41":"105.26316","42":"107.21248","43":"9.746589","44":"38.98635","45":"6.077973","46":"9.746589","47":"5.847953","48":"0","49":"0.000000","50":"1.949318","51":"0","52":"17.543860","53":"17.543860","54":"7.797271","55":"3.898635","56":"0.000000","57":"11.695906","58":"0.000000","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"1.949318","65":"17.543860","66":"3.898635","67":"0.00000","68":"3.898635"},{"1":"acad_0018","2":"gpt-4o-2024-08-06","3":"1.956947","4":"3.913894","5":"62.62231","6":"0.000000","7":"1.956947","8":"7.827789","9":"0","10":"3.913894","11":"7.827789","12":"0.000000","13":"0.000000","14":"0","15":"0.000000","16":"80.23483","17":"3.913894","18":"228.9628","19":"1.956947","20":"1.956947","21":"13.698630","22":"0.000000","23":"3.913894","24":"0.000000","25":"0.000000","26":"17.612524","27":"9.784736","28":"3.913894","29":"1.956947","30":"1.956947","31":"9.784736","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"1.956947","37":"0","38":"0.000000","39":"0.000000","40":"3.913894","41":"131.11546","42":"129.15851","43":"7.827789","44":"23.48337","45":"6.165029","46":"1.956947","47":"0.000000","48":"0","49":"0.000000","50":"1.956947","51":"0","52":"25.440313","53":"0.000000","54":"0.000000","55":"0.000000","56":"1.956947","57":"9.784736","58":"15.655577","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"0.000000","65":"13.698630","66":"0.000000","67":"0.00000","68":"1.956947"},{"1":"acad_0019","2":"gpt-4o-2024-08-06","3":"0.000000","4":"0.000000","5":"34.76483","6":"0.000000","7":"0.000000","8":"8.179959","9":"0","10":"6.134969","11":"4.089980","12":"0.000000","13":"0.000000","14":"0","15":"2.044990","16":"67.48466","17":"4.089980","18":"325.1534","19":"2.044990","20":"0.000000","21":"10.224949","22":"0.000000","23":"4.089980","24":"0.000000","25":"0.000000","26":"14.314928","27":"2.044990","28":"0.000000","29":"10.224949","30":"4.089980","31":"6.134969","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"2.044990","37":"0","38":"0.000000","39":"0.000000","40":"0.000000","41":"100.20450","42":"126.78937","43":"8.179959","44":"32.71984","45":"6.348361","46":"6.134969","47":"2.044990","48":"0","49":"2.044990","50":"2.044990","51":"0","52":"6.134969","53":"16.359918","54":"2.044990","55":"2.044990","56":"2.044990","57":"4.089980","58":"8.179959","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"0.000000","64":"6.134969","65":"18.404908","66":"4.089980","67":"0.00000","68":"2.044990"},{"1":"acad_0020","2":"gpt-4o-2024-08-06","3":"9.596929","4":"0.000000","5":"30.71017","6":"3.838772","7":"0.000000","8":"7.677543","9":"0","10":"5.758157","11":"9.596929","12":"0.000000","13":"0.000000","14":"0","15":"0.000000","16":"69.09789","17":"17.274472","18":"259.1171","19":"1.919386","20":"1.919386","21":"3.838772","22":"0.000000","23":"1.919386","24":"0.000000","25":"0.000000","26":"11.516315","27":"7.677543","28":"0.000000","29":"1.919386","30":"1.919386","31":"3.838772","32":"0.000000","33":"0.000000","34":"0","35":"0.000000","36":"1.919386","37":"0","38":"0.000000","39":"0.000000","40":"5.758157","41":"136.27639","42":"126.67946","43":"7.677543","44":"53.74280","45":"6.168906","46":"7.677543","47":"5.758157","48":"0","49":"1.919386","50":"3.838772","51":"0","52":"19.193858","53":"9.596929","54":"1.919386","55":"1.919386","56":"1.919386","57":"7.677543","58":"3.838772","59":"0.000000","60":"0.000000","61":"0.000000","62":"0","63":"3.838772","64":"3.838772","65":"21.113244","66":"3.838772","67":"0.00000","68":"5.758157"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<section id="metadata" class="level4">
+<h4 class="anchored" data-anchor-id="metadata">Metadata</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>doc_id</code></td>
+<td>Document ID of the text, in the format <code>texttype_id</code>. For example, <code>acad_0001</code> is the first text in the academic text-type.</td>
+</tr>
+<tr class="even">
+<td><code>source</code></td>
+<td>The source of the text: either human (<code>chunk_1</code> or <code>chunk_2</code>) or LLM (a string giving the LLM name and version).</td>
+</tr>
+</tbody>
+</table>
+<p>The remaining features are all linguistic features. Apart from mean word length, each is a rate per 1,000 words.</p>
+</section>
+<section id="tense-and-aspect-markers" class="level4">
+<h4 class="anchored" data-anchor-id="tense-and-aspect-markers">Tense and aspect markers</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_01_past_tense</code></td>
+<td>Verbs in the past tense.</td>
+</tr>
+<tr class="even">
+<td><code>f_02_perfect_aspect</code></td>
+<td>Verbs in the perfect aspect, indicated by “have” as an auxiliary verb (e.g.&nbsp;<em>I [have] written this sentence.</em>)”</td>
+</tr>
+<tr class="odd">
+<td><code>f_03_present_tense</code></td>
+<td>Verbs in the present tense.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="place-and-time-adverbials" class="level4">
+<h4 class="anchored" data-anchor-id="place-and-time-adverbials">Place and time adverbials</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_04_place_adverbials</code></td>
+<td>Place adverbials (e.g., <em>above</em>, <em>beside</em>, <em>outdoors</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_05_time_adverbials</code></td>
+<td>Time adverbials (e.g., <em>early</em>, <em>instantly</em>, <em>soon</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pronouns-and-pro-verbs" class="level4">
+<h4 class="anchored" data-anchor-id="pronouns-and-pro-verbs">Pronouns and pro-verbs</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_06_first_person_pronouns</code></td>
+<td>First-person pronouns</td>
+</tr>
+<tr class="even">
+<td><code>f_07_second_person_pronouns</code></td>
+<td>Second-person pronouns</td>
+</tr>
+<tr class="odd">
+<td><code>f_08_third_person_pronouns</code></td>
+<td>Third-person personal pronouns (excluding <em>it</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_09_pronoun_it</code></td>
+<td>Pronoun <em>it</em>, <em>its</em>, or <em>itself</em></td>
+</tr>
+<tr class="odd">
+<td><code>f_10_demonstrative_pronoun</code></td>
+<td>Pronouns being used to replace a noun (e.g.&nbsp;<em>[That] is an example sentence.</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_11_indefinite_pronouns</code></td>
+<td>Indefinite pronouns (e.g., <em>anybody</em>, <em>nothing</em>, <em>someone</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_12_proverb_do</code></td>
+<td>Pro-verb <em>do</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="questions" class="level4">
+<h4 class="anchored" data-anchor-id="questions">Questions</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_13_wh_question</code></td>
+<td>Direct <em>wh-</em> questions (e.g., <em>When are you leaving?</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="nominal-forms" class="level4">
+<h4 class="anchored" data-anchor-id="nominal-forms">Nominal forms</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_14_nominalizations</code></td>
+<td>Nominalizations (nouns ending in <em>-tion</em>, <em>-ment</em>, <em>-ness</em>, <em>-ity</em>, e.g.&nbsp;<em>adjustment</em>, <em>abandonment</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_15_gerunds</code></td>
+<td>Gerunds (participial forms functioning as nouns)</td>
+</tr>
+<tr class="odd">
+<td><code>f_16_other_nouns</code></td>
+<td>Total other nouns</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="passives" class="level4">
+<h4 class="anchored" data-anchor-id="passives">Passives</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_17_agentless_passives</code></td>
+<td>Agentless passives (e.g., <em>The task [was done].</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_18_by_passives</code></td>
+<td><em>by-</em> passives (e.g., <em>The task [was done by Steve].</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="stative-forms" class="level4">
+<h4 class="anchored" data-anchor-id="stative-forms">Stative forms</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_19_be_main_verb</code></td>
+<td><em>be</em> as main verb</td>
+</tr>
+<tr class="even">
+<td><code>f_20_existential_there</code></td>
+<td>Existential <em>there</em> (e.g., <em>[There] is a feature in this sentence.</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="subordination-features" class="level4">
+<h4 class="anchored" data-anchor-id="subordination-features">Subordination features</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_21_that_verb_comp</code></td>
+<td><em>that</em> verb complements (e.g., <em>I said [that he went].</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_22_that_adj_comp</code></td>
+<td><em>that</em> adjective complements (e.g., <em>I’m glad [that you like it].</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_23_wh_clause</code></td>
+<td><em>wh-</em> clauses (e.g., <em>I believed [what he told me].</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_24_infinitives</code></td>
+<td>Infinitives</td>
+</tr>
+<tr class="odd">
+<td><code>f_25_present_participle</code></td>
+<td>Present participial adverbial clauses (e.g., <em>[Stuffing his mouth with cookies], Joe ran out the door.</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_26_past_participle</code></td>
+<td>Past participial adverbial clauses (e.g., <em>[Built in a single week], the house would stand for fifty years.</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_27_past_participle_whiz</code></td>
+<td>Past participial postnominal (reduced relative) clauses (e.g., <em>the solution [produced by this process]</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_28_present_participle_whiz</code></td>
+<td>Present participial postnominal (reduced relative) clauses (e.g., <em>the event [causing this decline]</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_29_that_subj</code></td>
+<td><em>that</em> relative clauses on subject position (e.g., <em>the dog [that bit me]</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_30_that_obj</code></td>
+<td><em>that</em> relative clauses on object position (e.g., <em>the dog [that I saw]</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_31_wh_subj</code></td>
+<td><em>wh-</em> relatives on subject position (e.g., <em>the man [who likes popcorn]</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_32_wh_obj</code></td>
+<td><em>wh-</em> relatives on object position (e.g., <em>the man [who Sally likes]</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_33_pied_piping</code></td>
+<td>Pied-piping relative clauses (e.g., <em>the manner [in which he was told]</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_34_sentence_relatives</code></td>
+<td>Sentence relatives (e.g., <em>Bob likes fried mangoes, [which is the most disgusting thing I’ve ever heard of].</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_35_because</code></td>
+<td>Causative adverbial subordinator (<em>because</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_36_though</code></td>
+<td>Concessive adverbial subordinators (<em>although</em>, <em>though</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_37_if</code></td>
+<td>Conditional adverbial subordinators (<em>if</em>, <em>unless</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_38_other_adv_sub</code></td>
+<td>Other adverbial subordinators (e.g., <em>since</em>, <em>while</em>, <em>whereas</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="prepositional-phrases-adjectives-and-adverbs" class="level4">
+<h4 class="anchored" data-anchor-id="prepositional-phrases-adjectives-and-adverbs">Prepositional phrases, adjectives, and adverbs</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_39_prepositions</code></td>
+<td>Total prepositional phrases</td>
+</tr>
+<tr class="even">
+<td><code>f_40_adj_attr</code></td>
+<td>Attributive adjectives (e.g., <em>the [big] horse</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_41_adj_pred</code></td>
+<td>Predicative adjectives (e.g., <em>The horse is [big].</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_42_adverbs</code></td>
+<td>Total adverbs</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lexical-specificity" class="level4">
+<h4 class="anchored" data-anchor-id="lexical-specificity">Lexical specificity</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_44_mean_word_length</code></td>
+<td>Average word length (across tokens, excluding punctuation)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lexical-classes" class="level4">
+<h4 class="anchored" data-anchor-id="lexical-classes">Lexical classes</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_45_conjuncts</code></td>
+<td>Conjuncts (e.g., <em>consequently</em>, <em>furthermore</em>, <em>however</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_46_downtoners</code></td>
+<td>Downtoners (e.g., <em>barely</em>, <em>nearly</em>, <em>slightly</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_47_hedges</code></td>
+<td>Hedges (e.g., <em>at about</em>, <em>something like</em>, <em>almost</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_48_amplifiers</code></td>
+<td>Amplifiers (e.g., <em>absolutely</em>, <em>extremely</em>, <em>perfectly</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_49_emphatics</code></td>
+<td>Emphatics (e.g., <em>a lot</em>, <em>for sure</em>, <em>really</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_50_discourse_particles</code></td>
+<td>Discourse particles (e.g., sentence-initial <em>well</em>, <em>now</em>, <em>anyway</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_51_demonstratives</code></td>
+<td>Demonstratives (<em>that</em>, <em>this</em>, <em>these</em>, or <em>those</em> used as determiners, e.g.&nbsp;<em>[That] is the feature</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="modals" class="level4">
+<h4 class="anchored" data-anchor-id="modals">Modals</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_52_modal_possibility</code></td>
+<td>Possibility modals (<em>can</em>, <em>may</em>, <em>might</em>, <em>could</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_53_modal_necessity</code></td>
+<td>Necessity modals (<em>ought</em>, <em>should</em>, <em>must</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_54_modal_predictive</code></td>
+<td>Predictive modals (<em>will</em>, <em>would</em>, <em>shall</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="specialized-verb-classes" class="level4">
+<h4 class="anchored" data-anchor-id="specialized-verb-classes">Specialized verb classes</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_55_verb_public</code></td>
+<td>Public verbs (e.g., <em>assert</em>, <em>declare</em>, <em>mention</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_56_verb_private</code></td>
+<td>Private verbs (e.g., <em>assume</em>, <em>believe</em>, <em>doubt</em>, <em>know</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_57_verb_suasive</code></td>
+<td>Suasive verbs (e.g., <em>command</em>, <em>insist</em>, <em>propose</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_58_verb_seem</code></td>
+<td><em>seem</em> and <em>appear</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reduced-forms-and-dispreferred-structures" class="level4">
+<h4 class="anchored" data-anchor-id="reduced-forms-and-dispreferred-structures">Reduced forms and dispreferred structures</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_59_contractions</code></td>
+<td>Contractions</td>
+</tr>
+<tr class="even">
+<td><code>f_60_that_deletion</code></td>
+<td>Subordinator <em>that</em> deletion (e.g., <em>I think [he went].</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_61_stranded_preposition</code></td>
+<td>Stranded prepositions (e.g., <em>the candidate that I was thinking [of]</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_62_split_infinitive</code></td>
+<td>Split infinitives (e.g., <em>He wants [to convincingly prove] that …</em>)</td>
+</tr>
+<tr class="odd">
+<td><code>f_63_split_auxiliary</code></td>
+<td>Split auxiliaries (e.g., <em>They [were apparently shown] to …</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="co-ordination" class="level4">
+<h4 class="anchored" data-anchor-id="co-ordination">Co-ordination</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_64_phrasal_coordination</code></td>
+<td>Phrasal co-ordination (N and N; Adj and Adj; V and V; Adv and Adv)</td>
+</tr>
+<tr class="even">
+<td><code>f_65_clausal_coordination</code></td>
+<td>Independent clause co-ordination (clause-initial <em>and</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="negation" class="level4">
+<h4 class="anchored" data-anchor-id="negation">Negation</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>f_66_neg_synthetic</code></td>
+<td>Synthetic negation (e.g., <em>No answer is good enough for Jones.</em>)</td>
+</tr>
+<tr class="even">
+<td><code>f_67_neg_analytic</code></td>
+<td>Analytic negation (e.g., <em>That isn’t good enough.</em>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="questions-1" class="level2">
+<h2 class="anchored" data-anchor-id="questions-1">Questions</h2>
+<section id="eda" class="level3">
+<h3 class="anchored" data-anchor-id="eda">EDA</h3>
+<ol type="1">
+<li>Humans tend to adapt their writing and speech to the genre: blog posts are written differently than formal academic writing, which is very different from ordinary unscripted speech. Select the human chunk 2 text. Use the first part of the <code>doc_id</code> column to get the text-type of each text. Construct tables and visualizations to identify the features that differ the most by text-type. What features are most associated with formal writing? What features appear the most in informal speech?</li>
+<li>Now extend the comparison to examine how the instruction-tuned models (GPT-4o and the Llama Instruct variants) vary the same features by text-type.</li>
+<li>Build a table to compare the mean use of each feature by model.</li>
+<li>Build a visualization to compare the distribution of feature uses by model, compared to human use. How can you show the distributions in a compact way to allow the many features to be compared?</li>
+<li>Construct plots or tables that illustrate how the instruction-tuned Llama models compare to the base Llama models. What features seem to be changed the most by instruction tuning?</li>
+</ol>
+</section>
+<section id="classification" class="level3">
+<h3 class="anchored" data-anchor-id="classification">Classification</h3>
+<ol type="1">
+<li>Build a classifier to identify the source of text using the provided features. Split your data into training and test sets so you can evaluate its accuracy. What is the overall accuracy? How well can it distinguish between ChatGPT and Llama Instruct, and between the different sizes of each LLM?</li>
+<li>Subset the data to form pairwise corpora: human chunk 2 versus GPT-4o, human chunk 2 versus Llama 3 70B Instruct, and so on. For each pair, construct a classifier. Which LLMs are easiest to distinguish from human writing? Which are hardest?</li>
+<li>Explore which text-types have the lowest accuracy and which have the highest. In which do LLMs write most like humans, and in which do they write least like humans?</li>
+</ol>
+</section>
+<section id="multivariate-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="multivariate-analysis">Multivariate analysis</h3>
+<ol type="1">
+<li>Use a dimension-reduction technique like principal components analysis (PCA) to reduce the features down to a few dimensions. How much variance is explained by the top two dimensions? Try to interpret the dimensions: which features are associated with each dimension?</li>
+<li>Plot the texts in the space formed by the top two dimensions. Construct plots that allow you to compare the distributions of the models and the six text-types. Which text-types are most different? Which models are most different?</li>
+</ol>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>The full text of the corpus is available at: Brown et al (2024). Human-AI Parallel Corpus. <em>Hugging Face</em>, doi:<a href="https://doi.org/10.57967/hf/3770">10.57967/hf/3770</a></p>
+<p>This data was obtained from: Brown et al (2024). Human-AI Parallel Corpus, Biber Tagged. <em>Hugging Face</em>, doi:<a href="https://doi.org/10.57967/hf/3792">10.57967/hf/3792</a></p>
+<p>Discussion of the creation of the corpus and its analysis: Reinhart et al (2025). Do LLMs write like humans? Variation in grammatical and rhetorical styles. <em>Proceedings of the National Academy of Sciences</em>, 122 (8) 122 (8) e2422455122. doi:<a href="https://doi.org/10.1073/pnas.2422455122">10.1073/pnas.2422455122</a>. Preprint: <a href="https://arxiv.org/abs/2410.16107" class="uri">https://arxiv.org/abs/2410.16107</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/language/hap-e.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
