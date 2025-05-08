@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Shiyu Wu and Alex Reinhart">
-<meta name="dcterms.date" content="2024-06-25">
-<meta name="description" content="Are dark-skinned soccer players more likely to receive red cards than those with light skin? Use observational data on several thousand players and referees to examine the association. This data was used in the Many Analysts, One Data Set project exploring how different analysis teams produce different statistical results.">
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2025-05-08">
+<meta name="description" content="Doctors treating meningitis must rapidly determine if it is caused by bacteria or a virus. Can this be predicted using fast, inexpensive tests, instead of slower bacterial and viral cultures? Use an observational sample of meningitis cases to build a classifier.">
 
-<title>Bias in soccer refereeing – CMU S&amp;DS Data Repository</title>
+<title>Distinguishing bacterial and viral meningitis – CMU S&amp;DS Data Repository</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/many-analysts.html">Bias in soccer refereeing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/meningitis.html">Distinguishing bacterial and viral meningitis</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -288,13 +288,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Medicine</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
@@ -309,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../medicine/meningitis.html" class="sidebar-item-text sidebar-link">
+  <a href="../medicine/meningitis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Distinguishing bacterial and viral meningitis</span></a>
   </div>
 </li>
@@ -381,13 +381,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Psychology</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
@@ -408,7 +408,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link active">
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bias in soccer refereeing</span></a>
   </div>
 </li>
@@ -503,22 +503,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/many-analysts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/meningitis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/many-analysts.html">Bias in soccer refereeing</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../medicine/bloodletting.html">Medicine</a></li><li class="breadcrumb-item"><a href="../medicine/meningitis.html">Distinguishing bacterial and viral meningitis</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bias in soccer refereeing</h1>
+<h1 class="title">Distinguishing bacterial and viral meningitis</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">GLMs</div>
+    <div class="quarto-category">logistic regression</div>
+    <div class="quarto-category">classification</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Are dark-skinned soccer players more likely to receive red cards than those with light skin? Use observational data on several thousand players and referees to examine the association. This data was used in the Many Analysts, One Data Set project exploring how different analysis teams produce different statistical results.
+    Doctors treating meningitis must rapidly determine if it is caused by bacteria or a virus. Can this be predicted using fast, inexpensive tests, instead of slower bacterial and viral cultures? Use an observational sample of meningitis cases to build a classifier.
   </div>
 </div>
 
@@ -528,14 +529,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Shiyu Wu and Alex Reinhart </p>
+             <p>Alex Reinhart </p>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 25, 2024</p>
+      <p class="date">May 8, 2025</p>
     </div>
   </div>
   
@@ -544,14 +545,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Data files</div>
     <div class="quarto-title-meta-contents">
-            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/many-analysts.csv.gz">many-analysts.csv.gz</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/meningitis.csv">meningitis.csv</a>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Data year</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2018</p>
+      <p class="date">1989</p>
     </div>
   </div>
   </div>
@@ -562,23 +563,28 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Bias in decision-making is a critical issue in various fields, including sports. In soccer, referees have significant influence over the outcomes of matches through their decisions to issue yellow or red cards to players. Red cards, in particular, have severe consequences as they result in the player’s ejection from the game and leave their team short-handed. This raises important questions about the fairness and impartiality of referees’ decisions.</p>
-<p>This dataset compiles information about several thousand players in European soccer leagues, the referees who officiated their matches, and the number of yellow and red cards given by each referee to each player. Player photos were visually rated for skin color by two raters, allowing us to examine whether soccer players with dark skin are more likely to receive red cards.</p>
-<p>The data was compiled as part of the Many Analysts, One Data Set project, which gave the data to 29 different teams to analyze. This allowed the researchers to examine how different analysis choices by each team affected their results; teams used methods varying from simple linear regression to complicated hierarchical generalized linear models, and obtained often contradictory results, demonstrating that apparently innocuous analysis choices can cause large changes in results.</p>
+<p>Meningitis is an inflammation of the meninges, the membranes surrounding the brain and spinal cord. It is often caused by infections with viruses or bacteria, and if left untreated, can cause serious harm to the brain and nervous system. Doctors hence treat it as an emergency and seek to immediately start treatment.</p>
+<p>However, treating meningitis successfully requires knowing the cause of the infection. Bacterial meningitis, caused by infection with various kinds of bacteria, can be treated with appropriate antibiotics. But viral meningitis, which can be caused by several different kinds of virus, does not respond at all to antibiotics. It’s common to immediately give antibiotics so treatment can start before the cause is definitively known. Doctors then use a lumbar puncture to draw a sample of cerebrospinal fluid (CSF), the fluid surrounding the brain and spine, to test for signs of bacteria. There are several diagnostic signs:</p>
+<ul>
+<li>Gram staining: The sample is stained using crystal violet, which binds to the walls of some kinds of bacteria. They hence show up in bright violet under a microscope, demonstrating the presence of gram-positive bacteria. However, other kinds of bacteria (gram-negative bacteria) do not show up with this test, and it may be negative if the patient already received antibiotics.</li>
+<li>White blood cell count: White blood cells are the body’s immune cells. A high count indicates response to an infection. There are several kinds of white blood cell: Leukocytes suggest a viral infection, while neutrophil suggests a bacterial infection.</li>
+<li>Glucose level: The cerebrospinal fluid usually has a lower glucose level than the blood. In bacterial meningitis it drops even lower.</li>
+<li>Protein levels: Protein levels are typically higher in bacterial infections than viral.</li>
+</ul>
+<p>These measurements are fairly fast and easy to get from a CSF sample, but are not definitive. To definitively show a bacterium is present, it must be cultured over several days, or antigens detected in a counterimmunoelectrophoresis test. To definitively prove viral meningitis, the virus must be isolated from blood, stool, or CSF samples, or all other causes must be ruled out. In either case, a definitive ruling takes much more time and effort, while a bacterial infection must be treated straight away. So can we accurately decide whether a patient has bacterial meningitis using just the fast and easy-to-obtain test results?</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The data contains information on all soccer players in the male divisions of the English, German, French, and Spanish soccer leagues in the 2012-13 season. Each row represents a pair: one player and one referee. Players often played multiple matches officiated by the same referee, which would be grouped together into one row.</p>
-<p>The data contains about 2,000 players and about 3,000 referees, totaling 146,000 unique pairs with data. Each row contains information about how many games the player played with that referee, how many red cards were given to the player by the referee, and so on; plus metadata about the player and referee.</p>
-<p>Two variables measure implicit and explicit racial bias in the referee’s home country. These are based on average scores from people who took bias tests conducted online by <a href="https://implicit.harvard.edu/implicit/index.jsp">Project Implicit</a>; the referees themselves did not take bias tests.</p>
+<p>The data comes from a retrospective observational study at Duke University Medical Center, using records for all patients with acute meningitis between January 1969 and July 1980. The researchers used laboratory records to determine which patients had bacterial or viral meningitis, and extracted initial test results from the patients’ charts. Patients had both blood tests and cerebrospinal fluid (CSF) tests. Most patients had tests conducted immediately upon admission, and some had a second set of tests later in their stay.</p>
+<p>Many values are missing, as not every patient had every test conducted. Some variables are present in the data but not documented; these are marked “Unknown”. These undocumented variables were not used in the original published analysis of the data.</p>
 <section id="data-preview" class="level3">
 <h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
 <h4 class="anchored">
-<a href=" https://cmustatistics.github.io/data-repository/data/many-analysts.csv.gz "> many-analysts.csv.gz </a>
+<a href=" https://cmustatistics.github.io/data-repository/data/meningitis.csv "> meningitis.csv </a>
 </h4>
 <div data-pagedtable="false">
 <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["playerShort"],"name":[1],"type":["chr"],"align":["left"]},{"label":["player"],"name":[2],"type":["chr"],"align":["left"]},{"label":["club"],"name":[3],"type":["chr"],"align":["left"]},{"label":["leagueCountry"],"name":[4],"type":["chr"],"align":["left"]},{"label":["birthday"],"name":[5],"type":["chr"],"align":["left"]},{"label":["height"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["weight"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["position"],"name":[8],"type":["chr"],"align":["left"]},{"label":["games"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["victories"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["ties"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["defeats"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["goals"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["yellowCards"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["yellowReds"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["redCards"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["photoID"],"name":[17],"type":["chr"],"align":["left"]},{"label":["rater1"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["rater2"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["refNum"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["refCountry"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["Alpha_3"],"name":[22],"type":["chr"],"align":["left"]},{"label":["meanIAT"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["nIAT"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["seIAT"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["meanExp"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["nExp"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["seExp"],"name":[28],"type":["dbl"],"align":["right"]}],"data":[{"1":"lucas-wilchez","2":"Lucas Wilchez","3":"Real Zaragoza","4":"Spain","5":"31.08.1983","6":"177","7":"72","8":"Attacking Midfielder","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"95212.jpg","18":"0.25","19":"0.50","20":"1","21":"1","22":"GRC","23":"0.3263915","24":"712","25":"0.0005641124","26":"0.3960000","27":"750","28":"0.002696490"},{"1":"john-utaka","2":"John Utaka","3":"Montpellier HSC","4":"France","5":"08.01.1982","6":"179","7":"82","8":"Right Winger","9":"1","10":"0","11":"0","12":"1","13":"0","14":"1","15":"0","16":"0","17":"1663.jpg","18":"0.75","19":"0.75","20":"2","21":"2","22":"ZMB","23":"0.2033747","24":"40","25":"0.0108748941","26":"-0.2040816","27":"49","28":"0.061504404"},{"1":"abdon-prats","2":"Abdón Prats","3":"RCD Mallorca","4":"Spain","5":"17.12.1992","6":"181","7":"79","8":"NA","9":"1","10":"0","11":"1","12":"0","13":"0","14":"1","15":"0","16":"0","17":"NA","18":"NA","19":"NA","20":"3","21":"3","22":"ESP","23":"0.3698936","24":"1785","25":"0.0002294896","26":"0.5882973","27":"1897","28":"0.001001647"},{"1":"pablo-mari","2":"Pablo Marí","3":"RCD Mallorca","4":"Spain","5":"31.08.1993","6":"191","7":"87","8":"Center Back","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"NA","18":"NA","19":"NA","20":"3","21":"3","22":"ESP","23":"0.3698936","24":"1785","25":"0.0002294896","26":"0.5882973","27":"1897","28":"0.001001647"},{"1":"ruben-pena","2":"Rubén Peña","3":"Real Valladolid","4":"Spain","5":"18.07.1991","6":"172","7":"70","8":"Right Midfielder","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"NA","18":"NA","19":"NA","20":"3","21":"3","22":"ESP","23":"0.3698936","24":"1785","25":"0.0002294896","26":"0.5882973","27":"1897","28":"0.001001647"},{"1":"aaron-hughes","2":"Aaron Hughes","3":"Fulham FC","4":"England","5":"08.11.1979","6":"182","7":"71","8":"Center Back","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"3868.jpg","18":"0.25","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"aleksandar-kolarov","2":"Aleksandar Kolarov","3":"Manchester City","4":"England","5":"10.11.1985","6":"187","7":"80","8":"Left Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"47704.jpg","18":"0.00","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"alexander-tettey","2":"Alexander Tettey","3":"Norwich City","4":"England","5":"04.04.1986","6":"180","7":"68","8":"Defensive Midfielder","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"22356.jpg","18":"1.00","19":"1.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"anders-lindegaard","2":"Anders Lindegaard","3":"Manchester United","4":"England","5":"13.04.1984","6":"193","7":"80","8":"Goalkeeper","9":"1","10":"0","11":"1","12":"0","13":"0","14":"0","15":"0","16":"0","17":"16528.jpg","18":"0.25","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"andreas-beck","2":"Andreas Beck","3":"1899 Hoffenheim","4":"Germany","5":"13.03.1987","6":"180","7":"70","8":"Right Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"36499.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"antonio-rukavina","2":"Antonio Rukavina","3":"Real Valladolid","4":"Spain","5":"26.01.1984","6":"177","7":"74","8":"Right Fullback","9":"2","10":"2","11":"0","12":"0","13":"0","14":"1","15":"0","16":"0","17":"59786.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"ashkan-dejagah","2":"Ashkan Dejagah","3":"Fulham FC","4":"England","5":"05.07.1986","6":"181","7":"74","8":"Left Winger","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"23229.jpg","18":"0.50","19":"0.50","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"benedikt-hoewedes","2":"Benedikt Höwedes","3":"FC Schalke 04","4":"Germany","5":"29.02.1988","6":"187","7":"80","8":"Center Back","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"59387.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"chris-baird","2":"Chris Baird","3":"Fulham FC","4":"England","5":"25.02.1982","6":"186","7":"77","8":"Defensive Midfielder","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"8252.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"chris-brunt","2":"Chris Brunt","3":"West Bromwich Albion","4":"England","5":"14.12.1984","6":"185","7":"74","8":"NA","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"33783.jpg","18":"0.00","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"daniel-schwaab","2":"Daniel Schwaab","3":"Bayer Leverkusen","4":"Germany","5":"23.08.1988","6":"186","7":"76","8":"Right Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"0","15":"0","16":"0","17":"57169.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"dennis-aogo","2":"Dennis Aogo","3":"Hamburger SV","4":"Germany","5":"14.01.1987","6":"184","7":"85","8":"Left Fullback","9":"1","10":"1","11":"0","12":"0","13":"1","14":"0","15":"0","16":"0","17":"26844.jpg","18":"0.50","19":"0.50","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"george-mccartney","2":"George McCartney","3":"West Ham United","4":"England","5":"29.04.1981","6":"180","7":"74","8":"Left Fullback","9":"1","10":"0","11":"0","12":"1","13":"0","14":"0","15":"0","16":"0","17":"8255.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"gylfi-sigurdsson","2":"Gylfi Sigurðsson","3":"Tottenham Hotspur","4":"England","5":"08.09.1989","6":"186","7":"77","8":"Attacking Midfielder","9":"1","10":"0","11":"1","12":"0","13":"1","14":"0","15":"0","16":"0","17":"99196.jpg","18":"0.00","19":"0.00","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"},{"1":"ivan-obradovic","2":"Ivan Obradović","3":"Real Zaragoza","4":"Spain","5":"25.07.1988","6":"181","7":"74","8":"Left Fullback","9":"1","10":"1","11":"0","12":"0","13":"0","14":"1","15":"0","16":"0","17":"86306.jpg","18":"0.00","19":"0.25","20":"4","21":"4","22":"LUX","23":"0.3251852","24":"127","25":"0.0032968095","26":"0.5384615","27":"130","28":"0.013752210"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["casenum"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["month"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["race"],"name":[5],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[6],"type":["chr"],"align":["left"]},{"label":["dx"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["priordx"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["priorrx"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["wbc"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["pmn"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["bands"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["compns"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["daysrx"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["offrx"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["lptodc"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["lpgap"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["morelabs"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["bloodgl"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["gl"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["pr"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["reds"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["whites"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["polys"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["lymphs"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["monos"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["others"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["gram"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["culture"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["cie"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["bloodclt"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["bloodgl2"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["gl2"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["pr2"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["reds2"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["whites2"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["polys2"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["lymphs2"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["monos2"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["others2"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["sumbands"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["subset"],"name":[42],"type":["chr"],"align":["left"]},{"label":["abm"],"name":[43],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"78","3":"1","4":"4.00000000","5":"black","6":"female","7":"1","8":"0","9":"0","10":"6.5","11":"50","12":"4","13":"0","14":"10","15":"0","16":"0","17":"NA","18":"NA","19":"165","20":"3","21":"304","22":"440","23":"4000","24":"100","25":"0","26":"0","27":"0","28":"4","29":"1","30":"1","31":"1","32":"NA","33":"58","34":"46","35":"1","36":"47","37":"0","38":"100","39":"0","40":"0","41":"2.000000","42":"test","43":"1"},{"1":"2","2":"78","3":"12","4":"1.00000000","5":"black","6":"male","7":"1","8":"0","9":"0","10":"3.7","11":"62","12":"5","13":"0","14":"10","15":"2","16":"0","17":"NA","18":"0","19":"150","20":"92","21":"NA","22":"450","23":"5490","24":"97","25":"3","26":"0","27":"0","28":"5","29":"1","30":"NA","31":"1","32":"NA","33":"60","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"3.099000","42":"training","43":"1"},{"1":"3","2":"78","3":"3","4":"0.79999995","5":"black","6":"male","7":"0","8":"1","9":"1","10":"NA","11":"NA","12":"NA","13":"6","14":"10","15":"1","16":"1","17":"NA","18":"NA","19":"183","20":"36","21":"NA","22":"0","23":"4500","24":"100","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"NA","32":"NA","33":"52","34":"51","35":"335","36":"230","37":"0","38":"100","39":"0","40":"0","41":"NA","42":"test","43":"NA"},{"1":"4","2":"78","3":"8","4":"54.00000000","5":"black","6":"male","7":"6","8":"2","9":"0","10":"7.5","11":"73","12":"7","13":"6","14":"10","15":"NA","16":"NA","17":"NA","18":"0","19":"NA","20":"52","21":"43","22":"27","23":"0","24":"NA","25":"NA","26":"NA","27":"NA","28":"0","29":"6","30":"NA","31":"6","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"5.108999","42":"training","43":"1"},{"1":"5","2":"NA","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"test","43":"0"},{"1":"6","2":"NA","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"training","43":"0"},{"1":"7","2":"78","3":"12","4":"0.50000000","5":"black","6":"male","7":"2","8":"0","9":"0","10":"NA","11":"NA","12":"NA","13":"1","14":"28","15":"1","16":"0","17":"NA","18":"0","19":"NA","20":"NA","21":"NA","22":"NA","23":"16500","24":"100","25":"0","26":"0","27":"0","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"50","34":"23","35":"0","36":"2","37":"0","38":"100","39":"0","40":"0","41":"NA","42":"test","43":"1"},{"1":"8","2":"78","3":"2","4":"0.09999996","5":"black","6":"male","7":"6","8":"0","9":"NA","10":"NA","11":"NA","12":"NA","13":"0","14":"10","15":"1","16":"0","17":"NA","18":"0","19":"95","20":"54","21":"NA","22":"NA","23":"505","24":"100","25":"0","26":"0","27":"0","28":"0","29":"0","30":"0","31":"6","32":"NA","33":"NA","34":"NA","35":"17","36":"4","37":"75","38":"25","39":"0","40":"0","41":"NA","42":"test","43":"1"},{"1":"9","2":"NA","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"test","43":"0"},{"1":"10","2":"78","3":"12","4":"11.00000000","5":"white","6":"female","7":"0","8":"NA","9":"1","10":"NA","11":"NA","12":"NA","13":"0","14":"14","15":"NA","16":"NA","17":"NA","18":"0","19":"NA","20":"35","21":"175","22":"NA","23":"700","24":"1","25":"99","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"training","43":"NA"},{"1":"11","2":"78","3":"3","4":"66.00000000","5":"white","6":"male","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"training","43":"NA"},{"1":"12","2":"78","3":"1","4":"32.00000000","5":"black","6":"female","7":"0","8":"2","9":"1","10":"NA","11":"NA","12":"NA","13":"0","14":"NA","15":"NA","16":"NA","17":"NA","18":"0","19":"NA","20":"57","21":"188","22":"40","23":"1500","24":"99","25":"1","26":"0","27":"0","28":"0","29":"0","30":"0","31":"0","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"test","43":"NA"},{"1":"13","2":"78","3":"5","4":"1.00000000","5":"black","6":"female","7":"1","8":"1","9":"0","10":"NA","11":"NA","12":"NA","13":"0","14":"10","15":"1","16":"1","17":"NA","18":"0","19":"164","20":"36","21":"NA","22":"56","23":"721","24":"41","25":"59","26":"0","27":"0","28":"4","29":"1","30":"0","31":"NA","32":"95","33":"70","34":"19","35":"0","36":"1","37":"0","38":"100","39":"0","40":"0","41":"NA","42":"test","43":"1"},{"1":"14","2":"78","3":"8","4":"1.00000000","5":"black","6":"male","7":"1","8":"0","9":"0","10":"NA","11":"NA","12":"NA","13":"265","14":"NA","15":"NA","16":"NA","17":"NA","18":"0","19":"NA","20":"2","21":"42","22":"NA","23":"1640","24":"83","25":"17","26":"0","27":"0","28":"4","29":"1","30":"NA","31":"1","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"training","43":"1"},{"1":"15","2":"78","3":"6","4":"0.50000000","5":"black","6":"male","7":"1","8":"1","9":"0","10":"NA","11":"NA","12":"NA","13":"4","14":"12","15":"2","16":"0","17":"NA","18":"0","19":"145","20":"80","21":"NA","22":"NA","23":"3","24":"0","25":"100","26":"0","27":"0","28":"0","29":"1","30":"NA","31":"1","32":"NA","33":"49","34":"49","35":"880","36":"30","37":"2","38":"86","39":"12","40":"0","41":"NA","42":"training","43":"1"},{"1":"16","2":"78","3":"7","4":"0.29999995","5":"white","6":"male","7":"1","8":"0","9":"0","10":"NA","11":"NA","12":"NA","13":"14","14":"28","15":"2","16":"17","17":"NA","18":"0","19":"NA","20":"140","21":"200","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"0","29":"4","30":"NA","31":"4","32":"NA","33":"16","34":"125","35":"12","36":"480","37":"20","38":"56","39":"NA","40":"NA","41":"NA","42":"test","43":"1"},{"1":"17","2":"78","3":"4","4":"1.00000000","5":"black","6":"male","7":"1","8":"0","9":"0","10":"NA","11":"NA","12":"NA","13":"0","14":"14","15":"1","16":"1","17":"NA","18":"0","19":"NA","20":"30","21":"NA","22":"3660","23":"13680","24":"94","25":"6","26":"0","27":"0","28":"5","29":"1","30":"NA","31":"1","32":"NA","33":"NA","34":"NA","35":"0","36":"161","37":"0","38":"85","39":"15","40":"0","41":"NA","42":"test","43":"1"},{"1":"18","2":"78","3":"4","4":"0.39999998","5":"white","6":"male","7":"1","8":"NA","9":"1","10":"NA","11":"NA","12":"NA","13":"4","14":"13","15":"2","16":"2","17":"NA","18":"0","19":"NA","20":"52","21":"NA","22":"NA","23":"203","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"1","30":"0","31":"NA","32":"NA","33":"38","34":"78","35":"680","36":"90","37":"75","38":"25","39":"0","40":"0","41":"NA","42":"training","43":"1"},{"1":"19","2":"78","3":"3","4":"0.19999999","5":"white","6":"female","7":"2","8":"0","9":"0","10":"NA","11":"NA","12":"NA","13":"6","14":"14","15":"2","16":"5","17":"NA","18":"0","19":"189","20":"46","21":"NA","22":"4000","23":"800","24":"90","25":"10","26":"0","27":"0","28":"1","29":"0","30":"2","31":"0","32":"136","33":"46","34":"103","35":"13","36":"11","37":"55","38":"45","39":"0","40":"0","41":"NA","42":"training","43":"1"},{"1":"20","2":"78","3":"5","4":"0.79999995","5":"white","6":"male","7":"1","8":"NA","9":"1","10":"NA","11":"NA","12":"NA","13":"0","14":"16","15":"1","16":"0","17":"NA","18":"0","19":"NA","20":"3","21":"206","22":"NA","23":"5000","24":"94","25":"6","26":"0","27":"0","28":"NA","29":"1","30":"NA","31":"NA","32":"NA","33":"45","34":"30","35":"200","36":"73","37":"1","38":"99","39":"0","40":"0","41":"NA","42":"test","43":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </section>
@@ -597,116 +603,176 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>playerShort</td>
-<td>Unique player identifier</td>
+<td>casenum</td>
+<td>Case number</td>
 </tr>
 <tr class="even">
-<td>player</td>
-<td>Player’s full name</td>
+<td>year</td>
+<td>Year of the case (two digits, such as 78 for 1978)</td>
 </tr>
 <tr class="odd">
-<td>club</td>
-<td>Player’s club/team</td>
+<td>month</td>
+<td>Month number</td>
 </tr>
 <tr class="even">
-<td>leagueCountry</td>
-<td>Country of the league the player belongs to</td>
+<td>age</td>
+<td>Age of the patient, years</td>
 </tr>
 <tr class="odd">
-<td>birthday</td>
-<td>Player’s birth date (DD.MM.YYYY)</td>
+<td>race</td>
+<td>Race of the patient (Black or White)</td>
 </tr>
 <tr class="even">
-<td>height</td>
-<td>Player’s height in centimeters</td>
+<td>sex</td>
+<td>Sex of the patient (male or female)</td>
 </tr>
 <tr class="odd">
-<td>weight</td>
-<td>Player’s weight in kilograms</td>
+<td>dx</td>
+<td>Unknown</td>
 </tr>
 <tr class="even">
-<td>position</td>
-<td>Player’s position on the team (e.g.&nbsp;Goalkeeper, Defensive Midfielder, etc.)</td>
+<td>priordx</td>
+<td>Unknown</td>
 </tr>
 <tr class="odd">
-<td>games</td>
-<td>Number of games played by this player with this referee</td>
+<td>priorrx</td>
+<td>Whether patient received antibiotics prior to admission to the hospital (0 = no, 1 = yes)</td>
 </tr>
 <tr class="even">
-<td>victories</td>
-<td>Of those games, the number won by the player’s team</td>
+<td>wbc</td>
+<td>White blood cell count per 1,000, in a blood sample</td>
 </tr>
 <tr class="odd">
-<td>ties</td>
-<td>Of those games, the number tied by the player’s team</td>
+<td>pmn</td>
+<td>% polymorphonuclear leukocytes (PMNs) in blood</td>
 </tr>
 <tr class="even">
-<td>defeats</td>
-<td>Of those games, the number lost by the player’s team</td>
+<td>bands</td>
+<td>Percentage of blood PMNs that are immature “band” forms</td>
 </tr>
 <tr class="odd">
-<td>goals</td>
-<td>Number of goals scored by this player</td>
+<td>compns</td>
+<td>Unknown</td>
 </tr>
 <tr class="even">
-<td>yellowCards</td>
-<td>Number of yellow cards received by this player from this referee</td>
+<td>daysrx</td>
+<td>Unknown</td>
 </tr>
 <tr class="odd">
-<td>yellowReds</td>
-<td>Number of double yellow cards received by this player from this referee</td>
+<td>offrx</td>
+<td>Unknown</td>
 </tr>
 <tr class="even">
-<td>redCards</td>
-<td>Number of red cards received by this player from this referee</td>
+<td>lptodc</td>
+<td>Unknown</td>
 </tr>
 <tr class="odd">
-<td>photoID</td>
-<td>ID of the player’s photo</td>
+<td>lpgap</td>
+<td>Hours between the first lumbar puncture and the second, if a second was conducted</td>
 </tr>
 <tr class="even">
-<td>rater1</td>
-<td>Rating of player’s skin tone by the first rater (1 to 5 scale, where 1 is “very light skin” and 5 is “very dark skin”)</td>
+<td>morelabs</td>
+<td>Unknown</td>
 </tr>
 <tr class="odd">
-<td>rater2</td>
-<td>Rating of player’s skin tone by the second rater (1 to 5 scale)</td>
+<td>bloodgl</td>
+<td>Blood glucose level (mg/dL)</td>
 </tr>
 <tr class="even">
-<td>refNum</td>
-<td>Referee’s identification number</td>
+<td>gl</td>
+<td>CSF glucose level (mg/dL)</td>
 </tr>
 <tr class="odd">
-<td>refCountry</td>
-<td>Referee’s country identification number</td>
+<td>pr</td>
+<td>CSF protein level (mg/dL)</td>
 </tr>
 <tr class="even">
-<td>Alpha_3</td>
-<td>Referee’s country three-letter code</td>
+<td>reds</td>
+<td>CSF red blood cell count (count per mm<sup>3</sup>)</td>
 </tr>
 <tr class="odd">
-<td>meanIAT</td>
-<td>Mean implicit bias score (from the Implicit Association Test) for the referee’s country; larger values indicate higher implicit bias</td>
+<td>whites</td>
+<td>Total leukocytes (white blood cells) in CSF (count per mm<sup>3</sup>)</td>
 </tr>
 <tr class="even">
-<td>nIAT</td>
-<td>Sample size for the IAT score in the referee’s country</td>
+<td>polys</td>
+<td>% polymorphonuclear leukocytes (PMNs) in CSF</td>
 </tr>
 <tr class="odd">
-<td>seIAT</td>
-<td>Standard error for the IAT score</td>
+<td>lymphs</td>
+<td>Cerebrospinal fluid lymphocyte count (units not given)</td>
 </tr>
 <tr class="even">
-<td>meanExp</td>
-<td>Mean explicit bias score for the referee’s country; higher feelings indicate higher explicit bias</td>
+<td>monos</td>
+<td>Unknown; possibly CSF monocyte percentage</td>
 </tr>
 <tr class="odd">
-<td>nExp</td>
-<td>Sample size for the explicit bias score in that country</td>
+<td>others</td>
+<td>Unknown; possibly percentage of other white blood cell types in CSF</td>
 </tr>
 <tr class="even">
-<td>seExp</td>
-<td>Standard error for the explicit bias score</td>
+<td>gram</td>
+<td>Gram smear result (0 = Gram-negative, positive values mean Gram-positive)</td>
+</tr>
+<tr class="odd">
+<td>culture</td>
+<td>Unknown</td>
+</tr>
+<tr class="even">
+<td>cie</td>
+<td>Unknown; possibly the result of counterimmunoelectrophoresis (CIE) tests for presence of specific bacterial antigens, but coding is not clear</td>
+</tr>
+<tr class="odd">
+<td>bloodclt</td>
+<td>Unknown</td>
+</tr>
+<tr class="even">
+<td>bloodgl2</td>
+<td>Unknown; possibly blood glucose level at the time of the second lumbar puncture</td>
+</tr>
+<tr class="odd">
+<td>gl2</td>
+<td>CSF glucose level in the second lumbar puncture</td>
+</tr>
+<tr class="even">
+<td>pr2</td>
+<td>CSF protein level in the second lumbar puncture</td>
+</tr>
+<tr class="odd">
+<td>reds2</td>
+<td>CSF red blood cell count in the second lumbar puncture</td>
+</tr>
+<tr class="even">
+<td>whites2</td>
+<td>CSV white blood cell count in the second lumbar puncture</td>
+</tr>
+<tr class="odd">
+<td>polys2</td>
+<td>% PMNs in the second lumbar puncture</td>
+</tr>
+<tr class="even">
+<td>lymphs2</td>
+<td>CSF lymphocyte count in the second lumbar puncture</td>
+</tr>
+<tr class="odd">
+<td>monos2</td>
+<td>Unknown; possibly CSF monocyte percentage in the second lumbar puncture</td>
+</tr>
+<tr class="even">
+<td>others2</td>
+<td>Unknown; possibly percentage of other white blood cell types in the second lumbar puncture</td>
+</tr>
+<tr class="odd">
+<td>sumbands</td>
+<td>Unknown</td>
+</tr>
+<tr class="even">
+<td>subset</td>
+<td>The original researchers divided the data into a training set and a test set; this gives the assignment of each case</td>
+</tr>
+<tr class="odd">
+<td>abm</td>
+<td>Whether the patient has acute bacterial meningitis (1) or viral meningitis (0), as ultimately determined by cultures and antigen tests</td>
 </tr>
 </tbody>
 </table>
@@ -714,11 +780,22 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>The original primary research question was “whether soccer players with dark skin tone are more likely than those with light skin tone to receive red cards from referees”. Conduct an analysis and report your results.</p>
+<ol type="1">
+<li><p>The original researchers derived several features from the measurements given. Calculate these and add them to your data frame:</p>
+<ul>
+<li>The ratio of CSF to blood glucose levels. It is thought that the ratio is a better predictor than the CSF glucose level alone.</li>
+<li>Number of months from August. (For example, September and July are both 1 month from August.) Bacterial meningitis is most common in the winter and viral meningitis most common in the summer.</li>
+</ul></li>
+<li><p>Conduct an exploratory data analysis. First, examine the amount of missingness of the key variables. Then construct plots to examine how each key variable, including the new ones you calculated, may be related to the response (whether the patient has bacterial meningitis). The researchers believe age may affect the diagnostic relationships, so compare relationships for patients under 21 and over 21.</p>
+<p>As binary outcomes are hard to plot, it may help to divide the range of each predictor into bins, and plot the value against the fraction of cases in the bin that were bacterial. Comment on whether any predictors should be transformed, and the shape of the relationships between predictor and response.</p></li>
+<li><p>Fit a logistic regression to predict whether the patient has bacterial meningitis, using blood and CSF test results plus the features you derived in step 1. Include age and determine whether the other relationships vary with age. Ensure you hold out a test set before conducting your analysis. Make any necessary transformations and use diagnostics to check the relationships. Try to reduce your model: Are the calculated features more important than the raw test results? What is the simplest model you can construct that is an accurate predictor?</p></li>
+<li><p>Evaluate your model on the test set and report its performance. Show a confusion matrix.</p></li>
+</ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., … Nosek, B. A. (2018). “Many analysts, one data set: Making transparent how variations in analytic choices affect results”. <em>Advances in Methods and Practices in Psychological Science</em>, 1(3), 337–356. <a href="https://doi.org/10.1177/2515245917747646" class="uri">https://doi.org/10.1177/2515245917747646</a></p>
+<p>Spanos, Harrell, and Durack (1989). “Differential Diagnosis of Acute Meningitis: An Analysis of the Predictive Value of Initial Observations.” <em>JAMA</em> 262 (19), 2700-2707. <a href="https://doi.org/10.1001/jama.1989.03430190084036" class="uri">https://doi.org/10.1001/jama.1989.03430190084036</a></p>
+<p>Data obtained from <a href="https://hbiostat.org/data/" class="uri">https://hbiostat.org/data/</a> courtesy of the Vanderbilt University Department of Biostatistics.</p>
 
 
 </section>
@@ -1131,7 +1208,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/many-analysts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/medicine/meningitis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
