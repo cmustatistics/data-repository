@@ -1,0 +1,85 @@
+---
+title: Boston Housing and Fairness Assessment
+author: Jessica Zhiyu Guo
+date: July 1, 2025
+description: Boston housing was one of the standard toy datasets included in `scikit-learn`, but it has been critiqued and removed from the package for fairness issues. What can we learn from the problematic usage of sensitive attributes as predictive variables?
+categories:
+  - linear regression
+  - EDA
+  - classification
+data:
+  year: 1978
+  files: HousingData.csv
+---
+
+## Motivation
+
+Harrison and Rubinfeld developed the dataset in 1978 to illustrate the issues with using housing market data to measure consumer willingness to pay for clean air. The authors use a hedonic pricing approach, which assumes that the price of a good or service can be modeled as a function of features both internal and external to the good or service. The input to this model was a dataset comprising the Boston Standard Metropolitan Statistical Area, with the nitric oxides concentration (NOX) serving as a proxy for air quality.
+
+This dataset was included as one of ``scikit-learn’s`` and tensorflow’s standard toy datasets. It has also been used as a benchmark tool for many machine learning papers. In 2020, users brought the dataset’s fairness issues to the scikit-learn development team (see scikit-learn issue [#16155](https://github.com/scikit-learn/scikit-learn/issues/16155)), after which the team decided to remove the dataset in scikit-learn version 1.2.
+
+Since then, fairness practitioners have used this dataset to demonstrate what fairness issues in machine learning could look like and how to assess them. This data project is inspired by the [Fairlearn project](https://fairlearn.org/v0.12/user_guide/datasets/boston_housing_data.html#references).
+
+## Data
+
+The data consists of 506 observations, collected from a mixture of surveys, administrative records, and other research papers. While the paper defines each variable and suggests their impacts on housing prices, it generally lacks reasoning for inclusion and attributes of variables. For example, not only it's problematic to include the percentage of Black residents as a predictive attributes, the variable `B` is parabolic with limited justifications.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| CRIM | per capita crime rate by town |
+| ZN | proportion of residential land zoned for lots over 25,000 sq.ft. |
+| INDUS | proportion of non-retail business acres per town|
+| CHAS | Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)|
+| NOX | 	nitric oxides concentration (parts per 10 million)|
+| RM | 	average number of rooms per dwelling |
+| AGE | proportion of owner-occupied units built prior to 1940|
+| DIS | weighted distances to five Boston employment centers |
+| RAD | index of accessibility to radial highways|
+| TAX | full-value property-tax rate per $10,000|
+| PTRATIO | pupil-teacher ratio by town |
+| B | 1000(Bk - 0.63)^2 where Bk is the proportion of Black people by town|
+| LSTAT | % lower status of the population, defined as proportion of adults without some high school education and proportion of male workers classified as laborers |
+| MED | Median value of owner-occupied homes in $1000’s|
+
+
+## Questions
+
+1. Perform an exploratory data analysis on this dataset.
+
+2. Pretend the variables are not problematic for now and predict median housing price from the variables given. Be sure to set aside a test set for performance evaluation. What do you see?
+
+3. Remove `B` and `LSTAT` and build the prediction model again. Does the performance decrease or increase?
+
+4. In fairness research, group parity is considered one of the most important notions of fairness. Mathematically, it is defined as $\mathbb{E}[h(X)|Y=y, A=a] = \mathbb{E}[h(X)|Y=y]$ where $A$ indicates a sensitive attribute like race or gender. Let's simplify this problem by transforming `B`,`LSTAT`, and `MEDV` into binary variables. Namely, we can code `LSTAT` and `MEDV` as 1 when the value exceeds the column median, otherwise 0. We can code `B` as 1 when the value is above 136.9, where the authors claim the variable begins to have a negative impact on housing price.
+
+Now the classification task is classifying housing prices as above or below the median, using all other features. Use the transformed versions of `B` and `LSTAT` as described above, and remember to keep a test set aside.
+
+Calculate the demographic parity difference between groups A and B using your test set data. This metric measures the absolute difference in selection rates between the two groups, where the selection rate for each group is the proportion of positive predictions (houses predicted as above median price) within that group. Specifically, you'll compute:
+
+Group A selection rate = (positive predictions in group A) / (total samples in group A)
+
+Group B selection rate = (positive predictions in group B) / (total samples in group B)
+
+Demographic parity difference = |Group A selection rate - Group B selection rate|
+
+This tells you whether your model predicts 'above median price' at similar rates for both groups, which is important for fairness. What is the group parity difference you find and how would you interpret it?
+
+## References
+
+David Harrison, Jr and Daniel L Rubinfeld. Hedonic housing prices and the demand for clean air. Journal of environmental economics and management, 5(1):81–102, 1978. URL: <https://deepblue.lib.umich.edu/bitstream/handle/2027.42/22636/0000186.pdf?sequence=1&isAllowed=y.>
+
+Fairlearn: Assessing and Improving Fairness of AI Systems
+Hilde Weerts, Miroslav Dudík, Richard Edgar, Adrin Jalali, Roman Lutz, Michael Madaio; 24(257):1−8, 2023.
+
+<https://fairlearn.org/v0.12/user_guide/datasets/boston_housing_data.html#references>
+
+<https://www.kaggle.com/datasets/altavish/boston-housing-dataset?resource=download>
