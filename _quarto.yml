@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - "data/*.csv"
+    - "data/*.csv.gz"
     - "data/*.txt"
   pre-render: prepare.lua
   post-render: build-csv.R
@@ -29,6 +30,9 @@ format:
       - cmu.scss
     toc: true
     df-print: paged
+
+    include-in-header:
+      - matomo-analytics.html
 
     filters:
       - metadata.lua

@@ -1,0 +1,115 @@
+---
+title: Fiscally standardized cities
+author: Alex Reinhart
+date: September 7, 2023
+description: Extensive financial data on over 200 of the largest cities in the United States for over 40 years. Which cities spend the most or the least on government services?
+categories:
+  - EDA
+  - clustering
+data:
+  year: 2020
+  files: fisc_full_dataset_2020_update.csv.gz
+---
+
+## Motivation
+
+In the United States, city governments provide many services: they run public
+school districts, administer certain welfare and health programs, build roads
+and manage airports, provide police and fire protection, inspect buildings, and
+often run water and utility systems. Cities also get revenues through certain
+local taxes, various fees and permit costs, sale of property, and through the
+fees they charge for the utilities they run.
+
+It would be interesting to compare all these expenses and revenues across cities
+and over time, but also quite difficult. Cities share many of these service
+responsibilities with other government agencies: in one particular city, some
+roads may be maintained by the state government, some law enforcement provided
+by the county sheriff, some schools run by independent school districts with
+their own tax revenue, and some utilities run by special independent utility
+districts. These governmental structures vary greatly by state and by individual
+city. It would be hard to make a fair comparison without taking into account all
+these differences.
+
+This dataset takes into account all those differences. The Lincoln Institute of
+Land Policy produces what they call “Fiscally Standardized Cities” (FiSCs),
+aggregating all services provided to city residents regardless of how they may
+be divided up by different government agencies and jurisdictions. Using this, we
+can study city expenses and revenues, and how the proportions of different costs
+vary over time.
+
+## Data
+
+The dataset tracks over 200 American cities between 1977 and 2020. Each row
+represents one city for one year. Revenue and expenditures are broken down into
+more than 120 categories.
+
+Values are available for FiSCs and also for the entities that make it up: the
+city, the county, independent school districts, and any special districts, such
+as utility districts. There are hence five versions of each variable, with
+suffixes indicating the entity. For example, `taxes` gives the FiSC's tax
+revenue, while `taxes_city`, `taxes_cnty`, `taxes_schl`, and `taxes_spec` break
+it down for the city, county, school districts, and special districts.
+
+The values are organized *hierarchically*. For example, `taxes` is the sum of
+`tax_property` (property taxes), `tax_sales_general` (sales taxes), `tax_income`
+(income tax), and `tax_other` (other taxes). And `tax_income` is itself the sum
+of `tax_income_indiv` (individual income tax) and `tax_income_corp` (corporate
+income tax) subcategories.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+For each city and year, the following metadata is available:
+
+| Variable | Description |
+|----|-------------|
+| year | Year for these values |
+| city_name | Name of the city, such as "AK: Anchorage", where "AK" is the standard two-letter abbreviation for Alaska |
+| city_population | Estimated city population, based on Census data |
+| county_name | Name of the county the city is in |
+| county_population | Estimated county population, based on Census data |
+| cpi | Consumer Price Index for this year, scaled so that 2020 is 1. |
+| relationship_city_school | Type of school district. 1: City-wide independent school district that serves the entire city. 2: County-wide independent school district that serves the entire county. 3: One or more independent school districts whose boundaries extend beyond the city. 4: School district run by or dependent on the city. 5: School district run by or dependent on the county. |
+| enrollment | Estimated number of public school students living in the city. |
+| districts_in_city | Estimated number of school districts in the city. |
+| consolidated_govt | Whether the city has a consolidated city-county government (1 = yes, 0 = no). For example, Philadelphia's city and county government are the same entity; they are not separate governments. |
+| id2_city | 12-digit city identifier, from the Annual Survey of State and Local Government Finances |
+| id2_county | 12-digit county identifier |
+| city_types | Two types: core and legacy. There are 150 core cities, "including the two largest cities in each state, plus all cities with populations of 150,000+ in 1980 and 200,000+ in 2010". Legacy cities include "95 cities with population declines of at least 20 percent from their peak, poverty rates exceeding the national average, and a peak population of at least 50,000". Some cities are both (denoted "core|legacy"). |
+
+The revenue and expenses variables are described in [this detailed
+table](../data/fisc_full_dataset_2020_update_variables.pdf). Further
+documentation is available on the FiSC Database website, linked in
+[References](#references) below.
+
+All monetary data is already adjusted for inflation, and is given in terms of
+2020 US dollars per capita. The Consumer Price Index is provided for each year
+if you prefer to use numbers not adjusted for inflation, scaled so that 2020 is
+1; simply divide each value by the CPI to get the value in that year's nominal
+dollars. The total population is also provided if you want total values instead
+of per-capita values.
+
+## Questions
+
+1. Do some exploratory data analysis. Are there any outlying cities? Any
+   interesting trends and relationships? Also, explore the hierarchy of revenues
+   and expenses, and check that values add up in the way the hierarchy suggests
+   they should.
+2. When considering expenditures, there may be different kinds of cities.
+   Perhaps dense cities with efficient public transit spend money in different
+   ways than large, sprawling cities where everyone drives, for example. Extract
+   out important expenditure variables and do a clustering analysis. Are there
+   distinct clusters? How many? Can you interpret what they mean? Be careful
+   about including the hierarchical values in your analysis.
+
+
+## References
+
+Lincoln Institute of Land Policy. Fiscally Standardized Cities database.
+<https://www.lincolninst.edu/research-data/data-toolkits/fiscally-standardized-cities>

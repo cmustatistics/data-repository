@@ -1,0 +1,89 @@
+---
+title: Survey of data visualization courses
+author:
+  - Ronald Yurko
+  - Zach Branson
+  - Monica Paz
+date: September 29, 2024
+description: This dataset is a survey of data visualization courses across universities and liberal arts colleges, containing information for each course that was found. This includes which departments teach data visualization courses, as well as the types of statistics and data science topics that are covered.
+categories:
+  - categorical data
+  - data cleaning
+  - EDA
+  - text data
+data:
+  year: 2024
+  files: data-viz-survey.csv
+---
+
+## Motivation
+
+As statistics and data science educators, we are interested in how data
+visualization is currently taught across universities. To this end, we collected
+data on 154 highly ranked colleges and universities (based on U.S. News
+rankings), and determined which courses on data visualization, if any, were
+offered at each school. We recorded the name of each course, whether it was an
+undergraduate- and/or graduate-level course, the department(s) that offered it,
+and the topics and software taught based on its course description.
+
+## Data
+
+Each row in the dataset represents a single university or liberal arts college
+that was included in the survey. There are university-level columns indicating
+the ranking (as of 2023), if the course catalog was accessible, and if any data
+visualization courses were detected. The remaining columns describe each data
+visualization course that was found for the university with the following
+information:
+
++ name of the course,
++ URL for course website,
++ level of the course (undergrad vs graduate),
++ the department(s) hosting the course,
++ list of topics covered in the course,
++ and any described software used in the course.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| `university` | Name of university or college |
+| `us_news_rank_23` | US News ranking in 2023 |
+| `course_catalog_accessible` | Boolean indicator denoting if we were able to access their online course catalog |
+| `did_it_include_any_class` | Boolean indicator denoting if we were able to find any data visualization class in the catalog |
+| `course_X_name` | Name of the `X` course (where `X` goes up to 15)  |
+| `course_X_url` | URL for the `X` course if available  |
+| `course_X_level` | Course level (undergrad, grad, or both) for the `X` course (note there is inconsistent labeling that requires cleaning)  |
+| `course_X_dept` | Department name that hosts the `X` course |
+| `course_X_topic_list` | String of topics that were found in the course `X` syllabus (if available) |
+| `course_X_software` | String of software that were found in the course `X` syllabus (if)  |
+| `type` | Type of college: `liberal_arts` or `university` | 
+
+## Questions
+
+Data wrangling exercise: convert this wide university/college level dataset
+(i.e., each row is a single school with columns for every potential course) into
+a long course-level dataset (i.e., each row is a single course).
+
+Additionally, here are some example questions to consider:
+
++ What type of departments teach data visualization courses?
+
++ Is there a relationship between the number of data visualization courses and
+  the school's ranking?
+
++ What words are commonly used in the name of data visualization courses? What
+  words are rare? Do certain schools and/or departments tend to favor certain
+  words in the course names?
+
+## References
+
+Branson, Paz, and Yurko "The Landscape of College-level Data Visualization
+Courses, and the Benefits of Incorporating Statistical Thinking". *In
+preparation*.

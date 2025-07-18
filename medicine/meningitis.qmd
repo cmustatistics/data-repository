@@ -1,0 +1,164 @@
+---
+title: Distinguishing bacterial and viral meningitis
+author: Alex Reinhart
+date: May 8, 2025
+description: Doctors treating meningitis must rapidly determine if it is caused by bacteria or a virus. Can this be predicted using fast, inexpensive tests, instead of slower bacterial and viral cultures? Use an observational sample of meningitis cases to build a classifier.
+categories:
+  - logistic regression
+  - classification
+data:
+  year: 1989
+  files: meningitis.csv
+---
+
+## Motivation
+
+Meningitis is an inflammation of the meninges, the membranes surrounding the
+brain and spinal cord. It is often caused by infections with viruses or
+bacteria, and if left untreated, can cause serious harm to the brain and nervous
+system. Doctors hence treat it as an emergency and seek to immediately start
+treatment.
+
+However, treating meningitis successfully requires knowing the cause of the
+infection. Bacterial meningitis, caused by infection with various kinds of
+bacteria, can be treated with appropriate antibiotics. But viral meningitis,
+which can be caused by several different kinds of virus, does not respond at all
+to antibiotics. It's common to immediately give antibiotics so treatment can
+start before the cause is definitively known. Doctors then use a lumbar puncture
+to draw a sample of cerebrospinal fluid (CSF), the fluid surrounding the brain
+and spine, to test for signs of bacteria. There are several diagnostic signs:
+
+- Gram staining: The sample is stained using crystal violet, which binds to the
+  walls of some kinds of bacteria. They hence show up in bright violet under a
+  microscope, demonstrating the presence of gram-positive bacteria. However,
+  other kinds of bacteria (gram-negative bacteria) do not show up with this
+  test, and it may be negative if the patient already received antibiotics.
+- White blood cell count: White blood cells are the body's immune cells. A high
+  count indicates response to an infection. There are several kinds of white
+  blood cell: Leukocytes suggest a viral infection, while neutrophil suggests a
+  bacterial infection.
+- Glucose level: The cerebrospinal fluid usually has a lower glucose level than
+  the blood. In bacterial meningitis it drops even lower.
+- Protein levels: Protein levels are typically higher in bacterial infections
+  than viral.
+
+These measurements are fairly fast and easy to get from a CSF sample, but are
+not definitive. To definitively show a bacterium is present, it must be cultured
+over several days, or antigens detected in a counterimmunoelectrophoresis test.
+To definitively prove viral meningitis, the virus must be isolated from blood,
+stool, or CSF samples, or all other causes must be ruled out. In either case, a
+definitive ruling takes much more time and effort, while a bacterial infection
+must be treated straight away. So can we accurately decide whether a patient has
+bacterial meningitis using just the fast and easy-to-obtain test results?
+
+## Data
+
+The data comes from a retrospective observational study at Duke University
+Medical Center, using records for all patients with acute meningitis between
+January 1969 and July 1980. The researchers used laboratory records to determine
+which patients had bacterial or viral meningitis, and extracted initial test
+results from the patients' charts. Patients had both blood tests and
+cerebrospinal fluid (CSF) tests. Most patients had tests conducted immediately
+upon admission, and some had a second set of tests later in their stay.
+
+Many values are missing, as not every patient had every test conducted. Some
+variables are present in the data but not documented; these are marked
+"Unknown". These undocumented variables were not used in the original published
+analysis of the data.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| casenum | Case number |
+| year | Year of the case (two digits, such as 78 for 1978) |
+| month | Month number |
+| age | Age of the patient, years |
+| race | Race of the patient (Black or White) |
+| sex | Sex of the patient (male or female) |
+| dx | Unknown |
+| priordx | Unknown |
+| priorrx | Whether patient received antibiotics prior to admission to the hospital (0 = no, 1 = yes) |
+| wbc | White blood cell count per 1,000, in a blood sample |
+| pmn | % polymorphonuclear leukocytes (PMNs) in blood |
+| bands | Percentage of blood PMNs that are immature "band" forms |
+| compns | Unknown |
+| daysrx | Unknown |
+| offrx | Unknown |
+| lptodc | Unknown |
+| lpgap | Hours between the first lumbar puncture and the second, if a second was conducted |
+| morelabs | Unknown |
+| bloodgl | Blood glucose level (mg/dL) |
+| gl | CSF glucose level (mg/dL) |
+| pr | CSF protein level (mg/dL) |
+| reds | CSF red blood cell count (count per mm^3^) |
+| whites | Total leukocytes (white blood cells) in CSF (count per mm^3^) |
+| polys | % polymorphonuclear leukocytes (PMNs) in CSF |
+| lymphs  | Cerebrospinal fluid lymphocyte count (units not given) |
+| monos | Unknown; possibly CSF monocyte percentage |
+| others | Unknown; possibly percentage of other white blood cell types in CSF |
+| gram | Gram smear result (0 = Gram-negative, positive values mean Gram-positive) |
+| culture | Unknown |
+| cie | Unknown; possibly the result of counterimmunoelectrophoresis (CIE) tests for presence of specific bacterial antigens, but coding is not clear |
+| bloodclt | Unknown |
+| bloodgl2 | Unknown; possibly blood glucose level at the time of the second lumbar puncture |
+| gl2 | CSF glucose level in the second lumbar puncture |
+| pr2 | CSF protein level in the second lumbar puncture |
+| reds2 | CSF red blood cell count in the second lumbar puncture |
+| whites2 | CSV white blood cell count in the second lumbar puncture |
+| polys2 | % PMNs in the second lumbar puncture |
+| lymphs2 | CSF lymphocyte count in the second lumbar puncture |
+| monos2 | Unknown; possibly CSF monocyte percentage in the second lumbar puncture |
+| others2 | Unknown; possibly percentage of other white blood cell types in the second lumbar puncture |
+| sumbands | Unknown |
+| subset | The original researchers divided the data into a training set and a test set; this gives the assignment of each case |
+| abm | Whether the patient has acute bacterial meningitis (1) or viral meningitis (0), as ultimately determined by cultures and antigen tests |
+
+
+## Questions
+
+1. The original researchers derived several features from the measurements
+   given. Calculate these and add them to your data frame:
+   - The ratio of CSF to blood glucose levels. It is thought that the ratio is a
+     better predictor than the CSF glucose level alone.
+   - Number of months from August. (For example, September and July are both 1
+     month from August.) Bacterial meningitis is most common in the winter and
+     viral meningitis most common in the summer.
+2. Conduct an exploratory data analysis. First, examine the amount of
+   missingness of the key variables. Then construct plots to examine how each
+   key variable, including the new ones you calculated, may be related to the
+   response (whether the patient has bacterial meningitis). The researchers
+   believe age may affect the diagnostic relationships, so compare relationships
+   for patients under 21 and over 21.
+
+   As binary outcomes are hard to plot, it may help to divide the range of each
+   predictor into bins, and plot the value against the fraction of cases in the
+   bin that were bacterial. Comment on whether any predictors should be
+   transformed, and the shape of the relationships between predictor and
+   response.
+3. Fit a logistic regression to predict whether the patient has bacterial
+   meningitis, using blood and CSF test results plus the features you derived in
+   step 1. Include age and determine whether the other relationships vary with
+   age. Ensure you hold out a test set before conducting your analysis. Make any
+   necessary transformations and use diagnostics to check the relationships. Try
+   to reduce your model: Are the calculated features more important than the raw
+   test results? What is the simplest model you can construct that is an
+   accurate predictor?
+4. Evaluate your model on the test set and report its performance. Show a
+   confusion matrix.
+
+## References
+
+Spanos, Harrell, and Durack (1989). "Differential Diagnosis of Acute Meningitis:
+An Analysis of the Predictive Value of Initial Observations." *JAMA* 262 (19),
+2700-2707. <https://doi.org/10.1001/jama.1989.03430190084036>
+
+Data obtained from <https://hbiostat.org/data/> courtesy of the Vanderbilt
+University Department of Biostatistics.

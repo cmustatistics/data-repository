@@ -68,6 +68,7 @@ all serious or superficial infections together.
 | METS | Does the patient have cancer that has metastasized? (1 = yes, 0 = no) |
 | TUMOR | Does the patient have a solid tumor that has *not* metastasized? (1 = yes, 0 = no) |
 | COAG | Does the patient have coagulopathy (a blood clotting disorder)? (1 = yes, 0 = no) |
+| OBESE | Is the patient obese? (Definition not specified; 1 = yes, 0 = no) |
 | WGHTLOSS | Has the patient lost weight? (Time period and amount not specified; 1 = yes, 0 = no) |
 | LYTES | Does the patient have fluid or electrolyte disorders? (1 = yes, 0 = no) |
 | BLDLOSS | Does the patient have chronic blood loss anemia? (1 = yes, 0 = no) |

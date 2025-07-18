@@ -1,0 +1,329 @@
+---
+title: Human-AI Parallel Corpus
+author: Alex Reinhart
+date: January 10, 2025
+description: The Human-AI Parallel Corpus contains millions of words of text written by humans and by large language models (LLMs) such as OpenAI's GPT-4o and Meta's Llama 3. The texts have been annotated to identify rhetorical features, allowing comparison of the writing style of the different LLMs.
+categories:
+  - EDA
+  - multivariate analysis
+  - text data
+  - classification
+data:
+  year: 2024
+  files: hap-e-biber.csv.gz
+---
+
+## Motivation
+
+As large language models (LLMs) like ChatGPT grew increasingly popular, most
+attention focused on their ability to do tasks, like summarizing text or doing
+math homework problems. But many noticed that the writing style of ChatGPT,
+Gemini, Claude, and similar models was distinct. Words like "delve" and
+"underscore" became known as the hallmarks of LLMs. This data comes from a
+project to analyze the writing style of LLMs in more detail by studying
+linguistic and rhetorical features of their writing, such as their use of
+present participles, contractions, or the passive voice. Using a corpus of
+thousands of human-written texts, various LLMs were prompted to generate text in
+similar styles, allowing direct comparisons.
+
+The corpus contains text written by two different groups of models: OpenAI's
+GPT-4o, used to power ChatGPT starting in 2024, and Meta's Llama 3, which is
+released publicly and widely used to power many different AI products. The
+models are in several sizes, referring to the size of neural network used to
+generate their text output. GPT-4o has two sizes, GPT-4o Mini and the regular
+size; each Llama version comes in 8B and 70B (8 billion and 70 billion
+parameter) sizes.
+
+Some of the included LLMs are "base" or "pre-trained" models. These have been
+trained on massive corpora of text to predict the most likely next word in a
+sentence, allowing them to be used to generate realistic-sounding text. Prompted
+with a chunk of human text, they will generate a plausible continuation of it.
+The Llama models marked "base" are base models.
+
+The rest of the included LLMs have been "instruction-tuned", meaning that after
+the basic pre-training process, they have been tuned to answer questions, follow
+instructions, and complete tasks. The details of this process are proprietary,
+so AI companies do not explain the exact training steps and tasks used, but
+typically this process involves giving the LLMs tasks (such as summarizing a
+text or solving a math problem), rating its output, and using the ratings to
+tweak the model to better perform on the tasks. Instruction-tuned LLMs are the
+ones you may have interacted with through ChatGPT, Claude, Gemini, and similar
+tools. The GPT-4o models in this data are all instruction-tuned, as are the
+Llama models marked "instruct".
+
+## Data
+
+The Human-AI Parallel English Corpus (HAP-E) is based on 12,000 original texts,
+scraped from various online sources. There are 2,000 texts from each of six
+different text-types:
+
+- **Academic** writing from a corpus of open-access academic papers published by
+  Elsevier
+- **News** from a corpus of online news articles published by US-based news
+  organizations
+- **Fiction** from novels and short stories in the public domain and available
+  on [Project Gutenberg](https://gutenberg.org/) (which hosts work that is
+  out-of-copyright, so typically from before the 1930s)
+- **Spoken** word from a corpus of podcast transcriptions
+- **Blog** posts from a corpus of posts from blogger.com
+- **TV/movie scripts** drawn from two corpora of scripts
+
+Two chunks were extracted from each text. The first chunk of approximately 500
+words was used to prompt the LLMs, by asking them to write the next 500 words in
+the same style. The second chunk of 500 words was compared to the version
+written by the LLMs. There were six LLMs used:
+
+| LLM | Version | Instruction-tuned? |
+|-------|-------|----|
+| GPT-4o Mini | 2024-07-18 | Yes |
+| GPT-4o | 2024-08-06 | Yes |
+| Llama 3 | 8B | No |
+| Llama 3 | 8B Instruct | Yes |
+| Llama 3 | 70B | No |
+| Llama 3 | 70B Instruct | Yes |
+
+GPT-4o Mini and Llama 3 8B are smaller models with fewer parameters; GPT-4o and
+Llama 3 70B are larger and more capable.
+
+Occasionally the LLMs refused to complete the writing task, for instance if the
+text was violent or sexually explicit, or generated very short output. Short
+outputs were filtered out and only texts where all LLMs provided output were
+kept, leaving $n = 8290$ texts.
+
+Each chunk---the human first and second chunk and the 500-word chunks generated
+by the LLMs---was then analyzed with the
+[pseudobibeR](https://cran.r-project.org/package=pseudobibeR) package, which
+calculates the rate of 66 different rhetorical features in the texts. These are
+the variables provided in the data, listed below.
+
+Each row of data represents one 500-word chunk of text. As there were 8,290
+texts, each with two human chunks and six LLM chunks, there are $8290 \times 8 =
+66320$ rows.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+#### Metadata
+
+| Variable | Description |
+|----|-------------|
+| `doc_id` | Document ID of the text, in the format `texttype_id`. For example, `acad_0001` is the first text in the academic text-type. |
+| `source` | The source of the text: either human (`chunk_1` or `chunk_2`) or LLM (a string giving the LLM name and version). |
+
+The remaining features are all linguistic features. Apart from mean word length,
+each is a rate per 1,000 words.
+
+#### Tense and aspect markers
+
+| Variable | Description |
+|----|-------------|
+| `f_01_past_tense` | Verbs in the past tense. |
+| `f_02_perfect_aspect` | Verbs in the perfect aspect, indicated by "have" as an auxiliary verb (e.g. *I \[have\] written this sentence.*)" |
+| `f_03_present_tense` | Verbs in the present tense. |
+
+#### Place and time adverbials
+
+| Variable | Description |
+|----|-------------|
+| `f_04_place_adverbials` | Place adverbials (e.g., *above*, *beside*, *outdoors*) |
+| `f_05_time_adverbials` | Time adverbials (e.g., *early*, *instantly*, *soon*) |
+
+#### Pronouns and pro-verbs
+
+| Variable | Description |
+|----|-------------|
+| `f_06_first_person_pronouns` | First-person pronouns |
+| `f_07_second_person_pronouns` | Second-person pronouns |
+| `f_08_third_person_pronouns` | Third-person personal pronouns (excluding *it*) |
+| `f_09_pronoun_it` | Pronoun *it*, *its*, or *itself* |
+| `f_10_demonstrative_pronoun` | Pronouns being used to replace a noun (e.g. *\[That\] is an example sentence.*) |
+| `f_11_indefinite_pronouns` | Indefinite pronouns (e.g., *anybody*, *nothing*, *someone*) |
+| `f_12_proverb_do` | Pro-verb *do* |
+
+#### Questions
+
+| Variable | Description |
+|----|-------------|
+| `f_13_wh_question` | Direct *wh-* questions (e.g., *When are you leaving?*) |
+
+#### Nominal forms
+
+| Variable | Description |
+|----|-------------|
+| `f_14_nominalizations` | Nominalizations (nouns ending in *-tion*, *-ment*, *-ness*, *-ity*, e.g. *adjustment*, *abandonment*) |
+| `f_15_gerunds` | Gerunds (participial forms functioning as nouns) |
+| `f_16_other_nouns` | Total other nouns |
+
+#### Passives
+
+| Variable | Description |
+|----|-------------|
+| `f_17_agentless_passives` | Agentless passives (e.g., *The task \[was done\].*) |
+| `f_18_by_passives` | *by-* passives (e.g., *The task \[was done by Steve\].*) |
+
+#### Stative forms
+
+| Variable | Description |
+|----|-------------|
+| `f_19_be_main_verb` | *be* as main verb |
+| `f_20_existential_there` | Existential *there* (e.g., *\[There\] is a feature in this sentence.*) |
+
+#### Subordination features
+
+| Variable | Description |
+|----|-------------|
+| `f_21_that_verb_comp` | *that* verb complements (e.g., *I said \[that he went\].*) |
+| `f_22_that_adj_comp` | *that* adjective complements (e.g., *I'm glad \[that you like it\].*) |
+| `f_23_wh_clause` | *wh-* clauses (e.g., *I believed \[what he told me\].*) |
+| `f_24_infinitives` | Infinitives |
+| `f_25_present_participle` | Present participial adverbial clauses (e.g., *\[Stuffing his mouth with cookies\], Joe ran out the door.*) |
+| `f_26_past_participle` | Past participial adverbial clauses (e.g., *\[Built in a single week\], the house would stand for fifty years.*) |
+| `f_27_past_participle_whiz` | Past participial postnominal (reduced relative) clauses (e.g., *the solution \[produced by this process\]*) |
+| `f_28_present_participle_whiz` | Present participial postnominal (reduced relative) clauses (e.g., *the event \[causing this decline\]*) |
+| `f_29_that_subj` | *that* relative clauses on subject position (e.g., *the dog \[that bit me\]*) |
+| `f_30_that_obj` | *that* relative clauses on object position (e.g., *the dog \[that I saw\]*) |
+| `f_31_wh_subj` | *wh-* relatives on subject position (e.g., *the man \[who likes popcorn\]*) |
+| `f_32_wh_obj` | *wh-* relatives on object position (e.g., *the man \[who Sally likes\]*) |
+| `f_33_pied_piping` | Pied-piping relative clauses (e.g., *the manner \[in which he was told\]*) |
+| `f_34_sentence_relatives` | Sentence relatives (e.g., *Bob likes fried mangoes, \[which is the most disgusting thing I've ever heard of\].*) |
+| `f_35_because` | Causative adverbial subordinator (*because*) |
+| `f_36_though` | Concessive adverbial subordinators (*although*, *though*) |
+| `f_37_if` | Conditional adverbial subordinators (*if*, *unless*) |
+| `f_38_other_adv_sub` | Other adverbial subordinators (e.g., *since*, *while*, *whereas*) |
+
+#### Prepositional phrases, adjectives, and adverbs
+
+| Variable | Description |
+|----|-------------|
+| `f_39_prepositions` | Total prepositional phrases |
+| `f_40_adj_attr` | Attributive adjectives (e.g., *the \[big\] horse*) |
+| `f_41_adj_pred` | Predicative adjectives (e.g., *The horse is \[big\].*) |
+| `f_42_adverbs` | Total adverbs |
+
+#### Lexical specificity
+
+| Variable | Description |
+|----|-------------|
+| `f_44_mean_word_length` | Average word length (across tokens, excluding punctuation) |
+
+#### Lexical classes
+
+| Variable | Description |
+|----|-------------|
+| `f_45_conjuncts` | Conjuncts (e.g., *consequently*, *furthermore*, *however*) |
+| `f_46_downtoners` | Downtoners (e.g., *barely*, *nearly*, *slightly*) |
+| `f_47_hedges` | Hedges (e.g., *at about*, *something like*, *almost*) |
+| `f_48_amplifiers` | Amplifiers (e.g., *absolutely*, *extremely*, *perfectly*) |
+| `f_49_emphatics` | Emphatics (e.g., *a lot*, *for sure*, *really*) |
+| `f_50_discourse_particles` | Discourse particles (e.g., sentence-initial *well*, *now*, *anyway*) |
+| `f_51_demonstratives` | Demonstratives (*that*, *this*, *these*, or *those* used as determiners, e.g. *\[That\] is the feature*) |
+
+#### Modals
+
+| Variable | Description |
+|----|-------------|
+| `f_52_modal_possibility` | Possibility modals (*can*, *may*, *might*, *could*) |
+| `f_53_modal_necessity` | Necessity modals (*ought*, *should*, *must*) |
+| `f_54_modal_predictive` | Predictive modals (*will*, *would*, *shall*) |
+
+#### Specialized verb classes
+
+| Variable | Description |
+|----|-------------|
+| `f_55_verb_public` | Public verbs (e.g., *assert*, *declare*, *mention*) |
+| `f_56_verb_private` | Private verbs (e.g., *assume*, *believe*, *doubt*, *know*) |
+| `f_57_verb_suasive` | Suasive verbs (e.g., *command*, *insist*, *propose*) |
+| `f_58_verb_seem` | *seem* and *appear* |
+
+#### Reduced forms and dispreferred structures
+
+| Variable | Description |
+|----|-------------|
+| `f_59_contractions` | Contractions |
+| `f_60_that_deletion` | Subordinator *that* deletion (e.g., *I think \[he went\].*) |
+| `f_61_stranded_preposition` | Stranded prepositions (e.g., *the candidate that I was thinking \[of\]*) |
+| `f_62_split_infinitive` | Split infinitives (e.g., *He wants \[to convincingly prove\] that ...*) |
+| `f_63_split_auxiliary` | Split auxiliaries (e.g., *They \[were apparently shown\] to ...*) |
+
+#### Co-ordination
+
+| Variable | Description |
+|----|-------------|
+| `f_64_phrasal_coordination` | Phrasal co-ordination (N and N; Adj and Adj; V and V; Adv and Adv) |
+| `f_65_clausal_coordination` | Independent clause co-ordination (clause-initial *and*) |
+
+#### Negation
+
+| Variable | Description |
+|----|-------------|
+| `f_66_neg_synthetic` | Synthetic negation (e.g., *No answer is good enough for Jones.*) |
+| `f_67_neg_analytic` | Analytic negation (e.g., *That isn't good enough.*) |
+
+
+## Questions
+
+### EDA
+
+1. Humans tend to adapt their writing and speech to the genre: blog posts are
+   written differently than formal academic writing, which is very different
+   from ordinary unscripted speech. Select the human chunk 2 text. Use the first
+   part of the `doc_id` column to get the text-type of each text. Construct
+   tables and visualizations to identify the features that differ the most by
+   text-type. What features are most associated with formal writing? What
+   features appear the most in informal speech?
+2. Now extend the comparison to examine how the instruction-tuned models (GPT-4o
+   and the Llama Instruct variants) vary the same features by text-type.
+3. Build a table to compare the mean use of each feature by model.
+4. Build a visualization to compare the distribution of feature uses by model,
+   compared to human use. How can you show the distributions in a compact way to
+   allow the many features to be compared?
+5. Construct plots or tables that illustrate how the instruction-tuned Llama
+   models compare to the base Llama models. What features seem to be changed the
+   most by instruction tuning?
+
+### Classification
+
+1. Build a classifier to identify the source of text using the provided
+   features. Split your data into training and test sets so you can evaluate its
+   accuracy. What is the overall accuracy? How well can it distinguish between
+   ChatGPT and Llama Instruct, and between the different sizes of each LLM?
+2. Subset the data to form pairwise corpora: human chunk 2 versus GPT-4o, human
+   chunk 2 versus Llama 3 70B Instruct, and so on. For each pair, construct a
+   classifier. Which LLMs are easiest to distinguish from human writing? Which
+   are hardest?
+3. Explore which text-types have the lowest accuracy and which have the highest.
+   In which do LLMs write most like humans, and in which do they write least
+   like humans?
+
+### Multivariate analysis
+
+1. Use a dimension-reduction technique like principal components analysis (PCA)
+   to reduce the features down to a few dimensions. How much variance is
+   explained by the top two dimensions? Try to interpret the dimensions: which
+   features are associated with each dimension?
+2. Plot the texts in the space formed by the top two dimensions. Construct plots
+   that allow you to compare the distributions of the models and the six
+   text-types. Which text-types are most different? Which models are most
+   different?
+
+## References
+
+The full text of the corpus is available at: Brown et al (2024). Human-AI
+Parallel Corpus. *Hugging Face*,
+doi:[10.57967/hf/3770](https://doi.org/10.57967/hf/3770)
+
+This data was obtained from: Brown et al (2024). Human-AI Parallel Corpus, Biber
+Tagged. *Hugging Face*, doi:[10.57967/hf/3792](https://doi.org/10.57967/hf/3792)
+
+Discussion of the creation of the corpus and its analysis: Reinhart et al
+(2025). Do LLMs write like humans? Variation in grammatical and rhetorical
+styles. *Proceedings of the National Academy of Sciences*, 122 (8) 122 (8)
+e2422455122.
+doi:[10.1073/pnas.2422455122](https://doi.org/10.1073/pnas.2422455122).
+Preprint: <https://arxiv.org/abs/2410.16107>
