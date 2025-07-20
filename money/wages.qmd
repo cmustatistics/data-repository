@@ -1,0 +1,112 @@
+---
+title: Wage data for U.S. workers (March 2013)
+author: Selina Carter
+date: July 12, 2025
+description: A worker-level observational dataset of hourly wages from the March 2013 U.S. Current Population Survey, including worker demographic traits such as gender, race, age, and education level. This dataset is useful for multivariate regression to understand how hourly wages relate to worker traits. You can also predict categories via logistic regression.
+categories:
+  - linear regression
+  - multivariate analysis
+  - logistic regression
+  - with this dataset
+  - one per line
+  - with two spaces and a hyphen in front
+data:
+  year: 2013
+  files: wages_march_2013.csv
+---
+
+## Motivation
+
+Understanding what determines worker wages is a longstanding question in economics. Many factors can directly influence worker wages, such as the worker's years of experience and the region they live in. Within regions, urban versus rural workers also have different wages. For example, a worker living in New York City tends to have a higher wage than a worker in rural Maine. Many other demographic characteristics play a role - such as gender, race, union membership, and so on.
+
+Economists are not simply interested in relationships; they also want to infer *causality*. But, most economic datasets are observational, so inferring causality is difficult. Furthermore, many economic datasets are self-reported via phone surveys, which can lead to further biases in the analysis.
+
+This dataset can help us build econometric models that predict wages based on a host of worker-level information. You can also predict binary outcomes like union membership. While understanding relationships between variables is itself valuable, it is important to assess how causality is involved. For example, if married people tend to have higher wages controlling for other demographic variables, is this a causal relationship? If it's causal, what is the direction of causality? (For example, do higher wages make people want to "settle down" and get married, or do married people demand companies pay them more?) Or, is there *endogeneity* (two-way causality) in this relationship? These are some of the questions economists ask.
+
+
+## Data
+
+
+This dataset describes worker-level hourly wages from the March 2013 U.S. Current Population Survey (CPS). Each row represents a worker's response to the CPS. Columns include worker demographic traits such as gender, race, age, and education level. 
+
+There are 9799 rows; each row is an independent individual worker. There is no missing data.
+
+
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+All information is self-reported through the Current Population Survey (CPS).
+
+| Variable | Description |
+|----|-------------|
+| wage | hourly wage (March 2013 US dollars) |
+| hrswork | hours worked last week |
+| age | age |
+| exper | potential experience = age - educ - 6 |
+| educ | years of education |
+| female | =1 if female |
+| asian | =1 if asian |
+| black | =1 if black |
+| white | =1 if white |
+| divorced | =1 if divorced |
+| married | =1 if married |
+| single | =1 if single (never married) |
+| nchild | number of own children in household |
+| faminc | gross yearly income of other family members (March 2013 US dollars) |
+| insure | =1 if covered by private health insurance |
+| mcaid | =1 if covered by Medicaid last year |
+| mcare | =1 if covered by Medicare last year |
+| union | =1 if a union member |
+| metro | =1 if in metropolitan area |
+| northeast | =1 if in northeast region |
+| midwest | =1 if in midwest region |
+| south | =1 if in south region |
+| west | =1 if in west region |
+
+
+
+
+## Questions
+
+Suppose you would like to learn about demographic characteristics that are associated with higher wages. Suppose you want run multivariate regression using OLS on worker wages.
+
+1. If the outcome you're interested in is `wage`, should you perform any transformations? (Hint: plot a histogram of wage - does it appear symmetrical and bell-shaped?).
+
+2. What demographic variables would you include as covariates? Should there be any interaction terms?
+
+3. What happens if you try to regress `wage` on `age`, `educ` and `exper`? Why do you get this result?
+
+4. Would you consider adding non-linear terms, such as a polynomial in the `age` variable?
+
+5. Controlling for other demographic variables, do women have a different hourly wage than men? What other covariates might be missing in this analysis?
+
+
+
+Suppose you would like to run a logistic regression to predict whether or not a worker is a union member.
+
+1. What demographic variables would you include as covariates? Should there be any interaction terms?
+
+2. Include `married` as a covariate in your model. Is this covariate for men, women, or both? Can this coefficient be interpreted causally? (See article, ["To Restore Marriage, Restore Labor Unions?"](https://ifstudies.org/blog/to-restore-marriage-restore-labor-unions/) for insights.)
+
+
+
+## References
+
+The original source is the March 2013 Current Population Survey (U.S. Bureau of Labor Statistics), which produces monthly surveys of labor statistics for a probability selected sample of about 60,000 occupied households (see their [methodology page](https://www.census.gov/programs-surveys/cps/technical-documentation/methodology.html) for details). 
+
+
+The cps5 dataset was cleaned and simplified for education purposes by Division of Economic Development and Forecasting, Ourso College of Business, Louisiana State University. This dataset is common for introductory econometrics textbooks. One example is *Principles of Econometrics, 5th Edition* (Hill, Griffiths, and Lim) published by Wiley, 2018. <https://principlesofeconometrics.com/poe5/poe5.html>.
+
+You can find the data and description files at <https://www.principlesofeconometrics.com/poe5/poe5data.html> under `cps5`.
+
+
+This dataset is intended for public access and use. License: Creative Commons CCZero
+
+
