@@ -7,9 +7,8 @@ categories:
   - linear regression
   - multivariate analysis
   - logistic regression
-  - with this dataset
-  - one per line
-  - with two spaces and a hyphen in front
+  - categorial data
+  - causality
 data:
   year: 2013
   files: wages_march_2013.csv
