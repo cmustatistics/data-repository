@@ -76,15 +76,15 @@ All information is self-reported through the Current Population Survey (CPS).
 
 Suppose you would like to learn about demographic characteristics that are associated with higher wages. Suppose you want run multivariate regression using OLS on worker wages.
 
-1. If the outcome you're interested in is `wage`, should you perform any transformations? (Hint: plot a histogram of wage - does it appear symmetrical and bell-shaped?).
+1. If the outcome you're interested in is `wage`, first plot a histogram of wage - note that it is heavily right-skewed. Since OLS assumes error terms are Gaussian, should you necessarily perform a transformation of `wage`?
 
-2. What demographic variables would you include as covariates? Should there be any interaction terms?
+2. What happens if you try to regress `wage` on `age`, `educ` and `exper`? Why do you get this result?
 
-3. What happens if you try to regress `wage` on `age`, `educ` and `exper`? Why do you get this result?
+3. If your goal is non-causal (i.e., you want to predict wages from demographic variables), how do you construct a model to test what demographic variables do you think are the strongest predictors of wage?
 
-4. Would you consider adding non-linear terms, such as a polynomial in the `age` variable?
+4. Would you consider adding non-linear terms, such as a polynomial in the `age` variable? Consider also any interaction terms, such as `black`x`female`.
 
-5. Controlling for other demographic variables, do women have a different hourly wage than men? What other covariates might be missing in this analysis?
+5. Controlling for other demographic variables, do women have a different hourly wage than men? Can this result can be interpreted as evidence of a gender bias in wages? What other covariates might be missing in this analysis?
 
 
 
