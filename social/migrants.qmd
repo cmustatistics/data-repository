@@ -1,0 +1,170 @@
+---
+title: Survey on attitude towards migrants (Mexico and Dominican Republic)
+author: Selina Carter
+date: July 26, 2025
+description: This dataset is useful for public policy and causal analysis. In Mexico and the Dominican Republic, a survey was conducted on attitudes towards migrants. Each respondent receives one of two possible treatments (either an "emotive" or "informative" video about migrants), or is part of the placebo group (shown an unrelated video).
+categories:
+  - EDA
+  - causality
+  - surveys
+  - linear regression
+  - multivariate analysis
+  - logistic regression
+  - experiment design
+data:
+  year: 2023
+  files:
+    - migrants_domrep.csv
+    - migrants_mexico.csv
+    - migrants_dom_dictionary.csv
+    - migrants_mex_dictionary.csv
+    - migrants_response_translations.csv
+  
+---
+
+## Motivation
+
+The [Inter-American Development Bank](https://www.iadb.org/en) (IDB), the largest source of development financing for Latin America and the Caribbean, is an inter-governmental institution concerned with improving the quality of life across the region.
+
+
+This dataset is the result of an experiment conducted in nine countries in Latin America and the Caribbean and published as the book [*A Better World for Migrants in Latin America and the Caribbean*](https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean) (ABWMLAC). This project is joint work between the IDB and the United Nations Development Program (UNDP).  The data, collected in 2021, support an impact evaluation of an intervention aimed at exploring mechanisms that are effective in shifting people's beliefs and attitudes toward migrants. The experiment was conducted in nine countries in Latin America and the Caribbean and consisted of two video interventions. The first video (the "informative" treatment group) aimed to correct misinformation about the impact of migration by providing accurate information about the size of the migrant population and its characteristics. The second video (the "emotive" treatment group) intended to appeal to the emotions and empathy of the local population. The control (or placebo) group was shown a video on a topic unrelated to the study.
+
+
+For the Dominican Republic, there were two types of "emotive" videos: one involves a Haitian migrant while the other involves a Venezuelan migrant.
+
+The authors also note, "The sampling strategy does not ensure a nationally representative sample. In this case, however, to
+identify the impact of the interventions, the sample for each country needs to be comparable, which is achieved by randomly assigning participants to the different treatment and control groups"  (Source: [page 43-44, ABWMLAC](https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean)).
+
+## Data
+
+The [original data](https://doi.org/10.60966/fnm3-ab90) is available for nine countries: Barbados,  Chile,  Colombia, Costa Rica,  Dominican Republic, Ecuador, Mexico, Peru, and Trinidad and Tobago. Here, we provide data only for the Dominican Republic and Mexico, but you can easily download the other datasets also.
+
+The files `migrants_domrep.csv` and `migrants_mexico.csv` are the survey responses respectively for the Dominican Republic and Mexico. One row represents one *respondent* (a person) identified by the `response_id` variable.
+
+  - In the `migrants_domrep.csv` dataset, there are 3,542 rows and 56 columns.
+  - In the `migrants_mexico.csv` dataset, there are 2,432 rows and 56 columns.
+  
+Note that the columns represent demographic characteristics of the respondent and questions in the survey. Careful: the questions in each survey are numbered slightly differently (see bottom of [Variable descriptions](https://cmustatistics.github.io/data-repository/social/migrants.html#variable-descriptions) to see which columns differ). The files `migrants_dom_dictionary.csv` and `migrants_mex_dictionary.csv` describe the questions for each respective country. Since the questions were originally in Spanish, an English translation column is provided. 
+
+Responses are also in Spanish, so you can use `migrants_response_translations.csv` for Spanish-to-English translations.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+Note that all question information contained below is redundant to `migrants_dom_dictionary.csv` and `migrants_mex_dictionary.csv`. The Spanish-to-English translation of responses is in `migrants_response_translations.csv`.
+
+For the respondent-level files (`migrants_domrep.csv` and `migrants_mexico.csv`), below are the columns that are **shared** by both surveys (with minor changes to questions to reflect the country, highlighted in **bold**): 
+
+
+| Variable | Description | 
+|----|-------------|
+| response_id | Response ID  |
+| anio | In what year were you born?  |
+| edad | Age category |
+| pais | In which country were you born? |
+| departamento | In which province do you live? |
+| region | What region corresponds to the province you live in? |
+| ciudad | What city do you live in? |
+| genero | What is your gender? |
+| estadocivil | What is your marital status? |
+| hogar | How many people live in your household including yourself? |
+| hijos | Do you have children? |
+| educacion | What is the highest level of education you have achieved? |
+| actividad | What is your current employment activity? |
+| q10 | Imagine a scale of 5 steps, in which the poorest people are in “1” and on the "5" step are the richer people, where would you rank yourself? |
+| q11 | During the past 30 days, was there a time when your household ran out of food due to lack of money or other resources? |
+| q12 | Do you receive any monetary subsidy, social program or money transfer from the government? |
+| q13 | In politics we usually speak of "left" and "right". On a scale where "0" is the "left and 10 the "right ", where would you place yourself? |
+| q14 | What is the total monthly income of your household (adding that of all the members of your household) in a recent typical month in **[country currency]**? | 
+| q15r1 | Would you have as neighbors: Lesbian, gay, bisexual or trans people? |
+| q15r2 | Would you have as neighbors: Migrant people? |
+| q15r3 | Would you have as neighbors: People of a different race or ethnicity than yours? |
+| q15r4 | Would you have as neighbors: People of a different religion than yours? |
+| q16r1 | How much do you agree or disagree with the following: Sometimes it is difficult to see things from the point of view of others. |
+| q16r2 | How much do you agree or disagree with the following: I often have feelings of concern for people with fewer opportunities than me. |
+| q16r3 | How much do you agree or disagree with the following:  In the **[country]**, everyone has the opportunity to succeed and be economically successful |
+| q17 | What has the most influence on whether a person is poor? |
+|  | [Note the video is shown to participants after Question 17] |
+| q18 | Out of every 100 inhabitants in  **[country]**, how many do you think are migrants? |
+| q19 | In **[country]**, **[statistic]** out of 100 people finish secondary education. Out of 100 migrants in **[country]**, how many you think have completed secondary education? | 
+| q22r1 | Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: Migrants live in your country. |
+| q22r2 | Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: A migrant is your neighbor. |
+| q22r3 | Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: A migrant marries a close relative of yours. |
+| q23r2 | How much do you agree or disagree with the following: Migrants contribute to the country's economy. |
+| q23r3 | How much do you agree or disagree with the following: Migrants come to compete for our jobs. |
+| q23r4 | How much do you agree or disagree with the following: Migrants increase crime. |
+| q23r5 | How much do you agree or disagree with the following: Most migrant women end up practicing prostitution. |
+| q23r6 | How much do you agree or disagree with the following: Migrants improve our society by bringing new ideas and cultures. |
+| q23r7 | How much do you agree or disagree with the following: Migrants are a burden on the State. |
+| q23r8 | How much do you agree or disagree with the following: In general, migrants contribute more to the country than what they take from it. |
+| q24r1 | How much do you agree or disagree with the following: the government of **[country]** providing migrants living with access to humanitarian aid such as temporary accommodation, food and medical emergency care. |
+| q24r2 | How much do you agree or disagree with the following: the government of **[country]** providing migrants with access to work permit or documents that allows them to work legally. |
+| q24r3 | How much do you agree or disagree with the following: the government of **[country]** providing migrants with health services in the same conditions that these are provided to **[country's own citizens]**. |
+| q24r4 |  How much do you agree or disagree with the following: the government of **[country]** providing education services for migrant children and young people in the same conditions as they are provided to **[country's own citizens]**. |
+| q24r5 | How much do you agree or disagree with the following: the government of **[country]** providing health services for migrant children in the same conditions as they are provided to **[country's own citizens]**. |
+| q25a1 | Are you in contact with migrants in your daily life? - Yes, as my friends |
+| q25a2 | Are you in contact with migrants in your daily life? - Yes, as my acquaintances (classmates / work / etc.) |
+| q25a3 | Are you in contact with migrants in your daily life? - Yes, as my employees or service providers for me |
+| q25a4 | Are you in contact with migrants in your daily life? - Yes, as my employers |
+| q25a5 | Are you in contact with migrants in your daily life? - Yes, as my partner |
+| q25a6 | Are you in contact with migrants in your daily life? - Yes, as my neighbors |
+| q25a7 | Are you in contact with migrants in your daily life? - Yes, other |
+| q25a8 | Are you in contact with migrants in your daily life? - No relationship |
+| q25a9 | Are you in contact with migrants in your daily life? - Prefer not to answer |
+| q25a1d | Are you in contact with migrants in your daily life? - Please specify other |
+| tratamiento | Assigned treatment group |
+
+<br />
+<br />
+
+For `migrants_domrep.csv` these are the columns that are **unique** to the Dominican Republic survey: 
+
+
+| Variable | Description | Difference |
+|----|-------------|-----|
+| q20 | If you had any additional money: to which of the following organizations in your country, would you donate, or would not donate to anyone? | Question number  |
+| q32 | How much do you agree or disagree with the following: Sometimes it is difficult to see things from migrants’ point of view | Question number  |
+
+<br />
+<br />
+
+For `migrants_mex.csv` these are the columns that are **unique** to the Mexico survey: 
+
+| Variable | Description | Difference |
+|----|-------------|-----|
+| q20 | How much do you agree or disagree with the following: Sometimes it is difficult to see things from migrants’ point of view. | Question number  |
+| q21 | If you had any additional money: to which of the following organizations in your country, would you donate, or would not donate to anyone? | Question number  |
+
+
+## Questions
+
+
+**Note that the videos were shown to participants after `q17` in all countries.**
+
+1. Pick a country (either Mexico or the DR). It's important that the treatment groups and placebo groups are ["balanced"](https://cran.r-project.org/web/packages/MatchIt/vignettes/assessing-balance.html). Do you have evidence they are balanced across observable demographic characteristics?
+
+2. Having read the motivations and survey questions, come up with some research questions. For example, "What is the overall effect of the treatment arms on a respondent's likelihood of responding 'bad' to the statement, 'Migrants live in your country' (`q22r1`)?". How would you model these research questions?
+
+3. Run your model from question 2. What do you conclude?
+
+4. How do your results change if you control for respondent heterogeneity, such as gender and age?
+
+5. Look at pages 45-46 in the [original ABWMLAC study](https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean). Do the authors make modeling choices that you didn't consider? Do you agree with these differences?
+
+6. Can you replicate the results in Tables 3.1 (for Mexico) or 3.3 (for the DR) in the [original ABWMLAC study](https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean)?
+
+7. Suppose you want to compare the effects of the treatment groups between the countries of Mexico and the Dominican Republic. For example, "Is there a significant difference between Mexico and the DR with regards to the effect of the informative video on a respondent's likelihood of responding 'bad' to `q22r1`?". How would you test this?
+
+
+
+## References
+
+Cruces, Guillermo;Fajardo, Johanna;Hernández, Pablo;Ibáñez, Ana María;Luzes, Marta;Meléndez, Marcela;Muñoz, Felipe;Rodríguez Guillén, Lucina;Tenjo, Laura, 2023, Survey Data associated with: A Better World for Migrants in Latin America and the Caribbean, IDB Open Data, <https://doi.org/10.60966/fnm3-ab90>.
+
+Creative Commons Attribution 4.0 International
