@@ -1,0 +1,72 @@
+---
+title: Fandango Movie Ratings
+author: Jessica Zhiyu Guo
+date: July 1, 2025
+description: Which site do you use for movie ratings? How much do you trust the ratings? Walt Hicker took this question seriously and investigated the difference between Fandango ratings and other major platforms. 
+categories:
+  - EDA
+  - data visualization
+  - t-test
+data:
+  year: 2015
+  files: fandango_score_comparison.csv
+---
+
+## Motivation
+How often do you look at movie ratings before deciding to a movie? Which sites do you use? Rotten tomatoes, IMDB, and Metacritic have been the most popular platforms for movie ratings for a long time, with Letterboxd now as an up-and-coming competitor. But rarely if ever, we see people place a lot of trust on Fandango ratings. Why? Fivethirtyeight writer Walt Hicker took notice of the difference between Fandango ratings and other platforms' ratings and scraped raw data from Fandango to figure out why.
+
+Hicker finds that, by scraping the raw HTML script from Fandango website, Fandango presents a rounded rating but the raw average is in the HTML source code. This results in roughly 40% of the movies in sample were rounded up 0.3 to even a full half-star from the user ratings. It is unclear why Fandango does this, whether this is a designed rounding strategy or merely a bug, but this finding further proves how unreliable Fandango ratings are.
+
+## Data
+
+The dataset contains every film that has a Rotten Tomatoes rating, a RT User rating, a Metacritic score, a Metacritic User score, and IMDb score, and at least 30 fan reviews on Fandango that had a sale in 2015. The data from Fandango was pulled on Aug. 24, 2015.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| Film | Film name and release year |
+| RottenTomatoes | The Rotten Tomatoes Tomatometer (critic review) score for the film (0.5-5 stars, aggregated to a 100 point scale) |
+| RottenTomatoes_User | The Rotten Tomatoes user score for the film (0.5-5 stars, aggregated to a 100 point scale)|
+| Metacritic | The Metacritic critic score for the film (100 point scale)|
+| Metacritic_User| The Metacritic user score for the film (0-10 point scale) |
+| IMDB | The IMDb user score for the film (1-10 star scale)|
+| Fandango_Stars | The number of stars the film had on its Fandango movie page|
+| Fandango_Ratingvalue | The Fandango ratingValue for the film, as pulled from the HTML of each page. This is the actual average score the movie obtained.|
+| RT_norm | The Rotten Tomatoes Tomatometer score for the film , normalized to a 0 to 5 point system|
+| RT_user_norm | The Rotten Tomatoes user score for the film , normalized to a 0 to 5 point system|
+| Metacritic_norm | The Metacritic critic score for the film, normalized to a 0 to 5 point system|
+| Metacritic_user_nom | The Metacritic user score for the film, normalized to a 0 to 5 point system |
+| IMDB_norm | The IMDb user score for the film, normalized to a 0 to 5 point system|
+| RT_norm_round | The Rotten Tomatoes Tomatometer score for the film , normalized to a 0 to 5 point system and rounded to the nearest half-star|
+| RT_user_norm_round | The Rotten Tomatoes user score for the film , normalized to a 0 to 5 point system and rounded to the nearest half-star |
+| Metacritic_norm_round | The Metacritic critic score for the film, normalized to a 0 to 5 point system and rounded to the nearest half-star |
+| Metacritic_user_norm_round | The Metacritic user score for the film, normalized to a 0 to 5 point system and rounded to the nearest half-star |
+| IMDB_norm_round | The IMDb user score for the film, normalized to a 0 to 5 point system and rounded to the nearest half-star |
+| Metacritic_user_vote_count | The number of user votes the film had on Metacritic | 
+| IMDB_user_vote_count | The number of user votes the film had on IMDb |
+| Fandango_votes | The number of user votes the film had on Fandango |
+| Fandango_Difference | The difference between the presented Fandango_Stars and the actual Fandango_Ratingvalue| 
+
+
+## Questions
+1. Perform an EDA of the Fandango fan ratings, compare how much and how often the average differs from the presented aggregate score `Fandango_Stars`. Does the result following the rounding rules you would expect?
+
+2. Visualize the difference between Fandango ratings (both `Fandango_Stars` and `Fandango_Ratingvalue`) and other major platforms. Showcase the systemic differences however you like (hint: you can also use the user vote counts). Can the differences between Fandango's and other platform's ratings be explained by the rounding rules? If not, what other factors might explain them?
+
+3. Test the difference between IMDB ratings and Rotten Tomatoes user ratings, the difference between Metacritic critic ratings and Rotten Tomatoes critic ratings, and the difference between Fandango stars and ratings from any other platforms. Interpret the results.
+
+
+## References
+
+<https://github.com/fivethirtyeight/data/tree/master/fandango>
+
+Walt Hickey. (2015, October 15). Be suspicious of online movie ratings, especially Fandango’s. FiveThirtyEight. URL: <https://fivethirtyeight.com/features/fandango-movies-ratings/>
+
