@@ -16,7 +16,7 @@ data:
 
 ## Motivation
 
-Understanding what determines worker wages is a longstanding question in economics. Many factors can directly influence worker wages, such as the worker's years of experience and the region they live in. Within regions, urban versus rural workers also have different wages. For example, a worker living in New York City tends to have a higher wage than a worker in rural Maine. Many other demographic characteristics play a role - such as gender, race, union membership, and so on.
+Understanding what determines worker wages is a longstanding question in economics. Many factors can directly influence worker wages, such as the worker's years of experience and the region they live in. Within regions, urban versus rural workers also have different wages. For example, a worker living in New York City tends to have a higher wage than a worker in rural Maine. Many other demographic characteristics play a role---such as gender, race, union membership, and so on.
 
 Economists are not simply interested in relationships; they also want to infer *causality*. But, most economic datasets are observational, so inferring causality is difficult. Furthermore, many economic datasets are self-reported via phone surveys, which can lead to further biases in the analysis.
 
@@ -25,12 +25,11 @@ This dataset can help us build econometric models that predict wages based on a 
 
 ## Data
 
-
 This dataset describes worker-level hourly wages from the March 2013 U.S. Current Population Survey (CPS). Each row represents a worker's response to the CPS. Columns include worker demographic traits such as gender, race, age, and education level. 
 
+The Current Population Survey (U.S. Bureau of Labor Statistics) produces monthly surveys of labor statistics for a probability selected sample of about 60,000 occupied households (see their [methodology page](https://www.census.gov/programs-surveys/cps/technical-documentation/methodology.html) for details).
+
 There are 9799 rows; each row is an independent individual worker. There is no missing data.
-
-
 
 ### Data preview
 
@@ -48,7 +47,7 @@ All information is self-reported through the Current Population Survey (CPS).
 | wage | hourly wage (March 2013 US dollars) |
 | hrswork | hours worked last week |
 | age | age |
-| exper | potential experience = age - educ - 6 |
+| exper | potential years of work experience = age - educ - 6 |
 | educ | years of education |
 | female | =1 if female |
 | asian | =1 if asian |
@@ -64,12 +63,34 @@ All information is self-reported through the Current Population Survey (CPS).
 | mcare | =1 if covered by Medicare last year |
 | union | =1 if a union member |
 | metro | =1 if in metropolitan area |
-| northeast | =1 if in northeast region |
-| midwest | =1 if in midwest region |
-| south | =1 if in south region |
-| west | =1 if in west region |
+| northeast | =1 if in northeast region (includes Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, Vermont, New Jersey, New York, and Pennsylvania) |
+| midwest | =1 if in midwest region (includes Illinois, Indiana, Michigan, Ohio, Wisconsin, Iowa, Kansas, Minnesota, Missouri, Nebraska, North Dakota, and South Dakota)|
+| south | =1 if in south region (includes Delaware, District of Columbia, Florida, Georgia, Maryland, North Carolina, South Carolina, Virginia, West Virginia, Alabama, Kentucky, Mississippi, Tennessee, Arkansas, Louisiana, Oklahoma, and Texas) |
+| west | =1 if in west region (Arizona, Colorado, Idaho, Montana, Nevada, New Mexico, Utah, Wyoming, Alaska, California, Hawaii, Oregon, and Washington) |
 
 
+The `educ` variable was constructed from a categorical variable, as the CPS asks
+respondents for an educational category, not for their years of education. The
+categories were converted to years as follows:
+
+| educ | Category |
+|------|----------|
+| 0 | Less than 1st grade |
+| 3 | 1st through 4th grade
+| 5 | 5th or 6th grade |
+| 8 | 7th or 8th grade |
+| 9 | 9th grade |
+| 10 | 10th grade |
+| 11 | 11th grade |
+| 12 | 12th grade, but no high school diploma |
+| 12 | High school graduate or equivalent |
+| 13 | Some college, no degree |
+| 14 | Associate degree, occupational/vocational program |
+| 14 | Associate degree, academic program |
+| 16 | Bachelor's degree |
+| 18 | Master's degree |
+| 21 | Professional school degree (e.g., MD, DDS, DVM, JD) |
+| 21 | Doctorate degree (e.g., Ph.D., Ed.D.) |
 
 
 ## Questions
@@ -98,14 +119,6 @@ Suppose you would like to run a logistic regression to predict whether or not a 
 
 ## References
 
-The original source is the March 2013 Current Population Survey (U.S. Bureau of Labor Statistics), which produces monthly surveys of labor statistics for a probability selected sample of about 60,000 occupied households (see their [methodology page](https://www.census.gov/programs-surveys/cps/technical-documentation/methodology.html) for details). 
-
-
 The cps5 dataset was cleaned and simplified for education purposes by Division of Economic Development and Forecasting, Ourso College of Business, Louisiana State University. This dataset is common for introductory econometrics textbooks. One example is *Principles of Econometrics, 5th Edition* (Hill, Griffiths, and Lim) published by Wiley, 2018. <https://principlesofeconometrics.com/poe5/poe5.html>.
 
 You can find the data and description files at <https://www.principlesofeconometrics.com/poe5/poe5data.html> under `cps5`.
-
-
-This dataset is intended for public access and use. License: Creative Commons CCZero
-
-
