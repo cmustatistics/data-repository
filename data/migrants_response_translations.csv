@@ -1,0 +1,85 @@
+Response_ES,Response_EN
+Sí,Yes
+No,No
+18 a 29 años,18 to 29 years
+30 a 49 años,30 to 49 years
+50 a 64 años,50 to 64 years
+Más de 65 años,More than 65 years
+Masculino,Male
+Femenino,Female
+Casado(a) / Unión Libre,Married/Civil union
+Soltero(a),Single
+Separado(a) / Divorciado(a) / Viudo(a),Separated/Divorced/Widowed
+Prefiere no contestar,Prefers not to answer
+No sabe / Prefiere no contestar,Doesn't know / prefers not to answer
+Universitaria completa o más,Completed university degree or higher
+Universitaria incompleta,Incomplete university degree
+Secundaria completa,Completed high school degree
+Secundaria incompleta,Incomplete high school degree
+Primaria completa,Complete primary school degree
+Primaria incompleta,Incomplete primary school degree
+Ninguno,None
+Ninguna,None
+Básica completa,Completed primary school
+Básica incompleta,Incomplete primary school
+Media incompleta,Incomplete high school
+Media completa,Completed high school
+Terciaria/Universitaria incompleta,Incomplete terciary/university
+Terciaria/Universitaria completa o más,Completed terciary/university
+"Negocio propio, independiente o por cuenta propia","Own business, independent income, or self-employed"
+Desempleado(a) y buscando trabajo,Unemployed and seeking work
+Estudiante,Student
+Empleado(a) de tiempo completo (8 horas por día o más),Employeed full-time (8 hours/day or more)
+A cargo de las tareas del hogar/ crianza de los hijos,In charge of household tasks/raising children
+Empleado(a) de tiempo parcial (menos de 8 horas por día),Employeed part-time (less than 8 hours/day)
+No trabaja ni busca trabajo,Doesn't work and isn't looking for work
+Jubilado(a) / pensionado(a),Retired/pensioned
+1 - Más pobres,1 - poorer
+5 - Más ricos,5 - richer
+10 - Derecha,10 - Right
+0 - Izquierda,1 - Left
+Entre 0 y 20.000,Between 0 and 20
+Entre 20.000 y 28.000,Between 20 and 28
+Entre 28.000 y 38.000,Between 28 and 38
+Entre 38.000 y 57.000,Between 38 and 57
+Más de 57.000,More than 57
+Entre 0 y 7.300,Between 0 and 7.3
+Entre 7.300 y 11.300,Between 7.3 and 11.3
+Entre 11.300 y 16.400,Between 11.3 and 16.4
+Entre 16.400 y 25.100,Between 16.4 and 25.1
+Más de 25.100,More than 25.1
+Los tendría como vecinos,Would have them as neighbors
+No los tendría como vecinos,Would not have them as neighbors
+De acuerdo,Agree
+Algo de acuerdo,Somewhat agree
+Algo en desacuerdo,Somewhat disagree
+En desacuerdo,Disagree
+Circunstancias fuera de su control,Circumstances out of their control
+Falta de esfuerzo por su parte,Lack of effort on their part
+Menos de 5,Less than 5
+Más de 30,More than 30
+Entre 10 y 20,Between 10 and 20
+Entre 5 y 10,Between 5 and 10
+Entre 20 y 30,Between 10 and 30
+Menos de 5 personas,Less than 5 people
+Una organización que ayuda a las personas pobres.,An organization that helps poor people.
+Una organización que defiende los derechos de las mujeres.,An organization that defends women's rights
+Una organización que ayuda a las personas migrantes.,An organization that helps migrants.
+Una organización que protege el medio ambiente.,An organization that protects the environment.
+No donaría a nadie.,Not to donate to anyone
+Bueno,Good
+Depende,Depends
+Malo,Bad
+"Si, como mis amigos","Yes, as friends"
+"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","Yes, as acquaintencas (classmates, work colleagues, etc.)"
+"Si, como mis empleados o prestadores de servicios para mi","Yes, as employers or service providers to me"
+"Si, como mis empleadores","Yes, as employers"
+"Si, como mi pareja","Yes, as my partner/spouse"
+"Si, como mis vecinos","Yes, as neighbors"
+"Si, otro","Yes, other"
+Ninguna relación,No relationship
+Placebo,Placebo
+Emotivo,Emotive video
+Emotivo_H,Emotive (Haitian video)
+Emotivo_V,Emotive (Venezuelan video)
+Informativo,Informative video
