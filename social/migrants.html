@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Selina Carter">
+<meta name="dcterms.date" content="2025-07-26">
+<meta name="description" content="This dataset is useful for public policy and causal analysis. In Mexico and the Dominican Republic, a survey was conducted on attitudes towards migrants. Each respondent receives one of two possible treatments (either an “emotive” or “informative” video about migrants), or is part of the placebo group (shown an unrelated video).">
+
+<title>Survey on attitude towards migrants – CMU S&amp;DS Data Repository</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ca8d540a675d9487c69a7abe1948c93f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.refsmmat.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../social/bechdel_test.html">Social</a></li><li class="breadcrumb-item"><a href="../social/migrants.html">Survey on attitude towards migrants</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Astronomy</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Biology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Crime and Justice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Traffic stops in Connecticut</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/mapping-police-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping Police Violence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Daily Life</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/college-scorecard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">US College Scorecard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/fandango_movie_ratings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fandango movie ratings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/rtg-tinned-fish.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RTG tinned fish</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Language</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../language/hap-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Human-AI Parallel Corpus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Medicine</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/meningitis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distinguishing bacterial and viral meningitis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Money</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/european-ham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European protected ham</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Politics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/jan-6-insurrectionists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">January 6th insurrectionists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/standard-cities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fiscally standardized cities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">World Development Indicators</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bias in soccer refereeing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/moral-rebels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resenting moral rebels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Social</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bechdel_test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bechdel Test and box office results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bostonhousing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Boston Housing and fairness assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/data-viz-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey of data visualization courses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/elite-college-admissions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elite college admissions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/migrants.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Survey on attitude towards migrants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Sports</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/sprinters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fastest 100m sprint times</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/social/migrants.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../social/bechdel_test.html">Social</a></li><li class="breadcrumb-item"><a href="../social/migrants.html">Survey on attitude towards migrants</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Survey on attitude towards migrants</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">EDA</div>
+    <div class="quarto-category">causality</div>
+    <div class="quarto-category">surveys</div>
+    <div class="quarto-category">linear regression</div>
+    <div class="quarto-category">multivariate analysis</div>
+    <div class="quarto-category">logistic regression</div>
+    <div class="quarto-category">experimental design</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    This dataset is useful for public policy and causal analysis. In Mexico and the Dominican Republic, a survey was conducted on attitudes towards migrants. Each respondent receives one of two possible treatments (either an “emotive” or “informative” video about migrants), or is part of the placebo group (shown an unrelated video).
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Selina Carter </p>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 26, 2025</p>
+    </div>
+  </div>
+  
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/migrants_domrep.csv">migrants_domrep.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/migrants_mexico.csv">migrants_mexico.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/migrants_dom_dictionary.csv">migrants_dom_dictionary.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/migrants_mex_dictionary.csv">migrants_mex_dictionary.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/migrants_response_translations.csv">migrants_response_translations.csv</a>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023</p>
+    </div>
+  </div>
+  </div>
+
+
+</header>
+
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>The <a href="https://www.iadb.org/en">Inter-American Development Bank</a> (IDB), the largest source of development financing for Latin America and the Caribbean, is an inter-governmental institution concerned with improving the quality of life across the region.</p>
+<p>This dataset is the result of an experiment conducted in nine countries in Latin America and the Caribbean and published as the book <a href="https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean"><em>A Better World for Migrants in Latin America and the Caribbean</em></a> (ABWMLAC). This project is joint work between the IDB and the United Nations Development Program (UNDP). The data, collected in 2021, support an impact evaluation of an intervention aimed at exploring mechanisms that are effective in shifting people’s beliefs and attitudes toward migrants. The experiment was conducted in nine countries in Latin America and the Caribbean and consisted of two video interventions. The first video (the “informative” treatment group) aimed to correct misinformation about the impact of migration by providing accurate information about the size of the migrant population and its characteristics. The second video (the “emotive” treatment group) intended to appeal to the emotions and empathy of the local population. The control (or placebo) group was shown a video on a topic unrelated to the study.</p>
+<p>For the Dominican Republic, there were two types of “emotive” videos: one involves a Haitian migrant while the other involves a Venezuelan migrant.</p>
+<p>The authors also note, “The sampling strategy does not ensure a nationally representative sample. In this case, however, to identify the impact of the interventions, the sample for each country needs to be comparable, which is achieved by randomly assigning participants to the different treatment and control groups” (<a href="https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean">page 43-44, ABWMLAC</a>).</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The <a href="https://doi.org/10.60966/fnm3-ab90">original data</a> is available for nine countries: Barbados, Chile, Colombia, Costa Rica, Dominican Republic, Ecuador, Mexico, Peru, and Trinidad and Tobago. Here, we provide data only for the Dominican Republic and Mexico, but you can easily download the other datasets also.</p>
+<p>The files <code>migrants_domrep.csv</code> and <code>migrants_mexico.csv</code> are the survey responses respectively for the Dominican Republic and Mexico. Each row represents one <em>respondent</em> (a person) identified by the <code>response_id</code> variable.</p>
+<ul>
+<li>In the <code>migrants_domrep.csv</code> dataset, there are 3,542 rows and 56 columns.</li>
+<li>In the <code>migrants_mexico.csv</code> dataset, there are 2,432 rows and 56 columns.</li>
+</ul>
+<p>The columns represent demographic characteristics of the respondent and questions in the survey. Careful: the questions in each survey are numbered slightly differently (see bottom of <a href="#variable-descriptions">Variable descriptions</a> to see which columns differ). The files <code>migrants_dom_dictionary.csv</code> and <code>migrants_mex_dictionary.csv</code> describe the questions for each respective country. Since the questions were originally in Spanish, an English translation column is provided.</p>
+<p>Responses are also in Spanish, so you can use <code>migrants_response_translations.csv</code> for Spanish-to-English translations.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/migrants_domrep.csv "> migrants_domrep.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["anio"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["edad"],"name":[2],"type":["chr"],"align":["left"]},{"label":["pais"],"name":[3],"type":["chr"],"align":["left"]},{"label":["departamento"],"name":[4],"type":["chr"],"align":["left"]},{"label":["region"],"name":[5],"type":["chr"],"align":["left"]},{"label":["ciudad"],"name":[6],"type":["chr"],"align":["left"]},{"label":["genero"],"name":[7],"type":["chr"],"align":["left"]},{"label":["estadocivil"],"name":[8],"type":["chr"],"align":["left"]},{"label":["hogar"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["hijos"],"name":[10],"type":["chr"],"align":["left"]},{"label":["educacion"],"name":[11],"type":["chr"],"align":["left"]},{"label":["actividad"],"name":[12],"type":["chr"],"align":["left"]},{"label":["q10"],"name":[13],"type":["chr"],"align":["left"]},{"label":["q11"],"name":[14],"type":["chr"],"align":["left"]},{"label":["q12"],"name":[15],"type":["chr"],"align":["left"]},{"label":["q13"],"name":[16],"type":["chr"],"align":["left"]},{"label":["q14"],"name":[17],"type":["chr"],"align":["left"]},{"label":["q15r1"],"name":[18],"type":["chr"],"align":["left"]},{"label":["q15r2"],"name":[19],"type":["chr"],"align":["left"]},{"label":["q15r3"],"name":[20],"type":["chr"],"align":["left"]},{"label":["q15r4"],"name":[21],"type":["chr"],"align":["left"]},{"label":["q16r1"],"name":[22],"type":["chr"],"align":["left"]},{"label":["q16r2"],"name":[23],"type":["chr"],"align":["left"]},{"label":["q16r3"],"name":[24],"type":["chr"],"align":["left"]},{"label":["q17"],"name":[25],"type":["chr"],"align":["left"]},{"label":["q18"],"name":[26],"type":["chr"],"align":["left"]},{"label":["q19"],"name":[27],"type":["chr"],"align":["left"]},{"label":["q32"],"name":[28],"type":["chr"],"align":["left"]},{"label":["q20"],"name":[29],"type":["chr"],"align":["left"]},{"label":["q22r1"],"name":[30],"type":["chr"],"align":["left"]},{"label":["q22r2"],"name":[31],"type":["chr"],"align":["left"]},{"label":["q22r3"],"name":[32],"type":["chr"],"align":["left"]},{"label":["q23r1"],"name":[33],"type":["chr"],"align":["left"]},{"label":["q23r2"],"name":[34],"type":["chr"],"align":["left"]},{"label":["q23r3"],"name":[35],"type":["chr"],"align":["left"]},{"label":["q23r4"],"name":[36],"type":["chr"],"align":["left"]},{"label":["q23r5"],"name":[37],"type":["chr"],"align":["left"]},{"label":["q23r6"],"name":[38],"type":["chr"],"align":["left"]},{"label":["q23r7"],"name":[39],"type":["chr"],"align":["left"]},{"label":["q23r8"],"name":[40],"type":["chr"],"align":["left"]},{"label":["q24r1"],"name":[41],"type":["chr"],"align":["left"]},{"label":["q24r2"],"name":[42],"type":["chr"],"align":["left"]},{"label":["q24r3"],"name":[43],"type":["chr"],"align":["left"]},{"label":["q24r4"],"name":[44],"type":["chr"],"align":["left"]},{"label":["q24r5"],"name":[45],"type":["chr"],"align":["left"]},{"label":["q25a1"],"name":[46],"type":["chr"],"align":["left"]},{"label":["q25a2"],"name":[47],"type":["chr"],"align":["left"]},{"label":["q25a3"],"name":[48],"type":["chr"],"align":["left"]},{"label":["q25a4"],"name":[49],"type":["chr"],"align":["left"]},{"label":["q25a5"],"name":[50],"type":["chr"],"align":["left"]},{"label":["q25a6"],"name":[51],"type":["chr"],"align":["left"]},{"label":["q25a7"],"name":[52],"type":["chr"],"align":["left"]},{"label":["q25a8"],"name":[53],"type":["chr"],"align":["left"]},{"label":["q25a9"],"name":[54],"type":["chr"],"align":["left"]},{"label":["q25a1d"],"name":[55],"type":["chr"],"align":["left"]},{"label":["tratamiento"],"name":[56],"type":["chr"],"align":["left"]}],"data":[{"1":"1968","2":"50 a 64 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo Domingo Este","7":"Masculino","8":"Casado(a) / Unión Libre","9":"6","10":"Sí","11":"Secundaria completa","12":"Negocio propio, independiente o por cuenta propia","13":"2","14":"No","15":"No","16":"10 - Derecha","17":"No sabe / Prefiere no contestar","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Falta de esfuerzo por su parte","26":"Entre 10 y 20","27":"Entre 10 y 20","28":"Algo de acuerdo","29":"No sabe / Prefiere no contestar","30":"Depende","31":"Bueno","32":"Depende","33":"Algo en desacuerdo","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"Algo en desacuerdo","37":"Algo en desacuerdo","38":"Algo de acuerdo","39":"Algo de acuerdo","40":"Algo de acuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"Algo en desacuerdo","44":"Algo de acuerdo","45":"Algo de acuerdo","46":"NA","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"Si, otro","53":"NA","54":"NA","55":"[Si, otro ]Son muy violentos entre ellos y pelean y discuten mucho","56":"Placebo"},{"1":"1970","2":"50 a 64 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"Santo Domingo","7":"Masculino","8":"Soltero(a)","9":"2","10":"No","11":"Universitaria incompleta","12":"Desempleado(a) y buscando trabajo","13":"2","14":"Sí","15":"No","16":"5","17":"Entre 0 y 20.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Más de 30","27":"Más de 30","28":"De acuerdo","29":"Una organización que defiende los derechos de las mujeres.","30":"Bueno","31":"Bueno","32":"Bueno","33":"Algo de acuerdo","34":"Algo de acuerdo","35":"Algo en desacuerdo","36":"Algo en desacuerdo","37":"Algo en desacuerdo","38":"Algo en desacuerdo","39":"Algo en desacuerdo","40":"Algo de acuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"NA","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"Si, como mis empleados o prestadores de servicios para mi","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"2003","2":"18 a 29 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"Santo Domingo","7":"Femenino","8":"Prefiere no contestar","9":"5","10":"No","11":"Prefiere no contestar","12":"Estudiante","13":"3","14":"Sí","15":"Sí","16":"No sabe / Prefiere no contestar","17":"Entre 0 y 20.000","18":"No sabe / Prefiere no contestar","19":"No sabe / Prefiere no contestar","20":"No sabe / Prefiere no contestar","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"Entre 5 y 10","27":"Entre 5 y 10","28":"De acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Bueno","31":"Bueno","32":"Depende","33":"De acuerdo","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"Algo en desacuerdo","37":"Algo de acuerdo","38":"De acuerdo","39":"En desacuerdo","40":"De acuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"Si, como mis amigos","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1959","2":"50 a 64 años","3":"Republica Dominicana","4":"Espaillat","5":"Zona 4","6":"Moca","7":"Masculino","8":"Casado(a) / Unión Libre","9":"5","10":"Sí","11":"Secundaria incompleta","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"3","14":"No","15":"No","16":"8","17":"Entre 28.000 y 38.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Falta de esfuerzo por su parte","26":"Entre 20 y 30","27":"Más de 30","28":"De acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Bueno","31":"Bueno","32":"Depende","33":"Algo de acuerdo","34":"Algo de acuerdo","35":"Algo en desacuerdo","36":"Algo en desacuerdo","37":"En desacuerdo","38":"De acuerdo","39":"De acuerdo","40":"En desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1994","2":"18 a 29 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"Distrito Nacional","7":"Femenino","8":"Soltero(a)","9":"1","10":"Sí","11":"Universitaria incompleta","12":"Desempleado(a) y buscando trabajo","13":"4","14":"Sí","15":"No","16":"3","17":"No sabe / Prefiere no contestar","18":"No sabe / Prefiere no contestar","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"No sabe / Prefiere no contestar","27":"No sabe / Prefiere no contestar","28":"Algo de acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Bueno","31":"Depende","32":"Bueno","33":"No sabe / Prefiere no contestar","34":"No sabe / Prefiere no contestar","35":"En desacuerdo","36":"En desacuerdo","37":"No sabe / Prefiere no contestar","38":"No sabe / Prefiere no contestar","39":"No sabe / Prefiere no contestar","40":"No sabe / Prefiere no contestar","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"Si, como mis amigos","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1990","2":"30 a 49 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"Santo Domingo","7":"Masculino","8":"Soltero(a)","9":"4","10":"No","11":"Universitaria incompleta","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"1 - Más pobres","14":"Sí","15":"No","16":"No sabe / Prefiere no contestar","17":"Entre 0 y 20.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Menos de 5","27":"No sabe / Prefiere no contestar","28":"De acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Bueno","31":"Bueno","32":"Bueno","33":"De acuerdo","34":"De acuerdo","35":"No sabe / Prefiere no contestar","36":"En desacuerdo","37":"En desacuerdo","38":"De acuerdo","39":"En desacuerdo","40":"Algo en desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"Si, como mis amigos","47":"NA","48":"NA","49":"NA","50":"Si, como mi pareja","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1988","2":"30 a 49 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"Santo domingo","7":"Femenino","8":"Soltero(a)","9":"5","10":"Sí","11":"Universitaria incompleta","12":"Negocio propio, independiente o por cuenta propia","13":"2","14":"Sí","15":"No","16":"No sabe / Prefiere no contestar","17":"Entre 0 y 20.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Entre 20 y 30","27":"Entre 10 y 20","28":"Algo de acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Depende","31":"Depende","32":"Depende","33":"Algo de acuerdo","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"Algo en desacuerdo","37":"Algo en desacuerdo","38":"Algo en desacuerdo","39":"Algo en desacuerdo","40":"Algo en desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"Si, otro","53":"NA","54":"NA","55":"[Si, otro ]Personas que veo en las calles , que venden cosas","56":"Placebo"},{"1":"1991","2":"30 a 49 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo domingo oeste","7":"Masculino","8":"Casado(a) / Unión Libre","9":"4","10":"Sí","11":"Universitaria incompleta","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"3","14":"Sí","15":"No","16":"6","17":"Entre 38.000 y 57.000","18":"No los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"Algo en desacuerdo","25":"Circunstancias fuera de su control","26":"Entre 10 y 20","27":"Entre 5 y 10","28":"Algo de acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Depende","31":"Depende","32":"Depende","33":"Algo de acuerdo","34":"De acuerdo","35":"Algo de acuerdo","36":"Algo de acuerdo","37":"Algo en desacuerdo","38":"Algo en desacuerdo","39":"Algo de acuerdo","40":"En desacuerdo","41":"Algo en desacuerdo","42":"Algo de acuerdo","43":"De acuerdo","44":"Algo de acuerdo","45":"De acuerdo","46":"Si, como mis amigos","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1966","2":"50 a 64 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo Domingo","7":"Masculino","8":"Casado(a) / Unión Libre","9":"3","10":"Sí","11":"Primaria incompleta","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"2","14":"No","15":"No","16":"10 - Derecha","17":"Entre 28.000 y 38.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Falta de esfuerzo por su parte","26":"No sabe / Prefiere no contestar","27":"Entre 10 y 20","28":"Algo de acuerdo","29":"Una organización que protege el medio ambiente.","30":"Bueno","31":"Bueno","32":"Bueno","33":"Algo de acuerdo","34":"De acuerdo","35":"Algo en desacuerdo","36":"Algo en desacuerdo","37":"Algo en desacuerdo","38":"De acuerdo","39":"Algo de acuerdo","40":"Algo de acuerdo","41":"Algo en desacuerdo","42":"De acuerdo","43":"Algo de acuerdo","44":"Algo de acuerdo","45":"Algo de acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1988","2":"30 a 49 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo Domingo","7":"Masculino","8":"Casado(a) / Unión Libre","9":"2","10":"No","11":"Universitaria completa o más","12":"Negocio propio, independiente o por cuenta propia","13":"No sabe / Prefiere no contestar","14":"No","15":"No","16":"No sabe / Prefiere no contestar","17":"No sabe / Prefiere no contestar","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo en desacuerdo","23":"De acuerdo","24":"De acuerdo","25":"Falta de esfuerzo por su parte","26":"Más de 30","27":"Entre 20 y 30","28":"En desacuerdo","29":"Una organización que protege el medio ambiente.","30":"Bueno","31":"Bueno","32":"Bueno","33":"De acuerdo","34":"Algo de acuerdo","35":"En desacuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"De acuerdo","39":"En desacuerdo","40":"En desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"Si, como mis amigos","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"Si, como mis empleados o prestadores de servicios para mi","49":"Si, como mis empleadores","50":"Si, como mi pareja","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1993","2":"18 a 29 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"Oeste","7":"Femenino","8":"Soltero(a)","9":"4","10":"Sí","11":"Secundaria completa","12":"A cargo de las tareas del hogar/ crianza de los hijos","13":"2","14":"Sí","15":"No","16":"5","17":"Entre 0 y 20.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"Más de 30","27":"Más de 30","28":"De acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Depende","31":"Bueno","32":"Malo","33":"Algo de acuerdo","34":"Algo de acuerdo","35":"En desacuerdo","36":"Algo de acuerdo","37":"Algo de acuerdo","38":"En desacuerdo","39":"De acuerdo","40":"Algo de acuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1995","2":"18 a 29 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"Santo Domingo","7":"Femenino","8":"Soltero(a)","9":"6","10":"No","11":"Universitaria completa o más","12":"Estudiante","13":"2","14":"No","15":"No","16":"1","17":"Entre 20.000 y 28.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"No sabe / Prefiere no contestar","27":"Entre 5 y 10","28":"De acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Depende","31":"Bueno","32":"Depende","33":"Algo de acuerdo","34":"De acuerdo","35":"De acuerdo","36":"Algo de acuerdo","37":"Algo en desacuerdo","38":"Algo de acuerdo","39":"No sabe / Prefiere no contestar","40":"Algo de acuerdo","41":"De acuerdo","42":"De acuerdo","43":"Algo de acuerdo","44":"De acuerdo","45":"De acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1957","2":"50 a 64 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo Domingo distrito naciona","7":"Femenino","8":"Casado(a) / Unión Libre","9":"3","10":"Sí","11":"Universitaria incompleta","12":"Desempleado(a) y buscando trabajo","13":"2","14":"No sabe / Prefiere no contestar","15":"No","16":"1","17":"Entre 0 y 20.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"Más de 30","27":"Entre 20 y 30","28":"Algo de acuerdo","29":"Una organización que defiende los derechos de las mujeres.","30":"No sabe / Prefiere no contestar","31":"Bueno","32":"Depende","33":"En desacuerdo","34":"Algo de acuerdo","35":"Algo en desacuerdo","36":"No sabe / Prefiere no contestar","37":"Algo de acuerdo","38":"Algo en desacuerdo","39":"De acuerdo","40":"Algo de acuerdo","41":"De acuerdo","42":"De acuerdo","43":"Algo de acuerdo","44":"De acuerdo","45":"De acuerdo","46":"Si, como mis amigos","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1966","2":"50 a 64 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo Domingo","7":"Femenino","8":"Soltero(a)","9":"2","10":"No","11":"Universitaria completa o más","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"No sabe / Prefiere no contestar","14":"Sí","15":"No","16":"No sabe / Prefiere no contestar","17":"Entre 0 y 20.000","18":"No sabe / Prefiere no contestar","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Entre 20 y 30","27":"No sabe / Prefiere no contestar","28":"No sabe / Prefiere no contestar","29":"No sabe / Prefiere no contestar","30":"Depende","31":"Depende","32":"Depende","33":"No sabe / Prefiere no contestar","34":"De acuerdo","35":"En desacuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"Algo de acuerdo","39":"Algo de acuerdo","40":"Algo de acuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"Algo de acuerdo","44":"Algo de acuerdo","45":"Algo de acuerdo","46":"NA","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"2002","2":"18 a 29 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo Domingo","7":"Femenino","8":"Soltero(a)","9":"4","10":"No","11":"Universitaria incompleta","12":"Desempleado(a) y buscando trabajo","13":"2","14":"Sí","15":"No","16":"5","17":"No sabe / Prefiere no contestar","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"Algo en desacuerdo","25":"Circunstancias fuera de su control","26":"Entre 20 y 30","27":"Entre 20 y 30","28":"Algo de acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Malo","31":"Bueno","32":"Depende","33":"Algo de acuerdo","34":"Algo en desacuerdo","35":"Algo en desacuerdo","36":"Algo de acuerdo","37":"Algo de acuerdo","38":"Algo de acuerdo","39":"De acuerdo","40":"Algo en desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"Algo de acuerdo","46":"Si, como mis amigos","47":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1961","2":"50 a 64 años","3":"Republica Dominicana","4":"Santo Domingo","5":"Zona 1","6":"Santo domingo","7":"Masculino","8":"Soltero(a)","9":"1","10":"No","11":"Secundaria incompleta","12":"Desempleado(a) y buscando trabajo","13":"2","14":"Sí","15":"Sí","16":"3","17":"No sabe / Prefiere no contestar","18":"No sabe / Prefiere no contestar","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"Algo en desacuerdo","25":"Falta de esfuerzo por su parte","26":"No sabe / Prefiere no contestar","27":"Entre 5 y 10","28":"Algo de acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"No sabe / Prefiere no contestar","31":"Depende","32":"Depende","33":"De acuerdo","34":"De acuerdo","35":"En desacuerdo","36":"Algo de acuerdo","37":"En desacuerdo","38":"De acuerdo","39":"Algo de acuerdo","40":"De acuerdo","41":"De acuerdo","42":"De acuerdo","43":"En desacuerdo","44":"Algo de acuerdo","45":"Algo de acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1993","2":"18 a 29 años","3":"Republica Dominicana","4":"Distrito Nacional","5":"Zona 1","6":"La capital","7":"Femenino","8":"Soltero(a)","9":"4","10":"Sí","11":"Secundaria completa","12":"Desempleado(a) y buscando trabajo","13":"2","14":"Sí","15":"No","16":"2","17":"No sabe / Prefiere no contestar","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"De acuerdo","25":"No sabe / Prefiere no contestar","26":"Entre 20 y 30","27":"Menos de 5 personas","28":"Algo de acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Depende","31":"Depende","32":"Depende","33":"Algo en desacuerdo","34":"No sabe / Prefiere no contestar","35":"De acuerdo","36":"Algo de acuerdo","37":"Algo en desacuerdo","38":"No sabe / Prefiere no contestar","39":"Algo de acuerdo","40":"En desacuerdo","41":"No sabe / Prefiere no contestar","42":"En desacuerdo","43":"En desacuerdo","44":"En desacuerdo","45":"En desacuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1997","2":"18 a 29 años","3":"Republica Dominicana","4":"Puerto Plata","5":"Zona 4","6":"Puerto plata","7":"Prefiere no contestar","8":"Prefiere no contestar","9":"4","10":"Prefiere no contestar","11":"Secundaria completa","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"1 - Más pobres","14":"Sí","15":"No","16":"5","17":"Entre 0 y 20.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Más de 30","27":"Entre 10 y 20","28":"De acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Bueno","31":"Bueno","32":"Bueno","33":"Algo en desacuerdo","34":"De acuerdo","35":"En desacuerdo","36":"Algo en desacuerdo","37":"Algo en desacuerdo","38":"Algo de acuerdo","39":"De acuerdo","40":"Algo en desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"Algo en desacuerdo","45":"De acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"2000","2":"18 a 29 años","3":"Republica Dominicana","4":"Santiago","5":"Zona 4","6":"Santiago","7":"Femenino","8":"Casado(a) / Unión Libre","9":"2","10":"No","11":"Secundaria incompleta","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"2","14":"Sí","15":"No","16":"10 - Derecha","17":"Entre 0 y 20.000","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Más de 30","27":"Entre 10 y 20","28":"De acuerdo","29":"Una organización que ayuda a las personas pobres.","30":"Bueno","31":"Bueno","32":"Bueno","33":"Algo en desacuerdo","34":"Algo de acuerdo","35":"En desacuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"Algo de acuerdo","39":"En desacuerdo","40":"Algo en desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"Si, como mis vecinos","52":"NA","53":"NA","54":"NA","55":"NA","56":"Placebo"},{"1":"1976","2":"30 a 49 años","3":"Republica Dominicana","4":"Puerto Plata","5":"Zona 4","6":"Puerto plata","7":"Femenino","8":"Casado(a) / Unión Libre","9":"2","10":"Sí","11":"Primaria incompleta","12":"A cargo de las tareas del hogar/ crianza de los hijos","13":"2","14":"Sí","15":"No","16":"3","17":"Entre 20.000 y 28.000","18":"Los tendría como vecinos","19":"No los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Circunstancias fuera de su control","26":"No sabe / Prefiere no contestar","27":"No sabe / Prefiere no contestar","28":"De acuerdo","29":"Una organización que defiende los derechos de las mujeres.","30":"Depende","31":"Depende","32":"No sabe / Prefiere no contestar","33":"No sabe / Prefiere no contestar","34":"Algo de acuerdo","35":"De acuerdo","36":"De acuerdo","37":"De acuerdo","38":"Algo en desacuerdo","39":"De acuerdo","40":"Algo de acuerdo","41":"En desacuerdo","42":"En desacuerdo","43":"Algo en desacuerdo","44":"En desacuerdo","45":"Algo de acuerdo","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Prefiere no contestar","55":"NA","56":"Placebo"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/migrants_mexico.csv "> migrants_mexico.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["anio"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["edad"],"name":[2],"type":["chr"],"align":["left"]},{"label":["pais"],"name":[3],"type":["chr"],"align":["left"]},{"label":["departamento"],"name":[4],"type":["chr"],"align":["left"]},{"label":["region"],"name":[5],"type":["chr"],"align":["left"]},{"label":["ciudad"],"name":[6],"type":["chr"],"align":["left"]},{"label":["genero"],"name":[7],"type":["chr"],"align":["left"]},{"label":["estadocivil"],"name":[8],"type":["chr"],"align":["left"]},{"label":["hogar"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["hijos"],"name":[10],"type":["chr"],"align":["left"]},{"label":["educacion"],"name":[11],"type":["chr"],"align":["left"]},{"label":["actividad"],"name":[12],"type":["chr"],"align":["left"]},{"label":["q10"],"name":[13],"type":["chr"],"align":["left"]},{"label":["q11"],"name":[14],"type":["chr"],"align":["left"]},{"label":["q12"],"name":[15],"type":["chr"],"align":["left"]},{"label":["q13"],"name":[16],"type":["chr"],"align":["left"]},{"label":["q14"],"name":[17],"type":["chr"],"align":["left"]},{"label":["q15r1"],"name":[18],"type":["chr"],"align":["left"]},{"label":["q15r2"],"name":[19],"type":["chr"],"align":["left"]},{"label":["q15r3"],"name":[20],"type":["chr"],"align":["left"]},{"label":["q15r4"],"name":[21],"type":["chr"],"align":["left"]},{"label":["q16r1"],"name":[22],"type":["chr"],"align":["left"]},{"label":["q16r2"],"name":[23],"type":["chr"],"align":["left"]},{"label":["q16r3"],"name":[24],"type":["chr"],"align":["left"]},{"label":["q17"],"name":[25],"type":["chr"],"align":["left"]},{"label":["tratamiento"],"name":[26],"type":["chr"],"align":["left"]},{"label":["q18"],"name":[27],"type":["chr"],"align":["left"]},{"label":["q19"],"name":[28],"type":["chr"],"align":["left"]},{"label":["q20"],"name":[29],"type":["chr"],"align":["left"]},{"label":["q21"],"name":[30],"type":["chr"],"align":["left"]},{"label":["q22r1"],"name":[31],"type":["chr"],"align":["left"]},{"label":["q22r2"],"name":[32],"type":["chr"],"align":["left"]},{"label":["q22r3"],"name":[33],"type":["chr"],"align":["left"]},{"label":["q23r1"],"name":[34],"type":["chr"],"align":["left"]},{"label":["q23r2"],"name":[35],"type":["chr"],"align":["left"]},{"label":["q23r3"],"name":[36],"type":["chr"],"align":["left"]},{"label":["q23r4"],"name":[37],"type":["chr"],"align":["left"]},{"label":["q23r5"],"name":[38],"type":["chr"],"align":["left"]},{"label":["q23r6"],"name":[39],"type":["chr"],"align":["left"]},{"label":["q23r7"],"name":[40],"type":["chr"],"align":["left"]},{"label":["q23r8"],"name":[41],"type":["chr"],"align":["left"]},{"label":["q24r1"],"name":[42],"type":["chr"],"align":["left"]},{"label":["q24r2"],"name":[43],"type":["chr"],"align":["left"]},{"label":["q24r3"],"name":[44],"type":["chr"],"align":["left"]},{"label":["q24r4"],"name":[45],"type":["chr"],"align":["left"]},{"label":["q24r5"],"name":[46],"type":["chr"],"align":["left"]},{"label":["q25a1"],"name":[47],"type":["chr"],"align":["left"]},{"label":["q25a2"],"name":[48],"type":["chr"],"align":["left"]},{"label":["q25a3"],"name":[49],"type":["chr"],"align":["left"]},{"label":["q25a4"],"name":[50],"type":["chr"],"align":["left"]},{"label":["q25a5"],"name":[51],"type":["chr"],"align":["left"]},{"label":["q25a6"],"name":[52],"type":["chr"],"align":["left"]},{"label":["q25a7"],"name":[53],"type":["chr"],"align":["left"]},{"label":["q25a8"],"name":[54],"type":["chr"],"align":["left"]},{"label":["q25a9"],"name":[55],"type":["chr"],"align":["left"]},{"label":["q25a1d"],"name":[56],"type":["chr"],"align":["left"]}],"data":[{"1":"1966","2":"50 a 64 años","3":"México","4":"México","5":"Centro","6":"Tultitlán de Mariano Escobedo","7":"Masculino","8":"Casado(a) / Unión Civil","9":"6","10":"Sí","11":"Media completa","12":"Jubilado(a) / pensionado(a)","13":"3","14":"No","15":"No","16":"0 - Izquierda","17":"Entre 16.400 y 25.100","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"Algo de acuerdo","24":"De acuerdo","25":"Falta de esfuerzo por su parte","26":"Informativo","27":"Menos de 5","28":"Entre 10 y 20","29":"De acuerdo","30":"No donaría a nadie.","31":"Depende","32":"Bueno","33":"Bueno","34":"De acuerdo","35":"De acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"De acuerdo","40":"En desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"Si, como mis vecinos","53":"NA","54":"NA","55":"NA","56":"NA"},{"1":"1945","2":"Más de 65 años","3":"México","4":"Hidalgo","5":"Centro","6":"Pachuca Hidalgo","7":"Masculino","8":"Casado(a) / Unión Civil","9":"5","10":"Sí","11":"Básica completa","12":"Desempleado(a) y buscando trabajo","13":"3","14":"No","15":"Sí","16":"5","17":"Entre 7.300 y 11.300","18":"No sabe / Prefiere no contestar","19":"No sabe / Prefiere no contestar","20":"No sabe / Prefiere no contestar","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Falta de esfuerzo por su parte","26":"Placebo","27":"No sabe / Prefiere no contestar","28":"No sabe / Prefiere no contestar","29":"De acuerdo","30":"Una organización que defiende los derechos de las mujeres.","31":"Bueno","32":"Bueno","33":"Bueno","34":"De acuerdo","35":"De acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"De acuerdo","40":"En desacuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"Si, como mis amigos","48":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","49":"NA","50":"NA","51":"NA","52":"Si, como mis vecinos","53":"NA","54":"NA","55":"NA","56":"NA"},{"1":"1957","2":"50 a 64 años","3":"México","4":"México","5":"Centro","6":"León, Gto.","7":"Masculino","8":"Separado(a) / Divorciado(a) / Viudo(a)","9":"1","10":"Sí","11":"Terciaria/Universitaria incompleta","12":"Negocio propio, independiente o por cuenta propia","13":"2","14":"No","15":"No","16":"8","17":"Entre 7.300 y 11.300","18":"No los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"Informativo","27":"Entre 5 y 10","28":"Entre 20 y 30","29":"Algo de acuerdo","30":"Una organización que protege el medio ambiente.","31":"Bueno","32":"Bueno","33":"Bueno","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"En desacuerdo","37":"Algo en desacuerdo","38":"En desacuerdo","39":"Algo de acuerdo","40":"En desacuerdo","41":"Algo de acuerdo","42":"Algo de acuerdo","43":"Algo de acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1970","2":"50 a 64 años","3":"México","4":"Guanajuato","5":"Norte","6":"Salamanca, Gto.","7":"Femenino","8":"Casado(a) / Unión Civil","9":"3","10":"Sí","11":"Terciaria/Universitaria incompleta","12":"Negocio propio, independiente o por cuenta propia","13":"2","14":"Sí","15":"No","16":"0 - Izquierda","17":"Entre 11.300 y 16.400","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo en desacuerdo","23":"De acuerdo","24":"Algo en desacuerdo","25":"Circunstancias fuera de su control","26":"Placebo","27":"Entre 5 y 10","28":"Menos de 5 personas","29":"De acuerdo","30":"Una organización que protege el medio ambiente.","31":"Depende","32":"Depende","33":"Depende","34":"En desacuerdo","35":"En desacuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"En desacuerdo","40":"De acuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"Si, otro","54":"NA","55":"NA","56":"[Si, otro ]Personas que trabajan en algunos logares a los que asisto"},{"1":"1968","2":"50 a 64 años","3":"México","4":"Jalisco","5":"Pacífico","6":"Guadalajara","7":"Femenino","8":"Casado(a) / Unión Civil","9":"5","10":"Sí","11":"Terciaria/Universitaria completa o más","12":"Desempleado(a) y buscando trabajo","13":"3","14":"No","15":"No","16":"5","17":"Entre 7.300 y 11.300","18":"No los tendría como vecinos","19":"No los tendría como vecinos","20":"No los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Circunstancias fuera de su control","26":"Placebo","27":"Entre 10 y 20","28":"Menos de 5 personas","29":"De acuerdo","30":"Una organización que ayuda a las personas migrantes.","31":"Bueno","32":"Bueno","33":"Bueno","34":"De acuerdo","35":"Algo de acuerdo","36":"Algo de acuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"Algo de acuerdo","40":"En desacuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1956","2":"Más de 65 años","3":"México","4":"Nayarit","5":"Pacífico","6":"Sayula","7":"Masculino","8":"Casado(a) / Unión Civil","9":"2","10":"Sí","11":"Terciaria/Universitaria completa o más","12":"Negocio propio, independiente o por cuenta propia","13":"1 - Más pobres","14":"No","15":"No","16":"5","17":"Entre 0 y 7.300","18":"No sabe / Prefiere no contestar","19":"No sabe / Prefiere no contestar","20":"No sabe / Prefiere no contestar","21":"No sabe / Prefiere no contestar","22":"Algo de acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"Placebo","27":"Menos de 5","28":"Menos de 5 personas","29":"De acuerdo","30":"Una organización que ayuda a las personas pobres.","31":"Depende","32":"Depende","33":"Depende","34":"Algo de acuerdo","35":"Algo en desacuerdo","36":"Algo de acuerdo","37":"Algo de acuerdo","38":"Algo en desacuerdo","39":"Algo en desacuerdo","40":"De acuerdo","41":"No sabe / Prefiere no contestar","42":"Algo de acuerdo","43":"Algo de acuerdo","44":"Algo de acuerdo","45":"Algo de acuerdo","46":"Algo de acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1945","2":"Más de 65 años","3":"México","4":"Querétaro","5":"Norte","6":"Querétaro","7":"Femenino","8":"Separado(a) / Divorciado(a) / Viudo(a)","9":"1","10":"Sí","11":"Terciaria/Universitaria completa o más","12":"Negocio propio, independiente o por cuenta propia","13":"3","14":"No","15":"Sí","16":"0 - Izquierda","17":"Entre 7.300 y 11.300","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Emotivo","27":"Entre 20 y 30","28":"Menos de 5 personas","29":"De acuerdo","30":"Una organización que ayuda a las personas migrantes.","31":"Bueno","32":"Bueno","33":"Depende","34":"De acuerdo","35":"De acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"De acuerdo","39":"De acuerdo","40":"En desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1955","2":"Más de 65 años","3":"México","4":"Michoacán","5":"Pacífico","6":"Morelia","7":"Masculino","8":"Casado(a) / Unión Civil","9":"2","10":"Sí","11":"Terciaria/Universitaria completa o más","12":"Jubilado(a) / pensionado(a)","13":"3","14":"No","15":"No","16":"3","17":"Más de 25.100","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Circunstancias fuera de su control","26":"Informativo","27":"Menos de 5","28":"Más de 30","29":"De acuerdo","30":"Una organización que ayuda a las personas migrantes.","31":"Bueno","32":"Bueno","33":"Depende","34":"De acuerdo","35":"De acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"De acuerdo","40":"En desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"Si, como mis amigos","48":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","49":"NA","50":"NA","51":"NA","52":"Si, como mis vecinos","53":"NA","54":"NA","55":"NA","56":"NA"},{"1":"1958","2":"50 a 64 años","3":"México","4":"Sonora","5":"Pacífico","6":"Cananea","7":"Masculino","8":"Soltero(a)","9":"2","10":"Sí","11":"Terciaria/Universitaria incompleta","12":"Negocio propio, independiente o por cuenta propia","13":"3","14":"No","15":"No","16":"0 - Izquierda","17":"Entre 16.400 y 25.100","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Falta de esfuerzo por su parte","26":"Informativo","27":"Menos de 5","28":"Más de 30","29":"De acuerdo","30":"No donaría a nadie.","31":"Bueno","32":"Depende","33":"Depende","34":"De acuerdo","35":"De acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"Algo de acuerdo","40":"En desacuerdo","41":"De acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"Si, como mis amigos","48":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","49":"NA","50":"NA","51":"NA","52":"Si, como mis vecinos","53":"NA","54":"NA","55":"NA","56":"NA"},{"1":"1945","2":"Más de 65 años","3":"México","4":"Puebla","5":"Centro","6":"PUEBLA,SAN ANDRES CHOLULA,LOMAS DE ANGELÓPOLIS","7":"Masculino","8":"Casado(a) / Unión Civil","9":"2","10":"Sí","11":"Terciaria/Universitaria completa o más","12":"Jubilado(a) / pensionado(a)","13":"3","14":"No","15":"Sí","16":"5","17":"Más de 25.100","18":"No sabe / Prefiere no contestar","19":"No sabe / Prefiere no contestar","20":"No sabe / Prefiere no contestar","21":"No sabe / Prefiere no contestar","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Falta de esfuerzo por su parte","26":"Placebo","27":"Entre 10 y 20","28":"Menos de 5 personas","29":"De acuerdo","30":"Una organización que protege el medio ambiente.","31":"Depende","32":"Depende","33":"Depende","34":"No sabe / Prefiere no contestar","35":"De acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"Algo de acuerdo","39":"En desacuerdo","40":"De acuerdo","41":"En desacuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1958","2":"50 a 64 años","3":"México","4":"Tamaulipas","5":"Norte","6":"Reynosa","7":"Masculino","8":"Casado(a) / Unión Civil","9":"3","10":"Sí","11":"Terciaria/Universitaria completa o más","12":"Jubilado(a) / pensionado(a)","13":"2","14":"Sí","15":"No","16":"8","17":"Entre 11.300 y 16.400","18":"NA","19":"NA","20":"NA","21":"NA","22":"De acuerdo","23":"Algo de acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"Emotivo","27":"Entre 5 y 10","28":"Menos de 5 personas","29":"De acuerdo","30":"Una organización que ayuda a las personas pobres.","31":"Bueno","32":"Bueno","33":"Bueno","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"Algo de acuerdo","37":"Algo en desacuerdo","38":"Algo en desacuerdo","39":"Algo de acuerdo","40":"Algo de acuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"Si, como mis amigos","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"NA","55":"NA","56":"NA"},{"1":"1970","2":"50 a 64 años","3":"México","4":"Baja California","5":"Pacífico","6":"Tijuana","7":"Femenino","8":"Casado(a) / Unión Civil","9":"4","10":"Sí","11":"Media completa","12":"Desempleado(a) y buscando trabajo","13":"2","14":"No","15":"No","16":"3","17":"Entre 0 y 7.300","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"No sabe / Prefiere no contestar","23":"De acuerdo","24":"De acuerdo","25":"Circunstancias fuera de su control","26":"Placebo","27":"Entre 10 y 20","28":"Entre 10 y 20","29":"Algo de acuerdo","30":"Una organización que protege el medio ambiente.","31":"Depende","32":"Depende","33":"Depende","34":"De acuerdo","35":"De acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"De acuerdo","40":"En desacuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"Si, como mis amigos","48":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","49":"NA","50":"NA","51":"NA","52":"Si, como mis vecinos","53":"NA","54":"NA","55":"NA","56":"NA"},{"1":"1940","2":"Más de 65 años","3":"México","4":"Distrito Federal","5":"Centro","6":"Zapopan, Jal.","7":"Femenino","8":"Soltero(a)","9":"1","10":"Sí","11":"Básica completa","12":"Jubilado(a) / pensionado(a)","13":"3","14":"No","15":"Sí","16":"7","17":"Entre 16.400 y 25.100","18":"No sabe / Prefiere no contestar","19":"No sabe / Prefiere no contestar","20":"No sabe / Prefiere no contestar","21":"No sabe / Prefiere no contestar","22":"Algo de acuerdo","23":"De acuerdo","24":"Algo de acuerdo","25":"Circunstancias fuera de su control","26":"Informativo","27":"Entre 5 y 10","28":"Entre 10 y 20","29":"Algo de acuerdo","30":"Una organización que ayuda a las personas pobres.","31":"Depende","32":"Depende","33":"Bueno","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"Algo de acuerdo","37":"Algo de acuerdo","38":"No sabe / Prefiere no contestar","39":"Algo de acuerdo","40":"No sabe / Prefiere no contestar","41":"En desacuerdo","42":"Algo de acuerdo","43":"No sabe / Prefiere no contestar","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"2001","2":"18 a 29 años","3":"México","4":"Sinaloa","5":"Pacífico","6":"Culiacán","7":"Femenino","8":"Soltero(a)","9":"5","10":"Sí","11":"Básica incompleta","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"3","14":"Sí","15":"No","16":"No sabe / Prefiere no contestar","17":"Entre 7.300 y 11.300","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"De acuerdo","24":"Algo en desacuerdo","25":"Falta de esfuerzo por su parte","26":"Placebo","27":"Más de 30","28":"Entre 5 y 10","29":"Algo en desacuerdo","30":"Una organización que ayuda a las personas pobres.","31":"Bueno","32":"Bueno","33":"Bueno","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"En desacuerdo","37":"En desacuerdo","38":"Algo en desacuerdo","39":"Algo de acuerdo","40":"En desacuerdo","41":"Algo en desacuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"Si, otro","54":"NA","55":"NA","56":"[Si, otro ]Los veo trabajando en las calles"},{"1":"1962","2":"50 a 64 años","3":"México","4":"Oaxaca","5":"Sur","6":"soledad etla","7":"Masculino","8":"Casado(a) / Unión Civil","9":"5","10":"Sí","11":"Terciaria/Universitaria incompleta","12":"Negocio propio, independiente o por cuenta propia","13":"3","14":"No","15":"No","16":"2","17":"Entre 0 y 7.300","18":"NA","19":"NA","20":"NA","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"En desacuerdo","25":"Falta de esfuerzo por su parte","26":"Emotivo","27":"Más de 30","28":"Más de 30","29":"De acuerdo","30":"Una organización que protege el medio ambiente.","31":"Bueno","32":"Bueno","33":"Bueno","34":"Algo de acuerdo","35":"De acuerdo","36":"De acuerdo","37":"Algo de acuerdo","38":"En desacuerdo","39":"Algo de acuerdo","40":"De acuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","49":"Si, como mis empleados o prestadores de servicios para mi","50":"NA","51":"NA","52":"Si, como mis vecinos","53":"NA","54":"NA","55":"NA","56":"NA"},{"1":"1967","2":"50 a 64 años","3":"México","4":"México","5":"Centro","6":"Mexico","7":"Masculino","8":"Casado(a) / Unión Civil","9":"3","10":"Sí","11":"Básica completa","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"3","14":"No","15":"No","16":"10 - Derecha","17":"Entre 0 y 7.300","18":"No sabe / Prefiere no contestar","19":"No sabe / Prefiere no contestar","20":"No sabe / Prefiere no contestar","21":"No sabe / Prefiere no contestar","22":"De acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Falta de esfuerzo por su parte","26":"Emotivo","27":"Entre 5 y 10","28":"No sabe / Prefiere no contestar","29":"De acuerdo","30":"No donaría a nadie.","31":"No sabe / Prefiere no contestar","32":"Depende","33":"Malo","34":"No sabe / Prefiere no contestar","35":"En desacuerdo","36":"Algo de acuerdo","37":"De acuerdo","38":"De acuerdo","39":"En desacuerdo","40":"En desacuerdo","41":"En desacuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"En desacuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1962","2":"50 a 64 años","3":"México","4":"Baja California","5":"Pacífico","6":"Mexicali","7":"Femenino","8":"Separado(a) / Divorciado(a) / Viudo(a)","9":"2","10":"Sí","11":"Terciaria/Universitaria completa o más","12":"A cargo de las tareas del hogar/ crianza de los hijos","13":"3","14":"No","15":"No","16":"8","17":"Entre 7.300 y 11.300","18":"No sabe / Prefiere no contestar","19":"No sabe / Prefiere no contestar","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Falta de esfuerzo por su parte","26":"Emotivo","27":"Entre 5 y 10","28":"Entre 10 y 20","29":"No sabe / Prefiere no contestar","30":"Una organización que ayuda a las personas pobres.","31":"Depende","32":"No sabe / Prefiere no contestar","33":"No sabe / Prefiere no contestar","34":"No sabe / Prefiere no contestar","35":"En desacuerdo","36":"En desacuerdo","37":"De acuerdo","38":"En desacuerdo","39":"En desacuerdo","40":"De acuerdo","41":"En desacuerdo","42":"Algo en desacuerdo","43":"De acuerdo","44":"En desacuerdo","45":"Algo de acuerdo","46":"Algo de acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1965","2":"50 a 64 años","3":"México","4":"Oaxaca","5":"Sur","6":"Oaxaca de Juárez","7":"Masculino","8":"Casado(a) / Unión Civil","9":"6","10":"Sí","11":"Media completa","12":"Negocio propio, independiente o por cuenta propia","13":"3","14":"No","15":"No","16":"10 - Derecha","17":"Entre 16.400 y 25.100","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"De acuerdo","23":"De acuerdo","24":"De acuerdo","25":"Circunstancias fuera de su control","26":"Informativo","27":"Entre 5 y 10","28":"Más de 30","29":"De acuerdo","30":"Una organización que ayuda a las personas pobres.","31":"Depende","32":"Depende","33":"Depende","34":"Algo de acuerdo","35":"Algo de acuerdo","36":"Algo de acuerdo","37":"Algo de acuerdo","38":"No sabe / Prefiere no contestar","39":"Algo de acuerdo","40":"Algo de acuerdo","41":"Algo en desacuerdo","42":"De acuerdo","43":"Algo de acuerdo","44":"Algo en desacuerdo","45":"Algo en desacuerdo","46":"Algo de acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1991","2":"30 a 49 años","3":"México","4":"México","5":"Centro","6":"Ecatepec de Morelos","7":"Masculino","8":"Soltero(a)","9":"3","10":"No","11":"Media completa","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"3","14":"No","15":"No","16":"5","17":"Entre 0 y 7.300","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"Algo de acuerdo","24":"Algo en desacuerdo","25":"Falta de esfuerzo por su parte","26":"Placebo","27":"Entre 10 y 20","28":"Entre 5 y 10","29":"Algo de acuerdo","30":"Una organización que ayuda a las personas migrantes.","31":"Bueno","32":"Bueno","33":"Depende","34":"De acuerdo","35":"Algo de acuerdo","36":"Algo de acuerdo","37":"En desacuerdo","38":"En desacuerdo","39":"Algo de acuerdo","40":"Algo en desacuerdo","41":"Algo de acuerdo","42":"De acuerdo","43":"De acuerdo","44":"De acuerdo","45":"De acuerdo","46":"De acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"Ninguna relación","55":"NA","56":"NA"},{"1":"1972","2":"30 a 49 años","3":"México","4":"Guanajuato","5":"Norte","6":"Celaya","7":"Femenino","8":"Soltero(a)","9":"2","10":"No","11":"Terciaria/Universitaria completa o más","12":"Empleado(a) de tiempo completo (8 horas por día o más)","13":"3","14":"No","15":"No","16":"5","17":"No sabe / No contesta","18":"Los tendría como vecinos","19":"Los tendría como vecinos","20":"Los tendría como vecinos","21":"Los tendría como vecinos","22":"Algo de acuerdo","23":"Algo de acuerdo","24":"En desacuerdo","25":"Falta de esfuerzo por su parte","26":"Placebo","27":"Entre 10 y 20","28":"Menos de 5 personas","29":"Algo de acuerdo","30":"Una organización que ayuda a las personas pobres.","31":"Depende","32":"Depende","33":"Depende","34":"Algo de acuerdo","35":"En desacuerdo","36":"En desacuerdo","37":"Algo de acuerdo","38":"Algo en desacuerdo","39":"Algo en desacuerdo","40":"Algo de acuerdo","41":"Algo en desacuerdo","42":"De acuerdo","43":"Algo en desacuerdo","44":"Algo de acuerdo","45":"Algo de acuerdo","46":"Algo de acuerdo","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"NA","55":"Prefiere no contestar","56":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/migrants_dom_dictionary.csv "> migrants_dom_dictionary.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Description_ES"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Description_EN"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"response_id","2":"Character","3":"Response ID","4":"Response ID"},{"1":"anio","2":"integer","3":"ANIO - \\xbfEn qu\\xe9 a\\xf1o naci\\xf3?","4":"In what year were you born?"},{"1":"edad","2":"Categorial","3":"EDAD-Tramo edad","4":"Age category"},{"1":"pais","2":"Categorial","3":"PAIS - \\xbfEn qu\\xe9 pa\\xeds naci\\xf3?","4":"In which country were you born?"},{"1":"departamento","2":"Categorial","3":"DEPARTAMENTO - \\xbfEn qu\\xe9 departamento/provincia vive Usted?","4":"In which province do you live?"},{"1":"region","2":"Categorial","3":"REGION-\\xbfY a qu\\xe9 regi\\xf3n corresponde el departamento/provincia en la que vive?","4":"What region corresponds to the province you live in?"},{"1":"ciudad","2":"String","3":"CIUDAD - \\xbfEn qu\\xe9 ciudad vive Usted?","4":"What city do you live in?"},{"1":"genero","2":"Categorial","3":"GENERO - \\xbfCu\\xe1l es su g\\xe9nero?","4":"What is your gender?"},{"1":"estadocivil","2":"Categorial","3":"ESTADOCIVIL - \\xbfCu\\xe1l es su estado civil?","4":"What is your marital status?"},{"1":"hogar","2":"Categorial","3":"HOGAR - \\xbfCu\\xe1ntas personas viven en su hogar incluy\\xe9ndose a usted mismo/a?","4":"How many people live in your household including yourself?"},{"1":"hijos","2":"Binary","3":"HIJOS - \\xbfUsted tiene hijos?","4":"Do you have children?"},{"1":"educacion","2":"Categorial","3":"EDUCACION - \\xbfCu\\xe1l es el nivel de educaci\\xf3n m\\xe1s alto que usted alcanz\\xf3?","4":"What is the highest level of education you have achieved?"},{"1":"actividad","2":"Categorial","3":"ACTIVIDAD - \\xbfCu\\xe1l es su actividad actual?","4":"What is your current employment activity?"},{"1":"q10","2":"Continuous","3":"Q10 - Imag\\xednese una escala de 5 pelda\\xf1os, en el que en el \\x931\\x94 se ubican las personas m\\xe1s pobres y en el \"5\" se ubican las personas m\\xe1s ricas, \\xbfd\\xf3nde se ubicar\\xeda usted?","4":"Imagine a scale of 5 steps, in which the poorest people are in \\x931\\x94 and on the \"5\" step are the richer people, where would you rank yourself?"},{"1":"q11","2":"Binary","3":"Q11 - Durante los \\xfaltimos 30 d\\xedas, \\xbfhubo un momento en el que su hogar se qued\\xf3 sin alimentos por falta de dinero u otros recursos?","4":"During the past 30 days, was there a time when your household ran out of food due to lack of money or other resources?"},{"1":"q12","2":"Binary","3":"Q12 - \\xbfRecibe alg\\xfan subsidio monetario, programa social o transferencia de dinero por parte del gobierno?","4":"Do you receive any monetary subsidy, social program or money transfer from the government?"},{"1":"q13","2":"Continuous","3":"Q13 - En la pol\\xedtica se habla normalmente\\xa0 de \\x93izquierda\\x94 y \\x93derecha\\x94. En una escala donde \"0\" es la \"izquierda\" y \"10\" la \"derecha\", \\xbfd\\xf3nde se ubicar\\xeda usted?","4":"In politics we usually speak of \"left\" and \"right\". On a scale where \"0\" is the \"left and 10 the \"right \", where would you place yourself?"},{"1":"q14","2":"Categorial","3":"Q14 - \\xbfCu\\xe1l es el ingreso total mensual de su hogar (sumando el de todos los miembros de su hogar) en un mes t\\xedpico reciente en pesos dominicanos?","4":"What is the total monthly income of your household (adding that of all the members of your household) in a recent typical month in Dominican pesos?"},{"1":"q15r1","2":"Categorial","3":"Q15 - \\xbfTendr\\xeda como vecinos a Personas lesbianas, gays, bisexuales o trans?","4":"Would you have as neighbors: Lesbian, gay, bisexual or trans people?"},{"1":"q15r2","2":"Categorial","3":"Q15 - \\xbfTendr\\xeda como vecinos a Personas migrantes?","4":"Would you have as neighbors: Migrant people?"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/migrants_mex_dictionary.csv "> migrants_mex_dictionary.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Description_ES"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Description_EN"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"response_id","2":"Character","3":"Response ID","4":"Response ID"},{"1":"anio","2":"integer","3":"ANIO - ¿En qué año nació?","4":"In what year were you born?"},{"1":"edad","2":"Categorial","3":"EDAD-Tramo edad","4":"Age category"},{"1":"pais","2":"Categorial","3":"PAIS - ¿En qué país nació?","4":"In which country were you born?"},{"1":"departamento","2":"Categorial","3":"DEPARTAMENTO - ¿En qué departamento/provincia vive Usted?","4":"In which province do you live?"},{"1":"region","2":"Categorial","3":"REGION-¿Y a qué región corresponde el departamento/provincia en la que vive?","4":"What region corresponds to the province you live in?"},{"1":"ciudad","2":"String","3":"CIUDAD - ¿En qué ciudad vive Usted?","4":"What city do you live in?"},{"1":"genero","2":"Categorial","3":"GENERO - ¿Cuál es su género?","4":"What is your gender?"},{"1":"estadocivil","2":"Categorial","3":"ESTADOCIVIL - ¿Cuál es su estado civil?","4":"What is your marital status?"},{"1":"hogar","2":"Categorial","3":"HOGAR - ¿Cuántas personas viven en su hogar incluyéndose a usted mismo/a?","4":"How many people live in your household including yourself?"},{"1":"hijos","2":"Binary","3":"HIJOS - ¿Usted tiene hijos?","4":"Do you have children?"},{"1":"educacion","2":"Categorial","3":"EDUCACION - ¿Cuál es el nivel de educación más alto que usted alcanzó?","4":"What is the highest level of education you have achieved?"},{"1":"actividad","2":"Categorial","3":"ACTIVIDAD - ¿Cuál es su actividad actual?","4":"What is your current employment activity?"},{"1":"q10","2":"Continuous","3":"Q10 - Imagínese una escala de 5 peldaños, en el que en el “1” se ubican las personas más pobres y en el \"5\" se ubican las personas más ricas, ¿dónde se ubicaría usted?","4":"Imagine a scale of 5 steps, in which the poorest people are in “1” and on the \"5\" step are the richer people, where would you rank yourself?"},{"1":"q11","2":"Binary","3":"Q11 - Durante los últimos 30 días, ¿hubo un momento en el que su hogar se quedó sin alimentos por falta de dinero u otros recursos?","4":"During the past 30 days, was there a time when your household ran out of food due to lack of money or other resources?"},{"1":"q12","2":"Binary","3":"Q12 - ¿Recibe algún subsidio monetario, programa social o transferencia de dinero por parte del gobierno?","4":"Do you receive any monetary subsidy, social program or money transfer from the government?"},{"1":"q13","2":"Continuous","3":"Q13 - En la política se habla normalmente  de “izquierda” y “derecha”. En una escala donde \"0\" es la \"izquierda\" y \"10\" la \"derecha\", ¿dónde se ubicaría usted?","4":"In politics we usually speak of \"left\" and \"right\". On a scale where \"0\" is the \"left and 10 the \"right \", where would you place yourself?"},{"1":"q14","2":"Categorial","3":"Q14 - ¿Cuál es el ingreso total mensual de su hogar (sumando el de todos los miembros de su hogar) en un mes típico reciente en pesos mexicanos?","4":"What is the total monthly income of your household (adding that of all the members of your household) in a recent typical month in Mexican pesos?"},{"1":"q15r1","2":"Categorial","3":"Q15 - ¿Tendría como vecinos a Personas lesbianas, gays, bisexuales o trans?","4":"Would you have as neighbors: Lesbian, gay, bisexual or trans people?"},{"1":"q15r2","2":"Categorial","3":"Q15 - ¿Tendría como vecinos a Personas migrantes?","4":"Would you have as neighbors: Migrant people?"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/migrants_response_translations.csv "> migrants_response_translations.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Response_ES"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Response_EN"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Sí","2":"Yes"},{"1":"No","2":"No"},{"1":"18 a 29 años","2":"18 to 29 years"},{"1":"30 a 49 años","2":"30 to 49 years"},{"1":"50 a 64 años","2":"50 to 64 years"},{"1":"Más de 65 años","2":"More than 65 years"},{"1":"Masculino","2":"Male"},{"1":"Femenino","2":"Female"},{"1":"Casado(a) / Unión Libre","2":"Married/Civil union"},{"1":"Soltero(a)","2":"Single"},{"1":"Separado(a) / Divorciado(a) / Viudo(a)","2":"Separated/Divorced/Widowed"},{"1":"Prefiere no contestar","2":"Prefers not to answer"},{"1":"No sabe / Prefiere no contestar","2":"Doesn't know / prefers not to answer"},{"1":"Universitaria completa o más","2":"Completed university degree or higher"},{"1":"Universitaria incompleta","2":"Incomplete university degree"},{"1":"Secundaria completa","2":"Completed high school degree"},{"1":"Secundaria incompleta","2":"Incomplete high school degree"},{"1":"Primaria completa","2":"Complete primary school degree"},{"1":"Primaria incompleta","2":"Incomplete primary school degree"},{"1":"Ninguno","2":"None"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<p>Note that all question information contained below is redundant to <code>migrants_dom_dictionary.csv</code> and <code>migrants_mex_dictionary.csv</code>. The Spanish-to-English translation of responses is in <code>migrants_response_translations.csv</code>.</p>
+<p>For the respondent-level files (<code>migrants_domrep.csv</code> and <code>migrants_mexico.csv</code>), below are the columns that are <strong>shared</strong> by both surveys (with minor changes to questions to reflect the country, highlighted in <strong>bold</strong>):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>response_id</td>
+<td>Response ID</td>
+</tr>
+<tr class="even">
+<td>anio</td>
+<td>In what year were you born?</td>
+</tr>
+<tr class="odd">
+<td>edad</td>
+<td>Age category</td>
+</tr>
+<tr class="even">
+<td>pais</td>
+<td>In which country were you born?</td>
+</tr>
+<tr class="odd">
+<td>departamento</td>
+<td>In which province do you live?</td>
+</tr>
+<tr class="even">
+<td>region</td>
+<td>What region corresponds to the province you live in?</td>
+</tr>
+<tr class="odd">
+<td>ciudad</td>
+<td>What city do you live in?</td>
+</tr>
+<tr class="even">
+<td>genero</td>
+<td>What is your gender?</td>
+</tr>
+<tr class="odd">
+<td>estadocivil</td>
+<td>What is your marital status?</td>
+</tr>
+<tr class="even">
+<td>hogar</td>
+<td>How many people live in your household including yourself?</td>
+</tr>
+<tr class="odd">
+<td>hijos</td>
+<td>Do you have children?</td>
+</tr>
+<tr class="even">
+<td>educacion</td>
+<td>What is the highest level of education you have achieved?</td>
+</tr>
+<tr class="odd">
+<td>actividad</td>
+<td>What is your current employment activity?</td>
+</tr>
+<tr class="even">
+<td>q10</td>
+<td>Imagine a scale of 5 steps, in which the poorest people are in “1” and on the “5” step are the richer people, where would you rank yourself?</td>
+</tr>
+<tr class="odd">
+<td>q11</td>
+<td>During the past 30 days, was there a time when your household ran out of food due to lack of money or other resources?</td>
+</tr>
+<tr class="even">
+<td>q12</td>
+<td>Do you receive any monetary subsidy, social program or money transfer from the government?</td>
+</tr>
+<tr class="odd">
+<td>q13</td>
+<td>In politics we usually speak of “left” and “right”. On a scale where “0” is the “left and 10 the”right “, where would you place yourself?</td>
+</tr>
+<tr class="even">
+<td>q14</td>
+<td>What is the total monthly income of your household (adding that of all the members of your household) in a recent typical month in <strong>[country currency]</strong>?</td>
+</tr>
+<tr class="odd">
+<td>q15r1</td>
+<td>Would you have as neighbors: Lesbian, gay, bisexual or trans people?</td>
+</tr>
+<tr class="even">
+<td>q15r2</td>
+<td>Would you have as neighbors: Migrant people?</td>
+</tr>
+<tr class="odd">
+<td>q15r3</td>
+<td>Would you have as neighbors: People of a different race or ethnicity than yours?</td>
+</tr>
+<tr class="even">
+<td>q15r4</td>
+<td>Would you have as neighbors: People of a different religion than yours?</td>
+</tr>
+<tr class="odd">
+<td>q16r1</td>
+<td>How much do you agree or disagree with the following: Sometimes it is difficult to see things from the point of view of others.</td>
+</tr>
+<tr class="even">
+<td>q16r2</td>
+<td>How much do you agree or disagree with the following: I often have feelings of concern for people with fewer opportunities than me.</td>
+</tr>
+<tr class="odd">
+<td>q16r3</td>
+<td>How much do you agree or disagree with the following: In the <strong>[country]</strong>, everyone has the opportunity to succeed and be economically successful</td>
+</tr>
+<tr class="even">
+<td>q17</td>
+<td>What has the most influence on whether a person is poor?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>[Note the video is shown to participants after Question 17]</td>
+</tr>
+<tr class="even">
+<td>q18</td>
+<td>Out of every 100 inhabitants in <strong>[country]</strong>, how many do you think are migrants?</td>
+</tr>
+<tr class="odd">
+<td>q19</td>
+<td>In <strong>[country]</strong>, <strong>[statistic]</strong> out of 100 people finish secondary education. Out of 100 migrants in <strong>[country]</strong>, how many you think have completed secondary education?</td>
+</tr>
+<tr class="even">
+<td>q22r1</td>
+<td>Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: Migrants live in your country.</td>
+</tr>
+<tr class="odd">
+<td>q22r2</td>
+<td>Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: A migrant is your neighbor.</td>
+</tr>
+<tr class="even">
+<td>q22r3</td>
+<td>Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: A migrant marries a close relative of yours.</td>
+</tr>
+<tr class="odd">
+<td>q23r2</td>
+<td>How much do you agree or disagree with the following: Migrants contribute to the country’s economy.</td>
+</tr>
+<tr class="even">
+<td>q23r3</td>
+<td>How much do you agree or disagree with the following: Migrants come to compete for our jobs.</td>
+</tr>
+<tr class="odd">
+<td>q23r4</td>
+<td>How much do you agree or disagree with the following: Migrants increase crime.</td>
+</tr>
+<tr class="even">
+<td>q23r5</td>
+<td>How much do you agree or disagree with the following: Most migrant women end up practicing prostitution.</td>
+</tr>
+<tr class="odd">
+<td>q23r6</td>
+<td>How much do you agree or disagree with the following: Migrants improve our society by bringing new ideas and cultures.</td>
+</tr>
+<tr class="even">
+<td>q23r7</td>
+<td>How much do you agree or disagree with the following: Migrants are a burden on the State.</td>
+</tr>
+<tr class="odd">
+<td>q23r8</td>
+<td>How much do you agree or disagree with the following: In general, migrants contribute more to the country than what they take from it.</td>
+</tr>
+<tr class="even">
+<td>q24r1</td>
+<td>How much do you agree or disagree with the following: the government of <strong>[country]</strong> providing migrants living with access to humanitarian aid such as temporary accommodation, food and medical emergency care.</td>
+</tr>
+<tr class="odd">
+<td>q24r2</td>
+<td>How much do you agree or disagree with the following: the government of <strong>[country]</strong> providing migrants with access to work permit or documents that allows them to work legally.</td>
+</tr>
+<tr class="even">
+<td>q24r3</td>
+<td>How much do you agree or disagree with the following: the government of <strong>[country]</strong> providing migrants with health services in the same conditions that these are provided to <strong>[country’s own citizens]</strong>.</td>
+</tr>
+<tr class="odd">
+<td>q24r4</td>
+<td>How much do you agree or disagree with the following: the government of <strong>[country]</strong> providing education services for migrant children and young people in the same conditions as they are provided to <strong>[country’s own citizens]</strong>.</td>
+</tr>
+<tr class="even">
+<td>q24r5</td>
+<td>How much do you agree or disagree with the following: the government of <strong>[country]</strong> providing health services for migrant children in the same conditions as they are provided to <strong>[country’s own citizens]</strong>.</td>
+</tr>
+<tr class="odd">
+<td>q25a1</td>
+<td>Are you in contact with migrants in your daily life? - Yes, as my friends</td>
+</tr>
+<tr class="even">
+<td>q25a2</td>
+<td>Are you in contact with migrants in your daily life? - Yes, as my acquaintances (classmates / work / etc.)</td>
+</tr>
+<tr class="odd">
+<td>q25a3</td>
+<td>Are you in contact with migrants in your daily life? - Yes, as my employees or service providers for me</td>
+</tr>
+<tr class="even">
+<td>q25a4</td>
+<td>Are you in contact with migrants in your daily life? - Yes, as my employers</td>
+</tr>
+<tr class="odd">
+<td>q25a5</td>
+<td>Are you in contact with migrants in your daily life? - Yes, as my partner</td>
+</tr>
+<tr class="even">
+<td>q25a6</td>
+<td>Are you in contact with migrants in your daily life? - Yes, as my neighbors</td>
+</tr>
+<tr class="odd">
+<td>q25a7</td>
+<td>Are you in contact with migrants in your daily life? - Yes, other</td>
+</tr>
+<tr class="even">
+<td>q25a8</td>
+<td>Are you in contact with migrants in your daily life? - No relationship</td>
+</tr>
+<tr class="odd">
+<td>q25a9</td>
+<td>Are you in contact with migrants in your daily life? - Prefer not to answer</td>
+</tr>
+<tr class="even">
+<td>q25a1d</td>
+<td>Are you in contact with migrants in your daily life? - Please specify other</td>
+</tr>
+<tr class="odd">
+<td>tratamiento</td>
+<td>Assigned treatment group</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p>For <code>migrants_domrep.csv</code> these are the columns that are <strong>unique</strong> to the Dominican Republic survey:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 59%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>q20</td>
+<td>If you had any additional money: to which of the following organizations in your country, would you donate, or would not donate to anyone?</td>
+<td>Question number</td>
+</tr>
+<tr class="even">
+<td>q32</td>
+<td>How much do you agree or disagree with the following: Sometimes it is difficult to see things from migrants’ point of view</td>
+<td>Question number</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p>For <code>migrants_mex.csv</code> these are the columns that are <strong>unique</strong> to the Mexico survey:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 59%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>q20</td>
+<td>How much do you agree or disagree with the following: Sometimes it is difficult to see things from migrants’ point of view.</td>
+<td>Question number</td>
+</tr>
+<tr class="even">
+<td>q21</td>
+<td>If you had any additional money: to which of the following organizations in your country, would you donate, or would not donate to anyone?</td>
+<td>Question number</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p><strong>Note that the videos were shown to participants after <code>q17</code> in all countries.</strong></p>
+<ol type="1">
+<li><p>Pick a country (either Mexico or the Dominican Republic). It’s important that the treatment groups and placebo groups are <a href="https://cran.r-project.org/web/packages/MatchIt/vignettes/assessing-balance.html">“balanced”</a>. Do you have evidence they are balanced across observable demographic characteristics?</p></li>
+<li><p>Having read the motivations and survey questions, come up with some research questions. For example, “What is the overall effect of the treatment arms on a respondent’s likelihood of responding ‘bad’ to the statement, ‘Migrants live in your country’ (<code>q22r1</code>)?”. How would you model these research questions?</p></li>
+<li><p>Run your model from question 2. What do you conclude?</p></li>
+<li><p>How do your results change if you control for respondent heterogeneity, such as gender and age?</p></li>
+<li><p>Look at pages 45-46 in the <a href="https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean">original ABWMLAC study</a>. Do the authors make modeling choices that you didn’t consider? Do you agree with these differences?</p></li>
+<li><p>Can you replicate the results in Tables 3.1 (for Mexico) or 3.3 (for the DR) in the <a href="https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean">original ABWMLAC study</a>?</p></li>
+<li><p>Suppose you want to compare the effects of the treatment groups between the countries of Mexico and the Dominican Republic. For example, “Is there a significant difference between Mexico and the DR with regards to the effect of the informative video on a respondent’s likelihood of responding ‘bad’ to <code>q22r1</code>?”. How would you test this?</p></li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Cruces, G., Fajardo, J., Hernández, P., Ibáñez, A. M., Luzes, M., Meléndez, M., Muñoz, F., Rodríguez Guillén, L., &amp; Tenjo, L. (2023). <em>A Better World for Migrants in Latin America and the Caribbean</em>. https://doi.org/10.18235/0004850</p>
+<p>Cruces, Guillermo; Fajardo, Johanna; Hernández, Pablo; Ibáñez, Ana María; Luzes, Marta; Meléndez, Marcela; Muñoz, Felipe; Rodríguez Guillén, Lucina; Tenjo, Laura, 2023. Survey Data associated with: A Better World for Migrants in Latin America and the Caribbean, IDB Open Data, <a href="https://doi.org/10.60966/fnm3-ab90" class="uri">https://doi.org/10.60966/fnm3-ab90</a>.</p>
+<p>Released under the Creative Commons Attribution 4.0 International license.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/social/migrants.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
