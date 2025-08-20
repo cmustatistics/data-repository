@@ -1,0 +1,70 @@
+---
+title: Bechdel Test and Box Office
+author: Jessica Zhiyu Guo
+date: July 29, 2025
+description: The Bechdel test evaluates works of fiction based on whether they contain at least two women who talk to each other about something other than a man. It is often viewed as a proxy for gender bias in film and TV. Using a movie dataset from 1970 to 2013, we try to understand if passing the Bechdel Test hurts or benefits the box office.
+categories:
+  - EDA
+  - linear regression
+  - ANOVA
+data:
+  year: 2013
+  files: movies.csv
+---
+
+## Motivation
+
+The Bechdel Test is a test invented by Alison Bechdel to test whether a movie has at least two named women in the picture, they have a conversation with each other at some point, and that conversation isn’t about a male character, arguing that it offers a minimum effort for female character's depth. Since its invention, the Bechdel Test has been applied broadly as a measure for gender representation in the film industry.
+
+While the test is obviously not perfect--as Fivethirtyeight author Walt Hickey writes, "*Gravity* — which is dominated almost entirely by Sandra Bullock, in a highly praised performance — fails the test, as Bullock never speaks to another woman in the film." The test continues to hold cultural significance and reminds the film industry to do better.
+
+Hickey and colleagues at Fivethirtyeight collected data from 1970 to 2013 on Movies and their Bechdel Test results and their box office performances. They argue that passing the Bechdel Test doesn't hurt a movie's box office performance, and on the contrary, tend to have higher median return-on-investment. They hope for a change for better and fuller female characters in film in the future.
+
+## Data
+
+The dataset includes 1794 movies released between 1970 and 2013, when the data was collected. The authors at Fivethirtyeight collected data through the intersection of [The-Numbers](the-numbers.com) and [BechdelTest](BechdelTest.com). When considering the financial information, the authors adjusted all numbers for inflation, using 2013 dollars.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| year   | Release year of the movie |
+| imdb   | IMDB identifier of the movie |
+| title | title of the movie |
+| test | Unknown, some version of the Bechdel Test result based on BechdelTest.com|
+| clean_test | cleaned version of the Bechdel Test, where "dubious" is self-explanatory, "men" means women only talk about men, "notalk" means women don't talk to each other, "nowomen" means having fewer than two women, and "ok" means passing the test |
+| binary | Binary Bechdel test results, where only "ok" is marked as PASS |
+| budget | Budget, in dollars in the release year |
+| domgross | Domestic (US and Canada) gross box office record, in dollars, not adjusted for inflation |
+| intgross | International (including domestic) gross box office record, in dollars, not adjusted |
+| code | time and pass/fail code, format: YYYYPASS or YYYYFAIL |
+| budget_2013. | Budget, adjusted to 2013 dollars |
+| domgross_2013. | Domestic (US and Canada) gross box office, adjusted to 2013 dollars |
+| intgross_2013. | International gross box office, adjusted to 2013 dollars|
+| period.code | 1 = 2010-2013, 2 = 2005-2009, 3 = 2000-2004, 4 = 1995-1999, 5 = 1990-1994, NA otherwise|
+| decade.code | 1 = 2010-2013, 2 = 2000-2009, 3 = 1990-1999, NA otherwise| 
+
+
+## Questions
+
+1. Perform EDA on this dataset. Visualize the proportions of different categories of test results but also of passing/failing the test over time. Visualize the budget and domestic/international gross box office for Bechdel passing/failing movies over time.
+
+2. Focus on the 1990-2013 period. Build regression models on Return-on-Investment (International gross divided by budget) with and without the Bechdel indicator, what do you find? How would you interpret your findings?
+
+3. We can be more generous in the Bechdel Test by granting "dubious" movies passing grades, how would that affect question 2) and how would you interpret your results?
+
+4. Think broadly and creatively, what other information would be helpful to be incorporated as variables to predict ROI to help establish a more robust argument?
+
+## References
+
+<https://github.com/fivethirtyeight/data/tree/master/bechdel>
+
+Hickey, W. (2014, April 1). The dollar-and-cents case against Hollywood’s exclusion of women. FiveThirtyEight. <https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/>
+
