@@ -1,58 +1,58 @@
 Variable,Type,Description_ES,Description_EN
 response_id,Character,Response ID,Response ID
-anio,integer,ANIO - ¿En qué año nació?,In what year were you born?
+anio,integer,ANIO - Â¿En quÃ© aÃ±o naciÃ³?,In what year were you born?
 edad,Categorial,EDAD-Tramo edad,Age category
-pais,Categorial,PAIS - ¿En qué país nació? ,In which country were you born?
-departamento,Categorial,DEPARTAMENTO - ¿En qué departamento/provincia vive Usted?,In which province do you live?
-region,Categorial,REGION-¿Y a qué región corresponde el departamento/provincia en la que vive?,What region corresponds to the province you live in?
-ciudad,String,CIUDAD - ¿En qué ciudad vive Usted?,What city do you live in?
-genero,Categorial,GENERO - ¿Cuál es su género?,What is your gender?
-estadocivil,Categorial,ESTADOCIVIL - ¿Cuál es su estado civil?,What is your marital status?
-hogar,Categorial,HOGAR - ¿Cuántas personas viven en su hogar incluyéndose a usted mismo/a? ,How many people live in your household including yourself?
-hijos,Binary,HIJOS - ¿Usted tiene hijos?,Do you have children?
-educacion,Categorial,EDUCACION - ¿Cuál es el nivel de educación más alto que usted alcanzó?,What is the highest level of education you have achieved?
-actividad,Categorial,ACTIVIDAD - ¿Cuál es su actividad actual?,What is your current employment activity?
-q10,Continuous,"Q10 - Imagínese una escala de 5 peldaños, en el que en el “1” se ubican las personas más pobres y en el ""5"" se ubican las personas más ricas, ¿dónde se ubicaría usted?","Imagine a scale of 5 steps, in which the poorest people are in “1” and on the ""5"" step are the richer people, where would you rank yourself?"
-q11,Binary,"Q11 - Durante los últimos 30 días, ¿hubo un momento en el que su hogar se quedó sin alimentos por falta de dinero u otros recursos?","During the past 30 days, was there a time when your household ran out of food due to lack of money or other resources?"
-q12,Binary,"Q12 - ¿Recibe algún subsidio monetario, programa social o transferencia de dinero por parte del gobierno?","Do you receive any monetary subsidy, social program or money transfer from the government?"
-q13,Continuous,"Q13 - En la política se habla normalmente  de “izquierda” y “derecha”. En una escala donde ""0"" es la ""izquierda"" y ""10"" la ""derecha"", ¿dónde se ubicaría usted?","In politics we usually speak of ""left"" and ""right"". On a scale where ""0"" is the ""left and 10 the ""right "", where would you place yourself?"
-q14,Categorial,Q14 - ¿Cuál es el ingreso total mensual de su hogar (sumando el de todos los miembros de su hogar) en un mes típico reciente en pesos mexicanos?,What is the total monthly income of your household (adding that of all the members of your household) in a recent typical month in Mexican pesos?
-q15r1,Categorial,"Q15 - ¿Tendría como vecinos a Personas lesbianas, gays, bisexuales o trans?","Would you have as neighbors: Lesbian, gay, bisexual or trans people?"
-q15r2,Categorial,Q15 - ¿Tendría como vecinos a Personas migrantes?,Would you have as neighbors: Migrant people?
-q15r3,Categorial,Q15 - ¿Tendría como vecinos a Personas de una raza o etnia diferente a la suya?,Would you have as neighbors: People of a different race or ethnicity than yours?
-q15r4,Categorial,Q15 - ¿Tendría como vecinos a Personas de una religión diferente a la suya?,Would you have as neighbors: People of a different religion than yours?
-q16r1,Categorial,Q16 - A veces es difícil ver las cosas desde el punto de vista de otros,How much do you agree or disagree with the following:  Sometimes it is difficult to see things from the point of view of others.
-q16r2,Categorial,Q16 - A menudo tengo sentimientos de preocupación por las personas con menos oportunidades que yo,How much do you agree or disagree with the following:  I often have feelings of concern for people with fewer opportunities than me.
-q16r3,Categorial,"Q16 - En MEXICO, todo el mundo tiene la oportunidad de triunfar y tener éxito económico","How much do you agree or disagree with the following:  In Mexico, everyone has the opportunity to succeed and be economically successful"
-q17,Categorial,Q17 - ¿Qué influye más en que una persona sea pobre?,What has the most influence on whether a person is poor?
-q18,Categorial,"Q18 - De cada 100 habitantes de MEXICO,¿cuántos cree usted que son migrantes?","Out of every 100 inhabitants in Mexico, how many do you think are migrants?"
-q19,Categorial,"Q19 - En MEXICO, de cada 100 personas 42,9 terminaron la educación secundaria, ¿cuántos de cada 100 migrantes cree usted que terminaron la educación secundaria?","In Mexico, 42.9 out of 100 people finish secondary education. Out of 100 migrants in Mexico, how many you think have completed secondary education?"
-q20,Categorial,Q20 - A veces es difícil ver las cosas desde el punto de vista de los migrantes,How much do you agree or disagree with the following:  Sometimes it is difficult to see things from migrants’ point of view
-q21,Categorial,Q21 - Si usted tuviera algún dinero adicional: ¿a cuál de las siguientes organizaciones de su país donaría o no donaría a nadie?,"If you had any additional money: to which of the following organizations in your country, would you donate, or would not donate to anyone?"
-q22r1,Categorial,Q22 - Que migrantes vivan en su país,"Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: That migrants live in your country."
+pais,Categorial,PAIS - Â¿En quÃ© paÃ­s naciÃ³? ,In which country were you born?
+departamento,Categorial,DEPARTAMENTO - Â¿En quÃ© departamento/provincia vive Usted?,In which province do you live?
+region,Categorial,REGION-Â¿Y a quÃ© regiÃ³n corresponde el departamento/provincia en la que vive?,What region corresponds to the province you live in?
+ciudad,String,CIUDAD - Â¿En quÃ© ciudad vive Usted?,What city do you live in?
+genero,Categorial,GENERO - Â¿CuÃ¡l es su gÃ©nero?,What is your gender?
+estadocivil,Categorial,ESTADOCIVIL - Â¿CuÃ¡l es su estado civil?,What is your marital status?
+hogar,Categorial,HOGAR - Â¿CuÃ¡ntas personas viven en su hogar incluyÃ©ndose a usted mismo/a? ,How many people live in your household including yourself?
+hijos,Binary,HIJOS - Â¿Usted tiene hijos?,Do you have children?
+educacion,Categorial,EDUCACION - Â¿CuÃ¡l es el nivel de educaciÃ³n mÃ¡s alto que usted alcanzÃ³?,What is the highest level of education you have achieved?
+actividad,Categorial,ACTIVIDAD - Â¿CuÃ¡l es su actividad actual?,What is your current employment activity?
+q10,Continuous,"Q10 - ImagÃ­nese una escala de 5 peldaÃ±os, en el que en el â€œ1â€ se ubican las personas mÃ¡s pobres y en el ""5"" se ubican las personas mÃ¡s ricas, Â¿dÃ³nde se ubicarÃ­a usted?","Imagine a scale of 5 steps, in which the poorest people are in â€œ1â€ and on the ""5"" step are the richer people, where would you rank yourself?"
+q11,Binary,"Q11 - Durante los Ãºltimos 30 dÃ­as, Â¿hubo un momento en el que su hogar se quedÃ³ sin alimentos por falta de dinero u otros recursos?","During the past 30 days, was there a time when your household ran out of food due to lack of money or other resources?"
+q12,Binary,"Q12 - Â¿Recibe algÃºn subsidio monetario, programa social o transferencia de dinero por parte del gobierno?","Do you receive any monetary subsidy, social program or money transfer from the government?"
+q13,Continuous,"Q13 - En la polÃ­tica se habla normalmenteÂ  de â€œizquierdaâ€ y â€œderechaâ€. En una escala donde ""0"" es la ""izquierda"" y ""10"" la ""derecha"", Â¿dÃ³nde se ubicarÃ­a usted?","In politics we usually speak of ""left"" and ""right"". On a scale where ""0"" is the ""left and 10 the ""right "", where would you place yourself?"
+q14,Categorial,Q14 - Â¿CuÃ¡l es el ingreso total mensual de su hogar (sumando el de todos los miembros de su hogar) en un mes tÃ­pico reciente en pesos mexicanos?,What is the total monthly income of your household (adding that of all the members of your household) in a recent typical month in Mexican pesos?
+q15r1,Categorial,"Q15 - Â¿TendrÃ­a como vecinos a Personas lesbianas, gays, bisexuales o trans?","Would you have as neighbors: Lesbian, gay, bisexual or trans people?"
+q15r2,Categorial,Q15 - Â¿TendrÃ­a como vecinos a Personas migrantes?,Would you have as neighbors: Migrant people?
+q15r3,Categorial,Q15 - Â¿TendrÃ­a como vecinos a Personas de una raza o etnia diferente a la suya?,Would you have as neighbors: People of a different race or ethnicity than yours?
+q15r4,Categorial,Q15 - Â¿TendrÃ­a como vecinos a Personas de una religiÃ³n diferente a la suya?,Would you have as neighbors: People of a different religion than yours?
+q16r1,Categorial,Q16 - A veces es difÃ­cil ver las cosas desde el punto de vista de otros,How much do you agree or disagree with the following:  Sometimes it is difficult to see things from the point of view of others.
+q16r2,Categorial,Q16 - A menudo tengo sentimientos de preocupaciÃ³n por las personas con menos oportunidades que yo,How much do you agree or disagree with the following:  I often have feelings of concern for people with fewer opportunities than me.
+q16r3,Categorial,"Q16 - En MEXICO, todo el mundo tiene la oportunidad de triunfar y tener Ã©xito econÃ³mico","How much do you agree or disagree with the following:  In Mexico, everyone has the opportunity to succeed and be economically successful"
+q17,Categorial,Q17 - Â¿QuÃ© influye mÃ¡s en que una persona sea pobre?,What has the most influence on whether a person is poor?
+q18,Categorial,"Q18 - De cada 100 habitantes de MEXICO,Â¿cuÃ¡ntos cree usted que son migrantes?","Out of every 100 inhabitants in Mexico, how many do you think are migrants?"
+q19,Categorial,"Q19 - En MEXICO, de cada 100 personas 42,9 terminaron la educaciÃ³n secundaria, Â¿cuÃ¡ntos de cada 100 migrantes cree usted que terminaron la educaciÃ³n secundaria?","In Mexico, 42.9 out of 100 people finish secondary education. Out of 100 migrants in Mexico, how many you think have completed secondary education?"
+q20,Categorial,Q20 - A veces es difÃ­cil ver las cosas desde el punto de vista de los migrantes,How much do you agree or disagree with the following:  Sometimes it is difficult to see things from migrantsâ€™ point of view
+q21,Categorial,Q21 - Si usted tuviera algÃºn dinero adicional: Â¿a cuÃ¡l de las siguientes organizaciones de su paÃ­s donarÃ­a o no donarÃ­a a nadie?,"If you had any additional money: to which of the following organizations in your country, would you donate, or would not donate to anyone?"
+q22r1,Categorial,Q22 - Que migrantes vivan en su paÃ­s,"Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: That migrants live in your country."
 q22r2,Categorial,Q22 - Que un migrante sea su vecino/a,"Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: That a migrant is your neighbor."
 q22r3,Categorial,Q22 - Que un migrante se case con un(a) familiar cercano(a) suyo(a),"Please read the following sentence and select whether you think that the circumstances they describe are good, bad or that it depends: That a migrant marries a close relative of yours."
 q23r1,Categorial,Q23 - Se puede confiar en los migrantes que viven en MEXICO tanto como en los mexicanos,How much do you agree or disagree with the following: We can trust migrants living in Mexico as much as Mexicans.
-q23r2,Categorial,Q23 - Los migrantes contribuyen a la economía del país,How much do you agree or disagree with the following: Migrants contribute to the country's economy.
+q23r2,Categorial,Q23 - Los migrantes contribuyen a la economÃ­a del paÃ­s,How much do you agree or disagree with the following: Migrants contribute to the country's economy.
 q23r3,Categorial,Q23 - Los migrantes vienen a competir por nuestros trabajos,How much do you agree or disagree with the following: Migrants come to compete for our jobs.
 q23r4,Categorial,Q23 - Los migrantes aumentan el crimen,How much do you agree or disagree with the following: Migrants increase crime.
-q23r5,Categorial,Q23 - La mayoría de las mujeres migrantes acaban ejerciendo la prostitución,How much do you agree or disagree with the following: Most migrant women end up practicing prostitution.
+q23r5,Categorial,Q23 - La mayorÃ­a de las mujeres migrantes acaban ejerciendo la prostituciÃ³n,How much do you agree or disagree with the following: Most migrant women end up practicing prostitution.
 q23r6,Categorial,Q23 - Los migrantes mejoran nuestra sociedad al traer nuevas ideas y culturas,How much do you agree or disagree with the following: Migrants improve our society by bringing new ideas and cultures.
 q23r7,Categorial,Q23 - Los migrantes son una carga para el Estado,How much do you agree or disagree with the following: Migrants are a burden on the State.
-q23r8,Categorial,"Q23 - En general, los migrantes contribuyen al país más de lo que toman de él","How much do you agree or disagree with the following:  In general, migrants contribute more to the country than what they take from it."
-q24r1,Categorial,"Q24 - Ayuda humanitaria como alojamiento temporal, alimentación y atención de urgencias médicas","How much do you agree or disagree with the following: the government of Mexico providing migrants living with access to humanitarian aid such as temporary accommodation, food and medical emergency care."
+q23r8,Categorial,"Q23 - En general, los migrantes contribuyen al paÃ­s mÃ¡s de lo que toman de Ã©l","How much do you agree or disagree with the following:  In general, migrants contribute more to the country than what they take from it."
+q24r1,Categorial,"Q24 - Ayuda humanitaria como alojamiento temporal, alimentaciÃ³n y atenciÃ³n de urgencias mÃ©dicas","How much do you agree or disagree with the following: the government of Mexico providing migrants living with access to humanitarian aid such as temporary accommodation, food and medical emergency care."
 q24r2,Categorial,Q24 - Permiso de trabajo o documento que les permita trabajar legalmente,How much do you agree or disagree with the following: the government of Mexico providing migrants with access to work permit or documents that allows them to work legally.
-q24r3,Categorial,Q24 - Prestación de servicios de salud en las mismas condiciones que a los mexicanos,How much do you agree or disagree with the following: the government of Mexico providing migrants with health services in the same conditions that these are provided to Mexicans.
-q24r4,Categorial,Q24 - Prestación de servicios de educación para los niños y jóvenes en las mismas condiciones que a los mexicanos,How much do you agree or disagree with the following: the government of Mexico providing education services for migrant children and young people in the same conditions as they are provided to Mexicans.
-q24r5,Categorial,Q24 - Prestación de servicios de salud para los niños migrantes en las mismas condiciones que a los mexicanos,How much do you agree or disagree with the following: the government of Mexico providing health services for migrant children in the same conditions as they are provided to Mexicans.
-q25a1,Binary,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, como mis amigos","Are you in contact with migrants in your daily life? - Yes, as my friends"
-q25a2,Binary,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, como mis conocidos (compañeros de escuela/trabajo/etc.)","Are you in contact with migrants in your daily life? - Yes, as my acquaintances (classmates / work / etc.)"
-q25a3,Binary,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, como mis empleados o prestadores de servicios para mi","Are you in contact with migrants in your daily life? - Yes, as my employees or service providers for me"
-q25a4,Binary,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, como mis empleadores ","Are you in contact with migrants in your daily life? - Yes, as my employers"
-q25a5,Binary,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, como mi pareja","Are you in contact with migrants in your daily life? - Yes, as my partner"
-q25a6,Binary,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, como mis vecinos","Are you in contact with migrants in your daily life? - Yes, as my neighbors"
-q25a7,Binary,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, otro","Are you in contact with migrants in your daily life? - Yes, other"
-q25a8,Binary,Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Ninguna relación,Are you in contact with migrants in your daily life? - No relationship
-q25a9,Binary,Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Prefiere no contestar,Are you in contact with migrants in your daily life? - Prefer not to answer
-q25a1d,String,"Q25-¿Está usted en contacto con migrantes en su vida cotidiana? - Si, otro [ESPECIFIQUE]",Are you in contact with migrants in your daily life? - Please specify other
+q24r3,Categorial,Q24 - PrestaciÃ³n de servicios de salud en las mismas condiciones que a los mexicanos,How much do you agree or disagree with the following: the government of Mexico providing migrants with health services in the same conditions that these are provided to Mexicans.
+q24r4,Categorial,Q24 - PrestaciÃ³n de servicios de educaciÃ³n para los niÃ±os y jÃ³venes en las mismas condiciones que a los mexicanos,How much do you agree or disagree with the following: the government of Mexico providing education services for migrant children and young people in the same conditions as they are provided to Mexicans.
+q24r5,Categorial,Q24 - PrestaciÃ³n de servicios de salud para los niÃ±os migrantes en las mismas condiciones que a los mexicanos,How much do you agree or disagree with the following: the government of Mexico providing health services for migrant children in the same conditions as they are provided to Mexicans.
+q25a1,Binary,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, como mis amigos","Are you in contact with migrants in your daily life? - Yes, as my friends"
+q25a2,Binary,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, como mis conocidos (compaÃ±eros de escuela/trabajo/etc.)","Are you in contact with migrants in your daily life? - Yes, as my acquaintances (classmates / work / etc.)"
+q25a3,Binary,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, como mis empleados o prestadores de servicios para mi","Are you in contact with migrants in your daily life? - Yes, as my employees or service providers for me"
+q25a4,Binary,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, como mis empleadores ","Are you in contact with migrants in your daily life? - Yes, as my employers"
+q25a5,Binary,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, como mi pareja","Are you in contact with migrants in your daily life? - Yes, as my partner"
+q25a6,Binary,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, como mis vecinos","Are you in contact with migrants in your daily life? - Yes, as my neighbors"
+q25a7,Binary,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, otro","Are you in contact with migrants in your daily life? - Yes, other"
+q25a8,Binary,Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Ninguna relaciÃ³n,Are you in contact with migrants in your daily life? - No relationship
+q25a9,Binary,Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Prefiere no contestar,Are you in contact with migrants in your daily life? - Prefer not to answer
+q25a1d,String,"Q25-Â¿EstÃ¡ usted en contacto con migrantes en su vida cotidiana? - Si, otro [ESPECIFIQUE]",Are you in contact with migrants in your daily life? - Please specify other
 tratamiento,Categorial,Grupo de tratamiento al que fue asignado,Assigned treatment group
