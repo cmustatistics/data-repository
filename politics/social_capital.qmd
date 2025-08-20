@@ -1,8 +1,8 @@
 ---
-title: Social Capital, Income Inequality, and Political Outcomes Across US Counties
+title: Social capital, income inequality, and political outcomes across US counties
 author: Jessica Zhiyu Guo
 date: July 24, 2025
-description: County-level data combining social capital indices, income inequality measures, and economic indicators, inspired by Rodríguez-Pose, Lee, and Lipp's "Golfing with Trump" research on social capital, decline, and populism. Students must join this with the January 6th insurrectionists dataset to examine relationships between social cohesion, economic conditions, and political outcomes across US counties.
+description: County-level data combining social capital indices, income inequality measures, and economic indicators, inspired by Rodríguez-Pose, Lee, and Lipp's "Golfing with Trump" research on social capital, decline, and populism. Join this with the January 6th insurrectionists dataset to examine relationships between social cohesion, economic conditions, and political outcomes across US counties.
 categories:
   - EDA
   - linear regression
@@ -10,7 +10,7 @@ categories:
   - multivariate analysis
 data:
   year: 2025
-  files: county_data_joined.csv
+  files: social_capital_joined.csv
 ---
 
 ## Motivation
@@ -19,12 +19,17 @@ This dataset is inspired by research examining the relationship between social c
 
 Social capital—the networks, norms, and trust that facilitate cooperation within communities—has been hypothesized to play a crucial role in regional economic resilience and political stability. Areas with declining social capital may experience not only worse economic outcomes but also greater susceptibility to populist appeals, particularly when combined with rising inequality.
 
-You are expected to join this dataset with the [January 6th insurrectionists dataset](https://cmustatistics.github.io/data-repository/politics/jan-6-insurrectionists.html), which contains crucial outcome variables including Trump vote margins, white population change, employment rate change, and manufacturing job rate change. This combination allows for a comprehensive analysis of the relationships between social capital, economic conditions, and political outcomes at the county level.
+You are expected to join this dataset with the [January 6th insurrectionists dataset](../politics/jan-6-insurrectionists.qmd), which contains crucial outcome variables including Trump vote margins, white population change, employment rate change, and manufacturing job rate change. This combination allows for a comprehensive analysis of the relationships between social capital, economic conditions, and political outcomes at the county level.
 
 ## Data
-Each row represents a US county. The dataset contains approximately 3,100+ counties across all 50 US states, though some counties may have missing values for certain variables due to data availability limitations.
 
-Missing values are coded as `NA`. Missingness may occur due to: (1) insufficient sample sizes for reliable Gini coefficient estimation in very small counties, (2) data collection limitations for social capital measures, or (3) administrative differences (e.g., Alaska uses boroughs and census areas rather than counties or the inclusion of Puerto Rico).
+Each row represents a US county. The dataset contains approximately 3,100+
+counties across all 50 US states, though some counties may have missing values
+for certain variables due to data availability limitations. The dataset was
+formed by merging data from the Social Capital Project to Census and Bureau of
+Economic Analysis data.
+
+Missing values are coded as `NA`. Missingness may occur due to: (1) insufficient sample sizes for reliable Gini coefficient estimation in very small counties, (2) data collection limitations for social capital measures, or (3) administrative differences (e.g., Alaska uses boroughs and census areas rather than counties, or the inclusion of Puerto Rico).
 
 ### Data preview
 
@@ -38,10 +43,10 @@ preview_datasets()
 | Variable | Description |
 |----|-------------|
 | fips | 5-digit Federal Information Processing Standards code uniquely identifying each county (use for joining datasets) |
-| county_state_clean_gini | Full county and state name (e.g., "Jefferson County, Alabama") from the gini coefficient file |
-| gini_index | Gini coefficient measuring income inequality (0 = perfect equality, 1 = perfect inequality) obtained from 2020 ACS 5Y release |
+| county_state_clean_gini | Full county and state name (e.g., "Jefferson County, Alabama") from the Census income inequality dataset |
+| gini_index | [Gini coefficient](https://en.wikipedia.org/wiki/Gini_coefficient) measuring income inequality (0 = perfect equality, 1 = perfect inequality) obtained from 2020 ACS 5Y release |
 | gini_margin | Margin of error for the Gini coefficient estimate |
-| county_state_clean_social | Full county and state name (e.g., "Jefferson County, Alabama") from the social capital file|
+| county_state_clean_social | Full county and state name (e.g., "Jefferson County, Alabama") from the social capital dataset |
 | social_capital_index | Standardized social capital index based on seven components: family unity, family interaction, social support, community health, institutional health, collective efficacy, and philanthropic health. Scores range from approximately -2.2 to 2.1, where higher values indicate more social capital. A score of 1.5 means the county is 1.5 standard deviations above the mean. |
 | current_state | State name |
 | county_clean | County name without state |
@@ -49,7 +54,7 @@ preview_datasets()
 | income_2022 | Per capita personal income in 2022 (dollars) |
 | income_2023 | Per capita personal income in 2023 (dollars) |
 
-Additional variables available after joining with January 6th dataset: Trump vote margins, white population change, manufacturing employment decline, and other demographic and economic indicators.
+Additional variables available after joining with the [January 6th dataset](../politics/jan-6-insurrectionists.qmd): Trump vote margins, white population change, manufacturing employment decline, and other demographic and economic indicators.
 
 ## Questions
 
@@ -57,18 +62,18 @@ Additional variables available after joining with January 6th dataset: Trump vot
 
 2. The core theory from [Rodríguez-Pose, Lee, and Lipp (2021)](https://doi.org/10.1093/cjres/rsab026) was that declining social capital and rising inequality predicted support for populist candidates:
 
->[The authors posit that] the rise in votes for Trump has been the result of long-term economic and population decline in areas with strong social capital. This hypothesis is confirmed by the econometric analysis conducted for US counties. Long-term declines in employment and population—rather than in earnings, salaries, or wages—in places with relatively strong social capital propelled Donald Trump to the presidency and almost secured his re-election. By contrast, low social capital and high interpersonal inequality were not connected to a surge in support for Trump.
+    > [The authors posit that] the rise in votes for Trump has been the result of long-term economic and population decline in areas with strong social capital. This hypothesis is confirmed by the econometric analysis conducted for US counties. Long-term declines in employment and population—rather than in earnings, salaries, or wages—in places with relatively strong social capital propelled Donald Trump to the presidency and almost secured his re-election. By contrast, low social capital and high interpersonal inequality were not connected to a surge in support for Trump.
 
-Conduct an analysis to test this theory using the joined dataset. Examine whether counties with lower social capital index scores and higher Gini coefficients showed greater Trump vote margins in 2020. Be sure to account for county population, income levels, and demographic changes (white population decline, manufacturing job losses) as these factors may confound the relationship between social capital, inequality, and political outcomes.
+    Conduct an analysis to test this theory using the joined dataset. Examine whether counties with lower social capital index scores and higher Gini coefficients showed greater Trump vote margins in 2020. Be sure to account for county population, income levels, and demographic changes (white population decline, manufacturing job losses) as these factors may confound the relationship between social capital, inequality, and political outcomes.
 
 3. Model the relationship between social capital, inequality, and Trump vote margins using multiple regression. How do you interpret the coefficients on social capital and inequality? What does the interaction between these two variables (if significant) tell us about the combined effect of low social capital and high inequality on political outcomes?
 
 ## References
 
-Andrés Rodríguez-Pose, Neil Lee, Cornelius Lipp, Golfing with Trump. Social capital, decline, inequality, and the rise of populism in the US, Cambridge Journal of Regions, Economy and Society, Volume 14, Issue 3, November 2021, Pages 457–481, <https://doi.org/10.1093/cjres/rsab026>
+Andrés Rodríguez-Pose, Neil Lee, Cornelius Lipp, Golfing with Trump. Social capital, decline, inequality, and the rise of populism in the US, *Cambridge Journal of Regions, Economy and Society*, Volume 14, Issue 3, November 2021, Pages 457–481, <https://doi.org/10.1093/cjres/rsab026>
 
 U.S. Bureau of Economic Analysis, “Personal Income by County and Metropolitan Area, 2023,” news release (November 14, 2024), <https://www.bea.gov/data/income-saving/personal-income-county-metro-and-other-areas>.
 
-<https://www.jec.senate.gov/public/index.cfm/republicans/sci/>
+Social Capital Project, <https://www.jec.senate.gov/public/index.cfm/republicans/sci/>
 
 U.S. Census Bureau. "GINI INDEX OF INCOME INEQUALITY." American Community Survey, ACS 5-Year Estimates Detailed Tables, Table B19083, <https://data.census.gov/table/ACSDT5Y2020.B19083?g=010XX00US$0500000>. Accessed on 30 Jul 2025.
