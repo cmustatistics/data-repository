@@ -1,5 +1,5 @@
 ---
-title: Survey on attitude towards migrants (Mexico and Dominican Republic)
+title: Survey on attitude towards migrants
 author: Selina Carter
 date: July 26, 2025
 description: This dataset is useful for public policy and causal analysis. In Mexico and the Dominican Republic, a survey was conducted on attitudes towards migrants. Each respondent receives one of two possible treatments (either an "emotive" or "informative" video about migrants), or is part of the placebo group (shown an unrelated video).
@@ -10,7 +10,7 @@ categories:
   - linear regression
   - multivariate analysis
   - logistic regression
-  - experiment design
+  - experimental design
 data:
   year: 2023
   files:
@@ -33,18 +33,18 @@ This dataset is the result of an experiment conducted in nine countries in Latin
 For the Dominican Republic, there were two types of "emotive" videos: one involves a Haitian migrant while the other involves a Venezuelan migrant.
 
 The authors also note, "The sampling strategy does not ensure a nationally representative sample. In this case, however, to
-identify the impact of the interventions, the sample for each country needs to be comparable, which is achieved by randomly assigning participants to the different treatment and control groups"  (Source: [page 43-44, ABWMLAC](https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean)).
+identify the impact of the interventions, the sample for each country needs to be comparable, which is achieved by randomly assigning participants to the different treatment and control groups"  ([page 43-44, ABWMLAC](https://publications.iadb.org/en/better-world-migrants-latin-america-and-caribbean)).
 
 ## Data
 
 The [original data](https://doi.org/10.60966/fnm3-ab90) is available for nine countries: Barbados,  Chile,  Colombia, Costa Rica,  Dominican Republic, Ecuador, Mexico, Peru, and Trinidad and Tobago. Here, we provide data only for the Dominican Republic and Mexico, but you can easily download the other datasets also.
 
-The files `migrants_domrep.csv` and `migrants_mexico.csv` are the survey responses respectively for the Dominican Republic and Mexico. One row represents one *respondent* (a person) identified by the `response_id` variable.
+The files `migrants_domrep.csv` and `migrants_mexico.csv` are the survey responses respectively for the Dominican Republic and Mexico. Each row represents one *respondent* (a person) identified by the `response_id` variable.
 
   - In the `migrants_domrep.csv` dataset, there are 3,542 rows and 56 columns.
   - In the `migrants_mexico.csv` dataset, there are 2,432 rows and 56 columns.
   
-Note that the columns represent demographic characteristics of the respondent and questions in the survey. Careful: the questions in each survey are numbered slightly differently (see bottom of [Variable descriptions](https://cmustatistics.github.io/data-repository/social/migrants.html#variable-descriptions) to see which columns differ). The files `migrants_dom_dictionary.csv` and `migrants_mex_dictionary.csv` describe the questions for each respective country. Since the questions were originally in Spanish, an English translation column is provided. 
+The columns represent demographic characteristics of the respondent and questions in the survey. Careful: the questions in each survey are numbered slightly differently (see bottom of [Variable descriptions](#variable-descriptions) to see which columns differ). The files `migrants_dom_dictionary.csv` and `migrants_mex_dictionary.csv` describe the questions for each respective country. Since the questions were originally in Spanish, an English translation column is provided. 
 
 Responses are also in Spanish, so you can use `migrants_response_translations.csv` for Spanish-to-English translations.
 
@@ -147,7 +147,7 @@ For `migrants_mex.csv` these are the columns that are **unique** to the Mexico s
 
 **Note that the videos were shown to participants after `q17` in all countries.**
 
-1. Pick a country (either Mexico or the DR). It's important that the treatment groups and placebo groups are ["balanced"](https://cran.r-project.org/web/packages/MatchIt/vignettes/assessing-balance.html). Do you have evidence they are balanced across observable demographic characteristics?
+1. Pick a country (either Mexico or the Dominican Republic). It's important that the treatment groups and placebo groups are ["balanced"](https://cran.r-project.org/web/packages/MatchIt/vignettes/assessing-balance.html). Do you have evidence they are balanced across observable demographic characteristics?
 
 2. Having read the motivations and survey questions, come up with some research questions. For example, "What is the overall effect of the treatment arms on a respondent's likelihood of responding 'bad' to the statement, 'Migrants live in your country' (`q22r1`)?". How would you model these research questions?
 
@@ -165,6 +165,13 @@ For `migrants_mex.csv` these are the columns that are **unique** to the Mexico s
 
 ## References
 
-Cruces, Guillermo;Fajardo, Johanna;Hernández, Pablo;Ibáñez, Ana María;Luzes, Marta;Meléndez, Marcela;Muñoz, Felipe;Rodríguez Guillén, Lucina;Tenjo, Laura, 2023, Survey Data associated with: A Better World for Migrants in Latin America and the Caribbean, IDB Open Data, <https://doi.org/10.60966/fnm3-ab90>.
+Cruces, G., Fajardo, J., Hernández, P., Ibáñez, A. M., Luzes, M., Meléndez, M.,
+Muñoz, F., Rodríguez Guillén, L., & Tenjo, L. (2023). *A Better World for
+Migrants in Latin America and the Caribbean*. https://doi.org/10.18235/0004850
 
-Creative Commons Attribution 4.0 International
+Cruces, Guillermo; Fajardo, Johanna; Hernández, Pablo; Ibáñez, Ana María; Luzes,
+Marta; Meléndez, Marcela; Muñoz, Felipe; Rodríguez Guillén, Lucina; Tenjo,
+Laura, 2023. Survey Data associated with: A Better World for Migrants in Latin
+America and the Caribbean, IDB Open Data, <https://doi.org/10.60966/fnm3-ab90>.
+
+Released under the Creative Commons Attribution 4.0 International license.
