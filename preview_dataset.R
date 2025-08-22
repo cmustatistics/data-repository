@@ -2,7 +2,7 @@ library(cli)
 
 default_csv_loader <- function(dataset_name) {
   readr::read_csv(file.path("../data", dataset_name), guess_max = Inf,
-           show_col_types = FALSE)
+           show_col_types = FALSE, name_repair = "unique_quiet")
 }
 
 #' Produce a nice preview table of the chosen dataset
