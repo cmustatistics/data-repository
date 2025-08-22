@@ -1,0 +1,212 @@
+---
+title: Stress and cognitive-effort avoidance
+author: Alex Reinhart
+date: August 22, 2025
+description: "Cognitive performance is diminished when we're highly stressed. This experiment tried to evaluate whether this is because stressed subjects *choose* to avoid tasks that require cognitive effort. Use mixed effects models to evaluate the experimental results."
+categories:
+  - experimental design
+  - hierarchical model
+  - logistic regression
+data:
+  year: 2021
+  files:
+    - cognitive-effort.csv
+    - cognitive-effort-demographics.csv
+---
+
+## Motivation
+
+When people are stressed, they often aren't as good at cognitively demanding
+tasks. Psychologists have documented that learning, memory, and decision-making
+performance is impaired when people are acutely stressed, and have developed
+various theories to explain this. Roughly speaking, there are two competing
+explanations:
+
+1. When we are stressed, we reallocate cognitive effort from executive function
+   (decision-making) to salience (controlling our attention and looking for
+   important information), which impairs our executive function
+2. People who are stressed don't *want* to exert cognitive effort, and choose to
+   exert less, regardless of how much the stress has caused us to reallocate it
+
+Option 2 should make sense to anyone who has chosen to watch Netflix on the sofa
+after a stressful workday.
+
+To test which theory better explains behavior, we need an experiment where we
+can manipulate the stress level of the subjects, then see whether they *choose*
+to exert cognitive effort or not. Bogdanov et al. (2021) designed such an
+experiment.
+
+In their experiment, subjects were stressed using the [Trier social stress
+test](https://en.wikipedia.org/wiki/Trier_social_stress_test) (TSST), which has
+subjects prepare and give a 5-minute presentation in front of three impassive
+judges, then do a mental arithmetic task in front of them. This has been shown
+to reliably stress people out.[^trier]
+
+[^trier]: Despite the name, the test does not involve watching Lars von Trier
+    films with your parents, which would also serve as an effective stressor.
+
+Subjects then performed a demand-selection task (DST), a simple procedure where
+subjects click one of two options in a colorful diagram, and then must either
+judge the evenness/oddness of a number or judge whether it is larger or smaller
+than 5. The tasks are easy, but depending on the subject's choice, they may have
+to switch between them more or less option: in one choice, they do the same task
+(evenness or magnitude) repeatedly with probability 0.9, in the other choice
+they usually have to switch between each trial (repeat probability 0.1).
+Constantly switching the task takes cognitive effort, so generally subjects
+prefer the low-effort option.
+
+Thus, the researchers hypothesized:
+
+> Accordingly, we predicted that if stress engenders a withdrawal of
+> effort—either by increasing the subjective costs or decreasing the perceived
+> benefits of exerting cognitive effort—we should observe an even stronger
+> demand-avoidance effect in the stress condition relative to the control
+> condition.
+
+## Data
+
+The study has 20 participants. Each participant did one trial in the stressed
+condition (with the TSST) and one in the control condition (no TSST), seven days
+apart. On the first day they also took various psychological questionnaires.
+
+One data file (`cognitive-effort-demographics.csv`) gives the demographics and
+questionnaire results for each subject.
+
+The other data file (`cognitive-effort.csv`) gives the result of every single
+DST trial for each subject. In each trial, the subject is presented with the
+choice, makes their choice, is presented with the number, and must perform the
+task. The time they take to choose and the time they take to do the task are
+recorded, as well as their choice, whether the task switched, and whether they
+did the task correctly. The trials are divided into blocks of roughly 70
+individual trials; each subject did 4 blocks.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+For `cognitive-effort.csv`:
+
+| Variable | Description |
+|----|-------------|
+| PID | Participant ID |
+| condition | Experimental condition (control or stress) |
+| block | Block of the DST (1 through 4) |
+| effort_choice | 0 = chose high-effort cue, 1 = chose low-effort cue |
+| effort_choice_RT | How quickly they selected high or low effort (seconds) |
+| Switch | Whether current trial is a switch (true) or repetition trial (false) |
+| TS_correct | Accuracy of response in the task-switching part of the DST (0 = incorrect, 1 = correct) |
+| TS_RT | Reaction time in task switching (seconds) |
+| Session | Session number |
+
+For `cognitive-effort-demographics.csv`:
+
+| Variable | Description |
+|----|-------------|
+| ID | Participant ID |
+| Gender | Participant gender (0 = male, 1 = female) |
+| Age | Participant age, years |
+| BMI | Participant's body mass index |
+| GAD | Score on a generalized anxiety disorder scale (details not specified) |
+| PHQ | Score on the patient health questionnaire (details not specified) |
+| BAS_Drive | Behavioral Activation System subscale score for drive; higher = higher persistence toward goals |
+| BAS_Fun_seeking | Behavioral Activation System subscale score  for fun-seeking behavior; higher = higher desire for fun, novel things |
+| BAS_Reward_responsiveness | Behavioral Activation System subscale score for reward responsiveness; higher = greater responsiveness to rewards |
+| BAS_overall | Overall Behavioral Activation System score (sum of three subscale scores) |
+| BISBAS_dummy_items | Score on the 4 filler questions on the BIS/BAS scales |
+| BIS | Score on the Behavioral Inhibition System scale; higher = experience greater anxiety/inhibition about possible negative consequences of actions |
+| DAS | Score on the [Dimensional Apathy Scale](https://das.psy.ed.ac.uk/); higher = more lack of motivation toward goal-directed behaviors |
+| NFC | Score on the Need for Cognition Scale (higher = higher tendency to engage in and enjoy effortful cognitive endeavors) |
+| PSS | Score on the Perceived Stress Scale (higher = respondent finds their life unpredictable, uncontrollable, or overloading) |
+| SHAPS | Score on the Snaith-Hamilton Affective Pleasure Scale (measures ability to feel pleasure; higher = less ability) |
+| UPPS_P_Negative_urgency | UPPS-P Impulsive Behavior Scale; subscale score for negative urgency, the tendency to act impulsively due to negative emotions |
+| UPPS_P_Perseverance | UPPS-P Impulsive Behavior Scale; subscale score for lack of perseverance, the tendency to not complete tasks |
+| UPPS_P_Positive_urgency | UPPS-P Impulsive Behavior Scale; subscale score for positive urgency, the tendency to act impulsively due to positive emotions |
+| UPPS_P_Premediation | UPPS-P Impulsive Behavior Scale; subscale score for lack of premeditation, the tendency to act without forethought |
+| UPPS_P_Sensation_seeking | UPPS-P Impulsive Behavior Scale; subscale score for sensation-seeking, the tendency to pursue novel or thrilling experiences |
+| UPPS_P_overall | Overall UPPS-P Impulsive Behavior Scale score |
+| systolic_[condition]_x | Systolic blood pressure at time point x in this condition (treatment or control); e.g., `systolic_control_2` is systolic blood pressure in the control condition at time 2 |
+| diastolic_[condition]_x | Diastolic blood pressure at time point x in this condition |
+| heart_rate_[condition]_x | Heart rate at time point x in this condition |
+| PANAS_pos_[condition]_x | Score for the positive scale of the Positive and Negative Affect Schedule at time point x in this condition |
+| PANAS_neg_[condition]_x | Score for the positive scale of the Positive and Negative Affect Schedule at time point x in this condition |
+| cort_[condition]_x | Salivary cortisol level at time point x in this condition |
+| TSST_difficult_[condition] | Participant's assessment of difficulty for the stress manipulation in this condition, on a scale from 0 (not at all) to 100 (very much) |
+| TSST_unpleasant_[condition] | Participant's assessment of unpleasantness for the stress manipulation in this condition, on a scale from 0 (not at all) to 100 (very much) |
+| TSST_stressful_[condition] | Participant's assessment of stressfulness for the stress manipulation in this condition, on a scale from 0 (not at all) to 100 (very much) |
+| session_order | Order of stress and control conditions experienced by this participant (1 = control then stress, 2 = stress then control) |
+| OSPAN_math_errors_[condition] | Number of errors in the math equations in the Operation Span task |
+| OSPAN_score_[condition] | Score in the Operation Span task |
+| OSPAN_total_[condition] | Total remembered letters in the Operation Span task |
+
+## Questions
+
+1. Examine how treatments were allocated. Some subjects were stressed on their
+   first day; others on the second day (`session_order`). Look at the
+   distribution of treatment assignment by participant gender. Based on what you
+   see, describe the experimental design: what kind of study was this and how
+   were subjects randomized?
+
+2. In an experiment, it's important to verify that the intervention does what it
+   was supposed to. In this case, the Trier social stress test (TSST) was
+   supposed to stress the participants. This was evaluated with three questions
+   asking the participants about the difficulty, unpleasantness, and
+   stressfulness of the task (the three `TSST_` variables). Test whether
+   participants reported higher difficulty, unpleasantness, and stress in the
+   treatment condition than in the control.
+
+   Salivary cortisol also measures the body's stress response. Test whether
+   salivary cortisol levels were higher in the treatment condition than in the
+   control.
+
+3. The outcome measure is whether participants chose the low-effort or
+   high-effort options. Calculate the percentage of time each participant chose
+   the low-effort option in each experimental condition. Test whether the
+   proportions are different between conditions.
+
+4. We may expect there to be subject-level effects: some subjects generally
+   prefer the higher-effort option more, other prefer it less. This suggests
+   using a random or mixed effects model. Fit a logistic regression predicting
+   the subject's choice, using a fixed effect for condition and a random effect
+   for subject.
+
+   There could also be block and session effects. (Recall that the DST task is
+   done in four successive blocks, so subjects may gradually get better at it,
+   or change their preference over time. They may also have different
+   performance on their second day in the lab.) Extend your model to account for
+   this. Is there evidence of block and session effects?
+
+5. Any effect might be heterogeneous: different subjects might respond
+   differently to stress. One possible hypothesis is that subjects who enjoy
+   cognitive effort are less likely to switch to the low-effort option,
+   regardless of stress level. The Need for Cognition scale (NFC), available in
+   the demographic data, tries to measure how much the subjects participate in
+   and enjoy cognitive effort. Evaluate whether the effects depend on NFC score.
+
+   (This analysis was not conducted in the paper, which did not mention NFC
+   despite it being present in the data.)
+
+6. Besides effort preference, it may also be interesting to know if stressed
+   subjects perform more poorly on the task (are less accurate). Use a mixed
+   effects logistic regression to answer this question.
+
+7. It also may be interesting to know whether stressed subjects take *longer* to
+   decide on the effort and then to do the task, due to stress slowing their
+   cognitive effort. You can use the `effort_choice_RT` and `TS_RT` variables to
+   measure these times.
+
+   Evaluate the distribution of these variables. What kind of model would be
+   necessary to answer the question, and would transformations be necessary?
+   Decide on a model and answer the question for each reaction time.
+
+## References
+
+Bogdanov, M., Nitschke, J. P., LoParco, S., Bartz, J. A., & Otto, A. R. (2021).
+Acute Psychosocial Stress Increases Cognitive-Effort Avoidance. *Psychological
+Science*, 32(9), 1463-1475. <https://doi.org/10.1177/09567976211005465>
+
+Data via OSF, at <https://doi.org/10.17605/OSF.IO/26W4U>
