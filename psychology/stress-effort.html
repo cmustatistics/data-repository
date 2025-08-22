@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2025-08-22">
+<meta name="description" content="Cognitive performance is diminished when we’re highly stressed. This experiment tried to evaluate whether this is because stressed subjects choose to avoid tasks that require cognitive effort. Use mixed effects models to evaluate the experimental results.">
+
+<title>Stress and cognitive-effort avoidance – CMU S&amp;DS Data Repository</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ca8d540a675d9487c69a7abe1948c93f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.refsmmat.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/stress-effort.html">Stress and cognitive-effort avoidance</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Astronomy</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Biology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Crime and Justice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Traffic stops in Connecticut</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/mapping-police-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping Police Violence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Daily Life</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/college-scorecard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">US College Scorecard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/fandango_movie_ratings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fandango movie ratings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/rtg-tinned-fish.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RTG tinned fish</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Language</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../language/hap-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Human-AI Parallel Corpus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Medicine</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/meningitis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distinguishing bacterial and viral meningitis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Money</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/european-ham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European protected ham</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Politics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/jan-6-insurrectionists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">January 6th insurrectionists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/social_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Social capital, income inequality, and political outcomes across US counties</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/standard-cities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fiscally standardized cities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">World Development Indicators</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bias in soccer refereeing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/moral-rebels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resenting moral rebels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/stress-effort.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Stress and cognitive-effort avoidance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Social</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bechdel_test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bechdel Test and box office results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bostonhousing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Boston Housing and fairness assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/costa_rica_households.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Costa Rican household poverty level</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/data-viz-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey of data visualization courses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/elite-college-admissions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elite college admissions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/migrants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey on attitude towards migrants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Sports</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/sprinters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fastest 100m sprint times</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/stress-effort.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../psychology/cmu-sleep.html">Psychology</a></li><li class="breadcrumb-item"><a href="../psychology/stress-effort.html">Stress and cognitive-effort avoidance</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Stress and cognitive-effort avoidance</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">experimental design</div>
+    <div class="quarto-category">hierarchical model</div>
+    <div class="quarto-category">logistic regression</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Cognitive performance is diminished when we’re highly stressed. This experiment tried to evaluate whether this is because stressed subjects <em>choose</em> to avoid tasks that require cognitive effort. Use mixed effects models to evaluate the experimental results.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alex Reinhart </p>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 22, 2025</p>
+    </div>
+  </div>
+  
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/cognitive-effort.csv">cognitive-effort.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/cognitive-effort-demographics.csv">cognitive-effort-demographics.csv</a>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2021</p>
+    </div>
+  </div>
+  </div>
+
+
+</header>
+
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>When people are stressed, they often aren’t as good at cognitively demanding tasks. Psychologists have documented that learning, memory, and decision-making performance is impaired when people are acutely stressed, and have developed various theories to explain this. Roughly speaking, there are two competing explanations:</p>
+<ol type="1">
+<li>When we are stressed, we reallocate cognitive effort from executive function (decision-making) to salience (controlling our attention and looking for important information), which impairs our executive function</li>
+<li>People who are stressed don’t <em>want</em> to exert cognitive effort, and choose to exert less, regardless of how much the stress has caused us to reallocate it</li>
+</ol>
+<p>Option 2 should make sense to anyone who has chosen to watch Netflix on the sofa after a stressful workday.</p>
+<p>To test which theory better explains behavior, we need an experiment where we can manipulate the stress level of the subjects, then see whether they <em>choose</em> to exert cognitive effort or not. Bogdanov et al.&nbsp;(2021) designed such an experiment.</p>
+<p>In their experiment, subjects were stressed using the <a href="https://en.wikipedia.org/wiki/Trier_social_stress_test">Trier social stress test</a> (TSST), which has subjects prepare and give a 5-minute presentation in front of three impassive judges, then do a mental arithmetic task in front of them. This has been shown to reliably stress people out.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Subjects then performed a demand-selection task (DST), a simple procedure where subjects click one of two options in a colorful diagram, and then must either judge the evenness/oddness of a number or judge whether it is larger or smaller than 5. The tasks are easy, but depending on the subject’s choice, they may have to switch between them more or less option: in one choice, they do the same task (evenness or magnitude) repeatedly with probability 0.9, in the other choice they usually have to switch between each trial (repeat probability 0.1). Constantly switching the task takes cognitive effort, so generally subjects prefer the low-effort option.</p>
+<p>Thus, the researchers hypothesized:</p>
+<blockquote class="blockquote">
+<p>Accordingly, we predicted that if stress engenders a withdrawal of effort—either by increasing the subjective costs or decreasing the perceived benefits of exerting cognitive effort—we should observe an even stronger demand-avoidance effect in the stress condition relative to the control condition.</p>
+</blockquote>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The study has 20 participants. Each participant did one trial in the stressed condition (with the TSST) and one in the control condition (no TSST), seven days apart. On the first day they also took various psychological questionnaires.</p>
+<p>One data file (<code>cognitive-effort-demographics.csv</code>) gives the demographics and questionnaire results for each subject.</p>
+<p>The other data file (<code>cognitive-effort.csv</code>) gives the result of every single DST trial for each subject. In each trial, the subject is presented with the choice, makes their choice, is presented with the number, and must perform the task. The time they take to choose and the time they take to do the task are recorded, as well as their choice, whether the task switched, and whether they did the task correctly. The trials are divided into blocks of roughly 70 individual trials; each subject did 4 blocks.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/cognitive-effort.csv "> cognitive-effort.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["...1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["PID"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["condition"],"name":[3],"type":["chr"],"align":["left"]},{"label":["block"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["effort_choice"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["effort_choice_RT"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Switch"],"name":[7],"type":["lgl"],"align":["right"]},{"label":["TS_correct"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["TS_RT"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Session"],"name":[10],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"1","3":"control","4":"1","5":"0","6":"11.2470136","7":"FALSE","8":"1","9":"2.0532758","10":"1"},{"1":"2","2":"1","3":"control","4":"1","5":"1","6":"0.6640708","7":"FALSE","8":"1","9":"1.4923234","10":"1"},{"1":"3","2":"1","3":"control","4":"1","5":"1","6":"1.5165855","7":"FALSE","8":"1","9":"1.1255999","10":"1"},{"1":"4","2":"1","3":"control","4":"1","5":"0","6":"0.7154713","7":"TRUE","8":"1","9":"0.9324055","10":"1"},{"1":"5","2":"1","3":"control","4":"1","5":"1","6":"0.7382594","7":"FALSE","8":"1","9":"1.8269071","10":"1"},{"1":"6","2":"1","3":"control","4":"1","5":"1","6":"0.5493192","7":"TRUE","8":"0","9":"0.9908680","10":"1"},{"1":"7","2":"1","3":"control","4":"1","5":"0","6":"0.4849106","7":"TRUE","8":"1","9":"2.0479764","10":"1"},{"1":"8","2":"1","3":"control","4":"1","5":"0","6":"0.9578927","7":"TRUE","8":"0","9":"1.8219752","10":"1"},{"1":"9","2":"1","3":"control","4":"1","5":"1","6":"0.9754756","7":"FALSE","8":"0","9":"2.8856564","10":"1"},{"1":"10","2":"1","3":"control","4":"1","5":"1","6":"0.6212731","7":"FALSE","8":"1","9":"4.6653565","10":"1"},{"1":"11","2":"1","3":"control","4":"1","5":"1","6":"0.7134101","7":"FALSE","8":"1","9":"0.8268035","10":"1"},{"1":"12","2":"1","3":"control","4":"1","5":"1","6":"0.7171502","7":"FALSE","8":"1","9":"1.4703097","10":"1"},{"1":"13","2":"1","3":"control","4":"1","5":"0","6":"0.9896342","7":"TRUE","8":"1","9":"2.3309132","10":"1"},{"1":"14","2":"1","3":"control","4":"1","5":"0","6":"0.4790622","7":"TRUE","8":"0","9":"3.4110348","10":"1"},{"1":"15","2":"1","3":"control","4":"1","5":"0","6":"0.8406707","7":"TRUE","8":"1","9":"1.8207694","10":"1"},{"1":"16","2":"1","3":"control","4":"1","5":"1","6":"0.4200622","7":"FALSE","8":"1","9":"1.9133126","10":"1"},{"1":"17","2":"1","3":"control","4":"1","5":"1","6":"0.6996487","7":"FALSE","8":"1","9":"0.7014697","10":"1"},{"1":"18","2":"1","3":"control","4":"1","5":"1","6":"1.1442275","7":"FALSE","8":"0","9":"2.6394684","10":"1"},{"1":"19","2":"1","3":"control","4":"1","5":"0","6":"0.4628154","7":"TRUE","8":"0","9":"1.2508264","10":"1"},{"1":"20","2":"1","3":"control","4":"1","5":"0","6":"0.5439703","7":"TRUE","8":"1","9":"4.7917916","10":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/cognitive-effort-demographics.csv "> cognitive-effort-demographics.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["...1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["ID"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Gender"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Age"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["BMI"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["GAD"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["PHQ"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["BAS_Drive"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BAS_Fun_seeking"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["BAS_overall"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["BAS_Reward_responsiveness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["BIS"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["BISBAS_dummy_items"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["DAS"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["NFC"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["PSS"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["SHAPS"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["UPPS_P_Negative_urgency"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["UPPS_P_Perseverance"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["UPPS_P_Positive_urgency"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["UPPS_P_Premediation"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["UPPS_P_Sensation_seeking"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["UPPS_P_overall"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["systolic_control_1"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["systolic_control_2"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["systolic_control_3"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["systolic_control_4"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["systolic_control_5"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["systolic_control_6"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["systolic_stress_1"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["systolic_stress_2"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["systolic_stress_3"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["systolic_stress_4"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["systolic_stress_5"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["systolic_stress_6"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["diastolic_control_1"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["diastolic_control_2"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["diastolic_control_3"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["diastolic_control_4"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["diastolic_control_5"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["diastolic_control_6"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["diastolic_stress_1"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["diastolic_stress_2"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["diastolic_stress_3"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["diastolic_stress_4"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["diastolic_stress_5"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["diastolic_stress_6"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["heart_rate_control_1"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["heart_rate_control_2"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["heart_rate_control_3"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["heart_rate_control_4"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["heart_rate_control_5"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["heart_rate_control_6"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["heart_rate_stress_1"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["heart_rate_stress_2"],"name":[55],"type":["dbl"],"align":["right"]},{"label":["heart_rate_stress_3"],"name":[56],"type":["dbl"],"align":["right"]},{"label":["heart_rate_stress_4"],"name":[57],"type":["dbl"],"align":["right"]},{"label":["heart_rate_stress_5"],"name":[58],"type":["dbl"],"align":["right"]},{"label":["heart_rate_stress_6"],"name":[59],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_control_1"],"name":[60],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_control_2"],"name":[61],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_control_3"],"name":[62],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_control_4"],"name":[63],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_control_5"],"name":[64],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_stress_1"],"name":[65],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_stress_2"],"name":[66],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_stress_3"],"name":[67],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_stress_4"],"name":[68],"type":["dbl"],"align":["right"]},{"label":["PANAS_pos_stress_5"],"name":[69],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_control_1"],"name":[70],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_control_2"],"name":[71],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_control_3"],"name":[72],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_control_4"],"name":[73],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_control_5"],"name":[74],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_stress_1"],"name":[75],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_stress_2"],"name":[76],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_stress_3"],"name":[77],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_stress_4"],"name":[78],"type":["dbl"],"align":["right"]},{"label":["PANAS_neg_stress_5"],"name":[79],"type":["dbl"],"align":["right"]},{"label":["cort_control_1"],"name":[80],"type":["dbl"],"align":["right"]},{"label":["cort_control_2"],"name":[81],"type":["dbl"],"align":["right"]},{"label":["cort_control_3"],"name":[82],"type":["dbl"],"align":["right"]},{"label":["cort_control_4"],"name":[83],"type":["dbl"],"align":["right"]},{"label":["cort_control_5"],"name":[84],"type":["dbl"],"align":["right"]},{"label":["cort_stress_1"],"name":[85],"type":["dbl"],"align":["right"]},{"label":["cort_stress_2"],"name":[86],"type":["dbl"],"align":["right"]},{"label":["cort_stress_3"],"name":[87],"type":["dbl"],"align":["right"]},{"label":["cort_stress_4"],"name":[88],"type":["dbl"],"align":["right"]},{"label":["cort_stress_5"],"name":[89],"type":["dbl"],"align":["right"]},{"label":["TSST_difficult_control"],"name":[90],"type":["dbl"],"align":["right"]},{"label":["TSST_unpleasant_control"],"name":[91],"type":["dbl"],"align":["right"]},{"label":["TSST_stressful_control"],"name":[92],"type":["dbl"],"align":["right"]},{"label":["TSST_difficult_stress"],"name":[93],"type":["dbl"],"align":["right"]},{"label":["TSST_unpleasant_stress"],"name":[94],"type":["dbl"],"align":["right"]},{"label":["TSST_stressful_stress"],"name":[95],"type":["dbl"],"align":["right"]},{"label":["session_order"],"name":[96],"type":["dbl"],"align":["right"]},{"label":["OSPAN_math_errors_control"],"name":[97],"type":["dbl"],"align":["right"]},{"label":["OSPAN_score_control"],"name":[98],"type":["dbl"],"align":["right"]},{"label":["OSPAN_total_control"],"name":[99],"type":["dbl"],"align":["right"]},{"label":["OSPAN_math_errors_stress"],"name":[100],"type":["dbl"],"align":["right"]},{"label":["OSPAN_score_stress"],"name":[101],"type":["dbl"],"align":["right"]},{"label":["OSPAN_total_stress"],"name":[102],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"1","3":"1","4":"26","5":"25.30","6":"0","7":"0","8":"12","9":"12","10":"41","11":"17","12":"20","13":"13","14":"30","15":"66","16":"32","17":"0","18":"8","19":"13","20":"14","21":"14","22":"10","23":"59","24":"126.0","25":"128.0","26":"122.0","27":"121.5","28":"120.0","29":"125.5","30":"130.0","31":"139.0","32":"119.0","33":"128.5","34":"113.5","35":"121.0","36":"77.5","37":"80.5","38":"80.5","39":"85.0","40":"79.5","41":"84.0","42":"78.0","43":"88.5","44":"78.5","45":"83.0","46":"80.0","47":"77.0","48":"72.0","49":"70.5","50":"75.5","51":"72.0","52":"72.5","53":"68.5","54":"74.0","55":"83.5","56":"71.5","57":"73.0","58":"70.0","59":"71.5","60":"37","61":"39","62":"38","63":"34","64":"34","65":"31","66":"35","67":"31","68":"27","69":"24","70":"16","71":"16","72":"15","73":"15","74":"23","75":"13","76":"13","77":"12","78":"12","79":"11","80":"2.91","81":"2.31","82":"2.28","83":"1.74","84":"1.65","85":"3.20","86":"3.70","87":"4.22","88":"3.85","89":"3.04","90":"NA","91":"NA","92":"NA","93":"50","94":"70","95":"60","96":"1","97":"1","98":"30","99":"30","100":"2","101":"30","102":"30"},{"1":"2","2":"2","3":"0","4":"23","5":"18.70","6":"1","7":"2","8":"11","9":"14","10":"40","11":"15","12":"19","13":"13","14":"16","15":"64","16":"19","17":"3","18":"6","19":"11","20":"14","21":"12","22":"7","23":"50","24":"134.0","25":"136.0","26":"126.0","27":"129.0","28":"NA","29":"126.0","30":"128.5","31":"147.0","32":"128.5","33":"131.0","34":"112.5","35":"129.5","36":"75.0","37":"83.5","38":"79.5","39":"76.5","40":"NA","41":"80.5","42":"76.5","43":"77.5","44":"76.5","45":"75.0","46":"77.5","47":"77.5","48":"78.0","49":"57.5","50":"66.0","51":"58.0","52":"NA","53":"59.0","54":"68.5","55":"66.5","56":"68.5","57":"49.5","58":"66.0","59":"62.5","60":"36","61":"37","62":"NA","63":"NA","64":"34","65":"31","66":"29","67":"33","68":"35","69":"35","70":"11","71":"11","72":"NA","73":"NA","74":"11","75":"11","76":"11","77":"11","78":"11","79":"10","80":"3.95","81":"7.75","82":"5.44","83":"0.00","84":"4.19","85":"3.57","86":"7.69","87":"9.24","88":"6.64","89":"4.25","90":"30","91":"60","92":"10","93":"30","94":"60","95":"80","96":"1","97":"3","98":"30","99":"30","100":"3","101":"24","102":"28"},{"1":"3","2":"3","3":"1","4":"24","5":"22.90","6":"4","7":"8","8":"12","9":"11","10":"41","11":"18","12":"21","13":"10","14":"20","15":"68","16":"18","17":"0","18":"9","19":"13","20":"11","21":"11","22":"8","23":"52","24":"125.0","25":"122.5","26":"125.5","27":"118.5","28":"121.5","29":"110.5","30":"115.5","31":"159.0","32":"139.5","33":"125.0","34":"128.0","35":"113.5","36":"84.0","37":"80.5","38":"81.0","39":"80.0","40":"83.0","41":"75.0","42":"75.5","43":"101.5","44":"62.5","45":"77.0","46":"83.5","47":"81.5","48":"88.0","49":"83.5","50":"81.0","51":"80.0","52":"83.5","53":"85.0","54":"88.0","55":"121.5","56":"95.0","57":"78.0","58":"81.0","59":"81.5","60":"23","61":"17","62":"16","63":"16","64":"16","65":"16","66":"20","67":"16","68":"13","69":"13","70":"12","71":"12","72":"10","73":"10","74":"10","75":"10","76":"19","77":"12","78":"10","79":"11","80":"3.28","81":"3.73","82":"3.63","83":"3.69","84":"2.73","85":"4.73","86":"9.51","87":"10.99","88":"12.14","89":"7.43","90":"30","91":"60","92":"30","93":"70","94":"90","95":"90","96":"1","97":"1","98":"21","99":"24","100":"4","101":"19","102":"22"},{"1":"4","2":"4","3":"0","4":"30","5":"19.90","6":"1","7":"0","8":"12","9":"11","10":"39","11":"16","12":"16","13":"12","14":"30","15":"55","16":"27","17":"2","18":"10","19":"11","20":"12","21":"12","22":"8","23":"53","24":"125.5","25":"132.0","26":"122.0","27":"119.0","28":"125.0","29":"115.5","30":"115.0","31":"136.0","32":"134.5","33":"124.0","34":"124.5","35":"129.5","36":"87.0","37":"91.0","38":"81.0","39":"79.0","40":"86.0","41":"81.5","42":"78.5","43":"102.5","44":"91.5","45":"85.5","46":"82.0","47":"82.0","48":"67.0","49":"68.0","50":"68.5","51":"68.0","52":"69.0","53":"73.5","54":"81.0","55":"90.5","56":"79.5","57":"74.0","58":"77.0","59":"71.5","60":"30","61":"30","62":"30","63":"28","64":"31","65":"30","66":"30","67":"30","68":"30","69":"30","70":"16","71":"15","72":"12","73":"14","74":"17","75":"10","76":"16","77":"10","78":"10","79":"12","80":"2.08","81":"1.35","82":"1.08","83":"1.00","84":"1.01","85":"5.50","86":"4.36","87":"14.24","88":"12.41","89":"6.56","90":"40","91":"40","92":"40","93":"50","94":"90","95":"50","96":"1","97":"NA","98":"NA","99":"NA","100":"4","101":"19","102":"23"},{"1":"5","2":"5","3":"1","4":"26","5":"19.50","6":"0","7":"2","8":"10","9":"10","10":"38","11":"18","12":"22","13":"13","14":"30","15":"65","16":"31","17":"0","18":"11","19":"14","20":"12","21":"13","22":"12","23":"62","24":"120.0","25":"116.0","26":"111.5","27":"116.0","28":"114.5","29":"118.5","30":"118.0","31":"129.5","32":"118.5","33":"112.0","34":"111.5","35":"107.5","36":"81.5","37":"82.0","38":"83.5","39":"78.5","40":"81.0","41":"81.0","42":"79.0","43":"96.5","44":"82.5","45":"82.0","46":"78.0","47":"81.0","48":"95.0","49":"87.0","50":"91.5","51":"86.0","52":"88.0","53":"85.0","54":"88.0","55":"85.5","56":"87.0","57":"86.5","58":"89.0","59":"83.5","60":"18","61":"22","62":"10","63":"10","64":"10","65":"10","66":"11","67":"10","68":"11","69":"10","70":"10","71":"10","72":"10","73":"11","74":"11","75":"10","76":"12","77":"10","78":"10","79":"11","80":"4.43","81":"2.35","82":"1.61","83":"1.64","84":"1.41","85":"3.33","86":"2.05","87":"1.93","88":"1.96","89":"1.87","90":"40","91":"40","92":"40","93":"80","94":"70","95":"70","96":"1","97":"1","98":"4","99":"26","100":"1","101":"24","102":"27"},{"1":"6","2":"6","3":"1","4":"18","5":"27.59","6":"1","7":"0","8":"11","9":"16","10":"46","11":"19","12":"27","13":"15","14":"34","15":"45","16":"32","17":"0","18":"7","19":"12","20":"9","21":"13","22":"6","23":"47","24":"114.5","25":"114.0","26":"108.0","27":"151.5","28":"140.0","29":"122.0","30":"116.0","31":"154.5","32":"141.5","33":"140.0","34":"161.5","35":"104.5","36":"76.0","37":"98.0","38":"73.0","39":"109.0","40":"110.0","41":"77.5","42":"81.0","43":"94.5","44":"83.0","45":"74.0","46":"117.5","47":"87.5","48":"87.0","49":"70.0","50":"85.0","51":"87.5","52":"100.0","53":"87.5","54":"85.0","55":"119.0","56":"91.5","57":"85.5","58":"95.0","59":"87.0","60":"16","61":"18","62":"18","63":"16","64":"21","65":"22","66":"28","67":"28","68":"21","69":"18","70":"13","71":"10","72":"10","73":"12","74":"10","75":"10","76":"26","77":"19","78":"19","79":"15","80":"8.66","81":"5.86","82":"4.54","83":"4.22","84":"3.28","85":"3.56","86":"2.50","87":"5.14","88":"4.29","89":"2.39","90":"0","91":"0","92":"0","93":"80","94":"100","95":"100","96":"2","97":"1","98":"30","99":"30","100":"2","101":"30","102":"30"},{"1":"7","2":"7","3":"0","4":"25","5":"29.00","6":"3","7":"3","8":"10","9":"8","10":"34","11":"16","12":"23","13":"12","14":"33","15":"57","16":"23","17":"0","18":"11","19":"14","20":"16","21":"12","22":"10","23":"63","24":"153.5","25":"131.5","26":"128.0","27":"139.0","28":"121.5","29":"123.5","30":"133.0","31":"149.5","32":"139.5","33":"133.5","34":"127.0","35":"130.0","36":"115.5","37":"84.0","38":"82.5","39":"92.5","40":"82.0","41":"81.0","42":"90.5","43":"105.0","44":"86.5","45":"84.5","46":"88.0","47":"85.0","48":"85.5","49":"81.5","50":"88.5","51":"86.0","52":"83.5","53":"87.0","54":"72.0","55":"74.0","56":"69.0","57":"70.0","58":"74.0","59":"73.0","60":"20","61":"19","62":"22","63":"22","64":"24","65":"24","66":"22","67":"23","68":"21","69":"18","70":"10","71":"10","72":"10","73":"10","74":"10","75":"10","76":"10","77":"10","78":"10","79":"10","80":"2.82","81":"2.26","82":"2.15","83":"2.35","84":"2.00","85":"2.74","86":"5.18","87":"6.08","88":"5.08","89":"2.77","90":"30","91":"20","92":"20","93":"50","94":"80","95":"50","96":"2","97":"3","98":"30","99":"30","100":"1","101":"15","102":"21"},{"1":"8","2":"8","3":"1","4":"21","5":"22.30","6":"2","7":"1","8":"12","9":"13","10":"44","11":"19","12":"22","13":"13","14":"31","15":"66","16":"37","17":"1","18":"9","19":"11","20":"12","21":"13","22":"11","23":"56","24":"106.0","25":"100.5","26":"95.5","27":"99.0","28":"100.0","29":"94.5","30":"104.0","31":"116.0","32":"112.0","33":"109.5","34":"106.5","35":"107.0","36":"67.5","37":"69.5","38":"76.5","39":"73.5","40":"69.0","41":"68.5","42":"65.5","43":"75.5","44":"72.5","45":"70.5","46":"66.5","47":"71.5","48":"93.5","49":"86.0","50":"86.5","51":"92.5","52":"94.5","53":"90.5","54":"86.5","55":"88.5","56":"88.0","57":"85.0","58":"81.0","59":"81.0","60":"20","61":"12","62":"12","63":"12","64":"11","65":"11","66":"10","67":"11","68":"11","69":"13","70":"10","71":"10","72":"10","73":"10","74":"10","75":"11","76":"22","77":"14","78":"12","79":"12","80":"2.72","81":"1.49","82":"1.22","83":"1.46","84":"1.17","85":"3.86","86":"6.80","87":"9.51","88":"8.39","89":"6.31","90":"10","91":"10","92":"10","93":"100","94":"100","95":"100","96":"1","97":"4","98":"30","99":"30","100":"3","101":"30","102":"30"},{"1":"9","2":"9","3":"1","4":"23","5":"22.30","6":"0","7":"2","8":"14","9":"13","10":"47","11":"20","12":"24","13":"12","14":"19","15":"69","16":"26","17":"1","18":"11","19":"10","20":"13","21":"13","22":"8","23":"55","24":"115.0","25":"110.0","26":"108.0","27":"107.0","28":"107.0","29":"113.0","30":"116.5","31":"138.5","32":"121.5","33":"109.5","34":"114.5","35":"111.0","36":"82.0","37":"76.0","38":"76.0","39":"75.0","40":"76.0","41":"77.5","42":"78.5","43":"101.5","44":"87.0","45":"78.5","46":"75.5","47":"80.0","48":"85.5","49":"74.0","50":"73.0","51":"78.5","52":"78.0","53":"77.5","54":"74.0","55":"85.0","56":"62.5","57":"65.0","58":"68.5","59":"68.0","60":"36","61":"30","62":"28","63":"24","64":"26","65":"28","66":"29","67":"22","68":"24","69":"19","70":"13","71":"10","72":"10","73":"10","74":"11","75":"11","76":"13","77":"10","78":"10","79":"11","80":"5.29","81":"4.87","82":"3.60","83":"3.41","84":"3.18","85":"5.30","86":"4.54","87":"5.98","88":"5.52","89":"4.45","90":"10","91":"0","92":"10","93":"60","94":"80","95":"70","96":"2","97":"3","98":"24","99":"25","100":"3","101":"26","102":"28"},{"1":"10","2":"10","3":"1","4":"24","5":"21.80","6":"3","7":"1","8":"14","9":"14","10":"44","11":"16","12":"16","13":"10","14":"24","15":"64","16":"28","17":"0","18":"7","19":"13","20":"13","21":"11","22":"8","23":"52","24":"123.0","25":"103.0","26":"54.5","27":"108.5","28":"112.0","29":"104.5","30":"116.0","31":"129.0","32":"118.0","33":"115.0","34":"114.0","35":"109.0","36":"67.0","37":"71.0","38":"70.5","39":"59.0","40":"71.5","41":"55.0","42":"72.0","43":"68.5","44":"82.0","45":"81.0","46":"79.0","47":"76.0","48":"85.5","49":"76.5","50":"77.0","51":"80.0","52":"78.0","53":"83.0","54":"81.0","55":"71.0","56":"71.5","57":"72.0","58":"74.0","59":"76.5","60":"34","61":"33","62":"31","63":"27","64":"29","65":"37","66":"34","67":"33","68":"31","69":"31","70":"10","71":"10","72":"11","73":"10","74":"11","75":"10","76":"12","77":"10","78":"10","79":"10","80":"2.84","81":"1.58","82":"1.21","83":"1.09","84":"0.80","85":"2.57","86":"1.49","87":"1.37","88":"1.06","89":"1.02","90":"40","91":"30","92":"40","93":"60","94":"50","95":"50","96":"2","97":"2","98":"30","99":"30","100":"2","101":"19","102":"26"},{"1":"11","2":"11","3":"1","4":"22","5":"17.60","6":"0","7":"1","8":"11","9":"14","10":"42","11":"17","12":"25","13":"11","14":"29","15":"61","16":"24","17":"0","18":"8","19":"11","20":"13","21":"14","22":"10","23":"56","24":"120.0","25":"125.0","26":"126.0","27":"126.0","28":"125.0","29":"127.5","30":"117.5","31":"124.0","32":"115.5","33":"125.5","34":"120.0","35":"113.0","36":"84.5","37":"88.0","38":"87.0","39":"89.5","40":"88.0","41":"88.5","42":"80.5","43":"89.5","44":"84.0","45":"83.5","46":"79.0","47":"80.5","48":"93.0","49":"78.5","50":"82.0","51":"77.5","52":"106.0","53":"73.5","54":"88.5","55":"85.5","56":"80.0","57":"75.0","58":"73.0","59":"71.5","60":"19","61":"15","62":"15","63":"12","64":"11","65":"16","66":"10","67":"10","68":"10","69":"10","70":"12","71":"11","72":"10","73":"10","74":"10","75":"10","76":"13","77":"11","78":"11","79":"10","80":"4.54","81":"3.24","82":"3.24","83":"2.70","84":"2.26","85":"5.95","86":"9.72","87":"12.94","88":"7.72","89":"4.85","90":"60","91":"60","92":"70","93":"100","94":"100","95":"100","96":"1","97":"0","98":"30","99":"30","100":"0","101":"24","102":"38"},{"1":"12","2":"12","3":"1","4":"23","5":"18.80","6":"6","7":"7","8":"15","9":"8","10":"43","11":"20","12":"27","13":"10","14":"21","15":"51","16":"27","17":"1","18":"11","19":"14","20":"12","21":"14","22":"12","23":"63","24":"107.0","25":"112.5","26":"116.0","27":"109.5","28":"112.0","29":"109.5","30":"118.0","31":"133.5","32":"131.5","33":"121.5","34":"100.5","35":"116.0","36":"77.5","37":"86.0","38":"83.0","39":"77.5","40":"77.5","41":"77.5","42":"76.0","43":"89.0","44":"106.5","45":"79.0","46":"72.5","47":"71.0","48":"79.0","49":"80.0","50":"81.0","51":"79.0","52":"79.0","53":"79.0","54":"89.0","55":"95.5","56":"80.0","57":"80.5","58":"79.0","59":"74.0","60":"16","61":"28","62":"28","63":"18","64":"11","65":"10","66":"13","67":"18","68":"12","69":"16","70":"10","71":"13","72":"15","73":"14","74":"15","75":"12","76":"20","77":"16","78":"21","79":"20","80":"2.11","81":"1.55","82":"1.30","83":"1.04","84":"0.93","85":"1.93","86":"2.35","87":"3.69","88":"2.84","89":"1.55","90":"30","91":"0","92":"10","93":"60","94":"100","95":"50","96":"1","97":"2","98":"24","99":"29","100":"8","101":"24","102":"29"},{"1":"13","2":"13","3":"1","4":"24","5":"19.90","6":"4","7":"5","8":"12","9":"12","10":"44","11":"20","12":"22","13":"12","14":"24","15":"59","16":"26","17":"14","18":"8","19":"12","20":"11","21":"13","22":"5","23":"49","24":"164.5","25":"133.0","26":"132.0","27":"130.5","28":"130.0","29":"117.5","30":"128.5","31":"128.5","32":"143.0","33":"126.0","34":"124.5","35":"112.5","36":"121.5","37":"89.0","38":"72.5","39":"77.0","40":"76.5","41":"74.5","42":"96.5","43":"92.0","44":"75.0","45":"85.0","46":"91.5","47":"80.5","48":"109.0","49":"91.0","50":"102.5","51":"96.0","52":"100.5","53":"105.0","54":"102.0","55":"104.5","56":"104.0","57":"104.5","58":"112.0","59":"96.5","60":"32","61":"28","62":"30","63":"30","64":"36","65":"0","66":"0","67":"0","68":"0","69":"0","70":"14","71":"10","72":"12","73":"13","74":"13","75":"0","76":"0","77":"0","78":"0","79":"0","80":"5.67","81":"19.32","82":"18.07","83":"13.60","84":"7.89","85":"6.88","86":"4.39","87":"3.21","88":"3.00","89":"2.66","90":"20","91":"0","92":"10","93":"20","94":"20","95":"20","96":"2","97":"1","98":"25","99":"25","100":"7","101":"8","102":"17"},{"1":"14","2":"14","3":"1","4":"21","5":"28.30","6":"0","7":"0","8":"14","9":"10","10":"42","11":"18","12":"24","13":"14","14":"15","15":"56","16":"32","17":"0","18":"12","19":"15","20":"15","21":"16","22":"11","23":"69","24":"110.5","25":"112.0","26":"108.0","27":"108.5","28":"109.5","29":"109.0","30":"128.0","31":"122.5","32":"114.5","33":"113.0","34":"110.0","35":"114.0","36":"75.0","37":"80.0","38":"77.0","39":"75.5","40":"75.5","41":"76.5","42":"70.0","43":"80.5","44":"82.5","45":"81.5","46":"79.0","47":"76.5","48":"103.5","49":"81.0","50":"78.0","51":"79.0","52":"79.0","53":"77.5","54":"93.5","55":"114.0","56":"95.0","57":"100.5","58":"92.5","59":"87.0","60":"29","61":"30","62":"30","63":"30","64":"27","65":"35","66":"33","67":"33","68":"27","69":"27","70":"11","71":"10","72":"10","73":"10","74":"10","75":"14","76":"13","77":"11","78":"11","79":"11","80":"2.80","81":"2.12","82":"2.48","83":"1.29","84":"1.00","85":"3.56","86":"3.09","87":"3.37","88":"2.55","89":"1.96","90":"10","91":"0","92":"0","93":"50","94":"100","95":"30","96":"2","97":"4","98":"9","99":"18","100":"8","101":"13","102":"20"},{"1":"15","2":"15","3":"1","4":"25","5":"21.40","6":"0","7":"0","8":"5","9":"10","10":"32","11":"17","12":"15","13":"11","14":"9","15":"77","16":"13","17":"1","18":"8","19":"16","20":"16","21":"16","22":"7","23":"63","24":"122.5","25":"120.0","26":"117.0","27":"119.5","28":"118.5","29":"113.0","30":"120.5","31":"142.5","32":"124.5","33":"128.0","34":"118.5","35":"107.0","36":"73.0","37":"75.5","38":"73.0","39":"75.5","40":"70.0","41":"87.0","42":"74.0","43":"79.5","44":"75.5","45":"73.5","46":"74.0","47":"73.5","48":"64.0","49":"70.5","50":"65.5","51":"66.0","52":"71.5","53":"80.5","54":"78.5","55":"82.5","56":"78.0","57":"78.5","58":"72.5","59":"63.5","60":"43","61":"45","62":"45","63":"43","64":"46","65":"45","66":"47","67":"46","68":"46","69":"44","70":"10","71":"10","72":"10","73":"10","74":"11","75":"10","76":"11","77":"10","78":"10","79":"10","80":"4.61","81":"2.77","82":"2.76","83":"2.16","84":"1.59","85":"5.73","86":"2.87","87":"2.95","88":"2.36","89":"1.80","90":"80","91":"50","92":"60","93":"80","94":"60","95":"80","96":"1","97":"2","98":"9","99":"21","100":"3","101":"20","102":"25"},{"1":"16","2":"16","3":"1","4":"18","5":"18.80","6":"1","7":"3","8":"14","9":"14","10":"48","11":"20","12":"25","13":"15","14":"35","15":"64","16":"42","17":"2","18":"10","19":"10","20":"13","21":"10","22":"9","23":"52","24":"106.5","25":"107.0","26":"103.0","27":"102.5","28":"101.0","29":"111.5","30":"111.0","31":"117.5","32":"107.0","33":"100.5","34":"100.0","35":"107.5","36":"69.0","37":"65.5","38":"69.5","39":"69.0","40":"71.0","41":"66.5","42":"73.5","43":"86.0","44":"73.5","45":"70.0","46":"73.5","47":"70.0","48":"74.0","49":"70.0","50":"67.0","51":"71.0","52":"63.5","53":"75.5","54":"90.0","55":"77.0","56":"69.0","57":"74.0","58":"72.0","59":"73.0","60":"30","61":"28","62":"22","63":"30","64":"25","65":"26","66":"24","67":"28","68":"22","69":"26","70":"19","71":"17","72":"16","73":"17","74":"14","75":"13","76":"18","77":"14","78":"14","79":"14","80":"9.61","81":"4.91","82":"3.49","83":"3.53","84":"2.45","85":"6.34","86":"3.29","87":"2.72","88":"2.43","89":"1.86","90":"0","91":"0","92":"0","93":"70","94":"100","95":"80","96":"1","97":"3","98":"30","99":"30","100":"2","101":"19","102":"27"},{"1":"17","2":"17","3":"1","4":"23","5":"18.70","6":"0","7":"0","8":"13","9":"12","10":"40","11":"15","12":"20","13":"12","14":"39","15":"61","16":"27","17":"0","18":"10","19":"12","20":"11","21":"11","22":"9","23":"53","24":"122.5","25":"126.0","26":"124.0","27":"105.0","28":"116.0","29":"119.5","30":"121.5","31":"134.0","32":"120.0","33":"121.5","34":"131.0","35":"127.0","36":"75.0","37":"75.0","38":"77.0","39":"74.5","40":"82.0","41":"82.5","42":"75.0","43":"93.0","44":"92.5","45":"95.5","46":"90.0","47":"97.5","48":"92.5","49":"90.0","50":"87.0","51":"87.0","52":"93.5","53":"94.5","54":"95.5","55":"91.5","56":"80.0","57":"86.5","58":"86.0","59":"83.0","60":"16","61":"13","62":"12","63":"11","64":"13","65":"20","66":"17","67":"12","68":"15","69":"12","70":"12","71":"10","72":"10","73":"20","74":"10","75":"16","76":"15","77":"12","78":"12","79":"11","80":"5.21","81":"3.27","82":"3.11","83":"2.90","84":"1.99","85":"8.17","86":"5.62","87":"8.02","88":"13.05","89":"9.70","90":"10","91":"0","92":"0","93":"20","94":"10","95":"30","96":"2","97":"3","98":"24","99":"26","100":"4","101":"25","102":"28"},{"1":"18","2":"18","3":"0","4":"20","5":"20.10","6":"0","7":"1","8":"12","9":"14","10":"43","11":"17","12":"20","13":"11","14":"18","15":"62","16":"22","17":"0","18":"9","19":"15","20":"13","21":"13","22":"10","23":"60","24":"121.5","25":"125.0","26":"125.0","27":"114.0","28":"125.5","29":"112.0","30":"133.0","31":"151.5","32":"130.0","33":"118.5","34":"131.5","35":"133.0","36":"79.0","37":"82.0","38":"82.0","39":"78.0","40":"76.0","41":"76.0","42":"86.5","43":"91.5","44":"92.0","45":"80.5","46":"85.0","47":"82.0","48":"123.0","49":"96.5","50":"104.5","51":"101.0","52":"97.5","53":"95.0","54":"115.0","55":"147.5","56":"115.0","57":"107.5","58":"99.0","59":"98.0","60":"34","61":"35","62":"34","63":"31","64":"35","65":"30","66":"36","67":"35","68":"33","69":"35","70":"13","71":"13","72":"12","73":"12","74":"11","75":"12","76":"12","77":"12","78":"12","79":"12","80":"1.80","81":"22.87","82":"26.88","83":"16.87","84":"7.82","85":"5.23","86":"13.65","87":"21.33","88":"21.21","89":"15.07","90":"70","91":"70","92":"80","93":"80","94":"80","95":"70","96":"1","97":"3","98":"25","99":"28","100":"1","101":"24","102":"29"},{"1":"19","2":"19","3":"0","4":"21","5":"23.90","6":"0","7":"0","8":"13","9":"13","10":"46","11":"20","12":"22","13":"13","14":"27","15":"74","16":"19","17":"0","18":"8","19":"11","20":"15","21":"13","22":"8","23":"55","24":"132.0","25":"133.0","26":"127.0","27":"132.0","28":"115.5","29":"110.5","30":"127.0","31":"169.0","32":"140.0","33":"136.0","34":"131.0","35":"114.5","36":"74.0","37":"69.5","38":"73.0","39":"73.5","40":"72.0","41":"74.5","42":"77.5","43":"108.0","44":"86.5","45":"83.5","46":"76.0","47":"77.5","48":"94.0","49":"95.5","50":"91.5","51":"88.0","52":"97.0","53":"84.5","54":"80.5","55":"75.0","56":"78.5","57":"85.5","58":"94.0","59":"88.0","60":"23","61":"22","62":"24","63":"20","64":"15","65":"32","66":"32","67":"35","68":"30","69":"26","70":"10","71":"10","72":"10","73":"10","74":"11","75":"12","76":"21","77":"13","78":"12","79":"13","80":"9.69","81":"7.57","82":"6.85","83":"4.92","84":"4.29","85":"14.97","86":"7.86","87":"7.47","88":"4.81","89":"4.45","90":"20","91":"0","92":"0","93":"90","94":"60","95":"80","96":"2","97":"1","98":"4","99":"25","100":"3","101":"25","102":"28"},{"1":"20","2":"20","3":"0","4":"21","5":"24.30","6":"5","7":"5","8":"8","9":"10","10":"33","11":"15","12":"17","13":"8","14":"36","15":"61","16":"32","17":"0","18":"12","19":"10","20":"11","21":"12","22":"9","23":"54","24":"111.0","25":"115.5","26":"110.5","27":"117.5","28":"102.0","29":"115.0","30":"103.0","31":"123.5","32":"110.0","33":"111.0","34":"111.0","35":"109.0","36":"73.0","37":"68.5","38":"74.0","39":"56.0","40":"73.5","41":"69.5","42":"58.5","43":"72.5","44":"76.0","45":"72.5","46":"73.5","47":"72.0","48":"77.5","49":"70.5","50":"65.5","51":"69.5","52":"69.5","53":"64.0","54":"76.0","55":"70.0","56":"71.5","57":"72.0","58":"68.5","59":"74.5","60":"18","61":"20","62":"22","63":"18","64":"16","65":"20","66":"21","67":"21","68":"21","69":"16","70":"14","71":"10","72":"10","73":"10","74":"10","75":"11","76":"10","77":"10","78":"10","79":"10","80":"5.42","81":"4.31","82":"3.42","83":"3.21","84":"4.15","85":"4.47","86":"3.96","87":"4.61","88":"7.06","89":"5.46","90":"20","91":"20","92":"20","93":"70","94":"40","95":"40","96":"2","97":"3","98":"25","99":"28","100":"2","101":"24","102":"26"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<p>For <code>cognitive-effort.csv</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PID</td>
+<td>Participant ID</td>
+</tr>
+<tr class="even">
+<td>condition</td>
+<td>Experimental condition (control or stress)</td>
+</tr>
+<tr class="odd">
+<td>block</td>
+<td>Block of the DST (1 through 4)</td>
+</tr>
+<tr class="even">
+<td>effort_choice</td>
+<td>0 = chose high-effort cue, 1 = chose low-effort cue</td>
+</tr>
+<tr class="odd">
+<td>effort_choice_RT</td>
+<td>How quickly they selected high or low effort (seconds)</td>
+</tr>
+<tr class="even">
+<td>Switch</td>
+<td>Whether current trial is a switch (true) or repetition trial (false)</td>
+</tr>
+<tr class="odd">
+<td>TS_correct</td>
+<td>Accuracy of response in the task-switching part of the DST (0 = incorrect, 1 = correct)</td>
+</tr>
+<tr class="even">
+<td>TS_RT</td>
+<td>Reaction time in task switching (seconds)</td>
+</tr>
+<tr class="odd">
+<td>Session</td>
+<td>Session number</td>
+</tr>
+</tbody>
+</table>
+<p>For <code>cognitive-effort-demographics.csv</code>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ID</td>
+<td>Participant ID</td>
+</tr>
+<tr class="even">
+<td>Gender</td>
+<td>Participant gender (0 = male, 1 = female)</td>
+</tr>
+<tr class="odd">
+<td>Age</td>
+<td>Participant age, years</td>
+</tr>
+<tr class="even">
+<td>BMI</td>
+<td>Participant’s body mass index</td>
+</tr>
+<tr class="odd">
+<td>GAD</td>
+<td>Score on a generalized anxiety disorder scale (details not specified)</td>
+</tr>
+<tr class="even">
+<td>PHQ</td>
+<td>Score on the patient health questionnaire (details not specified)</td>
+</tr>
+<tr class="odd">
+<td>BAS_Drive</td>
+<td>Behavioral Activation System subscale score for drive; higher = higher persistence toward goals</td>
+</tr>
+<tr class="even">
+<td>BAS_Fun_seeking</td>
+<td>Behavioral Activation System subscale score for fun-seeking behavior; higher = higher desire for fun, novel things</td>
+</tr>
+<tr class="odd">
+<td>BAS_Reward_responsiveness</td>
+<td>Behavioral Activation System subscale score for reward responsiveness; higher = greater responsiveness to rewards</td>
+</tr>
+<tr class="even">
+<td>BAS_overall</td>
+<td>Overall Behavioral Activation System score (sum of three subscale scores)</td>
+</tr>
+<tr class="odd">
+<td>BISBAS_dummy_items</td>
+<td>Score on the 4 filler questions on the BIS/BAS scales</td>
+</tr>
+<tr class="even">
+<td>BIS</td>
+<td>Score on the Behavioral Inhibition System scale; higher = experience greater anxiety/inhibition about possible negative consequences of actions</td>
+</tr>
+<tr class="odd">
+<td>DAS</td>
+<td>Score on the <a href="https://das.psy.ed.ac.uk/">Dimensional Apathy Scale</a>; higher = more lack of motivation toward goal-directed behaviors</td>
+</tr>
+<tr class="even">
+<td>NFC</td>
+<td>Score on the Need for Cognition Scale (higher = higher tendency to engage in and enjoy effortful cognitive endeavors)</td>
+</tr>
+<tr class="odd">
+<td>PSS</td>
+<td>Score on the Perceived Stress Scale (higher = respondent finds their life unpredictable, uncontrollable, or overloading)</td>
+</tr>
+<tr class="even">
+<td>SHAPS</td>
+<td>Score on the Snaith-Hamilton Affective Pleasure Scale (measures ability to feel pleasure; higher = less ability)</td>
+</tr>
+<tr class="odd">
+<td>UPPS_P_Negative_urgency</td>
+<td>UPPS-P Impulsive Behavior Scale; subscale score for negative urgency, the tendency to act impulsively due to negative emotions</td>
+</tr>
+<tr class="even">
+<td>UPPS_P_Perseverance</td>
+<td>UPPS-P Impulsive Behavior Scale; subscale score for lack of perseverance, the tendency to not complete tasks</td>
+</tr>
+<tr class="odd">
+<td>UPPS_P_Positive_urgency</td>
+<td>UPPS-P Impulsive Behavior Scale; subscale score for positive urgency, the tendency to act impulsively due to positive emotions</td>
+</tr>
+<tr class="even">
+<td>UPPS_P_Premediation</td>
+<td>UPPS-P Impulsive Behavior Scale; subscale score for lack of premeditation, the tendency to act without forethought</td>
+</tr>
+<tr class="odd">
+<td>UPPS_P_Sensation_seeking</td>
+<td>UPPS-P Impulsive Behavior Scale; subscale score for sensation-seeking, the tendency to pursue novel or thrilling experiences</td>
+</tr>
+<tr class="even">
+<td>UPPS_P_overall</td>
+<td>Overall UPPS-P Impulsive Behavior Scale score</td>
+</tr>
+<tr class="odd">
+<td>systolic_[condition]_x</td>
+<td>Systolic blood pressure at time point x in this condition (treatment or control); e.g., <code>systolic_control_2</code> is systolic blood pressure in the control condition at time 2</td>
+</tr>
+<tr class="even">
+<td>diastolic_[condition]_x</td>
+<td>Diastolic blood pressure at time point x in this condition</td>
+</tr>
+<tr class="odd">
+<td>heart_rate_[condition]_x</td>
+<td>Heart rate at time point x in this condition</td>
+</tr>
+<tr class="even">
+<td>PANAS_pos_[condition]_x</td>
+<td>Score for the positive scale of the Positive and Negative Affect Schedule at time point x in this condition</td>
+</tr>
+<tr class="odd">
+<td>PANAS_neg_[condition]_x</td>
+<td>Score for the positive scale of the Positive and Negative Affect Schedule at time point x in this condition</td>
+</tr>
+<tr class="even">
+<td>cort_[condition]_x</td>
+<td>Salivary cortisol level at time point x in this condition</td>
+</tr>
+<tr class="odd">
+<td>TSST_difficult_[condition]</td>
+<td>Participant’s assessment of difficulty for the stress manipulation in this condition, on a scale from 0 (not at all) to 100 (very much)</td>
+</tr>
+<tr class="even">
+<td>TSST_unpleasant_[condition]</td>
+<td>Participant’s assessment of unpleasantness for the stress manipulation in this condition, on a scale from 0 (not at all) to 100 (very much)</td>
+</tr>
+<tr class="odd">
+<td>TSST_stressful_[condition]</td>
+<td>Participant’s assessment of stressfulness for the stress manipulation in this condition, on a scale from 0 (not at all) to 100 (very much)</td>
+</tr>
+<tr class="even">
+<td>session_order</td>
+<td>Order of stress and control conditions experienced by this participant (1 = control then stress, 2 = stress then control)</td>
+</tr>
+<tr class="odd">
+<td>OSPAN_math_errors_[condition]</td>
+<td>Number of errors in the math equations in the Operation Span task</td>
+</tr>
+<tr class="even">
+<td>OSPAN_score_[condition]</td>
+<td>Score in the Operation Span task</td>
+</tr>
+<tr class="odd">
+<td>OSPAN_total_[condition]</td>
+<td>Total remembered letters in the Operation Span task</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ol type="1">
+<li><p>Examine how treatments were allocated. Some subjects were stressed on their first day; others on the second day (<code>session_order</code>). Look at the distribution of treatment assignment by participant gender. Based on what you see, describe the experimental design: what kind of study was this and how were subjects randomized?</p></li>
+<li><p>In an experiment, it’s important to verify that the intervention does what it was supposed to. In this case, the Trier social stress test (TSST) was supposed to stress the participants. This was evaluated with three questions asking the participants about the difficulty, unpleasantness, and stressfulness of the task (the three <code>TSST_</code> variables). Test whether participants reported higher difficulty, unpleasantness, and stress in the treatment condition than in the control.</p>
+<p>Salivary cortisol also measures the body’s stress response. Test whether salivary cortisol levels were higher in the treatment condition than in the control.</p></li>
+<li><p>The outcome measure is whether participants chose the low-effort or high-effort options. Calculate the percentage of time each participant chose the low-effort option in each experimental condition. Test whether the proportions are different between conditions.</p></li>
+<li><p>We may expect there to be subject-level effects: some subjects generally prefer the higher-effort option more, other prefer it less. This suggests using a random or mixed effects model. Fit a logistic regression predicting the subject’s choice, using a fixed effect for condition and a random effect for subject.</p>
+<p>There could also be block and session effects. (Recall that the DST task is done in four successive blocks, so subjects may gradually get better at it, or change their preference over time. They may also have different performance on their second day in the lab.) Extend your model to account for this. Is there evidence of block and session effects?</p></li>
+<li><p>Any effect might be heterogeneous: different subjects might respond differently to stress. One possible hypothesis is that subjects who enjoy cognitive effort are less likely to switch to the low-effort option, regardless of stress level. The Need for Cognition scale (NFC), available in the demographic data, tries to measure how much the subjects participate in and enjoy cognitive effort. Evaluate whether the effects depend on NFC score.</p>
+<p>(This analysis was not conducted in the paper, which did not mention NFC despite it being present in the data.)</p></li>
+<li><p>Besides effort preference, it may also be interesting to know if stressed subjects perform more poorly on the task (are less accurate). Use a mixed effects logistic regression to answer this question.</p></li>
+<li><p>It also may be interesting to know whether stressed subjects take <em>longer</em> to decide on the effort and then to do the task, due to stress slowing their cognitive effort. You can use the <code>effort_choice_RT</code> and <code>TS_RT</code> variables to measure these times.</p>
+<p>Evaluate the distribution of these variables. What kind of model would be necessary to answer the question, and would transformations be necessary? Decide on a model and answer the question for each reaction time.</p></li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Bogdanov, M., Nitschke, J. P., LoParco, S., Bartz, J. A., &amp; Otto, A. R. (2021). Acute Psychosocial Stress Increases Cognitive-Effort Avoidance. <em>Psychological Science</em>, 32(9), 1463-1475. <a href="https://doi.org/10.1177/09567976211005465" class="uri">https://doi.org/10.1177/09567976211005465</a></p>
+<p>Data via OSF, at <a href="https://doi.org/10.17605/OSF.IO/26W4U" class="uri">https://doi.org/10.17605/OSF.IO/26W4U</a></p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Despite the name, the test does not involve watching Lars von Trier films with your parents, which would also serve as an effective stressor.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/psychology/stress-effort.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
