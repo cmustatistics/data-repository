@@ -13,8 +13,8 @@ data:
 
 ## Motivation
 
-Excess consumption of sugary drinks--soda, lemonade, sweet tea, and everything
-in between--has been blamed for a variety of health problems, like diabetes and
+Excess consumption of sugary drinks---soda, lemonade, sweet tea, and everything
+in between---has been blamed for a variety of health problems, like diabetes and
 obesity, which collectively cause billions of dollars of health costs each year.
 Some governments are taking action to reduce consumption of sugary drinks; most
 famously, the New York City Board of Health passed a regulation in 2012 banning
