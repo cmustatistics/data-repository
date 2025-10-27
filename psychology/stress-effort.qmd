@@ -49,7 +49,7 @@ Subjects then performed a demand-selection task (DST), a simple procedure where
 subjects click one of two options in a colorful diagram, and then must either
 judge the evenness/oddness of a number or judge whether it is larger or smaller
 than 5. The tasks are easy, but depending on the subject's choice, they may have
-to switch between them more or less option: in one choice, they do the same task
+to switch between them more or less often: in one choice, they do the same task
 (evenness or magnitude) repeatedly with probability 0.9, in the other choice
 they usually have to switch between each trial (repeat probability 0.1).
 Constantly switching the task takes cognitive effort, so generally subjects
