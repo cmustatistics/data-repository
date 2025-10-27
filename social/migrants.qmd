@@ -167,7 +167,7 @@ For `migrants_mex.csv` these are the columns that are **unique** to the Mexico s
 
 Cruces, G., Fajardo, J., Hernández, P., Ibáñez, A. M., Luzes, M., Meléndez, M.,
 Muñoz, F., Rodríguez Guillén, L., & Tenjo, L. (2023). *A Better World for
-Migrants in Latin America and the Caribbean*. https://doi.org/10.18235/0004850
+Migrants in Latin America and the Caribbean*. <https://doi.org/10.18235/0004850>
 
 Cruces, Guillermo; Fajardo, Johanna; Hernández, Pablo; Ibáñez, Ana María; Luzes,
 Marta; Meléndez, Marcela; Muñoz, Felipe; Rodríguez Guillén, Lucina; Tenjo,
