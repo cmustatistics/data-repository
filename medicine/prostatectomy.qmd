@@ -17,7 +17,7 @@ data:
 Prostate cancer is the most common type of malignant cancer in men. One common
 treatment option is radical prostatectomy: complete surgical removal of the
 prostate gland. Unfortunately, the cancer often returns after surgery---in about
-three quarters of patients, it will recur within five years---so surgeons are
+one quarter of patients, it will recur within five years---so surgeons are
 interested in understanding factors associated with recurrence and how they can
 be managed.
 
