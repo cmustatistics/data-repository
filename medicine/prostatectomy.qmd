@@ -1,0 +1,106 @@
+---
+title: Blood transfusions in prostatectomies
+author: Alex Reinhart
+date: October 28, 2025
+description: When patients have prostatectomies to treat prostate cancer, the surgery may cause blood loss requiring a blood transfusion. Blood transfusions may cause adverse reactions and affect the immune system, so this could affect the success of the surgery and whether the prostate cancer recurs. Use logistic regression or survival analysis to explore an observational dataset of patients.
+categories:
+  - logistic regression
+  - survival analysis
+data:
+  year: 2011
+  files:
+    - prostatectomy-storage.csv
+---
+
+## Motivation
+
+Prostate cancer is the most common type of malignant cancer in men. One common
+treatment option is radical prostatectomy: complete surgical removal of the
+prostate gland. Unfortunately, the cancer often returns after surgery---in about
+three quarters of patients, it will recur within five years---so surgeons are
+interested in understanding factors associated with recurrence and how they can
+be managed.
+
+One possible factor is the use of blood transfusions during surgery. If the
+patient loses too much blood during surgery, they will be given a blood
+transfusion. Most blood transfusions use blood from unrelated donors that
+matches the recipient's blood type, but because the blood comes from a different
+person, it contains different immune cells. It is possible that this suppresses
+or interferes with the recipient's immune system, making it more likely the
+cancer can recur. It is also thought that older blood cells---that is, those
+that have been in storage for longer before being used in the transfusion---may
+cause more immune disruption and thus be worse for the patient.
+
+This data comes from an observational study of patients who received blood
+transfusions during their prostatectomy. The data includes the number of units
+of blood transfused and the age of the blood used. Patients were tracked for
+five years to determine if their prostate cancer returned after the surgery, so
+it is possible to investigate how the age of the transfused blood is associated
+with recurrence.
+
+## Data
+
+Each observation is one patient who had a prostatectomy at the Cleveland Clinic
+between July 6, 1998 and December 27, 2007, and who had a blood transfusion
+during their surgery. There are 316 total patients included in this sample.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| RBC.Age.Group | Red blood cell storage duration, grouped (1 = less than 13 days, 2 = 13-18 days, 3 = more than 18 days) |
+| Median.RBC.Age | Median age of red blood cells transfused (conversion of RBC.Age.Group to days) |
+| Age | Patient age (years) |
+| AA | 1 if patient is African-American, 0 otherwise |
+| FamHx | 1 if patient has family history of prostate cancer |
+| PVol | Prostate mass when removed (grams) |
+| TVol | Tumor volume (1 = low, 2 = medium, 3 = extensive) |
+| T.Stage | Clinical T category, a measure of the stage of cancer, estimated before surgery. 1 = stages T1-T2a, indicating tumor can't be felt or seen in imaging, or is felt/seen in half of only one side of the prostate. 2 = stages T2b-T3, indicating tumor is felt/seen in more than half of one side, is in both sides, or has spread outside the prostate. |
+| bGS | Biopsy Gleason score, discretized. Based on microscopic examination of cells in a biopsy. Low scores means the cells look normal, high scores mean they look abnormal. 0 = score 0-6, 2 = score 7, 3 = score 8-10. |
+| BN+ | Bladder neck positive: whether the neck of the bladder, at the edge of the prostate, contained cancerous cells when investigated after surgery. 1 = yes, 0 = no. |
+| OrganConfined | 1 if cancer is limited to the prostate gland, 0 if it has spread outside it |
+| PreopPSA | Prostate-specific antigen (PSA) levels measured before the surgery; levels are typically higher in people with prostate cancer (ng/mL) |
+| PreopTherapy | Whether the patient received cancer treatment prior to surgery (1 = yes, 0 = no) |
+| Units | Number of allogeneic units of blood received |
+| sGS | Surgical Gleason score, discretized. Same as bGS, but based on examination of the tumor removed in surgery, rather than on cells removed in a biopsy |
+| AnyAdjTherapy | Whether the patient received adjuvant therapy after the surgery, i.e., another treatment to prevent recurrence (such as chemotherapy, radiation, or other cancer treatments) |
+| AdjRadTherapy | Whether the patient received radiation therapy after surgery to prevent recurrence|
+| Recurrence | Whether the prostate cancer recurred (1 = yes, 0 = no) |
+| Censor | Whether the study ended before the patient had any recurrence, so their final status is unknown (1 = censored, 0 = not censored)|
+| TimeToRecurrence | Time to recurrence of prostate cancer, months |
+
+
+## Questions
+
+1. It's possible that the amount of blood transfused depends on features of the
+   tumor---perhaps more advanced cases required more invasive surgery with
+   greater blood loss, for instance. Conduct an exploratory data analysis to
+   judge the relationship between the units of blood transfused and indicators
+   of the severity of the tumor, such as clinical T category, Gleason score, and
+   tumor volume.
+2. Explore how tumor severity is related to the risk of recurrence. Conduct an
+   exploratory analysis and then use regression to predict the risk of
+   recurrence. How much more likely is recurrence for patients with a tumor that
+   is advanced at the time of surgery, as measured by clinical T category or
+   surgical Gleason score?
+3. Analyze the main research question: Is the risk of recurrence related to the
+   age of blood transfused? Is there evidence that older blood is associated
+   with a higher risk of recurrence?
+
+## References
+
+Dataset adapted for classroom use by: Amy S. Nowacki, “Blood Storage Dataset”,
+TSHS Resources Portal (2017). Available at
+<https://www.causeweb.org/tshs/blood-storage/>. Released under a [CC
+BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+
+Original study: Cata et al. (2011). "Blood Storage Duration and Biochemical
+Recurrence of Cancer After Radical Prostatectomy." *Mayo Clinic Proceedings* 86
+(2), 120-127. <https://doi.org/10.4065/mcp.2010.0313>
