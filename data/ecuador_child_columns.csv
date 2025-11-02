@@ -1,0 +1,1180 @@
+column,Definition,wave,level_of_analysis,section
+idhabitus, household identifier (to be combined with "persona"),0,household,identifiers
+persona,person identifier in household (from household roster),0,person,identifiers
+prov,province identifier,0,household,identifiers
+cant,canton identifier,0,household,identifiers
+parr,parish identifier,0,household,identifiers
+ciudad,prov+cant+parr,0,household,identifiers
+treatment,=1 if hh is assigned to treatment by lottery - BDH,1,household,identifiers
+quint_selben,SELBEN index quintile (lower is poorer),1,household,identifiers
+bl,=1 if child was in baseline,0,person,attrition
+w1,=1 if child was in wave 1,1,person,attrition
+w2,=1 if child was in wave 2,2,person,attrition
+w3,=1 if child was in wave 3,3,person,attrition
+w4,=1 if child was in wave 4,4,person,attrition
+panel,=1 if child in all waves bl to w4,4,person,attrition
+DRaircon0,=1 if hh owns air conditioning,0,household,household assets
+NDRaircon0,number of air conditioners,0,household,household assets
+DRbike0,=1 if hh owns bike,0,household,household assets
+NDRbike0,number of bikes,0,household,household assets
+DRblender0,=1 if hh owns blender,0,household,household assets
+NDRblender0,number of blenders,0,household,household assets
+DRblender2,=1 if hh owns blender,2,household,household assets
+NDRblender2,number of blenders,2,household,household assets
+DRbwtv0,=1 if hh owns tv (black&white),0,household,household assets
+NDRbwtv0,number of black and white TVs,0,household,household assets
+DRcar0,=1 if hh owns car,0,household,household assets
+NDRcar0,number of cars,0,household,household assets
+DRcolortv0,=1 if hh owns color TV,0,household,household assets
+NDRcolortv0,number of color TVs,0,household,household assets
+DRcomputer0,=1 if hh owns computer,0,household,household assets
+NDRcomputer0,number of computers,0,household,household assets
+DRcar2,=1 if hh owns car,2,household,household assets
+NDRcar2,number of cars,2,household,household assets
+DRcolortv2,=1 if hh owns color TV,2,household,household assets
+NDRcolortv2,number of color TVs,2,household,household assets
+DRcomputer2,=1 if hh owns computer,2,household,household assets
+NDRcomputer2,number of computers,2,household,household assets
+DRfan0,=1 if hh owns fan,0,household,household assets
+NDRfan0,number of fans,0,household,household assets
+DRfridge0,=1 if hh owns fridge,0,household,household assets
+NDRfridge0,number of fridges,0,household,household assets
+DRiron0,=1 if hh owns iron for clothes,0,household,household assets
+NDRiron0,number of irons for clothes,0,household,household assets
+DRmixer0,=1 if hh owns mixer,0,household,household assets
+NDRmixer0,number of mixers,0,household,household assets
+DRfridge2,=1 if hh owns fridge,2,household,household assets
+NDRfridge2,number of fridges,2,household,household assets
+DRiron2,=1 if hh owns iron for clothes,2,household,household assets
+NDRiron2,number of irons for clothes,2,household,household assets
+DRmixer2,=1 if hh owns mixer,2,household,household assets
+NDRmixer2,number of mixers,2,household,household assets
+DRmotorc0,=1 if hh owns motorcyle,0,household,household assets
+NDRmotorc0,number of motorcycles,0,household,household assets
+DRoven0,=1 if hh owns oven,0,household,household assets
+NDRoven0,number of ovens,0,household,household assets
+DRradio0,=1 if hh owns radio,0,household,household assets
+NDRradio0,number of radios,0,household,household assets
+DRsewing0,=1 if hh owns sewing machine,0,household,household assets
+NDRsewing0,number of sewing machines,0,household,household assets
+DRstereo0,=1 if hh owns stereo,0,household,household assets
+NDRstereo0,number of stereos,0,household,household assets
+DRstove0,=1 if hh owns stove,0,household,household assets
+NDRstove0,number of stoves,0,household,household assets
+DRstereo2,=1 if hh owns stereo,2,household,household assets
+NDRstereo2,number of stereos,2,household,household assets
+DRstove2,=1 if hh owns stove,2,household,household assets
+NDRstove2,number of stoves,2,household,household assets
+DRstovepl0,=1 if hh owns kitchenette ("cocineta"),0,household,household assets
+NDRstovepl0,number of kitchenettes,0,household,household assets
+DRtypewr0,=1 if hh owns type writer,0,household,household assets
+NDRtypewr0,number of type writers,0,household,household assets
+DRvhsdvd0,=1 if hh owns dvd players,0,household,household assets
+NDRvhsdvd0,number of dvd players,0,household,household assets
+DRvhsdvd2,=1 if hh owns dvd players,2,household,household assets
+NDRvhsdvd2,number of dvd players,2,household,household assets
+DRwaffle0,=1 if hh owns waffle maker,0,household,household assets
+NDRwaffle0,number of waffle makers,0,household,household assets
+DRwasher0,=1 if hh owns washer,0,household,household assets
+NDRwasher0,number of washers,0,household,household assets
+DRwasher2,=1 if hh owns washer,2,household,household assets
+NDRwasher2,number of washers,2,household,household assets
+DRmicrowave2,=1 if hh owns microwave,2,household,household assets
+NDRmicrowave2,number of microwaves,2,household,household assets
+DRcell2,=1 if hh owns cellphone,2,household,household assets
+NDRcell2,number of cellphones,2,household,household assets
+DRphone2,=1 if hh owns phone,2,household,household assets
+NDRphone2,number of phones,2,household,household assets
+Hgarbage0,type of garbage disposal,0,household,household services and materials
+Hgarbage2,type of garbage disposal,2,household,household services and materials
+Hlights0,type of lighting,0,household,household services and materials
+Hlights2,type of lighting,2,household,household services and materials
+Hwater0,type of water source,0,household,household services and materials
+Hwater2,type of water source,2,household,household services and materials
+Hshower0,type of shower,0,household,household services and materials
+Hshower2,type of shower,2,household,household services and materials
+Htoilet0,type of toilet,0,household,household services and materials
+Htoilet2,type of toilet,2,household,household services and materials
+Hfuel0,type of fuel for cooking,0,household,household services and materials
+Hfuel2,type of fuel for cooking,2,household,household services and materials
+Hheat2,=1 if gas water-heater (calefon) in hh,2,household,household services and materials
+Hgas2,=1 if use domestic gas for water-heater,2,household,household services and materials
+Hroof0,type of roof material,0,household,household services and materials
+Hroof1,type of roof material,1,household,household services and materials
+Hroof2,type of roof material,2,household,household services and materials
+Hwalls0,type of wall material,0,household,household services and materials
+Hfloor0,type of floor material,0,household,household services and materials
+Hfloor1,type of floor material,1,household,household services and materials
+Hfloor2,type of floor material,2,household,household services and materials
+Hbedrooms0,number of bedrooms in dwelling,0,household,household services and materials
+Hbedrooms2,number of bedrooms in dwelling,2,household,household services and materials
+Hrooms0,number of rooms in dwelling,0,household,household services and materials
+Hrooms2,number of rooms in dwelling,2,household,household services and materials
+Htenure0,type of home tenure,0,household,household services and materials
+Htenure2,type of home tenure,2,household,household services and materials
+Htype0,type of the dwelling,0,household,household services and materials
+Htype2,type of the dwelling,0,household,household services and materials
+Hfarm0,=1 if dwelling is a farm,0,household,household services and materials
+Hfarm2,=1 if dwelling is a farm,0,household,household services and materials
+Hfarmten0,farm tenure (if dwelling is a farm),0,household,household services and materials
+Hfarmten2,farm tenure (if dwelling is a farm),2,household,household services and materials
+Haltitude0,altitude in meters,0,household,household services and materials
+ln_pcexp0,ln per-capita hh expenditure in BL,0,household,household expenditures
+ln_totexp0,ln total hh expenditure in BL,0,household,household expenditures
+Efood2,food exp: every 365 days, region adjusted in USD,2,household,household expenditures
+Enfood2,non-food exp: every 365 days, region adjusted in USD,2,household,household expenditures
+Epcexp2,total PC exp: every 365 days, region adjusted in USD,2,household,household expenditures
+Erent2,rent exp: every 365 days, region adjusted in USD,2,household,household expenditures
+Eschool2,school exp: every 365 days, region adjusted in USD,2,household,household expenditures
+Etotexp2,total HH exp: every 365 days, region adjusted in USD,2,household,household expenditures
+Eutil2,utility exp: every 365 days, region adjusted in USD,2,household,household expenditures
+Crelate0,relationship to head of HH,0,person,child basic info
+Cagemo0,age of child in months,0,person,child basic info
+Crelate1,relationship to head of HH,1,person,child basic info
+Cagemo1,age of child in months,1,person,child basic info
+Crelate2,relationship to head of HH,2,person,child basic info
+Cagemo2,age of child in months,2,person,child basic info
+Cagemo3,age of child in months,3,person,child basic info
+Cagemo4,age of child in months,4,person,child basic info
+Cmale0,=1 if child is a male,0,person,child basic info
+Cbio0,child biological, adopted, etc,0,person,child basic info
+Cbio1,child biological, adopted, etc,1,person,child basic info
+Cbio2,child biological, adopted, etc,2,person,child basic info
+Cdisable0,=1 if child has any disability,0,person,child basic info
+Clanguage0,what language or languages does child speak,0,person,child basic info
+Clanguage1,what language or languages does child speak,1,person,child basic info
+Clanguage2,what language or languages does child speak,2,person,child basic info
+Clit0,=1 if child knows how to read and write,0,person,child basic info
+Clit1,=1 if child knows how to read and write,1,person,child basic info
+Chighgrade1,high grade child has completed (pre-school or first year of basic),1,person,child basic info
+Chighgrade2,high grade child has completed (pre-school or first year of basic),2,person,child basic info
+Cesc3,completed years of education,3,person,child basic info
+Cesc4,completed years of education,4,person,child basic info
+Cinschool2,=1 if currently attending school (5 and older),2,person,child basic info
+Cinschool3,=1 if currently attending school (5 and older),3,person,child basic info
+Cinschool4,=1 if currently attending school (5 and older),4,person,child basic info
+Mrelate0,mother's relationship to head,0,person,mother basic info
+Mrelate1,mother's relationship to head,1,person,mother basic info
+Mrelate2,mother's relationship to head,2,person,mother basic info
+Cmomhome0,=1 if child's mom at home,0,person,mother basic info
+Cmomhome1,=1 if child's mom at home,1,person,mother basic info
+Cmomhome2,=1 if child's mom at home,2,person,mother basic info
+Cmomhome3,=1 if child's mom at home,3,person,mother basic info
+Cmomhome4,=1 if child's mom at home,4,person,mother basic info
+Cmomwhynot0,why doesn't mother live in HH?,0,person,mother basic info
+Cmomwhynot1,why doesn't mother live in HH?,1,person,mother basic info
+Cmomwhynot2,why doesn't mother live in HH?,2,person,mother basic info
+Cmomwhynot3,why doesn't mother live in HH?,3,person,mother basic info
+Cmomwhynot4,why doesn't mother live in HH?,4,person,mother basic info
+Cmomdead0,=1 if mom died,0,person,mother basic info
+Cmomdead1,=1 if mom died,1,person,mother basic info
+Cmomdead2,=1 if mom died,2,person,mother basic info
+Cmomdead3,=1 if mom died,3,person,mother basic info
+Cmomdead4,=1 if mom died,4,person,mother basic info
+Cmommig0,=1 if mom migrated,0,person,mother basic info
+Cmommig1,=1 if mom migrated,1,person,mother basic info
+Cmommig2,=1 if mom migrated,2,person,mother basic info
+Cmommig3,=1 if mom migrated,3,person,mother basic info
+Cmommig4,=1 if mom migrated,4,person,mother basic info
+Cmomyrleft0,year mother stop living in HH-either left or died,0,person,mother basic info
+Cmomyrleft1,year mother stop living in HH-either left or died,1,person,mother basic info
+Cmomyrleft2,year mother stop living in HH-either left or died,2,person,mother basic info
+Cmomyrleft3,year mother stop living in HH-either left or died,3,person,mother basic info
+Cmomyrleft4,year mother stop living in HH-either left or died,4,person,mother basic info
+Medyrs0,mother’s education in years,0,person,mother basic info
+Medyrs1,mother’s education in years,1,person,mother basic info
+Medyrs2,mother’s education in years,2,person,mother basic info
+Medyrs3,mother’s education in years,3,person,mother basic info
+Medyrs4,mother’s education in years,4,person,mother basic info
+Medcat0,mother’s education category,0,person,mother basic info
+Medcat1,mother’s education category,1,person,mother basic info
+Medcat2,mother’s education category,2,person,mother basic info
+Mage0,mother's age,0,person,mother basic info
+Mage1,mother's age,1,person,mother basic info
+Mage2,mother's age,2,person,mother basic info
+Mage3,mother's age,3,person,mother basic info
+Mage4,mother's age,4,person,mother basic info
+Mmrd0,mother's marital status,0,person,mother basic info
+Mmrd1,mother's marital status,1,person,mother basic info
+Mmrd2,mother's marital status,2,person,mother basic info
+Mmrd3,mother's marital status,3,person,mother basic info
+Mmrd4,mother's marital status,4,person,mother basic info
+Mdisable0,=1 if mother has a disability,0,person,mother basic info
+Mlanguage3,what language or languages does mother speak,3,person,mother basic info
+Mlanguage4,what language or languages does mother speak,4,person,mother basic info
+Mlit0,mother’s literacy,0,person,mother basic info
+Mrace1,mother’s race,1,person,mother basic info
+Mrace2,mother’s race,2,person,mother basic info
+Mrace3,mother’s race,3,person,mother basic info
+Mrace4,mother’s race,4,person,mother basic info
+Mworkpay1,=1 if mother earned money working at a job in last week,1,person,mother basic info
+Mworkpay2,=1 if mother earned money working at a job in last week,2,person,mother basic info
+Mworkpay3,=1 if mother earned money working at a job in last week,3,person,mother basic info
+Mworkpay4,=1 if mother earned money working at a job in last week,4,person,mother basic info
+Mpayhrs1,hours mother worked at paying job in last week,1,person,mother basic info
+Mpayhrs2,hours mother worked at paying job in last week,2,person,mother basic info
+Mpayhrs3,hours mother worked at paying job in last week,3,person,mother basic info
+Mpayhrs4,hours mother worked at paying job in last week,4,person,mother basic info
+Mworknopay1,=1 if mother worked/volunteered at non-paying job/activity in last week,1,person,mother basic info
+Mworknopay2,=1 if mother worked/volunteered at non-paying job/activity in last week,2,person,mother basic info
+Mnopayhrs1,hours mother worked at non-paying job/activity in last week,1,person,mother basic info
+Mnopayhrs2,hours mother worked at non-paying job/activity in last week,2,person,mother basic info
+Cdadhome0,=1 if child's father at home,0,person,father basic info
+Cdadhome1,=1 if child's father at home,1,person,father basic info
+Cdadhome2,=1 if child's father at home,2,person,father basic info
+Cdadhome3,=1 if child's father at home,3,person,father basic info
+Cdadwhynot0,why doesn't father live in HH?,0,person,father basic info
+Cdadwhynot1,why doesn't father live in HH?,1,person,father basic info
+Cdadwhynot2,why doesn't father live in HH?,2,person,father basic info
+Cdaddead0,=1 if father died,0,person,father basic info
+Cdaddead1,=1 if father died,1,person,father basic info
+Cdaddead2,=1 if father died,2,person,father basic info
+Cdadmig0,=1 if father migrated,0,person,father basic info
+Cdadmig1,=1 if father migrated,1,person,father basic info
+Cdadmig2,=1 if father migrated,2,person,father basic info
+Cdadyrleft0,In which year did father stop living in HH-either left or died,0,person,father basic info
+Cdadyrleft1,In which year did father stop living in HH-either left or died,1,person,father basic info
+Cdadyrleft2,In which year did father stop living in HH-either left or died,2,person,father basic info
+Cdadedyrs0,father's education in years,0,person,father basic info
+Cdadedyrs1,father's education in years,1,person,father basic info
+Cdadedyrs2,father's education in years,2,person,father basic info
+Cdadedcat0,father's education category,0,person,father basic info
+Cdadedcat1,father's education category,1,person,father basic info
+Cdadedcat2,father's education category,2,person,father basic info
+F0t50,females ages 0-5,0,household,household composition
+F0t51,females ages 0-5,1,household,household composition
+F0t52,females ages 0-5,2,household,household composition
+F6t140,females ages 6-14,0,household,household composition
+F6t141,females ages 6-14,1,household,household composition
+F6t142,females ages 6-14,2,household,household composition
+F15t440,females ages 15-44,0,household,household composition
+F15t441,females ages 15-44,1,household,household composition
+F15t442,females ages 15-44,2,household,household composition
+F45t640,females ages 45-64,0,household,household composition
+F45t641,females ages 45-64,1,household,household composition
+F45t642,females ages 45-64,2,household,household composition
+F65p0,females ages 65+,0,household,household composition
+F65p1,females ages 65+,1,household,household composition
+F65p2,females ages 65+,2,household,household composition
+M0t50,males ages 0-5,0,household,household composition
+M0t51,males ages 0-5,1,household,household composition
+M0t52,males ages 0-5,2,household,household composition
+M6t140,males ages 6-14,0,household,household composition
+M6t141,males ages 6-14,1,household,household composition
+M6t142,males ages 6-14,2,household,household composition
+M15t440,males ages 15-44,0,household,household composition
+M15t441,males ages 15-44,1,household,household composition
+M15t442,males ages 15-44,2,household,household composition
+M45t640,males ages 45-64,0,household,household composition
+M45t641,males ages 45-64,1,household,household composition
+M45t642,males ages 45-64,2,household,household composition
+M65p0,males ages 65+,0,household,household composition
+M65p1,males ages 65+,1,household,household composition
+M65p2,males ages 65+,2,household,household composition
+Hmaxed0,maximum education in household,0,household,household composition
+Hmaxed1,maximum education in household,1,household,household composition
+Hmaxed2,maximum education in household,2,household,household composition
+Hmaxed3,maximum education in household,3,household,household composition
+Hmaxed4,maximum education in household,4,household,household composition
+Child ,,0,,
+Health and vaccinations,,0,,
+Chstat0,child's health status,0,person,child health and vaccinations
+Chstat1,child's health status,1,person,child health and vaccinations
+Chstat2,child's health status,2,person,child health and vaccinations
+Cbedday0,=1 if child was in bed last month,0,person,child health and vaccinations
+Cbedday1,=1 if child was in bed last month,1,person,child health and vaccinations
+Cbedday2,=1 if child was in bed last month,2,person,child health and vaccinations
+Cnbeddays0,number of bed days last month,0,person,child health and vaccinations
+Cnbeddays1,number of bed days last month,1,person,child health and vaccinations
+Cnbeddays2,number of bed days last month,2,person,child health and vaccinations
+Chlthcard0,=1 if child has health card,0,person,child health and vaccinations
+Chlthcard1,=1 if child has health card,1,person,child health and vaccinations
+Canyvac0,=1 if child has received any vaccinations (no hlth card),0,person,child health and vaccinations
+Canyvac1,=1 if child has received any vaccinations (no hlth card),1,person,child health and vaccinations
+Cnumvac0,number of vaccinations (no hlth card),0,person,child health and vaccinations
+Cnumvac1,number of vaccinations (no hlth card),1,person,child health and vaccinations
+Cothvac0,=1 if child has vaccines not listed on card,0,person,child health and vaccinations
+Cothvac1,=1 if child has vaccines not listed on card,1,person,child health and vaccinations
+Cwherevac0,MSP code of where child got most vaccinations,0,person,child health and vaccinations
+Cwherevac1,MSP code of where child got most vaccinations,1,person,child health and vaccinations
+Chlthins0,child's health insurance,0,person,child health and vaccinations
+Chlthins1,child's health insurance,1,person,child health and vaccinations
+Chlthins2,child's health insurance,2,person,child health and vaccinations
+Chmintravel0,time to get to health center in mins,0,person,child health and vaccinations
+Chmintravel1,time to get to health center in mins,1,person,child health and vaccinations
+Chmintravel2,time to get to health center in mins,2,person,child health and vaccinations
+Chlthvisits0,health visits in last month,0,person,child health and vaccinations
+Chlthwhy0,reason for health visit,0,person,child health and vaccinations
+Cadjhemo0,child's adjusted hemoglobin level,0,person,child health and vaccinations
+Cadjhemo1,child's adjusted hemoglobin level,1,person,child health and vaccinations
+Cadjhemo2,child's adjusted hemoglobin level,2,person,child health and vaccinations
+Health Booklet ("carnet de salud"),,0,,
+Cvac010,date of vaccination for BCG,0,person,child health booklet
+Cvac020,date of vaccination for DTP 1a ,0,person,child health booklet
+Cvac030,date of vaccination for DTP 2a,0,person,child health booklet
+Cvac040,date of vaccination for DTP 3a,0,person,child health booklet
+Cvac050,date of vaccination for DTP R ,0,person,child health booklet
+Cvac060,date of vaccination for OPV 1a,0,person,child health booklet
+Cvac070,date of vaccination for OPV 2a,0,person,child health booklet
+Cvac080,date of vaccination for OPV 3a ,0,person,child health booklet
+Cvac090,date of vaccination for OPV R/A,0,person,child health booklet
+Cvac100,date of vaccination for Antihepatitis B 1a,0,person,child health booklet
+Cvac110,date of vaccination for Antihepatitis B 2a ,0,person,child health booklet
+Cvac120,date of vaccination for Antihepatitis B 3a,0,person,child health booklet
+Cvac130,date of vaccination for SR Dupla viral,0,person,child health booklet
+Cvac140,date of vaccination for SRP Triple viral,0,person,child health booklet
+Cvac150,date of vaccination for Antiamar,0,person,child health booklet
+Cvac160,date of vaccination for Pentavalente 1a,0,person,child health booklet
+Cvac170,date of vaccination for Pentavalente 2a ,0,person,child health booklet
+Cvac180,date of vaccination for Pentavalente 3a ,0,person,child health booklet
+Cvac190,date of vaccination for Sarampionosa,0,person,child health booklet
+Cvac200,date of vaccination for other vaccins,0,person,child health booklet
+Cvacbcg0,=1 if has BCG vaccine- on health card,0,person,child health booklet
+Cvacbcg1,=1 if has BCG vaccine- on health card,1,person,child health booklet
+Cvacdpt0,=1 if has DPT/Triple vaccine- on health card,0,person,child health booklet
+Cvacdpt1,=1 if has DPT/Triple vaccine- on health card,1,person,child health booklet
+Cvachepb0,=1 if has Hepatitis-B vaccine- on health card,0,person,child health booklet
+Cvachepb1,=1 if has Hepatitis-B vaccine- on health card,1,person,child health booklet
+Cvacmal0,=1 if has anti-malaria on health card,0,person,child health booklet
+Cvacmal1,=1 if has anti-malaria on health card,1,person,child health booklet
+Cvacsar0,=1 if has SR vaccine- on health card,0,person,child health booklet
+Cvacsar1,=1 if has SR vaccine- on health card,1,person,child health booklet
+Cvacpolio0,=1 if has Polio/OPV vaccine- on health card,0,person,child health booklet
+Cvacpolio1,=1 if has Polio/OPV vaccine- on health card,1,person,child health booklet
+Cage01gc0,growth check 1- age in months,0,person,child health booklet
+Ckg01gc0,growth check 1- weight in kg,0,person,child health booklet
+Health check "Niño Sano",,0,,
+Cgrthcont0,=1 if growth check in last 6 months,0,person,child health check
+Cgrthcont0,=1 if growth check in last 6 months,0,person,child health check
+Cgrthcont0,=1 if growth check in last 6 months,0,person,child health check
+Cngrthcont0,number of growth checks in last 6 months,0,person,child health check
+Cngrthcont1,number of growth checks in last 6 months,1,person,child health check
+Cngrthcont2,number of growth checks in last 6 months,2,person,child health check
+Cwheregcont0,where did child received last growth check?,0,person,child health check
+Cwheregcont1,where did child received last growth check?,1,person,child health check
+Cwheregcont2,where did child received last growth check?,2,person,child health check
+Cwhogcont0,who did the growth and development  check?,0,person,child health check
+Cgotiron0,=1 if child got iron last 6 months,0,person,child health check
+Cgotiron1,=1 if child got iron last 6 months,1,person,child health check
+Cgotiron2,=1 if child got iron last 6 months,2,person,child health check
+Cnumiron0,number of times child got iron last 6 months,0,person,child health check
+Cnumiron1,number of times child got iron last 6 months,1,person,child health check
+Cnumiron2,number of times child got iron last 6 months,2,person,child health check
+CgotvitA0,=1 if child got Vitamin A last 6 months,0,person,child health check
+CgotvitA1,=1 if child got Vitamin A last 6 months,1,person,child health check
+CgotvitA2,=1 if child got Vitamin A last 6 months,2,person,child health check
+CnumvitA0,number of times child got Vitamin A last 6 months,0,person,child health check
+CnumvitA1,number of times child got Vitamin A last 6 months,1,person,child health check
+CnumvitA2,number of times child got Vitamin A last 6 months,2,person,child health check
+Cfood_bread0,=1 if child ate bread last week,0,person,child nutrition
+Cfood_bread1,=1 if child ate bread last week,1,person,child nutrition
+Cfood_carrot0,=1 if child ate carrot/squash last week,0,person,child nutrition
+Cfood_carrot1,=1 if child ate carrot/squash last week,1,person,child nutrition
+Cfood_chard0,=1 if child ate chard/spinach last week,0,person,child nutrition
+Cfood_chard1,=1 if child ate chard/spinach last week,1,person,child nutrition
+Cfood_citrus0,=1 if child ate citrus last week,0,person,child nutrition
+Cfood_citrus1,=1 if child ate citrus last week,1,person,child nutrition
+Cfood_cowv0,=1 if child ate cow viscera last week,0,person,child nutrition
+Cfood_cowv1,=1 if child ate cow viscera last week,1,person,child nutrition
+Cfood_fruit0,=1 if child ate other fruit last week,0,person,child nutrition
+Cfood_fruit1,=1 if child ate other fruit last week,1,person,child nutrition
+Cfood_liver0,=1 if child ate liver last week,0,person,child nutrition
+Cfood_liver1,=1 if child ate liver last week,1,person,child nutrition
+Cnfood_fruit0,number of times ate other fruit last week,0,person,child nutrition
+Cnfood_fruit1,number of times ate other fruit last week,1,person,child nutrition
+Cnfood_liver0,number of times ate liver last week,0,person,child nutrition
+Cnfood_liver1,number of times ate liver last week,1,person,child nutrition
+Cnfood_bread0,number of times ate bread last week,0,person,child nutrition
+Cnfood_bread1,number of times ate bread last week,1,person,child nutrition
+Cnfood_carrot0,number of times ate carrot/squash last week,0,person,child nutrition
+Cnfood_carrot1,number of times ate carrot/squash last week,1,person,child nutrition
+Cnfood_chard0,number of times ate chard/spinach last week,0,person,child nutrition
+Cnfood_chard1,number of times ate chard/spinach last week,1,person,child nutrition
+Cnfood_citrus0,number of times ate citrus last week,0,person,child nutrition
+Cnfood_citrus1,number of times ate citrus last week,1,person,child nutrition
+Cnfood_cowv0,number of times ate cow viscera last week,0,person,child nutrition
+Cnfood_cowv1,number of times ate cow viscera last week,1,person,child nutrition
+Cfood_candy1,=1 if child ate candy last week?,1,person,child nutrition
+Cfood_cookie1,=1 if child ate cookie/biscuit/pastry last week?,1,person,child nutrition
+Cfood_fried1,=1 if child ate fried foods (eg, french fries) last week?,1,person,child nutrition
+Cfood_soda1,=1 if child ate soda/ice cream last week?,1,person,child nutrition
+Cnfood_candy1,number of times ate candy last week,1,person,child nutrition
+Cnfood_cookie1,number of times ate cookie/biscuit/pastry last week,1,person,child nutrition
+Cnfood_fried1,number of times ate fried foods (eg, french fries) last,1,person,child nutrition
+Cnfood_soda1,number of times ate soda/ice cream last week,1,person,child nutrition
+Cbfed0,=1 if child was breastfed,0,person,child breastfeeding
+Cbfed1,=1 if child was breastfed,1,person,child breastfeeding
+CbfedWN0,why was child not breast fed?,0,person,child breastfeeding
+Cbfedcurr0,=1 if child is currently breastfed,0,person,child breastfeeding
+Cbfedcurr1,=1 if child is currently breastfed,1,person,child breastfeeding
+Cbfedmonths0,number of months child was breastfed,0,person,child breastfeeding
+Cbfedmonths1,number of months child was breastfed,1,person,child breastfeeding
+Cbfedlstnite0,number of times child was breastfed last night,0,person,child breastfeeding
+Cbfedsugar0,=1 if sugar was used in bottle (if bfed),0,person,child breastfeeding
+Cbfedsolids0,=1 if child was fed solids (if bfed),0,person,child breastfeeding
+Respiratory Track Infections,,0,,
+Cresp0,=1 if child had fever/cough last 2 weeks,0,person,child respiratory track infections
+Cresp1,=1 if child had fever/cough last 2 weeks,1,person,child respiratory track infections
+Cresp2,=1 if child had fever/cough last 2 weeks,2,person,child respiratory track infections
+Cnresp0,number of days with fever/cough last 2 weeks,0,person,child respiratory track infections
+Cnresp1,number of days with fever/cough last 2 weeks,1,person,child respiratory track infections
+Cnresp2,number of days with fever/cough last 2 weeks,2,person,child respiratory track infections
+Cresptreat0,=1 if child’s fever/cough was treated,0,person,child respiratory track infections
+Cresptreat1,=1 if child’s fever/cough was treated,1,person,child respiratory track infections
+CrespWN0,why was there no treatment for fever/cough?,0,person,child respiratory track infections
+CrespWN1,why was there no treatment for fever/cough?,1,person,child respiratory track infections
+Crespwhere0,where got treatment/advice, fever cough?,0,person,child respiratory track infections
+Crespwhere1,where got treatment/advice, fever cough?,1,person,child respiratory track infections
+Acute diarrheal diseases,,0,,
+Cdiar0,=1 if child got diarrhea in last 2 weeks,0,person,child acute diarrheal diseases
+Cdiar1,=1 if child got diarrhea in last 2 weeks,1,person,child acute diarrheal diseases
+Cdiar2,=1 if child got diarrhea in last 2 weeks,2,person,child acute diarrheal diseases
+Cndiar0,number of days child had diarrhea in last 2 weeks,0,person,child acute diarrheal diseases
+Cndiar1,number of days child had diarrhea in last 2 weeks,1,person,child acute diarrheal diseases
+Cndiar2,number of days child had diarrhea in last 2 weeks,2,person,child acute diarrheal diseases
+Cdiartreat0,=1 if diarrhea was treated,0,person,child acute diarrheal diseases
+Cdiartreat1,=1 if diarrhea was treated,1,person,child acute diarrheal diseases
+Cdiarwhere0,where did child get treatment/advice for diarrhea?,0,person,child acute diarrheal diseases
+Cdiarwhere1,where did child get treatment/advice for diarrhea?,1,person,child acute diarrheal diseases
+CdiarWN0,why didn’t child get treated for diarrhea?,0,person,child acute diarrheal diseases
+Cdiar_IVfluids0,=1 if child got IV fluids during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_ORT0,=1 if child got oral rehydration treatment during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_antib0,=1 if child got antibiotics during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_dryskin0,=1 if child got dry skin while had diarrhea,0,person,child acute diarrheal diseases
+Cdiar_homemade0,=1 if child got homemade ORT treatment during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_liquids0,=1 if child got liquids during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_liquids1,=1 if child got liquids during diarrhea,1,person,child acute diarrheal diseases
+Cdiar_pedialyte0,=1 if child got pedialyte during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_solids0,=1 if child got food during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_syrup0,=1 if child got syrup or pills during diarrhea,0,person,child acute diarrheal diseases
+Cdiar_teajuice0,=1 if child got herbal tea or juice during diarrhea,0,person,child acute diarrheal diseases
+Hospitalization,,0,,child hospitalization
+Chosp0,was hospitalized last year?,0,person,child hospitalization
+Chosp1,was hospitalized last year?,1,person,child hospitalization
+Cnhosp0,number of days hospitalized,0,person,child hospitalization
+Cnhosp1,number of days hospitalized,1,person,child hospitalization
+Ccond_asthma0,=1 if child has asthma,0,person,child hospitalization
+Ccond_asthma1,=1 if child has asthma,1,person,child hospitalization
+Ccond_bronc0,=1 if child has bronchitis,0,person,child hospitalization
+Ccond_bronc1,=1 if child has bronchitis,1,person,child hospitalization
+Ccond_bronc2,=1 if child has bronchitis,2,person,child hospitalization
+Ccond_diab0,=1 if child has diabetes,0,person,child hospitalization
+Ccond_diab1,=1 if child has diabetes,1,person,child hospitalization
+Ccond_headach2,=1 if child has diabetes,2,person,child hospitalization
+Ccond_epilep0,=1 if child has epilepsy,0,person,child hospitalization
+Ccond_epilep1,=1 if child has epilepsy,1,person,child hospitalization
+Ccond_headach0,=1 if child has headaches,0,person,child hospitalization
+Ccond_headach1,=1 if child has headaches,1,person,child hospitalization
+Ccond_hearing0,=1 if child has hearings problems,0,person,child hospitalization
+Ccond_hearing1,=1 if child has hearings problems,1,person,child hospitalization
+Ccond_hearing2,=1 if child has hearings problems,2,person,child hospitalization
+Ccond_heart0,=1 if child has heart problems,0,person,child hospitalization
+Ccond_heart1,=1 if child has heart problems,1,person,child hospitalization
+Ccond_retard0,=1 if child has intellectual disability,0,person,child hospitalization
+Ccond_retard1,=1 if child has intellectual disability,1,person,child hospitalization
+Ccond_sight0,=1 if child has sight problems,0,person,child hospitalization
+Ccond_sight1,=1 if child has sight problems,1,person,child hospitalization
+Ccond_sight2,=1 if child has sight problems,2,person,child hospitalization
+Ccond_sight3,=1 if child has sight problems,3,person,child hospitalization
+Ccond_sinus0,=1 if child has sinusitis,0,person,child hospitalization
+CMP0,=1 receive food supplement last 3 months?,0,person,child social programs
+CMP1,=1 receive food supplement last 3 months?,1,person,child social programs
+CMPWN0,why did not receive food supplement?,0,person,child social programs
+CMP_free0,=1 if food supplement was free,0,person,child social programs
+CMP_ate0,=1 if child ate food supplement,0,person,child social programs
+CMP_ate1,=1 if child ate food supplement,1,person,child social programs
+CMP_ateWN0,why not ate food supplement?,0,person,child social programs
+CMP_adults0,=1 if the also gave food supplement to adults at home,0,person,child social programs
+CMP_animals0,=1 if they also gave food supplement to animals,0,person,child social programs
+CMP_okids0,=1 gave food supplement to other kids,0,person,child social programs
+CMP_sibs0,=1 if they also gave food supplement to other kids at home,0,person,child social programs
+Child Development Programs (CDP),,0,,
+Cprogram0,type of CDP attended,0,person,child development programs
+Cprogram1,type of CDP attended,1,person,child development programs
+Cprogram_days0,days in CDP,0,person,child development programs
+Cprogram_days1,days in CDP,1,person,child development programs
+Cprogram_hrs0,hours in CDP,0,person,child development programs
+Cprogram_hrs1,hours in CDP,1,person,child development programs
+Cprogram_fd0,=1 if there was food in the CDP?,0,person,child development programs
+Cchildcare0,usual child caregiver,0,person,child development programs
+Cchildcare1,usual child caregiver,1,person,child development programs
+Cchildcare2,usual child caregiver,2,person,child development programs
+Cwhodaycare02,where child was cared for during dat, 0 years old (ie less than 1 year),2,person,child development programs
+Cwhodaycare12,where child was cared for during day, 1 years old,2,person,child development programs
+Cwhodaycare22,where child was cared for during day, 2 years old,2,person,child development programs
+Cwhodaycare32,where child was cared for during day, 3 years old,2,person,child development programs
+Cwhodaycare42,where child was cared for during day, 4 years old,2,person,child development programs
+Cwhodaycare52,where child was cared for during day, 5 years old,2,person,child development programs
+Cwhichdaycare02,which formal daycare was child enrolled when 0 years old (ie less than 1 year)?,2,person,child development programs
+Cwhichdaycare12,which formal daycare was child enrolled when 1 years old?,2,person,child development programs
+Cwhichdaycare22,which formal daycare was child enrolled when 2 years old?,2,person,child development programs
+Cwhichdaycare32,which formal daycare was child enrolled when 3 years old?,2,person,child development programs
+Cwhichdaycare42,which formal daycare was child enrolled when 4 years old?,2,person,child development programs
+Cwhichdaycare52,which formal daycare was child enrolled when 5 years old?,2,person,child development programs
+Cmnthsdaycare02,number months child attended formal daycare when 0 years old (ie less than 1 yea,2,person,child development programs
+Cmnthsdaycare12,number months child attended formal daycare when 1 years old,2,person,child development programs
+Cmnthsdaycare22,number months child attended formal daycare when 2 years old,2,person,child development programs
+Cmnthsdaycare32,number months child attended formal daycare when 3 years old,2,person,child development programs
+Cmnthsdaycare42,number months child attended formal daycare when 4 years old,2,person,child development programs
+Cmnthsdaycare52,number months child attended formal daycare when 5 years old,2,person,child development programs
+Cattendnow02,child currently attends same daycare?,2,person,child development programs
+Cattendnow12,child currently attends same daycare?,2,person,child development programs
+Cattendnow22,child currently attends same daycare?,2,person,child development programs
+Cattendnow32,child currently attends same daycare?,2,person,child development programs
+Cattendnow42,child currently attends same daycare?,2,person,child development programs
+Cattendnow52,child currently attends same daycare?,2,person,child development programs
+Cformaldaycare02,=1 if enrolled in formal daycare when 0 years old (ie less than 1 year),2,person,child development programs
+Cformaldaycare12,=1 if enrolled in formal daycare when 1 years old,2,person,child development programs
+Cformaldaycare22,=1 if enrolled in formal daycare when 2 years old,2,person,child development programs
+Cformaldaycare32,=1 if enrolled in formal daycare when 3 years old,2,person,child development programs
+Cformaldaycare42,=1 if enrolled in formal daycare when 4 years old,2,person,child development programs
+Cformaldaycare52,=1 if enrolled in formal daycare when 5 years old,2,person,child development programs
+Quality of Home Environment (including discipline),,0,,
+Cbooks0,number of children's books at hh,0,household,quality of home environment including discipline
+Cbooks1,number of children's books at hh,1,household,quality of home environment including discipline
+Cbooks2,number of children's books at hh,2,household,quality of home environment including discipline
+Cread1,w1 someone at home reads to child,1,person,quality of home environment including discipline
+Cread2,w1 someone at home reads to child,2,person,quality of home environment including discipline
+Creadwho0,who reads to the child,0,person,quality of home environment including discipline
+Creadtime0,hours per week reads to child ,0,person,quality of home environment including discipline
+Creadtime1,hours per week reads to child ,1,person,quality of home environment including discipline
+Creadtime2,hours per week reads to child ,2,person,quality of home environment including discipline
+Mharshtot0,M hostility score (0 to 6),0,person,quality of home environment including discipline
+Mharshtot1,M hostility score (0 to 6),1,person,quality of home environment including discipline
+Mharshtot4,M hostility score (0 to 6),4,person,quality of home environment including discipline
+Mcoldtot0,M coldness score (0 to 6),0,person,quality of home environment including discipline
+Mcoldtot1,M coldness score (0 to 6),1,person,quality of home environment including discipline
+Mcoldtot4,M coldness score (0 to 6),4,person,quality of home environment including discipline
+Mhometot0,total Home Observation for Measurement of the Environment (HOME) score - 0 to 11, with higher values corresponding to less responsive and harsher behavior,0,person,quality of home environment including discipline
+Mhometot1,total Home Observation for Measurement of the Environment (HOME) score - 0 to 11, with higher values corresponding to less responsive and harsher behavior,1,person,quality of home environment including discipline
+Mhometot4,total Home Observation for Measurement of the Environment (HOME) score - 0 to 11, with higher values corresponding to less responsive and harsher behavior,4,person,quality of home environment including discipline
+Cstory1,Does anyone in HH tell stories to or sing to child,1,person,quality of home environment including discipline
+Cstory2,Does anyone in HH tell stories to or sing to child,2,person,quality of home environment including discipline
+Mpunbelt1,how many times punished oldest kid with belt/other object in last 30 days,1,person,quality of home environment including discipline
+Mpunslap1,how many times punished oldest kid with slaps/spanks/pinches in last 30 days,1,person,quality of home environment including discipline
+Mpunyell1,how many times punished oldest kid with yells or insults in last 30 days,1,person,quality of home environment including discipline
+Mpunother1,how else does punish oldest child when s/he misbehaves?,1,person,quality of home environment including discipline
+Cmhit2,did mother hit child with object, last 30 days?,2,person,quality of home environment including discipline
+Cmnhit2,# times mother hit with object child, last 30 days,2,person,quality of home environment including discipline
+Cmshout2,did mother shout at child, last 30 days?,2,person,quality of home environment including discipline
+Cmnshout2,# times mother shouted at child, last 30 days,2,person,quality of home environment including discipline
+Cmspank2,did mother spank child, last 30 days?,2,person,quality of home environment including discipline
+Cmnspank2,# times mother spanked child, last 30 days,2,person,quality of home environment including discipline
+Cmnotv2,did mother punish by taking away games, TV, treats etc?,2,person,quality of home environment including discipline
+Cmpnsho2,did mother use another form of violent punishment with child?,2,person,quality of home environment including discipline
+Cmtalk2,does mother prefer not to punish child, instead talk?,2,person,quality of home environment including discipline
+Cohit2,did other adult hit child with object, last 30 days?,2,person,quality of home environment including discipline
+Conhit2,# times other adult hit with object child, last 30 days,2,person,quality of home environment including discipline
+Coshout2,did other adult shout at child, last 30 days?,2,person,quality of home environment including discipline
+Conshout2,# times other adult shouted at child, last 30 days,2,person,quality of home environment including discipline
+Cospank2,did other adult spank child, last 30 days?,2,person,quality of home environment including discipline
+Conspank2,# times other adult spanked child, last 30 days,2,person,quality of home environment including discipline
+Conotv2,did other adult punish by taking away games, TV, treats etc?,2,person,quality of home environment including discipline
+Copnsho2,did other adult use another form of violent punishment with child?,2,person,quality of home environment including discipline
+Cotalk2,does other adult prefer not to punish child, instead talk?,2,person,quality of home environment including discipline
+Crepeat_ever2,=1 if child ever repeat a grade,2,person,child school-related, 5 years and older
+Crepeat_initial2,grade that child first repeated,2,person,child school-related, 5 years and older
+Crepeat_scnd2,grade that child repeated, the second time,2,person,child school-related, 5 years and older
+Cnrepeat_gr12,number of times child repeated grade 1,2,person,child school-related, 5 years and older
+Cnrepeat_gr22,number of times child repeated grade 2,2,person,child school-related, 5 years and older
+Cnrepeat_gr32,number of times child repeated grade 3,2,person,child school-related, 5 years and older
+Cnrepeat_gr42,number of times child repeated grade 4,2,person,child school-related, 5 years and older
+Cnrepeat_gr52,number of times child repeated grade 5,2,person,child school-related, 5 years and older
+Cnrepeat_gr62,number of times child repeated grade 6,2,person,child school-related, 5 years and older
+Cnrepeat_gr72,number of times child repeated grade 7,2,person,child school-related, 5 years and older
+Cnrepeat_gr82,number of times child repeated grade 8,2,person,child school-related, 5 years and older
+Cnrepeat_gr92,number of times child repeated grade 9,2,person,child school-related, 5 years and older
+Cabsent2,=1 if child was absent from school, last 2 weeks,2,person,child school-related, 5 years and older
+Cwhyabsent2,why was child absent from school?,2,person,child school-related, 5 years and older
+Cnabsent2,number of schools days child missed, last 2 weeks?,2,person,child school-related, 5 years and older
+Ctimeschool2,minutes it takes to get to school,2,person,child school-related, 5 years and older
+Chwhelp2,=1 if someone helps child with homework,2,person,child school-related, 5 years and older
+Chelphwline2,line number of hh member: helps w homework,2,person,child school-related, 5 years and older
+Ctimehw2,minutes devoted to homework, per day,2,person,child school-related, 5 years and older
+Cexp_books2,=1 if any exp: books, supplies (annual),2,person,child school-related, 5 years and older
+Cexp_books_amt2,amount: book, sch materials exp (annual),2,person,child school-related, 5 years and older
+Cexp_books_mnth2,=1 if any exp: books, supplies (last month),2,person,child school-related, 5 years and older
+Cexp_books_mnth_amt2,amount: book, sch materials exp (last month),2,person,child school-related, 5 years and older
+Cexp_bus2,=1 if any exp: sch bus (last month),2,person,child school-related, 5 years and older
+Cexp_bus_amt2,amount: sch bus exp (last month),2,person,child school-related, 5 years and older
+Cexp_other2,=1 if any exp: other sch costs (last month),2,person,child school-related, 5 years and older
+Cexp_other_amt2,amount: other sch exp (last month),2,person,child school-related, 5 years and older
+Cexp_pcommit2,=1 if any exp: sch parent committee (annual),2,person,child school-related, 5 years and older
+Cexp_pcommit_amt2,amount: exp for sch parent committee (annual),2,person,child school-related, 5 years and older
+Cexp_regis2,=1 if any exp: sch registration (annual),2,person,child school-related, 5 years and older
+Cexp_regis_amt2,amount: sch registration exp (annual),2,person,child school-related, 5 years and older
+Cexp_regis_mnth2,=1 if any exp: sch registration (last month),2,person,child school-related, 5 years and older
+Cexp_regis_mnth_amt2,amount: sch registration exp (last month),2,person,child school-related, 5 years and older
+Cexp_uniform2,=1 if any exp: sch uniform (annual),2,person,child school-related, 5 years and older
+Cexp_uniform_amt2,amount: sch uniform exp (annual),2,person,child school-related, 5 years and older
+Cwrk_h2,=1 if work on hh chores (last week),2,person,child labor
+Cwrk_h_hrs2,hours worked on hh chores (last week),2,person,child labor
+Cwrk_n2,=1 if work for no pay (last week),2,person,child labor
+Cwrk_n_hrs2,hours worked for no pay (last week),2,person,child labor
+Cwrk_p2,=1 if work for pay (last week),2,person,child labor
+Cwrk_p_hrs2,hours worked for pay (last week),2,person,child labor
+Cwrk_p_wage2,wage paid for work (last month),2,person,child labor
+Child Assessments,,0,,
+TVIP,,0,,
+Ctvipcomplete0,completed the Peabody Picture Vocabulary Test (TVIP) test,0,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipcomplete1,completed the Peabody Picture Vocabulary Test (TVIP) test,1,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipcomplete2,completed the Peabody Picture Vocabulary Test (TVIP) test,2,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipcomplete3,completed the Peabody Picture Vocabulary Test (TVIP) test,3,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipcomplete4,completed the Peabody Picture Vocabulary Test (TVIP) test,4,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipwhynot1,why Peabody Picture Vocabulary Test (TVIP) not completed,1,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipwhynot2,why Peabody Picture Vocabulary Test (TVIP) not completed,2,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipwhynot3,why Peabody Picture Vocabulary Test (TVIP) not completed,3,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctvipwhynot4,why Peabody Picture Vocabulary Test (TVIP) not completed,4,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot0,raw Peabody Picture Vocabulary Test (TVIP) score,0,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot1,raw Peabody Picture Vocabulary Test (TVIP) score,1,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot2,raw Peabody Picture Vocabulary Test (TVIP) score,2,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot3,raw Peabody Picture Vocabulary Test (TVIP) score,3,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot4,raw Peabody Picture Vocabulary Test (TVIP) score,4,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Cstdtvip0,standarized Peabody Picture Vocabulary Test (TVIP) score ,0,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Cstdtvip1,standarized Peabody Picture Vocabulary Test (TVIP) score ,1,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Cstdtvip2,standarized Peabody Picture Vocabulary Test (TVIP) score ,2,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot0_k,standardized Peabody Picture Vocabulary Test (TVIP) score (non parametric),0,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot1_k,standardized Peabody Picture Vocabulary Test (TVIP) score (non parametric),1,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot2_k,standardized Peabody Picture Vocabulary Test (TVIP) score (non parametric),2,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot3_k,standardized Peabody Picture Vocabulary Test (TVIP) score (non parametric),3,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Ctviptot4_k,standardized Peabody Picture Vocabulary Test (TVIP) score (non parametric),4,person,child assessments,  Peabody Picture Vocabulary Test (TVIP)
+Household (observation),,0,,
+SANbarn0,=1 if barn/animals near house,0,household,household observations
+SANbarn1,=1 if barn/animals near house,1,household,household observations
+SANbarn2,=1 if barn/animals near house,2,household,household observations
+SANexcr0,=1 if excrement in yard,0,household,household observations
+SANexcr1,=1 if excrement in yard,1,household,household observations
+SANexcr2,=1 if excrement in yard,2,household,household observations
+SANgarb0,=1 if garbage around house,0,household,household observations
+SANgarb1,=1 if garbage around house,1,household,household observations
+SANgarb2,=1 if garbage around house,2,household,household observations
+SANvent0,=1 if lack of ventilation,0,household,household observations
+SANvent1,=1 if lack of ventilation,1,household,household observations
+SANvent2,=1 if lack of ventilation,2,household,household observations
+SANwatr0,=1 if standing water around house,0,household,household observations
+SANwatr1,=1 if standing water around house,1,household,household observations
+SANwatr2,=1 if standing water around house,2,household,household observations
+SANyard0,=1 if yard not clean,0,household,household observations
+SANyard1,=1 if yard not clean,1,household,household observations
+SANyard2,=1 if yard not clean,2,household,household observations
+Chaz0,Height-age z-score,0,person,child assessments,  anthropometry
+Chaz1,Height-age z-score,1,person,child assessments,  anthropometry
+Chaz2,Height-age z-score,2,person,child assessments,  anthropometry
+Cwaz0,Weight-age z-score,0,person,child assessments,  anthropometry
+Cwaz1,Weight-age z-score,1,person,child assessments,  anthropometry
+Cwaz2,Weight-age z-score,2,person,child assessments,  anthropometry
+Cwhz0,Weight-height z-score,0,person,child assessments,  anthropometry
+Cwhz1,Weight-height z-score,1,person,child assessments,  anthropometry
+Cwhz2,Weight-height z-score,2,person,child assessments,  anthropometry
+Cstunted0,haz<-2,0,person,child assessments,  anthropometry
+Cstunted1,haz<-2,1,person,child assessments,  anthropometry
+Cstunted2,haz<-2,2,person,child assessments,  anthropometry
+Cwasted0,whz<-2,0,person,child assessments,  anthropometry
+Cwasted1,whz<-2,1,person,child assessments,  anthropometry
+Cwasted2,whz<-2,2,person,child assessments,  anthropometry
+Cbmi1,body mass index,1,person,child assessments,  anthropometry
+Cbmi2,body mass index,2,person,child assessments,  anthropometry
+Cpbcomplete1,=1 if completed the Pegboard test,1,person,child assessments,  pegboard test
+Cpbcomplete2,=1 if completed the Pegboard test,2,person,child assessments,  pegboard test
+Cpbwhynot1,why Pegboard test not completed,1,person,child assessments,  pegboard test
+Cpbwhynot2,why Pegboard test not completed,2,person,child assessments,  pegboard test
+Cpbint1,during pegboard test, child was,1,person,child assessments,  pegboard test
+Cpbint2,during pegboard test, child was,2,person,child assessments,  pegboard test
+Cpbavg_dom1,average of dominant hand Pegboard scores,1,person,child assessments,  pegboard test
+Cpbavg_dom2,average of dominant hand Pegboard scores,2,person,child assessments,  pegboard test
+Cpbavg_nd1,average of non-dominant hand Pegboard scores,1,person,child assessments,  pegboard test
+Cpbavg_nd2,average of non-dominant hand Pegboard scores,2,person,child assessments,  pegboard test
+Cbmcomplete1,completed the Barrera-Moncada (B-M) test,1,person,child assessments,  Barrera-Moncada Test
+Cbmwhynot1,why Barrera-Moncada (B-M) test not completed,1,person,child assessments,  Barrera-Moncada Test
+Cbmscore1,raw score for Barrera-Moncada (B-M) test,1,person,child assessments,  Barrera-Moncada Test
+Cbmpct1,percent of 'yes' responses for Barrera-Moncada (B-M) test,1,person,child assessments,  Barrera-Moncada Test
+Cbmallyes1,reached all dev. milestones on Barrera-Moncada (B-M) test,1,person,child assessments,  Barrera-Moncada Test
+Cbmint1,during Barrera-Moncada test, child was,1,person,child assessments,  Barrera-Moncada Test
+Cmaccomplete1,=1 if completed the MacArthur test,1,person,child assessments,  Mac Arther test
+Cmacwhynot1,why MacArthur test not completed,1,person,child assessments,  Mac Arther test
+Cmacscore1,MacArthur test raw score,1,person,child assessments,  Mac Arther test
+Cmacpct1,MacArthur percent 'yes',1,person,child assessments,  Mac Arther test
+Cbpicomplete1,=1 if completed the Behavior Problems Inventory (BPI) behavioral test,1,person,child assessments,  Behavior Problems Inventory test
+Cbpiwhynot1,why Behavior Problems Inventory (BPI) behavioral test not completed,1,person,child assessments,  Behavior Problems Inventory test
+Cbpiint1,during Behavior Problems Inventory (BPI) test, child was,1,person,child assessments,  Behavior Problems Inventory test
+Cbpitotal_a1,total BPI score - sum of question scores,1,person,child assessments,  Behavior Problems Inventory test
+CbpiAggr_a1,Behavior Problems Inventory (BPI) aggression sub-scale score - sum of question scores,1,person,child assessments,  Behavior Problems Inventory test
+CbpiAnx_a1,Behavior Problems Inventory (BPI) anxiety sub-scale score - sum of question scores,1,person,child assessments,  Behavior Problems Inventory test
+CbpiOth_a1,Behavior Problems Inventory (BPI) other sub-scale score - sum of question scores,1,person,child assessments,  Behavior Problems Inventory test
+FAManswer2,during int, parent respond to kids' fond words, at least once?,2,person,child assessments,  family relations
+FAMcpresent2,was at least one child present during interview?,2,person,child assessments,  family relations
+FAMforbid2,during int, parent forbid child from doing something, at least three times?,2,person,child assessments,  family relations
+FAMhit2,during int, did parent hit a child?,2,person,child assessments,  family relations
+FAMhostile2,during int, was parent annoyed or hostility to kids?,2,person,child assessments,  family relations
+FAMkiss2,during int, did parent kiss a child, at least once?,2,person,child assessments,  family relations
+FAMpositive2,during int, when parent spoke to kids, was tone positive?,2,person,child assessments,  family relations
+FAMpraise2,during int, did parent praise kids, at least twice?,2,person,child assessments,  family relations
+FAMscold2,during int, did parent scold, critisize a child?,2,person,child assessments,  family relations
+FAMshout2,during int, did parent shout at any child?,2,person,child assessments,  family relations
+FAMteach2,during int, parent teach a kid about object/person, at least twice?,2,person,child assessments,  family relations
+FAMwords2,during int, parent say fond words to kids, at least twice?,2,person,child assessments,  family relations
+CSDQtotal3,Strenghts and Difficulties (S&D) total score,3,person,child assessments,  Strengths and Difficulties test
+CSDQtotal4,Strenghts and Difficulties (S&D) total score,4,person,child assessments,  Strengths and Difficulties test
+sdCSDQtotal3,Strenghts and Difficulties (S&D) standardized total score,3,person,child assessments,  Strengths and Difficulties test
+sdCSDQtotal4,Strenghts and Difficulties (S&D) standardized total score,4,person,child assessments,  Strengths and Difficulties test
+CSDQemot3,Strenghts and Difficulties (S&D) emotional symptoms score,3,person,child assessments,  Strengths and Difficulties test
+CSDQemot4,Strenghts and Difficulties (S&D) emotional symptoms score,4,person,child assessments,  Strengths and Difficulties test
+sdCSDQemot3,Strenghts and Difficulties (S&D) standardized emotional symptoms score,3,person,child assessments,  Strengths and Difficulties test
+sdCSDQemot4,Strenghts and Difficulties (S&D) standardized emotional symptoms score,4,person,child assessments,  Strengths and Difficulties test
+CSDQcond3,Strenghts and Difficulties (S&D) conduct problem score,3,person,child assessments,  Strengths and Difficulties test
+CSDQcond4,Strenghts and Difficulties (S&D) conduct problem score,4,person,child assessments,  Strengths and Difficulties test
+sdCSDQcond3,Strenghts and Difficulties (S&D) standardized conduct problem score,3,person,child assessments,  Strengths and Difficulties test
+sdCSDQcond4,Strenghts and Difficulties (S&D) standardized conduct problem score,4,person,child assessments,  Strengths and Difficulties test
+CSDQhyp3,Strenghts and Difficulties (S&D) hyperactivity score,3,person,child assessments,  Strengths and Difficulties test
+CSDQhyp4,Strenghts and Difficulties (S&D) hyperactivity score,4,person,child assessments,  Strengths and Difficulties test
+sdCSDQhyp3,Strenghts and Difficulties (S&D) standardized hyperactivity score,3,person,child assessments,  Strengths and Difficulties test
+sdCSDQhyp4,Strenghts and Difficulties (S&D) standardized hyperactivity score,4,person,child assessments,  Strengths and Difficulties test
+CSDQpprob3,Strenghts and Difficulties (S&D) peer problem score,3,person,child assessments,  Strengths and Difficulties test
+CSDQpprob4,Strenghts and Difficulties (S&D) peer problem score,4,person,child assessments,  Strengths and Difficulties test
+sdCSDQpprob3,Strenghts and Difficulties (S&D) standardized peer problem score,3,person,child assessments,  Strengths and Difficulties test
+sdCSDQpprob4,Strenghts and Difficulties (S&D) standardized peer problem score,4,person,child assessments,  Strengths and Difficulties test
+CSDQpros3,Strenghts and Difficulties (S&D) prosocial behavior score,3,person,child assessments,  Strengths and Difficulties test
+CSDQpros4,Strenghts and Difficulties (S&D) prosocial behavior score,4,person,child assessments,  Strengths and Difficulties test
+sdCSDQpros3,Strenghts and Difficulties (S&D) standardized prosocial behavior score,3,person,child assessments,  Strengths and Difficulties test
+sdCSDQpros4,Strenghts and Difficulties (S&D) standardized prosocial behavior score,4,person,child assessments,  Strengths and Difficulties test
+Ccolypalraw13,Colors and words-1 raw score,3,person,child assessments,  Color and Words test
+Ccolypalraw23,Colors and words-2 raw score,3,person,child assessments,  Color and Words test
+Ccolypalraw33,Colors and words-3 raw score,3,person,child assessments,  Color and Words test
+Ccolypalraw33_k,Colors and words-3 standardized score (non parametric),3,person,child assessments,  Color and Words test
+CEATQtot3,Early Adolescent Temperament Questionnaire (EATQ-R) raw total,3,person,child assessments,  Early Adolescent Temperament Questionnaire
+sdCEATQtot3,Early Adolescent Temperament Questionnaire (EATQ-R) standardized total,3,person,child assessments,  Early Adolescent Temperament Questionnaire
+CEATQfrust3,Early Adolescent Temperament Questionnaire (EATQ-R) frustration scale,3,person,child assessments,  Early Adolescent Temperament Questionnaire
+sdCEATQfrust3,Early Adolescent Temperament Questionnaire (EATQ-R) standardized frustration,3,person,child assessments,  Early Adolescent Temperament Questionnaire
+CEATQsurg3,Early Adolescent Temperament Questionnaire (EATQ-R) pleasure scale,3,person,child assessments,  Early Adolescent Temperament Questionnaire
+sdCEATQsurg3,Early Adolescent Temperament Questionnaire (EATQ-R) standardized pleasure,3,person,child assessments,  Early Adolescent Temperament Questionnaire
+CWJ1complete1,=1 if completed the Woodcock-Johnson test for names,1,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1complete2,=1 if completed the Woodcock-Johnson test for names,2,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1complete3,=1 if completed the Woodcock-Johnson test for names,3,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1whynot1,why Woodcock-Johnson test for names not completed,1,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1whynot2,why Woodcock-Johnson test for names not completed,2,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1whynot3,why Woodcock-Johnson test for names not completed,3,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1int1,during WJ1 names test, child was,1,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1int2,during WJ1 names test, child was,2,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1int3,during WJ1 names test, child was,3,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1pct1,WJ1 names percentile,1,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1pct2,WJ1 names percentile,2,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1pct3,WJ1 names percentile,3,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1tot1,WJ1 names raw score,1,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1tot2,WJ1 names raw score,2,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1tot3,WJ1 names raw score,3,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1tot1_k,WJ1 names standardized score (non parametric),1,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1tot2_k,WJ1 names standardized score (non parametric),2,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ1tot3_k,WJ1 names standardized score (non parametric),3,person,child assessments,  Woodcock-Johnson test of memory for names
+CWJ2complete1,=1 if completed the Woodcock-Johnson test for sentences,1,person,child assessments,  Woodcock-Johnson test of memory for sentences
+CWJ2whynot1,why Woodcock-Johnson test for sentences not completed,1,person,child assessments,  Woodcock-Johnson test of memory for sentences
+CWJ2int1,during WJ2 sentences test, child was,1,person,child assessments,  Woodcock-Johnson test of memory for sentences
+CWJ2pct1,WJ2 sentences percentile,1,person,child assessments,  Woodcock-Johnson test of memory for sentences
+CWJ2tot1,WJ2 sentences raw score,1,person,child assessments,  Woodcock-Johnson test of memory for sentences
+CWJ5complete1,=1 if completed the Woodcock-Johnson visual integration,1,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5complete2,=1 if completed the Woodcock-Johnson visual integration,2,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5complete3,=1 if completed the Woodcock-Johnson visual integration,3,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5whynot1,why Woodcock-Johnson test for visial integration not completed,1,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5whynot2,why Woodcock-Johnson test for visial integration not completed,2,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5whynot3,why Woodcock-Johnson test for visial integration not completed,3,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5int1,during WJ5 visual integration test, child was,1,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5int2,during WJ5 visual integration test, child was,2,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5int3,during WJ5 visual integration test, child was,3,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5pct1,WJ5 visual integration percentile,1,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5pct2,WJ5 visual integration percentile,2,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5pctile3,WJ5 visual integration percentile,3,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5tot1,WJ5 visual integration raw score,1,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5tot2,WJ5 visual integration raw score,2,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5tot3,WJ5 visual integration raw score,3,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5tot1_k,WJ5 visual integration standardized score (non parametric),1,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5tot2_k,WJ5 visual integration standardized score (non parametric),2,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+CWJ5tot3_k,WJ5 visual integration standardized score (non parametric),3,person,child assessments,  Woodcock-Johnson test of memory for visual integration
+Cdmcomplete2,=1 if completed the digit memory test,2,person,child assessments,  Digit Memory test
+Cdmcomplete3,=1 if completed the digit memory test,3,person,child assessments,  Digit Memory test
+Cdmcomplete4,=1 if completed the digit memory test,4,person,child assessments,  Digit Memory test
+Cdmwhynot2,why digit memory test not completed,2,person,child assessments,  Digit Memory test
+Cdmwhynot3,why digit memory test not completed,3,person,child assessments,  Digit Memory test
+Cdmwhynot4,why digit memory test not completed,4,person,child assessments,  Digit Memory test
+Cdmint3,during digit memory test, child was,3,person,child assessments,  Digit Memory test
+Cdmint4,during digit memory test, child was,4,person,child assessments,  Digit Memory test
+Cdm1_tot2,raw score part 1 of digit memory test,2,person,child assessments,  Digit Memory test
+Cdm1_tot3,raw score part 1 of digit memory test,3,person,child assessments,  Digit Memory test
+Cdm1_tot4,raw score part 1 of digit memory test,4,person,child assessments,  Digit Memory test
+Cdm2_tot2,raw score part 2 of digit memory test,2,person,child assessments,  Digit Memory test
+Cdm2_tot3,raw score part 2 of digit memory test,3,person,child assessments,  Digit Memory test
+Cdm2_tot4,raw score part 2 of digit memory test,4,person,child assessments,  Digit Memory test
+Cdmtot2_k,digit memory standardized score (non parametric),2,person,child assessments,  Digit Memory test
+Cdmtot3_k,digit memory standardized score (non parametric),3,person,child assessments,  Digit Memory test
+Cdmtot4_k,digit memory standardized score (non parametric),4,person,child assessments,  Digit Memory test
+CWM6complete2,=1 if completed the Woodcock-Munoz math fluency test,2,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6complete3,=1 if completed the Woodcock-Munoz math fluency test,3,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6complete4,=1 if completed the Woodcock-Munoz math fluency test,4,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6whynot2,why Woodcock-Munoz math fluency test not completed,2,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6whynot3,why Woodcock-Munoz math fluency test not completed,3,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6whynot4,why Woodcock-Munoz math fluency test not completed,4,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6tot2,WM6 math fluency raw score,2,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6tot3,WM6 math fluency raw score,3,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6tot4,WM6 math fluency raw score,4,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6tot2_k,WM6 math fluency  standardized score (non parametric),2,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6tot3_k,WM6 math fluency  standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM6tot4_k,WM6 math fluency  standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for math fluency
+CWM18Bcomplete2,=1 if completed the Woodcock-Munoz numeric series test,2,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Bcomplete3,=1 if completed the Woodcock-Munoz numeric series test,3,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Bcomplete4,=1 if completed the Woodcock-Munoz numeric series test,4,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Bwhynot2,why numeric series test not complete, child was,2,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Bwhynot3,why numeric series test not complete, child was,3,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Bwhynot4,why numeric series test not complete, child was,4,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Btot2,WM18 numeric series raw score,2,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Btot3,WM18 numeric series raw score,3,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Btot4,WM18 numeric series raw score,4,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Btot2_k,WM18 numeric series standardized score (non parametric),2,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Btot3_k,WM18 numeric series standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM18Btot4_k,WM18 numeric series standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for numeric series
+CWM1complete2,=1 if completed the Woodcock-Munoz for tests of letters and words,2,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1complete3,=1 if completed the Woodcock-Munoz for tests of letters and words,3,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1complete4,=1 if completed the Woodcock-Munoz for tests of letters and words,4,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1whynot2,why Woodcock-Munoz test of letters and words not completed,2,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1whynot3,why Woodcock-Munoz test of letters and words not completed,3,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1whynot4,why Woodcock-Munoz test of letters and words not completed,4,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1tot2,WM1 letters and words raw score,2,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1tot3,WM1 letters and words raw score,3,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1tot4,WM1 letters and words raw score,4,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1tot2_k,WM1 letters and words standardized score (non parametric),2,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1tot3_k,WM1 letters and words standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM1tot4_k,WM1 letters and words standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for letters and words
+CWM20complete3,=1 if completed the Woodcock-Munoz pair cancellation test,3,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM20complete4,=1 if completed the Woodcock-Munoz pair cancellation test,4,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM20whynot3,why pair cancellation test not completed, child was,3,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM20whynot4,why pair cancellation test not completed, child was,4,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM20tot3,WM20 pair cancellation raw score,3,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM20tot4,WM20 pair cancellation raw score,4,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM20tot3_k,WM20 pair cancellation standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM20tot4_k,WM20 pair cancellation standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for pair cancellation
+CWM2complete3,=1 if completed the Woodcock-Munoz verbal comprehension test,3,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2complete4,=1 if completed the Woodcock-Munoz verbal comprehension test,4,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2whynot3,why verbal comprehension test not completed, child was,3,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2whynot4,why verbal comprehension test not completed, child was,4,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2Atot3,WM2 verbal comprehension: synonyms raw score,3,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2Atot4,WM2 verbal comprehension: synonyms raw score,4,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2Btot3,WM2 verbal comprehension: antonyms raw score,3,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2Btot4,WM2 verbal comprehension: antonyms raw score,4,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2Ctot3,WM2 verbal comprehension: verbal analogies raw score,3,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2Ctot4,WM2 verbal comprehension: verbal analogies raw score,4,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2tot3,WM2 verbal comprehension raw score,3,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2tot4,WM2 verbal comprehension raw score,4,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2tot3_k,WM2 verbal comprehension standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM2tot4_k,WM2 verbal comprehension standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for verbal comprehension
+CWM3complete3,=1 if completed the Woodcock-Munoz spatial relations test,3,person,child assessments,  Woodcock-Muñoz test for spacial relations
+CWM3whynot3,why spatial relations test not completed, child was,3,person,child assessments,  Woodcock-Muñoz test for spacial relations
+CWM3tot3,WM3 spatial relations raw score,3,person,child assessments,  Woodcock-Muñoz test for spacial relations
+CWM3tot3_k,WM3 spatial relations standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for spacial relations
+CWM10complete3,=1 if completed the Woodcock-Munoz applied problems test,3,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM10complete4,=1 if completed the Woodcock-Munoz applied problems test,4,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM10whynot3,why applied problems test not completed, child was,3,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM10whynot4,why applied problems test not completed, child was,4,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM10tot3,WM10 applied problems raw score,3,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM10tot4,WM10 applied problems raw score,4,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM10tot3_k,WM10 applied problems standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM10tot4_k,WM10 applied problems standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for applied problems
+CWM5complete3,=1 if completed the Woodcock-Munoz calculation test,3,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM5complete4,=1 if completed the Woodcock-Munoz calculation test,4,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM5whynot3,why calculation test not completed, child was,3,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM5whynot4,why calculation test not completed, child was,4,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM5tot3,WM5 calculation raw score,3,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM5tot4,WM5 calculation raw score,4,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM5tot3_k,WM5 calculation standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM5tot4_k,WM5 calculation standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for calculation
+CWM12complete3,=1 if completed the Woodcock-Munoz retrieval fluency test,3,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+CWM12complete4,=1 if completed the Woodcock-Munoz retrieval fluency test,4,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+CWM12whynot3,why retrieval fluency test not completed, child was,3,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+CWM12whynot4,why retrieval fluency test not completed, child was,4,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+CWM12tot3,WM12 retrieval fluency raw score,3,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+CWM12tot4,WM12 retrieval fluency raw score,4,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+CWM12tot3_k,WM12 retrieval fluency standardized score (non parametric),3,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+CWM12tot4_k,WM12 retrieval fluency standardized score (non parametric),4,person,child assessments,  Woodcock-Muñoz test for retrieval fluency
+Crccomplete3,=1 if completed reading comprehension test,3,person,child assessments,  reading comprehension test
+Crccomplete4,=1 if completed reading comprehension test,4,person,child assessments,  reading comprehension test
+Crcwhynot3,why reading comprehension test not completed, child was,3,person,child assessments,  reading comprehension test
+Crcwhynot4,why reading comprehension test not completed, child was,4,person,child assessments,  reading comprehension test
+Crcint3,during digit memory test, child was,3,person,child assessments,  reading comprehension test
+Crcint4,during digit memory test, child was,4,person,child assessments,  reading comprehension test
+Crctot3,reading comprehension raw score,3,person,child assessments,  reading comprehension test
+Crctot4,reading comprehension raw score,4,person,child assessments,  reading comprehension test
+Crctot3_k,reading comprehension standardized score (non parametric),3,person,child assessments,  reading comprehension test
+Crctot4_k,reading comprehension standardized score (non parametric),4,person,child assessments,  reading comprehension test
+Mtvipraw1,Peabody Picture Vocabulary Test (TVIP)  raw score,1,person,mother assessments
+Mtvip1,Peabody Picture Vocabulary Test (TVIP)  standardized score,1,person,mother assessments
+MladderC1,MacArthur ladder score - community,1,person,mother assessments
+MladderC2,MacArthur ladder score - community,2,person,mother assessments
+MladderE1,MacArthur ladder score - Ecuador,1,person,mother assessments
+MladderE2,MacArthur ladder score - Ecuador,2,person,mother assessments
+Mdeptot0,depression score from CESD,0,person,mother assessments
+Mcesd1,depression score from CESD,1,person,mother assessments
+Mcesd2,depression score from CESD,2,person,mother assessments
+Mcesd3,depression score from CESD,3,person,mother assessments
+Mcesd4,depression score from CESD,4,person,mother assessments
+Mlivebirths0,mother's number of live births,0,person,mother birth history
+Mlivekids0,mother's number of living children,0,person,mother birth history
+Mdeadkid0,=1 if mother's ever had child die,0,person,mother birth history
+Mdkyrdied0,year in which child died,0,person,mother birth history
+Mdkmndied0,month in which child died,0,person,mother birth history
+Mdkcough0,did child have convulsive cough before died,0,person,mother birth history
+Mdkbreath0,did child have difficulty breathing before they died,0,person,mother birth history
+Mdk12months0,number of mother's kids born alive in last 12 months who later died,0,person,mother birth history
+Msb_abort0,mother ever had an abortion of still-birth,0,person,mother birth history
+Msb_abortmn0,month of last abortion of still-birth,0,person,mother birth history
+Msb_abortyr0,year of last abortion or still-birth,0,person,mother birth history
+Mpregnow0,=1 if mother is pregnant now,0,person,mother pregnancies
+Mpregnow1,=1 if mother is pregnant now,1,person,mother pregnancies
+Mpregcont0,has mother had a pregnancy control,0,person,mother pregnancies
+Mpregcont1,has mother had a pregnancy control,1,person,mother pregnancies
+Mpregmonths0,months mother is pregnant,0,person,mother pregnancies
+Mpregmonths1,months mother is pregnant,1,person,mother pregnancies
+Mhaspcard0,=1 if mother has pregnancy control card,0,person,mother pregnancies
+Mpregcontnum0,how many pregnancy controls has M had,0,person,mother pregnancies
+Mpregcontnum1,how many pregnancy controls has M had,1,person,mother pregnancies
+MpregcontwhereR0,where did mother receive pregnancy control,0,person,mother pregnancies
+Mpregcontwhere1,where did mother receive pregnancy control,1,person,mother pregnancies
+Mpregcontwho0,who assisted mother in last pregnancy control,0,person,mother pregnancies
+Mpregcontwho1,who assisted mother in last pregnancy control,1,person,mother pregnancies
+Mpregcontpay0,=1 if mother had to pay for pregnancy control,0,person,mother pregnancies
+Mpregcontpay1,=1 if mother had to pay for pregnancy control,1,person,mother pregnancies
+Mpregcontcost0,how much mother had to pay for pregnancy control,0,person,mother pregnancies
+Mpregcontcost1,how much mother had to pay for pregnancy control,1,person,mother pregnancies
+Mpregcontmins0,minutes it takes for mother to get to pregnancy control site,0,person,mother pregnancies
+Mpregcontmins1,minutes it takes for mother to get to pregnancy control site,1,person,mother pregnancies
+Mpregtet0,=1 if received tetanus shot during pregnancy,0,person,mother pregnancies
+Mpregtet1,=1 if received tetanus shot during pregnancy,1,person,mother pregnancies
+Mpregtetnum0,number of tetanus shots received during pregnancy,0,person,mother pregnancies
+Mpregtetnum1,number of tetanus shots received during pregnancy,1,person,mother pregnancies
+Mpregiron0,=1 if mother received iron during pregnancy,0,person,mother pregnancies
+Mpregiron1,=1 if mother received iron during pregnancy,1,person,mother pregnancies
+Mpregironnum0,how many times mother received iron during pregnancy,0,person,mother pregnancies
+Mpregironnum1,how many times mother received iron during pregnancy,1,person,mother pregnancies
+Mpregfolic0,=1 if mother received folic acid during pregnancy,0,person,mother pregnancies
+Mpregfolic1,=1 if mother received folic acid during pregnancy,1,person,mother pregnancies
+Mpregfolicnum0,how many times mother received folic acid during pregnancy,0,person,mother pregnancies
+Mpregfolicnum1,how many times mother received folic acid during pregnancy,1,person,mother pregnancies
+Mpregvita0,=1 if mother received Vitamin A during pregnancy,0,person,mother pregnancies
+Mpregvita1,=1 if mother received Vitamin A during pregnancy,1,person,mother pregnancies
+Mpregvitanum0,how many times mother received Vitamin A during pregnancy,0,person,mother pregnancies
+Mpregvitanum1,how many times mother received Vitamin A during pregnancy,1,person,mother pregnancies
+Mpregcomp0,=1 if during pregnancy control someone explained possible preg. complications,0,person,mother pregnancies
+Mpregcomp1,=1 if during pregnancy control someone explained possible preg. complications,1,person,mother pregnancies
+Mcompwhere0,=1 if anyone tell mother where to go if she has pregnancy complications,0,person,mother pregnancies
+Mcompwhere1,=1 if anyone tell mother where to go if she has pregnancy complications,1,person,mother pregnancies
+Mmatprog0,=1 if mother knows about free Maternity Program,0,person,mother pregnancies
+Mcon01dd0,check 1- day,0,person,mother perinatal card
+Mcon01mm0,check 1- month,0,person,mother perinatal card
+Mcon01yy0,check 1- year,0,person,mother perinatal card
+Mcon01kg0,check 1- weight in kg,0,person,mother perinatal card
+Mcon01wp0 ,check 1 - weeks pregnant,0,person,mother perinatal card
+Mprenatal0,=1 if mother prenatal care last pregnancy,0,person,mother last pregnancy (youngest child)
+Mprenatal1,=1 if mother prenatal care last pregnancy,1,person,mother last pregnancy (youngest child)
+Mtetanus0,=1 if mother tetanus shot last pregnancy,0,person,mother last pregnancy (youngest child)
+Mtetanus1,=1 if mother tetanus shot last pregnancy,1,person,mother last pregnancy (youngest child)
+MbrthplaceR0,where youngest child born,0,person,mother last pregnancy (youngest child)
+Mbrthplace1,where youngest child born,1,person,mother last pregnancy (youngest child)
+Mwhyhome0,why gave birth at home,0,person,mother last pregnancy (youngest child)
+Mwhyhome1,why gave birth at home,1,person,mother last pregnancy (youngest child)
+Mbrthasst0,who assisted in delivery,0,person,mother last pregnancy (youngest child)
+Mbrthasst1,who assisted in delivery,1,person,mother last pregnancy (youngest child)
+Mpostnatal0,=1 if mother had checkup after delivery,0,person,mother last pregnancy (youngest child)
+Mpostnatal1,=1 if mother had checkup after delivery,1,person,mother last pregnancy (youngest child)
+Mpostiron0,=1 if mother receive iron postnatally,0,person,mother last pregnancy (youngest child)
+Mpostiron1,=1 if mother receive iron postnatally,1,person,mother last pregnancy (youngest child)
+Mnumiron0,number of iron treatments postnatally,0,person,mother last pregnancy (youngest child)
+Mnumiron1,number of iron treatments postnatally,1,person,mother last pregnancy (youngest child)
+MpostvitA0,=1 if mother receive vit A postnatally,0,person,mother last pregnancy (youngest child)
+MpostvitA1,=1 if mother receive vit A postnatally,1,person,mother last pregnancy (youngest child)
+MnumvitA0,number of vit A treatments postnatally,0,person,mother last pregnancy (youngest child)
+MnumvitA1,number of vit A treatments postnatally,1,person,mother last pregnancy (youngest child)
+Mbfinfo0,=1 if mother receive any breast-feeding info before last child was born,0,person,mother last pregnancy (youngest child)
+Mbfinfo1,=1 if mother receive any breast-feeding info before last child was born,1,person,mother last pregnancy (youngest child)
+MbfinfowhereR0,where did mother receive breast-feeding info ,0,person,mother last pregnancy (youngest child)
+Mbfinfowhere1,where did mother receive breast-feeding info ,1,person,mother last pregnancy (youngest child)
+Mbcuse0,=1 if mother or partner uses birth control,0,person,mother last pregnancy (youngest child)
+Mbctype0,type of birth control used,0,person,mother last pregnancy (youngest child)
+Mmibebida0,=1 if mother received Mi Bebida in last 3 months,0,person,mother last pregnancy (youngest child)
+Mmibebida1,=1 if mother received Mi Bebida in last 3 months,1,person,mother last pregnancy (youngest child)
+Mmibebidanum0,number of times mother received Mi Bebida in last 3 months,0,person,mother last pregnancy (youngest child)
+Mmibebidanum1,number of times mother received Mi Bebida in last 3 months,1,person,mother last pregnancy (youngest child)
+Mhstat0,mother's health status,0,person,mother health
+Mhstat1,mother's health status,1,person,mother health
+Mhstat2,mother's health status,2,person,mother health
+Mnsickdays0,days last month mother is unable to do daily activities,0,person,mother health
+Mnsickdays1,days last month mother is unable to do daily activities,1,person,mother health
+Mnbeddays0,mother's bed days last month,0,person,mother health
+Mnbeddays1,mother's bed days last month,1,person,mother health
+Mvigact0,mother can do vigrous activities (3-point),0,person,mother health
+Mvigact1,mother can do vigrous activities (3-point),1,person,mother health
+Mpain0,mother how much pain in last month,0,person,mother health
+Mpain1,mother how much pain in last month,1,person,mother health
+Mmammogram0,=1 if mother mother had mammogram,0,person,mother health
+Mmammwhynot0,why hasn't mother ever had mammogram,0,person,mother health
+MPAPtest0,=1 if mother ever had Pap test,0,person,mother health
+MPAPday0,day of last Pap test,0,person,mother health
+MPAPmonth0,month of last Pap test,0,person,mother health
+MPAPyear0,year of last Pap test,0,person,mother health
+MPAPresults0,=1 if mother get to know results of Pap test,0,person,mother health
+MPAPwhere0,where did mother get last Pap test,0,person,mother health
+Manycough0,=1 if mother cough in last month,0,person,mother health
+Manycough1,=1 if mother cough in last month,1,person,mother health
+Mbldcough0,=1 if mother cough w/ blood last month,0,person,mother health
+Mdrycough0,=1 if mother dry cough in last month,0,person,mother health
+Mwetcough0,=1 if mother cough w/ phlegm in last month,0,person,mother health
+Manydiarr0,=1 if mother diarrhea in last month,0,person,mother health
+Manydiarr1,=1 if mother diarrhea in last month,1,person,mother health
+Mblddiarr0,=1 if mother bloody diarrhea in last month,0,person,mother health
+Mliqdiarr0,=1 if mother liquid diarrhea last month,0,person,mother health
+Mmucdiarr0,=1 if mother diarrhea w/ mucus in last month,0,person,mother health
+Mheadache0,=1 if mother headache last month,0,person,mother health
+Mheadache1,=1 if mother headache last month,1,person,mother health
+Mjointpain0,=1 if mother joint pain last month,0,person,mother health
+Mjointpain1,=1 if mother joint pain last month,1,person,mother health
+Mskininf0,=1 if mother skin infection last month,0,person,mother health
+Mskininf1,=1 if mother skin infection last month,1,person,mother health
+Mstomache0,=1 if mother stomache ache last month,0,person,mother health
+Mstomache1,=1 if mother stomache ache last month,1,person,mother health
+Mtoothache0,=1 if mother toothache last month,0,person,mother health
+Mtoothache1,=1 if mother toothache last month,1,person,mother health
+Mvomit0,=1 if mother nausea/vomiting last month,0,person,mother health
+Mvomit1,=1 if mother nausea/vomiting last month,1,person,mother health
+Meyeinf0,=1 if mother eye infection last month,0,person,mother health
+Meyeinf1,=1 if mother eye infection last month,1,person,mother health
+Mfastresp0,=1 if mother rapid breathing last month,0,person,mother health
+Mfastresp1,=1 if mother rapid breathing last month,1,person,mother health
+Mfever0,=1 if mother fever last month,0,person,mother health
+Mfever1,=1 if mother fever last month,1,person,mother health
+Mrunnynose0,=1 if mother runny nose last month,0,person,mother health
+Mrunnynose1,=1 if mother runny nose last month,1,person,mother health
+Mhospeps0,=1 mother hospital episode last year,0,person,mother health
+Mhospeps1,=1 mother hospital episode last year,1,person,mother health
+Mhospdays0,number of days mother in Hosp last year,0,person,mother health
+Mhospdays1,number of days mother in Hosp last year,1,person,mother health
+Madjhemo0,mother's adjusted hemoglobin,0,person,mother health
+Madjhemo1,mother's adjusted hemoglobin,1,person,mother health
+Madjhemo2,mother's adjusted hemoglobin,2,person,mother health
+Manemic0,=1 if mother is anemic,0,person,mother health
+Manemic1,=1 if mother is anemic,1,person,mother health
+Manemic2,=1 if mother is anemic,2,person,mother health
+Mhlthins0,mother's health insurance,0,person,mother health
+Mhlthins1,mother's health insurance,1,person,mother health
+Mhlthins2,mother's health insurance,2,person,mother health
+Mhlthvisits0,mother's health visits in last month ,0,person,mother health
+Mhlthvisits1,mother's health visits in last month ,1,person,mother health
+Mhlthwhy0,mother's reason for health visit,0,person,mother health
+Mhlthwhy1,mother's reason for health visit,1,person,mother health
+Millmed0,medical treatment for illness,0,person,mother health
+Millmed1,medical treatment for illness,1,person,mother health
+Mheight1,mother's height (cm) ,1,person,mother anthropometrics
+Mheight2,mother's height (cm) ,2,person,mother anthropometrics
+Mbmi1,mother's BMI,1,person,mother anthropometrics
+Mbmi2,mother's BMI,2,person,mother anthropometrics
+Mdv_answerwhyn0,why mother didn't answer domestic violence questions,0,person,mother domestic violence
+Mdv_answerwhyn1,why mother didn't answer domestic violence questions,1,person,mother domestic violence
+Mlivehusb0,=1 if mother lives with husband or partner,0,person,mother domestic violence
+Mlivehusb1,=1 if mother lives with husband or partner,1,person,mother domestic violence
+Mdv_answer0,=1 if mother is willing to answer dom. violence questions,0,person,mother domestic violence
+Mdv_answer1,=1 if mother is willing to answer dom. violence questions,1,person,mother domestic violence
+Mdv_freetime0,husband spends free time with mother,0,person,mother domestic violence
+Mdv_freetime1,husband spends free time with mother,1,person,mother domestic violence
+Mdv_affection0,husband is affectionate,0,person,mother domestic violence
+Mdv_affection1,husband is affectionate,1,person,mother domestic violence
+Mdv_ignore0,husband ignores mother,0,person,mother domestic violence
+Mdv_ignore1,husband ignores mother,1,person,mother domestic violence
+Mdv_nostudy0,husband doesn't allow mother to study or work,0,person,mother domestic violence
+Mdv_nostudy1,husband doesn't allow mother to study or work,1,person,mother domestic violence
+Mdv_yell0,husband yells at mother,0,person,mother domestic violence
+Mdv_yell1,husband yells at mother,1,person,mother domestic violence
+Mdv_worthless0,husband tells mother she is worthless, or similar,0,person,mother domestic violence
+Mdv_worthless1,husband tells mother she is worthless, or similar,1,person,mother domestic violence
+Mdv_nofriends0,husband doesn't allow mother to see friends/family,0,person,mother domestic violence
+Mdv_nofriends1,husband doesn't allow mother to see friends/family,1,person,mother domestic violence
+Mdv_leave0,husband tells mother 'tired of you, thinking of leaving you,0,person,mother domestic violence
+Mdv_leave1,husband tells mother 'tired of you, thinking of leaving you,1,person,mother domestic violence
+Mdv_takekids0,husband says he'll take kids if mother leaves,0,person,mother domestic violence
+Mdv_takekids1,husband says he'll take kids if mother leaves,1,person,mother domestic violence
+Mdv_beat0,=1 if husband or partner pushed, beaten or attacked mother physically,0,person,mother domestic violence
+Mdv_beat1,=1 if husband or partner pushed, beaten or attacked mother physically,1,person,mother domestic violence
+Mdv_beatoften0,how often does husband/partner attack mother physically,0,person,mother domestic violence
+Mdv_beatoften1,how often does husband/partner attack mother physically,1,person,mother domestic violence
+Mdv_hdrinks0,husband/partner gets drunk,0,person,mother domestic violence
+Mdv_hdrinks1,husband/partner gets drunk,1,person,mother domestic violence
+Mdv_help0,=1 if mother asked for help when husband mistreated her,0,person,mother domestic violence
+Mdv_help1,=1 if mother asked for help when husband mistreated her,1,person,mother domestic violence
+Mdv_helpwho0,who did mother ask for help after being mistreated by husband,0,person,mother domestic violence
+Mdv_helpwho1,who did mother ask for help after being mistreated by husband,1,person,mother domestic violence
+Mdv_hcounsel0,after mistreated, mother sought help at town counsel for the defense,0,person,mother domestic violence
+Mdv_hcounsel1,after mistreated, mother sought help at town counsel for the defense,1,person,mother domestic violence
+Mdv_hcourt0,after mistreated, mother sought help at court,0,person,mother domestic violence
+Mdv_hcourt1,after mistreated, mother sought help at court,1,person,mother domestic violence
+Mdv_hhunity0,after mistreated, mother sought help at Health Unity,0,person,mother domestic violence
+Mdv_hhunity1,after mistreated, mother sought help at Health Unity,1,person,mother domestic violence
+Mdv_hjudpol0,after mistreated, mother sought help at judicial police,0,person,mother domestic violence
+Mdv_hjudpol1,after mistreated, mother sought help at judicial police,1,person,mother domestic violence
+Mdv_hother0,after mistreated, mother sought help at other institution,0,person,mother domestic violence
+Mdv_hother1,after mistreated, mother sought help at other institution,1,person,mother domestic violence
+Mdv_hpolice0,after mistreated, mother sought help at police station,0,person,mother domestic violence
+Mdv_hpolice1,after mistreated, mother sought help at police station,1,person,mother domestic violence
+Mdv_hprivorg0,after mistreated, mother sought help at private org.,0,person,mother domestic violence
+Mdv_hprivorg1,after mistreated, mother sought help at private org.,1,person,mother domestic violence
+Mdv_hwomoff0,after mistreated, mother sought help at women's office,0,person,mother domestic violence
+Mdv_hwomoff1,after mistreated, mother sought help at women's office,1,person,mother domestic violence
+Mdv_hnoinst0,after mistreated, mother never sought help at any institution,0,person,mother domestic violence
+Mdv_hnoinst1,after mistreated, mother never sought help at any institution,1,person,mother domestic violence
+Mdv_nhbadexp0,=1 if didn't seek help b/c had a bad experience when reported it,0,person,mother domestic violence
+Mdv_nhbadexp1,=1 if didn't seek help b/c had a bad experience when reported it,1,person,mother domestic violence
+Mdv_nhdeserve0,=1 if didn't seek help b/c deserves to be mistreated,0,person,mother domestic violence
+Mdv_nhdeserve1,=1 if didn't seek help b/c deserves to be mistreated,1,person,mother domestic violence
+Mdv_nhdidntknow0,=1 if didn't seek help b/c didn't know where to go,0,person,mother domestic violence
+Mdv_nhdidntknow1,=1 if didn't seek help b/c didn't know where to go,1,person,mother domestic violence
+Mdv_nhdivorce0,=1 if didn't seek help b/c afraid of divorce/separation,0,person,mother domestic violence
+Mdv_nhdivorce1,=1 if didn't seek help b/c afraid of divorce/separation,1,person,mother domestic violence
+Mdv_nhembarrassed0,=1 if didn't seek help b/c embarrassed,0,person,mother domestic violence
+Mdv_nhembarrassed1,=1 if didn't seek help b/c embarrassed,1,person,mother domestic violence
+Mdv_nhhandle0,=1 if didn't seek help b/c can handle it on own,0,person,mother domestic violence
+Mdv_nhhandle1,=1 if didn't seek help b/c can handle it on own,1,person,mother domestic violence
+Mdv_nhharmless0,=1 if didn't seek help b/c damage was harmless,0,person,mother domestic violence
+Mdv_nhharmless1,=1 if didn't seek help b/c damage was harmless,1,person,mother domestic violence
+Mdv_nhhit0,=1 if didn't seek help b/c afraid husband would hit M or kids,0,person,mother domestic violence
+Mdv_nhhit1,=1 if didn't seek help b/c afraid husband would hit M or kids,1,person,mother domestic violence
+Mdv_nhjustice0,=1 if didn't seek help b/c doesn't believe in justice,0,person,mother domestic violence
+Mdv_nhjustice1,=1 if didn't seek help b/c doesn't believe in justice,1,person,mother domestic violence
+Mdv_nhnevagain0,=1 if didn't seek help b/c will never happen again,0,person,mother domestic violence
+Mdv_nhnevagain1,=1 if didn't seek help b/c will never happen again,1,person,mother domestic violence
+Mdv_nhnohurt0,=1 if didn't seek help b/c don't want to hurt attacker,0,person,mother domestic violence
+Mdv_nhnohurt1,=1 if didn't seek help b/c don't want to hurt attacker,1,person,mother domestic violence
+Mdv_nhnormal0,=1 if didn't seek help b/c dv is part of life/normal,0,person,mother domestic violence
+Mdv_nhnormal1,=1 if didn't seek help b/c dv is part of life/normal,1,person,mother domestic violence
+Mbdh_hrd1,=1 if mother heard of BDH,1,person,mother Bono de Desarrollo Humano program
+Mbdh_cond1,=1 if mother thinks BDH is conditional,1,person,mother Bono de Desarrollo Humano program
+Mbdh_condA1,mother first specified condition for BDH,1,person,mother Bono de Desarrollo Humano program
+Mbdh_condB1,mother second specified condition for BDH,1,person,mother Bono de Desarrollo Humano program
+Mbdh_rec1,=1 if someone in HH received bono mother answers,1,household,mother Bono de Desarrollo Humano program
+Mbdh_rec2,=1 if someone in HH received bono mother answers,2,household,mother Bono de Desarrollo Humano program
+Mbdh_rec3,=1 if someone in HH received bono mother answers,3,household,mother Bono de Desarrollo Humano program
+Mbdh_rec4,=1 if someone in HH received bono mother answers,4,household,mother Bono de Desarrollo Humano program
+Mbdh_firstmn1,first month received bono,1,person,mother Bono de Desarrollo Humano program
+Mbdh_firstyr1,first year received bono,1,person,mother Bono de Desarrollo Humano program
+Mbdh_lastmn1,last month received bono,1,person,mother Bono de Desarrollo Humano program
+Mbdh_lastyr1,last year received bono,1,person,mother Bono de Desarrollo Humano program
+Mbdh_wait1,how long had to wait in line (in mins) to receive last bono,1,person,mother Bono de Desarrollo Humano program
+Mspentclothes1,how much of bono spent on clothes,1,person,mother Bono de Desarrollo Humano program
+Mspented1,how much of bono spent on education,1,person,mother Bono de Desarrollo Humano program
+Mspentfood1,how much of bono spent on food,1,person,mother Bono de Desarrollo Humano program
+Mspenthealth1,how much of bono spent on health,1,person,mother Bono de Desarrollo Humano program
+Mspenthouse1,how much of bono spent on housing,1,person,mother Bono de Desarrollo Humano program
+Mspenthusb1,how much of bono spent on husband, incl. liquor & fun,1,person,mother Bono de Desarrollo Humano program
+Mspenttrans1,how much of bono spent on transport,1,person,mother Bono de Desarrollo Humano program
+Mwhoclothes1,who decided bono should be spent on clothes,1,person,mother Bono de Desarrollo Humano program
+Mwhoed1,who decided bono should be spent on education,1,person,mother Bono de Desarrollo Humano program
+Mwhofood1,who decided bono should be spent on food,1,person,mother Bono de Desarrollo Humano program
+Mwhohealth1,who decided bono should be spent on health,1,person,mother Bono de Desarrollo Humano program
+Mwhohouse1,who decided bono should be spent on housing,1,person,mother Bono de Desarrollo Humano program
+Mwhohusb1,who decided bono should be spent on husband, incl. liquor &,1,person,mother Bono de Desarrollo Humano program
+Mwhotrans1,who decided bono should be spent on transport,1,person,mother Bono de Desarrollo Humano program
+Mbdh_stop1,=1 if mother stop receiving BDH,1,person,mother Bono de Desarrollo Humano program
+Mbdh_stopyr1,when mother stopped BDH,1,person,mother Bono de Desarrollo Humano program
+Mbdh_stopwhy1,why did mother stop receiving BDH,1,person,mother Bono de Desarrollo Humano program
+Mbdh_recoth1,=1 if someone in HH other than mother received bono,1,household,mother Bono de Desarrollo Humano program
+Mbdh_act2,Did HH act to improve chances of receiving the BDH?,2,household,mother Bono de Desarrollo Humano program
