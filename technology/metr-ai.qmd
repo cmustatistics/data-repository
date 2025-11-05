@@ -1,0 +1,106 @@
+---
+title: Effect of AI on programming productivity
+author: Alex Reinhart
+date: November 5, 2025
+description: Software engineers rapidly adopted generative AI tools to help write code. This randomized experiment evaluates whether AI use reduces the time required to complete tasks.
+categories:
+  - hierarchical model
+  - EDA
+data:
+  year: 2025
+  files: metr-ai.csv
+---
+
+## Motivation
+
+As generative AI tools became popular in 2025, a common use case was for
+generating code. Many software developers adopted AI tools (either
+general-purpose services like ChatGPT and Gemini, or coding-specific tools like
+Cursor and Copilot) to help them write and review code, and many reported
+feeling much more productive with AI support. But productivity is difficult to
+quantify, so how could the productivity gain be tested?
+
+This dataset comes from an experiment conducted by Model Evaluation & Threat
+Research (METR), an independent group evaluating AI systems. METR organized a
+randomized controlled trial in which 16 experienced software developers were
+recruited and paid to participate. These developers worked on large open-source
+projects; most had years of experience working on the same project, so they
+understood the code well.
+
+The software projects all used code platforms like GitHub or GitLab, which
+provide code hosting as well as bug tracking and collaboration features. The
+developers provided a list of bugs, feature requests, and other tasks they
+intended to work on in the future, and were asked how long they expected each
+task to take. The experimenters then randomly assigned teach task to be
+completed with AI assistance or without and paid the developers to complete the
+tasks. The developers recorded the amount of time taken for each task, so their
+time estimates could be compared to the actual time taken.
+
+All developers were given access to Cursor Pro, a popular AI-assisted code
+editor, and were given basic training on its use.
+
+## Data
+
+The dataset contains 246 tasks, as well as the developer who completed each task
+and the time expected and actually required to complete it. Note that several
+variables were only collected starting after many tasks had been completed, so
+they are missing for tasks completed earlier.
+
+Besides the estimated time for each task, there are two actual times. Developers
+completed an initial version and submitted a "pull request", which allows other
+developers on the project to review their code and give feedback. After this
+peer review, they then revised their code to make a final version. The time for
+revision was tracked separately.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| dev_id | Unique ID for each developer |
+| issue_id | Unique ID for each GitHub issue in the experiment |
+| predicted_time_no_ai | How long the developer estimated the issue would take *without* AI (minutes) |
+| predicted_time_ai_allowed | How long the developer estimated the issue would take *with* AI (minutes) |
+| prior_task_exposure_1_to_5 | How familiar the developer was with this type of issue (1 = least familiar, 5 = most); only collected starting halfway through the study |
+| external_resource_needs_1_to_3 | How many external resources, such as documentation, the developer expected to require to solve the issue (1 = none, 3 = many) |
+| ai_treatment | 0 if AI use was not allowed, 1 if AI use was allowed |
+| initial_implementation_time | Time taken by the developer to solve the issue and create an initial pull request (an initial solution) (minutes) |
+| post_review_implementation_time | Time taken by the developer to revise the pull request based on review feedback; only collected starting halfway through the study (minutes) |
+
+## Questions
+
+1. Construct plots or tables to compare expected and actual implementation time
+   for tasks with and without AI use. What is the evident effect of AI? How
+   accurate are developer time estimates, and do they tend to be too optimistic
+   or pessimistic?
+
+2. Since there are only 16 developers but 246 tasks, we have repeated
+   observations from each developer. We might expect differences between
+   developers, based on their experience, the type of projects they work on, and
+   the typical scope of tasks they define. A hierarchical or random effects
+   model might hence be a good idea.
+
+   Define a model for the initial implementation time, allowing for
+   developer-level effects. Interpret the results.
+
+   Should you allow the effect of AI to vary by developer? Consider adding the
+   necessary random effects and evaluate the model.
+
+3. It may also be useful to control for the amount of time the developer
+   expected the task to take, since there is a large amount of variation in the
+   size of the tasks. Accounting for this variance may give better results.
+   Define a model that controls for the time the developer expected the task to
+   take *without* AI, and interpret the results.
+
+## References
+
+Becker, Rush, Barnes, and Rein (2025). Measuring the Impact of Early-2025 AI on
+Experienced Open-Source Developer Productivity. <https://arxiv.org/abs/2507.09089>
+
+Data published by METR at <https://github.com/METR/Measuring-Early-2025-AI-on-Exp-OSS-Devs>
