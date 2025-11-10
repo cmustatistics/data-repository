@@ -421,6 +421,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../psychology/healing-time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical healing and time perception</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Testosterone and diversity</span></a>
   </div>
@@ -642,6 +648,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>Each observation is one patient who had a prostatectomy at the Cleveland Clinic between July 6, 1998 and December 27, 2007, and who had a blood transfusion during their surgery. There are 316 total patients included in this sample.</p>
+<p>The primary outcome is whether the cancer recurred within 5 years. However, some patients were not observed for a full 5 years, because the last records available were less than 5 years after their surgery. These patients are censored, meaning we have an indicator of whether they had recurrence in the time period available, and a variable indicating how long they were monitored post-surgery.</p>
 <section id="data-preview" class="level3">
 <h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
 <h4 class="anchored">
@@ -737,7 +744,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Recurrence</td>
-<td>Whether the prostate cancer recurred (1 = yes, 0 = no)</td>
+<td>Whether the prostate cancer recurred within 5 years (1 = yes, 0 = no)</td>
 </tr>
 <tr class="odd">
 <td>Censor</td>
@@ -745,7 +752,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>TimeToRecurrence</td>
-<td>Time to recurrence of prostate cancer, months</td>
+<td>Time to recurrence of prostate cancer, months; if censored (so the patient had no recurrence), the time from their surgery to the end of the study</td>
 </tr>
 </tbody>
 </table>
