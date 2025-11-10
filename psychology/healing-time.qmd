@@ -1,0 +1,144 @@
+---
+title: Physical healing and time perception
+author: Alex Reinhart
+date: November 9, 2025
+description: If the body affects the mind and the mind affects the body, it should by possible to influence the body by influencing the mind. This study manipulated perception of time to see if perceived, not actual, time would influence the rate at which wounds heal. Reinterpret a psychological experiment using linear and mixed models.
+categories:
+  - linear regression
+  - hierarchical model
+data:
+  year: 2023
+  files: healing-time.csv
+---
+
+## Motivation
+
+Recent psychological research has examined the idea of mind-body unity: that
+physical ailments can cause mental stress, but also that psychological
+influences can cause physical ailments. For instance, chronic stress might
+contribute to high blood pressure or chronic pain, and depression might
+contribute to other physical ailments. But the depth of this connection is not
+well-understood, so psychologists have designed various studies to explore it.
+This study looked at the mental perception of time: rather than manipulating
+mood and seeing how that affects health, the study manipulates how much time
+participants feel has passed, to see if that affects the rate at which the body
+heals.
+
+The study was based on cupping, which involves placing a suction cup on the skin
+and applying light suction. This increases blood flow to the area, which certain
+alternative medicine practitioners believe can help with various medical
+conditions, and typically also causes a red mark on the skin. The rate at which
+these marks disappeared was the measure of healing.
+
+Thirty-three subjects were recruited to the study. Each participant came to the
+lab three times on different days. During each lab session, they were cupped in
+a particular location: Session 1 cupped their upper forearm, session 2 cupped
+the middle of their forearm, and session 3 cupped their lower forearm. Each
+session was also assigned to one of three conditions, with every participant
+receiving every condition in a random order:
+
+1. Slow Time (14 min)
+2. Normal Time (28 min)
+3. Fast Time (56 min)
+
+The condition is based on the manipulation of time used in the experiment. While
+waiting for the cupping mark to disappear, the participants played Tetris, and
+at regular intervals they were presented a short survey asking how much the mark
+had healed. These surveys were ostensibly every 2, 4, or 8 minutes in the slow,
+normal, and fast conditions, but actually were always every 4 minutes. As their
+phones and watches were confiscated at the start of the session, the
+participants could only use the clock on the lab computer screen, which was
+faked to match the time manipulation. Thus they were manipulated into thinking
+time was passing faster or slower than it really was. Participants in the slow
+time condition *thought* only 14 minutes had passed, when in fact 28 minutes
+actually had, and so on.
+
+At the beginning and end of the experiment, the experimenters took photos of the
+participant's arm. These photos were used to rate how much the cupping mark
+healed during the 28-minute window. Ratings were provided by workers on Amazon
+Mechanical Turk who were provided the photos and asked to rate healing on a 0 to
+10 scale. Multiple workers were used to rate every photo, in the hopes that this
+would give better estimates than using a single rater.
+
+According to the experimenters, "significantly more healing was observed in the
+Normal Time condition compared to the Slow Time condition, in the Fast Time
+condition compared to the Normal Time condition, and in the Fast Time condition
+compared to the Slow Time condition"
+
+However, Gelman and Brown (2024) argue that instead this study is "fatally
+flawed in the sense of not providing evidence to support [its] strong claims."
+They argue that the hierarchical (mixed-effects) model used to analyze the data
+was inappropriate, and that with these errors corrected, "the data do not
+provide strong evidence of the claimed effect". We can reanalyze the data to
+explore their objections.
+
+## Data
+
+Each observation is one rating by one Mechanical Turk worker, rating the healing
+for one participant in one session.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| Subject | Subject ID number |
+| ResponseId | Unique ID for each Mechanical Turk rater |
+| Condition | Experimental condition: the perceived time in this trial, either 14, 28, or 56 minutes |
+| Session | Session number |
+| Healing | Amount of healing, based on average of Mechanical Turk workers (0 = not at all healed, 5 = somewhat healed, 10 = completely healed) |
+| Session_Mood | Participant's mood score during the session; scale used not specified |
+| Age | Participant age (years) |
+| Gender | Gender of the participant |
+| Race | Race of the participant |
+| PSS_sum | Stress score from the Perceived Stress Scale |
+| Mindfulness | Mindfulness estimate from the Langer Mindfulness Scale |
+| Extraversion | Extraversion, one of the Big 5 personality traits; scale used not specified |
+| Agreeableness | Agreeableness, one of the Big 5 personality traits; scale used not specified |
+| Conscientiousness | Conscientiousness, one of the Big 5 personality traits; scale used not specified |
+| Neuroticism | Neuroticism, one of the Big 5 personality traits; scale used not specified |
+| Openness | Openness, one of the Big 5 personality traits; scale used not specified |
+| Dscale | Depression score from the Hospital Anxiety and Depression Scale (0-21, 0 = no depression, 21 = depression) |
+| Ascale | Anxiety score from the Hospital Anxiety and Depression Scale (0-21, 0 = no anxiety, 21 = most anxiety) |
+
+
+## Questions
+
+1. Tabulate the participants and sessions. Did every participant attend every
+   session? How many raters rated each participant? Is there any missingness
+   that could be concerning?
+2. The experiment was intended to randomize the order each participant received
+   each condition, so that any time-ordering affects (such as healing improving
+   in later sessions due to some kind of practice or learning effect) would not
+   bias the results. Tabulate the session orderings to see whether they are
+   indeed balanced.
+3. Perform an exploratory data analysis of average healing rating by condition.
+   What evidence do you see of a difference in healing?
+4. Perform an exploratory data analysis comparing the raters. Is there evidence
+   that some of the raters give systematically higher or lower ratings?
+5. Consider using a mixed effects model to estimate the condition effect. What
+   are the sources of variation? What random effects should be included? For
+   fixed effects, start with the simplest possible model, and don't yet consider
+   the various demographic and psychological variables.
+6. Fit the model you proposed and evaluate the results.
+7. Read the "Reanalysis and Reassessment" by Gelman and Brown (2024) and compare
+   their simple model to yours. What decisions did they make differently?
+   Particularly contrast your choice of random effects, and comment on which
+   choices seem most appropriate.
+
+
+## References
+
+Aungle, P., Langer, E. (2023). Physical healing as a function of perceived time.
+*Scientific Reports* 13, 22432. <https://doi.org/10.1038/s41598-023-50009-3>
+
+See also: Gelman A, Brown NJL (2024). How Statistical Challenges and Misreadings
+of the Literature Combine to Produce Unreplicable Science: An Example From
+Psychology. *Advances in Methods and Practices in Psychological Science* 7(4).
+<https://doi.org/10.1177/25152459241276398>
