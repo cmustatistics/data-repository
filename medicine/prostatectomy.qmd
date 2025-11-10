@@ -44,6 +44,13 @@ Each observation is one patient who had a prostatectomy at the Cleveland Clinic
 between July 6, 1998 and December 27, 2007, and who had a blood transfusion
 during their surgery. There are 316 total patients included in this sample.
 
+The primary outcome is whether the cancer recurred within 5 years. However, some
+patients were not observed for a full 5 years, because the last records
+available were less than 5 years after their surgery. These patients are
+censored, meaning we have an indicator of whether they had recurrence in the
+time period available, and a variable indicating how long they were monitored
+post-surgery.
+
 ### Data preview
 
 ```{r, echo=FALSE, results="asis"}
@@ -72,9 +79,9 @@ preview_datasets()
 | sGS | Surgical Gleason score, discretized. Same type of measurement as bGS, but based on examination of the tumor removed in surgery, rather than on cells removed in a biopsy. 1 = not assigned, 2 = no disease or score 0-6, 3 = score 7, 4 = score 8-10. |
 | AnyAdjTherapy | Whether the patient received adjuvant therapy after the surgery, i.e., another treatment to prevent recurrence (such as chemotherapy, radiation, or other cancer treatments) |
 | AdjRadTherapy | Whether the patient received radiation therapy after surgery to prevent recurrence|
-| Recurrence | Whether the prostate cancer recurred (1 = yes, 0 = no) |
+| Recurrence | Whether the prostate cancer recurred within 5 years (1 = yes, 0 = no) |
 | Censor | Whether the study ended before the patient had any recurrence, so their final status is unknown (1 = censored, 0 = not censored)|
-| TimeToRecurrence | Time to recurrence of prostate cancer, months |
+| TimeToRecurrence | Time to recurrence of prostate cancer, months; if censored (so the patient had no recurrence), the time from their surgery to the end of the study |
 
 
 ## Questions
