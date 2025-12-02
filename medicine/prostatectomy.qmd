@@ -62,7 +62,7 @@ preview_datasets()
 
 | Variable | Description |
 |----|-------------|
-| RBC.Age.Group | Red blood cell storage duration, grouped (1 = less than 13 days, 2 = 13-18 days, 3 = more than 18 days) |
+| RBC.Age.Group | Red blood cell (RBC) storage duration, grouped (1 = less than 13 days, 2 = 13-18 days, 3 = more than 18 days) |
 | Median.RBC.Age | Median age of red blood cells transfused (conversion of RBC.Age.Group to days) |
 | Age | Patient age (years) |
 | AA | 1 if patient is African-American, 0 otherwise |
