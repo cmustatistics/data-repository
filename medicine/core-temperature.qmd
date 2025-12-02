@@ -127,9 +127,10 @@ all serious or superficial infections together.
    immunosuppressive drug usage," and presence of heart failure, vascular
    disease, diabetes, renal failure, metastatic cancer, solid tumor,
    coagulopathy, weight loss, fluid and electrolyte disorders, blood loss
-   anemia, deficiency anemia, and drug use. Interpret the results of this model,
-   and compare it to the previous fit. What can you conclude about core
-   temperature during surgery?
+   anemia, deficiency anemia, and drug use. (However, smoking status was not
+   provided in the public data, so you can't use it.) Interpret the results of
+   this model, and compare it to the previous fit. What can you conclude about
+   core temperature during surgery?
 3. Repeat this logistic regression, but to predict *superficial* infection
    instead of serious infection (`SuperficialInfection`). Comment on your
    results and compare them to the results for serious infection.
