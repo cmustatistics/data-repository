@@ -1,0 +1,288 @@
+---
+title: Police implicit bias training
+author: Victoria Sagasta Pereira
+date: June 8, 2026
+description: Does implicit bias training affect the beliefs, motivations, or actions of police officers? Analyze observational data from officers attending a training program meant to increase their knowledge about biases and teach evidence-based strategies to mitigate it.
+categories:
+  - linear regression
+  - logistic regression
+  - t-test
+data:
+  year: 2021
+  files:
+    - police-bias-cohort1-t1t2-long.csv
+    - police-bias-cohort2-t1t2t3-long.csv
+---
+
+## Motivation
+
+Since their creation, U.S. police departments have perpetuated unequal treatment
+towards black and brown individuals in their community. While overt racism is
+one possible explanation, researchers suspect that in ordinary day-to-day
+interactions between police officers and the community, implicit bias is the
+more likely problem.
+
+"Implicit bias" refers to "biases that operate outside of conscious awareness
+and control but nevertheless influence our behaviors" (Spencer, Charbonneau, and
+Glaser 2016). For example, when an officer is trying to determine someone's
+intentions---such as to determine if they are armed or intend to attack the
+officer---the officer's judgment may follow racial stereotypes, making them more
+likely to draw negative conclusions about Black people. In a fast-moving
+situation, this may lead an officer to use force when they otherwise wouldn't.
+
+In an attempt to address the dangerous and often deadly consequences of implicit
+in policing, some departments have started integrating implicit bias training
+into their curriculum. However, little research has evaluated whether the
+trainings are effective at changing officers’ beliefs, motivations, and most
+importantly, actions. 
+
+This study tested a day-long "Managing Bias" diversity training program,
+designed by the Anti-Defamation League and delivered to sworn officers of
+unnamed police departments within the United States:
+
+> Throughout the workshop, officers participated in activities that raised their
+> awareness of bias. These activities educated officers about the definition and
+> origins of bias, the influence of culture and identity on social experience,
+> and gaps in understanding between police officers and community members. By
+> the end of this section, officers were expected to understand the differences
+> between implicit and explicit bias, identify how their worldview has been
+> shaped by their culture and identity, and appreciate how biases may affect
+> behavior.
+>
+> The final section of the training program focused on building skills to manage
+> bias in policing. Officers were taught five practices that had been shown to
+> reduce biased behavior. (Lai and Lisnek 2023)
+
+Officers completed up to three surveys that assessed self-reported beliefs,
+attitudes, motivations, and behavior. The first survey was a baseline survey
+administered to officers before the training began, the second survey assessed
+immediate effectiveness and was administered immediately after the end of
+training, and the third survey was administered 1 month after training. The goal
+was to evaluate how the training improved officer knowledge about bias and
+whether it increased their use of the five strategies after the training, thus
+changing police behavior.
+
+
+## Data
+
+The data collected is divided into two separate cohorts. In cohort 1, 4,659
+officers were trained in person from July 2019 to March 2020, and in cohort 2,
+3,103 officers were trained online from September 2020 to January 2021. From the
+first cohort, after exclusions, we obtained usable data from 3,417 officers who
+completed the first two surveys. From the second cohort, due to duplicate
+surveys, problems linking surveys together, and evidence of survey misbehavior,
+usable data is limited to 72 officers who completed all three surveys.[^linkage]
+
+[^linkage]: The original study reported only 53 participants in Cohort 2 who
+    completed all three surveys and whose data was usable. However, on matching
+    up the data files provided, we were able to match 72 officers across all
+    three surveys.
+
+There were many individual training sessions; each officer obtained only one.
+For each officer, their participation involved several steps:
+
+1. First, each officer completed a baseline survey before the training (time
+   T1). This asked about their demographics, beliefs about bias, and behaviors
+   related to bias.
+2. Next, they attended the day-long training workshop (or did so online). This
+   taught them about implicit bias and taught several strategies for recognizing
+   and avoiding it.
+3. Then they completed a post-training survey at the end of the workshop (time
+   T2). This again asked about their beliefs and behaviors, as well as how they
+   *intended* to use the strategies taught in the workshop.
+4. Finally, officers completed a third survey 30 days after the workshop (time
+   T3). This asked how they had *actually* used the bias management
+   strategies in their work in that time.
+    
+    **However,** this survey was only used for Cohort 2, and as the survey was
+    later, many officers did not complete this survey. Other T3 surveys couldn't
+    be matched up to the responses from T1 or T2 and had to be excluded as well.
+
+Each row represents one officer at one time point, so a Cohort 2 officer who was
+surveyed at all three times will have three rows.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+
+| Variable | Description |
+|----|-------------|
+|id | Unique identifier variable|
+|time | Data collection time point (1 or 2)|
+|cohort | Describes whether data comes from the first or second cohort|
+|knowledge | Knowledge about Bias|
+|theories | Beliefs about the Malleability of Bias|
+|biasworry | Concern about Bias|
+|strategy | Use of Strategies to Manage Bias (Time 1; measured as use in the past 7 days)|
+|strategy | Intentions to Use Strategies to Manage Bias (Time 2; measured as intention to use)|
+|strat | Average of Perceived Feasibility, Efficacy, and Motivation to Use Strategies (Time 2)|
+|centrality | Police Identity Centrality (Time 1)|
+|respect | Expectations of Respect from Community Members (Time 1)|
+|rank | What is your rank? (Time 1; 0 = Below Sergeant, 1 = Sergeant or above)|
+|gender_d | What is your gender? (Time 1; 0 = Female, 1 = Male)|
+|race | What is your race or ethnicity? (Time 1; 1 = White or Caucasian, 2 = Black or African American, 3 = Hispanic or Latino, 4 = Asian or Pacific Islander, 5 = Multiracial or Other)|
+|race_white | White vs. Non-White (Time 1; 1 = White, 0 = Non-White)|
+|race_black | Black vs. Non-Black (Time 1; 1 = Black, 0 = Non-Black)|
+|education | What is the highest level of education that you have completed? (Time 1; 1 = some high school or less, 2 = high school graduate, 3 = some college, 4 = associate's degree, 5 = bachelor's degree, 6 = graduate degree)|
+|education_ba | Bachelor's degree or higher vs. lower than Bachelor's degree (Time 1; 1 = Bachelor's degree or higher, 0 = Lower than Bachelor's degree)|
+|yearsworked | How many years have you worked in the department? (Time 1)|
+|frequency_white | In your daily work with the Police Department, how often do you interact with people who are White or Caucasian? (Time 1; 1 = never, 2 = very rarely, 3 = rarely, 4 = occasionally, 5 = frequently, 6 = very frequently)|
+|frequency_black | In your daily work with the Police Department, how often do you interact with people who are Black or African American? (Time 1; 1 = never to 6 = very frequently)|
+|frequency_asian | In your daily work with the Police Department, how often do you interact with people who are Asian? (Time 1; 1 = never to 6 = very frequently)|
+|frequency_hispanic | In your daily work with the Police Department, how often do you interact with people who are Hispanic or Latino? (Time 1;  1 = never to 6 = very frequently)|
+|frequency_gay | In your daily work with the Police Department, how often do you interact with people who are Gay, Lesbian, or Bisexual? (Time 1; 1 = never to 6 = very frequently)|
+|frequency_trans | In your daily work with the Police Department, how often do you interact with people who are Transgender? (Time 1; 1 = never to 6 = very frequently)|
+|facilduo_gender | Educator pair's gender makeup (Time 2; mm = Male-Male, ff = Female-Female, mf = Male-Female) |
+|facilduo_race | Educator pair's racial makeup (Time 2; ww = White-White, bw = Black-White, asianduo = Has an Asian educator)|
+|facilduo_le | Has an ex-law-enforcement educator vs. doesn't have an ex-law enforcement educator (Time 2; 1 = Has an ex-law-enforcement educator, 0 = Doesn't)|
+|facilduo_relatedle | Has a close relationship with a member of law enforcement, including being one, vs. doesn't have a close relationship (Time 2; 1 = Has a close relationship, 0 = Doesn't)|
+|facilduo_relatedle_nole | Has a close relationship with a member of law enforcement vs. doesn't, excluding educator who was ex-law-enforcement (Time 2; 1 = Has a close relationship, 0 = Doesn't)|
+|attendance | Number of officers attending the session (Time 2)|
+|substitution | Substitution strategy use in the past 7 days (Time 1; 0 = 0 times, 1 = 1 time, 2 = 2 times, 3 = 3 times, 4 = 4 times, 5 = 5 times, 6 = 6 or more times)|
+|substitution | Intentions to use Substitution strategy in the next 7 days (Time 2)|
+|perspective | Perspective-taking strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|perspective | Intentions to use Perspective-taking strategy in the next 7 days (Time 2)|
+|exposure | Diversity exposure strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|exposure | Intentions to use Diversity exposure strategy in the next 7 days (Time 2)|
+|individuation | Individuation strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|individuation | Intentions to use Individuation strategy in the next 7 days (Time 2)|
+|mindful | Mindfulness strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|mindful | Intentions to use Mindfulness strategy in the next 7 days (Time 2)|
+|knowledge_bias | Subtle or implicit biases influence my decision making about other people. ( 1 = strongly disagree, 2 = moderately disagree, 3 = slightly disagree, 4 = neutral, 5 = slightly agree, 6 = moderately agree, 7 = strongly agree)|
+|knowledge_race | Whether I am aware of it or not, I use a person's race or ethnicity to form an impression of the kind of person they are. ( 1 = strongly disagree to 7 = strongly agree)|
+|knowledge_culture | My cultural background influences how I perceive other people. ( 1 = strongly disagree to 7 = strongly agree)|
+|theories1 | People have a certain amount of bias toward other people and they can’t really change that. ( 1 = strongly disagree to 7 = strongly agree)|
+|theories2 | People’s level of bias toward other people is something very basic about them that they can’t change very much. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_white | I worry that I act in an unintentionally biased way toward White people. (Time 1–2; 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_black | I worry that I act in an unintentionally biased way toward Black people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_asian | I worry that I act in an unintentionally biased way toward Asian people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_hispanic | I worry that I act in an unintentionally biased way toward Hispanic or Latino people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_lgb | I worry that I act in an unintentionally biased way toward Gay, Lesbian, or Bisexual people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_trans | I worry that I act in an unintentionally biased way toward Transgender people. ( 1 = strongly disagree to 7 = strongly agree)|
+|strat_know | Do you feel like you could execute these strategies correctly if you wanted to? (Time 2; 1 = definitely not, 2 = probably not, 3 = somewhat, 4 = probably, 5 = definitely)|
+|strat_efficacy | How effective do you think these strategies are for addressing issues related to bias? (Time 2; 1 = not at all, 2 = slightly, 3 = moderately, 4 = very, 5 = extremely)|
+|strat_mot | How motivated are you to use these strategies? (Time 2; 1 = not at all to 5 = extremely)|
+|centrality1 | In general, being a police officer is an important part of my self-image. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|centrality2 | I have a strong attachment to law enforcement. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|centrality3 | Being a police officer is a reflection of who I am. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect1 | I expect respect when I put my uniform on. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect2 | I expect citizens to obey my authority when I am on duty. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect3 | When I wear my uniform, I expect citizens to obey any orders I give them. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect4 | I expect that citizens will speak to me with respect. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+
+: cohort1-t1t2-long.csv: Cohort 1, times 1 and 2
+
+
+| Variable | Description |
+|----|-------------|
+|id | Unique identifier variable|
+|time | Data collection time point (1, 2, or 3)|
+|cohort | Describes whether data comes from the first or second cohort|
+|knowledge | Knowledge about Bias|
+|theories | Beliefs about the Malleability of Bias|
+|biasworry | Concern about Bias|
+|strategy | Use of Strategies to Manage Bias (Time 1; measured as use in the past 7 days)|
+|strategy | Intentions to Use Strategies to Manage Bias (Time 2; measured as intention to use)|
+|strategy | Use of Strategies to Manage Bias (Time 3; measured as use in the past 7 days)|
+|strat | Average of Perceived Feasibility, Efficacy, and Motivation to Use Strategies (Time 2–3)|
+|centrality | Police Identity Centrality (Time 1)|
+|respect | Expectations of Respect from Community Members (Time 1)|
+|rank | What is your rank? (Time 1; 0 = Below Sergeant, 1 = Sergeant or above)|
+|gender_d | What is your gender? (Time 1; 0 = Female, 1 = Male)|
+|race | What is your race or ethnicity? (Time 1; 1 = White or Caucasian, 2 = Black or African American, 3 = Hispanic or Latino, 4 = Asian or Pacific Islander, 5 = Multiracial or Other)|
+|race_white | White vs. Non-White (Time 1; 1 = White, 0 = Non-White)|
+|race_black | Black vs. Non-Black (Time 1; 1 = Black, 0 = Non-Black)|
+|education | What is the highest level of education that you have completed? (Time 1; 1 = some high school or less, 2 = high school graduate, 3 = some college, 4 = associate's degree, 5 = bachelor's degree, 6 = graduate degree)|
+|education_ba | Bachelor's degree or higher vs. lower than Bachelor's degree (Time 1; 1 = Bachelor's degree or higher, 0 = Lower than Bachelor's degree)|
+|yearsworked | How many years have you worked in the department? (Time 1)|
+|frequency_white | In your daily work with the Police Department, how often do you interact with people who are White or Caucasian? (Time 1; 1 = never, 2 = very rarely, 3 = rarely, 4 = occasionally, 5 = frequently, 6 = very frequently)|
+|frequency_black | In your daily work with the Police Department, how often do you interact with people who are Black or African American? (Time 1; 1 = never to 6 = very frequently)|
+|frequency_asian | In your daily work with the Police Department, how often do you interact with people who are Asian? (Time 1; 1 = never to 6 = very frequently)|
+|frequency_hispanic | In your daily work with the Police Department, how often do you interact with people who are Hispanic or Latino? (Time 1;  1 = never to 6 = very frequently)|
+|frequency_gay | In your daily work with the Police Department, how often do you interact with people who are Gay, Lesbian, or Bisexual? (Time 1; 1 = never to 6 = very frequently)|
+|frequency_trans | In your daily work with the Police Department, how often do you interact with people who are Transgender? (Time 1; 1 = never to 6 = very frequently)|
+|facilduo_gender | Educator pair's gender makeup (Time 2; mm = Male-Male, ff = Female-Female, mf = Male-Female) |
+|facilduo_race | Educator pair's racial makeup (Time 2; ww = White-White, bw = Black-White, asianduo = Has an Asian educator)|
+|facilduo_le | Has an ex-law-enforcement educator vs. doesn't have an ex-law enforcement educator (Time 2; 1 = Has an ex-law-enforcement educator, 0 = Doesn't)|
+|facilduo_relatedle | Has a close relationship with a member of law enforcement, including being one, vs. doesn't have a close relationship (Time 2; 1 = Has a close relationship, 0 = Doesn't)|
+|facilduo_relatedle_nole | Has a close relationship with a member of law enforcement vs. doesn't, excluding educator who was ex-law-enforcement (Time 2; 1 = Has a close relationship, 0 = Doesn't)|
+|attendance | Number of officers attending the session (Time 2)|
+|substitution | Substitution strategy use in the past 7 days (Time 1; 0 = 0 times, 1 = 1 time, 2 = 2 times, 3 = 3 times, 4 = 4 times, 5 = 5 times, 6 = 6 or more times)|
+|substitution | Intentions to use Substitution strategy in the next 7 days (Time 2)|
+|substitution | Substitution strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)|
+|perspective | Perspective-taking strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|perspective | Intentions to use Perspective-taking strategy in the next 7 days (Time 2)|
+|perspective | Perspective-taking strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)|
+|exposure | Diversity exposure strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|exposure | Intentions to use Diversity exposure strategy in the next 7 days (Time 2)|
+|exposure | Diversity exposure strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)|
+|individuation | Individuation strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|individuation | Intentions to use Individuation strategy in the next 7 days (Time 2)|
+|individuation | Individuation strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)|
+|mindful | Mindfulness strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)|
+|mindful | Intentions to use Mindfulness strategy in the next 7 days (Time 2)|
+|mindful | Mindfulness strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)|
+|knowledge_bias | Subtle or implicit biases influence my decision making about other people. ( 1 = strongly disagree, 2 = moderately disagree, 3 = slightly disagree, 4 = neutral, 5 = slightly agree, 6 = moderately agree, 7 = strongly agree)|
+|knowledge_race | Whether I am aware of it or not, I use a person's race or ethnicity to form an impression of the kind of person they are. ( 1 = strongly disagree to 7 = strongly agree)|
+|knowledge_culture | My cultural background influences how I perceive other people. ( 1 = strongly disagree to 7 = strongly agree)|
+|theories1 | People have a certain amount of bias toward other people and they can’t really change that. ( 1 = strongly disagree to 7 = strongly agree)|
+|theories2 | People’s level of bias toward other people is something very basic about them that they can’t change very much. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_white | I worry that I act in an unintentionally biased way toward White people. (Time 1–2; 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_black | I worry that I act in an unintentionally biased way toward Black people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_asian | I worry that I act in an unintentionally biased way toward Asian people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_hispanic | I worry that I act in an unintentionally biased way toward Hispanic or Latino people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_lgb | I worry that I act in an unintentionally biased way toward Gay, Lesbian, or Bisexual people. ( 1 = strongly disagree to 7 = strongly agree)|
+|biasworry_trans | I worry that I act in an unintentionally biased way toward Transgender people. ( 1 = strongly disagree to 7 = strongly agree)|
+|strat_know | Do you feel like you could execute these strategies correctly if you wanted to? (Time 2–3; 1 = definitely not, 2 = probably not, 3 = somewhat, 4 = probably, 5 = definitely)|
+|strat_efficacy | How effective do you think these strategies are for addressing issues related to bias? (Time 2–3; 1 = not at all, 2 = slightly, 3 = moderately, 4 = very, 5 = extremely)|
+|strat_mot | How motivated are you to use these strategies? (Time 2–3; 1 = not at all to 5 = extremely)|
+|centrality1 | In general, being a police officer is an important part of my self-image. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|centrality2 | I have a strong attachment to law enforcement. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|centrality3 | Being a police officer is a reflection of who I am. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect1 | I expect respect when I put my uniform on. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect2 | I expect citizens to obey my authority when I am on duty. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect3 | When I wear my uniform, I expect citizens to obey any orders I give them. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+|respect4 | I expect that citizens will speak to me with respect. (Time 1; 1 = strongly disagree to 7 = strongly agree)|
+
+: cohort2-t1t2t3-long.csv: Cohort 2, times 1 through 3
+
+## Questions
+
+1. Call an officer “training-resistant” if their knowledge or attitudes about
+   implicit bias do not change from before the course to immediately afterward.
+   Using the demographic data collected (including age, experience, or attitudes
+   about policing), what types of officers are most likely to be training
+   resistant?
+2. Some of the training sessions were led by an educator who had previously been
+   a police officer. (See `facilduo_le`.) These educators may be better at
+   convincing current officers of the importance of implicit bias. Do these
+   sessions have fewer training-resistant officers? Are the training-resistant
+   officers in those sessions different somehow, such as if these educators are
+   better at reaching officers with particular attitudes about policing?
+3. Using each officer's demographic data and their responses to questions about
+   their attitudes toward policing (`centrality` and `respect`), can you predict
+   which officers are least likely to use bias mitigation strategies before
+   training?
+4. Does training improve actual behaviors and not just beliefs? Is there
+   evidence the training improves the rate of bias-mitigating strategy use
+   compared to before the training?
+
+
+## References
+
+Lai, C. K., & Lisnek, J. A. (2023). "The Impact of Implicit-Bias-Oriented
+Diversity Training on Police Officers’ Beliefs, Motivations, and Actions."
+*Psychological Science*, 34(4), 424-434.
+<https://doi.org/10.1177/09567976221150617>.
+
+Data available from <https://osf.io/vfdrt/overview>
+
+For background, see Spencer, Charbonneau, and Glaser (2016). "Implicit Bias and
+Policing." *Social and Personality Psychology Compass*, 10(1), 50-63.
+<https://doi.org/10.1111/spc3.12210>
