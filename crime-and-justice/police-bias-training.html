@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Victoria Sagasta Pereira">
+<meta name="dcterms.date" content="2026-06-08">
+<meta name="description" content="Does implicit bias training affect the beliefs, motivations, or actions of police officers? Analyze observational data from officers attending a training program meant to increase their knowledge about biases and teach evidence-based strategies to mitigate it.">
+
+<title>Police implicit bias training – CMU S&amp;DS Data Repository</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-eabfdf94e188cb8e14a0fc12813110d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.refsmmat.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../crime-and-justice/connecticut-stops.html">Crime and Justice</a></li><li class="breadcrumb-item"><a href="../crime-and-justice/police-bias-training.html">Police implicit bias training</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Astronomy</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Biology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Crime and Justice</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Traffic stops in Connecticut</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/mapping-police-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping Police Violence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/police-bias-training.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Police implicit bias training</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Daily Life</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/college-scorecard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">US College Scorecard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/fandango_movie_ratings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fandango movie ratings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/rtg-tinned-fish.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RTG tinned fish</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Language</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../language/hap-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Human-AI Parallel Corpus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Medicine</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/meningitis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distinguishing bacterial and viral meningitis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/prostatectomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blood transfusions in prostatectomies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Money</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/european-ham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European protected ham</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Politics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/jan-6-insurrectionists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">January 6th insurrectionists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/social_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Social capital, income inequality, and political outcomes across US counties</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/standard-cities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fiscally standardized cities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">World Development Indicators</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/healing-time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical healing and time perception</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bias in soccer refereeing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/moral-rebels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resenting moral rebels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/stress-effort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stress and cognitive-effort avoidance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Social</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bechdel_test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bechdel Test and box office results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bostonhousing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Boston Housing and fairness assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/costa_rica_households.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Costa Rican household poverty level</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/data-viz-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey of data visualization courses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/elite-college-admissions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elite college admissions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/migrants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey on attitude towards migrants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Sports</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/sprinters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fastest 100m sprint times</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Technology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technology/ai-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Can generative AI harm student learning?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technology/metr-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Effect of AI on programming productivity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/crime-and-justice/police-bias-training.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../crime-and-justice/connecticut-stops.html">Crime and Justice</a></li><li class="breadcrumb-item"><a href="../crime-and-justice/police-bias-training.html">Police implicit bias training</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Police implicit bias training</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">linear regression</div>
+    <div class="quarto-category">logistic regression</div>
+    <div class="quarto-category">t-test</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Does implicit bias training affect the beliefs, motivations, or actions of police officers? Analyze observational data from officers attending a training program meant to increase their knowledge about biases and teach evidence-based strategies to mitigate it.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Victoria Sagasta Pereira </p>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 8, 2026</p>
+    </div>
+  </div>
+  
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/police-bias-cohort1-t1t2-long.csv">police-bias-cohort1-t1t2-long.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/police-bias-cohort2-t1t2t3-long.csv">police-bias-cohort2-t1t2t3-long.csv</a>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2021</p>
+    </div>
+  </div>
+  </div>
+
+
+</header>
+
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Since their creation, U.S. police departments have perpetuated unequal treatment towards black and brown individuals in their community. While overt racism is one possible explanation, researchers suspect that in ordinary day-to-day interactions between police officers and the community, implicit bias is the more likely problem.</p>
+<p>“Implicit bias” refers to “biases that operate outside of conscious awareness and control but nevertheless influence our behaviors” (Spencer, Charbonneau, and Glaser 2016). For example, when an officer is trying to determine someone’s intentions—such as to determine if they are armed or intend to attack the officer—the officer’s judgment may follow racial stereotypes, making them more likely to draw negative conclusions about Black people. In a fast-moving situation, this may lead an officer to use force when they otherwise wouldn’t.</p>
+<p>In an attempt to address the dangerous and often deadly consequences of implicit in policing, some departments have started integrating implicit bias training into their curriculum. However, little research has evaluated whether the trainings are effective at changing officers’ beliefs, motivations, and most importantly, actions.</p>
+<p>This study tested a day-long “Managing Bias” diversity training program, designed by the Anti-Defamation League and delivered to sworn officers of unnamed police departments within the United States:</p>
+<blockquote class="blockquote">
+<p>Throughout the workshop, officers participated in activities that raised their awareness of bias. These activities educated officers about the definition and origins of bias, the influence of culture and identity on social experience, and gaps in understanding between police officers and community members. By the end of this section, officers were expected to understand the differences between implicit and explicit bias, identify how their worldview has been shaped by their culture and identity, and appreciate how biases may affect behavior.</p>
+<p>The final section of the training program focused on building skills to manage bias in policing. Officers were taught five practices that had been shown to reduce biased behavior. (Lai and Lisnek 2023)</p>
+</blockquote>
+<p>Officers completed up to three surveys that assessed self-reported beliefs, attitudes, motivations, and behavior. The first survey was a baseline survey administered to officers before the training began, the second survey assessed immediate effectiveness and was administered immediately after the end of training, and the third survey was administered 1 month after training. The goal was to evaluate how the training improved officer knowledge about bias and whether it increased their use of the five strategies after the training, thus changing police behavior.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data collected is divided into two separate cohorts. In cohort 1, 4,659 officers were trained in person from July 2019 to March 2020, and in cohort 2, 3,103 officers were trained online from September 2020 to January 2021. From the first cohort, after exclusions, we obtained usable data from 3,417 officers who completed the first two surveys. From the second cohort, due to duplicate surveys, problems linking surveys together, and evidence of survey misbehavior, usable data is limited to 72 officers who completed all three surveys.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>There were many individual training sessions; each officer obtained only one. For each officer, their participation involved several steps:</p>
+<ol type="1">
+<li><p>First, each officer completed a baseline survey before the training (time T1). This asked about their demographics, beliefs about bias, and behaviors related to bias.</p></li>
+<li><p>Next, they attended the day-long training workshop (or did so online). This taught them about implicit bias and taught several strategies for recognizing and avoiding it.</p></li>
+<li><p>Then they completed a post-training survey at the end of the workshop (time T2). This again asked about their beliefs and behaviors, as well as how they <em>intended</em> to use the strategies taught in the workshop.</p></li>
+<li><p>Finally, officers completed a third survey 30 days after the workshop (time T3). This asked how they had <em>actually</em> used the bias management strategies in their work in that time.</p>
+<p><strong>However,</strong> this survey was only used for Cohort 2, and as the survey was later, many officers did not complete this survey. Other T3 surveys couldn’t be matched up to the responses from T1 or T2 and had to be excluded as well.</p></li>
+</ol>
+<p>Each row represents one officer at one time point, so a Cohort 2 officer who was surveyed at all three times will have three rows.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/police-bias-cohort1-t1t2-long.csv "> police-bias-cohort1-t1t2-long.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["time"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["cohort"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["knowledge"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["theories"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["biasworry"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["strategy"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["strat_know"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["strat_efficacy"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["strat_mot"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["centrality"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["respect"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["gender_d"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["race_white"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["race_black"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["education_ba"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["yearsworked"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["frequency_black"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["frequency_hispanic"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["frequency_asian"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["frequency_gay"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["frequency_trans"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["facilduo_gender"],"name":[24],"type":["chr"],"align":["left"]},{"label":["facilduo_race"],"name":[25],"type":["chr"],"align":["left"]},{"label":["facilduo_le"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["facilduo_relatedle"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["facilduo_relatedle_nole"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["attendance"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["substitution"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["perspective"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["mindful"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["strat"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["race"],"name":[34],"type":["chr"],"align":["left"]},{"label":["education"],"name":[35],"type":["chr"],"align":["left"]},{"label":["exposure"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["individuation"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["knowledge_bias"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["knowledge_race"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["knowledge_culture"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["theories1"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["theories2"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["biasworry_black"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["biasworry_asian"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["biasworry_hispanic"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["biasworry_lgb"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["biasworry_trans"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["biasworry_white"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["centrality1"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["centrality2"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["centrality3"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["respect1"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["respect2"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["respect3"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["respect4"],"name":[55],"type":["dbl"],"align":["right"]}],"data":[{"1":"s0002","2":"1","3":"1","4":"4.000000","5":"3.0","6":"4.0","7":"0.0","8":"NA","9":"NA","10":"NA","11":"4.666667","12":"6.0","13":"0","14":"1","15":"1","16":"0","17":"1","18":"20","19":"4","20":"4","21":"4","22":"3","23":"1","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"0","32":"0","33":"NA","34":"white","35":"Bachelors degree","36":"0","37":"0","38":"5","39":"3","40":"4","41":"3","42":"3","43":"4","44":"4","45":"4","46":"4","47":"4","48":"4","49":"5","50":"4","51":"5","52":"6","53":"6","54":"6","55":"6"},{"1":"s0002","2":"2","3":"1","4":"5.000000","5":"3.0","6":"4.0","7":"1.2","8":"4","9":"3","10":"3","11":"4.666667","12":"6.0","13":"0","14":"1","15":"1","16":"0","17":"1","18":"20","19":"4","20":"4","21":"4","22":"3","23":"1","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"2","31":"0","32":"3","33":"3.333333","34":"white","35":"Bachelors degree","36":"0","37":"1","38":"6","39":"5","40":"4","41":"3","42":"3","43":"4","44":"4","45":"4","46":"4","47":"4","48":"3","49":"5","50":"4","51":"5","52":"6","53":"6","54":"6","55":"6"},{"1":"s0003","2":"1","3":"1","4":"4.000000","5":"3.5","6":"4.2","7":"1.6","8":"NA","9":"NA","10":"NA","11":"4.333333","12":"5.0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"2","19":"4","20":"5","21":"3","22":"3","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"2","31":"1","32":"2","33":"NA","34":"hispanic","35":"Graduate degree","36":"2","37":"1","38":"4","39":"3","40":"5","41":"3","42":"4","43":"4","44":"4","45":"4","46":"5","47":"4","48":"4","49":"4","50":"5","51":"4","52":"5","53":"5","54":"4","55":"6"},{"1":"s0003","2":"2","3":"1","4":"5.333333","5":"2.0","6":"5.0","7":"3.8","8":"5","9":"4","10":"4","11":"4.333333","12":"5.0","13":"0","14":"0","15":"0","16":"0","17":"1","18":"2","19":"4","20":"5","21":"3","22":"3","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"3","31":"4","32":"5","33":"4.333333","34":"hispanic","35":"Graduate degree","36":"4","37":"3","38":"5","39":"5","40":"6","41":"1","42":"3","43":"5","44":"4","45":"5","46":"6","47":"5","48":"5","49":"4","50":"5","51":"4","52":"5","53":"5","54":"4","55":"6"},{"1":"s0004","2":"1","3":"1","4":"1.000000","5":"7.0","6":"1.0","7":"0.0","8":"NA","9":"NA","10":"NA","11":"5.333333","12":"5.0","13":"0","14":"1","15":"0","16":"0","17":"1","18":"13","19":"4","20":"4","21":"3","22":"NA","23":"NA","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"0","32":"0","33":"NA","34":"hispanic","35":"Bachelors degree","36":"0","37":"0","38":"1","39":"1","40":"1","41":"7","42":"7","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"2","50":"7","51":"7","52":"5","53":"5","54":"5","55":"5"},{"1":"s0004","2":"2","3":"1","4":"4.666667","5":"3.5","6":"1.0","7":"1.0","8":"3","9":"2","10":"2","11":"5.333333","12":"5.0","13":"0","14":"1","15":"0","16":"0","17":"1","18":"13","19":"4","20":"4","21":"3","22":"NA","23":"NA","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"1","32":"2","33":"2.333333","34":"hispanic","35":"Bachelors degree","36":"2","37":"0","38":"6","39":"2","40":"6","41":"5","42":"2","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"2","50":"7","51":"7","52":"5","53":"5","54":"5","55":"5"},{"1":"s0006","2":"1","3":"1","4":"1.666667","5":"5.5","6":"1.0","7":"0.4","8":"NA","9":"NA","10":"NA","11":"4.333333","12":"4.5","13":"0","14":"0","15":"1","16":"0","17":"1","18":"13","19":"4","20":"4","21":"1","22":"4","23":"1","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"1","32":"1","33":"NA","34":"white","35":"Bachelors degree","36":"0","37":"0","38":"1","39":"1","40":"3","41":"5","42":"6","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"4","50":"5","51":"4","52":"4","53":"5","54":"4","55":"5"},{"1":"s0006","2":"2","3":"1","4":"4.666667","5":"4.0","6":"5.0","7":"1.2","8":"4","9":"4","10":"3","11":"4.333333","12":"4.5","13":"0","14":"0","15":"1","16":"0","17":"1","18":"13","19":"4","20":"4","21":"1","22":"4","23":"1","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"1","31":"1","32":"2","33":"3.666667","34":"white","35":"Bachelors degree","36":"1","37":"1","38":"5","39":"5","40":"4","41":"3","42":"5","43":"5","44":"5","45":"5","46":"5","47":"5","48":"5","49":"4","50":"5","51":"4","52":"4","53":"5","54":"4","55":"5"},{"1":"s0007","2":"1","3":"1","4":"2.000000","5":"6.0","6":"2.0","7":"3.2","8":"NA","9":"NA","10":"NA","11":"4.333333","12":"2.5","13":"0","14":"1","15":"1","16":"0","17":"1","18":"9","19":"4","20":"4","21":"4","22":"4","23":"4","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"3","31":"3","32":"4","33":"NA","34":"white","35":"Bachelors degree","36":"4","37":"2","38":"2","39":"2","40":"2","41":"6","42":"6","43":"2","44":"2","45":"2","46":"2","47":"2","48":"2","49":"2","50":"5","51":"6","52":"2","53":"3","54":"3","55":"2"},{"1":"s0007","2":"2","3":"1","4":"5.333333","5":"6.5","6":"3.8","7":"6.0","8":"5","9":"5","10":"5","11":"4.333333","12":"2.5","13":"0","14":"1","15":"1","16":"0","17":"1","18":"9","19":"4","20":"4","21":"4","22":"4","23":"4","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"6","31":"6","32":"6","33":"5.000000","34":"white","35":"Bachelors degree","36":"6","37":"6","38":"5","39":"6","40":"5","41":"6","42":"7","43":"3","44":"3","45":"5","46":"3","47":"5","48":"5","49":"2","50":"5","51":"6","52":"2","53":"3","54":"3","55":"2"},{"1":"s0008","2":"1","3":"1","4":"5.000000","5":"5.0","6":"3.2","7":"1.8","8":"NA","9":"NA","10":"NA","11":"6.000000","12":"6.5","13":"0","14":"1","15":"1","16":"0","17":"1","18":"NA","19":"4","20":"4","21":"3","22":"3","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"1","32":"6","33":"NA","34":"white","35":"Bachelors degree","36":"0","37":"2","38":"5","39":"5","40":"5","41":"4","42":"6","43":"5","44":"1","45":"3","46":"2","47":"5","48":"1","49":"6","50":"7","51":"5","52":"7","53":"7","54":"5","55":"7"},{"1":"s0008","2":"2","3":"1","4":"7.000000","5":"7.0","6":"3.0","7":"5.4","8":"5","9":"5","10":"5","11":"6.000000","12":"6.5","13":"0","14":"1","15":"1","16":"0","17":"1","18":"NA","19":"4","20":"4","21":"3","22":"3","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"3","31":"6","32":"6","33":"5.000000","34":"white","35":"Bachelors degree","36":"6","37":"6","38":"7","39":"7","40":"7","41":"7","42":"7","43":"5","44":"1","45":"3","46":"1","47":"5","48":"1","49":"6","50":"7","51":"5","52":"7","53":"7","54":"5","55":"7"},{"1":"s0010","2":"1","3":"1","4":"2.333333","5":"5.0","6":"2.0","7":"0.2","8":"NA","9":"NA","10":"NA","11":"5.333333","12":"4.0","13":"0","14":"1","15":"1","16":"0","17":"1","18":"NA","19":"4","20":"4","21":"3","22":"3","23":"1","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"1","32":"0","33":"NA","34":"white","35":"Bachelors degree","36":"0","37":"0","38":"2","39":"2","40":"3","41":"5","42":"5","43":"2","44":"2","45":"2","46":"2","47":"2","48":"2","49":"6","50":"5","51":"5","52":"4","53":"5","54":"3","55":"4"},{"1":"s0010","2":"2","3":"1","4":"4.333333","5":"6.0","6":"4.0","7":"2.0","8":"4","9":"3","10":"3","11":"5.333333","12":"4.0","13":"0","14":"1","15":"1","16":"0","17":"1","18":"NA","19":"4","20":"4","21":"3","22":"3","23":"1","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"2","31":"2","32":"2","33":"3.333333","34":"white","35":"Bachelors degree","36":"2","37":"2","38":"5","39":"4","40":"4","41":"6","42":"6","43":"4","44":"4","45":"4","46":"4","47":"4","48":"4","49":"6","50":"5","51":"5","52":"4","53":"5","54":"3","55":"4"},{"1":"s0011","2":"1","3":"1","4":"4.666667","5":"6.0","6":"2.0","7":"3.6","8":"NA","9":"NA","10":"NA","11":"5.000000","12":"7.0","13":"0","14":"0","15":"1","16":"0","17":"1","18":"14","19":"5","20":"5","21":"5","22":"5","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"2","31":"4","32":"6","33":"NA","34":"white","35":"Graduate degree","36":"2","37":"4","38":"5","39":"3","40":"6","41":"6","42":"6","43":"2","44":"2","45":"2","46":"2","47":"2","48":"2","49":"5","50":"6","51":"4","52":"7","53":"7","54":"7","55":"7"},{"1":"s0011","2":"2","3":"1","4":"5.333333","5":"4.0","6":"1.0","7":"6.0","8":"4","9":"4","10":"4","11":"5.000000","12":"7.0","13":"0","14":"0","15":"1","16":"0","17":"1","18":"14","19":"5","20":"5","21":"5","22":"5","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"6","31":"6","32":"6","33":"4.000000","34":"white","35":"Graduate degree","36":"6","37":"6","38":"5","39":"5","40":"6","41":"5","42":"3","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"5","50":"6","51":"4","52":"7","53":"7","54":"7","55":"7"},{"1":"s0012","2":"1","3":"1","4":"1.000000","5":"5.5","6":"1.0","7":"0.0","8":"NA","9":"NA","10":"NA","11":"4.000000","12":"4.5","13":"0","14":"1","15":"1","16":"0","17":"0","18":"15","19":"5","20":"5","21":"3","22":"5","23":"3","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"0","32":"0","33":"NA","34":"white","35":"Some college","36":"0","37":"0","38":"1","39":"1","40":"1","41":"4","42":"7","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"4","50":"4","51":"4","52":"4","53":"4","54":"6","55":"4"},{"1":"s0012","2":"2","3":"1","4":"3.666667","5":"4.5","6":"1.0","7":"0.0","8":"2","9":"1","10":"1","11":"4.000000","12":"4.5","13":"0","14":"1","15":"1","16":"0","17":"0","18":"15","19":"5","20":"5","21":"3","22":"5","23":"3","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"0","32":"0","33":"1.333333","34":"white","35":"Some college","36":"0","37":"0","38":"6","39":"4","40":"1","41":"3","42":"6","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"4","50":"4","51":"4","52":"4","53":"4","54":"6","55":"4"},{"1":"s0013","2":"1","3":"1","4":"5.000000","5":"3.5","6":"3.0","7":"3.6","8":"NA","9":"NA","10":"NA","11":"5.000000","12":"5.0","13":"1","14":"1","15":"1","16":"0","17":"1","18":"33","19":"4","20":"4","21":"4","22":"3","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"0","31":"6","32":"6","33":"NA","34":"white","35":"Graduate degree","36":"0","37":"6","38":"5","39":"5","40":"5","41":"3","42":"4","43":"3","44":"3","45":"3","46":"3","47":"3","48":"3","49":"5","50":"5","51":"5","52":"5","53":"5","54":"5","55":"5"},{"1":"s0013","2":"2","3":"1","4":"6.000000","5":"4.0","6":"3.0","7":"3.2","8":"4","9":"3","10":"3","11":"5.000000","12":"5.0","13":"1","14":"1","15":"1","16":"0","17":"1","18":"33","19":"4","20":"4","21":"4","22":"3","23":"2","24":"ff","25":"bw","26":"0","27":"1","28":"1","29":"28","30":"2","31":"6","32":"3","33":"3.333333","34":"white","35":"Graduate degree","36":"2","37":"3","38":"6","39":"6","40":"6","41":"3","42":"5","43":"3","44":"3","45":"3","46":"3","47":"3","48":"3","49":"5","50":"5","51":"5","52":"5","53":"5","54":"5","55":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/police-bias-cohort2-t1t2t3-long.csv "> police-bias-cohort2-t1t2t3-long.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["time"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["cohort"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["frequency_black"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["frequency_hispanic"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["frequency_asian"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["frequency_gay"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["frequency_trans"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["respect"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["centrality"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["yearsworked"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["race_white"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["race_black"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["gender_d"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["education_ba"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["attendance"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["facilduo_gender"],"name":[18],"type":["chr"],"align":["left"]},{"label":["facilduo_race"],"name":[19],"type":["chr"],"align":["left"]},{"label":["facilduo_le"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["facilduo_relatedle"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["facilduo_relatedle_nole"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["knowledge"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["theories"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["strategy"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["biasworry"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["strat_know"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["strat_efficacy"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["strat_mot"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["strat"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["race"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["education"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["substitution"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["perspective"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["exposure"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["individuation"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["mindful"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["knowledge_bias"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["knowledge_race"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["knowledge_culture"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["theories1"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["theories2"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["biasworry_black"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["biasworry_asian"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["biasworry_hispanic"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["biasworry_lgb"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["biasworry_trans"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["biasworry_white"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["centrality1"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["centrality2"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["centrality3"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["respect1"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["respect2"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["respect3"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["respect4"],"name":[55],"type":["dbl"],"align":["right"]}],"data":[{"1":"s3991","2":"1","3":"2","4":"5","5":"5","6":"3","7":"5","8":"3","9":"3.5","10":"5.000000","11":"21","12":"1","13":"1","14":"0","15":"0","16":"1","17":"50","18":"mf","19":"bw","20":"0","21":"1","22":"1","23":"6.333333","24":"4.5","25":"1.8","26":"2.0","27":"NA","28":"NA","29":"NA","30":"NA","31":"1","32":"6","33":"1","34":"3","35":"0","36":"1","37":"4","38":"7","39":"5","40":"7","41":"3","42":"6","43":"2","44":"2","45":"2","46":"2","47":"2","48":"2","49":"6","50":"5","51":"4","52":"4","53":"5","54":"4","55":"1"},{"1":"s3991","2":"2","3":"2","4":"5","5":"5","6":"3","7":"5","8":"3","9":"3.5","10":"5.000000","11":"21","12":"1","13":"1","14":"0","15":"0","16":"1","17":"50","18":"mf","19":"bw","20":"0","21":"1","22":"1","23":"5.666667","24":"4.0","25":"3.4","26":"4.6","27":"4","28":"3","29":"3","30":"3.333333","31":"1","32":"6","33":"3","34":"5","35":"1","36":"2","37":"6","38":"6","39":"5","40":"6","41":"2","42":"6","43":"5","44":"5","45":"5","46":"3","47":"5","48":"5","49":"6","50":"5","51":"4","52":"4","53":"5","54":"4","55":"1"},{"1":"s3991","2":"3","3":"2","4":"5","5":"5","6":"3","7":"5","8":"3","9":"3.5","10":"5.000000","11":"21","12":"1","13":"1","14":"0","15":"0","16":"1","17":"50","18":"mf","19":"bw","20":"0","21":"1","22":"1","23":"3.000000","24":"6.0","25":"2.6","26":"2.4","27":"4","28":"3","29":"4","30":"3.666667","31":"1","32":"6","33":"0","34":"6","35":"1","36":"0","37":"6","38":"5","39":"2","40":"2","41":"6","42":"6","43":"2","44":"2","45":"2","46":"1","47":"5","48":"NA","49":"6","50":"5","51":"4","52":"4","53":"5","54":"4","55":"1"},{"1":"s4014","2":"1","3":"2","4":"4","5":"4","6":"3","7":"3","8":"3","9":"5.0","10":"4.000000","11":"20","12":"0","13":"0","14":"0","15":"1","16":"1","17":"54","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"5.000000","24":"3.0","25":"1.0","26":"1.0","27":"NA","28":"NA","29":"NA","30":"NA","31":"4","32":"6","33":"1","34":"1","35":"1","36":"1","37":"1","38":"5","39":"5","40":"5","41":"3","42":"3","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"4","50":"4","51":"4","52":"5","53":"5","54":"5","55":"5"},{"1":"s4014","2":"2","3":"2","4":"4","5":"4","6":"3","7":"3","8":"3","9":"5.0","10":"4.000000","11":"20","12":"0","13":"0","14":"0","15":"1","16":"1","17":"54","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"5.000000","24":"5.0","25":"2.0","26":"4.2","27":"4","28":"4","29":"4","30":"4.000000","31":"4","32":"6","33":"0","34":"3","35":"4","36":"2","37":"1","38":"5","39":"5","40":"5","41":"5","42":"5","43":"5","44":"3","45":"3","46":"5","47":"5","48":"4","49":"4","50":"4","51":"4","52":"5","53":"5","54":"5","55":"5"},{"1":"s4014","2":"3","3":"2","4":"4","5":"4","6":"3","7":"3","8":"3","9":"5.0","10":"4.000000","11":"20","12":"0","13":"0","14":"0","15":"1","16":"1","17":"54","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"3.000000","24":"5.5","25":"2.6","26":"1.6","27":"2","28":"4","29":"2","30":"2.666667","31":"4","32":"6","33":"2","34":"6","35":"0","36":"2","37":"3","38":"5","39":"1","40":"3","41":"5","42":"6","43":"1","44":"1","45":"1","46":"3","47":"2","48":"NA","49":"4","50":"4","51":"4","52":"5","53":"5","54":"5","55":"5"},{"1":"s4015","2":"1","3":"2","4":"5","5":"5","6":"1","7":"1","8":"0","9":"2.5","10":"1.000000","11":"22","12":"0","13":"1","14":"0","15":"1","16":"1","17":"51","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"1.000000","24":"7.0","25":"0.6","26":"1.0","27":"NA","28":"NA","29":"NA","30":"NA","31":"1","32":"5","33":"0","34":"3","35":"0","36":"0","37":"0","38":"1","39":"1","40":"1","41":"7","42":"7","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"1","50":"1","51":"1","52":"1","53":"1","54":"7","55":"1"},{"1":"s4015","2":"2","3":"2","4":"5","5":"5","6":"1","7":"1","8":"0","9":"2.5","10":"1.000000","11":"22","12":"0","13":"1","14":"0","15":"1","16":"1","17":"51","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"2.000000","24":"6.5","25":"2.2","26":"1.0","27":"5","28":"3","29":"4","30":"4.000000","31":"1","32":"5","33":"1","34":"2","35":"0","36":"2","37":"6","38":"2","39":"2","40":"2","41":"6","42":"7","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"1","50":"1","51":"1","52":"1","53":"1","54":"7","55":"1"},{"1":"s4015","2":"3","3":"2","4":"5","5":"5","6":"1","7":"1","8":"0","9":"2.5","10":"1.000000","11":"22","12":"0","13":"1","14":"0","15":"1","16":"1","17":"51","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"2.333333","24":"7.0","25":"0.0","26":"1.0","27":"5","28":"2","29":"5","30":"4.000000","31":"1","32":"5","33":"0","34":"0","35":"0","36":"0","37":"0","38":"2","39":"2","40":"3","41":"7","42":"7","43":"1","44":"1","45":"1","46":"1","47":"1","48":"NA","49":"1","50":"1","51":"1","52":"1","53":"1","54":"7","55":"1"},{"1":"s4221","2":"1","3":"2","4":"4","5":"4","6":"1","7":"1","8":"1","9":"6.0","10":"1.000000","11":"26","12":"0","13":"1","14":"0","15":"1","16":"1","17":"52","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"2.666667","24":"5.0","25":"2.8","26":"3.0","27":"NA","28":"NA","29":"NA","30":"NA","31":"1","32":"6","33":"0","34":"3","35":"3","36":"5","37":"3","38":"3","39":"3","40":"2","41":"5","42":"5","43":"3","44":"3","45":"3","46":"3","47":"3","48":"3","49":"1","50":"1","51":"1","52":"6","53":"7","54":"5","55":"6"},{"1":"s4221","2":"2","3":"2","4":"4","5":"4","6":"1","7":"1","8":"1","9":"6.0","10":"1.000000","11":"26","12":"0","13":"1","14":"0","15":"1","16":"1","17":"52","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"3.666667","24":"5.0","25":"0.0","26":"3.0","27":"2","28":"2","29":"2","30":"2.000000","31":"1","32":"6","33":"0","34":"0","35":"0","36":"0","37":"0","38":"3","39":"3","40":"5","41":"5","42":"5","43":"3","44":"3","45":"3","46":"3","47":"3","48":"3","49":"1","50":"1","51":"1","52":"6","53":"7","54":"5","55":"6"},{"1":"s4221","2":"3","3":"2","4":"4","5":"4","6":"1","7":"1","8":"1","9":"6.0","10":"1.000000","11":"26","12":"0","13":"1","14":"0","15":"1","16":"1","17":"52","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"4.333333","24":"5.0","25":"0.4","26":"2.2","27":"4","28":"4","29":"4","30":"4.000000","31":"1","32":"6","33":"0","34":"2","35":"0","36":"0","37":"0","38":"6","39":"4","40":"3","41":"5","42":"5","43":"3","44":"2","45":"2","46":"2","47":"2","48":"NA","49":"1","50":"1","51":"1","52":"6","53":"7","54":"5","55":"6"},{"1":"s4237","2":"1","3":"2","4":"5","5":"4","6":"1","7":"3","8":"1","9":"7.0","10":"5.000000","11":"22","12":"1","13":"0","14":"0","15":"1","16":"1","17":"52","18":"mf","19":"bw","20":"1","21":"1","22":"0","23":"2.666667","24":"6.0","25":"0.0","26":"1.0","27":"NA","28":"NA","29":"NA","30":"NA","31":"3","32":"6","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"1","40":"6","41":"6","42":"6","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"4","50":"5","51":"6","52":"7","53":"7","54":"7","55":"7"},{"1":"s4237","2":"2","3":"2","4":"5","5":"4","6":"1","7":"3","8":"1","9":"7.0","10":"5.000000","11":"22","12":"1","13":"0","14":"0","15":"1","16":"1","17":"52","18":"mf","19":"bw","20":"1","21":"1","22":"0","23":"1.000000","24":"4.0","25":"0.0","26":"1.0","27":"5","28":"2","29":"1","30":"2.666667","31":"3","32":"6","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"1","40":"1","41":"3","42":"5","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"4","50":"5","51":"6","52":"7","53":"7","54":"7","55":"7"},{"1":"s4237","2":"3","3":"2","4":"5","5":"4","6":"1","7":"3","8":"1","9":"7.0","10":"5.000000","11":"22","12":"1","13":"0","14":"0","15":"1","16":"1","17":"52","18":"mf","19":"bw","20":"1","21":"1","22":"0","23":"1.333333","24":"7.0","25":"0.0","26":"1.0","27":"4","28":"2","29":"1","30":"2.333333","31":"3","32":"6","33":"0","34":"0","35":"0","36":"0","37":"0","38":"1","39":"1","40":"2","41":"7","42":"7","43":"1","44":"1","45":"1","46":"1","47":"1","48":"NA","49":"4","50":"5","51":"6","52":"7","53":"7","54":"7","55":"7"},{"1":"s4309","2":"1","3":"2","4":"4","5":"4","6":"4","7":"4","8":"4","9":"1.0","10":"1.000000","11":"25","12":"1","13":"0","14":"1","15":"1","16":"1","17":"9","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"4.333333","24":"5.0","25":"5.0","26":"1.0","27":"NA","28":"NA","29":"NA","30":"NA","31":"2","32":"6","33":"5","34":"5","35":"5","36":"5","37":"5","38":"1","39":"7","40":"5","41":"3","42":"7","43":"1","44":"1","45":"1","46":"1","47":"1","48":"1","49":"1","50":"1","51":"1","52":"1","53":"1","54":"1","55":"1"},{"1":"s4309","2":"2","3":"2","4":"4","5":"4","6":"4","7":"4","8":"4","9":"1.0","10":"1.000000","11":"25","12":"1","13":"0","14":"1","15":"1","16":"1","17":"9","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"6.000000","24":"5.0","25":"5.0","26":"5.0","27":"5","28":"5","29":"5","30":"5.000000","31":"2","32":"6","33":"5","34":"5","35":"5","36":"5","37":"5","38":"6","39":"6","40":"6","41":"5","42":"5","43":"5","44":"5","45":"5","46":"5","47":"5","48":"5","49":"1","50":"1","51":"1","52":"1","53":"1","54":"1","55":"1"},{"1":"s4309","2":"3","3":"2","4":"4","5":"4","6":"4","7":"4","8":"4","9":"1.0","10":"1.000000","11":"25","12":"1","13":"0","14":"1","15":"1","16":"1","17":"9","18":"mf","19":"bw","20":"0","21":"0","22":"0","23":"4.000000","24":"5.0","25":"5.0","26":"1.0","27":"5","28":"5","29":"5","30":"5.000000","31":"2","32":"6","33":"5","34":"5","35":"5","36":"5","37":"5","38":"4","39":"3","40":"5","41":"5","42":"5","43":"1","44":"1","45":"1","46":"1","47":"1","48":"NA","49":"1","50":"1","51":"1","52":"1","53":"1","54":"1","55":"1"},{"1":"s4317","2":"1","3":"2","4":"3","5":"3","6":"3","7":"3","8":"3","9":"5.0","10":"2.666667","11":"24","12":"0","13":"0","14":"1","15":"1","16":"0","17":"52","18":"mf","19":"bw","20":"1","21":"1","22":"0","23":"5.000000","24":"7.0","25":"0.0","26":"2.0","27":"NA","28":"NA","29":"NA","30":"NA","31":"2","32":"3","33":"0","34":"0","35":"0","36":"0","37":"0","38":"7","39":"2","40":"6","41":"7","42":"7","43":"2","44":"2","45":"2","46":"2","47":"2","48":"2","49":"1","50":"5","51":"2","52":"2","53":"6","54":"6","55":"6"},{"1":"s4317","2":"2","3":"2","4":"3","5":"3","6":"3","7":"3","8":"3","9":"5.0","10":"2.666667","11":"24","12":"0","13":"0","14":"1","15":"1","16":"0","17":"52","18":"mf","19":"bw","20":"1","21":"1","22":"0","23":"4.000000","24":"4.0","25":"1.6","26":"4.0","27":"4","28":"3","29":"4","30":"3.666667","31":"2","32":"3","33":"2","34":"2","35":"2","36":"1","37":"1","38":"4","39":"4","40":"4","41":"4","42":"4","43":"4","44":"4","45":"4","46":"4","47":"4","48":"4","49":"1","50":"5","51":"2","52":"2","53":"6","54":"6","55":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<table class="caption-top table">
+<caption>cohort1-t1t2-long.csv: Cohort 1, times 1 and 2</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>Unique identifier variable</td>
+</tr>
+<tr class="even">
+<td>time</td>
+<td>Data collection time point (1 or 2)</td>
+</tr>
+<tr class="odd">
+<td>cohort</td>
+<td>Describes whether data comes from the first or second cohort</td>
+</tr>
+<tr class="even">
+<td>knowledge</td>
+<td>Knowledge about Bias</td>
+</tr>
+<tr class="odd">
+<td>theories</td>
+<td>Beliefs about the Malleability of Bias</td>
+</tr>
+<tr class="even">
+<td>biasworry</td>
+<td>Concern about Bias</td>
+</tr>
+<tr class="odd">
+<td>strategy</td>
+<td>Use of Strategies to Manage Bias (Time 1; measured as use in the past 7 days)</td>
+</tr>
+<tr class="even">
+<td>strategy</td>
+<td>Intentions to Use Strategies to Manage Bias (Time 2; measured as intention to use)</td>
+</tr>
+<tr class="odd">
+<td>strat</td>
+<td>Average of Perceived Feasibility, Efficacy, and Motivation to Use Strategies (Time 2)</td>
+</tr>
+<tr class="even">
+<td>centrality</td>
+<td>Police Identity Centrality (Time 1)</td>
+</tr>
+<tr class="odd">
+<td>respect</td>
+<td>Expectations of Respect from Community Members (Time 1)</td>
+</tr>
+<tr class="even">
+<td>rank</td>
+<td>What is your rank? (Time 1; 0 = Below Sergeant, 1 = Sergeant or above)</td>
+</tr>
+<tr class="odd">
+<td>gender_d</td>
+<td>What is your gender? (Time 1; 0 = Female, 1 = Male)</td>
+</tr>
+<tr class="even">
+<td>race</td>
+<td>What is your race or ethnicity? (Time 1; 1 = White or Caucasian, 2 = Black or African American, 3 = Hispanic or Latino, 4 = Asian or Pacific Islander, 5 = Multiracial or Other)</td>
+</tr>
+<tr class="odd">
+<td>race_white</td>
+<td>White vs.&nbsp;Non-White (Time 1; 1 = White, 0 = Non-White)</td>
+</tr>
+<tr class="even">
+<td>race_black</td>
+<td>Black vs.&nbsp;Non-Black (Time 1; 1 = Black, 0 = Non-Black)</td>
+</tr>
+<tr class="odd">
+<td>education</td>
+<td>What is the highest level of education that you have completed? (Time 1; 1 = some high school or less, 2 = high school graduate, 3 = some college, 4 = associate’s degree, 5 = bachelor’s degree, 6 = graduate degree)</td>
+</tr>
+<tr class="even">
+<td>education_ba</td>
+<td>Bachelor’s degree or higher vs.&nbsp;lower than Bachelor’s degree (Time 1; 1 = Bachelor’s degree or higher, 0 = Lower than Bachelor’s degree)</td>
+</tr>
+<tr class="odd">
+<td>yearsworked</td>
+<td>How many years have you worked in the department? (Time 1)</td>
+</tr>
+<tr class="even">
+<td>frequency_white</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are White or Caucasian? (Time 1; 1 = never, 2 = very rarely, 3 = rarely, 4 = occasionally, 5 = frequently, 6 = very frequently)</td>
+</tr>
+<tr class="odd">
+<td>frequency_black</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Black or African American? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="even">
+<td>frequency_asian</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Asian? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="odd">
+<td>frequency_hispanic</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Hispanic or Latino? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="even">
+<td>frequency_gay</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Gay, Lesbian, or Bisexual? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="odd">
+<td>frequency_trans</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Transgender? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="even">
+<td>facilduo_gender</td>
+<td>Educator pair’s gender makeup (Time 2; mm = Male-Male, ff = Female-Female, mf = Male-Female)</td>
+</tr>
+<tr class="odd">
+<td>facilduo_race</td>
+<td>Educator pair’s racial makeup (Time 2; ww = White-White, bw = Black-White, asianduo = Has an Asian educator)</td>
+</tr>
+<tr class="even">
+<td>facilduo_le</td>
+<td>Has an ex-law-enforcement educator vs.&nbsp;doesn’t have an ex-law enforcement educator (Time 2; 1 = Has an ex-law-enforcement educator, 0 = Doesn’t)</td>
+</tr>
+<tr class="odd">
+<td>facilduo_relatedle</td>
+<td>Has a close relationship with a member of law enforcement, including being one, vs.&nbsp;doesn’t have a close relationship (Time 2; 1 = Has a close relationship, 0 = Doesn’t)</td>
+</tr>
+<tr class="even">
+<td>facilduo_relatedle_nole</td>
+<td>Has a close relationship with a member of law enforcement vs.&nbsp;doesn’t, excluding educator who was ex-law-enforcement (Time 2; 1 = Has a close relationship, 0 = Doesn’t)</td>
+</tr>
+<tr class="odd">
+<td>attendance</td>
+<td>Number of officers attending the session (Time 2)</td>
+</tr>
+<tr class="even">
+<td>substitution</td>
+<td>Substitution strategy use in the past 7 days (Time 1; 0 = 0 times, 1 = 1 time, 2 = 2 times, 3 = 3 times, 4 = 4 times, 5 = 5 times, 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>substitution</td>
+<td>Intentions to use Substitution strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="even">
+<td>perspective</td>
+<td>Perspective-taking strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>perspective</td>
+<td>Intentions to use Perspective-taking strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="even">
+<td>exposure</td>
+<td>Diversity exposure strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>exposure</td>
+<td>Intentions to use Diversity exposure strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="even">
+<td>individuation</td>
+<td>Individuation strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>individuation</td>
+<td>Intentions to use Individuation strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="even">
+<td>mindful</td>
+<td>Mindfulness strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>mindful</td>
+<td>Intentions to use Mindfulness strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="even">
+<td>knowledge_bias</td>
+<td>Subtle or implicit biases influence my decision making about other people. ( 1 = strongly disagree, 2 = moderately disagree, 3 = slightly disagree, 4 = neutral, 5 = slightly agree, 6 = moderately agree, 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>knowledge_race</td>
+<td>Whether I am aware of it or not, I use a person’s race or ethnicity to form an impression of the kind of person they are. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>knowledge_culture</td>
+<td>My cultural background influences how I perceive other people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>theories1</td>
+<td>People have a certain amount of bias toward other people and they can’t really change that. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>theories2</td>
+<td>People’s level of bias toward other people is something very basic about them that they can’t change very much. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>biasworry_white</td>
+<td>I worry that I act in an unintentionally biased way toward White people. (Time 1–2; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>biasworry_black</td>
+<td>I worry that I act in an unintentionally biased way toward Black people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>biasworry_asian</td>
+<td>I worry that I act in an unintentionally biased way toward Asian people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>biasworry_hispanic</td>
+<td>I worry that I act in an unintentionally biased way toward Hispanic or Latino people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>biasworry_lgb</td>
+<td>I worry that I act in an unintentionally biased way toward Gay, Lesbian, or Bisexual people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>biasworry_trans</td>
+<td>I worry that I act in an unintentionally biased way toward Transgender people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>strat_know</td>
+<td>Do you feel like you could execute these strategies correctly if you wanted to? (Time 2; 1 = definitely not, 2 = probably not, 3 = somewhat, 4 = probably, 5 = definitely)</td>
+</tr>
+<tr class="even">
+<td>strat_efficacy</td>
+<td>How effective do you think these strategies are for addressing issues related to bias? (Time 2; 1 = not at all, 2 = slightly, 3 = moderately, 4 = very, 5 = extremely)</td>
+</tr>
+<tr class="odd">
+<td>strat_mot</td>
+<td>How motivated are you to use these strategies? (Time 2; 1 = not at all to 5 = extremely)</td>
+</tr>
+<tr class="even">
+<td>centrality1</td>
+<td>In general, being a police officer is an important part of my self-image. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>centrality2</td>
+<td>I have a strong attachment to law enforcement. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>centrality3</td>
+<td>Being a police officer is a reflection of who I am. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>respect1</td>
+<td>I expect respect when I put my uniform on. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>respect2</td>
+<td>I expect citizens to obey my authority when I am on duty. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>respect3</td>
+<td>When I wear my uniform, I expect citizens to obey any orders I give them. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>respect4</td>
+<td>I expect that citizens will speak to me with respect. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>cohort2-t1t2t3-long.csv: Cohort 2, times 1 through 3</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>Unique identifier variable</td>
+</tr>
+<tr class="even">
+<td>time</td>
+<td>Data collection time point (1, 2, or 3)</td>
+</tr>
+<tr class="odd">
+<td>cohort</td>
+<td>Describes whether data comes from the first or second cohort</td>
+</tr>
+<tr class="even">
+<td>knowledge</td>
+<td>Knowledge about Bias</td>
+</tr>
+<tr class="odd">
+<td>theories</td>
+<td>Beliefs about the Malleability of Bias</td>
+</tr>
+<tr class="even">
+<td>biasworry</td>
+<td>Concern about Bias</td>
+</tr>
+<tr class="odd">
+<td>strategy</td>
+<td>Use of Strategies to Manage Bias (Time 1; measured as use in the past 7 days)</td>
+</tr>
+<tr class="even">
+<td>strategy</td>
+<td>Intentions to Use Strategies to Manage Bias (Time 2; measured as intention to use)</td>
+</tr>
+<tr class="odd">
+<td>strategy</td>
+<td>Use of Strategies to Manage Bias (Time 3; measured as use in the past 7 days)</td>
+</tr>
+<tr class="even">
+<td>strat</td>
+<td>Average of Perceived Feasibility, Efficacy, and Motivation to Use Strategies (Time 2–3)</td>
+</tr>
+<tr class="odd">
+<td>centrality</td>
+<td>Police Identity Centrality (Time 1)</td>
+</tr>
+<tr class="even">
+<td>respect</td>
+<td>Expectations of Respect from Community Members (Time 1)</td>
+</tr>
+<tr class="odd">
+<td>rank</td>
+<td>What is your rank? (Time 1; 0 = Below Sergeant, 1 = Sergeant or above)</td>
+</tr>
+<tr class="even">
+<td>gender_d</td>
+<td>What is your gender? (Time 1; 0 = Female, 1 = Male)</td>
+</tr>
+<tr class="odd">
+<td>race</td>
+<td>What is your race or ethnicity? (Time 1; 1 = White or Caucasian, 2 = Black or African American, 3 = Hispanic or Latino, 4 = Asian or Pacific Islander, 5 = Multiracial or Other)</td>
+</tr>
+<tr class="even">
+<td>race_white</td>
+<td>White vs.&nbsp;Non-White (Time 1; 1 = White, 0 = Non-White)</td>
+</tr>
+<tr class="odd">
+<td>race_black</td>
+<td>Black vs.&nbsp;Non-Black (Time 1; 1 = Black, 0 = Non-Black)</td>
+</tr>
+<tr class="even">
+<td>education</td>
+<td>What is the highest level of education that you have completed? (Time 1; 1 = some high school or less, 2 = high school graduate, 3 = some college, 4 = associate’s degree, 5 = bachelor’s degree, 6 = graduate degree)</td>
+</tr>
+<tr class="odd">
+<td>education_ba</td>
+<td>Bachelor’s degree or higher vs.&nbsp;lower than Bachelor’s degree (Time 1; 1 = Bachelor’s degree or higher, 0 = Lower than Bachelor’s degree)</td>
+</tr>
+<tr class="even">
+<td>yearsworked</td>
+<td>How many years have you worked in the department? (Time 1)</td>
+</tr>
+<tr class="odd">
+<td>frequency_white</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are White or Caucasian? (Time 1; 1 = never, 2 = very rarely, 3 = rarely, 4 = occasionally, 5 = frequently, 6 = very frequently)</td>
+</tr>
+<tr class="even">
+<td>frequency_black</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Black or African American? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="odd">
+<td>frequency_asian</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Asian? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="even">
+<td>frequency_hispanic</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Hispanic or Latino? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="odd">
+<td>frequency_gay</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Gay, Lesbian, or Bisexual? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="even">
+<td>frequency_trans</td>
+<td>In your daily work with the Police Department, how often do you interact with people who are Transgender? (Time 1; 1 = never to 6 = very frequently)</td>
+</tr>
+<tr class="odd">
+<td>facilduo_gender</td>
+<td>Educator pair’s gender makeup (Time 2; mm = Male-Male, ff = Female-Female, mf = Male-Female)</td>
+</tr>
+<tr class="even">
+<td>facilduo_race</td>
+<td>Educator pair’s racial makeup (Time 2; ww = White-White, bw = Black-White, asianduo = Has an Asian educator)</td>
+</tr>
+<tr class="odd">
+<td>facilduo_le</td>
+<td>Has an ex-law-enforcement educator vs.&nbsp;doesn’t have an ex-law enforcement educator (Time 2; 1 = Has an ex-law-enforcement educator, 0 = Doesn’t)</td>
+</tr>
+<tr class="even">
+<td>facilduo_relatedle</td>
+<td>Has a close relationship with a member of law enforcement, including being one, vs.&nbsp;doesn’t have a close relationship (Time 2; 1 = Has a close relationship, 0 = Doesn’t)</td>
+</tr>
+<tr class="odd">
+<td>facilduo_relatedle_nole</td>
+<td>Has a close relationship with a member of law enforcement vs.&nbsp;doesn’t, excluding educator who was ex-law-enforcement (Time 2; 1 = Has a close relationship, 0 = Doesn’t)</td>
+</tr>
+<tr class="even">
+<td>attendance</td>
+<td>Number of officers attending the session (Time 2)</td>
+</tr>
+<tr class="odd">
+<td>substitution</td>
+<td>Substitution strategy use in the past 7 days (Time 1; 0 = 0 times, 1 = 1 time, 2 = 2 times, 3 = 3 times, 4 = 4 times, 5 = 5 times, 6 = 6 or more times)</td>
+</tr>
+<tr class="even">
+<td>substitution</td>
+<td>Intentions to use Substitution strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="odd">
+<td>substitution</td>
+<td>Substitution strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="even">
+<td>perspective</td>
+<td>Perspective-taking strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>perspective</td>
+<td>Intentions to use Perspective-taking strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="even">
+<td>perspective</td>
+<td>Perspective-taking strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>exposure</td>
+<td>Diversity exposure strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="even">
+<td>exposure</td>
+<td>Intentions to use Diversity exposure strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="odd">
+<td>exposure</td>
+<td>Diversity exposure strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="even">
+<td>individuation</td>
+<td>Individuation strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>individuation</td>
+<td>Intentions to use Individuation strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="even">
+<td>individuation</td>
+<td>Individuation strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="odd">
+<td>mindful</td>
+<td>Mindfulness strategy use in the past 7 days (Time 1; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="even">
+<td>mindful</td>
+<td>Intentions to use Mindfulness strategy in the next 7 days (Time 2)</td>
+</tr>
+<tr class="odd">
+<td>mindful</td>
+<td>Mindfulness strategy use in the past 7 days (Time 3; 0 = 0 times to 6 = 6 or more times)</td>
+</tr>
+<tr class="even">
+<td>knowledge_bias</td>
+<td>Subtle or implicit biases influence my decision making about other people. ( 1 = strongly disagree, 2 = moderately disagree, 3 = slightly disagree, 4 = neutral, 5 = slightly agree, 6 = moderately agree, 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>knowledge_race</td>
+<td>Whether I am aware of it or not, I use a person’s race or ethnicity to form an impression of the kind of person they are. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>knowledge_culture</td>
+<td>My cultural background influences how I perceive other people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>theories1</td>
+<td>People have a certain amount of bias toward other people and they can’t really change that. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>theories2</td>
+<td>People’s level of bias toward other people is something very basic about them that they can’t change very much. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>biasworry_white</td>
+<td>I worry that I act in an unintentionally biased way toward White people. (Time 1–2; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>biasworry_black</td>
+<td>I worry that I act in an unintentionally biased way toward Black people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>biasworry_asian</td>
+<td>I worry that I act in an unintentionally biased way toward Asian people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>biasworry_hispanic</td>
+<td>I worry that I act in an unintentionally biased way toward Hispanic or Latino people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>biasworry_lgb</td>
+<td>I worry that I act in an unintentionally biased way toward Gay, Lesbian, or Bisexual people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>biasworry_trans</td>
+<td>I worry that I act in an unintentionally biased way toward Transgender people. ( 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>strat_know</td>
+<td>Do you feel like you could execute these strategies correctly if you wanted to? (Time 2–3; 1 = definitely not, 2 = probably not, 3 = somewhat, 4 = probably, 5 = definitely)</td>
+</tr>
+<tr class="even">
+<td>strat_efficacy</td>
+<td>How effective do you think these strategies are for addressing issues related to bias? (Time 2–3; 1 = not at all, 2 = slightly, 3 = moderately, 4 = very, 5 = extremely)</td>
+</tr>
+<tr class="odd">
+<td>strat_mot</td>
+<td>How motivated are you to use these strategies? (Time 2–3; 1 = not at all to 5 = extremely)</td>
+</tr>
+<tr class="even">
+<td>centrality1</td>
+<td>In general, being a police officer is an important part of my self-image. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>centrality2</td>
+<td>I have a strong attachment to law enforcement. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>centrality3</td>
+<td>Being a police officer is a reflection of who I am. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>respect1</td>
+<td>I expect respect when I put my uniform on. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>respect2</td>
+<td>I expect citizens to obey my authority when I am on duty. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="odd">
+<td>respect3</td>
+<td>When I wear my uniform, I expect citizens to obey any orders I give them. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+<tr class="even">
+<td>respect4</td>
+<td>I expect that citizens will speak to me with respect. (Time 1; 1 = strongly disagree to 7 = strongly agree)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ol type="1">
+<li>Call an officer “training-resistant” if their knowledge or attitudes about implicit bias do not change from before the course to immediately afterward. Using the demographic data collected (including age, experience, or attitudes about policing), what types of officers are most likely to be training resistant?</li>
+<li>Some of the training sessions were led by an educator who had previously been a police officer. (See <code>facilduo_le</code>.) These educators may be better at convincing current officers of the importance of implicit bias. Do these sessions have fewer training-resistant officers? Are the training-resistant officers in those sessions different somehow, such as if these educators are better at reaching officers with particular attitudes about policing?</li>
+<li>Using each officer’s demographic data and their responses to questions about their attitudes toward policing (<code>centrality</code> and <code>respect</code>), can you predict which officers are least likely to use bias mitigation strategies before training?</li>
+<li>Does training improve actual behaviors and not just beliefs? Is there evidence the training improves the rate of bias-mitigating strategy use compared to before the training?</li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Lai, C. K., &amp; Lisnek, J. A. (2023). “The Impact of Implicit-Bias-Oriented Diversity Training on Police Officers’ Beliefs, Motivations, and Actions.” <em>Psychological Science</em>, 34(4), 424-434. <a href="https://doi.org/10.1177/09567976221150617" class="uri">https://doi.org/10.1177/09567976221150617</a>.</p>
+<p>Data available from <a href="https://osf.io/vfdrt/overview" class="uri">https://osf.io/vfdrt/overview</a></p>
+<p>For background, see Spencer, Charbonneau, and Glaser (2016). “Implicit Bias and Policing.” <em>Social and Personality Psychology Compass</em>, 10(1), 50-63. <a href="https://doi.org/10.1111/spc3.12210" class="uri">https://doi.org/10.1111/spc3.12210</a></p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The original study reported only 53 participants in Cohort 2 who completed all three surveys and whose data was usable. However, on matching up the data files provided, we were able to match 72 officers across all three surveys.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/crime-and-justice/police-bias-training.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
