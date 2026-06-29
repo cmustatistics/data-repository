@@ -9,3 +9,5 @@ metadata.json
 
 # RStudio project data
 .Rproj.user
+
+**/*.quarto_ipynb
