@@ -1,0 +1,138 @@
+---
+title: Can generative AI harm student learning?
+author: Victoria Sagasta Pereira
+date: June 19, 2026
+description: Does access to generative AI help high-school students learn mathematics? Analyze the results of a randomized trial of different AI math tutors based on ChatGPT.
+categories:
+  - hirerarchical modeling
+  - linear regression
+data:
+  year: 2023
+  files: ai-learning.csv
+---
+
+## Motivation
+
+Generative AI has been shown to enhance productivity at times, but its influence
+on learning remains unclear. Generative AI tools could provide individualized
+tutoring and feedback to students, but they could also let students get quick
+answers without learning the material. This experiment studied the impact of
+generative AI on student learning and skill acquisition in math education, using
+data from nearly 1,000 Turkish high-school students in 9th, 10th, and 11th-grade
+math classrooms.
+
+To ensure that students learning was not disrupted, researchers built two
+variants of OpenAI's GPT for the students to use. The first variant, “GPT Base,”
+was a standard interface designed to mimic ChatGPT, but prompted with the
+practice problems for that session and a directive to serve as a tutor and help
+the student solve the problem. The second variant, “GPT Tutor,” used the same
+chat interface but was carefully engineered (with the help of teachers) to
+provide hints to the student without directly giving them the answer. It also
+had access to correct solutions to each practice problem, as well as common
+student mistakes and how to provide feedback.
+
+Before the the Fall semester of the 2023–2024 year, the researchers sent out a
+10-minute survey to students, collecting data on their demographics and
+educational background. During the semester students had a total of 4 in-class
+study sessions designed to help students review material previously covered in
+the course. Each study session started with a short review lecture by the
+teacher.
+
+After the review, the students were asked to solve practice problems while
+having access to standard resources such as their course notes and textbook.
+Each classroom was assigned to one of three treatment options: either the
+students used only their course notes and books (control), or they had access to
+GPT Base ("vanilla"), or they had access to GPT Tutor ("augmented"). Classrooms
+stayed in the same treatment arm for all 4 study sessions.
+
+After working on the practice problems, all students had to complete an exam on
+their own without access to any resources, regardless of treatment arm. Lastly,
+at the end of each session students completed a survey on their experience and
+preferences of AI usage. 
+
+Student performance for both assisted practice problems and unassisted exams was
+evaluated by independent graders with no knowledge of which assignments belonged
+to which student or treatment to reduce potential teacher bias. By examining
+their scores, we can evaluate whether AI access helped them complete the
+practice questions and whether it affected their ability to do the exam
+questions without AI assistance.
+
+
+## Data
+
+Each row is one of the 943 students for a particular session. There are 4
+sessions so the same student can be present up to 4 separate times in the data.
+
+While students were randomly assigned to classrooms and classrooms randomly
+assigned to treatments, there is an exception: some classrooms are "honors"
+classrooms, which students are selected into based on their academic
+performance. The original study excluded honors classrooms from their analysis,
+as they are not a random sample of students.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+
+| Variable | Description |
+|----|-------------|
+|Student ID | Unique identifier variable for each student|
+|Class | 	Class identifier |
+|Year | Academic year (9, 10, or 11)|
+|Session | The experiment session identifier (1, 2, 3, or 4)|
+|Grader | Grader identifier (note some students had 2 graders)|
+|Part2Tot | Part 2 (the assisted practice problems) student decimal score (values from 0.00 to 1.00)|
+|Part3Tot | Part 3 (the unassisted exam) student decimal score (values from 0.00 to 1.00)|
+|Survey Q1 | “How much do you think you learned from this whole class session?” with options “A great deal,” “Quite a lot,” “Moderately,” “A little,” and “Nothing at all”|
+|Survey Q2 | “How well do you think you performed in this quiz?” with options “Excellent,” “Above Average,” “Average,” “Below Average,” and “Very Poorly” |
+|Survey Q3 | “How much time did it take you to solve the questions in this quiz?” with options “0-5 min,” “5-10 min,” “10-15 min,” “15-20 min,” “20-25 min,” and “25-30 min”|
+|Survey Q4 | “How useful was the problem-solving session in the previous part (Part 2) in helping you solve the questions in this quiz?” with options “Effective,” “Somewhat effective,” “Neutral,” “Somewhat ineffective,” and “Ineffective”|
+|Survey Q5 | “How many minutes would you be willing to give up on this quiz to have the help of the TED-AI Training Engine (or ChatGPT-4 if you haven’t used the TED-AI Training Engine)?” with options “0-5 min,” “5-10 min,” “10-15 min,” “15-20 min,” “20-25 min,” and “25-30 min”|
+|gpa_prev | Previous GPA of the student (0.00 - 1.00)|
+|GPTBase | Indicator for base treatment assignment |
+|GPTTutor | Indicator for advanced treatment assignment |
+|teacher | Teacher identifier (teacher_1 through teacher_19)|
+|n_household_members |  Number of household members |
+|class_enjoyment | Self-reported student sentiment (0-4) |
+|class_participation_likelihood | Self-reported student participation (0-4) |
+|n_weekday_study_hours | Self-Reported study hours on weekdays (measured in increments of 0.5 hours)|
+|n_weekend_study_hours | Self-Reported study hours on weekends (measured in increments of 0.5 hours) |
+|math_hw_completion | Homework completion (1, 2, 3, or 4)|
+|hw_help |Indicator of whether the student receives help for homework |
+|private_tutorship | Indicator of whether the student receives private tutoring |
+|visit_training_center | Indicator of whether the student visits a private training center |
+|chatgpt_use |Self-reported indicator of whether the student has previous experience with ChatGPT |
+|Treatment_arm | Treatment assignment "control" (no devices will be provided to students, they will work on problems on their own), "vanilla" (students will work through problems with access to GPT Base on laptops), "augmented" (students will work through problems with access to GPT Tutor on laptops)|
+|female | Gender indicator (1 for female, 0 for male)|
+|education_parent | Parental education level (2 through 8)|
+|n_household_children | Number of children in household |
+|Honors |Honors class participation indicator |
+
+*Note:* The data file contains Unicode characters such as Ü that may be read
+incorrectly by programs like Excel.
+
+## Questions
+
+1. Does the students use of GPT-4, or an augmented version of GPT-4 (modified by
+   a preamble prompt that includes teacher-provided step-by-step solutions),
+   enhance the students' perceived and actual learning outcomes compared to the
+   control group?
+2. Does prior exposure to generative AI affect the test outcome for students in
+   either treatment arm?
+3. Does access to private tutoring affect the grade outcome of the students?
+   What about visits to the training center?
+
+
+## References
+
+H. Bastani, O. Bastani, A. Sungu, H. Ge, Ö. Kabakcı, & R. Mariman, Generative AI
+without guardrails can harm learning: Evidence from high school mathematics,
+*Proceedings of the National Academy of Sciences* 122 (26) e2422633122, (2025).
+<https://doi.org/10.1073/pnas.2422633122>.
+
+Data available via GitHub: <https://github.com/obastani/GenAICanHarmLearning>
