@@ -84,6 +84,7 @@ Additionally, here are some example questions to consider:
 
 ## References
 
-Branson, Paz, and Yurko "The Landscape of College-level Data Visualization
-Courses, and the Benefits of Incorporating Statistical Thinking". *In
-preparation*.
+Branson, Paz, and Yurko (2025). "The Landscape of College-level Data Visualization
+Courses, and the Benefits of Incorporating Statistical Thinking". *Journal of
+Statistics and Data Science Education* 33 (4), 390-406.
+<https://doi.org/10.1080/26939169.2025.2537049>
