@@ -1,0 +1,109 @@
+---
+title: California Assisted Living Waiver facilities
+author: Assaf Ichaki
+date: July 19, 2026
+description: An observational dataset of 1,224 facilities participating in California's Medi-Cal Assisted Living Waiver, including location and licensed participant-enrollment-unit capacity. It supports exploratory, geographic, and grouped analyses of how program capacity is distributed across 15 counties.
+categories:
+  - EDA
+  - data cleaning
+  - split/apply/combine
+data:
+  year: 2026
+  files: california-alw-facilities-2026.csv
+---
+
+## Motivation
+
+California's Assisted Living Waiver (ALW) is a Medi-Cal Home and Community-Based
+Services program. It is intended to let eligible people receive supportive care
+in an assisted-living setting instead of an institution. At the time this
+dataset was produced, participating facilities were located in 15 of
+California's 58 counties.
+
+This dataset can be used to study how the program's licensed capacity is
+distributed geographically. For example, students can compare the number of
+participating facilities with total capacity in each county, examine the highly
+skewed distribution of facility sizes, and discuss what can and cannot be
+inferred from administrative program data. Licensed capacity is a facility's
+approved participant-enrollment-unit ceiling; it is not a count of current
+vacancies.
+
+California Care Compass assembled this analysis-ready release from the
+[California Department of Health Care Services (DHCS) ALW participating-facilities
+GIS dataset](https://gis.dhcs.ca.gov/datasets/CADHCS::alw-assisted-living-facilities/about).
+The [versioned open-data repository](https://github.com/asafichaki/california-alw-open-data)
+includes the source links, methodology, machine-readable metadata, and the
+standard-library Python script used to fetch and normalize the government data.
+The [human-readable county tracker](https://californiacarecompass.com/data/california-alw-county-tracker-2026)
+provides additional context and caveats.
+
+## Data
+
+Each row represents one DHCS participant-enrollment-unit/provider record. The
+file contains 1,224 rows across 15 counties and a total licensed capacity of
+39,065. All fields are complete except `address_2`, which is blank for 1,220
+records because most facilities do not have a second address line. Blank values
+are represented by empty CSV fields.
+
+The `county` field uses the GIS-derived county name. Eleven source records have
+a conflict between the source's free-text county field and mapped county name;
+using the mapped field reproduces the published 15-county aggregate. Multiple
+provider records can refer to the same street address, so rows should not be
+interpreted as unique buildings without further entity resolution.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| `provider_number` | DHCS provider identifier. Treat as an identifier, not a numerical measurement. |
+| `legal_name` | Legal name in the DHCS source. |
+| `business_name` | Facility or doing-business-as name in the DHCS source. |
+| `capacity_per_peu` | Approved participant-enrollment-unit capacity for the provider record; this is not live vacancy information. |
+| `address` | Primary street-address line. |
+| `address_2` | Secondary address line when supplied; blank for 1,220 records. |
+| `city` | City name in the source. |
+| `county` | GIS-derived California county name used for aggregation. |
+| `zip_code` | ZIP or ZIP+4 code. Treat as text because it is a geographic identifier. |
+| `phone_number` | Public facility telephone number in the DHCS source. |
+| `latitude` | Facility latitude in decimal degrees. |
+| `longitude` | Facility longitude in decimal degrees. |
+| `source_access_date` | Date the DHCS source was accessed, in ISO 8601 format. |
+
+## Questions
+
+1. Summarize the distribution of `capacity_per_peu`. How do the mean, median,
+   quantiles, and maximum differ, and which plots best reveal the distribution?
+2. Group the records by county. Which counties have the most facilities, the
+   greatest licensed capacity, and the highest median facility capacity? How
+   sensitive are comparisons to the very different county populations?
+3. What share of statewide capacity is located in the largest three counties?
+   Use an appropriate visualization to show concentration across all 15
+   participating counties.
+4. Use latitude and longitude to map the records. What geographic patterns are
+   visible, and what additional data would be needed before making claims about
+   access or unmet need?
+5. Investigate repeated addresses and similar business names. Propose a
+   transparent entity-resolution rule, then explain how the result changes the
+   number of apparent facilities without confusing provider records with
+   facility-license identifiers.
+6. The source is a current administrative list rather than a random sample or
+   experiment. Which descriptive conclusions are supported, and which causal or
+   statewide-access conclusions would be inappropriate?
+
+## References
+
+California Department of Health Care Services. “ALW Assisted Living
+Facilities.” <https://gis.dhcs.ca.gov/datasets/CADHCS::alw-assisted-living-facilities/about>
+
+California Care Compass. *California ALW County Availability Tracker 2026*,
+version 2026.1. <https://californiacarecompass.com/data/california-alw-county-tracker-2026>
+
+The analysis-ready dataset is available under the
+[Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
