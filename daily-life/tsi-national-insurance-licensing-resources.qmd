@@ -1,0 +1,102 @@
+---
+title: U.S. insurance licensing resources by state
+author: TSI National
+date: July 27, 2026
+description: An observational directory with one row per U.S. state, public
+  licensing and continuing-education resource URLs, TSI course availability,
+  and a review date. Use it to practice categorical summaries, data validation,
+  missing-data reasoning, and geographic joins.
+categories:
+  - EDA
+  - categorical data
+  - data cleaning
+data:
+  year: 2026
+  files: tsi-national-insurance-licensing-resources.csv
+---
+
+## Motivation
+
+Insurance producer licensing is administered state by state in the United
+States, so learners and researchers must navigate different requirements and
+resources for each jurisdiction. [TSI National](https://tsinational.com/), a
+private insurance exam-preparation provider, maintains a
+[50-state licensing and continuing-education directory](https://tsinational.com/insurance-licensing-and-ce-requirements-by-state/)
+to organize those routes.
+
+This snapshot makes the directory available as a small, tidy dataset. It is
+well suited to introductory exercises about categorical variables, validation
+rules, intentionally missing values, URL structure, and joins to other
+state-level data. The 50 rows are the complete population of U.S. states, not a
+sample drawn for inference.
+
+The dataset is a navigation resource, not a registry of every regulator or
+education provider. The course-availability fields describe TSI National only.
+They do not indicate state approval or endorsement, whether a course is
+required, or whether other providers offer courses.
+
+## Data
+
+The file contains 50 rows and 7 columns. Each row represents one U.S. state.
+Every row has one licensing-guide URL, one continuing-education-guide URL, and
+the date on which that directory row was reviewed. TSI lists a course route for
+44 states. For the other 6 states, `tsi_course_availability` is
+`not currently offered` and `tsi_course_options_url` is intentionally blank.
+
+Because licensing requirements and web destinations can change, this is a
+dated snapshot. The canonical directory should be checked before using a URL
+as current operational guidance.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| `state_code` | Two-letter U.S. postal abbreviation. |
+| `state_name` | Full state name. |
+| `licensing_guide_url` | Public TSI page describing insurance prelicensing requirements for the state. |
+| `continuing_education_guide_url` | Public TSI page describing continuing-education or renewal requirements for the state. |
+| `tsi_course_availability` | Whether TSI listed a course-options route for the state in this snapshot: `course options available` or `not currently offered`. |
+| `tsi_course_options_url` | Public TSI course or course-options route when available; intentionally blank otherwise. |
+| `directory_reviewed_date` | ISO 8601 date on which the canonical directory row was reviewed. |
+
+## Questions
+
+1. Validate the claimed structure of the file: 50 rows, 50 unique state codes,
+   50 unique state names, and no duplicate licensing or continuing-education
+   URLs. Which assertions would you automate before analyzing a future
+   snapshot?
+2. Check whether missing values in `tsi_course_options_url` agree exactly with
+   `tsi_course_availability`. Why are these values structurally missing rather
+   than missing at random?
+3. Summarize the distribution of course availability. Because the dataset
+   contains all 50 states rather than a random sample, which descriptive
+   statistics are useful, and which inferential claims would be inappropriate?
+4. Join the data to a public table of U.S. Census regions or divisions. Compare
+   availability proportions by region and visualize the result. What can the
+   observed geographic pattern establish, and what can it not establish?
+5. Parse the URL paths into useful features, such as whether a route is under
+   `/product/` or is a guide page. Which cleaning rules are robust to trailing
+   slashes, hyphens, and other URL variation?
+6. Suppose monthly snapshots were available. Design a change-detection table
+   that records additions, removals, and destination changes without treating a
+   changed URL as evidence that licensing law changed.
+7. Explain how the dataset's company-maintained origin and inclusion of
+   commercial course routes affect its scope, possible uses, and limitations.
+
+## References
+
+TSI National. *U.S. Insurance Licensing Resources - 50-State Dataset*.
+[Public repository and documentation](https://github.com/milesdeepresearch/tsi-national-insurance-licensing-data).
+
+TSI National. *Insurance Licensing and Continuing Education Requirements by
+State*. [Canonical directory](https://tsinational.com/insurance-licensing-and-ce-requirements-by-state/).
+
+The snapshot data are available under the
+[Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
