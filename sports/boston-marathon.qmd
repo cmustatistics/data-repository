@@ -1,0 +1,105 @@
+---
+title: Boston Marathon times, 2021--2024
+author: Alex Reinhart
+date: August 4, 2026
+description: Explore the times of runners in the Boston Marathon. Is it possible to predict their finish time accurately from their progress partway through the marathon?
+categories:
+  - linear regression
+data:
+  year: 2024
+  files: boston-marathon-2021-2024.csv.gz
+---
+
+## Motivation
+
+The Boston Marathon is the oldest and among the most famous annual marathon
+races. It is also one of the most competitive: to be allowed to run in the
+Boston Marathon, you must show you have already completed another marathon with
+a time that exceeds a strict standard, limiting the Boston Marathon to only the
+fastest runners. These standards are used to limit the marathon to about 30,000
+runners so the course is not too crowded, though about half a million spectators
+also crowd along the route.
+
+In modern marathons, runners wear a race bib with an identifying number and an
+RFID tag that allows electronic monitors around the course to track each runner.
+This is used to calculate each runner's time and determine the winner, but also
+allows spectators to follow a runner's progress---helpful if you're attending to
+support a particular runner and want to know when they'll pass you or when
+they'll arrive at the finish line.
+
+Onyejekwe and Gerber (2026) considered whether a runner's pace at certain
+milestones throughout the marathon can be used to accurately when the runner
+will pass the finish line. They obtained data from all runners in the Boston
+Marathon between 2021 and 2024: their pace at various points throughout the race
+and their ultimate total time to complete the marathon. Can this data be used to
+predict finish times?
+
+## Data
+
+Each row is one runner in a particular year, 2021--2024.
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| Name | Runner name |
+| Age | Runner age (years) |
+| M/F | Runner gender (qualifying time standards vary by gender) |
+| 5K | Time the runner took to run the first 5,000 meters (seconds) |
+| 10K | Time the runner took to run the first 10,000 meters (seconds) |
+| 15K | (as above) |
+| 20K | (as above) |
+| HALF | Time the runner took to run the first half (about 21,000 meters; seconds) |
+| 25K | (as above) |
+| 30K | (as above) |
+| 35K | (as above) |
+| 40K | (as above) |
+| Finish Net | Time the runner took to run the full marathon, 42,195 meters (seconds) |
+| Year | Year of the marathon, 2021--2024 |
+
+## Questions
+
+1. Runners probably slow down throughout the race as they grow fatigued.
+   Calculate the runner's speed every 5K as the amount of time it took the
+   runner to run that 5K (so the speed at 10K is the difference in time between
+   the 5K and 10K points). Build a visualization showing the speed of runners
+   every 5K. Do they indeed slow down throughout the race?
+2. Build a model to predict finish time (`Finish Net`) using the time taken to
+   complete the half marathon (`HALF`). Interpret the coefficients. If runners
+   were consistent and maintained the same pace, `Finish Net = 2 * HALF`; is
+   that the case?
+3. Each year may be slightly different, as the temperature and wind vary and may
+   speed up or slow down the runners. (On a very hot day, perhaps runners
+   fatigue much more quickly.) Consider adding a term to your model for year.
+   What should you add to allow the model to change by year? Add the term and
+   conduct an appropriate hypothesis test to determine whether the relationship
+   varies by year.
+4. The relationship may also depend on runner gender and age, so test whether
+   these variables are relevant and decide whether to include them.
+5. Fit your model (without the term for year) to just the 2021--2022 data. Use
+   it to make predictions for the running finish time for runners in 2023--2024.
+   For each prediction, also produce a 95% prediction interval, and compare the
+   interval to the runner's actual finish time. Do the prediction intervals have
+   95% coverage?
+6. Write code to make models to predict from each time point. That is, predict
+   finish time from the 5K time, then (separately) predict finish time from the
+   10K time, and so on. Fit on the 2021--2022 data again. Show or plot the
+   estimated error variance $\hat \sigma^2$ from each model. We'd expect the
+   model uncertainty to decrease as we get later in the race, so the 40K time is
+   the most precise predictor of finish time and the 5K time is the least
+   precise; does this show up in $\hat \sigma^2$?
+
+## References
+
+Data scraped from the website of the Boston Athletic Association by Brandon
+Onyejekwe and Eric A. E. Gerber for the paper "Quantifying uncertainty in
+marathon finish time predictions", presented at JSM 2026. Code and data
+available at <https://github.com/bonyejekwe/Marathon_Predictor>.
+
+Additional historical data available at
+<https://github.com/adrian3/Boston-Marathon-Data-Project>.
