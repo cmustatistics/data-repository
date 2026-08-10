@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex Reinhart">
-<meta name="dcterms.date" content="2021-12-27">
-<meta name="description" content="The AnAge database includes information on the longevity of thousands of animal species, allowing studies of the factors related to long lifespans.">
+<meta name="dcterms.date" content="2026-08-04">
+<meta name="description" content="Explore the times of runners in the Boston Marathon. Is it possible to predict their finish time accurately from their progress partway through the marathon?">
 
-<title>AnAge Longevity Database – CMU S&amp;DS Data Repository</title>
+<title>Boston Marathon times, 2021–2024 – CMU S&amp;DS Data Repository</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -94,6 +94,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -141,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/anage.html">Biology</a></li><li class="breadcrumb-item"><a href="../biology/anage.html">AnAge Longevity Database</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sports/boston-marathon.html">Sports</a></li><li class="breadcrumb-item"><a href="../sports/boston-marathon.html">Boston Marathon times, 2021–2024</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -190,16 +219,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Biology</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link active">
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AnAge Longevity Database</span></a>
   </div>
 </li>
@@ -535,16 +564,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
  <span class="menu-text">Sports</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sports/boston-marathon.html" class="sidebar-item-text sidebar-link">
+  <a href="../sports/boston-marathon.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Boston Marathon times, 2021–2024</span></a>
   </div>
 </li>
@@ -592,20 +621,19 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
-  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
   <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
   </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/biology/anage.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/sports/boston-marathon.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../biology/anage.html">Biology</a></li><li class="breadcrumb-item"><a href="../biology/anage.html">AnAge Longevity Database</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sports/boston-marathon.html">Sports</a></li><li class="breadcrumb-item"><a href="../sports/boston-marathon.html">Boston Marathon times, 2021–2024</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AnAge Longevity Database</h1>
+<h1 class="title">Boston Marathon times, 2021–2024</h1>
   <div class="quarto-categories">
     <div class="quarto-category">linear regression</div>
   </div>
@@ -613,7 +641,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    The AnAge database includes information on the longevity of thousands of animal species, allowing studies of the factors related to long lifespans.
+    Explore the times of runners in the Boston Marathon. Is it possible to predict their finish time accurately from their progress partway through the marathon?
   </div>
 </div>
 
@@ -630,7 +658,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 27, 2021</p>
+      <p class="date">August 4, 2026</p>
     </div>
   </div>
   
@@ -639,14 +667,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Data files</div>
     <div class="quarto-title-meta-contents">
-            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/anage.csv">anage.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/boston-marathon-2021-2024.csv.gz">boston-marathon-2021-2024.csv.gz</a>
           </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Data year</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2017</p>
+      <p class="date">2024</p>
     </div>
   </div>
   </div>
@@ -657,22 +685,21 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>The <a href="https://genomics.senescence.info/species/index.html">AnAge Database of Animal Ageing and Longevity</a> is a “curated database of ageing and life history in animals” that was “primarily developed for comparative biology studies.” It contains information, compiled from hundreds of scientific papers, for over 4,200 species. It’s mainly meant for studies of aging, so for each species, it includes variables such as lifespan, age of sexual maturity, adult body mass, typical body temperature, and metabolic rate. We can use this data to learn more about the relationships between each variable and the key outcome variable: lifespan.</p>
+<p>The Boston Marathon is the oldest and among the most famous annual marathon races. It is also one of the most competitive: to be allowed to run in the Boston Marathon, you must show you have already completed another marathon with a time that exceeds a strict standard, limiting the Boston Marathon to only the fastest runners. These standards are used to limit the marathon to about 30,000 runners so the course is not too crowded, though about half a million spectators also crowd along the route.</p>
+<p>In modern marathons, runners wear a race bib with an identifying number and an RFID tag that allows electronic monitors around the course to track each runner. This is used to calculate each runner’s time and determine the winner, but also allows spectators to follow a runner’s progress—helpful if you’re attending to support a particular runner and want to know when they’ll pass you or when they’ll arrive at the finish line.</p>
+<p>Onyejekwe and Gerber (2026) considered whether a runner’s pace at certain milestones throughout the marathon can be used to accurately when the runner will pass the finish line. They obtained data from all runners in the Boston Marathon between 2021 and 2024: their pace at various points throughout the race and their ultimate total time to complete the marathon. Can this data be used to predict finish times?</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Each observation is one animal species. Note that many variables are missing for individual species, so you may need to restrict your analysis to complete observations.</p>
-<section id="data-preview" class="level3">
-<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<p>Each row is one runner in a particular year, 2021–2024.</p>
 <h4 class="anchored">
-<a href=" https://cmustatistics.github.io/data-repository/data/anage.csv "> anage.csv </a>
+<a href=" https://cmustatistics.github.io/data-repository/data/boston-marathon-2021-2024.csv.gz "> boston-marathon-2021-2024.csv.gz </a>
 </h4>
 <div data-pagedtable="false">
 <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["HAGRID"],"name":[1],"type":["int"],"align":["right"]},{"label":["Kingdom"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Phylum"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Class"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Order"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Family"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Genus"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Species"],"name":[8],"type":["chr"],"align":["left"]},{"label":["Common.name"],"name":[9],"type":["chr"],"align":["left"]},{"label":["Maximum.longevity.yrs"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Body.mass.g"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Metabolic.rate"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["Temperature"],"name":[13],"type":["dbl"],"align":["right"]}],"data":[{"1":"3","2":"Animalia","3":"Arthropoda","4":"Branchiopoda","5":"Diplostraca","6":"Daphniidae","7":"Daphnia","8":"pulicaria","9":"Daphnia","10":"0.19","11":"NA","12":"NA","13":"NA"},{"1":"5","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Diptera","6":"Drosophilidae","7":"Drosophila","8":"melanogaster","9":"Fruit fly","10":"0.30","11":"NA","12":"NA","13":"NA"},{"1":"6","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Apidae","7":"Apis","8":"mellifera","9":"Honey bee","10":"8.00","11":"NA","12":"NA","13":"NA"},{"1":"8","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Formicidae","7":"Cardiocondyla","8":"obscurior","9":"Cardiocondyla obscurior","10":"0.50","11":"NA","12":"NA","13":"NA"},{"1":"9","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Formicidae","7":"Lasius","8":"niger","9":"Black garden ant","10":"28.00","11":"NA","12":"NA","13":"NA"},{"1":"10","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Hymenoptera","6":"Formicidae","7":"Pheidole","8":"dentata","9":"Pheidole dentata","10":"0.40","11":"NA","12":"NA","13":"NA"},{"1":"11","2":"Animalia","3":"Arthropoda","4":"Insecta","5":"Lepidoptera","6":"Nymphalidae","7":"Bicyclus","8":"anynana","9":"Squinting bush brown","10":"0.50","11":"NA","12":"NA","13":"NA"},{"1":"12","2":"Animalia","3":"Arthropoda","4":"Malacostraca","5":"Decapoda","6":"Nephropidae","7":"Homarus","8":"americanus","9":"American lobster","10":"100.00","11":"NA","12":"NA","13":"NA"},{"1":"15","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bombinatoridae","7":"Bombina","8":"bombina","9":"Firebelly toad","10":"20.00","11":"NA","12":"NA","13":"NA"},{"1":"16","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bombinatoridae","7":"Bombina","8":"orientalis","9":"Oriental firebelly toad","10":"15.80","11":"NA","12":"NA","13":"NA"},{"1":"17","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bombinatoridae","7":"Bombina","8":"variegata","9":"Yellow-bellied toad","10":"29.00","11":"NA","12":"NA","13":"NA"},{"1":"18","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"americanus","9":"American toad","10":"36.00","11":"21.6","12":"0.00829","13":"288"},{"1":"19","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"boreas","9":"Western toad","10":"11.50","11":"NA","12":"NA","13":"NA"},{"1":"20","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"canorus","9":"Yosemite toad","10":"15.00","11":"NA","12":"NA","13":"NA"},{"1":"21","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"cognatus","9":"Great plains toad","10":"10.70","11":"NA","12":"NA","13":"NA"},{"1":"22","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"debilis","9":"Green toad","10":"12.40","11":"NA","12":"NA","13":"NA"},{"1":"23","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"hemiophrys","9":"Canadian toad","10":"13.30","11":"NA","12":"NA","13":"NA"},{"1":"24","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"punctatus","9":"Red-spotted toad","10":"11.30","11":"NA","12":"NA","13":"NA"},{"1":"25","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"retiformis","9":"Sonoran green toad","10":"15.30","11":"NA","12":"NA","13":"NA"},{"1":"26","2":"Animalia","3":"Chordata","4":"Amphibia","5":"Anura","6":"Bufonidae","7":"Anaxyrus","8":"terrestris","9":"Southern toad","10":"10.00","11":"19.2","12":"0.00698","13":"288"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["M/F"],"name":[3],"type":["chr"],"align":["left"]},{"label":["5K"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["10K"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["15K"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["20K"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["HALF"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["25K"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["30K"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["35K"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["40K"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["Finish Net"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["Year"],"name":[14],"type":["dbl"],"align":["right"]}],"data":[{"1":"Kipruto, Benson","2":"30","3":"M","4":"929","5":"1870","6":"2805","7":"3773","8":"3982","9":"4696","10":"5637","11":"6566","12":"7411","13":"7791","14":"2021"},{"1":"Berhanu, Lemi","2":"27","3":"M","4":"931","5":"1872","6":"2806","7":"3774","8":"3983","9":"4697","10":"5639","11":"6566","12":"7448","13":"7837","14":"2021"},{"1":"Yimer, Jemal","2":"38","3":"M","4":"928","5":"1869","6":"2804","7":"3772","8":"3981","9":"4695","10":"5638","11":"6565","12":"7448","13":"7838","14":"2021"},{"1":"Ayana, Tsedat","2":"25","3":"M","4":"930","5":"1872","6":"2805","7":"3773","8":"3982","9":"4696","10":"5638","11":"6565","12":"7448","13":"7847","14":"2021"},{"1":"Barsoton, Leonard","2":"26","3":"M","4":"931","5":"1871","6":"2805","7":"3772","8":"3982","9":"4696","10":"5638","11":"6566","12":"7448","13":"7871","14":"2021"},{"1":"Teshager, Bayelign","2":"21","3":"M","4":"932","5":"1872","6":"2806","7":"3774","8":"3982","9":"4697","10":"5638","11":"6566","12":"7473","13":"7876","14":"2021"},{"1":"Bennie, Colin","2":"26","3":"M","4":"930","5":"1870","6":"2806","7":"3772","8":"3981","9":"4712","10":"5647","11":"6571","12":"7478","13":"7886","14":"2021"},{"1":"Debela, Dejene","2":"26","3":"M","4":"932","5":"1872","6":"2807","7":"3773","8":"3982","9":"4696","10":"5638","11":"6566","12":"7475","13":"7898","14":"2021"},{"1":"Chebet, Wilson","2":"36","3":"M","4":"930","5":"1870","6":"2805","7":"3773","8":"3981","9":"4696","10":"5638","11":"6565","12":"7475","13":"7900","14":"2021"},{"1":"Albertson, Cj","2":"28","3":"M","4":"869","5":"1772","6":"2701","7":"3643","8":"3848","9":"4594","10":"5583","11":"6570","12":"7494","13":"7904","14":"2021"},{"1":"Kandie, Felix","2":"34","3":"M","4":"931","5":"1870","6":"2806","7":"3773","8":"3982","9":"4696","10":"5638","11":"6566","12":"7481","13":"7908","14":"2021"},{"1":"Robertson, Jake","2":"31","3":"M","4":"931","5":"1872","6":"2807","7":"3774","8":"3982","9":"4696","10":"5638","11":"6566","12":"7475","13":"7916","14":"2021"},{"1":"Kirui, Geoffrey","2":"28","3":"M","4":"929","5":"1871","6":"2805","7":"3772","8":"3981","9":"4695","10":"5638","11":"6565","12":"7477","13":"7920","14":"2021"},{"1":"Mengstu, Asefa","2":"33","3":"M","4":"930","5":"1870","6":"2804","7":"3773","8":"3982","9":"4696","10":"5638","11":"6566","12":"7477","13":"7931","14":"2021"},{"1":"Gezahegn, Kelkile","2":"25","3":"M","4":"928","5":"1870","6":"2804","7":"3772","8":"3982","9":"4695","10":"5638","11":"6565","12":"7514","13":"7957","14":"2021"},{"1":"Fauble, Scott","2":"29","3":"M","4":"930","5":"1871","6":"2805","7":"3773","8":"3981","9":"4714","10":"5687","11":"6636","12":"7593","13":"8027","14":"2021"},{"1":"Smith, Scott","2":"35","3":"M","4":"930","5":"1871","6":"2806","7":"3773","8":"3982","9":"4714","10":"5672","11":"6652","12":"7635","13":"8069","14":"2021"},{"1":"Nelson, Harvey","2":"25","3":"M","4":"930","5":"1871","6":"2806","7":"3775","8":"3982","9":"4793","10":"5761","11":"6723","12":"7664","13":"8087","14":"2021"},{"1":"Kiprotich, Filex","2":"32","3":"M","4":"929","5":"1871","6":"2804","7":"3772","8":"3981","9":"4695","10":"5637","11":"6566","12":"7598","13":"8103","14":"2021"},{"1":"Mcdonald, Matthew","2":"28","3":"M","4":"930","5":"1871","6":"2806","7":"3773","8":"3981","9":"4714","10":"5673","11":"6680","12":"7708","13":"8147","14":"2021"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-</section>
 <section id="variable-descriptions" class="level3">
 <h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
 <table class="caption-top table">
@@ -688,56 +715,60 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>HAGRID</td>
-<td>A unique ID for each entry (the Human Ageing Genomic Resources ID)</td>
+<td>Name</td>
+<td>Runner name</td>
 </tr>
 <tr class="even">
-<td>Kingdom</td>
-<td>Along with the following variables (phylum, class, order, family, genus, and species), this gives the taxonomic classification of the species. Species names are typically given as genus and species, e.g.&nbsp;Anaxyrus americanus is the species name for the American toad.</td>
+<td>Age</td>
+<td>Runner age (years)</td>
 </tr>
 <tr class="odd">
-<td>Phylum</td>
-<td>Phylum of the species</td>
+<td>M/F</td>
+<td>Runner gender (qualifying time standards vary by gender)</td>
 </tr>
 <tr class="even">
-<td>Class</td>
-<td>Class of the species</td>
+<td>5K</td>
+<td>Time the runner took to run the first 5,000 meters (seconds)</td>
 </tr>
 <tr class="odd">
-<td>Order</td>
-<td>Order of the species</td>
+<td>10K</td>
+<td>Time the runner took to run the first 10,000 meters (seconds)</td>
 </tr>
 <tr class="even">
-<td>Family</td>
-<td>Family of the species</td>
+<td>15K</td>
+<td>(as above)</td>
 </tr>
 <tr class="odd">
-<td>Genus</td>
-<td>Genus of the species</td>
+<td>20K</td>
+<td>(as above)</td>
 </tr>
 <tr class="even">
-<td>Species</td>
-<td>Species name</td>
+<td>HALF</td>
+<td>Time the runner took to run the first half (about 21,000 meters; seconds)</td>
 </tr>
 <tr class="odd">
-<td>Common.name</td>
-<td>Common name (i.e., the name used by ordinary people, not scientists) for the animal</td>
+<td>25K</td>
+<td>(as above)</td>
 </tr>
 <tr class="even">
-<td>Maximum.longevity.yrs</td>
-<td>Maximum longevity (lifespan), in years</td>
+<td>30K</td>
+<td>(as above)</td>
 </tr>
 <tr class="odd">
-<td>Body.mass.g</td>
-<td>Typical adult body mass, in grams</td>
+<td>35K</td>
+<td>(as above)</td>
 </tr>
 <tr class="even">
-<td>Metabolic.rate</td>
-<td>Typical resting metabolic rate (i.e., rate of energy use), in Watts</td>
+<td>40K</td>
+<td>(as above)</td>
 </tr>
 <tr class="odd">
-<td>Temperature</td>
-<td>Typical body temperature, in Kelvin</td>
+<td>Finish Net</td>
+<td>Time the runner took to run the full marathon, 42,195 meters (seconds)</td>
+</tr>
+<tr class="even">
+<td>Year</td>
+<td>Year of the marathon, 2021–2024</td>
 </tr>
 </tbody>
 </table>
@@ -746,15 +777,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <ol type="1">
-<li>Some research has suggested that slowing the metabolic rate—for example, by intermittent fasting—may increase lifespan. Is this supported by the evidence? Develop a model for lifespan using metabolic rate, and interpret what it means.</li>
-<li>Is the relationship between metabolic rate and lifespan nonlinear, even after transformations? Use a nonparametric model to determine if a nonlinear fit is more appropriate.</li>
-<li>Build a model to predict longevity using the available data. Evaluate its accuracy and report on any problems with the model.</li>
-<li>Explain whether your model supports the conclusion that changing an animal’s metabolic rate, such as through medical intervention, would <em>cause</em> its mean lifespan to change.</li>
+<li>Runners probably slow down throughout the race as they grow fatigued. Calculate the runner’s speed every 5K as the amount of time it took the runner to run that 5K (so the speed at 10K is the difference in time between the 5K and 10K points). Build a visualization showing the speed of runners every 5K. Do they indeed slow down throughout the race?</li>
+<li>Build a model to predict finish time (<code>Finish Net</code>) using the time taken to complete the half marathon (<code>HALF</code>). Interpret the coefficients. If runners were consistent and maintained the same pace, <code>Finish Net = 2 * HALF</code>; is that the case?</li>
+<li>Each year may be slightly different, as the temperature and wind vary and may speed up or slow down the runners. (On a very hot day, perhaps runners fatigue much more quickly.) Consider adding a term to your model for year. What should you add to allow the model to change by year? Add the term and conduct an appropriate hypothesis test to determine whether the relationship varies by year.</li>
+<li>The relationship may also depend on runner gender and age, so test whether these variables are relevant and decide whether to include them.</li>
+<li>Fit your model (without the term for year) to just the 2021–2022 data. Use it to make predictions for the running finish time for runners in 2023–2024. For each prediction, also produce a 95% prediction interval, and compare the interval to the runner’s actual finish time. Do the prediction intervals have 95% coverage?</li>
+<li>Write code to make models to predict from each time point. That is, predict finish time from the 5K time, then (separately) predict finish time from the 10K time, and so on. Fit on the 2021–2022 data again. Show or plot the estimated error variance <span class="math inline">\(\hat \sigma^2\)</span> from each model. We’d expect the model uncertainty to decrease as we get later in the race, so the 40K time is the most precise predictor of finish time and the 5K time is the least precise; does this show up in <span class="math inline">\(\hat \sigma^2\)</span>?</li>
 </ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>The AnAge Database of Animal Ageing and Longevity, at <a href="https://genomics.senescence.info/species/index.html" class="uri">https://genomics.senescence.info/species/index.html</a>. Data made available under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+<p>Data scraped from the website of the Boston Athletic Association by Brandon Onyejekwe and Eric A. E. Gerber for the paper “Quantifying uncertainty in marathon finish time predictions”, presented at JSM 2026. Code and data available at <a href="https://github.com/bonyejekwe/Marathon_Predictor" class="uri">https://github.com/bonyejekwe/Marathon_Predictor</a>.</p>
+<p>Additional historical data available at <a href="https://github.com/adrian3/Boston-Marathon-Data-Project" class="uri">https://github.com/adrian3/Boston-Marathon-Data-Project</a>.</p>
 
 
 </section>
@@ -1168,7 +1202,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/biology/anage.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/sports/boston-marathon.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
