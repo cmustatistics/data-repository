@@ -1,0 +1,10 @@
+game_slug,game_name,game_type,result_format,normal_draw_days,normal_draw_times_pht,timezone,official_source,reference_page
+2d-lotto,2D Lotto,digit,2 digits,Daily,"2:00 PM; 5:00 PM; 9:00 PM",Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/2d-lotto
+3d-lotto,3D Lotto,digit,3 digits,Daily,"2:00 PM; 5:00 PM; 9:00 PM",Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/3d-lotto
+4d-lotto,4D Lotto,digit,4 digits,"Monday; Wednesday; Friday",9:00 PM,Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/4d-lotto
+6d-lotto,6D Lotto,digit,6 digits,"Tuesday; Thursday; Saturday",9:00 PM,Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/6d-lotto
+lotto-642,Lotto 6/42,jackpot,6 numbers from 1-42,"Tuesday; Thursday; Saturday",9:00 PM,Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/lotto-642
+mega-lotto-645,Mega Lotto 6/45,jackpot,6 numbers from 1-45,"Monday; Wednesday; Friday",9:00 PM,Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/mega-lotto-645
+super-lotto-649,Super Lotto 6/49,jackpot,6 numbers from 1-49,"Tuesday; Thursday; Sunday",9:00 PM,Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/super-lotto-649
+grand-lotto-655,Grand Lotto 6/55,jackpot,6 numbers from 1-55,"Monday; Wednesday; Saturday",9:00 PM,Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/grand-lotto-655
+ultra-lotto-658,Ultra Lotto 6/58,jackpot,6 numbers from 1-58,"Tuesday; Friday; Sunday",9:00 PM,Asia/Manila,https://www.pcso.gov.ph/,https://lottolensph.com/lottery/ultra-lotto-658

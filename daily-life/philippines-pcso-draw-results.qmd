@@ -1,0 +1,152 @@
+---
+title: Philippines PCSO lottery draw results, 2022--2026
+author: LottoLens PH Editorial
+date: August 12, 2026
+description: An observational record of 13,457 published Philippine lottery draw results across nine games, suitable for teaching data cleaning, visualization, categorical inference, simulation, and the limits of retrospective randomness checks.
+categories:
+  - EDA
+  - categorical data
+  - data visualization
+  - data cleaning
+data:
+  year: 2026
+  files:
+    - philippines-pcso-draw-results-2022-2026.csv
+    - philippines-pcso-draw-schedule.csv
+---
+
+## Motivation
+
+The Philippine Charity Sweepstakes Office (PCSO) operates digit games and
+jackpot games on recurring weekly schedules. Published results create a useful
+teaching setting because the records combine dates, categorical game labels,
+draw times, number strings, monetary values, and row-level source provenance.
+Students can practice reshaping and validating semi-structured fields before
+asking inferential questions about coverage, marginal number frequencies, or
+sequential patterns.
+
+This is an observational, independently compiled snapshot, **not an official
+PCSO database**. It combines publicly reported draw facts for nine games. The
+snapshot is fixed at version 2.0.1 so that classroom analyses are reproducible.
+Most rows cite a secondary public results archive; the `source_url` field should
+therefore remain attached to every row. Apparent gaps can reflect source
+coverage, holidays, special schedule changes, or collection errors and should
+not automatically be interpreted as cancelled draws.
+
+Lottery draws are also a useful setting for discussing the limits of
+statistical inference. Retrospective frequency or independence checks can
+identify unusual patterns in this snapshot, but they cannot predict future
+winning numbers or establish a problem with a draw process by themselves.
+
+## Data
+
+`philippines-pcso-draw-results-2022-2026.csv` contains 13,457 rows. Each row is
+one published result for one game, date, and scheduled draw time. The snapshot
+covers January 2, 2022 through July 20, 2026, though the exact first and last
+dates differ by game. It contains 4,295 2D Lotto results, 4,296 3D Lotto
+results, and between 676 and 705 results for each of seven other games.
+
+There are no duplicate `(lottery_slug, draw_date, draw_time)` keys. All rows
+have a non-empty winning-number string and source URL, and all have status
+`published`. `jackpot_amount` is blank for 10,034 rows. This is expected for the
+digit games and also occurs when a monetary value was unavailable in the cited
+source. A blank amount must not be treated as zero. Currency is not encoded in
+the file; monetary analysis should first verify values against the cited source
+and document any assumptions.
+
+The source distribution is itself an important limitation: 13,450 rows cite
+`www.lottopcso.com`, six cite `philnews.ph`, and one cites `lottolensph.com`.
+These counts describe provenance in this snapshot, not independent
+confirmation of every row.
+
+`philippines-pcso-draw-schedule.csv` contains nine rows, one per game. It records
+the normal schedule and result format as a compact lookup table. Schedule data
+describes the normal timetable; holidays and PCSO announcements can supersede
+it.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Draw-result variables
+
+| Variable | Description |
+|----|-------------|
+| `lottery_slug` | Stable lowercase identifier for the game. |
+| `draw_date` | Calendar date of the draw in `YYYY-MM-DD` format. |
+| `draw_time` | Scheduled draw label, such as `2PM`, `5PM`, `9PM`, or `9PM Main`. |
+| `winning_numbers` | Winning digits or balls stored as a hyphen-separated character string. Parse digit and jackpot games separately, preserving leading zeroes. |
+| `jackpot_amount` | Reported jackpot amount when available; blank means unavailable or not applicable, not zero. Currency is not encoded and should be verified before monetary analysis. |
+| `status` | Publication status. Every row in this fixed snapshot is `published`. |
+| `published_at` | Timestamp at which the result was recorded, including UTC offset. This is not necessarily the official draw time. |
+| `source_name` | Human-readable label for the cited public results source. |
+| `source_url` | Row-level URL used as provenance for the reported result. |
+
+### Schedule variables
+
+| Variable | Description |
+|----|-------------|
+| `game_slug` | Stable lowercase identifier matching `lottery_slug` in the results file. |
+| `game_name` | Display name of the lottery game. |
+| `game_type` | `digit` or `jackpot`. |
+| `result_format` | Expected number of digits or balls in a result. |
+| `normal_draw_days` | Normal days on which draws are scheduled. |
+| `normal_draw_times_pht` | Normal draw times in Philippine Time, separated by semicolons when more than one applies. |
+| `timezone` | IANA time-zone identifier for the schedule (`Asia/Manila`). |
+| `official_source` | Link to the official PCSO website. |
+| `reference_page` | LottoLens PH game page documenting the schedule used in this snapshot. |
+
+## Questions
+
+1. Build an expected sequence of draw slots from the schedule table. For each
+   game and month, compare expected and observed slots and visualize where
+   coverage differs. Which discrepancies can be explained by holidays or
+   special PCSO announcements, and which remain source-coverage questions?
+
+2. Parse `winning_numbers`, treating digit games separately from jackpot games.
+   For each game, compare marginal number frequencies with the distribution
+   expected under a simple uniform model. Use chi-squared or Monte Carlo
+   methods, report effect sizes, and account for multiple testing. How sensitive
+   are conclusions to the chosen time window?
+
+3. Test whether consecutive draws show more repeated digits or balls than
+   simulated independent draws with the same game rules. What assumptions are
+   required? Explain why a retrospective rejection or non-rejection does not
+   provide a strategy for predicting the next result.
+
+4. For rows with a verified monetary value, describe jackpot distributions by
+   game and identify outliers. How do results change when the analysis excludes
+   values whose units or source records cannot be independently confirmed? Do
+   not treat blank amounts as zero.
+
+5. Examine how source coverage changes over time. Are particular games, dates,
+   or draw times associated with a change in `source_name` or a missing expected
+   slot? Discuss why source selection and collection coverage limit any causal
+   interpretation.
+
+## References
+
+- [Philippine Charity Sweepstakes Office](https://www.pcso.gov.ph/), official
+  operator website.
+- [Fixed LottoLens PH public-data release v2.0.1](https://github.com/remo65588-boop/lottolens-ph-public-data/tree/v2.0.1),
+  including the data dictionary, row-level provenance, checksums, and collection
+  limitations.
+- [PCSO FOI response: historical Lotto 6/42 draw results (1995--2025)](https://www.foi.gov.ph/agencies/pcso/historical-lotto-642-draw-results-pcso-19952025/),
+  an approved research and statistical-verification request. The records were
+  delivered separately to that requester; this snapshot is not claimed to be a
+  copy of the delivered file.
+- [PCSO FOI response: lotto results from start to current](https://www.foi.gov.ph/agencies/pcso/pcso-lotto-results-from-start-to-current/),
+  an approved research-and-development request describing result fields. This
+  is corroborating evidence that PCSO releases this class of factual record,
+  not row-level verification of this snapshot.
+
+The fixed CSV files are redistributed as part of the LottoLens PH compilation.
+The public repository licenses its original documentation, field definitions,
+and compilation metadata under CC BY 4.0. Underlying draw facts remain subject
+to the terms of their cited sources; no article text, page design, or source
+presentation is included here. Users needing official records should obtain
+them directly from PCSO or through the Philippine Freedom of Information
+process.
