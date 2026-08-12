@@ -1,0 +1,101 @@
+---
+title: Listed prices for DJI drone models
+author: Thomas Lau
+date: August 12, 2026
+description: An observational snapshot of low, median, and high listed prices for 43 DJI drone models from one retailer. Explore price dispersion, configuration counts, and selection bias without treating listed prices as completed sales or market-wide values.
+categories:
+  - EDA
+  - data visualization
+  - linear regression
+  - data cleaning
+data:
+  year: 2026
+  files: dji-listed-prices-q3-2026.csv
+---
+
+## Motivation
+
+Consumer drones are often offered in multiple configurations that combine the
+same aircraft with different controllers, batteries, accessories, and condition
+grades. A single model can therefore have a wide range of listed prices even at
+one retailer. This dataset preserves a cross-sectional snapshot of model-level
+price summaries and configuration counts, making it useful for teaching
+exploratory data analysis, transformations, visualization, and the limits of
+observational data.
+
+The data were aggregated from active Reboot Hub catalog configurations on July
+7, 2026. The submitter maintains the source dataset for Reboot Hub; that
+affiliation is disclosed so the commercial source and its limitations are clear.
+The dataset does not compare retailers and is not intended to estimate market
+share, resale value, transaction prices, or global market prices.
+
+## Data
+
+Each row represents one DJI aircraft model. The 43 model-level rows summarize
+251 listed configurations. Prices are expressed in United States dollars. There
+are no missing values in the submitted fields.
+
+The source release excludes one accessory row and one row with an unresolved
+pricing anomaly. It also merges one customization listing into its base aircraft
+model. The underlying configuration-level rows are not distributed in this
+release.
+
+Important limitations include:
+
+- The rows come from one retailer rather than a random sample of sellers.
+- Prices are listed prices, not completed-sale prices.
+- Range width can reflect bundle contents, controller type, batteries,
+  accessories, and condition grade as well as differences in aircraft value.
+- `configurations_tracked` measures the number of catalog configurations behind
+  each model summary, so it is partly a measure of sampling effort.
+- This is one cross-sectional snapshot and cannot measure price changes over
+  time.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| model | Aircraft model name |
+| source_row_count | Number of source catalog listing labels merged into the model-level row |
+| configurations_tracked | Number of listed product configurations summarized for the model |
+| listed_price_low_usd | Lowest listed configuration price for the model, in USD |
+| listed_price_high_usd | Highest listed configuration price for the model, in USD |
+| median_listed_price_usd | Median listed configuration price for the model, in USD |
+| snapshot_date | Date on which the catalog snapshot was taken, in ISO 8601 format |
+| release_quarter | Dataset release quarter |
+
+## Questions
+
+1. What is the distribution of median listed prices? Compare the raw and
+   logarithmic scales, and explain which scale communicates the variation more
+   clearly.
+2. Calculate the listed-price range for each model. Is range width associated
+   with the number of configurations tracked? What alternative explanations
+   could produce that association?
+3. Which models have unusual median prices or price ranges? Evaluate how these
+   observations influence a linear regression of median price on configuration
+   count.
+4. Extract model-family terms from the `model` field. How do the results depend
+   on the cleaning and grouping rules chosen by the analyst?
+5. Which conclusions would be invalid because the data come from a single
+   retailer and contain listed prices rather than completed transactions? Design
+   a sampling plan for a broader study.
+
+## References
+
+Reboot Hub (2026). *Reboot Hub DJI Drone Specs and Used Price Index: Q3 2026
+Baseline*, version 0.2.0. Zenodo.
+<https://doi.org/10.5281/zenodo.21387578>
+
+The source methodology and current public data notes are available on the
+[Reboot Hub Data page](https://reboot-hub.com/pages/reboot-hub-data).
+
+Data are available under the [Creative Commons Attribution 4.0 International
+license](https://creativecommons.org/licenses/by/4.0/).
