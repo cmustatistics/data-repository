@@ -1,0 +1,111 @@
+---
+title: Codex usage-limit reset announcements
+author: Suvada Depolo
+date: October 12, 2026
+description: A small observational event log for exploring time intervals, category counts, incomplete observation windows, and the difference between announcements and account-level measurements.
+categories:
+  - EDA
+data:
+  year: 2026
+  files: codex-reset-history.csv
+---
+
+## Motivation
+
+Codex is an AI coding service with usage limits. Its operator sometimes announces
+an immediate shared reset of these limits or grants a reset credit that users
+can redeem later. How regularly do these events occur, and what can an
+announcement archive tell us about the service?
+
+Codex Reset, an independent community project, compiled this archive from public
+announcements by Thibault Sottiaux (@thsottiaux) and its own monitoring. This is
+an observational event log, not a randomized experiment or an official OpenAI
+account-usage dataset. The submitter is sharing it on behalf of Codex Reset.
+The exercises below are proposed teaching uses; they have not been evaluated in
+a classroom.
+
+## Data
+
+The CSV is a fixed snapshot prepared on October 12, 2026. It contains 62 events
+from September 17, 2025 through October 11, 2026: 52 immediate resets and 10 banked
+reset grants. There are eight columns. Each row represents one event; a post
+announcing both a reset and a banked grant can generate two rows. There are 61
+post-linked events and one observed-only event.
+
+Inclusion requires a completed all-user reset announcement or a banked grant.
+Promises, individual replies, and partial fixes are excluded. The collection
+process uses automated alert judgement followed by manual review. Post-linked
+timestamps are derived from post IDs in UTC; they date the announcement, not
+necessarily the instant every user's account changed. An observed-only row
+records a monitoring observation without a public source post.
+
+The CSV is copied without modification from the archived source. No cleaning or
+imputation has been applied. Empty strings encode inapplicable or absent values:
+`banked_state` is empty for reset rows, and `post_url` is empty for the observed-only
+row. The code `unknown` is a recorded banked-state category, not an empty value.
+
+### Reading the data
+
+Read identifiers as text to avoid rounding long numeric-looking IDs. For example,
+with R and readr:
+
+```r
+events <- readr::read_csv(
+  "codex-reset-history.csv",
+  col_types = readr::cols(.default = readr::col_character()),
+  na = character()
+)
+events$time <- as.POSIXct(
+  events$announced_at, format = "%Y-%m-%dT%H:%M:%OSZ", tz = "UTC"
+)
+```
+
+With pandas, use `dtype=str, keep_default_na=False` when reading the CSV, then
+parse `announced_at` explicitly as UTC. Do not interpret the event ID as a
+continuous quantitative variable.
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| event_id | Unique event identifier; preserve as text. It is not always just a post ID. |
+| type | `reset` for an immediate reset; `banked` for a reset-credit grant. |
+| announced_at | Event timestamp in ISO 8601 UTC. For post-linked events this comes from the post ID; observed-only timing has a different evidence basis. |
+| date | UTC calendar date, in YYYY-MM-DD format. |
+| source | `post` for a public source post or `observed` for a monitoring-only observation. |
+| post_url | Public source-post URL; empty for observed-only events. |
+| banked_state | Recorded banked-grant state: `unknown`, `announced`, `arriving`, or `available`; empty for immediate resets. It is not a current account balance. |
+| summary | Short source text or event description; not a numerical measurement. |
+
+## Questions
+
+1. Tabulate events by type and calendar month. Distinguish zero-event months
+   from missing observations. How do the partial first and last months affect
+   comparisons of counts or daily rates?
+2. Filter to immediate resets, sort by time, and compute elapsed days between
+   consecutive events. Plot the distribution and the intervals over time.
+   Compare median and mean gaps. Why should banked grants not automatically
+   reset the same clock?
+3. Compare an analysis using only post-linked events with one including the
+   observed-only event. How sensitive are summaries to the inclusion rule?
+   Discuss the distinction between a missing source URL and an absent event.
+4. Check whether multiple event rows share a source-post URL. Explain why
+   counting rows and counting announcements answer different questions.
+5. Could the observed average gap be used to promise when the next reset will
+   occur? Discuss changing product policies, dependence between events,
+   selection and archival omissions, and the incomplete observation window.
+   No historical average guarantees a future reset, and these data cannot
+   establish causation or individual account entitlements.
+
+## References
+
+Codex Reset (2026). *Codex reset history: resets and banked grants* [dataset],
+snapshot of October 12, 2026. <https://doi.org/10.5281/zenodo.23289519>.
+
+The [live archive and collection methodology](https://codex-reset.com/timeline)
+may subsequently change. This teaching snapshot does not update automatically.
+Individual source posts are linked in the `post_url` column.
+
+Data are available under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+Required visible attribution: **Data: codex-reset.com**.
+Codex Reset is independent of and not affiliated with OpenAI.
