@@ -31,8 +31,23 @@ we welcome submissions. Datasets should meet a few requirements:
 If you're familiar with R Markdown or Quarto, you can instead prepare the data
 description page yourself from a template. Read on for detailed instructions.
 
+::: {.callout-note}
 
-## Getting Started with Quarto
+## Using AI to write data descriptions
+
+We have received several dataset submissions written by AI agents. They are
+generally quite bad: AI agents do not know what is interesting or relevant to
+students, and pack the description with irrelevant detail while omitting
+information students need.
+
+You, the human author, should ensure the data description is written to be
+helpful to students and instructors. We will reject submissions that are
+obviously entirely AI-written. We should not have to take the time to give
+feedback to your AI agent; you should do that prior to submission.
+
+:::
+
+## Getting started with Quarto
 
 This website is built using the [Quarto](https://quarto.org) system and
 automatically rendered into a website. Data description pages can be made
@@ -49,7 +64,7 @@ You can get the template in two ways:
    GitHub account and edit it like any other Git repository. Once you're done,
    you can submit a pull request.
 
-## The Dataset Template
+## The dataset template
 
 The dataset template is a [Quarto](https://quarto.org/docs/guide/) file; Quarto
 is much like R Markdown and is supported by recent versions of RStudio. Quarto
