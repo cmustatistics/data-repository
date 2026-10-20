@@ -1,0 +1,115 @@
+---
+title: Diagnosing dengue fever
+author: Alex Reinhart
+date: October 21, 2026
+description: Dengue fever is a common illness in tropical and subtropical parts of the world. Definitive diagnosis requires dengue-specific lab tests, but it may be possible to get an accurate diagnosis from cheaper and easier tests and symptoms. Use data on dengue patients in Vietnam to evaluate whether a classifier can accurately diagnose dengue from blood tests and symptoms.
+categories:
+  - classification
+  - logistic regression
+data:
+  year: 2015
+  files: dengue.csv
+---
+
+## Motivation
+
+Dengue fever is a common viral illness spread by mosquitoes in tropical and
+subtropical parts of the world. More than 5 million people are infected each
+year. While most people recover within one or two weeks, some cases become
+severe, requiring hospitalization to treat shock and internal bleeding. Roughly
+5,000 people die of dengue fever each year.
+
+While there is no medication that can cure dengue, prompt diagnosis is still
+helpful so patients can get supportive treatment and be closely monitored for
+signs of severe dengue. This data comes from a study in Vietnam which tested
+whether simple lab tests and symptom data can be used to accurately diagnose
+dengue fever, rather than relying on more expensive dengue-specific lab tests.
+If this were possible, doctors could diagnose patients more quickly and cheaply,
+before more extensive lab test results are available.
+
+## Data
+
+The data contains symptom and test results for 5,726 patients, all children
+1--15 years old in several hospitals in Vietnam. Children were eligible to
+enroll if they had been sick less than 72 hours and had a fever, and the
+attending physician thought dengue fever was a possible diagnosis. Patients
+whose parents consented were enrolled in the study. On enrollment, blood samples
+were drawn for normal blood tests (such as white blood counts) and dengue fever
+tests.
+
+If the patient was hospitalized, a second blood sample was drawn for additional
+blood tests to see if they had dengue fever antibodies. Of those patients who
+were *not* hospitalized, 10% were randomly selected to get a second blood
+sample.
+
+The definitive diagnosis of dengue fever was made by using three tests: RT-PCR,
+serology, and ELISA assay.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| DateEnrol | Date patient was enrolled in the study. (Time is provided, but always midnight or noon; probably because Excel automatically converted the date to a time.) |
+| SiteNo | Which hospital (of several hospitals participating in the study) the patient was from |
+| StudyNo | Identifying number for the patient |
+| Sex | Sex of the patient (1 = male, 2 = female) |
+| Age | Age of the patient (years) |
+| DayDisease | How many days the patient had been sick, when they were enrolled into the study |
+| Vomiting | Whether the patient presented with vomiting (1 = yes, 2 = no) |
+| Abdo | Whether the patient had abdominal pain (1 = yes, 2 = no) |
+| Muco | Whether the patient had mucosal bleeding (1 = yes, 2 = no) |
+| Skin | Whether the patient had skin bleeding (1 = yes, 2 = no) |
+| Temp | Patient's body temperature (Celsius) |
+| BMI | Patient's Body Mass Index |
+| Height | Patient's height (cm) |
+| Weight | Patient's weight (kg) |
+| Flush | Whether the patient had redness of the skin caused by dilation of the capillaries |
+| Hepatomegaly | Whether the patient had an enlarged liver |
+| Rash | Whether the patient had a rash ("generalized macular, blanching, non-petechial rash") |
+| Injection | Whether the patient had conjunctival injection, i.e., red eyes due to prominent blood vessels in the conjuctiva |
+| WBC | White blood cell count (10^3^/mm^3^) |
+| HCT | Hematocrit percentage |
+| PLT | Platelet count (10^3^/mm^3^) |
+| NEUCount | Neutrophil count |
+| LYMCount | Lymphocyte count |
+| MONOCount | Monocyte count |
+| ALB | Blood albumin concentration (g/L) |
+| AST | Blood aspartat aminotransferase concentration (log2-transformed) |
+| ALT | Unknown |
+| CK | Blood creatine kinase concentration (log2-transformed) |
+| Lab_Confirmed_Dengue | Whether the patient had laboratory-confirmed dengue fever (1 = yes, 2 = no) according to the results of RT-PCR, ELISA assay, or IgM seroconversion |
+| Serotype | Which dengue fever serotype was detected (1-4), or "<LOD" if dengue levels were below the level of detection |
+| NS1_PLATELIA | Result of the Platelia Dengue NS1 Ag ELISA assay, a dengue blood test (1 = positive, 2 = negative) |
+| NS1_TRIP | Unclear; may be result of the BioRad NS1 Ag STRIP, a rapid antibody test for dengue fever (1 = positive, 2 = negative) |
+| SeroConversion | For patients with two blood samples, whether they showed seroconversion, the change in antibodies created after a dengue infection (coding not specified) |
+| Serology | For patients who showed seroconversion, whether the serological response was primary or secondary (0 = inconclusive, 1 = primary, 2 = secondary) |
+| Pairedsample | Whether the patient had two different blood samples available (one at enrollment and one at early convalescence) for seroconversion testing (1 = yes, 0 = no; unknown what 2 means) |
+
+## Questions
+
+1. Compare the demographics of the patients across hospitals. Are the patients
+   similar between hospitals, or do hospitals serve patients of different ages
+   or sexes? Do patients at some hospitals present with more severe symptoms?
+2. Build a classifier to predict whether the patient had laboratory-confirmed
+   dengue (`Lab_Confirmed_Dengue`) from the blood test results, symptoms, and
+   demographics that would be available for patients prior to diagnosis.
+   Evaluate its performance. Is it accurate for diagnosing sensitivity? What are
+   its false positive and false negative rates, and what is the positive
+   predictive value?
+
+
+## References
+
+Tuan NM, Nhan HT, Chau NVV, Hung NT, Tuan HM, Tram TV, et al. (2015) Sensitivity
+and Specificity of a Novel Classifier for the Early Diagnosis of Dengue. *PLoS
+Neglected Tropical Diseases* 9(4): e0003638.
+<https://doi.org/10.1371/journal.pntd.0003638>. Data is included in the
+Supporting Information, S1 Dataset,
+<https://doi.org/10.1371/journal.pntd.0003638.s009>.
