@@ -1,0 +1,226 @@
+---
+title: "Los Angeles's homelessness scoring system"
+description: "Homelessness levels often exceed available housing options in the United States. Thus, many local homelessness agencies use a prioritization system to help triage interventions. In 2013, the Los Angeles Homeless Services Authority (LAHSA) began using the Vulnerability Index-Service Prioritization Decision Assistance Tool (VI‑SPDAT), which assigns clients an acuity, or vulnerability, score based on their housing situation and personal history. However, community members and researchers have raised concerns about VI-SPDAT's validity, reliability, and ability to equitably assess clients. Analyze survey results from 140,000 clients to assess how acuity scores relate to demographics and housing outcomes."
+author: "Sara Colando"
+date: October 20, 2026
+categories:
+  - EDA
+  - ANOVA
+  - logistic regression
+  - classification
+data:
+  year: 2022
+  files:
+    - vispdat_assessments.csv.gz
+---
+
+## Motivation
+
+The United States Department of Housing and Urban Development (HUD) estimates
+that 745,652 individuals experienced homelessness on a single night in January
+2025 (U.S. Department of Housing and Urban Development, 2026). While
+homelessness is a persistent problem across the United States, it tends to be
+primarily concentrated in urban areas. For example, the Los Angeles Homeless
+Services Authority (LAHSA) estimates that 72,195 individuals experience
+homelessness in LA County on a single night in 2025, which is about 9.7% of the
+national estimate (Los Angeles Homeless Services Authority, 2025a). One of the
+central challenges for local homelessness agencies, especially those serving
+large populations like LAHSA, is how to allocate limited housing resources.
+Given homelessness levels often exceed housing options, LAHSA and other
+homelessness agencies must have a prioritization system for housing and service
+allocation based on individuals' needs.
+
+To systematize housing allocation within an area, HUD requires LAHSA and other
+agencies that receive federal homelessness funding to use coordinated entry
+systems (HUD, 2012). These systems are meant to standardize the way in which
+individuals experiencing homelessness, or who are at risk of homelessness, are
+assessed and referred to housing or other programs and services. Until recently,
+one of the most widely used assessment tools within coordinated entry systems
+was the Vulnerability Index-Service Prioritization Decision Assistance Tool
+(VI-SPDAT), which LAHSA began using in 2013 (Shinn and Richard, 2022; Varner and
+Lecher, 2023). During a VI-SPDAT assessment, a case manager asks the client a
+series of questions about their housing situation and personal history. Each
+answer corresponds to a point value, which are summed to give the client's final
+"acuity", or vulnerability, score (Varner and Lecher, 2023). In general,
+individuals with higher acuity scores receive greater priority for permanent
+housing and other programs or services (Lecher and Varner, 2023).
+
+However, several concerns have been raised about VI-SPDAT’s validity,
+reliability, and capability to equitably assess individuals. For example, Brown
+et al. (2018) found that VI-SPDAT acuity scores did not significantly predict
+risk of return to homeless services, raising concerns about the tool's validity.
+Using data from LAHSA, journalists at The Markup found that Black and Latino
+individuals experiencing homelessness in Los Angeles tend to receive lower
+acuity scores than white individuals (Lecher and Varner, 2023). Given these
+concerns, local politicians and community members urged LAHSA to address the
+racial inequities in their prioritization system and design a plan for reform
+(Lecher, 2024). Ultimately, LAHSA replaced VI-SPDAT with the Los Angeles Housing
+Assessment Tool in June 2026 (LAHSA, 2026).
+
+## Data
+
+The dataset is a cleaned version of the data provided to The Markup by LAHSA
+under a California Public Records Act request. It purportedly contains all
+clients of Homeless Management Information System in Los Angeles, who took
+either the VI-SPDAT assessment designed for single adults (*CES Survey Part 1*)
+or youth under 25 years old (*Next Step Tool*) between January 1st, 2016 and
+October 30, 2022. There are 139,931 total clients in the data.
+
+Each observation represents a client's VI-SPDAT assessment. The columns describe
+the client's demographic information, calculated scores based on their original
+survey responses, total acuity score, the intervention they received (if any),
+as well as metadata about the assessment. To protect clients' privacy, the
+cleaned dataset only contains the client's *calculated* question scores rather
+than their answers on the original survey. Information about the original data
+provided by LAHSA is available on The Markup's
+[GitHub](https://github.com/the-markup/investigation-vi-spdat/blob/main/docs/cpra-response-dict.md),
+and a version of the VI-SPDAT assessment filled out by case managers is
+available on the [Los Angeles County
+website](https://file.lacounty.gov/SDSInter/dmh/240602_VI-SPDATv2.0FamilyUS.pdf).
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|-------------------------|-----------------------------------|
+| unique_client_id | Unique number corresponding to each client's assessment (unclear if this actually corresponds to an actual client ID). |
+| race_ethnicity | The client's self-reported race or ethnicity, standardized to these options: `Asian`, `Black`, `Latino`, `White`, `Other`, `Unknown`. If a respondent indicated their ethnicity was "Hispanic/Latin(a)(o)(x)" on the assessment, they were classified as `Latino` regardless of their reported race. Additionally, respondents who identified as "American Indian, Alaska Native, or Indigenous", "Native Hawaiian or Pacific Islander," or "Multiple Races," on the assessment were classified as `Other` due to small sample sizes. |
+| veteran_status | Whether the client reports being a veteran: `Yes`, `No`, or `Unknown`. |
+| spa | The client's LA [service planning area](http://publichealth.lacounty.gov/chs/SPAMain/ServicePlanningAreas.htm), integer-valued between 1 and 8. |
+| gender | The client's self-reported gender, standardized to these options: `Male`, `Female`, `Unknown`, `Transgender`, `No Single Gender` or `Questioning`. |
+| age_group_at_assessment | The client's age group (in years) at the time of assessment binned into: `Under 18`, `18-24`, `25-44`, `45-59`, and `60+`. |
+| intervention | The client's received intervention (if any). |
+| intervention_year | The year that the client's intervention occurred (if at all). |
+| assessment_predates_intervention | Whether the client's assessment date is before or the same as their intervention date. |
+| assessment_name | The client's assessment type: `CES Survey Part 1` (intended for single adults) `Next Step Tool` (intended for youth under 25 years old). |
+| assessment_year | Year of the client's assessment. |
+| acuity | The client's assessment score based on `total_score`, binned by The Markup into three categories: `1/Low Acuity`, `2/Mid Acuity`, and `3/High Acuity`. For *CES Survey Part 1* clients: `1/Low Acuity` = 0-3, `2/Mid Acuity` = 4-11, and `3/High Acuity` = 12-17. For *Next Step Tool* clients: `1/Low Acuity` = 0-3, `2/Mid Acuity` = 4-7, `3/High Acuity`= 7-17. These groups are defined based on [June 2020 report](https://clkrep.lacity.org/onlinedocs/2019/19-1576_rpt_HSA_08-06-2020.pdf) from LAHSA, which parallel the [CES Prioritization Policy](https://www.lahsa.org/documents?id=2062-draft-ces-matching-policies.pdf), adopted in 2018. |
+| acuity_score | The client's raw assessment acuity score, reported by LAHSA, integer-valued between 0-17. Higher scores indicate higher vulnerability. |
+| total_score | The client's total assessment score, provided by LAHSA, integer-valued between 0-17. Higher scores indicate higher vulnerability. LAHSA did not provide The Markup with why `total_score` differ from `acuity_score` for some clients. |
+| general_sub_score | The client's general sub-score based on their VI-SPDAT assessment, provided by LAHSA: either `0` or `1`. |
+| history_sub_score | The client's history sub-score based on their VI-SPDAT assessment, provided by LAHSA: either `0`, `1` , or `2`. |
+| risks_sub_score | The client's risks sub-score based on their VI-SPDAT assessment, provided by LAHSA: either `0`, `1`, `2`, `3`, or `4`. |
+| socialization_sub_score | The client's risks sub-score based on their VI-SPDAT assessment, provided by LAHSA: either `0`, `1`, `2`, `3`, `4`, or `5`. |
+| wellness_sub_score | The client's wellness sub-score based on their VI-SPDAT assessment, provided by LAHSA: either `0`, `1`, `2`, `3`, `4`, or `5`, or `6`. |
+| calc_total_score | Sum of the client's three sub-scores calculated by The Markup (`calc_history_sub_score`, `calc_risk_sub_score`, `calc_socicalization_sub_score`, `calc_wellness_sub_score`) and the general sub-score provided by LAHSA (`general_sub_score`). |
+| calc_history_sub_score | Sum of the client's sleeping location history score (`calc_history_sleeping_location`) and history of homelessness score (`calc_history_of_homelessness`). |
+| calc_history_sleeping_location | Whether the client reports sleeping most frequently in a location other than a shelter or transitional housing (survey options included "doesn't know", "refused to answer", "couch surfing", "safe haven", "shelters", "outdoors", etc.) |
+| calc_history_history_of_homelessness | Whether the client has experienced one or more consecutive years of homelessness or 4+ episodes of homelessness with a total duration of homelessness greater than 1 year. |
+| calc_risks_sub_score | Sum of client's four risk scores calculated by The Markup (`calc_risks_emergency_service_use`, `calc_risks_risk_of_harm`, `calc_risks_legal_issues` and `calc_risks_risk_of_exploitation`). |
+| calc_risks_emergency_service_use | Based on client's emergency medical services usage (e.g., gone to the emergency room, taken an ambulance, or used a crisis service), police interactions (e.g., from witnessing a crime, being the victim of a crime, or being asked to move along because of loitering), and how often they stayed one or more nights in jail, a holding cell or prison. Clients with 4+ total interactions in the last six months received a `1` (they received a `0` otherwise). |
+| calc_risks_risks_of_harm | Whether the client, since being homeless, has been beaten up or assaulted, threatened or tried to harm themselves, been threatened with violence or made them feel unsafe, or tried to be controlled through violence or threats to violence. |
+| calc_risks_legal_issues | For *CES Survey Part 1* clients: whether the respondent: (1) has legal stuff going on that could result in: them being locked up, having to pay fines or fees that they cannot afford, lower their ability to get housing, or impact their family’s ability to stay together, or (2) been convicted of a crime that makes it difficult to access or maintain housing. For *Next Step Tool* clients: additionally whether the respondent was incarcerated under the age of 18 years old. |
+| calc_risks_risk_of_exploitation | Whether the client: (1) has been manipulated, exploited or forced to do things they do not want to do, or (2) does things that may be considered to be risky or harmful like run drugs, share a needle, do sex work, etc. |
+| calc_socialization_sub_score | Sum of socialization scores calculated by The Markup (`calc_socialization_money_management`, `calc_socialization_meaningful_daily_activity`, `calc_socialization_selfcare`, `calc_socialization_social_relationships` and `calc_socialization_use_trauma`). |
+| calc_socialization_money_management | Whether the client: (1) has a person or organization that thinks they owe them money (e.g., family member, friend, past landlord, business, bookie, dealer, etc.), (2) ever gambled with money they cannot afford to lose or have debts associated with gambling, or (3) does not receive any money (e.g., from the government, a job, child support, working under the table, day labor, pension). |
+| calc_socialization_meaningful_daily_activity | Whether the client lacks planned activities (other than activities for survival) that they do at least four days per week which make them feel happy and fulfilled. |
+| calc_socialization_selfcare | Whether the client is currently able to take care of basic needs (e.g., bathing, changing clothes, using a restroom). |
+| calc_socialization_social_relationships | For *CES Survey Part 1* clients: whether client reports that their current homelessness was caused by social relationships (e.g., a relationship that broke down, or an unhealthy or abusive relationship). For *Next Step Tool* clients: whether client reports that their current homeless was caused by them running away from their family home, group home, or foster home, and that their lack of stable housing is because of differences in religious or cultural beliefs or conflicts around gender identity or sexual orientation. |
+| calc_socialization_use_trauma | Whether the client reports that current lack of stable housing is because of violence at home between family members or because of an unhealthy or abusive relationship, either at home or elsewhere. *Only calculated for Next Step Tool clients*. |
+| calc_wellness_sub_score | Sum of the client's wellness scores calculated by The Markup (`calc_wellness_phsyical_health`, `calc_wellness_substance_use`, `calc_wellness_mental_health`, `calc_wellness_trimorbidity`, `calc_wellness_medications` and `calc_wellness_abuse_and_trauma`). |
+| calc_wellness_physical_health | For both *CES Survey Part 1* and *Next Step Tool* clients, whether they: (1) have ever had to leave a place they were staying because of their physical health, (2) suffer chronic health issues with their liver, kidneys, stomach, lungs, or heart, (3) have physical disabilities that would limit the type of housing they could access or their ability to live independently, (4) avoid getting medical help when they are not feeling well, or (5) if they would be interested in programs that assist people that live with HIV or AIDS. Additionally for *Next Step Tool* clients, whether they are currently pregnant, have ever been pregnant, or gotten someone pregnant. |
+| calc_wellness_substance_use | For both *CES Survey Part 1* and *Next Step Tool* clients, whether drinking or drug use: (1) has ever led to them being kicked out of an apartment or program they were staying in the past, or (2) make it difficult for them to stay housed or afford housing. Additionally, for *Next Step Tool* clients: additionally if they have ever used marijuana, whether they first tried it at 12 years old or younger. |
+| calc_wellness_mental_health | Whether the client has: (1) ever had trouble maintaining housing (or been kicked out of a place they were staying) because of a mental health concern, past head injury, learning disability, or other impairment, or (2) mental health of brain issues that would make it hard for them to live independently because help would be needed. |
+| calc_wellness_trimorbidity | Whether the client has scores a one on the physical health, substance use, and mental health measures (`calc_wellness_physical_health`, `calc_wellness_substance_use`, `calc_wellness_mental_health`). |
+| calc_wellness_medications | Whether the client has: (1) any medications that a doctor said they should be taking that, for whatever reason, they are not taking, or (2) medications like painkillers that they don’t take the way the doctor prescribed or where they sell the medication. |
+| calc_wellness_abuse_and_trauma | Whether the client reports that their current period of homelessness was caused by an experience of emotional, physical, psychological, sexual, or other type of abuse, or by any other trauma they experienced. *Only calculated for CES Survey Part 1 clients*. |
+
+## Questions
+
+1. Conduct some exploratory data analysis. What is the distribution of acuity
+   scores? Which intervention type is most common? How does the acuity score
+   distribution vary by intervention type? Analyze how these distributions and
+   relationships differ across (at least) one of the demographic variables in
+   the dataset (`race_ethnicity`, `veteran_status`, `spa`, `gender`,
+   `age_group_at_assessment`).
+
+2. Reproduce The Markup's ["Acuity Group Distributions by
+   Race"](https://themarkup.org/show-your-work/2023/02/28/how-we-investigated-l-a-s-homelessness-scoring-system)
+   analysis for adults. In particular, compute the number and percent who scored
+   in each acuity group by race. Then, conduct a test to determine whether there
+   is an association between being classified as "High Acuity" and race.
+   Finally, recreate the data visualizations from The Markup which compare adult
+   acuity score distributions by race.
+
+3. Generally, clients with higher VI-SPDAT acuity scores receive greater
+   priority for permanent housing. However, clients with lower acuity could be
+   easier to match in permanent housing because they often have lower barriers
+   to becoming "match-ready" (i.e., compiling and uploading all required
+   verification documents into the Homeless Management Information System). Are
+   clients with higher assessed vulnerability scores more likely to matched into
+   permanent housing, on average?
+
+4. Given the size of Los Angeles County, homeless services providers are
+   organized into eight [Service Planning Areas
+   (SPAs)](http://publichealth.lacounty.gov/chs/SPAMain/ServicePlanningAreas.htm),
+   each serving a specific geographic region of the county. The SPAs vary in
+   population characteristics, housing availability, and access to homeless
+   services, which could affect how assessed vulnerability relates to housing
+   matches. Does the relationship between assessed vulnerability and the
+   probability of being matched into permanent housing (estimated in question 3)
+   differ by service planning area?
+
+5. Each VI-SPDAT question is intended to capture an aspect of vulnerability for
+   those experiencing (or at risk of) homelessness. These questions are combined
+   into subsections, and a client’s total VI-SPDAT acuity score is calculated by
+   summing up their section subscores. However, certain questions may be more
+   predictive of being matched to permanent housing than others. How well does
+   total acuity score predict whether a client is matched into permanent
+   housing? Does a different combination of the calculated question scores
+   (i.e., all the `calc_*` variables except for `calc_total_score` and
+   `calc_*_sub_score` variables) better predict whether a client is matched into
+   permanent housing?
+
+## References
+
+Brown, Cummings, Lyons, Carrión, and Watson (2018). “Reliability and Validity of
+the Vulnerability Index-Service Prioritization Decision Assistance Tool
+(VI-SPDAT) in Real-World Implementation”. *Journal of Social Distress and the
+Homeless* 27(2): 110–117. <https://doi.org/10.1080/10530789.2018.1482991>
+
+Lecher (2024). “L.A. Is Changing How It Scores ‘Vulnerability’ of Unhoused
+People”. *The Markup*, February 15.
+<https://themarkup.org/impact/2024/02/15/l-a-is-changing-how-it-scores-vulnerability-of-unhoused-people>
+
+Lecher and Varner (2023). “L.A.’s Scoring System for Subsidized Housing Gives
+Black and Latino People Experiencing Homelessness Lower Priority Scores”. *The
+Markup*, February 28.
+<https://themarkup.org/investigations/2023/02/28/l-a-s-scoring-system-for-subsidized-housing-gives-black-and-latino-people-experiencing-homelessness-lower-priority-scores>
+
+Los Angeles Homeless Services Authority (2025a). “LAHSA Releases Finalized 2025
+Homeless Count Results After HUD Review”. *Los Angeles Homeless Services
+Authority*.
+<https://www.lahsa.org/news?article=1051-lahsa-releases-finalized-2025-homeless-count-results-after-hud-review>
+
+Los Angeles Homeless Services Authority (2025b). “Los Angeles Housing Assessment
+Tool (LA-HAT)”. *Los Angeles Homeless Services Authority*.
+<https://www.lahsa.org/news?article=1033-los-angeles-housing-assessment-tool-la-hat->
+
+Shinn and Richard (2022). “Allocating Homeless Services After the Withdrawal of
+the Vulnerability Index–Service Prioritization Decision Assistance Tool”.
+*American Journal of Public Health* 112(3): 378–382.
+<https://doi.org/10.2105/AJPH.2021.306628>
+
+U.S. Department of Housing and Urban Development (2012). “Homeless Emergency
+Assistance and Rapid Transition to Housing: Continuum of Care Program”. *Federal
+Register* 77: 45422–45467.
+<https://www.govinfo.gov/content/pkg/FR-2012-07-31/pdf/2012-17546.pdf>
+
+U.S. Department of Housing and Urban Development (2026). “The 2025 Annual
+Homelessness Assessment Report (AHAR) to Congress: Part 1: Point-in-Time
+Estimates of Homelessness”. *Office of Community Planning and Development*.
+<https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf>
+
+Varner and Lecher (2023). “How We Investigated L.A.’s Homelessness Scoring
+System”. *The Markup*, February 28.
+<https://themarkup.org/show-your-work/2023/02/28/how-we-investigated-l-a-s-homelessness-scoring-system>
+
+The dataset was obtained from The Markup (© 2023 The Markup News Inc.) and is
+distributed under the BSD 3-Clause License:
+<https://github.com/the-markup/investigation-vi-spdat>
