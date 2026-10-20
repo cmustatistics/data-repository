@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Kenneth Morrison Brown">
+<meta name="dcterms.date" content="2026-08-04">
+<meta name="description" content="A transcription of the Agricultural Census of Canada of 1851 for two adjacent counties 60–100 km west of Montreal between the St.&nbsp;Lawrence and Ottawa Rivers. Vaudreuil County in Quebec was settled under seigneurial land tenure with a predominantly French-speaking population and Glengarry County in Ontario was settled under freehold tenure, with a largely Highland Scots-Gaelic-speaking population in 1851. From the census variables, can we get a coherent picture of the variability of agricultural practices in these two counties?">
+
+<title>Agricultural Census for 1851, Glengarry and Vaudreuil Counties – CMU S&amp;DS Data Repository</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-d756cba9c3239338bf47de2b36be5d9d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.refsmmat.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../history/GlengarryVaudreuil-agricultural-census.html">History</a></li><li class="breadcrumb-item"><a href="../history/GlengarryVaudreuil-agricultural-census.html">Agricultural Census for 1851, Glengarry and Vaudreuil Counties</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Astronomy</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Biology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Crime and Justice</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Traffic stops in Connecticut</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/mapping-police-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping Police Violence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/police-bias-training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Police implicit bias training</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Daily Life</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/college-scorecard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">US College Scorecard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/fandango_movie_ratings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fandango movie ratings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/rtg-tinned-fish.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RTG tinned fish</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">History</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../history/GlengarryVaudreuil-agricultural-census.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Agricultural Census for 1851, Glengarry and Vaudreuil Counties</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Language</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../language/hap-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Human-AI Parallel Corpus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Medicine</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/dengue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diagnosing dengue fever</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/meningitis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distinguishing bacterial and viral meningitis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/prostatectomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blood transfusions in prostatectomies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Money</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/european-ham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European protected ham</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Politics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/jan-6-insurrectionists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">January 6th insurrectionists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/social_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Social capital, income inequality, and political outcomes across US counties</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/standard-cities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fiscally standardized cities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">World Development Indicators</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/healing-time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical healing and time perception</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bias in soccer refereeing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/moral-rebels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resenting moral rebels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/stress-effort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stress and cognitive-effort avoidance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Social</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bechdel_test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bechdel Test and box office results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bostonhousing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Boston Housing and fairness assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/costa_rica_households.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Costa Rican household poverty level</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/data-viz-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey of data visualization courses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/elite-college-admissions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elite college admissions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/la-homelessness-algorithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Los Angeles’s homelessness scoring system</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/migrants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey on attitude towards migrants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Sports</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/boston-marathon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Boston Marathon times, 2021–2024</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/sprinters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fastest 100m sprint times</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Technology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technology/ai-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Can generative AI harm student learning?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technology/metr-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Effect of AI on programming productivity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  <li><a href="#supplementary-materials" id="toc-supplementary-materials" class="nav-link" data-scroll-target="#supplementary-materials">Supplementary materials</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/history/GlengarryVaudreuil-agricultural-census.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../history/GlengarryVaudreuil-agricultural-census.html">History</a></li><li class="breadcrumb-item"><a href="../history/GlengarryVaudreuil-agricultural-census.html">Agricultural Census for 1851, Glengarry and Vaudreuil Counties</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Agricultural Census for 1851, Glengarry and Vaudreuil Counties</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">EDA</div>
+    <div class="quarto-category">data assessment</div>
+    <div class="quarto-category">linear regression</div>
+    <div class="quarto-category">multivariate analysis</div>
+    <div class="quarto-category">logistic regression</div>
+    <div class="quarto-category">clustering</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A transcription of the Agricultural Census of Canada of 1851 for two adjacent counties 60–100 km west of Montreal between the St.&nbsp;Lawrence and Ottawa Rivers. Vaudreuil County in Quebec was settled under seigneurial land tenure with a predominantly French-speaking population and Glengarry County in Ontario was settled under freehold tenure, with a largely Highland Scots-Gaelic-speaking population in 1851. From the census variables, can we get a coherent picture of the variability of agricultural practices in these two counties?
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kenneth Morrison Brown </p>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 4, 2026</p>
+    </div>
+  </div>
+  
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/GlengarryVaudreuilAgricCensus1851En.csv.gz">GlengarryVaudreuilAgricCensus1851En.csv.gz</a>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1852</p>
+    </div>
+  </div>
+  </div>
+
+
+</header>
+
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>In our time, farms in North America are often large, highly specialized operations. But what did farming look like without herbicides, pesticides, artificial fertilizers, before mechanization, and before railways were built?</p>
+<p>The Canadian agricultural census of 1851 collected data on the size of holding, the amount of land under cultivation, the amount of land devoted to various crops, as well as production of these crops. Data were also collected on numbers of livestock, and on the products of farm enterprise, such as wool and cloth production, dairy products, and cured beef and pork. These enterprises were partly for each family’s own needs, but there were also local markets and trade amongst neighbors. The picture that emerges is one of diversified, and by modern standards, small operations.</p>
+<p>Is it possible to find patterns in this diversity and relate these to spatial or cultural variables, or to the size and apparent prosperity of the operation? To what extent were there very wealthy families, or poor families, and can these be detected using the variables measured? The area includes two different types of land tenure, and a diversity of cultural traditions. Do these factors have a discernible effect on farming practices?</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The Agricultural Censuses of Canada carried out in rural areas were meant to get an idea of the state of farming for the census year. To collect the data, trained enumerators traveled through each county to record data about each farm. The 1851 census was meant to cover farming that occurred in that year, but the enumeration was actually done in early 1852, so the accuracy of the results does depend on whether farmers kept good records.</p>
+<p>Each row in the data represents a household and its land, and variables include the size of holding, both total and under cultivation (at this time, there was still land to be cleared), production of various crops, numbers of livestock and production from other farm enterprises (e.g., wool, cloth, butter, cheese, maple sugar). Not every row represents a farm, as there were villages, as well as rural households with livelihoods other than farming.</p>
+<p>This extract covers Glengarry and Vaudreuil Counties, which are 60–100 km west of Montreal between the St.&nbsp;Lawrence and Ottawa Rivers. Vaudreuil County in Quebec was settled under <a href="https://en.wikipedia.org/wiki/Seigneurial_system_of_New_France">seigneurial land tenure</a> with a predominantly French-speaking population and Glengarry County in Ontario was settled under <a href="https://en.wikipedia.org/wiki/Freehold_(law)">freehold tenure</a>, with a largely Highland Scots-Gaelic-speaking population in 1851.</p>
+<p>There are 4,632 households in the data. Data collection was by local enumerators, and there is evident variability in the way the data were collected, resulting in missing data for some variables.</p>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/GlengarryVaudreuilAgricCensus1851En.csv.gz "> GlengarryVaudreuilAgricCensus1851En.csv.gz </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["...1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["IndexNoA"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["IndexNoCD"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Name"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Surname"],"name":[5],"type":["chr"],"align":["left"]},{"label":["NameOrigin"],"name":[6],"type":["chr"],"align":["left"]},{"label":["Concession"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Lot"],"name":[8],"type":["chr"],"align":["left"]},{"label":["Location"],"name":[9],"type":["chr"],"align":["left"]},{"label":["Latitude"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Longitude"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["LandTotal"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["LandCultivated"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["LandCrops1851"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["LandPasture1851"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["LandGardenOrchard"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["LandWoodWild"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["LandWheat"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["ProdWheat"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["LandBarley"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["ProdBarley"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["LandRye"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["ProdRye"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["LandPeas"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["ProdPeas"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["LandOats"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["ProdOats"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["LandBuckWheat"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["ProdBuckWheat"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["LandMaize"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["ProdMaize"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["LandPotatoes"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["ProdPotatoes"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["LandTurnip"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["ProdTurnip"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["ProdClover"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["ProdCarrots"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["ProdMangelwurzel"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["ProdBeans"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["ProdHops"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["Foin"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["Hay"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["ProdFlax"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["Tobacco"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["Wool"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["Apples"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["MapleSugar"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["FulledCloth"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["ProdLinen"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["Flannel"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["BullsOxenSteers"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["MilchCows"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["Calves"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["Horses"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["Sheep"],"name":[55],"type":["dbl"],"align":["right"]},{"label":["Pigs"],"name":[56],"type":["dbl"],"align":["right"]},{"label":["Butter"],"name":[57],"type":["dbl"],"align":["right"]},{"label":["Cheese"],"name":[58],"type":["dbl"],"align":["right"]},{"label":["Beef"],"name":[59],"type":["dbl"],"align":["right"]},{"label":["Pork"],"name":[60],"type":["dbl"],"align":["right"]},{"label":["ValueProperty"],"name":[61],"type":["dbl"],"align":["right"]},{"label":["County"],"name":[62],"type":["chr"],"align":["left"]},{"label":["SubDistrict"],"name":[63],"type":["chr"],"align":["left"]},{"label":["SubDistrictNoA"],"name":[64],"type":["dbl"],"align":["right"]},{"label":["DistrictNo"],"name":[65],"type":["dbl"],"align":["right"]},{"label":["SubDistrictNoB"],"name":[66],"type":["dbl"],"align":["right"]},{"label":["PageNo"],"name":[67],"type":["dbl"],"align":["right"]},{"label":["LineNo"],"name":[68],"type":["dbl"],"align":["right"]},{"label":["IndexNoB"],"name":[69],"type":["dbl"],"align":["right"]},{"label":["Remarks"],"name":[70],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"1","3":"165.01","4":"Donald","5":"McRae","6":"S","7":"6","8":"13","9":"Farm","10":"45.273","11":"-74.462","12":"200","13":"80","14":"34","15":"46","16":"0","17":"120","18":"13","19":"200","20":"0","21":"0","22":"0","23":"0","24":"4.0","25":"80","26":"11","27":"400","28":"4.0","29":"60","30":"0.00","31":"0","32":"2.00","33":"200","34":"0","35":"0","36":"4","37":"0","38":"0","39":"0","40":"0","41":"7000","42":"50","43":"0","44":"0","45":"100","46":"10","47":"20","48":"33","49":"0","50":"64","51":"6","52":"8","53":"7","54":"7","55":"43","56":"13","57":"600","58":"200","59":"0","60":"20","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"1","69":"1","70":"Column 37 is used for Production of Apples (bushels) {KMB}"},{"1":"2","2":"2","3":"165.02","4":"Ranald","5":"McDonald","6":"S","7":"6","8":"12","9":"Farm","10":"45.274","11":"-74.458","12":"134","13":"46","14":"30","15":"16","16":"0","17":"88","18":"14","19":"160","20":"0","21":"0","22":"0","23":"0","24":"4.0","25":"30","26":"11","27":"200","28":"0.0","29":"0","30":"0.00","31":"0","32":"1.00","33":"100","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"1400","42":"10","43":"0","44":"0","45":"39","46":"20","47":"0","48":"0","49":"0","50":"0","51":"4","52":"3","53":"3","54":"5","55":"13","56":"10","57":"100","58":"0","59":"4","60":"8","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"2","69":"2","70":"NA"},{"1":"3","2":"3","3":"165.03","4":"Donald","5":"McDonald","6":"S","7":"6","8":"12","9":"Farm","10":"45.274","11":"-74.458","12":"66","13":"26","14":"15","15":"11","16":"0","17":"40","18":"6","19":"100","20":"0","21":"0","22":"0","23":"0","24":"3.0","25":"50","26":"5","27":"120","28":"0.0","29":"0","30":"0.00","31":"0","32":"1.00","33":"50","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"1120","42":"8","43":"0","44":"0","45":"10","46":"0","47":"0","48":"11","49":"0","50":"0","51":"0","52":"1","53":"3","54":"2","55":"3","56":"8","57":"50","58":"0","59":"4","60":"8","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"3","69":"3","70":"NA"},{"1":"4","2":"4","3":"165.04","4":"Catherine","5":"Johnson","6":"I","7":"6","8":"11","9":"Farm","10":"45.276","11":"-74.454","12":"100","13":"15","14":"11","15":"4","16":"0","17":"85","18":"5","19":"58","20":"0","21":"0","22":"0","23":"0","24":"0.0","25":"0","26":"5","27":"130","28":"0.0","29":"0","30":"0.00","31":"0","32":"1.00","33":"50","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"420","42":"3","43":"0","44":"0","45":"13","46":"0","47":"0","48":"0","49":"0","50":"16","51":"1","52":"3","53":"4","54":"0","55":"1","56":"3","57":"300","58":"70","59":"3","60":"5","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"4","69":"4","70":"NA"},{"1":"5","2":"5","3":"165.05","4":"Donald Roy","5":"McDonell","6":"S","7":"6","8":"11","9":"Farm","10":"45.276","11":"-74.454","12":"95","13":"25","14":"19","15":"6","16":"0","17":"70","18":"6","19":"82","20":"0","21":"0","22":"0","23":"0","24":"0.0","25":"0","26":"10","27":"200","28":"0.0","29":"0","30":"2.00","31":"20","32":"1.00","33":"100","34":"0","35":"0","36":"0","37":"6","38":"0","39":"0","40":"0","41":"1120","42":"8","43":"0","44":"0","45":"50","46":"0","47":"0","48":"0","49":"0","50":"30","51":"1","52":"2","53":"2","54":"2","55":"12","56":"2","57":"100","58":"0","59":"0","60":"6","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"5","69":"5","70":"NA"},{"1":"6","2":"6","3":"165.06","4":"Andrew","5":"Byorde","6":"F","7":"6","8":"17","9":"Farm","10":"45.267","11":"-74.480","12":"12","13":"12","14":"2","15":"10","16":"0","17":"0","18":"1","19":"10","20":"0","21":"0","22":"0","23":"0","24":"0.0","25":"0","26":"0","27":"0","28":"0.0","29":"0","30":"0.00","31":"0","32":"1.00","33":"40","34":"0","35":"0","36":"0","37":"2","38":"0","39":"0","40":"0","41":"0","42":"0","43":"0","44":"10","45":"0","46":"6","47":"0","48":"0","49":"0","50":"0","51":"0","52":"2","53":"1","54":"1","55":"0","56":"3","57":"60","58":"0","59":"0","60":"3","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"6","69":"6","70":"NA"},{"1":"7","2":"7","3":"165.07","4":"Norman Senr","5":"McKay","6":"S","7":"6","8":"14","9":"Farm","10":"45.272","11":"-74.467","12":"107","13":"50","14":"23","15":"27","16":"0","17":"57","18":"12","19":"160","20":"0","21":"0","22":"2","23":"40","24":"3.0","25":"30","26":"4","27":"100","28":"0.0","29":"0","30":"1.00","31":"10","32":"1.00","33":"100","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"3500","42":"25","43":"0","44":"0","45":"36","46":"15","47":"0","48":"16","49":"0","50":"37","51":"1","52":"3","53":"3","54":"3","55":"23","56":"8","57":"200","58":"100","59":"4","60":"3","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"7","69":"7","70":"NA"},{"1":"8","2":"8","3":"165.08","4":"Norman Junr","5":"McKay","6":"S","7":"6","8":"14","9":"Farm","10":"45.272","11":"-74.467","12":"60","13":"40","14":"13","15":"27","16":"0","17":"20","18":"5","19":"25","20":"2","21":"20","22":"0","23":"0","24":"4.0","25":"50","26":"1","27":"20","28":"0.0","29":"0","30":"1.00","31":"10","32":"0.00","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"2100","42":"15","43":"0","44":"0","45":"13","46":"0","47":"0","48":"12","49":"0","50":"0","51":"0","52":"2","53":"1","54":"1","55":"4","56":"2","57":"100","58":"0","59":"0","60":"1","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"8","69":"8","70":"NA"},{"1":"9","2":"9","3":"165.09","4":"Kenneth","5":"McDonald","6":"S","7":"5","8":"10","9":"Farm","10":"45.261","11":"-74.436","12":"1","13":"1","14":"1","15":"0","16":"0","17":"0","18":"0","19":"30","20":"0","21":"0","22":"0","23":"0","24":"0.0","25":"0","26":"0","27":"40","28":"0.0","29":"0","30":"0.00","31":"0","32":"0.50","33":"70","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"0","42":"0","43":"0","44":"0","45":"18","46":"0","47":"0","48":"12","49":"0","50":"16","51":"0","52":"3","53":"1","54":"2","55":"8","56":"4","57":"150","58":"50","59":"3","60":"3","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"9","69":"9","70":"NA"},{"1":"10","2":"10","3":"165.10","4":"Donald","5":"McDonald","6":"S","7":"6","8":"11","9":"Farm","10":"45.276","11":"-74.454","12":"5","13":"3","14":"0","15":"3","16":"0","17":"2","18":"0","19":"40","20":"0","21":"0","22":"0","23":"0","24":"0.0","25":"0","26":"0","27":"60","28":"0.0","29":"0","30":"0.00","31":"0","32":"0.00","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"0","42":"0","43":"0","44":"0","45":"0","46":"0","47":"0","48":"0","49":"0","50":"0","51":"0","52":"1","53":"2","54":"1","55":"0","56":"1","57":"50","58":"0","59":"0","60":"3","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"10","69":"10","70":"The grain was raised in a neighbouring lot where they have the privilege to till."},{"1":"11","2":"11","3":"165.11","4":"John","5":"McDonald","6":"S","7":"4","8":"10","9":"Farm","10":"45.246","11":"-74.418","12":"100","13":"12","14":"9","15":"3","16":"0","17":"88","18":"4","19":"47","20":"0","21":"0","22":"0","23":"0","24":"1.0","25":"20","26":"3","27":"50","28":"0.5","29":"8","30":"0.25","31":"4","32":"0.25","33":"20","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"700","42":"5","43":"0","44":"0","45":"12","46":"0","47":"0","48":"10","49":"0","50":"12","51":"0","52":"2","53":"1","54":"1","55":"6","56":"4","57":"50","58":"20","59":"0","60":"2","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"11","69":"11","70":"NA"},{"1":"12","2":"12","3":"165.12","4":"Angus","5":"McGillis","6":"S","7":"5","8":"9","9":"Farm","10":"45.264","11":"-74.432","12":"200","13":"40","14":"20","15":"20","16":"0","17":"160","18":"8","19":"134","20":"1","21":"35","22":"0","23":"0","24":"3.0","25":"50","26":"5","27":"300","28":"0.0","29":"0","30":"2.00","31":"30","32":"1.00","33":"100","34":"0","35":"60","36":"0","37":"0","38":"0","39":"0","40":"0","41":"3500","42":"25","43":"0","44":"0","45":"30","46":"12","47":"32","48":"0","49":"0","50":"0","51":"0","52":"5","53":"7","54":"4","55":"12","56":"11","57":"300","58":"50","59":"4","60":"15","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"12","69":"12","70":"The wool of two years is often manufactured in one."},{"1":"13","2":"13","3":"165.13","4":"James","5":"McGillis","6":"S","7":"5","8":"8","9":"Farm","10":"45.264","11":"-74.427","12":"50","13":"6","14":"3","15":"3","16":"0","17":"44","18":"3","19":"37","20":"0","21":"0","22":"0","23":"0","24":"0.0","25":"0","26":"0","27":"0","28":"0.0","29":"0","30":"0.00","31":"0","32":"0.00","33":"0","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"0","42":"0","43":"0","44":"0","45":"10","46":"0","47":"0","48":"0","49":"0","50":"0","51":"0","52":"0","53":"1","54":"0","55":"0","56":"0","57":"0","58":"0","59":"0","60":"0","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"13","69":"13","70":"NA"},{"1":"14","2":"14","3":"165.14","4":"Archibald","5":"McGillis","6":"S","7":"5","8":"8","9":"Farm","10":"45.264","11":"-74.427","12":"100","13":"35","14":"28","15":"7","16":"0","17":"65","18":"8","19":"80","20":"0","21":"0","22":"0","23":"0","24":"6.0","25":"50","26":"12","27":"250","28":"1.0","29":"10","30":"0.00","31":"0","32":"1.00","33":"60","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"840","42":"6","43":"0","44":"0","45":"30","46":"0","47":"0","48":"20","49":"0","50":"0","51":"1","52":"5","53":"2","54":"4","55":"10","56":"6","57":"250","58":"100","59":"3","60":"8","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"14","69":"14","70":"NA"},{"1":"15","2":"15","3":"165.15","4":"Angus","5":"McDonell","6":"S","7":"6","8":"8","9":"Farm","10":"45.275","11":"-74.437","12":"100","13":"55","14":"33","15":"22","16":"0","17":"45","18":"12","19":"80","20":"0","21":"0","22":"0","23":"0","24":"6.0","25":"60","26":"14","27":"250","28":"0.0","29":"0","30":"0.00","31":"0","32":"1.00","33":"60","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"1820","42":"13","43":"0","44":"0","45":"20","46":"0","47":"0","48":"18","49":"0","50":"0","51":"3","52":"5","53":"3","54":"2","55":"4","56":"11","57":"200","58":"60","59":"4","60":"8","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"15","69":"15","70":"NA"},{"1":"16","2":"16","3":"165.16","4":"Alexander","5":"McDougal","6":"S","7":"6","8":"9","9":"Farm","10":"45.278","11":"-74.444","12":"2","13":"2","14":"2","15":"0","16":"0","17":"0","18":"0","19":"0","20":"0","21":"0","22":"0","23":"0","24":"0.0","25":"0","26":"1","27":"10","28":"0.0","29":"0","30":"0.00","31":"0","32":"1.00","33":"60","34":"0","35":"4","36":"0","37":"0","38":"0","39":"0","40":"0","41":"0","42":"0","43":"0","44":"0","45":"3","46":"0","47":"14","48":"0","49":"0","50":"0","51":"0","52":"1","53":"1","54":"1","55":"1","56":"2","57":"0","58":"0","59":"0","60":"0","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"16","69":"16","70":"NA"},{"1":"17","2":"17","3":"165.17","4":"Antoine","5":"Lavere","6":"F","7":"7","8":"13","9":"Farm","10":"45.290","11":"-74.475","12":"12","13":"12","14":"12","15":"0","16":"0","17":"0","18":"4","19":"15","20":"0","21":"0","22":"0","23":"0","24":"3.0","25":"15","26":"3","27":"40","28":"1.0","29":"30","30":"0.50","31":"6","32":"0.50","33":"50","34":"0","35":"0","36":"0","37":"2","38":"0","39":"0","40":"0","41":"280","42":"2","43":"0","44":"0","45":"18","46":"0","47":"0","48":"15","49":"0","50":"0","51":"0","52":"2","53":"1","54":"2","55":"14","56":"3","57":"50","58":"0","59":"0","60":"2","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"17","69":"17","70":"NA"},{"1":"18","2":"18","3":"165.18","4":"Archbald","5":"McDonell","6":"S","7":"6","8":"10","9":"Farm","10":"45.279","11":"-74.450","12":"150","13":"63","14":"41","15":"22","16":"0","17":"87","18":"15","19":"220","20":"2","21":"32","22":"0","23":"0","24":"5.0","25":"75","26":"15","27":"500","28":"1.0","29":"21","30":"1.00","31":"10","32":"2.00","33":"300","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"3920","42":"28","43":"0","44":"0","45":"40","46":"40","47":"50","48":"30","49":"0","50":"24","51":"3","52":"9","53":"9","54":"5","55":"14","56":"13","57":"400","58":"100","59":"5","60":"10","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"18","69":"18","70":"NA"},{"1":"19","2":"19","3":"165.19","4":"John","5":"McDonell","6":"S","7":"6","8":"9","9":"Farm","10":"45.278","11":"-74.444","12":"98","13":"32","14":"21","15":"11","16":"0","17":"66","18":"6","19":"70","20":"1","21":"24","22":"0","23":"0","24":"2.5","25":"25","26":"10","27":"200","28":"0.0","29":"0","30":"1.00","31":"12","32":"0.50","33":"50","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"1400","42":"10","43":"0","44":"0","45":"30","46":"20","47":"0","48":"20","49":"0","50":"30","51":"1","52":"3","53":"0","54":"5","55":"7","56":"8","57":"80","58":"0","59":"0","60":"5","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"19","69":"19","70":"The flannel is here and sometimes evenly [?] half wool and half cotton."},{"1":"20","2":"20","3":"165.20","4":"Donald","5":"McDonell","6":"S","7":"6","8":"10","9":"Farm","10":"45.279","11":"-74.450","12":"50","13":"20","14":"12","15":"8","16":"0","17":"30","18":"3","19":"60","20":"0","21":"0","22":"0","23":"0","24":"2.0","25":"20","26":"6","27":"150","28":"0.0","29":"0","30":"0.50","31":"10","32":"0.50","33":"40","34":"0","35":"0","36":"0","37":"0","38":"0","39":"0","40":"0","41":"840","42":"6","43":"0","44":"0","45":"18","46":"20","47":"0","48":"10","49":"0","50":"0","51":"2","52":"3","53":"0","54":"2","55":"6","56":"8","57":"100","58":"30","59":"3","60":"3","61":"NA","62":"Glengarry","63":"Lancaster","64":"1","65":"10","66":"79","67":"165","68":"20","69":"20","70":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IndexNoA</td>
+<td>Observation number.</td>
+</tr>
+<tr class="even">
+<td>IndexNoCD</td>
+<td>PageNo + LineNo/100. PageNo and LineNo are explained below. Of the form 137.01. This index is useful for locating data in the original manuscripts.</td>
+</tr>
+<tr class="odd">
+<td>Name</td>
+<td>Given name of the proprietor.</td>
+</tr>
+<tr class="even">
+<td>Surname</td>
+<td>Surname of the proprietor.</td>
+</tr>
+<tr class="odd">
+<td>NameOrigin</td>
+<td>Ethnicity/language assignment primarily based on Surname. E = English, F = French, I = Irish, O = Other, S = Scots. See Supplementary Materials, Part A.</td>
+</tr>
+<tr class="even">
+<td>Concession</td>
+<td>Concession name or number. See Supplementary Materials, Part B, Concession, Lot, Location, Latitude and Longitude</td>
+</tr>
+<tr class="odd">
+<td>Lot</td>
+<td>Lot number, or number of lots, or fraction of a lot. See Supplementary Materials, Part B. This variable was treated differently depending on the type of land tenure.</td>
+</tr>
+<tr class="even">
+<td>Location</td>
+<td>Name given to the area on which latitude and longitude were determined. For Glengarry, this is the individual farm, and this is shown as Location = Farm. For Vaudreuil, the location is based on the Concession name. See Supplementary Materials, Part B.</td>
+</tr>
+<tr class="odd">
+<td>Latitude</td>
+<td>Latitude of Location. See Supplementary Materials, Part B.</td>
+</tr>
+<tr class="even">
+<td>Longitude</td>
+<td>Longitude of Location. See Supplementary Materials, Part B.</td>
+</tr>
+<tr class="odd">
+<td>LandTotal</td>
+<td>Total number of acres of land held by the proprietor. In the curated data all of measures of land area are in acres. For most of Vaudreuil County, the original land data measure was the <em>arpent.</em> These have been translated to acre equivalents. This comment applies to all of the land variables. See Supplementary Materials, Part C: Units of Measurement.</td>
+</tr>
+<tr class="even">
+<td>LandCultivated</td>
+<td>Number of acres of land under cultivation.</td>
+</tr>
+<tr class="odd">
+<td>LandCrops1851</td>
+<td>Number of acres under crops in 1851.</td>
+</tr>
+<tr class="even">
+<td>LandPasture1851</td>
+<td>Number of acres in pasture in 1851.</td>
+</tr>
+<tr class="odd">
+<td>LandGardenOrchard</td>
+<td>Number of acres devoted to gardens or orchards in 1851.</td>
+</tr>
+<tr class="even">
+<td>LandWoodWild</td>
+<td>Number of acres of land undeveloped, wild or wood. For the six land variables listed, LandTotal = LandCultivated + LandWoodWild, and LandCultivated = LandCrops1851 + LandPasture1851 + LandGardenOrchard</td>
+</tr>
+<tr class="odd">
+<td>LandWheat</td>
+<td>Number of acres planted in wheat.</td>
+</tr>
+<tr class="even">
+<td>ProdWheat</td>
+<td>Production of wheat in bushels. For most of Vaudreuil County, the original produce measure was the <em>minot.</em> These have been translated to bushel equivalents. See Supplementary Materials, Part C: Units of Measurement. This comment applies to all of the production variables where production is by volume. It is understood that all the production measures refer to the year 1851.</td>
+</tr>
+<tr class="odd">
+<td>LandBarley</td>
+<td>Number of acres planted in barley.</td>
+</tr>
+<tr class="even">
+<td>ProdBarley</td>
+<td>Production of barley in bushels.</td>
+</tr>
+<tr class="odd">
+<td>LandRye</td>
+<td>Number of acres planted in rye.</td>
+</tr>
+<tr class="even">
+<td>ProdRye</td>
+<td>Production of rye in bushels.</td>
+</tr>
+<tr class="odd">
+<td>LandPeas</td>
+<td>Number of acres planted in peas.</td>
+</tr>
+<tr class="even">
+<td>ProdPeas</td>
+<td>Production of peas in bushels.</td>
+</tr>
+<tr class="odd">
+<td>LandOats</td>
+<td>Number of acres planted in oats.</td>
+</tr>
+<tr class="even">
+<td>ProdOats</td>
+<td>Production of oats in bushels.</td>
+</tr>
+<tr class="odd">
+<td>LandBuckwheat</td>
+<td>Number of acres planted in buckwheat.</td>
+</tr>
+<tr class="even">
+<td>ProdBuckwheat</td>
+<td>Production of buckwheat in bushels.</td>
+</tr>
+<tr class="odd">
+<td>LandMaize</td>
+<td>Number of acres planted in maize.</td>
+</tr>
+<tr class="even">
+<td>ProdMaize</td>
+<td>Production of maize in bushels.</td>
+</tr>
+<tr class="odd">
+<td>LandPotatoes</td>
+<td>Number of acres planted in potatoes.</td>
+</tr>
+<tr class="even">
+<td>ProdPotatoes</td>
+<td>Production of potatoes in bushels.</td>
+</tr>
+<tr class="odd">
+<td>LandTurnip</td>
+<td>Number of acres planted in turnips.</td>
+</tr>
+<tr class="even">
+<td>ProdTurnip</td>
+<td>Production of turnips in bushels.</td>
+</tr>
+<tr class="odd">
+<td>ProdClover</td>
+<td>Production of clover, timothy, and other grass in bushels.</td>
+</tr>
+<tr class="even">
+<td>ProdCarrots</td>
+<td>Production of carrots in bushels.</td>
+</tr>
+<tr class="odd">
+<td>ProdMangelWurzel</td>
+<td>Production of mangelwurzel in bushels.</td>
+</tr>
+<tr class="even">
+<td>ProdBeans</td>
+<td>Production of beans in bushels.</td>
+</tr>
+<tr class="odd">
+<td>ProdHops</td>
+<td>Production of hops in pounds.</td>
+</tr>
+<tr class="even">
+<td>Foin</td>
+<td>Production of hay in “bundles” (<em>bottes</em>). Bundles were the more common measure in French language areas, and the Census report of 1855 reports quantities in both units using the conversion: one ton = 140 <em>bottes.</em> See Supplementary Materials, Part C.</td>
+</tr>
+<tr class="odd">
+<td>Hay</td>
+<td>Production of hay in tons. See the comment under Foin</td>
+</tr>
+<tr class="even">
+<td>ProdFlax</td>
+<td>Production of flax or hemp in pounds.</td>
+</tr>
+<tr class="odd">
+<td>Tobacco</td>
+<td>Production of tobacco in pounds.</td>
+</tr>
+<tr class="even">
+<td>Wool</td>
+<td>Production of wool in pounds.</td>
+</tr>
+<tr class="odd">
+<td>Apples</td>
+<td>Production of apples in bushels. The production of apples was not recorded in all Subdistricts. Enumerators were given three “blank” columns to record produce specific to their own Subdistrict. For Glengarry and Vaudreuil, recording production of apples was the most common use of the blank columns.</td>
+</tr>
+<tr class="even">
+<td>MapleSugar</td>
+<td>Production of maple sugar in pounds.</td>
+</tr>
+<tr class="odd">
+<td>FulledCloth</td>
+<td>Production of fulled cloth in yards.</td>
+</tr>
+<tr class="even">
+<td>ProdLinen</td>
+<td>Production of linen in yards.</td>
+</tr>
+<tr class="odd">
+<td>Flannel</td>
+<td>Production of flannel in yards.</td>
+</tr>
+<tr class="even">
+<td>BullsOxenSteers</td>
+<td>Number of bulls, oxen or steers.</td>
+</tr>
+<tr class="odd">
+<td>MilchCows</td>
+<td>Number of milk cows. (The English language name of the variable follows the 1851 usage. In French, <em>vaches laitières</em>)</td>
+</tr>
+<tr class="even">
+<td>Calves</td>
+<td>Number of calves or heifers.</td>
+</tr>
+<tr class="odd">
+<td>Horses</td>
+<td>Number of horses of all ages.</td>
+</tr>
+<tr class="even">
+<td>Sheep</td>
+<td>Number of sheep.</td>
+</tr>
+<tr class="odd">
+<td>Pigs</td>
+<td>Number of pigs.</td>
+</tr>
+<tr class="even">
+<td>Butter</td>
+<td>Production of butter in pounds.</td>
+</tr>
+<tr class="odd">
+<td>Cheese</td>
+<td>Production of cheese in pounds</td>
+</tr>
+<tr class="even">
+<td>Beef</td>
+<td>Production of beef, measured in hundredweight (Cwt). See Supplementary Materials, Part C: Units of Measurement for discussion.</td>
+</tr>
+<tr class="odd">
+<td>Pork</td>
+<td>Production of pork, measured in hundredweight (Cwt). See Supplementary Materials, Part C: Units of Measurement for discussion.</td>
+</tr>
+<tr class="even">
+<td>ValueProperty</td>
+<td>Estimate of property value in pounds sterling made by the enumerators for the SubDistrict of St.-Polycarpe in Vaudreuil. For all of the other SubDistricts, this column is <code>NA</code>. The intended use of this column in the Census manuscripts was to record the quantity of dried fish produced; only one household produced dried fish.</td>
+</tr>
+<tr class="odd">
+<td>County</td>
+<td>Name of county. Glengarry, Vaudreuil See Supplementary Materials, Part E</td>
+</tr>
+<tr class="even">
+<td>SubDistrict</td>
+<td>Name of Subdistrict. See Supplementary Materials Part E. The full names of the Subdistricts are used.</td>
+</tr>
+<tr class="odd">
+<td>SubDistrictNoA</td>
+<td>Within each county, each Subdistrict was given a number by the transcriber.</td>
+</tr>
+<tr class="even">
+<td>DistrictNo</td>
+<td>Census number for District. Glengarry = 10, Vaudrreuil = 34</td>
+</tr>
+<tr class="odd">
+<td>SubDistrictNoB</td>
+<td>Census number for SubDistrict as assigned in the original Census. See Supplementary Materials, Part E</td>
+</tr>
+<tr class="even">
+<td>PageNo</td>
+<td>Page number in the original manuscript census. The page number and line number are useful for checking the transcribed data with the original manuscript. See also IndexNoCD above.</td>
+</tr>
+<tr class="odd">
+<td>LineNo</td>
+<td>Line number on the page in the original manuscript. Each page had 50 lines.</td>
+</tr>
+<tr class="even">
+<td>IndexNoB</td>
+<td>Index number within a SubDistrict. For example, for Lancaster SubDistrict, the index ranges from 001 to 500.</td>
+</tr>
+<tr class="odd">
+<td>Remarks</td>
+<td>A column in the original census reserved for the enumerators’ observations or remarks. These have been transcribed in the original languages, mostly without translation to the other. Occasionally, the transcriber inserted a clarifying remark or made a translation in this column; these remarks or translations are specified with the transcriber’s initials in braces: <code>{KMB}</code>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="supplementary-materials" class="level3">
+<h3 class="anchored" data-anchor-id="supplementary-materials">Supplementary materials</h3>
+<p>The <a href="../data/GlengarryVaudreuilSupplementary2.pdf">Supplementary Materials</a> describe how the data was collected, how data cleaning was completed, how units of measure were standardized, and how the original data may be retrieved from Library and Archives Canada.</p>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>Much of the data includes measures of farm or household production, not only production from crops, but also from livestock. There are also data on investment—acres devoted to specific crops, numbers of livestock. Is it possible to create a model explaining variability in production for a specific crop or product (wool, or cloth or butter)?</p>
+<p>Farming enterprises in this area in the nineteenth century were quite diversified, and different farms made different choices as to what enterprise to pursue. Conduct an analysis that aims to predict which households chose to include a specific crop (e.g., Barley or Rye) or product (linen or fulled cloth).</p>
+<p>The enumerators who collected the data were generally educated and local to the area, and they were given fairly specific instructions. However, enumerators may have made different decisions about how to collect the data. As an example: where detailed farm records may not have been kept, how was production measured? How can one detect estimation in data? Are some variables more likely to be accurately measured than others? Be attentive to these issues and comment on how these might affect your analysis results.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Government of Canada (1855). <em>Census of the Canadas 1851-2, Vol II</em>. Lovell and Lamoureux. <a href="https://publications.gc.ca/collections/collection_2012/statcan/rh-hc/CS98-1851-2-eng.pdf" class="uri">https://publications.gc.ca/collections/collection_2012/statcan/rh-hc/CS98-1851-2-eng.pdf</a></p>
+<p>Individual records available through the <a href="https://recherche-collection-search.bac-lac.gc.ca/eng/Census/index">Census Search</a> from Library and Archives Canada. See <em>Supplementary Materials</em> for details on how to retrieve records and how the transcription process was completed. Data transcribed from these records by Kenneth Morrison Brown.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/history/GlengarryVaudreuil-agricultural-census.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
