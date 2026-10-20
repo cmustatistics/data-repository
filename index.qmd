@@ -18,3 +18,5 @@ the data. This means:
 
 Datasets are organized by broad subject areas on the left, or you can browse a
 [sortable list of all datasets](by-method.qmd).
+
+The Data Repository is edited by [Alex Reinhart](https://www.refsmmat.com).
