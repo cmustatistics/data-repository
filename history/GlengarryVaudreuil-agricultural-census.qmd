@@ -1,0 +1,186 @@
+---
+title: Agricultural Census for 1851, Glengarry and Vaudreuil Counties
+author: Kenneth Morrison Brown
+date: August 4, 2026
+description: A transcription of the Agricultural Census of Canada of 1851 for two adjacent counties 60–100 km west of Montreal between the St. Lawrence and Ottawa Rivers.  Vaudreuil County in Quebec was settled under seigneurial land tenure with a predominantly French-speaking population and Glengarry County in Ontario was settled under freehold tenure, with a largely Highland Scots-Gaelic-speaking population in 1851.  From the census variables, can we get a coherent picture of the variability of agricultural practices in these two counties?
+categories:
+  - EDA
+  - data assessment
+  - linear regression
+  - multivariate analysis
+  - logistic regression
+  - clustering
+data:
+  year: 1852
+  files: GlengarryVaudreuilAgricCensus1851En.csv.gz
+---
+
+## Motivation
+
+In our time, farms in North America are often large, highly specialized
+operations. But what did farming look like without herbicides, pesticides,
+artificial fertilizers, before mechanization, and before railways were built?
+
+The Canadian agricultural census of 1851 collected data on the size of holding,
+the amount of land under cultivation, the amount of land devoted to various
+crops, as well as production of these crops. Data were also collected on numbers
+of livestock, and on the products of farm enterprise, such as wool and cloth
+production, dairy products, and cured beef and pork. These enterprises were
+partly for each family's own needs, but there were also local markets and trade
+amongst neighbors. The picture that emerges is one of diversified, and by modern
+standards, small operations.
+
+Is it possible to find patterns in this diversity and relate these to spatial or
+cultural variables, or to the size and apparent prosperity of the operation? To
+what extent were there very wealthy families, or poor families, and can these be
+detected using the variables measured? The area includes two different types of
+land tenure, and a diversity of cultural traditions. Do these factors have a
+discernible effect on farming practices?
+
+## Data
+
+The Agricultural Censuses of Canada carried out in rural areas were meant to get
+an idea of the state of farming for the census year. To collect the data,
+trained enumerators traveled through each county to record data about each farm.
+The 1851 census was meant to cover farming that occurred in that year, but the
+enumeration was actually done in early 1852, so the accuracy of the results does
+depend on whether farmers kept good records.
+
+Each row in the data represents a household and its land, and variables include
+the size of holding, both total and under cultivation (at this time, there was
+still land to be cleared), production of various crops, numbers of livestock and
+production from other farm enterprises (e.g., wool, cloth, butter, cheese, maple
+sugar). Not every row represents a farm, as there were villages, as well as
+rural households with livelihoods other than farming.
+
+This extract covers Glengarry and Vaudreuil Counties, which are 60–100 km west
+of Montreal between the St. Lawrence and Ottawa Rivers. Vaudreuil County in
+Quebec was settled under [seigneurial land
+tenure](https://en.wikipedia.org/wiki/Seigneurial_system_of_New_France) with a
+predominantly French-speaking population and Glengarry County in Ontario was
+settled under [freehold tenure](https://en.wikipedia.org/wiki/Freehold_(law)),
+with a largely Highland Scots-Gaelic-speaking population in 1851.
+
+There are 4,632 households in the data. Data collection was by local
+enumerators, and there is evident variability in the way the data were
+collected, resulting in missing data for some variables.
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|-----------------|------------------------------------------------------------|
+| IndexNoA | Observation number. |
+| IndexNoCD | PageNo + LineNo/100. PageNo and LineNo are explained below. Of the form 137.01. This index is useful for locating data in the original manuscripts. |
+| Name | Given name of the proprietor. |
+| Surname | Surname of the proprietor. |
+| NameOrigin | Ethnicity/language assignment primarily based on Surname. E = English, F = French, I = Irish, O = Other, S = Scots. See Supplementary Materials, Part A. |
+| Concession | Concession name or number. See Supplementary Materials, Part B, Concession, Lot, Location, Latitude and Longitude |
+| Lot | Lot number, or number of lots, or fraction of a lot. See Supplementary Materials, Part B. This variable was treated differently depending on the type of land tenure. |
+| Location | Name given to the area on which latitude and longitude were determined. For Glengarry, this is the individual farm, and this is shown as Location = Farm. For Vaudreuil, the location is based on the Concession name. See Supplementary Materials, Part B. |
+| Latitude | Latitude of Location. See Supplementary Materials, Part B. |
+| Longitude | Longitude of Location. See Supplementary Materials, Part B. |
+| LandTotal | Total number of acres of land held by the proprietor. In the curated data all of measures of land area are in acres. For most of Vaudreuil County, the original land data measure was the *arpent.* These have been translated to acre equivalents. This comment applies to all of the land variables. See Supplementary Materials, Part C: Units of Measurement. |
+| LandCultivated | Number of acres of land under cultivation. |
+| LandCrops1851 | Number of acres under crops in 1851. |
+| LandPasture1851 | Number of acres in pasture in 1851. |
+| LandGardenOrchard | Number of acres devoted to gardens or orchards in 1851. |
+| LandWoodWild | Number of acres of land undeveloped, wild or wood. For the six land variables listed, LandTotal = LandCultivated + LandWoodWild, and LandCultivated = LandCrops1851 + LandPasture1851 + LandGardenOrchard |
+| LandWheat | Number of acres planted in wheat. |
+| ProdWheat | Production of wheat in bushels. For most of Vaudreuil County, the original produce measure was the *minot.* These have been translated to bushel equivalents. See Supplementary Materials, Part C: Units of Measurement. This comment applies to all of the production variables where production is by volume. It is understood that all the production measures refer to the year 1851. |
+| LandBarley | Number of acres planted in barley. |
+| ProdBarley | Production of barley in bushels. |
+| LandRye | Number of acres planted in rye. |
+| ProdRye | Production of rye in bushels. |
+| LandPeas | Number of acres planted in peas. |
+| ProdPeas | Production of peas in bushels. |
+| LandOats | Number of acres planted in oats. |
+| ProdOats | Production of oats in bushels. |
+| LandBuckwheat | Number of acres planted in buckwheat. |
+| ProdBuckwheat | Production of buckwheat in bushels. |
+| LandMaize | Number of acres planted in maize. |
+| ProdMaize | Production of maize in bushels. |
+| LandPotatoes | Number of acres planted in potatoes. |
+| ProdPotatoes | Production of potatoes in bushels. |
+| LandTurnip | Number of acres planted in turnips. |
+| ProdTurnip | Production of turnips in bushels. |
+| ProdClover | Production of clover, timothy, and other grass in bushels. |
+| ProdCarrots | Production of carrots in bushels. |
+| ProdMangelWurzel | Production of mangelwurzel in bushels. |
+| ProdBeans | Production of beans in bushels. |
+| ProdHops | Production of hops in pounds. |
+| Foin | Production of hay in "bundles" (*bottes*). Bundles were the more common measure in French language areas, and the Census report of 1855 reports quantities in both units using the conversion: one ton = 140 *bottes.* See Supplementary Materials, Part C. |
+| Hay | Production of hay in tons. See the comment under Foin |
+| ProdFlax | Production of flax or hemp in pounds. |
+| Tobacco | Production of tobacco in pounds. |
+| Wool | Production of wool in pounds. |
+| Apples | Production of apples in bushels. The production of apples was not recorded in all Subdistricts. Enumerators were given three "blank" columns to record produce specific to their own Subdistrict. For Glengarry and Vaudreuil, recording production of apples was the most common use of the blank columns. |
+| MapleSugar | Production of maple sugar in pounds. |
+| FulledCloth | Production of fulled cloth in yards. |
+| ProdLinen | Production of linen in yards. |
+| Flannel | Production of flannel in yards. |
+| BullsOxenSteers | Number of bulls, oxen or steers. |
+| MilchCows | Number of milk cows. (The English language name of the variable follows the 1851 usage. In French, *vaches laitières*) |
+| Calves | Number of calves or heifers. |
+| Horses | Number of horses of all ages. |
+| Sheep | Number of sheep. |
+| Pigs | Number of pigs. |
+| Butter | Production of butter in pounds. |
+| Cheese | Production of cheese in pounds |
+| Beef | Production of beef, measured in hundredweight (Cwt). See Supplementary Materials, Part C: Units of Measurement for discussion. |
+| Pork | Production of pork, measured in hundredweight (Cwt). See Supplementary Materials, Part C: Units of Measurement for discussion. |
+| ValueProperty | Estimate of property value in pounds sterling made by the enumerators for the SubDistrict of St.-Polycarpe in Vaudreuil. For all of the other SubDistricts, this column is `NA`. The intended use of this column in the Census manuscripts was to record the quantity of dried fish produced; only one household produced dried fish. |
+| County | Name of county. Glengarry, Vaudreuil See Supplementary Materials, Part E |
+| SubDistrict | Name of Subdistrict. See Supplementary Materials Part E. The full names of the Subdistricts are used. |
+| SubDistrictNoA | Within each county, each Subdistrict was given a number by the transcriber. |
+| DistrictNo | Census number for District. Glengarry = 10, Vaudrreuil = 34 |
+| SubDistrictNoB | Census number for SubDistrict as assigned in the original Census. See Supplementary Materials, Part E |
+| PageNo | Page number in the original manuscript census. The page number and line number are useful for checking the transcribed data with the original manuscript. See also IndexNoCD above. |
+| LineNo | Line number on the page in the original manuscript. Each page had 50 lines. |
+| IndexNoB | Index number within a SubDistrict. For example, for Lancaster SubDistrict, the index ranges from 001 to 500. |
+| Remarks | A column in the original census reserved for the enumerators' observations or remarks. These have been transcribed in the original languages, mostly without translation to the other. Occasionally, the transcriber inserted a clarifying remark or made a translation in this column; these remarks or translations are specified with the transcriber's initials in braces: `{KMB}`. |
+
+### Supplementary materials
+
+The [Supplementary Materials](../data/GlengarryVaudreuilSupplementary2.pdf)
+describe how the data was collected, how data cleaning was completed, how units
+of measure were standardized, and how the original data may be retrieved from
+Library and Archives Canada.
+
+## Questions
+
+Much of the data includes measures of farm or household production, not only
+production from crops, but also from livestock. There are also data on
+investment---acres devoted to specific crops, numbers of livestock. Is it
+possible to create a model explaining variability in production for a specific
+crop or product (wool, or cloth or butter)?
+
+Farming enterprises in this area in the nineteenth century were quite
+diversified, and different farms made different choices as to what enterprise to
+pursue. Conduct an analysis that aims to predict which households chose to
+include a specific crop (e.g., Barley or Rye) or product (linen or fulled
+cloth).
+
+The enumerators who collected the data were generally educated and local to the
+area, and they were given fairly specific instructions. However, enumerators may
+have made different decisions about how to collect the data. As an example:
+where detailed farm records may not have been kept, how was production measured?
+How can one detect estimation in data? Are some variables more likely to be
+accurately measured than others? Be attentive to these issues and comment on how
+these might affect your analysis results.
+
+## References
+
+Government of Canada (1855). *Census of the Canadas 1851-2, Vol II*. Lovell and
+Lamoureux.
+<https://publications.gc.ca/collections/collection_2012/statcan/rh-hc/CS98-1851-2-eng.pdf>
+
+Individual records available through the [Census
+Search](https://recherche-collection-search.bac-lac.gc.ca/eng/Census/index) from
+Library and Archives Canada. See *Supplementary Materials* for details on how to
+retrieve records and how the transcription process was completed. Data
+transcribed from these records by Kenneth Morrison Brown.
