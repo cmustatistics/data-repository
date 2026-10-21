@@ -1,0 +1,67 @@
+---
+title: Longevity World Cup rankings
+author: nopara73
+date: May 30, 2026
+description: Public Longevity World Cup leaderboard snapshot for exploring biological age reduction, track membership, age group, division, and country or community affiliation among longevity athletes.
+categories:
+  - EDA
+  - linear regression
+  - logistic regression
+data:
+  year: 2026
+  files:
+    - longevity-world-cup.csv
+---
+
+## Motivation
+
+The [Longevity World Cup](https://longevityworldcup.com/) is an open competition where longevity athletes rank by improving biological age measures. Athletes submit evidence-backed biological age results and are ranked on a public leaderboard. The competition has two main tracks: Pro athletes have an eligible Bortz age result, while Amateur athletes are ranked using pheno age.
+
+This snapshot can be used to explore public rankings in a new kind of health competition. Students can examine how chronological age, biological age clocks, division, generation, and track membership relate to each athlete's age reduction.
+
+## Data
+
+Each row represents one public athlete on the Longevity World Cup Ultimate League leaderboard. The dataset was created from the machine-readable public leaderboard facts page generated on May 30, 2026. The original page contained 203 athletes; this classroom snapshot keeps the main ranking and demographic/grouping fields and omits the media contact field.
+
+The ranking is observational. Lower, more negative age reduction values rank higher within each track, and Pro athletes are ordered ahead of Amateur athletes in the Ultimate League.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| rank | Athlete's rank on the Ultimate League leaderboard at the time of the snapshot. |
+| athlete | Public athlete display name. |
+| profile_url | Public Longevity World Cup athlete profile URL. |
+| track | Competition track. Pro athletes have an eligible Bortz age result; Amateur athletes are ranked using pheno age. |
+| age_reduction_years | Ranking value in years. More negative values indicate a lower biological age relative to chronological age. |
+| lowest_bortz_age_years | Athlete's lowest eligible Bortz age result, in years, if available. Missing values indicate no eligible Bortz result. |
+| lowest_pheno_age_years | Athlete's lowest eligible pheno age result, in years, if available. |
+| chronological_age_years | Athlete's chronological age in years at the time of the snapshot. |
+| division | Public division label, such as Men's, Women's, or Open. |
+| generation | Public generation grouping. |
+| flag | Public country, community, or self-described affiliation shown on the leaderboard. |
+| exclusive_league | Optional public exclusive-league label shown on the leaderboard. |
+
+## Questions
+
+1. How does age reduction vary between Pro and Amateur athletes? Because the Ultimate League orders Pro athletes before Amateur athletes, compare both the leaderboard rank and the raw age reduction values.
+2. Is chronological age associated with age reduction? Fit and interpret a regression model, and check whether the relationship differs by track.
+3. Which generation or division groups have the largest median age reduction? How sensitive are the results to small group sizes?
+4. Can track membership be predicted from chronological age, division, generation, and public ranking variables? Discuss why this should not be interpreted causally.
+
+## References
+
+Longevity World Cup public leaderboard: <https://longevityworldcup.com/leaderboard>.
+
+Machine-readable leaderboard facts page used for the snapshot: <https://longevityworldcup.com/ai/leaderboard.md>.
+
+Longevity World Cup rules and ranking overview: <https://longevityworldcup.com/ruleset>.
+
+Source code for Longevity World Cup is available under the MIT License at <https://github.com/nopara73/LongevityWorldCup>.
