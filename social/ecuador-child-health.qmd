@@ -1,0 +1,123 @@
+---
+title: Longitudinal RCT on child and maternal health (Ecuador)
+author: Selina Carter
+date: August 15, 2025
+description: This dataset is useful for public policy and causal analysis. In Ecuador, a survey was conducted to track child and maternal health over 11 years.  The objective was to evaluate the impact of the Ecuadorian conditional cash transfer program on health and child development outcomes via a randomized control trial (RCT).
+categories:
+  - EDA
+  - causality
+  - surveys
+  - linear regression
+  - multivariate analysis
+  - logistic regression
+  - experiment design
+data:
+  year: 2003-2014
+  files:
+    - ecuador_child_columns.csv
+    - ecuador_child_RCT.csv
+---
+
+## Motivation
+
+The [Inter-American Development Bank](https://www.iadb.org/en) (IDB), the largest source of development financing for Latin America and the Caribbean, is an inter-governmental institution concerned with improving the quality of life across the region.
+
+Very few developing countries have long-term longitudinal surveys that have followed children from the early years throughout their adult life, with low attrition rates and large sample sizes. This type of survey is essential to understand what are critical times in the life cycle when gaps in different dimensions of human capital emerge and how they evolve over time and affect later outcomes.
+
+The **Ecuador longitudinal survey** started in 2003 ("wave 0") and has had 5 subsequent follow-ups: 2005 ("wave 1"), 2008 ("wave 2"), 2011 ("wave 3"), 2014 ("wave 4"), and 2019 ("wave 5"). This data set contains waves 0-4. A large number of papers has been written using this data ([Paxson and Schady 2007](https://openknowledge.worldbank.org/entities/publication/e43d8c38-a1a2-547d-950d-a16404ced057), [Paxson and Schady 2010](https://www.journals.uchicago.edu/doi/full/10.1086/655458?casa_token=UU6i_-HXHAgAAAAA%3AjxOry8U2HzE3Ut5nBfn1wYudUBDZKYzywKMYEZolYOosprHipjdfO4NsDFkSc9AUl8zTCdxOkuk), [Schady et al 2006](https://www.jstor.org/stable/20065499?casa_token=5D08ildzNqAAAAAA%3ASsbtS3qzj4_54IQ-olWTIsX-BWMIdVzJSBkRQF-tuMfq1O_taoaraaXlQTA4cVF6s5CMfNWRgDcTr-i3mrSvvLxX080326BIah6cWgZtDl-_9v95N7o&seq=1), [Fernald and Hidrobo 2011](https://www.sciencedirect.com/science/article/pii/S0277953611001481?casa_token=ww65KMka1JoAAAAA:IRcZURxnooWDrM5EHyqtA-p-yEZP-lDIp-0kCpHX22ONuMbjbtPKWWoYhAjIPznndqmyQ_Z5zw), [Schady 2011](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2011.300253), [Schady, Behrman et al 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4431591/), [Berlinsky and Schady 2015](https://publications.iadb.org/en/early-years-child-well-being-and-role-public-policy), [Araujo, Bosch, Maldonado and Schady 2017](https://publications.iadb.org/en/effect-welfare-payments-work-middle-income-country), [Araujo, Bosch and Schady 2016](https://www.nber.org/papers/w22670)  ).
+
+
+This longitudinal dataset started in 2003 ("wave 0") with the original objective of evaluating the impact of the Ecuadorian conditional cash transfer program called *Bono de Desarrollo Humano* (BDH, hereinafter) on health and child development outcomes with a randomized control trial (RCT). All rounds of the survey administered tests to measure different areas of child development (cognition, language, fine and gross motor skills, and socio-emotional development). Tests that were selected were appropriate for children's age and piloted and adapted to the local context. For kids who attended school, the survey also included other assessments of their learning outcomes (language and mathematics) as well as of executive function.
+
+
+## Data
+
+In 2003 (wave 0 or "baseline"), the survey collected data on a sample of 5,081 rural and urban households eligible to participate in the BDH. All households in the original sample had children aged 0-5 years and no children above that age. Households were visited again in 2005, 2008, 2011 and 2014 (waves 1, 2, 3 and 4, respectively). Surveys have concentrated the tracking efforts on the mother of the eligible household and her children (in the 2003 baseline and born afterwards). The 2005 survey concluded BDH’s impact evaluation. However, given that the first two rounds contained very rich information on human capital formation in the early years, additional follow-up surveys were implemented in order to investigate the relationship between early
+learning outcomes and schooling and labor market outcomes. From 2008 onwards, the sample was restricted to households in rural areas. 
+
+The randomization into treatment vs. control groups was conducted at the parish level (the smallest administrative unit in Ecuador, called a *parroquia* in Spanish) across 378 parishes.
+
+
+  - The file `ecuador_list-of-variables.csv` is simply a description of variables; there are 1,180 rows and 5 columns. (But, it's probably easiest to get the variable descriptions from the original Excel file [here](https://data.iadb.org/file/download/a93fb82d-7194-4cba-a3db-d129ef3da7af)).
+  - The file `ecuador_child_RCT.csv` contains the survey responses; there are 6,009 rows (representing unique person-households) and 1,285 columns. Each row represents either a household (identified by the **idhabitus** column) or a person of that household (identified by the **persona** column pertaining to that particular household), depending on the column. To make a unique ID per row, you should concatenate **idhabitus-persona**. To check if the column represents a household-level or person-level response, see the **level_of_analysis** column in `ecuador_list-of-variables.csv`. If a column is at the person level, it could either be about the mother or the child (you must see the column description to find out).
+
+If a particular survey question or column is unclear, consult some of the references listed previously, as each paper describes the study design and questionnaire at varying levels of detail.
+
+
+
+### Data preview
+
+```{r, echo=FALSE, results="asis", warning=FALSE}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+Note that all question information contained below is redundant to `ecuador_child_columns.csv` (but, it's probably easiest to get the variable descriptions from the original Excel file [here](https://data.iadb.org/file/download/a93fb82d-7194-4cba-a3db-d129ef3da7af)). Below is a sample of the variable description file.
+
+
+| Variable | Description | Wave |  Level of Analysis |  Section |
+|----|-------------|------|------|------|
+| idhabitus | household identifier (to be combined with "persona") | 0 | household | identifiers| 
+| persona | person identifier in household (from household roster) | 0 | person | identifiers| 
+| prov | province identifier | 0 | household | identifiers| 
+| cant | canton identifier | 0 | household | identifiers| 
+| parr | parish identifier | 0 | household | identifiers| 
+| ciudad | prov+cant+parr | 0 | household | identifiers| 
+| treatment | =1 if hh is assigned to treatment by lottery - BDH | 1 | household | identifiers| 
+| quint_selben | SELBEN index quintile (lower is poorer) | 1 | household | identifiers| 
+| bl | =1 if child was in baseline | 0 | person | attrition| 
+| w1 | =1 if child was in wave 1 | 1 | person | attrition| 
+| w2 | =1 if child was in wave 2 | 2 | person | attrition| 
+| w3 | =1 if child was in wave 3 | 3 | person | attrition| 
+| w4 | =1 if child was in wave 4 | 4 | person | attrition| 
+| panel | =1 if child in all waves bl to w4 | 4 | person | attrition| 
+| DRaircon0 | =1 if hh owns air conditioning | 0 | household | household assets| 
+| NDRaircon0 | number of air conditioners | 0 | household | household assets| 
+| ... | ... | ... | ... | ...|
+| Crelate0 | relationship to head of HH | 0 | person | child basic info| 
+| Cagemo0 | age of child in months | 0 | person | child basic info| 
+| Crelate1 | relationship to head of HH | 1 | person | child basic info| 
+| Cagemo1 | age of child in months | 1 | person | child basic info| 
+| Crelate2 | relationship to head of HH | 2 | person | child basic info| 
+| ... | ... | ... | ... | ...|
+
+
+
+## Questions
+
+
+**Note that the treatment was assigned after wave 0; hence, waves 1-4 reflect treatment/control effects.**
+
+
+As a starting point, refer to [Paxson and Schady 2010](https://www.jstor.org/stable/pdf/10.1086/655458.pdf) for a detailed description of the study design and methodology. 
+
+
+1. This dataset is "real" - so although cleaned for public use, it still has missing values or ambiguous entries. Look at the column **Crelate0** (child relationship to head of HH at baseline). What do you think missing values mean? How can you check if your theory is correct? (Remember that there are various waves of the survey, and each question pertains to a specific wave).
+
+2. It's important that the treatment groups and placebo groups are ["balanced"](https://cran.r-project.org/web/packages/MatchIt/vignettes/assessing-balance.html). Do you have evidence they are balanced across observable household characteristics? (Hint: pick a few columns you find interesting in the "household assets" and "household services and materials" sections of the survey, as well as **quint_selben**, to see if there is evidence of balance using the **treatment** variable.)
+
+3. This study has lots of psychological and health tests. (See any of the "child assessments" sections of the survey.) Explore some of these with EDA - for example, is there a positive or a negative correlation between the Barrera-Moncada (B-M) test and the Peabody Picture Vocabulary Test (TVIP)? (Make sure you compare the same wave).
+
+
+4. Having read the motivations of the study, come up with some research questions -- keep them simple! For example, "What is the overall effect of the treatment on a child's reading comprehension score?" or "What is the overall effect of the treatment on a mother's health [picking some aspect from the 'mother health' section]?" How would you model these research questions? Make sure you consider the correct waves of the survey and incorporate the baseline (pre-treatment) wave 0.
+
+5. Run your models from question 4. What do you conclude?
+
+6. How do your results change if you control for respondent heterogeneity, such as child gender and age?
+
+7. Look at the "Methods" section (page 201 in the [Paxson and Schady 2010](https://www.jstor.org/stable/pdf/10.1086/655458.pdf)). Do the authors make modeling choices that you didn't consider? Do you agree with these differences?
+
+8. Can you replicate the results in Table 3 on page 205 of the [Paxson and Schady 2010](https://www.jstor.org/stable/pdf/10.1086/655458.pdf))? If not, what information would you need in order to replicate these results?
+
+
+
+
+## References
+
+
+Araujo, María Caridad and Schady, Norbert. Ecuador Longitudinal Survey of Child Health and Development, Rounds 1-5 (2003-2014), by Health, Nutrition and Population Division (VPS/SCL/HNP) of the Inter-American Development Bank. <https://data.iadb.org/dataset/ecuador-longitudinal-survey-of-child-health-and-development-rounds-1-5-2003>
+
+
+The Creative Commons Attribution-NonCommercial-NoDerivs 3.0 IGO (CC BY-NC-ND 3.0 IGO)
