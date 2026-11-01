@@ -1,0 +1,97 @@
+---
+title: Comparing bank and credit union CD quotes
+author: Cheng Xu
+date: November 1, 2026
+description: An observational snapshot of quoted certificate-of-deposit rates, with one selected quote per institution and term. Compare groups, then repeat the comparison using only institutions observed at both terms.
+categories:
+  - EDA
+  - data visualization
+  - split/apply/combine
+data:
+  year: 2026
+  files: cd-rates.csv
+---
+
+## Motivation
+
+A certificate of deposit (CD) holds money for a specified term. Its annual
+percentage yield (APY) expresses the annualized return with compounding.
+Credit unions offer a similar product called a share certificate.
+
+Does a longer term have a higher quoted APY? Do the distributions differ
+between banks and credit unions? These data allow students to compare the
+answers from two different samples: all institutions observed at each term,
+and the subset observed at both terms.
+
+## Data
+
+The CSV contains 3,013 institution-term observations from 436 independent
+regulators at nine terms. It was extracted without filtering or imputation
+from the `samples` array in APY Ledger's public October 23, 2026 release.
+Each row is one selected quote, not one customer account or one depositor.
+
+For each regulator and exact term, the selection uses the highest qualifying
+quote for a $10,000 deposit, excludes relationship-only offers and requires a
+known applicable deposit tier. If more than one observed ZIP qualifies, the
+highest APY is selected. The source quotes were verified within seven days
+of export, not all at one instant.
+
+This is a selected observational sample, not a census or a random sample of
+U.S. institutions. High quoted APYs can have membership, residency, new-money
+or other opening conditions. A blank ZIP means that no sample ZIP was
+recorded for that quote; it does not establish nationwide availability.
+An absent institution-term row is not a zero rate. Institutions observed at
+different terms can differ, and rows for one regulator are not independent
+institutions. Source checks can miss errors; these are historical observations,
+not current offers or investment recommendations.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|---|---|
+| regulator_id | FDIC or NCUA identifier; use this to join terms within an institution. |
+| type | `bank` or `credit_union`. |
+| slug | Publisher's readable institution identifier. |
+| term_days | Exact term in days; 365 is one year and 1825 is five years. |
+| term_label | Source term label for readers. |
+| apy | APY in percentage units: 3.5 means 3.5%, not 0.035. |
+| min_deposit | Published minimum deposit tier in U.S. dollars. |
+| product | Selected product name. |
+| kind | Offer label, such as standard, special or promotional. |
+| zip | Observed pricing ZIP as text; blank means not recorded. |
+| verified_at | Source verification time in ISO 8601 UTC. |
+| source_snapshot | Link to supporting source evidence. |
+
+## Questions
+
+1. Restrict to `term_days == 365`. Show a histogram or empirical cumulative
+   distribution for each institution type. Compare medians and sample sizes.
+   Why might quoting only the maximum APY be misleading?
+2. Compare one-year and five-year medians using every available row at each
+   term. Then join those terms on `regulator_id` and plot the within-institution
+   difference in APY. Do the two analyses answer the same question?
+3. Count how many of the nine terms each regulator contributes. What would go
+   wrong if an analysis treated all 3,013 rows as independent institutions?
+4. A difference between the two group medians is in percentage points, not
+   percent. Express the one-year median difference in both percentage points
+   and basis points. Does this observational comparison establish why the
+   groups differ, or which offers an individual can open?
+
+## References
+
+APY Ledger. *US Bank and Credit Union CD Rates*. Exported October 23, 2026,
+12:59:03.964 UTC. <https://doi.org/10.5281/zenodo.23597306>.
+Public files and original variable documentation:
+<https://huggingface.co/datasets/eatfreshapple/us-bank-and-credit-union-cd-rates>.
+Selection method: <https://apyledger.com/index#methodology>.
+
+Structured data are available under Creative Commons Attribution 4.0
+International. This teaching CSV selects fields from `samples` and converts
+verification timestamps to ISO 8601 UTC; no rows or APYs are changed.
