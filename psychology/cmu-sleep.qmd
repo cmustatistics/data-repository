@@ -32,7 +32,7 @@ first-year students at three universities:
 
 * Carnegie Mellon University (CMU), a STEM-focused private university
 * The University of Washington (UW), a large public university
-* Notre Dame University (ND), a private Catholic university
+* University of Notre Dame (ND), a private Catholic university
 
 Each student participant was given a device to track their sleep patterns for a
 month early in their spring academic term. The researchers then obtained
@@ -70,7 +70,7 @@ The data is divided into five separate studies, by university and semester:
 | 1 | Carnegie Mellon University | Spring 2018 |
 | 2 | University of Washington | Spring 2018 |
 | 3 | University of Washington | Spring 2019 |
-| 4 | Notre Dame University | Spring 2016 |
+| 4 | University of Notre Dame | Spring 2016 |
 | 5 | Carnegie Mellon University | Spring 2017 |
 
 ### Data preview
