@@ -1,0 +1,126 @@
+---
+title: Ph.D. stipends and program placements
+author: Alex Reinhart
+date: November 10, 2026
+description: Ph.D. students are typically paid stipends that are much lower than workers of equivalent experience could obtain in a job. Stipends vary widely between Ph.D. programs, however. Are higher stipends associated with programs producing more successful students, as measured by their placement in tenure-track jobs after graduation?
+categories:
+  - GLMs
+  - EDA
+data:
+  year: 2024
+  files:
+    - phd-stipends.csv
+    - phd-programs.csv
+---
+
+## Motivation
+
+It is a truth universally acknowledged, that a Ph.D. student in possession of a
+stipend, must be in want of a raise.
+
+Ph.D. programs vary widely between countries and disciplines, so it is hard to
+generalize. But in many programs, Ph.D. students are funded: the university
+covers the cost of their tuition and pays a modest stipend to cover the
+student's living expenses. This stipend may require the student to do some work
+outside their academic studies, such as serving as a teaching assistant for
+courses, or it may pay them to conduct their thesis research. Nominally, this
+pay is for about 20 hours of work a week, so it is not a full-time job even
+though the student may spend much more than 40 hours a week on their academic
+work.
+
+Whatever the case, Ph.D. stipends are paid for from university funds, research
+grants, fellowships, and other sources, and they are rarely generous. Stipends
+are almost always lower than wages for jobs in the field, and are often below
+what is considered a living wage. Students thus often argue for higher stipends.
+There are many possible arguments---based on wages for comparable jobs, on
+living wage standards, on the effect of low pay on mental and physical health,
+and so on---but one possible argument is that improved pay may improve outcomes:
+
+> This analysis looks at graduate student pay from another angle: that of
+> program outcomes. Setting aside the debate over whether students *deserve*
+> higher wages, there may be another reason for which student pay should be
+> higher. If better wages lead to greater success, then this will be reflected
+> in program outcomes, and higher-paying departments can reap reputational
+> benefits as a result. (Warner and Stecuła, 2024)
+
+This data comes from a study that aimed to answer this question. The authors
+gathered data on 85 Ph.D. programs in political science in the United States,
+including their number of graduates, program ranking, location, and outcomes:
+how many graduates got tenure-track jobs. Stipends are often not listed
+publicly, so they gathered self-reported data from PhDStipends.com, where
+students can report the stipends they receive or were offered by Ph.D. programs.
+
+## Data
+
+The data is split into two files. One file contains one row per Ph.D. program,
+giving metadata about the program. The other file contains one row per stipend
+report on PhDStipends.com. Each program may have more than one reported stipend,
+if more than one student reported it or if students reported stipends in
+different years.
+
+### Data preview
+
+```{r, echo=FALSE, results="asis"}
+source("../preview_dataset.R")
+preview_datasets()
+```
+
+### Variable descriptions
+
+| Variable | Description |
+|----|-------------|
+| program | Ph.D. program |
+| stipend | Stipend amount (dollars) |
+| coaiadj_pay | Ratio of stipend amount to county-level cost of living, as estimated by MIT Living Wage Lab (less than 1 = lower than cost of living) |
+| acyear | Academic year stipend was reported |
+| pryear | Student's year in their Ph.D. program |
+| stipendnotes | Additional comments listed by the student in their submission |
+: phd-stipends.csv
+
+| Variable | Description |
+|----|-------------|
+| program | Ph.D. program |
+| link | Link to the program's web page |
+| listed | Whether the program's outcome data was available (1 = yes, 0 = no) |
+| grads | Ph.D. graduates in the 2019-2021 academic years (if a list was publicly available) |
+| ustenure | How many of those graduates obtained tenure-track jobs at US institutions during the 2019-2021 hiring cycles, as of January 2022 |
+| alltenure | Same but for all institutions, not just US |
+| non_tt | How many of those graduates obtained non-tenure-track academic jobs during the 2019-2021 hiring cycles, as of November 2023 |
+| size | Number of Ph.D. students listed in the program's directory |
+| rank13 | The program's rank in the 2013 US News and World Report program rankings (or 100 if the program was not ranked) |
+| top_subfield | If the program was ranked in one of the political science subfields in the 2013 US News and World Report (1 = yes, 0 = no) |
+| union | Whether the graduate students were unionized as of 2018 (1 = yes, 0 = no) |
+| metro_rating | The size of the metro area in which the program is located (2 = top 20 metro areas by population, 1 = top 100, 0 = other) |
+| endowment_fte | University's endowment divided by the number of full-time enrolled students |
+| type | Whether the university is public or private |
+| region | US Census region of the university |
+: phd-programs.csv
+
+## Questions
+
+1. Determine how to merge the program and stipend information. How much do
+   stipends vary within a program? Should you simply take the average stipend
+   per program? Merge the data.
+2. Conduct EDA. What is the typical Ph.D. stipend? Is it related to the
+   program's rank, the cost of living, whether the university is public or
+   private, or the region? Do universities with higher endowments (per student)
+   pay better stipends? Devise plots or tables to address these questions.
+3. The core question is whether better-paying programs have better outcomes, in
+   terms of the fraction of students who get academic jobs. Select a model to
+   answer this question. Can you find evidence for it?
+4. The authors of the original study claim that according to their results, the
+   stipend amount "clearly and meaningfully impacts their ability to thrive on
+   the highly competitive job market". That is, they regard the association as
+   indicating that stipends *cause* an increase in placement. Under what
+   conditions can we make a causal claim? Are there confounding variables, or
+   other variables we would need to measure?
+
+## References
+
+Warner, S. B., & Stecuła, D. A. (2024). PhD stipends and program placement
+success in political science. *Research & Politics*, 11(2).
+<https://doi.org/10.1177/20531680241241131>
+
+Warner, Seth & Dominik Stecuła (2024). Replication Data for: PhD Stipends and
+Program Placement Success in Political Science. Harvard Dataverse.
+<https://doi.org/10.7910/DVN/FO7JBZ>
