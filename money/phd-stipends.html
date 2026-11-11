@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Reinhart">
+<meta name="dcterms.date" content="2026-11-10">
+<meta name="description" content="Ph.D.&nbsp;students are typically paid stipends that are much lower than workers of equivalent experience could obtain in a job. Stipends vary widely between Ph.D.&nbsp;programs, however. Are higher stipends associated with programs producing more successful students, as measured by their placement in tenure-track jobs after graduation?">
+
+<title>Ph.D.&nbsp;stipends and program placements – CMU S&amp;DS Data Repository</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-48e0b55b23dd15165e38d7b466a0d3b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.refsmmat.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CMU S&amp;DS Data Repository</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../by-method.html" aria-current="page"> 
+<span class="menu-text">All Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../submit-data.html"> 
+<span class="menu-text">Submit a Dataset</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../external-sources.html"> 
+<span class="menu-text">External Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../money/ames-housing.html">Money</a></li><li class="breadcrumb-item"><a href="../money/phd-stipends.html">Ph.D.&nbsp;stipends and program placements</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../by-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../external-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">External Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../submit-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Submit a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Astronomy</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../astronomy/buzzard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Galaxy mass prediction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Biology</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/anage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AnAge Longevity Database</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bird-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bird genetic diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/bug-attraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insect attraction to light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/dry-beans.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry beans</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../biology/spider-nuptials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spider nuptial gifts and fraud</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Crime and Justice</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/connecticut-stops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Traffic stops in Connecticut</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/mapping-police-violence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping Police Violence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../crime-and-justice/police-bias-training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Police implicit bias training</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Daily Life</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/college-scorecard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">US College Scorecard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/fandango_movie_ratings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fandango movie ratings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../daily-life/rtg-tinned-fish.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RTG tinned fish</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-5-label">History</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../history/GlengarryVaudreuil-agricultural-census.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agricultural Census for 1851, Glengarry and Vaudreuil Counties</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Language</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../language/hap-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Human-AI Parallel Corpus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Medicine</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/bloodletting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bloodletting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/core-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Core temperature during surgery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/dengue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diagnosing dengue fever</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/meningitis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distinguishing bacterial and viral meningitis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/prostatectomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blood transfusions in prostatectomies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../medicine/vietnam-health.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health exams in Vietnam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-8-label">Money</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/ames-housing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">House prices in Ames, Iowa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/european-ham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European protected ham</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/phd-stipends.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Ph.D.&nbsp;stipends and program placements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../money/rail-trails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rail trails and property values</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-9-label">Politics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/jan-6-insurrectionists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">January 6th insurrectionists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/social_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Social capital, income inequality, and political outcomes across US counties</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/standard-cities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fiscally standardized cities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../politics/world-bank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">World Development Indicators</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-10-label">Psychology</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/cmu-sleep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nightly sleep time and GPA in first-years</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/healing-time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical healing and time perception</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/hormone-diversity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testosterone and diversity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/male-makeup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Makeup and male attractiveness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/many-analysts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bias in soccer refereeing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/moral-rebels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resenting moral rebels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/plate-size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serving sizes and plate sizes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/religion-analytic-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Religion and analytic thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/stress-effort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stress and cognitive-effort avoidance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psychology/sugary-drinks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sugary drinks and portion limits</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-11-label">Social</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bechdel_test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bechdel Test and box office results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/bostonhousing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Boston Housing and fairness assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/costa_rica_households.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Costa Rican household poverty level</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/data-viz-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey of data visualization courses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/elite-college-admissions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elite college admissions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/la-homelessness-algorithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Los Angeles’s homelessness scoring system</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/migrants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey on attitude towards migrants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../social/science-forums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Forums</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-controls="quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-12-label">Sports</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-12" aria-labelledby="quarto-sidebar-section-12-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/boston-marathon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Boston Marathon times, 2021–2024</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sports/sprinters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fastest 100m sprint times</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-controls="quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-13-label">Technology</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-13" aria-labelledby="quarto-sidebar-section-13-label" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technology/ai-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Can generative AI harm student learning?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technology/metr-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Effect of AI on programming productivity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-preview" id="toc-data-preview" class="nav-link" data-scroll-target="#data-preview">Data preview</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable descriptions</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/money/phd-stipends.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../money/ames-housing.html">Money</a></li><li class="breadcrumb-item"><a href="../money/phd-stipends.html">Ph.D.&nbsp;stipends and program placements</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Ph.D.&nbsp;stipends and program placements</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">GLMs</div>
+    <div class="quarto-category">EDA</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Ph.D.&nbsp;students are typically paid stipends that are much lower than workers of equivalent experience could obtain in a job. Stipends vary widely between Ph.D.&nbsp;programs, however. Are higher stipends associated with programs producing more successful students, as measured by their placement in tenure-track jobs after graduation?
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alex Reinhart </p>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 10, 2026</p>
+    </div>
+  </div>
+  
+  
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data files</div>
+    <div class="quarto-title-meta-contents">
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/phd-stipends.csv">phd-stipends.csv</a>
+            • <a class="data-file" href="https://cmustatistics.github.io/data-repository/data/phd-programs.csv">phd-programs.csv</a>
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Data year</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024</p>
+    </div>
+  </div>
+  </div>
+
+
+</header>
+
+
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>It is a truth universally acknowledged, that a Ph.D.&nbsp;student in possession of a stipend, must be in want of a raise.</p>
+<p>Ph.D.&nbsp;programs vary widely between countries and disciplines, so it is hard to generalize. But in many programs, Ph.D.&nbsp;students are funded: the university covers the cost of their tuition and pays a modest stipend to cover the student’s living expenses. This stipend may require the student to do some work outside their academic studies, such as serving as a teaching assistant for courses, or it may pay them to conduct their thesis research. Nominally, this pay is for about 20 hours of work a week, so it is not a full-time job even though the student may spend much more than 40 hours a week on their academic work.</p>
+<p>Whatever the case, Ph.D.&nbsp;stipends are paid for from university funds, research grants, fellowships, and other sources, and they are rarely generous. Stipends are almost always lower than wages for jobs in the field, and are often below what is considered a living wage. Students thus often argue for higher stipends. There are many possible arguments—based on wages for comparable jobs, on living wage standards, on the effect of low pay on mental and physical health, and so on—but one possible argument is that improved pay may improve outcomes:</p>
+<blockquote class="blockquote">
+<p>This analysis looks at graduate student pay from another angle: that of program outcomes. Setting aside the debate over whether students <em>deserve</em> higher wages, there may be another reason for which student pay should be higher. If better wages lead to greater success, then this will be reflected in program outcomes, and higher-paying departments can reap reputational benefits as a result. (Warner and Stecuła, 2024)</p>
+</blockquote>
+<p>This data comes from a study that aimed to answer this question. The authors gathered data on 85 Ph.D.&nbsp;programs in political science in the United States, including their number of graduates, program ranking, location, and outcomes: how many graduates got tenure-track jobs. Stipends are often not listed publicly, so they gathered self-reported data from PhDStipends.com, where students can report the stipends they receive or were offered by Ph.D.&nbsp;programs.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data is split into two files. One file contains one row per Ph.D.&nbsp;program, giving metadata about the program. The other file contains one row per stipend report on PhDStipends.com. Each program may have more than one reported stipend, if more than one student reported it or if students reported stipends in different years.</p>
+<section id="data-preview" class="level3">
+<h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/phd-stipends.csv "> phd-stipends.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["program"],"name":[1],"type":["chr"],"align":["left"]},{"label":["stipend"],"name":[2],"type":["chr"],"align":["left"]},{"label":["coiadj_pay"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["acyear"],"name":[4],"type":["chr"],"align":["left"]},{"label":["pryear"],"name":[5],"type":["chr"],"align":["left"]},{"label":["stipendnotes"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"Rutgers the State University of New Jersey - New Brunswick","2":"$40,600","3":"1.57","4":"2016-2017","5":"1st","6":"Two fellowships (one departmental, one university-wide) 40,000 per year with 3,000 for the first summer (research)"},{"1":"Stanford University (SU)","2":"$40,350","3":"1.40","4":"2018-2019","5":"1st","6":"5K summer, 1K for discretionary support, healthcare benefits"},{"1":"Duke University (DU)","2":"$37,000","3":"1.66","4":"2018-2019","5":"1st","6":"NA"},{"1":"University of Rochester (UR)","2":"$37,000","3":"1.73","4":"2018-2019","5":"1st","6":"Sproull Fellowship"},{"1":"Princeton University","2":"$36,500","3":"1.44","4":"2017-2018","5":"1st","6":"NA"},{"1":"Harvard University (HU)","2":"$36,000","3":"1.26","4":"2019-2020","5":"2nd","6":"NA"},{"1":"Duke University (DU)","2":"$34,000","3":"1.53","4":"2016-2017","5":"NA","6":"Campus-wide fellowship: 34k for the first two years then reverts to the base stipend + summer support for the remaining years."},{"1":"Georgetown University","2":"$34,000","3":"1.10","4":"2017-2018","5":"1st","6":"$14.5K each semester and $5K summers (must apply after the first year). One of the best offers out there for poli sci/government"},{"1":"University of Southern California (USC)","2":"$34,000","3":"1.31","4":"2020-2021","5":"3rd","6":"Enough to live and indulge in eating out once or twice a week and don't have to budget too striclty but it helps to have a roommate/partner you live with."},{"1":"University of Texas - Austin (UT)","2":"$34,000","3":"1.49","4":"2018-2019","5":"1st","6":"Summer funding available upon successful application within department"},{"1":"Brown University","2":"$33,676","3":"1.48","4":"2019-2020","5":"3rd","6":"NA"},{"1":"University of Western Ontario","2":"$33,629","3":"NA","4":"2016-2017","5":"1st","6":"Original offer was 37,400, they revised it to 40,300. $15,000 is coming from OGS (Ontario Graduate Scholarship)."},{"1":"Harvard University (HU)","2":"$33,624","3":"1.17","4":"2017-2018","5":"1st","6":"Health insurance and all fees are covered, one-time stipend of $2500 for professional development offered in addition to the $33.6k yearly stipend"},{"1":"Harvard University (HU)","2":"$33,624","3":"1.17","4":"2017-2018","5":"1st","6":"NA"},{"1":"University of Michigan - Ann Arbor (UM)","2":"$32,605","3":"1.41","4":"2017-2018","5":"1st","6":"Summers: $3,000 for 5 years and $9,868 summer TAship for 3 years"},{"1":"University of Michigan - Ann Arbor (UM)","2":"$32,600","3":"1.41","4":"2017-2018","5":"1st","6":"NA"},{"1":"New York University (NYU)","2":"$32,526","3":"1.09","4":"2016-2017","5":"1st","6":"for 2017/18 academic year"},{"1":"University of Southern California (USC)","2":"$32,500","3":"1.26","4":"2018-2019","5":"1st","6":"NA"},{"1":"University of Michigan - Ann Arbor (UM)","2":"$32,487","3":"1.41","4":"2019-2020","5":"2nd","6":"Teaching for fall/winter, RA for summer. Same pay so I put as 12 mos. 50% appt fraction. Fees are for fall/winter only; more fees if you do summer classes (and they are higher as an RA, interestingly). Rent is about half my paycheck. I seem to get by OK on this, but certainly not saving much. No contribution from me for health or dental insurance,"},{"1":"University of Chicago (UC)","2":"$32,400","3":"1.34","4":"2017-2018","5":"1st","6":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<h4 class="anchored">
+<a href=" https://cmustatistics.github.io/data-repository/data/phd-programs.csv "> phd-programs.csv </a>
+</h4>
+<div data-pagedtable="false">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["program"],"name":[1],"type":["chr"],"align":["left"]},{"label":["link"],"name":[2],"type":["chr"],"align":["left"]},{"label":["listed"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["grads"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["ustenure"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["alltenure"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["non_tt"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["size"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["rank13"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["top_subfield"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["union"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["metro_rating"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["endowment_fte"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["type"],"name":[14],"type":["chr"],"align":["left"]},{"label":["region"],"name":[15],"type":["chr"],"align":["left"]}],"data":[{"1":"Harvard University (HU)","2":"https://gov.harvard.edu/placement-history","3":"1","4":"20","5":"9","6":"13","7":"7","8":"165","9":"1","10":"1","11":"0","12":"2","13":"1463888","14":"private","15":"northeast"},{"1":"Princeton University","2":"https://politics.princeton.edu/graduate/job-placement","3":"1","4":"36","5":"18","6":"27","7":"17","8":"137","9":"2","10":"1","11":"0","12":"2","13":"2750279","14":"private","15":"northeast"},{"1":"Stanford University (SU)","2":"https://politicalscience.stanford.edu/graduate-programphd-admissions/job-placement","3":"1","4":"NA","5":"9","6":"9","7":"7","8":"94","9":"2","10":"1","11":"0","12":"2","13":"1384424","14":"private","15":"west"},{"1":"University of Michigan - Ann Arbor (UM)","2":"https://docs.google.com/spreadsheets/d/1ctb2SVXHa2tHNgszgth-zAmPwedp9InbCopqG5aIt40/edit#gid=958445409","3":"1","4":"27","5":"16","6":"19","7":"14","8":"53","9":"4","10":"1","11":"1","12":"0","13":"232210","14":"public","15":"midwest"},{"1":"Yale University (YU)","2":"https://politicalscience.yale.edu/graduate-placements","3":"1","4":"31","5":"12","6":"13","7":"18","8":"95","9":"4","10":"1","11":"1","12":"2","13":"2066580","14":"private","15":"northeast"},{"1":"University of California - Berkeley","2":"https://polisci.berkeley.edu/graduate-program/job-placement/department-placement-history","3":"0","4":"NA","5":"NA","6":"NA","7":"NA","8":"175","9":"6","10":"0","11":"NA","12":"NA","13":"NA","14":"public","15":"west"},{"1":"Columbia University (CU)","2":"https://polisci.columbia.edu/sites/default/files/content/pdfs/Political%20Science%20Placement%202010-2021.pdf","3":"1","4":"16","5":"10","6":"12","7":"18","8":"100","9":"7","10":"1","11":"0","12":"2","13":"360986","14":"private","15":"northeast"},{"1":"Massachusetts Institute of Technology (MIT)","2":"https://polisci.mit.edu/graduate/job-placement","3":"1","4":"6","5":"8","6":"10","7":"7","8":"70","9":"8","10":"1","11":"0","12":"2","13":"1173672","14":"private","15":"northeast"},{"1":"University of California - San Diego (UCSD)","2":"https://polisci.ucsd.edu/grad/placement/Placement-tables/Graduate-Placement-Table-Updated-051120.pdf","3":"1","4":"7","5":"5","6":"5","7":"10","8":"77","9":"8","10":"1","11":"0","12":"2","13":"50123","14":"public","15":"west"},{"1":"Duke University (DU)","2":"https://polisci.duke.edu/graduate/phd/placements","3":"1","4":"19","5":"5","6":"12","7":"8","8":"76","9":"10","10":"1","11":"0","12":"1","13":"442704","14":"private","15":"south"},{"1":"University of California - Los Angeles (UCLA)","2":"https://polisci.ucla.edu/academics/graduate/recent-and-past-placements/","3":"1","4":"10","5":"0","6":"1","7":"19","8":"100","9":"10","10":"1","11":"1","12":"2","13":"77520","14":"public","15":"west"},{"1":"University of Chicago (UC)","2":"https://political-science.uchicago.edu/content/placement-history","3":"1","4":"21","5":"7","6":"10","7":"14","8":"103","9":"12","10":"1","11":"1","12":"2","13":"507935","14":"private","15":"midwest"},{"1":"Washington University in St. Louis (Wash U)","2":"https://wustl.app.box.com/s/d16sugiysowjul4jiztkkjnvh6zac1c3","3":"1","4":"5","5":"4","6":"5","7":"5","8":"38","9":"13","10":"1","11":"0","12":"1","13":"484435","14":"private","15":"midwest"},{"1":"University of North Carolina - Chapel Hill (UNC)","2":"https://politicalscience.unc.edu/graduate/phd-completion-and-placement-stats/","3":"0","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"13","10":"0","11":"NA","12":"NA","13":"NA","14":"public","15":"south"},{"1":"New York University (NYU)","2":"https://as.nyu.edu/content/nyu-as/as/departments/politics/phd-program/phd-placements.html","3":"1","4":"14","5":"2","6":"8","7":"9","8":"64","9":"15","10":"1","11":"1","12":"2","13":"79518","14":"private","15":"northeast"},{"1":"Ohio State University (OSU)","2":"https://polisci.osu.edu/graduate/prospective-students/placement","3":"1","4":"9","5":"1","6":"3","7":"4","8":"70","9":"15","10":"1","11":"0","12":"1","13":"66839","14":"public","15":"midwest"},{"1":"University of Rochester (UR)","2":"https://www.sas.rochester.edu/psc/graduate/alumni.html","3":"1","4":"9","5":"1","6":"4","7":"3","8":"44","9":"15","10":"1","11":"0","12":"1","13":"192469","14":"private","15":"northeast"},{"1":"University of Wisconsin - Madison (UW)","2":"https://polisci.wisc.edu/career-placement/","3":"0","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"15","10":"0","11":"NA","12":"NA","13":"NA","14":"public","15":"midwest"},{"1":"Cornell University (CU)","2":"https://government.cornell.edu/placement#placement-record","3":"1","4":"NA","5":"7","6":"6","7":"14","8":"80","9":"19","10":"1","11":"0","12":"0","13":"263560","14":"private","15":"northeast"},{"1":"University of Minnesota - Twin Cities (UM)","2":"https://cla.umn.edu/polisci/graduate/job-placement-achievements","3":"1","4":"7","5":"8","6":"9","7":"3","8":"65","9":"19","10":"0","11":"0","12":"2","13":"76642","14":"public","15":"midwest"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</section>
+<section id="variable-descriptions" class="level3">
+<h3 class="anchored" data-anchor-id="variable-descriptions">Variable descriptions</h3>
+<table class="caption-top table">
+<caption>phd-stipends.csv</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>program</td>
+<td>Ph.D.&nbsp;program</td>
+</tr>
+<tr class="even">
+<td>stipend</td>
+<td>Stipend amount (dollars)</td>
+</tr>
+<tr class="odd">
+<td>coaiadj_pay</td>
+<td>Ratio of stipend amount to county-level cost of living, as estimated by MIT Living Wage Lab (less than 1 = lower than cost of living)</td>
+</tr>
+<tr class="even">
+<td>acyear</td>
+<td>Academic year stipend was reported</td>
+</tr>
+<tr class="odd">
+<td>pryear</td>
+<td>Student’s year in their Ph.D.&nbsp;program</td>
+</tr>
+<tr class="even">
+<td>stipendnotes</td>
+<td>Additional comments listed by the student in their submission</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>phd-programs.csv</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>program</td>
+<td>Ph.D.&nbsp;program</td>
+</tr>
+<tr class="even">
+<td>link</td>
+<td>Link to the program’s web page</td>
+</tr>
+<tr class="odd">
+<td>listed</td>
+<td>Whether the program’s outcome data was available (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>grads</td>
+<td>Ph.D.&nbsp;graduates in the 2019-2021 academic years (if a list was publicly available)</td>
+</tr>
+<tr class="odd">
+<td>ustenure</td>
+<td>How many of those graduates obtained tenure-track jobs at US institutions during the 2019-2021 hiring cycles, as of January 2022</td>
+</tr>
+<tr class="even">
+<td>alltenure</td>
+<td>Same but for all institutions, not just US</td>
+</tr>
+<tr class="odd">
+<td>non_tt</td>
+<td>How many of those graduates obtained non-tenure-track academic jobs during the 2019-2021 hiring cycles, as of November 2023</td>
+</tr>
+<tr class="even">
+<td>size</td>
+<td>Number of Ph.D.&nbsp;students listed in the program’s directory</td>
+</tr>
+<tr class="odd">
+<td>rank13</td>
+<td>The program’s rank in the 2013 US News and World Report program rankings (or 100 if the program was not ranked)</td>
+</tr>
+<tr class="even">
+<td>top_subfield</td>
+<td>If the program was ranked in one of the political science subfields in the 2013 US News and World Report (1 = yes, 0 = no)</td>
+</tr>
+<tr class="odd">
+<td>union</td>
+<td>Whether the graduate students were unionized as of 2018 (1 = yes, 0 = no)</td>
+</tr>
+<tr class="even">
+<td>metro_rating</td>
+<td>The size of the metro area in which the program is located (2 = top 20 metro areas by population, 1 = top 100, 0 = other)</td>
+</tr>
+<tr class="odd">
+<td>endowment_fte</td>
+<td>University’s endowment divided by the number of full-time enrolled students</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>Whether the university is public or private</td>
+</tr>
+<tr class="odd">
+<td>region</td>
+<td>US Census region of the university</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ol type="1">
+<li>Determine how to merge the program and stipend information. How much do stipends vary within a program? Should you simply take the average stipend per program? Merge the data.</li>
+<li>Conduct EDA. What is the typical Ph.D.&nbsp;stipend? Is it related to the program’s rank, the cost of living, whether the university is public or private, or the region? Do universities with higher endowments (per student) pay better stipends? Devise plots or tables to address these questions.</li>
+<li>The core question is whether better-paying programs have better outcomes, in terms of the fraction of students who get academic jobs. Select a model to answer this question. Can you find evidence for it?</li>
+<li>The authors of the original study claim that according to their results, the stipend amount “clearly and meaningfully impacts their ability to thrive on the highly competitive job market”. That is, they regard the association as indicating that stipends <em>cause</em> an increase in placement. Under what conditions can we make a causal claim? Are there confounding variables, or other variables we would need to measure?</li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Warner, S. B., &amp; Stecuła, D. A. (2024). PhD stipends and program placement success in political science. <em>Research &amp; Politics</em>, 11(2). <a href="https://doi.org/10.1177/20531680241241131" class="uri">https://doi.org/10.1177/20531680241241131</a></p>
+<p>Warner, Seth &amp; Dominik Stecuła (2024). Replication Data for: PhD Stipends and Program Placement Success in Political Science. Harvard Dataverse. <a href="https://doi.org/10.7910/DVN/FO7JBZ" class="uri">https://doi.org/10.7910/DVN/FO7JBZ</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/cmustatistics\.github\.io\/data-repository\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Maintained by the <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">Department of Statistics &amp; Data Science</a>, Carnegie Mellon University</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cmustatistics/data-repository/edit/main/money/phd-stipends.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cmustatistics/data-repository/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
