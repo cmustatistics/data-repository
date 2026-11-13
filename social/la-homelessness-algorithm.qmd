@@ -75,8 +75,17 @@ than their answers on the original survey. Information about the original data
 provided by LAHSA is available on The Markup's
 [GitHub](https://github.com/the-markup/investigation-vi-spdat/blob/main/docs/cpra-response-dict.md),
 and a version of the VI-SPDAT assessment filled out by case managers is
-available on the [Los Angeles County
-website](https://file.lacounty.gov/SDSInter/dmh/240602_VI-SPDATv2.0FamilyUS.pdf).
+[available
+online](/data/1306-ces-survey-for-individuals-survey-packet.pdf).
+
+The acuity score is used directly to prioritize interventions. According to the
+score sheet at the end of the CES Survey Part 1, the prioritization rules are:
+
+| Score | Recommendation |
+|-------|----------------|
+| 0–3 | No housing intervention |
+| 4–7 | Assessment for Rapid Re-Housing program |
+| 8+ | Assessment for Permanent Supportive Housing or Housing First program |
 
 ### Data preview
 
@@ -98,9 +107,9 @@ preview_datasets()
 | intervention | The client's received intervention (if any). |
 | intervention_year | The year that the client's intervention occurred (if at all). |
 | assessment_predates_intervention | Whether the client's assessment date is before or the same as their intervention date. |
-| assessment_name | The client's assessment type: `CES Survey Part 1` (intended for single adults) `Next Step Tool` (intended for youth under 25 years old). |
+| assessment_name | The client's assessment type: `CES Survey Part 1` (intended for single adults) or `Next Step Tool` (intended for youth under 25 years old). |
 | assessment_year | Year of the client's assessment. |
-| acuity | The client's assessment score based on `total_score`, binned by The Markup into three categories: `1/Low Acuity`, `2/Mid Acuity`, and `3/High Acuity`. For *CES Survey Part 1* clients: `1/Low Acuity` = 0-3, `2/Mid Acuity` = 4-11, and `3/High Acuity` = 12-17. For *Next Step Tool* clients: `1/Low Acuity` = 0-3, `2/Mid Acuity` = 4-7, `3/High Acuity`= 7-17. These groups are defined based on [June 2020 report](https://clkrep.lacity.org/onlinedocs/2019/19-1576_rpt_HSA_08-06-2020.pdf) from LAHSA, which parallel the [CES Prioritization Policy](https://www.lahsa.org/documents?id=2062-draft-ces-matching-policies.pdf), adopted in 2018. |
+| acuity | The client's assessment score based on `total_score`, binned by The Markup into three categories: `1/Low Acuity`, `2/Mid Acuity`, and `3/High Acuity`. For *CES Survey Part 1* clients: `1/Low Acuity` = 0-3, `2/Mid Acuity` = 4-11, and `3/High Acuity` = 12-17. For *Next Step Tool* clients: `1/Low Acuity` = 0-3, `2/Mid Acuity` = 4-7, `3/High Acuity`= 8-17. These groups are defined based on [June 2020 report](https://clkrep.lacity.org/onlinedocs/2019/19-1576_rpt_HSA_08-06-2020.pdf) from LAHSA, which parallel the [CES Prioritization Policy](https://www.lahsa.org/documents?id=2062-draft-ces-matching-policies.pdf), adopted in 2018. |
 | acuity_score | The client's raw assessment acuity score, reported by LAHSA, integer-valued between 0-17. Higher scores indicate higher vulnerability. |
 | total_score | The client's total assessment score, provided by LAHSA, integer-valued between 0-17. Higher scores indicate higher vulnerability. LAHSA did not provide The Markup with why `total_score` differ from `acuity_score` for some clients. |
 | general_sub_score | The client's general sub-score based on their VI-SPDAT assessment, provided by LAHSA: either `0` or `1`. |
