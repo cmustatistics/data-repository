@@ -664,7 +664,34 @@ ul.task-list li input[type="checkbox"] {
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>The dataset is a cleaned version of the data provided to The Markup by LAHSA under a California Public Records Act request. It purportedly contains all clients of Homeless Management Information System in Los Angeles, who took either the VI-SPDAT assessment designed for single adults (<em>CES Survey Part 1</em>) or youth under 25 years old (<em>Next Step Tool</em>) between January 1st, 2016 and October 30, 2022. There are 139,931 total clients in the data.</p>
-<p>Each observation represents a client’s VI-SPDAT assessment. The columns describe the client’s demographic information, calculated scores based on their original survey responses, total acuity score, the intervention they received (if any), as well as metadata about the assessment. To protect clients’ privacy, the cleaned dataset only contains the client’s <em>calculated</em> question scores rather than their answers on the original survey. Information about the original data provided by LAHSA is available on The Markup’s <a href="https://github.com/the-markup/investigation-vi-spdat/blob/main/docs/cpra-response-dict.md">GitHub</a>, and a version of the VI-SPDAT assessment filled out by case managers is available on the <a href="https://file.lacounty.gov/SDSInter/dmh/240602_VI-SPDATv2.0FamilyUS.pdf">Los Angeles County website</a>.</p>
+<p>Each observation represents a client’s VI-SPDAT assessment. The columns describe the client’s demographic information, calculated scores based on their original survey responses, total acuity score, the intervention they received (if any), as well as metadata about the assessment. To protect clients’ privacy, the cleaned dataset only contains the client’s <em>calculated</em> question scores rather than their answers on the original survey. Information about the original data provided by LAHSA is available on The Markup’s <a href="https://github.com/the-markup/investigation-vi-spdat/blob/main/docs/cpra-response-dict.md">GitHub</a>, and a version of the VI-SPDAT assessment filled out by case managers is <a href="../data/1306-ces-survey-for-individuals-survey-packet.pdf">available online</a>.</p>
+<p>The acuity score is used directly to prioritize interventions. According to the score sheet at the end of the CES Survey Part 1, the prioritization rules are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Score</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0–3</td>
+<td>No housing intervention</td>
+</tr>
+<tr class="even">
+<td>4–7</td>
+<td>Assessment for Rapid Re-Housing program</td>
+</tr>
+<tr class="odd">
+<td>8+</td>
+<td>Assessment for Permanent Supportive Housing or Housing First program</td>
+</tr>
+</tbody>
+</table>
 <section id="data-preview" class="level3">
 <h3 class="anchored" data-anchor-id="data-preview">Data preview</h3>
 <h4 class="anchored">
@@ -724,7 +751,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>assessment_name</td>
-<td>The client’s assessment type: <code>CES Survey Part 1</code> (intended for single adults) <code>Next Step Tool</code> (intended for youth under 25 years old).</td>
+<td>The client’s assessment type: <code>CES Survey Part 1</code> (intended for single adults) or <code>Next Step Tool</code> (intended for youth under 25 years old).</td>
 </tr>
 <tr class="odd">
 <td>assessment_year</td>
@@ -732,7 +759,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>acuity</td>
-<td>The client’s assessment score based on <code>total_score</code>, binned by The Markup into three categories: <code>1/Low Acuity</code>, <code>2/Mid Acuity</code>, and <code>3/High Acuity</code>. For <em>CES Survey Part 1</em> clients: <code>1/Low Acuity</code> = 0-3, <code>2/Mid Acuity</code> = 4-11, and <code>3/High Acuity</code> = 12-17. For <em>Next Step Tool</em> clients: <code>1/Low Acuity</code> = 0-3, <code>2/Mid Acuity</code> = 4-7, <code>3/High Acuity</code>= 7-17. These groups are defined based on <a href="https://clkrep.lacity.org/onlinedocs/2019/19-1576_rpt_HSA_08-06-2020.pdf">June 2020 report</a> from LAHSA, which parallel the <a href="https://www.lahsa.org/documents?id=2062-draft-ces-matching-policies.pdf">CES Prioritization Policy</a>, adopted in 2018.</td>
+<td>The client’s assessment score based on <code>total_score</code>, binned by The Markup into three categories: <code>1/Low Acuity</code>, <code>2/Mid Acuity</code>, and <code>3/High Acuity</code>. For <em>CES Survey Part 1</em> clients: <code>1/Low Acuity</code> = 0-3, <code>2/Mid Acuity</code> = 4-11, and <code>3/High Acuity</code> = 12-17. For <em>Next Step Tool</em> clients: <code>1/Low Acuity</code> = 0-3, <code>2/Mid Acuity</code> = 4-7, <code>3/High Acuity</code>= 8-17. These groups are defined based on <a href="https://clkrep.lacity.org/onlinedocs/2019/19-1576_rpt_HSA_08-06-2020.pdf">June 2020 report</a> from LAHSA, which parallel the <a href="https://www.lahsa.org/documents?id=2062-draft-ces-matching-policies.pdf">CES Prioritization Policy</a>, adopted in 2018.</td>
 </tr>
 <tr class="odd">
 <td>acuity_score</td>
